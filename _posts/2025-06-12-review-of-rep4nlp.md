@@ -4,7 +4,7 @@ title: "What's Happening in Representation Learning? A Look at REP4NLP 2025"
 date: 2025-06-27 00:00:00 +0000
 # Optional: add or remove tags as you prefer
 tags: [Research, NLP]
-hidden: true
+hidden: false
 related_posts: false
 toc:
   sidebar: left
