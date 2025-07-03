@@ -15,7 +15,7 @@ toc:
 Representation Learning is one of the primitives of intelligence. In a broad sense, it's the foundation of all abstractions and compressions, necessary precursors for solving anycomplex problems in math and science. More narrowly, learning complex representations by changing weights through gradient descent, has been at the heart of the effectiveness of deep neural nets since their inception and I've found it a compelling part of ML and NLP for years. More specifically, although there have been many different iterations of the "learn meaningful representations of language" problem I've always been quite fond of is Word2Vec. One of the first ML for NLP techniques I learned about, and one that always deserves a mention when talking about representation learning, for its elegance and ability to reveal the underlying "geometry of language" even back in 2012. This first encounter with representation learning for NLP led to an enduring interest in the field and its developments, of which there were plenty in the 2010s. The story of NLP in the 2010s is essentially the story of representation learning for language driving massive improvements across downstream tasks, a story I followed with interest.
 
 Nevertheless, as the NLP community at large has moved more and more towards applied work on agents, prompting and the like, I've also paid less attention to developments in representation learning, despite there being many. Working at a question-answering-from-data company, I've been drawn more toward the practical applications too.
-However, in the last few weeks I've decided to take a closer look at the current state of representation learning for NLP by surveying the papers accepted to the REP4NLP 2025 workshop held this past May at ACL in Albuquerque, New Mexico. Here's what I found interesting.
+However, in the last few weeks I've decided to take a closer look at the current state of representation learning for NLP by surveying the papers accepted to the REP4NLP 2025 workshop held this past May at NAACL in Albuquerque, New Mexico. Here's what I found interesting.
 
 Before we begin, some caveats. First and foremost, the papers in this workshop will only provide a limited snapshot of the field and by their very nature will tend to be a lagging indicator of what people have been working on and talking about. Second, I don't claim to be the most up-to-date member of the NLP community, so some references or methods might be lost on me, but I do have a strong interest in the subfield and have followed it for many years. That said, let's start!
 
@@ -126,8 +126,6 @@ _Results:_ For this 1-layer model the authors find that:
 3. **"Robust" features also useful**
    Features that survive both fine-tunes and the merge contribute ~45 % of total log-prob improvement on a mixed validation set, despite being <10 % of all discovered features.
 
-![SAE workflow diagram](/assets/img/rep4nlp/sae_workflow.png)
-
 #### My thoughts
 
 - Very interesting to see SAEs in action
@@ -152,8 +150,6 @@ _Results:_
 2. **ICL vs k** - ID rises from 0-shot up to ~5-10 shots, then plateaus or declines; the k where AUC peaks usually matches where accuracy saturates
 3. **Paradigm comparison** - For k ≥ 5, ICL induces consistently higher IDs than SFT across all (model, dataset) pairs—even though SFT reaches better accuracy
 4. **Cool finding** - ID can be used as a heuristic to pick SFT checkpoints before overfitting and choose optimal k for ICL performance
-
-![Intrinsic-dimension bar chart](/assets/img/rep4nlp/id_bar_chart.png)
 
 #### My thoughts
 
@@ -183,8 +179,6 @@ demonstrate only modest alignment with human-perceived fine-grained semantic dis
 **LLMs demonstrate markedly superior information-theoretic efficiency in their conceptual representations compared to human conceptual structures**. Evaluated via our L-objective, LLM-derived clusters consistently achieve a more "optimal" balance (by this measure) between representational complexity (compression) and semantic distortion. Human
 conceptualizations, while richer, appear less statistically compact, suggesting optimization
 for pressures beyond pure statistical compressibility
-
-![Mutual Information between human categories and LLM concepts crusters](/assets/img/rep4nlp/ami_across_models.png)
 
 #### My thoughts
 
