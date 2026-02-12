@@ -67,44 +67,44 @@ ninja.data = [{
             window.open("https://openmined.org/blog/what-is-federated-learning/", "_blank");
           
         },
-      },{id: "post-bart-are-all-pretraining-techniques-created-equal-by-antonio-lopardo-dair-ai-medium",
+      },{id: "post-just-a-moment",
         
-          title: 'BART: Are all pretraining techniques created equal? | by Antonio Lopardo | DAIR.AI... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+          title: 'Just a moment... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "In this paper, Lewis et al. present valuable comparative work on different pre-training techniques and show how this kind of work can be used to guide large pre-training experiments reaching…",
+        description: "",
         section: "Posts",
         handler: () => {
           
             window.open("https://medium.com/dair-ai/bart-are-all-pretraining-techniques-created-equal-e869a490042e", "_blank");
           
         },
-      },{id: "post-word2vec-to-transformers-the-evolution-of-word-embeddings-notes-by-antonio-lopardo-tds-archive-medium",
+      },{id: "post-just-a-moment",
         
-          title: 'Word2Vec to Transformers. The evolution of word embeddings, notes… | by Antonio Lopardo... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+          title: 'Just a moment... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Developing meaningful representations of words has been one of the primary goals of NLP since its inception. This foundational task has been, during the 2010s, one of the main drivers of advances and…",
+        description: "",
         section: "Posts",
         handler: () => {
           
             window.open("https://medium.com/data-science/word2vec-to-transformers-caf5a3daa08a", "_blank");
           
         },
-      },{id: "post-the-basics-of-language-modeling-notes-from-cs224n-lesson-6-and-7-by-antonio-lopardo-medium",
+      },{id: "post-just-a-moment",
         
-          title: 'The basics of Language Modeling. Notes from CS224n lesson 6 and 7. |... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+          title: 'Just a moment... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Language modeling is one of the benchmark tasks of NLP. In its simplest form, it consists of predicting the most probable word following a series of words based on them. There are many applications…",
+        description: "",
         section: "Posts",
         handler: () => {
           
             window.open("https://medium.com/@antonio.lopardo/the-basics-of-language-modeling-1c8832f21079", "_blank");
           
         },
-      },{id: "post-the-midterms-on-twitter-i-by-antonio-lopardo-medium",
+      },{id: "post-just-a-moment",
         
-          title: 'The MidTerms on Twitter. I | by Antonio Lopardo | Medium <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+          title: 'Just a moment... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Political support inference from twitter has been among the most widely studied areas of NLP (Natural Language Processing) on the platform with many valid approaches developed over the years since…",
+        description: "",
         section: "Posts",
         handler: () => {
           
