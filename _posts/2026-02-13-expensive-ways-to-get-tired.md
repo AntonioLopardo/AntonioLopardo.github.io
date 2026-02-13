@@ -23,6 +23,8 @@ Running is supposed to be the simple one. Just shoes and a road, right? Wrong. S
 
 <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="14165709640" data-style="standard" data-from-embed="false"></div>
 
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="14087468628" data-style="standard" data-from-embed="false"></div>
+
 <script src="https://strava-embeds.com/embed.js"></script>
 
 ---
