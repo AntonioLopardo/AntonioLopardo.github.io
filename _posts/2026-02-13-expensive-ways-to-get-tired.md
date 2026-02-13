@@ -13,42 +13,17 @@ What follows is a collection of training sessions that, taken together, represen
 
 ---
 
-## Swimming — "Just keep flailing"
-
-Nothing humbles you quite like sharing a lane with a 70-year-old who laps you twice. Pool fees, goggles that fog up after 200 metres, and the lingering smell of chlorine in places chlorine shouldn't be — this is the glamorous life of a triathlete-in-training.
-
-<div style="max-width: 590px; margin: 1em auto;">
-<!-- Replace with Strava embed -->
-<iframe allowtransparency frameborder='0' height='160' scrolling='no'
-  src='https://www.strava.com/activities/ACTIVITY_ID/embed/HASH'
-  width='590'></iframe>
-</div>
-
----
-
-## Cycling — "My bank account called, it's worried"
-
-If swimming is humbling, cycling is bankrupting. Once you start down the road of clipless pedals, bib shorts, and "just one more component upgrade," there is no coming back. The bike now costs more than my first car, and it doesn't even have a radio.
-
-<div style="max-width: 590px; margin: 1em auto;">
-<!-- Replace with Strava embed -->
-<iframe allowtransparency frameborder='0' height='160' scrolling='no'
-  src='https://www.strava.com/activities/ACTIVITY_ID/embed/HASH'
-  width='590'></iframe>
-</div>
-
----
-
 ## Running — "The cheapest sport (they said)"
 
 Running is supposed to be the simple one. Just shoes and a road, right? Wrong. Shoes with carbon plates, a GPS watch that judges your VO2 max, energy gels that taste like flavoured regret — it adds up. But at least I get to do it *after* swimming and cycling, when my legs feel like they belong to someone else.
 
-<div style="max-width: 590px; margin: 1em auto;">
-<!-- Replace with Strava embed -->
-<iframe allowtransparency frameborder='0' height='160' scrolling='no'
-  src='https://www.strava.com/activities/ACTIVITY_ID/embed/HASH'
-  width='590'></iframe>
-</div>
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="11230336724" data-style="standard" data-from-embed="false"></div>
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="14373185191" data-style="standard" data-from-embed="false"></div>
+
+<div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="14165709640" data-style="standard" data-from-embed="false"></div>
+
+<script src="https://strava-embeds.com/embed.js"></script>
 
 ---
 
