@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Expensive ways to get tired"
-date: 2026-02-13 00:00:00 +0000
+date: 2025-02-13 00:00:00 +0000
 tags: [Triathlon]
 hidden: false
 related_posts: false
