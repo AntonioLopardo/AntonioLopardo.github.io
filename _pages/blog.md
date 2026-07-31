@@ -41,10 +41,11 @@ nav_order: 1
 
 <div class="post bear-blog">
 
-  {% assign blog_name_size = site.blog_name | size %}
-  {% if blog_name_size > 0 %}
-    <h1>{{ site.blog_name }}</h1>
-  {% endif %}
+{% assign blog_name_size = site.blog_name | size %}
+{% if blog_name_size > 0 %}
+
+<h1>{{ site.blog_name }}</h1>
+{% endif %}
 
   <ul class="bear-list">
     {% for post in site.posts %}
