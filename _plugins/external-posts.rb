@@ -73,6 +73,9 @@ module ExternalPosts
         puts "...fetching #{post_config['url']}"
         content = fetch_content_from_url(post_config['url'])
         content[:published] = parse_published_date(post_config['published_date'])
+        # allow an explicit title override in _config.yml (e.g. when the source
+        # is behind a bot challenge and the fetched <title> is unusable)
+        content[:title] = post_config['title'] if post_config['title']
         create_document(site, src['name'], post_config['url'], content, post_config['thumbnail'], post_config['tags'])
       end
     end

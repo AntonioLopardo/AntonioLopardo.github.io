@@ -6,38 +6,7 @@ nav: true
 nav_order: 1
 ---
 
-<style>
-  .bear-blog {
-    max-width: 42rem;
-  }
-  .bear-blog h1 {
-    margin-bottom: 2rem;
-  }
-  .bear-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .bear-list li {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin: 0.35rem 0;
-  }
-  .bear-list .date {
-    flex: 0 0 auto;
-    font-variant-numeric: tabular-nums;
-    color: var(--global-text-color-light, #828282);
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
-  .bear-list a {
-    text-decoration: none;
-  }
-  .bear-list a:hover {
-    text-decoration: underline;
-  }
-</style>
+{% include bear.liquid %}
 
 <div class="post bear-blog">
 

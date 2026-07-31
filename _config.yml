@@ -126,18 +126,22 @@ external_sources:
   - name: medium.com
     posts:
       - url: https://medium.com/dair-ai/bart-are-all-pretraining-techniques-created-equal-e869a490042e
+        title: "BART: Are all pretraining techniques created equal?"
         published_date: 2020-05-15
         thumbnail: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*F26mikJYghMCClTE5suyMg.jpeg
         tags: [NLP, Research]
       - url: https://medium.com/data-science/word2vec-to-transformers-caf5a3daa08a
+        title: "Word2Vec to Transformers"
         published_date: 2020-01-07
         thumbnail: https://miro.medium.com/v2/resize:fit:1312/format:webp/1*sZ17cYbnzFt8nR-aITZI5w.png
         tags: [NLP]
       - url: https://medium.com/@antonio.lopardo/the-basics-of-language-modeling-1c8832f21079
+        title: "The Basics of Language Modeling"
         published_date: 2019-12-23
         thumbnail: https://miro.medium.com/v2/resize:fit:4800/format:webp/1*rJN4xBVD_u0vYLc2olcDHQ.png
         tags: [NLP]
       - url: https://medium.com/@antonio.lopardo/the-midterms-on-twitter-3562b3c751b1
+        title: "The Midterms on Twitter"
         published_date: 2018-11-05
         thumbnail: https://miro.medium.com/v2/resize:fit:4800/format:webp/1*AIIuDZoBCt_wm31Jfit3TQ.png
         tags: [NLP, Research]
