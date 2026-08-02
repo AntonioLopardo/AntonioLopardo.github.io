@@ -331,6 +331,8 @@
         <span class="count" id="count"></span>
       </div>
 
+      <div id="roster"></div>
+
       <main id="list"><div class="loading">LOADING…</div></main>
 
       <footer>
@@ -388,6 +390,35 @@
         } catch (e) {
           list.innerHTML = '<div class="empty">COULD NOT LOAD THE FEED — TRY A HARD REFRESH.</div>';
           return;
+        }
+
+        const people = [...xml.getElementsByTagNameNS(NS, "person")].map((p) => ({
+          name: p.getAttribute("name"),
+          rel: p.getAttribute("relationship"),
+          aff: p.getAttribute("affiliation") || "",
+        }));
+        if (people.length) {
+          const chip = (p) =>
+            `<button class="chip ${p.rel}" data-n="${p.name}" title="${p.aff}">` +
+            `${p.name}${p.aff ? ` <span class="aff">· ${p.aff.split(/[;(]/)[0].trim()}</span>` : ""}</button>`;
+          const group = (label, list) =>
+            list.length ? `<div class="rosterhead">${label} · ${list.length}</div><div class="chips">${list.map(chip).join("")}</div>` : "";
+          document.getElementById("roster").innerHTML =
+            group(
+              "Met in person",
+              people.filter((p) => p.rel === "met")
+            ) +
+            group(
+              "Following",
+              people.filter((p) => p.rel !== "met")
+            );
+          document.addEventListener("click", (e) => {
+            const b = e.target.closest(".chip");
+            if (!b) return;
+            who.value = who.value === b.dataset.n ? "" : b.dataset.n;
+            document.querySelectorAll(".chip").forEach((c) => c.classList.toggle("on", c.dataset.n === who.value));
+            render();
+          });
         }
 
         // person filter options
