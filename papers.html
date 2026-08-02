@@ -277,6 +277,37 @@
         color: var(--faint);
         font-size: 11.5px;
       }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 3px 10px 3px 4px;
+      }
+      .face,
+      .mono {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        color: var(--paper);
+      }
+      .entry .faces {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 6px;
+      }
+      .entry .faces .face,
+      .entry .faces .mono {
+        width: 30px;
+        height: 30px;
+      }
       .meta {
         font-family: "IBM Plex Mono", monospace;
         font-size: 11.5px;
@@ -387,6 +418,26 @@
         const count = document.getElementById("count");
         const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         let items = [];
+        const slug = (n) =>
+          n
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, "")
+            .trim()
+            .split(/\s+/)
+            .join("-");
+        const hue = (s) => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 0);
+        const avatar = (name) => {
+          const init = name
+            .split(/\s+/)
+            .map((w) => w[0])
+            .slice(0, 2)
+            .join("")
+            .toUpperCase();
+          return (
+            `<img class="face" src="/assets/img/people/${slug(name)}.jpg" alt="" loading="lazy" ` +
+            `onerror="this.outerHTML='<span class=\\'mono\\' style=\\'background:hsl(${hue(name)} 42% 42%)\\'>${init}</span>'">`
+          );
+        };
         let xml = null;
         const NS = "https://antoniolopardo.github.io/ns/paper-watch";
 
@@ -439,7 +490,7 @@
           : [];
         if (people.length) {
           const chip = (p) =>
-            `<button class="chip ${p.rel}" data-n="${p.name}" title="${p.aff}">` +
+            `<button class="chip ${p.rel}" data-n="${p.name}" title="${p.aff}">${avatar(p.name)}` +
             `${p.name}${p.aff ? ` <span class="aff">· ${p.aff.split(/[;(]/)[0].trim()}</span>` : ""}</button>`;
           const group = (label, list) =>
             list.length ? `<div class="rosterhead">${label} · ${list.length}</div><div class="chips">${list.map(chip).join("")}</div>` : "";
@@ -527,6 +578,7 @@
             html += `<li class="entry" style="animation-delay:${Math.min(n * 35, 600)}ms">
         <span class="num">${String(n).padStart(2, "0")}</span>
         <div>
+          <div class="faces">${p.met.split(", ").filter(Boolean).map(avatar).join("")}</div>
           <h2><a href="${p.link || "#"}" target="_blank" rel="noopener">${p.title}</a></h2>
           <p class="byline">${markMet(p.authors, p.met, p.rels)}</p>
           <div class="meta">
