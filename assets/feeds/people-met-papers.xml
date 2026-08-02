@@ -3,7 +3,7 @@
 <title>People I Met — New Papers</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers from researchers I met (ACL 2026 and beyond), via Semantic Scholar.</description>
-<lastBuildDate>Sun, 02 Aug 2026 14:47:03 +0000</lastBuildDate>
+<lastBuildDate>Sun, 02 Aug 2026 14:53:29 +0000</lastBuildDate>
 <item>
 <title>Advancing conversational task assistance: The Second Alexa Prize TaskBot Challenge</title>
 <link>https://www.semanticscholar.org/paper/d4d244c29f528a634d91b398d8b5be7d4d42b300</link>
@@ -95,6 +95,30 @@
 <description>By Michiel van der Meer, Piek Vossen, C. Jonker, P. Murukannaiah. . (Met: Michiel van der Meer)</description>
 <pw:authors>Michiel van der Meer, Piek Vossen, C. Jonker, P. Murukannaiah</pw:authors>
 <pw:met>Michiel van der Meer</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>ElChat: Adapting Chat Language Models Using Only Target Unlabeled Language Data</title>
+<link>https://www.semanticscholar.org/paper/7c522588dae5cb340d8350efa422542515260735</link>
+<guid isPermaLink="false">7c522588dae5cb340d8350efa422542515260735</guid>
+<description>By Atsuki Yamaguchi, Terufumi Morishita, Aline Villavicencio, Nikolaos Aletras, Marah Abdin, Jy-oti Aneja, H. Awadalla, Ammar Ahmed Awadallah, Ahmad Awan, Nguyen Bach et al.. . (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Atsuki Yamaguchi, Terufumi Morishita, Aline Villavicencio, Nikolaos Aletras, Marah Abdin, Jy-oti Aneja, H. Awadalla, Ammar Ahmed Awadallah, Ahmad Awan, Nguyen Bach et al.</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>A Data-driven Approach to Natural Language Processing for Contemporary and Historical French</title>
+<link>https://www.semanticscholar.org/paper/8d4141ede4ea753915ab7ba4835e067bcfcc187e</link>
+<guid isPermaLink="false">8d4141ede4ea753915ab7ba4835e067bcfcc187e</guid>
+<description>By Pedro Ortiz Suarez. . (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Pedro Ortiz Suarez</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -712,6 +736,19 @@
 <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Colour Contrast on the Web: A WCAG 2.1 Level AA Compliance Audit of Common Crawl's Top 500 Domains</title>
+<link>https://www.semanticscholar.org/paper/d3953e5a75991bc9adbb8de146dacbdc85b8d990</link>
+<guid isPermaLink="false">d3953e5a75991bc9adbb8de146dacbdc85b8d990</guid>
+<description>By Thom Vaughan, Pedro Ortiz Suarez. arXiv.org. (Met: Pedro Ortiz Suarez) arXiv:2602.24067</description>
+<pw:authors>Thom Vaughan, Pedro Ortiz Suarez</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2602.24067</pw:arxiv>
+<pw:date>2026-02-27</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>General Agent Evaluation</title>
 <link>https://www.semanticscholar.org/paper/49bc80f5d2fb839402c3f9dba7ba5af7d11c2247</link>
 <guid isPermaLink="false">49bc80f5d2fb839402c3f9dba7ba5af7d11c2247</guid>
@@ -801,6 +838,19 @@
 <pw:date>2026-02-17</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>How Should We Model the Probability of a Language?</title>
+<link>https://www.semanticscholar.org/paper/4c1e4ca3f66a8a3a4b562aea59729ec196173164</link>
+<guid isPermaLink="false">4c1e4ca3f66a8a3a4b562aea59729ec196173164</guid>
+<description>By Rasul Dent, Pedro Ortiz Suarez, Thibault Cl'erice, Benoît Sagot. VarDial@EAC. (Met: Pedro Ortiz Suarez) arXiv:2602.08951</description>
+<pw:authors>Rasul Dent, Pedro Ortiz Suarez, Thibault Cl'erice, Benoît Sagot</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>VarDial@EAC</pw:venue>
+<pw:arxiv>2602.08951</pw:arxiv>
+<pw:date>2026-02-09</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>LLM as a Risk Manager: LLM Semantic Filtering for Lead–Lag Trading in Prediction Markets</title>
@@ -897,9 +947,9 @@
 <title>CommonLID: Re-evaluating State-of-the-Art Language Identification Performance on Web Data</title>
 <link>https://www.semanticscholar.org/paper/08aebd9f6d3550fe2ac3d0c0bc0673c2de6eec2c</link>
 <guid isPermaLink="false">08aebd9f6d3550fe2ac3d0c0bc0673c2de6eec2c</guid>
-<description>By Pedro Ortiz Suarez, Laurie Burchell, Catherine Arnett, Rafael Mosquera-G'omez, Sara Hincapie-Monsalve, Thom Vaughan, D. Stewart, Malte Ostendorff, Idris Abdulmumin, V. Marivate et al.. Volume 1. (Met: Leshem Choshen, Catherine Arnett) arXiv:2601.18026</description>
+<description>By Pedro Ortiz Suarez, Laurie Burchell, Catherine Arnett, Rafael Mosquera-G'omez, Sara Hincapie-Monsalve, Thom Vaughan, D. Stewart, Malte Ostendorff, Idris Abdulmumin, V. Marivate et al.. Volume 1. (Met: Leshem Choshen, Catherine Arnett, Pedro Ortiz Suarez) arXiv:2601.18026</description>
 <pw:authors>Pedro Ortiz Suarez, Laurie Burchell, Catherine Arnett, Rafael Mosquera-G'omez, Sara Hincapie-Monsalve, Thom Vaughan, D. Stewart, Malte Ostendorff, Idris Abdulmumin, V. Marivate et al.</pw:authors>
-<pw:met>Leshem Choshen, Catherine Arnett</pw:met>
+<pw:met>Leshem Choshen, Catherine Arnett, Pedro Ortiz Suarez</pw:met>
 <pw:venue>Volume 1</pw:venue>
 <pw:arxiv>2601.18026</pw:arxiv>
 <pw:date>2026-01-25</pw:date>
@@ -1076,6 +1126,19 @@
 <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Low-Resource, High-Impact: Building Corpora for Inclusive Language Technologies</title>
+<link>https://www.semanticscholar.org/paper/b95a9015554b7b6273fd5e67403762f22e164a59</link>
+<guid isPermaLink="false">b95a9015554b7b6273fd5e67403762f22e164a59</guid>
+<description>By Ekaterina Artemova, Laurie Burchell, Daryna Dementieva, Shu Okabe, Mariya Shmatova, Pedro Ortiz Suarez. arXiv.org. (Met: Pedro Ortiz Suarez) arXiv:2512.14576</description>
+<pw:authors>Ekaterina Artemova, Laurie Burchell, Daryna Dementieva, Shu Okabe, Mariya Shmatova, Pedro Ortiz Suarez</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2512.14576</pw:arxiv>
+<pw:date>2025-12-16</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>AI/ML Based Prediction of FPGA Synthesis Features From RTLs</title>
 <link>https://www.semanticscholar.org/paper/6b0586d5f4f075575babf263c4247a248e654dc7</link>
 <guid isPermaLink="false">6b0586d5f4f075575babf263c4247a248e654dc7</guid>
@@ -1087,6 +1150,19 @@
 <pw:date>2025-12-14</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>SciLaD: A Large-Scale, Transparent, Reproducible Dataset for Natural Scientific Language Processing</title>
+<link>https://www.semanticscholar.org/paper/13b6a265d4023d50967745f56a22e8c5806c2c53</link>
+<guid isPermaLink="false">13b6a265d4023d50967745f56a22e8c5806c2c53</guid>
+<description>By Luca Foppiano, Sotaro Takeshita, Pedro Ortiz Suarez, Ekaterina Borisova, Raia Abu Ahmad, Malte Ostendorff, Fabio Barth, J. Schneider, Georg Rehm. arXiv.org. (Met: Pedro Ortiz Suarez) arXiv:2512.11192</description>
+<pw:authors>Luca Foppiano, Sotaro Takeshita, Pedro Ortiz Suarez, Ekaterina Borisova, Raia Abu Ahmad, Malte Ostendorff, Fabio Barth, J. Schneider, Georg Rehm</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2512.11192</pw:arxiv>
+<pw:date>2025-12-12</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>A Latent Variable Framework for Scaling Laws in Large Language Models</title>
@@ -1113,6 +1189,19 @@
 <pw:date>2025-11-30</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>A Framework for Ethical Data Removal from Language Resources: An Example from Low-Resource Language Communities</title>
+<link>https://www.semanticscholar.org/paper/530a088d23b780cbd1e74ea4637a1db7463d7ca1</link>
+<guid isPermaLink="false">530a088d23b780cbd1e74ea4637a1db7463d7ca1</guid>
+<description>By Sarah Luger, Rafael Mosquera-Gómez, Pedro Ortiz Suarez, Thom Vaughan. Proceedings of the AAAI Symposium Series. (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Sarah Luger, Rafael Mosquera-Gómez, Pedro Ortiz Suarez, Thom Vaughan</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>Proceedings of the AAAI Symposium Series</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date>2025-11-23</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>From Narrow Unlearning to Emergent Misalignment: Causes, Consequences, and Containment in LLMs</title>
@@ -1512,6 +1601,32 @@
 <pw:authors>Livia Lilli, C. Masciocchi, Antonio Marchetti, Giovanni Arcuri, S. Patarnello</pw:authors>
 <pw:met>Livia Lilli</pw:met>
 <pw:venue>Proceedings of the 24th Workshop on Biomedical Language Processing</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Identifying Rare Languages in Common Crawl Data is a Needles-in-a-Haystack Problem</title>
+<link>https://www.semanticscholar.org/paper/da3c2c2f6ee5aa13d9b573d8e7bb910b8adc124b</link>
+<guid isPermaLink="false">da3c2c2f6ee5aa13d9b573d8e7bb910b8adc124b</guid>
+<description>By Rasul Dent, Pedro Ortiz Suarez, Thibault Clérice, Benoît Sagot. Conference on Empirical Methods in Natural Language Processing. (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Rasul Dent, Pedro Ortiz Suarez, Thibault Clérice, Benoît Sagot</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Building Data Infrastructure for Low-Resource Languages</title>
+<link>https://www.semanticscholar.org/paper/97e783730dbedd888e2e0d4557516b18b344e078</link>
+<guid isPermaLink="false">97e783730dbedd888e2e0d4557516b18b344e078</guid>
+<description>By Sarah Luger, Rafael Mosquera, Pedro Ortiz Suarez. Proceedings of the Eighth Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2025). (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Sarah Luger, Rafael Mosquera, Pedro Ortiz Suarez</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue>Proceedings of the Eighth Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2025)</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
