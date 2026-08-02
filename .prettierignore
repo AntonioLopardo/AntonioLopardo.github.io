@@ -13,3 +13,6 @@ _scripts/*
 
 # generated daily by the paper-watch routine
 assets/feeds/**
+
+# generated from scripts/paper_watch.py — do not reformat
+papers.html
