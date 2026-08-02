@@ -350,11 +350,12 @@
         const count = document.getElementById("count");
         const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         let items = [];
+        let xml = null;
+        const NS = "https://antoniolopardo.github.io/ns/paper-watch";
 
         try {
           const res = await fetch("/assets/feeds/people-met-papers.xml", { cache: "no-cache" });
-          const xml = new DOMParser().parseFromString(await res.text(), "application/xml");
-          const NS = "https://antoniolopardo.github.io/ns/paper-watch";
+          xml = new DOMParser().parseFromString(await res.text(), "application/xml");
           items = [...xml.querySelectorAll("item")]
             .map((it) => {
               const g = (t) => (it.querySelector(t)?.textContent || "").trim();
@@ -392,11 +393,13 @@
           return;
         }
 
-        const people = [...xml.getElementsByTagNameNS(NS, "person")].map((p) => ({
-          name: p.getAttribute("name"),
-          rel: p.getAttribute("relationship"),
-          aff: p.getAttribute("affiliation") || "",
-        }));
+        const people = xml
+          ? [...xml.getElementsByTagNameNS(NS, "person")].map((p) => ({
+              name: p.getAttribute("name"),
+              rel: p.getAttribute("relationship"),
+              aff: p.getAttribute("affiliation") || "",
+            }))
+          : [];
         if (people.length) {
           const chip = (p) =>
             `<button class="chip ${p.rel}" data-n="${p.name}" title="${p.aff}">` +
