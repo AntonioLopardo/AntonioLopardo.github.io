@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Sun, 02 Aug 2026 15:04:34 +0000</lastBuildDate>
+<lastBuildDate>Sun, 02 Aug 2026 15:06:55 +0000</lastBuildDate>
 <item>
 <title>Advancing conversational task assistance: The Second Alexa Prize TaskBot Challenge</title>
 <link>https://www.semanticscholar.org/paper/d4d244c29f528a634d91b398d8b5be7d4d42b300</link>
@@ -151,6 +151,19 @@
 <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Co-LMLM: Continuous-Query Limited Memory Language Models</title>
+<link>https://www.semanticscholar.org/paper/0cb5d368d2d39cbdd4056986074d7a9ef3d2395d</link>
+<guid isPermaLink="false">0cb5d368d2d39cbdd4056986074d7a9ef3d2395d</guid>
+<description>By Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi. . (Met: Nathan Godey) arXiv:2607.07707</description>
+<pw:authors>Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv>2607.07707</pw:arxiv>
+<pw:date>2026-07-08</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Can Dialects Be Steered Like Languages? Sparse Neurons and Distributed Directions in Arabic LLMs</title>
 <link>https://www.semanticscholar.org/paper/267821c1ea08b995a54b9989662551fda4a541d4</link>
 <guid isPermaLink="false">267821c1ea08b995a54b9989662551fda4a541d4</guid>
@@ -175,6 +188,19 @@
 <pw:date>2026-07-02</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>The State-Prediction Separation Hypothesis</title>
+<link>https://www.semanticscholar.org/paper/e333c50dfb78de1061e6e1a2b98e2379d6f3b1dd</link>
+<guid isPermaLink="false">e333c50dfb78de1061e6e1a2b98e2379d6f3b1dd</guid>
+<description>By Giovanni Monea, Nathan Godey, Kianté Brantley, Yoav Artzi. . (Met: Nathan Godey) arXiv:2607.01218</description>
+<pw:authors>Giovanni Monea, Nathan Godey, Kianté Brantley, Yoav Artzi</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv>2607.01218</pw:arxiv>
+<pw:date>2026-07-01</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>When Summaries Distort Decisions: Information Fidelity in LLM-Compressed Financial Analysis</title>
@@ -671,6 +697,19 @@
 <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Lost in Backpropagation: The LM Head is a Gradient Bottleneck</title>
+<link>https://www.semanticscholar.org/paper/9da4e0b9480b904613fc8d3da145d5685fb3a215</link>
+<guid isPermaLink="false">9da4e0b9480b904613fc8d3da145d5685fb3a215</guid>
+<description>By Nathan Godey, Yoav Artzi. arXiv.org. (Met: Nathan Godey) arXiv:2603.10145</description>
+<pw:authors>Nathan Godey, Yoav Artzi</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2603.10145</pw:arxiv>
+<pw:date>2026-03-10</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Transducing Language Models</title>
 <link>https://www.semanticscholar.org/paper/181a1c2396a83c1f20afc3df1df9f2f5f73c44a7</link>
 <guid isPermaLink="false">181a1c2396a83c1f20afc3df1df9f2f5f73c44a7</guid>
@@ -1126,6 +1165,32 @@
 <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Gaperon: A Peppered English-French Generative Language Model Suite</title>
+<link>https://www.semanticscholar.org/paper/7c201b4efcacb21aad8fb367b02626491ca2769e</link>
+<guid isPermaLink="false">7c201b4efcacb21aad8fb367b02626491ca2769e</guid>
+<description>By Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
+<pw:authors>Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Biomed-Enriched: Data-Efficient Biomedical Pretraining via Paragraph-Level Annotation</title>
+<link>https://www.semanticscholar.org/paper/bddf23a04c87f0ca4b16786bdd9af733cfe69e30</link>
+<guid isPermaLink="false">bddf23a04c87f0ca4b16786bdd9af733cfe69e30</guid>
+<description>By Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
+<pw:authors>Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>What Do Prosody and Text Convey? Characterizing How Meaningful Information is Distributed Across Multiple Channels</title>
 <link>https://www.semanticscholar.org/paper/3a6dec2e9e8a99987b614ffce6cdd215bd3f5ba2</link>
 <guid isPermaLink="false">3a6dec2e9e8a99987b614ffce6cdd215bd3f5ba2</guid>
@@ -1228,6 +1293,19 @@
 <pw:date>2025-11-18</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Gaperon: A Peppered English-French Generative Language Model Suite</title>
+<link>https://www.semanticscholar.org/paper/e4ec95f799dc73bd387b73432dac6d8376ea0bfa</link>
+<guid isPermaLink="false">e4ec95f799dc73bd387b73432dac6d8376ea0bfa</guid>
+<description>By Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, 'Eric de la Clergerie, Benoît Sagot, Djamé Seddah. arXiv.org. (Met: Nathan Godey) arXiv:2510.25771</description>
+<pw:authors>Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, 'Eric de la Clergerie, Benoît Sagot, Djamé Seddah</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2510.25771</pw:arxiv>
+<pw:date>2025-10-29</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Global PIQA: Evaluating Commonsense Reasoning Across 100+ Languages and Cultures</title>
@@ -1529,6 +1607,19 @@
 <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Biomed-Enriched: A Biomedical Dataset Enriched with LLMs for Pretraining and Extracting Rare and Hidden Content</title>
+<link>https://www.semanticscholar.org/paper/4d56e977cd0b4abb88b4355537479ef279ae51d8</link>
+<guid isPermaLink="false">4d56e977cd0b4abb88b4355537479ef279ae51d8</guid>
+<description>By Rian Touchent, Nathan Godey, Éric de la Clergerie. arXiv.org. (Met: Nathan Godey) arXiv:2506.20331</description>
+<pw:authors>Rian Touchent, Nathan Godey, Éric de la Clergerie</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2506.20331</pw:arxiv>
+<pw:date>2025-06-25</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Privacy in Italian Clinical Reports: A NLP-Based Anonymization Approach</title>
 <link>https://www.semanticscholar.org/paper/5e3359959c4ad1abed7efead21bf21db8420536f</link>
 <guid isPermaLink="false">5e3359959c4ad1abed7efead21bf21db8420536f</guid>
@@ -1789,6 +1880,19 @@
 <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Q-Filters: Leveraging QK Geometry for Efficient KV Cache Compression</title>
+<link>https://www.semanticscholar.org/paper/c422791206cbc717f0a22ba8933fd7661876f6d9</link>
+<guid isPermaLink="false">c422791206cbc717f0a22ba8933fd7661876f6d9</guid>
+<description>By Nathan Godey, Alessio Devoto, Yu Zhao, S. Scardapane, Pasquale Minervini, Eric Villemonte de la Clergerie, Benoît Sagot. . (Met: Nathan Godey) arXiv:2503.02812</description>
+<pw:authors>Nathan Godey, Alessio Devoto, Yu Zhao, S. Scardapane, Pasquale Minervini, Eric Villemonte de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv>2503.02812</pw:arxiv>
+<pw:date>2025-03-04</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>DOVE: A Large-Scale Multi-Dimensional Predictions Dataset Towards Meaningful LLM Evaluation</title>
 <link>https://www.semanticscholar.org/paper/9d042e9f236f288907a0ed2eb702a85ce37032a9</link>
 <guid isPermaLink="false">9d042e9f236f288907a0ed2eb702a85ce37032a9</guid>
@@ -2043,6 +2147,19 @@
 <pw:authors>Livia Lilli, C. Masciocchi, Antonio Marchetti, Giovanni Arcuri, S. Patarnello</pw:authors>
 <pw:met>Livia Lilli</pw:met>
 <pw:venue>Proceedings of the 24th Workshop on Biomedical Language Processing</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Q-Filters: Leveraging QK Geometry for Efficient KV Cache Compression</title>
+<link>https://www.semanticscholar.org/paper/7cc39f33810d1bd4af7a64399adca1c57e8ab640</link>
+<guid isPermaLink="false">7cc39f33810d1bd4af7a64399adca1c57e8ab640</guid>
+<description>By Nathan Godey, Alessio Devoto, Yu Zhao, S. Scardapane, Pasquale Minervini, Éric de la Clergerie, Benoît Sagot. arXiv.org. (Met: Nathan Godey)</description>
+<pw:authors>Nathan Godey, Alessio Devoto, Yu Zhao, S. Scardapane, Pasquale Minervini, Éric de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
@@ -2816,6 +2933,19 @@
 <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Why do small language models underperform? Studying Language Model Saturation via the Softmax Bottleneck</title>
+<link>https://www.semanticscholar.org/paper/5df905efd0c79e9a39b98a537769cbe9f9462847</link>
+<guid isPermaLink="false">5df905efd0c79e9a39b98a537769cbe9f9462847</guid>
+<description>By Nathan Godey, Éric de la Clergerie, Benoît Sagot. arXiv.org. (Met: Nathan Godey) arXiv:2404.07647</description>
+<pw:authors>Nathan Godey, Éric de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2404.07647</pw:arxiv>
+<pw:date>2024-04-11</pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>[Call for Papers] The 2nd BabyLM Challenge: Sample-efficient pretraining on a developmentally plausible corpus</title>
 <link>https://www.semanticscholar.org/paper/6c552d900eadfcedce23c16cbd70fdf6d3024125</link>
 <guid isPermaLink="false">6c552d900eadfcedce23c16cbd70fdf6d3024125</guid>
@@ -2905,6 +3035,19 @@
 <pw:date>2024-03-01</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>On the Scaling Laws of Geographical Representation in Language Models</title>
+<link>https://www.semanticscholar.org/paper/09331c5b6ebb17edb0d379873f673500355bb2fe</link>
+<guid isPermaLink="false">09331c5b6ebb17edb0d379873f673500355bb2fe</guid>
+<description>By Nathan Godey, Éric de la Clergerie, Benoît Sagot. International Conference on Language Resources and Evaluation. (Met: Nathan Godey) arXiv:2402.19406</description>
+<pw:authors>Nathan Godey, Éric de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>International Conference on Language Resources and Evaluation</pw:venue>
+<pw:arxiv>2402.19406</pw:arxiv>
+<pw:date>2024-02-29</pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models</title>
@@ -3035,6 +3178,19 @@
 <pw:date>2024-01-25</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Anisotropy Is Inherent to Self-Attention in Transformers</title>
+<link>https://www.semanticscholar.org/paper/96c88b196e3e432710debab39f49ee72f2b96a10</link>
+<guid isPermaLink="false">96c88b196e3e432710debab39f49ee72f2b96a10</guid>
+<description>By Nathan Godey, Eric Villemonte de la Clergerie, Benoît Sagot. Conference of the European Chapter of the Association for Computational Linguistics. (Met: Nathan Godey) arXiv:2401.12143</description>
+<pw:authors>Nathan Godey, Eric Villemonte de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>Conference of the European Chapter of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv>2401.12143</pw:arxiv>
+<pw:date>2024-01-22</pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Deductive Closure Training of Language Models for Coherence, Accuracy, and Updatability</title>
@@ -3258,6 +3414,19 @@
 <pubDate>Tue, 19 Sep 2023 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Headless Language Models: Learning without Predicting with Contrastive Weight Tying</title>
+<link>https://www.semanticscholar.org/paper/98785df4aac68fdeb8ef42ab6c0e74a3ca3eb0e1</link>
+<guid isPermaLink="false">98785df4aac68fdeb8ef42ab6c0e74a3ca3eb0e1</guid>
+<description>By Nathan Godey, Eric Villemonte de la Clergerie, Benoît Sagot. International Conference on Learning Representations. (Met: Nathan Godey) arXiv:2309.08351</description>
+<pw:authors>Nathan Godey, Eric Villemonte de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>International Conference on Learning Representations</pw:venue>
+<pw:arxiv>2309.08351</pw:arxiv>
+<pw:date>2023-09-15</pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Efficient Benchmarking (of Language Models)</title>
 <link>https://www.semanticscholar.org/paper/9a4765547cb43ab221fe262df7405f6795557d8c</link>
 <guid isPermaLink="false">9a4765547cb43ab221fe262df7405f6795557d8c</guid>
@@ -3347,6 +3516,19 @@
 <pw:date>2023-06-30</pw:date>
 <pw:year>2023</pw:year>
 <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Is Anisotropy Inherent to Transformers?</title>
+<link>https://www.semanticscholar.org/paper/5cd4fe8174b582f27d79859e4b79e0eba2a1d5f0</link>
+<guid isPermaLink="false">5cd4fe8174b582f27d79859e4b79e0eba2a1d5f0</guid>
+<description>By Nathan Godey, Eric Villemonte de la Clergerie, Benoît Sagot. arXiv.org. (Met: Nathan Godey) arXiv:2306.07656</description>
+<pw:authors>Nathan Godey, Eric Villemonte de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2306.07656</pw:arxiv>
+<pw:date>2023-06-13</pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TIES-Merging: Resolving Interference When Merging Models</title>
@@ -3529,6 +3711,19 @@
 <pw:date>2022-12-16</pw:date>
 <pw:year>2022</pw:year>
 <pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>MANTa: Efficient Gradient-Based Tokenization for Robust End-to-End Language Modeling</title>
+<link>https://www.semanticscholar.org/paper/bc518f89f1ea8244ca019fd03c8c70f9d3c7fe9d</link>
+<guid isPermaLink="false">bc518f89f1ea8244ca019fd03c8c70f9d3c7fe9d</guid>
+<description>By Nathan Godey, Roman Castagn'e, Eric Villemonte de la Clergerie, Benoît Sagot. arXiv.org. (Met: Nathan Godey) arXiv:2212.07284</description>
+<pw:authors>Nathan Godey, Roman Castagn'e, Eric Villemonte de la Clergerie, Benoît Sagot</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2212.07284</pw:arxiv>
+<pw:date>2022-12-14</pw:date>
+<pw:year>2022</pw:year>
+<pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>ColD Fusion: Collaborative Descent for Distributed Multitask Finetuning</title>
