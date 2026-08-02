@@ -3,12 +3,12 @@
 <title>People I Met — New Papers</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers from researchers I met (ACL 2026 and beyond), via Semantic Scholar.</description>
-<lastBuildDate>Sun, 02 Aug 2026 14:15:55 +0000</lastBuildDate>
+<lastBuildDate>Sun, 02 Aug 2026 14:33:26 +0000</lastBuildDate>
 <item>
 <title>Advancing conversational task assistance: The Second Alexa Prize TaskBot Challenge</title>
 <link>https://www.semanticscholar.org/paper/d4d244c29f528a634d91b398d8b5be7d4d42b300</link>
 <guid isPermaLink="false">d4d244c29f528a634d91b398d8b5be7d4d42b300</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Eugene Agichtein, Michael Johnston, Anna Gottardi, Lavina Vaz, C. Flagg, Yao Lu, Shaohua Liu, Sattvik Sahai, Giuseppe Castellucci, J. Choi et al.. . (Met: Sattvik Sahai)</description>
 <pw:authors>Eugene Agichtein, Michael Johnston, Anna Gottardi, Lavina Vaz, C. Flagg, Yao Lu, Shaohua Liu, Sattvik Sahai, Giuseppe Castellucci, J. Choi et al.</pw:authors>
 <pw:met>Sattvik Sahai</pw:met>
@@ -19,7 +19,7 @@
 <title>FairCoder: Evaluating Social Bias of LLMs in Code Generation</title>
 <link>https://www.semanticscholar.org/paper/38025a6af74959bf80e255990894d0d9ce89834b</link>
 <guid isPermaLink="false">38025a6af74959bf80e255990894d0d9ce89834b</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Yongkang Du, Jen-Tse Huang, Jieyu Zhao, Lu Lin, J. Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang et al.. . (Met: Hanchi Sun)</description>
 <pw:authors>Yongkang Du, Jen-Tse Huang, Jieyu Zhao, Lu Lin, J. Dhamala, Tony Sun, Varun Kumar, Satyapriya Krishna, Yada Pruksachatkun, Kai-Wei Chang et al.</pw:authors>
 <pw:met>Hanchi Sun</pw:met>
@@ -30,7 +30,7 @@
 <title>Journal of Memory and Language</title>
 <link>https://www.semanticscholar.org/paper/9b61ac0644162fdc087452581608cc55b25bfac2</link>
 <guid isPermaLink="false">9b61ac0644162fdc087452581608cc55b25bfac2</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By E. Wilcox, Michael Hu, Aaron Mueller, A. Warstadt, Leshem Choshen, Chengxu Zhuang, Adina Williams, Ryan Cotterell, Tal Linzen. . (Met: Leshem Choshen)</description>
 <pw:authors>E. Wilcox, Michael Hu, Aaron Mueller, A. Warstadt, Leshem Choshen, Chengxu Zhuang, Adina Williams, Ryan Cotterell, Tal Linzen</pw:authors>
 <pw:met>Leshem Choshen</pw:met>
@@ -41,7 +41,7 @@
 <title>P OSITION : A GENTIC S YSTEMS S HOULD BE G ENERAL</title>
 <link>https://www.semanticscholar.org/paper/b664d882b5ef8608eeca64cd2ad0b05cbf6cf8f9</link>
 <guid isPermaLink="false">b664d882b5ef8608eeca64cd2ad0b05cbf6cf8f9</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Elron Bandel, Asaf Yehudai, Alexandre Lacoste, Avijit Ghosh, Graham Neubig, Margaret Mitchell, Michal Shmueli-Scheuer, Leshem Choshen, I. Research, Servicenow Research et al.. . (Met: Leshem Choshen)</description>
 <pw:authors>Elron Bandel, Asaf Yehudai, Alexandre Lacoste, Avijit Ghosh, Graham Neubig, Margaret Mitchell, Michal Shmueli-Scheuer, Leshem Choshen, I. Research, Servicenow Research et al.</pw:authors>
 <pw:met>Leshem Choshen</pw:met>
@@ -52,7 +52,7 @@
 <title>Overview of the 2nd “Voight-Kampff” Generative AI Authorship Verification Task at PAN and ELOQUENT 2025</title>
 <link>https://www.semanticscholar.org/paper/d2e65291e3da0dfdd2cdb1b5619fd9785416d9fa</link>
 <guid isPermaLink="false">d2e65291e3da0dfdd2cdb1b5619fd9785416d9fa</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Janek Bevendorff, Yuxia Wang, Jussi Karlgren, Matti Wiegmann, Maik Fröbe, Akim Tsivgun, Jinyan Su, Zhuohan Xie, Mervat T. Abassy, Jonibek Mansurov et al.. . (Met: Mervat Abassy)</description>
 <pw:authors>Janek Bevendorff, Yuxia Wang, Jussi Karlgren, Matti Wiegmann, Maik Fröbe, Akim Tsivgun, Jinyan Su, Zhuohan Xie, Mervat T. Abassy, Jonibek Mansurov et al.</pw:authors>
 <pw:met>Mervat Abassy</pw:met>
@@ -63,7 +63,7 @@
 <title>The Pupil Becomes the Master: Eye-Tracking Feedback for Tuning LLMs</title>
 <link>https://www.semanticscholar.org/paper/38d1681bc70963455aeff1dc384010c064f2d74f</link>
 <guid isPermaLink="false">38d1681bc70963455aeff1dc384010c064f2d74f</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox. . (Met: Samuel Kiegeland)</description>
 <pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox</pw:authors>
 <pw:met>Samuel Kiegeland</pw:met>
@@ -74,7 +74,7 @@
 <title>Extracting a Prototypical Argumentative Pattern in Financial Q&amp;As</title>
 <link>https://www.semanticscholar.org/paper/51ee03c9a36c4f963f62a8aa073f01a15ade7240</link>
 <guid isPermaLink="false">51ee03c9a36c4f963f62a8aa073f01a15ade7240</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Giulia D’Agostino, Michiel van der Meer, Chris A. Reed. . (Met: Michiel van der Meer)</description>
 <pw:authors>Giulia D’Agostino, Michiel van der Meer, Chris A. Reed</pw:authors>
 <pw:met>Michiel van der Meer</pw:met>
@@ -85,21 +85,10 @@
 <title>Do Differences in Values Inﬂuence Disagreements in Online Discussions?</title>
 <link>https://www.semanticscholar.org/paper/d74e0ae0dadf6dc12ddce16a548812aed51f7993</link>
 <guid isPermaLink="false">d74e0ae0dadf6dc12ddce16a548812aed51f7993</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
+<pubDate>Sun, 02 Aug 2026 14:33:26 +0000</pubDate>
 <description>By Michiel van der Meer, Piek Vossen, C. Jonker, P. Murukannaiah. . (Met: Michiel van der Meer)</description>
 <pw:authors>Michiel van der Meer, Piek Vossen, C. Jonker, P. Murukannaiah</pw:authors>
 <pw:met>Michiel van der Meer</pw:met>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-</item>
-<item>
-<title>Transversal at Ten – Historical and Historiographical Reflections from Within</title>
-<link>https://www.semanticscholar.org/paper/42bb6929cfba35c4ae0055197eadda1e4f0c1a2e</link>
-<guid isPermaLink="false">42bb6929cfba35c4ae0055197eadda1e4f0c1a2e</guid>
-<pubDate>Sun, 02 Aug 2026 14:15:55 +0000</pubDate>
-<description>By Raffaele Pisano. . (Met: Raffaele Pisano)</description>
-<pw:authors>Raffaele Pisano</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 </item>
@@ -168,17 +157,6 @@
 <pw:met>Leshem Choshen</pw:met>
 <pw:venue></pw:venue>
 <pw:arxiv>2606.24579</pw:arxiv>
-</item>
-<item>
-<title>Transversal at Ten</title>
-<link>https://www.semanticscholar.org/paper/d11f86ddb96391d1e8886b3322dce9d7025d1cac</link>
-<guid isPermaLink="false">d11f86ddb96391d1e8886b3322dce9d7025d1cac</guid>
-<pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
-<description>By Raffaele Pisano. Transversal: International Journal for the Historiography of Science. (Met: Raffaele Pisano)</description>
-<pw:authors>Raffaele Pisano</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Transversal: International Journal for the Historiography of Science</pw:venue>
-<pw:arxiv></pw:arxiv>
 </item>
 <item>
 <title>Learning to Prompt: Improving Student Engagement with Adaptive LLM-based High-School Tutoring</title>
@@ -421,17 +399,6 @@
 <pw:met>Samuel Kiegeland, Eleftheria Tsipidi</pw:met>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2604.18712</pw:arxiv>
-</item>
-<item>
-<title>Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards</title>
-<link>https://www.semanticscholar.org/paper/84bcf103308a81e6c2fbb4fddf4387aaf4fb1780</link>
-<guid isPermaLink="false">84bcf103308a81e6c2fbb4fddf4387aaf4fb1780</guid>
-<pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
-<description>By Raffaele Pisano, Roberto Navigli. Annual Meeting of the Association for Computational Linguistics. (Met: Raffaele Pisano) arXiv:2604.17957</description>
-<pw:authors>Raffaele Pisano, Roberto Navigli</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2604.17957</pw:arxiv>
 </item>
 <item>
 <title>MegaTrain: Full Precision Training of 100B+ Parameter Large Language Models on a Single GPU</title>
@@ -720,17 +687,6 @@
 <pw:arxiv>2602.16085</pw:arxiv>
 </item>
 <item>
-<title>The Role of Absolute Space in Newton’s Physics</title>
-<link>https://www.semanticscholar.org/paper/b1e98b0c71bfffdbdee52892c837f82c366cea3b</link>
-<guid isPermaLink="false">b1e98b0c71bfffdbdee52892c837f82c366cea3b</guid>
-<pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
-<description>By Raffaele Pisano, Paolo Bussotti. Foundations of Science. (Met: Raffaele Pisano)</description>
-<pw:authors>Raffaele Pisano, Paolo Bussotti</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Foundations of Science</pw:venue>
-<pw:arxiv></pw:arxiv>
-</item>
-<item>
 <title>LLM as a Risk Manager: LLM Semantic Filtering for Lead–Lag Trading in Prediction Markets</title>
 <link>https://www.semanticscholar.org/paper/6fcdbf7b9eb3e4b8cdbbbff5a64f809f9b79eee8</link>
 <guid isPermaLink="false">6fcdbf7b9eb3e4b8cdbbbff5a64f809f9b79eee8</guid>
@@ -962,39 +918,6 @@
 <pw:arxiv>2512.16832</pw:arxiv>
 </item>
 <item>
-<title>The physics-mathematics interplay in Newton Principia Geneva Edition (1822): a new case study on the three-body problem, Proposition LXVI-Theorem XXVI.</title>
-<link>https://www.semanticscholar.org/paper/28a478c1973391851671f7d46c3b22d8149eb320</link>
-<guid isPermaLink="false">28a478c1973391851671f7d46c3b22d8149eb320</guid>
-<pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-<description>By Raffaele Pisano, P. Bussotti. Philosophical transactions. Series A, Mathematical, physical, and engineering sciences. (Met: Raffaele Pisano)</description>
-<pw:authors>Raffaele Pisano, P. Bussotti</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Philosophical transactions. Series A, Mathematical, physical, and engineering sciences</pw:venue>
-<pw:arxiv></pw:arxiv>
-</item>
-<item>
-<title>Newton's Philosophiae Naturalis Principia Mathematica Geneva Edition ([1739-1742] 1822): Philosophical Transaction A Special Issue &amp; the State-of-the-Art.</title>
-<link>https://www.semanticscholar.org/paper/63e47b8c2b2902b4f25abcbc378420c2da91d433</link>
-<guid isPermaLink="false">63e47b8c2b2902b4f25abcbc378420c2da91d433</guid>
-<pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-<description>By Raffaele Pisano, P. Bussotti, Elisa Belotti. Philosophical transactions. Series A, Mathematical, physical, and engineering sciences. (Met: Raffaele Pisano)</description>
-<pw:authors>Raffaele Pisano, P. Bussotti, Elisa Belotti</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Philosophical transactions. Series A, Mathematical, physical, and engineering sciences</pw:venue>
-<pw:arxiv></pw:arxiv>
-</item>
-<item>
-<title>Conceptual frameworks from Newton's Principia and Newton's Principia Geneva Edition: case studies and analysis of the problem of isochronism, Propositions XLVIII-LIII.</title>
-<link>https://www.semanticscholar.org/paper/d93c3172ca6b28dbd9fb3d96cf3ccbee8e8b7e23</link>
-<guid isPermaLink="false">d93c3172ca6b28dbd9fb3d96cf3ccbee8e8b7e23</guid>
-<pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-<description>By P. Bussotti, Raffaele Pisano. Philosophical transactions. Series A, Mathematical, physical, and engineering sciences. (Met: Raffaele Pisano)</description>
-<pw:authors>P. Bussotti, Raffaele Pisano</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Philosophical transactions. Series A, Mathematical, physical, and engineering sciences</pw:venue>
-<pw:arxiv></pw:arxiv>
-</item>
-<item>
 <title>AI/ML Based Prediction of FPGA Synthesis Features From RTLs</title>
 <link>https://www.semanticscholar.org/paper/6b0586d5f4f075575babf263c4247a248e654dc7</link>
 <guid isPermaLink="false">6b0586d5f4f075575babf263c4247a248e654dc7</guid>
@@ -1015,17 +938,6 @@
 <pw:met>Leshem Choshen</pw:met>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2512.06553</pw:arxiv>
-</item>
-<item>
-<title>The Structure of the Newton’s Principia Geneva Edition ([1739–1742] 1822), Special Issue</title>
-<link>https://www.semanticscholar.org/paper/7f3c7b36f82ad9b7f85bb64609bcadd1670bc0fd</link>
-<guid isPermaLink="false">7f3c7b36f82ad9b7f85bb64609bcadd1670bc0fd</guid>
-<pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
-<description>By Raffaele Pisano, Paolo Bussotti, Elisa Belotti. Foundations of Science. (Met: Raffaele Pisano)</description>
-<pw:authors>Raffaele Pisano, Paolo Bussotti, Elisa Belotti</pw:authors>
-<pw:met>Raffaele Pisano</pw:met>
-<pw:venue>Foundations of Science</pw:venue>
-<pw:arxiv></pw:arxiv>
 </item>
 <item>
 <title>ELR-1000: A Community-Generated Dataset for Endangered Indic Indigenous Languages</title>
