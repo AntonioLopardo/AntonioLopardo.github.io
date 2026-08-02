@@ -3,19 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Sun, 02 Aug 2026 15:06:55 +0000</lastBuildDate>
-<item>
-<title>Advancing conversational task assistance: The Second Alexa Prize TaskBot Challenge</title>
-<link>https://www.semanticscholar.org/paper/d4d244c29f528a634d91b398d8b5be7d4d42b300</link>
-<guid isPermaLink="false">d4d244c29f528a634d91b398d8b5be7d4d42b300</guid>
-<description>By Eugene Agichtein, Michael Johnston, Anna Gottardi, Lavina Vaz, C. Flagg, Yao Lu, Shaohua Liu, Sattvik Sahai, Giuseppe Castellucci, J. Choi et al.. . (Met: Sattvik Sahai)</description>
-<pw:authors>Eugene Agichtein, Michael Johnston, Anna Gottardi, Lavina Vaz, C. Flagg, Yao Lu, Shaohua Liu, Sattvik Sahai, Giuseppe Castellucci, J. Choi et al.</pw:authors>
-<pw:met>Sattvik Sahai</pw:met>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
+<lastBuildDate>Sun, 02 Aug 2026 15:17:37 +0000</lastBuildDate>
 <item>
 <title>FairCoder: Evaluating Social Bias of LLMs in Code Generation</title>
 <link>https://www.semanticscholar.org/paper/38025a6af74959bf80e255990894d0d9ce89834b</link>
@@ -65,18 +53,6 @@
 <pw:year></pw:year>
 </item>
 <item>
-<title>The Pupil Becomes the Master: Eye-Tracking Feedback for Tuning LLMs</title>
-<link>https://www.semanticscholar.org/paper/38d1681bc70963455aeff1dc384010c064f2d74f</link>
-<guid isPermaLink="false">38d1681bc70963455aeff1dc384010c064f2d74f</guid>
-<description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox. . (Met: Samuel Kiegeland)</description>
-<pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox</pw:authors>
-<pw:met>Samuel Kiegeland</pw:met>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
 <title>Extracting a Prototypical Argumentative Pattern in Financial Q&amp;As</title>
 <link>https://www.semanticscholar.org/paper/51ee03c9a36c4f963f62a8aa073f01a15ade7240</link>
 <guid isPermaLink="false">51ee03c9a36c4f963f62a8aa073f01a15ade7240</guid>
@@ -119,6 +95,30 @@
 <description>By Pedro Ortiz Suarez. . (Met: Pedro Ortiz Suarez)</description>
 <pw:authors>Pedro Ortiz Suarez</pw:authors>
 <pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>The Pupil Becomes the Master: Eye-Tracking Feedback for Tuning LLMs</title>
+<link>https://www.semanticscholar.org/paper/38d1681bc70963455aeff1dc384010c064f2d74f</link>
+<guid isPermaLink="false">38d1681bc70963455aeff1dc384010c064f2d74f</guid>
+<description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox. . (Met: Samuel Kiegeland)</description>
+<pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox</pw:authors>
+<pw:met>Samuel Kiegeland</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Advancing conversational task assistance: The Second Alexa Prize TaskBot Challenge</title>
+<link>https://www.semanticscholar.org/paper/d4d244c29f528a634d91b398d8b5be7d4d42b300</link>
+<guid isPermaLink="false">d4d244c29f528a634d91b398d8b5be7d4d42b300</guid>
+<description>By Eugene Agichtein, Michael Johnston, Anna Gottardi, Lavina Vaz, C. Flagg, Yao Lu, Shaohua Liu, Sattvik Sahai, Giuseppe Castellucci, J. Choi et al.. . (Met: Sattvik Sahai)</description>
+<pw:authors>Eugene Agichtein, Michael Johnston, Anna Gottardi, Lavina Vaz, C. Flagg, Yao Lu, Shaohua Liu, Sattvik Sahai, Giuseppe Castellucci, J. Choi et al.</pw:authors>
+<pw:met>Sattvik Sahai</pw:met>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -398,19 +398,6 @@
 <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Instructions Shape Production of Language, not Processing</title>
-<link>https://www.semanticscholar.org/paper/66647a0f0d7e9d13f53b95bb494689185d8c0243</link>
-<guid isPermaLink="false">66647a0f0d7e9d13f53b95bb494689185d8c0243</guid>
-<description>By Andreas Waldis, Leshem Choshen, Yufang Hou, Yotam Perlitz. arXiv.org. (Met: Leshem Choshen) arXiv:2605.11206</description>
-<pw:authors>Andreas Waldis, Leshem Choshen, Yufang Hou, Yotam Perlitz</pw:authors>
-<pw:met>Leshem Choshen</pw:met>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2605.11206</pw:arxiv>
-<pw:date>2026-05-11</pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Meta-heuristic Adaptive Exploration Strategy Through Routing Optimization</title>
 <link>https://www.semanticscholar.org/paper/961a1c458cdfab309d82515de33193d4b2726f1d</link>
 <guid isPermaLink="false">961a1c458cdfab309d82515de33193d4b2726f1d</guid>
@@ -419,6 +406,19 @@
 <pw:met>Amr Hegazy</pw:met>
 <pw:venue>2026 ICEENG International Conference for Innovations in Power and Control Systems (IPCS)</pw:venue>
 <pw:arxiv></pw:arxiv>
+<pw:date>2026-05-11</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Instructions Shape Production of Language, not Processing</title>
+<link>https://www.semanticscholar.org/paper/66647a0f0d7e9d13f53b95bb494689185d8c0243</link>
+<guid isPermaLink="false">66647a0f0d7e9d13f53b95bb494689185d8c0243</guid>
+<description>By Andreas Waldis, Leshem Choshen, Yufang Hou, Yotam Perlitz. arXiv.org. (Met: Leshem Choshen) arXiv:2605.11206</description>
+<pw:authors>Andreas Waldis, Leshem Choshen, Yufang Hou, Yotam Perlitz</pw:authors>
+<pw:met>Leshem Choshen</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2605.11206</pw:arxiv>
 <pw:date>2026-05-11</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
@@ -489,6 +489,19 @@
 <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Probing for Reading Times</title>
+<link>https://www.semanticscholar.org/paper/31486708f3df4cbbf487d62d3e0ec141556201e3</link>
+<guid isPermaLink="false">31486708f3df4cbbf487d62d3e0ec141556201e3</guid>
+<description>By Eleftheria Tsipidi, Samuel Kiegeland, F. Re, Tianyang Xu, Mario Giulianelli, Karolina Stanczak, Ryan Cotterell. Annual Meeting of the Association for Computational Linguistics. (Met: Eleftheria Tsipidi, Samuel Kiegeland) arXiv:2604.18712</description>
+<pw:authors>Eleftheria Tsipidi, Samuel Kiegeland, F. Re, Tianyang Xu, Mario Giulianelli, Karolina Stanczak, Ryan Cotterell</pw:authors>
+<pw:met>Eleftheria Tsipidi, Samuel Kiegeland</pw:met>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv>2604.18712</pw:arxiv>
+<pw:date>2026-04-20</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Adversarial Arena: Crowdsourcing Data Generation through Interactive Competition</title>
 <link>https://www.semanticscholar.org/paper/936f7d633c916d68025fc440dab092e6270f1181</link>
 <guid isPermaLink="false">936f7d633c916d68025fc440dab092e6270f1181</guid>
@@ -510,19 +523,6 @@
 <pw:met>Yannick Detrois</pw:met>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2604.18226</pw:arxiv>
-<pw:date>2026-04-20</pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Probing for Reading Times</title>
-<link>https://www.semanticscholar.org/paper/31486708f3df4cbbf487d62d3e0ec141556201e3</link>
-<guid isPermaLink="false">31486708f3df4cbbf487d62d3e0ec141556201e3</guid>
-<description>By Eleftheria Tsipidi, Samuel Kiegeland, F. Re, Tianyang Xu, Mario Giulianelli, Karolina Stanczak, Ryan Cotterell. Annual Meeting of the Association for Computational Linguistics. (Met: Samuel Kiegeland, Eleftheria Tsipidi) arXiv:2604.18712</description>
-<pw:authors>Eleftheria Tsipidi, Samuel Kiegeland, F. Re, Tianyang Xu, Mario Giulianelli, Karolina Stanczak, Ryan Cotterell</pw:authors>
-<pw:met>Samuel Kiegeland, Eleftheria Tsipidi</pw:met>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2604.18712</pw:arxiv>
 <pw:date>2026-04-20</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
@@ -554,19 +554,6 @@
 <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Not All Subjectivity Is the Same! Defining Desiderata for the Evaluation of Subjectivity in NLP</title>
-<link>https://www.semanticscholar.org/paper/5ed302cd2f4123cb8ecf6f1258cdca8ce66a1ec8</link>
-<guid isPermaLink="false">5ed302cd2f4123cb8ecf6f1258cdca8ce66a1ec8</guid>
-<description>By Urja Khurana, Michiel van der Meer, Enrico Liscio, Antske Fokkens, P. Murukannaiah. arXiv.org. (Met: Michiel van der Meer) arXiv:2603.28351</description>
-<pw:authors>Urja Khurana, Michiel van der Meer, Enrico Liscio, Antske Fokkens, P. Murukannaiah</pw:authors>
-<pw:met>Michiel van der Meer</pw:met>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2603.28351</pw:arxiv>
-<pw:date>2026-03-30</pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>KoALa-Bench: Evaluating Large Audio Language Models on Korean Speech Understanding and Faithfulness</title>
 <link>https://www.semanticscholar.org/paper/a396f99afe6a9ac759c9fc71fd11420c7d6a2b50</link>
 <guid isPermaLink="false">a396f99afe6a9ac759c9fc71fd11420c7d6a2b50</guid>
@@ -575,6 +562,19 @@
 <pw:met>Hyeongsoo Lim</pw:met>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2604.19782</pw:arxiv>
+<pw:date>2026-03-30</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Not All Subjectivity Is the Same! Defining Desiderata for the Evaluation of Subjectivity in NLP</title>
+<link>https://www.semanticscholar.org/paper/5ed302cd2f4123cb8ecf6f1258cdca8ce66a1ec8</link>
+<guid isPermaLink="false">5ed302cd2f4123cb8ecf6f1258cdca8ce66a1ec8</guid>
+<description>By Urja Khurana, Michiel van der Meer, Enrico Liscio, Antske Fokkens, P. Murukannaiah. arXiv.org. (Met: Michiel van der Meer) arXiv:2603.28351</description>
+<pw:authors>Urja Khurana, Michiel van der Meer, Enrico Liscio, Antske Fokkens, P. Murukannaiah</pw:authors>
+<pw:met>Michiel van der Meer</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2603.28351</pw:arxiv>
 <pw:date>2026-03-30</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
@@ -739,9 +739,9 @@
 <title>Traces of Social Competence in Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/a46a0e25a13f00c24e2d960e32132c0c83c09621</link>
 <guid isPermaLink="false">a46a0e25a13f00c24e2d960e32132c0c83c09621</guid>
-<description>By Tom Kouwenhoven, Michiel van der Meer, Max J. van Duijn. Proceedings of the 30th Conference on Computational Natural Language Learning. (Met: Tom Kouwenhoven, Michiel van der Meer) arXiv:2603.04161</description>
+<description>By Tom Kouwenhoven, Michiel van der Meer, Max J. van Duijn. Proceedings of the 30th Conference on Computational Natural Language Learning. (Met: Michiel van der Meer, Tom Kouwenhoven) arXiv:2603.04161</description>
 <pw:authors>Tom Kouwenhoven, Michiel van der Meer, Max J. van Duijn</pw:authors>
-<pw:met>Tom Kouwenhoven, Michiel van der Meer</pw:met>
+<pw:met>Michiel van der Meer, Tom Kouwenhoven</pw:met>
 <pw:venue>Proceedings of the 30th Conference on Computational Natural Language Learning</pw:venue>
 <pw:arxiv>2603.04161</pw:arxiv>
 <pw:date>2026-03-04</pw:date>
@@ -999,9 +999,9 @@
 <title>CommonLID: Re-evaluating State-of-the-Art Language Identification Performance on Web Data</title>
 <link>https://www.semanticscholar.org/paper/08aebd9f6d3550fe2ac3d0c0bc0673c2de6eec2c</link>
 <guid isPermaLink="false">08aebd9f6d3550fe2ac3d0c0bc0673c2de6eec2c</guid>
-<description>By Pedro Ortiz Suarez, Laurie Burchell, Catherine Arnett, Rafael Mosquera-G'omez, Sara Hincapie-Monsalve, Thom Vaughan, D. Stewart, Malte Ostendorff, Idris Abdulmumin, V. Marivate et al.. Volume 1. (Met: Leshem Choshen, Catherine Arnett, Pedro Ortiz Suarez) arXiv:2601.18026</description>
+<description>By Pedro Ortiz Suarez, Laurie Burchell, Catherine Arnett, Rafael Mosquera-G'omez, Sara Hincapie-Monsalve, Thom Vaughan, D. Stewart, Malte Ostendorff, Idris Abdulmumin, V. Marivate et al.. Volume 1. (Met: Catherine Arnett, Leshem Choshen, Pedro Ortiz Suarez) arXiv:2601.18026</description>
 <pw:authors>Pedro Ortiz Suarez, Laurie Burchell, Catherine Arnett, Rafael Mosquera-G'omez, Sara Hincapie-Monsalve, Thom Vaughan, D. Stewart, Malte Ostendorff, Idris Abdulmumin, V. Marivate et al.</pw:authors>
-<pw:met>Leshem Choshen, Catherine Arnett, Pedro Ortiz Suarez</pw:met>
+<pw:met>Catherine Arnett, Leshem Choshen, Pedro Ortiz Suarez</pw:met>
 <pw:venue>Volume 1</pw:venue>
 <pw:arxiv>2601.18026</pw:arxiv>
 <pw:date>2026-01-25</pw:date>
@@ -1048,26 +1048,13 @@
 <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>From Narrow Unlearning to Emergent Misalignment in LLMs</title>
-<link>https://www.semanticscholar.org/paper/135152f6db72a8a15b3d909a21817b8b36b871e2</link>
-<guid isPermaLink="false">135152f6db72a8a15b3d909a21817b8b36b871e2</guid>
-<description>By Erum Mushtaq, Anil Ramakrishna, Satyapriya Krishna, Sattvik Sahai, P. Goyal, Kai-Wei Chang, Tao Zhang, Rahul Gupta. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers). (Met: Sattvik Sahai)</description>
-<pw:authors>Erum Mushtaq, Anil Ramakrishna, Satyapriya Krishna, Sattvik Sahai, P. Goyal, Kai-Wei Chang, Tao Zhang, Rahul Gupta</pw:authors>
-<pw:met>Sattvik Sahai</pw:met>
-<pw:venue>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>The Mighty ToRR: A Benchmark for Table Reasoning and Robustness in LLMs</title>
-<link>https://www.semanticscholar.org/paper/b27ef889458bf8326778756c4f32f8a56afe985b</link>
-<guid isPermaLink="false">b27ef889458bf8326778756c4f32f8a56afe985b</guid>
-<description>By Shir Ashury-Tahan, Yifan Mai, Rajmohan C, Ariel Gera, Yotam Perlitz, Asaf Yehudai, Elron Bandel, Leshem Choshen, Eyal Shnarch, Percy Liang et al.. Proceedings of the First Workshop on Structured Understanding, Retrieval, and Generation in the LLM Era (SURGeLLM 2026). (Met: Leshem Choshen)</description>
-<pw:authors>Shir Ashury-Tahan, Yifan Mai, Rajmohan C, Ariel Gera, Yotam Perlitz, Asaf Yehudai, Elron Bandel, Leshem Choshen, Eyal Shnarch, Percy Liang et al.</pw:authors>
-<pw:met>Leshem Choshen</pw:met>
-<pw:venue>Proceedings of the First Workshop on Structured Understanding, Retrieval, and Generation in the LLM Era (SURGeLLM 2026)</pw:venue>
+<title>SelFusion: Self-distillation for Diffusion Language Models</title>
+<link>https://www.semanticscholar.org/paper/4d4f7f1c85d29c2bbe16abb0eb6a5a42be296c6d</link>
+<guid isPermaLink="false">4d4f7f1c85d29c2bbe16abb0eb6a5a42be296c6d</guid>
+<description>By Hyeongsoo Lim, Jinyoung Kim, Eunjoo Seo, Minsung Jang, J. Yoon. Annual Meeting of the Association for Computational Linguistics. (Met: Hyeongsoo Lim)</description>
+<pw:authors>Hyeongsoo Lim, Jinyoung Kim, Eunjoo Seo, Minsung Jang, J. Yoon</pw:authors>
+<pw:met>Hyeongsoo Lim</pw:met>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2026</pw:year>
@@ -1100,6 +1087,32 @@
 <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>The Mighty ToRR: A Benchmark for Table Reasoning and Robustness in LLMs</title>
+<link>https://www.semanticscholar.org/paper/b27ef889458bf8326778756c4f32f8a56afe985b</link>
+<guid isPermaLink="false">b27ef889458bf8326778756c4f32f8a56afe985b</guid>
+<description>By Shir Ashury-Tahan, Yifan Mai, Rajmohan C, Ariel Gera, Yotam Perlitz, Asaf Yehudai, Elron Bandel, Leshem Choshen, Eyal Shnarch, Percy Liang et al.. Proceedings of the First Workshop on Structured Understanding, Retrieval, and Generation in the LLM Era (SURGeLLM 2026). (Met: Leshem Choshen)</description>
+<pw:authors>Shir Ashury-Tahan, Yifan Mai, Rajmohan C, Ariel Gera, Yotam Perlitz, Asaf Yehudai, Elron Bandel, Leshem Choshen, Eyal Shnarch, Percy Liang et al.</pw:authors>
+<pw:met>Leshem Choshen</pw:met>
+<pw:venue>Proceedings of the First Workshop on Structured Understanding, Retrieval, and Generation in the LLM Era (SURGeLLM 2026)</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Segmentation Matters: Exploring LLM-Based Strategies for Temporal Clinical Event Identification in Oncology Reports</title>
+<link>https://www.semanticscholar.org/paper/24ab222120e60f63032fc66a8e53d28261b63c51</link>
+<guid isPermaLink="false">24ab222120e60f63032fc66a8e53d28261b63c51</guid>
+<description>By Cristiano Bellucci, Francesco Madeddu, C. Iacomini, C. Masciocchi, S. Patarnello, Massimo Bernaschi, Mario Santoro, Livia Lilli. Workshop on Biomedical Natural Language Processing. (Met: Livia Lilli)</description>
+<pw:authors>Cristiano Bellucci, Francesco Madeddu, C. Iacomini, C. Masciocchi, S. Patarnello, Massimo Bernaschi, Mario Santoro, Livia Lilli</pw:authors>
+<pw:met>Livia Lilli</pw:met>
+<pw:venue>Workshop on Biomedical Natural Language Processing</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Linguistic Profiling of Transformer Embedding Geometry</title>
 <link>https://www.semanticscholar.org/paper/50d1fabeae67e36133716dca0498daabbedf54e7</link>
 <guid isPermaLink="false">50d1fabeae67e36133716dca0498daabbedf54e7</guid>
@@ -1126,45 +1139,6 @@
 <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Segmentation Matters: Exploring LLM-Based Strategies for Temporal Clinical Event Identification in Oncology Reports</title>
-<link>https://www.semanticscholar.org/paper/24ab222120e60f63032fc66a8e53d28261b63c51</link>
-<guid isPermaLink="false">24ab222120e60f63032fc66a8e53d28261b63c51</guid>
-<description>By Cristiano Bellucci, Francesco Madeddu, C. Iacomini, C. Masciocchi, S. Patarnello, Massimo Bernaschi, Mario Santoro, Livia Lilli. Workshop on Biomedical Natural Language Processing. (Met: Livia Lilli)</description>
-<pw:authors>Cristiano Bellucci, Francesco Madeddu, C. Iacomini, C. Masciocchi, S. Patarnello, Massimo Bernaschi, Mario Santoro, Livia Lilli</pw:authors>
-<pw:met>Livia Lilli</pw:met>
-<pw:venue>Workshop on Biomedical Natural Language Processing</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Thesis Proposal: LLMs post-training for multilingual medical tasks. Instruction-Tuning, Continual-Pretraining or Reasoning?</title>
-<link>https://www.semanticscholar.org/paper/372669335121ff412f00c5b29302b3fac381e899</link>
-<guid isPermaLink="false">372669335121ff412f00c5b29302b3fac381e899</guid>
-<description>By Pietro Ferrazzi, A. Lavelli, Bernardo Magnini. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop). (Met: Pietro Ferrazzi)</description>
-<pw:authors>Pietro Ferrazzi, A. Lavelli, Bernardo Magnini</pw:authors>
-<pw:met>Pietro Ferrazzi</pw:met>
-<pw:venue>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>SelFusion: Self-distillation for Diffusion Language Models</title>
-<link>https://www.semanticscholar.org/paper/4d4f7f1c85d29c2bbe16abb0eb6a5a42be296c6d</link>
-<guid isPermaLink="false">4d4f7f1c85d29c2bbe16abb0eb6a5a42be296c6d</guid>
-<description>By Hyeongsoo Lim, Jinyoung Kim, Eunjoo Seo, Minsung Jang, J. Yoon. Annual Meeting of the Association for Computational Linguistics. (Met: Hyeongsoo Lim)</description>
-<pw:authors>Hyeongsoo Lim, Jinyoung Kim, Eunjoo Seo, Minsung Jang, J. Yoon</pw:authors>
-<pw:met>Hyeongsoo Lim</pw:met>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Gaperon: A Peppered English-French Generative Language Model Suite</title>
 <link>https://www.semanticscholar.org/paper/7c201b4efcacb21aad8fb367b02626491ca2769e</link>
 <guid isPermaLink="false">7c201b4efcacb21aad8fb367b02626491ca2769e</guid>
@@ -1185,6 +1159,32 @@
 <pw:authors>Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Thesis Proposal: LLMs post-training for multilingual medical tasks. Instruction-Tuning, Continual-Pretraining or Reasoning?</title>
+<link>https://www.semanticscholar.org/paper/372669335121ff412f00c5b29302b3fac381e899</link>
+<guid isPermaLink="false">372669335121ff412f00c5b29302b3fac381e899</guid>
+<description>By Pietro Ferrazzi, A. Lavelli, Bernardo Magnini. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop). (Met: Pietro Ferrazzi)</description>
+<pw:authors>Pietro Ferrazzi, A. Lavelli, Bernardo Magnini</pw:authors>
+<pw:met>Pietro Ferrazzi</pw:met>
+<pw:venue>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>From Narrow Unlearning to Emergent Misalignment in LLMs</title>
+<link>https://www.semanticscholar.org/paper/135152f6db72a8a15b3d909a21817b8b36b871e2</link>
+<guid isPermaLink="false">135152f6db72a8a15b3d909a21817b8b36b871e2</guid>
+<description>By Erum Mushtaq, Anil Ramakrishna, Satyapriya Krishna, Sattvik Sahai, P. Goyal, Kai-Wei Chang, Tao Zhang, Rahul Gupta. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers). (Met: Sattvik Sahai)</description>
+<pw:authors>Erum Mushtaq, Anil Ramakrishna, Satyapriya Krishna, Sattvik Sahai, P. Goyal, Kai-Wei Chang, Tao Zhang, Rahul Gupta</pw:authors>
+<pw:met>Sattvik Sahai</pw:met>
+<pw:venue>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2026</pw:year>
@@ -1308,19 +1308,6 @@
 <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Global PIQA: Evaluating Commonsense Reasoning Across 100+ Languages and Cultures</title>
-<link>https://www.semanticscholar.org/paper/9964d27318f1f4f3cf01f5fe8b1cdbd905678fd6</link>
-<guid isPermaLink="false">9964d27318f1f4f3cf01f5fe8b1cdbd905678fd6</guid>
-<description>By Tyler A. Chang, Catherine Arnett, A. Sadallah, A. Eldesokey, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarimayum Meerajita Sharma et al.. . (Met: Leshem Choshen, Catherine Arnett) arXiv:2510.24081</description>
-<pw:authors>Tyler A. Chang, Catherine Arnett, A. Sadallah, A. Eldesokey, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarimayum Meerajita Sharma et al.</pw:authors>
-<pw:met>Leshem Choshen, Catherine Arnett</pw:met>
-<pw:venue></pw:venue>
-<pw:arxiv>2510.24081</pw:arxiv>
-<pw:date>2025-10-28</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction</title>
 <link>https://www.semanticscholar.org/paper/63f3d60cadb96970ad362935d24cbfb24f642e5b</link>
 <guid isPermaLink="false">63f3d60cadb96970ad362935d24cbfb24f642e5b</guid>
@@ -1329,6 +1316,19 @@
 <pw:met>Catherine Arnett, James A. Michaelov</pw:met>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2510.24934</pw:arxiv>
+<pw:date>2025-10-28</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Global PIQA: Evaluating Commonsense Reasoning Across 100+ Languages and Cultures</title>
+<link>https://www.semanticscholar.org/paper/9964d27318f1f4f3cf01f5fe8b1cdbd905678fd6</link>
+<guid isPermaLink="false">9964d27318f1f4f3cf01f5fe8b1cdbd905678fd6</guid>
+<description>By Tyler A. Chang, Catherine Arnett, A. Sadallah, A. Eldesokey, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarimayum Meerajita Sharma et al.. . (Met: Catherine Arnett, Leshem Choshen) arXiv:2510.24081</description>
+<pw:authors>Tyler A. Chang, Catherine Arnett, A. Sadallah, A. Eldesokey, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarimayum Meerajita Sharma et al.</pw:authors>
+<pw:met>Catherine Arnett, Leshem Choshen</pw:met>
+<pw:venue></pw:venue>
+<pw:arxiv>2510.24081</pw:arxiv>
 <pw:date>2025-10-28</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
@@ -1688,9 +1688,9 @@
 <title>The Harmonic Structure of Information Contours</title>
 <link>https://www.semanticscholar.org/paper/cccb705560d0314252981957f9b73aabddd51553</link>
 <guid isPermaLink="false">cccb705560d0314252981957f9b73aabddd51553</guid>
-<description>By Eleftheria Tsipidi, Samuel Kiegeland, Franz Nowak, Tianyang Xu, E. Wilcox, A. Warstadt, Ryan Cotterell, Mario Giulianelli. Annual Meeting of the Association for Computational Linguistics. (Met: Samuel Kiegeland, Eleftheria Tsipidi) arXiv:2506.03902</description>
+<description>By Eleftheria Tsipidi, Samuel Kiegeland, Franz Nowak, Tianyang Xu, E. Wilcox, A. Warstadt, Ryan Cotterell, Mario Giulianelli. Annual Meeting of the Association for Computational Linguistics. (Met: Eleftheria Tsipidi, Samuel Kiegeland) arXiv:2506.03902</description>
 <pw:authors>Eleftheria Tsipidi, Samuel Kiegeland, Franz Nowak, Tianyang Xu, E. Wilcox, A. Warstadt, Ryan Cotterell, Mario Giulianelli</pw:authors>
-<pw:met>Samuel Kiegeland, Eleftheria Tsipidi</pw:met>
+<pw:met>Eleftheria Tsipidi, Samuel Kiegeland</pw:met>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2506.03902</pw:arxiv>
 <pw:date>2025-06-04</pw:date>
@@ -1854,19 +1854,6 @@
 <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>On the Acquisition of Shared Grammatical Representations in Bilingual Language Models</title>
-<link>https://www.semanticscholar.org/paper/55440706a45cc1f377b23e64bf489cb7814c716e</link>
-<guid isPermaLink="false">55440706a45cc1f377b23e64bf489cb7814c716e</guid>
-<description>By Catherine Arnett, Tyler A. Chang, James A. Michaelov, Benjamin K. Bergen. Annual Meeting of the Association for Computational Linguistics. (Met: Catherine Arnett, James A. Michaelov) arXiv:2503.03962</description>
-<pw:authors>Catherine Arnett, Tyler A. Chang, James A. Michaelov, Benjamin K. Bergen</pw:authors>
-<pw:met>Catherine Arnett, James A. Michaelov</pw:met>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2503.03962</pw:arxiv>
-<pw:date>2025-03-05</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Safe LLM-Controlled Robots with Formal Guarantees via Reachability Analysis</title>
 <link>https://www.semanticscholar.org/paper/019bd741a8ce9654ff7fb80b512d19ba1d586745</link>
 <guid isPermaLink="false">019bd741a8ce9654ff7fb80b512d19ba1d586745</guid>
@@ -1875,6 +1862,19 @@
 <pw:met>Amr Hegazy</pw:met>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2503.03911</pw:arxiv>
+<pw:date>2025-03-05</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>On the Acquisition of Shared Grammatical Representations in Bilingual Language Models</title>
+<link>https://www.semanticscholar.org/paper/55440706a45cc1f377b23e64bf489cb7814c716e</link>
+<guid isPermaLink="false">55440706a45cc1f377b23e64bf489cb7814c716e</guid>
+<description>By Catherine Arnett, Tyler A. Chang, James A. Michaelov, Benjamin K. Bergen. Annual Meeting of the Association for Computational Linguistics. (Met: Catherine Arnett, James A. Michaelov) arXiv:2503.03962</description>
+<pw:authors>Catherine Arnett, Tyler A. Chang, James A. Michaelov, Benjamin K. Bergen</pw:authors>
+<pw:met>Catherine Arnett, James A. Michaelov</pw:met>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv>2503.03962</pw:arxiv>
 <pw:date>2025-03-05</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
@@ -1971,6 +1971,45 @@
 <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Why do language models perform worse for morphologically complex languages?</title>
+<link>https://www.semanticscholar.org/paper/2d1220321420f04acb7ed422d3c312972bb76459</link>
+<guid isPermaLink="false">2d1220321420f04acb7ed422d3c312972bb76459</guid>
+<description>By Catherine Arnett, Benjamin K. Bergen. International Conference on Computational Linguistics. (Met: Catherine Arnett)</description>
+<pw:authors>Catherine Arnett, Benjamin K. Bergen</pw:authors>
+<pw:met>Catherine Arnett</pw:met>
+<pw:venue>International Conference on Computational Linguistics</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures</title>
+<link>https://www.semanticscholar.org/paper/9490cffce0f8d55cda7424dccef0b854ec80abb9</link>
+<guid isPermaLink="false">9490cffce0f8d55cda7424dccef0b854ec80abb9</guid>
+<description>By Tyler Chang, Catherine Arnett, A. Eldesokey, A. Sadallah, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarinayum Meerajita Sharma et al.. arXiv.org. (Met: Catherine Arnett, Leshem Choshen)</description>
+<pw:authors>Tyler Chang, Catherine Arnett, A. Eldesokey, A. Sadallah, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarinayum Meerajita Sharma et al.</pw:authors>
+<pw:met>Catherine Arnett, Leshem Choshen</pw:met>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>rrSDS 2.0: Incremental, Modular, Distributed, Multimodal Spoken Dialogue with Robotic Platforms</title>
+<link>https://www.semanticscholar.org/paper/4672c341acaa0653830304c7560633004d4540f5</link>
+<guid isPermaLink="false">4672c341acaa0653830304c7560633004d4540f5</guid>
+<description>By Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, Casey Kennington. SIGDIAL Conferences. (Met: Josue Torres-Fonseca)</description>
+<pw:authors>Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, Casey Kennington</pw:authors>
+<pw:met>Josue Torres-Fonseca</pw:met>
+<pw:venue>SIGDIAL Conferences</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>A Survey on Model MoErging: Recycling and Routing Among Specialized Experts for Collaborative Learning</title>
 <link>https://www.semanticscholar.org/paper/07018ccd67ae8abd5ad37a91be6f871700dffa16</link>
 <guid isPermaLink="false">07018ccd67ae8abd5ad37a91be6f871700dffa16</guid>
@@ -2023,39 +2062,26 @@
 <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures</title>
-<link>https://www.semanticscholar.org/paper/9490cffce0f8d55cda7424dccef0b854ec80abb9</link>
-<guid isPermaLink="false">9490cffce0f8d55cda7424dccef0b854ec80abb9</guid>
-<description>By Tyler Chang, Catherine Arnett, A. Eldesokey, A. Sadallah, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarinayum Meerajita Sharma et al.. arXiv.org. (Met: Leshem Choshen, Catherine Arnett)</description>
-<pw:authors>Tyler Chang, Catherine Arnett, A. Eldesokey, A. Sadallah, Abeer Kashar, A. Daud, Abosede Grace Olanihun, Adamu Mohammed, Adeyemi Praise, Adhikarinayum Meerajita Sharma et al.</pw:authors>
-<pw:met>Leshem Choshen, Catherine Arnett</pw:met>
-<pw:venue>arXiv.org</pw:venue>
+<title>Mamma Mia! Where's My Name? De-Identifying Italian Clinical Notes with Large Language Models</title>
+<link>https://www.semanticscholar.org/paper/8f5d35c5c2473628fc38735e50c826b9ce4db637</link>
+<guid isPermaLink="false">8f5d35c5c2473628fc38735e50c826b9ce4db637</guid>
+<description>By M. Miranda, Sébastien Bratières, S. Patarnello, Livia Lilli. Italian Conference on Computational Linguistics. (Met: Livia Lilli)</description>
+<pw:authors>M. Miranda, Sébastien Bratières, S. Patarnello, Livia Lilli</pw:authors>
+<pw:met>Livia Lilli</pw:met>
+<pw:venue>Italian Conference on Computational Linguistics</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Why do language models perform worse for morphologically complex languages?</title>
-<link>https://www.semanticscholar.org/paper/2d1220321420f04acb7ed422d3c312972bb76459</link>
-<guid isPermaLink="false">2d1220321420f04acb7ed422d3c312972bb76459</guid>
-<description>By Catherine Arnett, Benjamin K. Bergen. International Conference on Computational Linguistics. (Met: Catherine Arnett)</description>
-<pw:authors>Catherine Arnett, Benjamin K. Bergen</pw:authors>
-<pw:met>Catherine Arnett</pw:met>
-<pw:venue>International Conference on Computational Linguistics</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>rrSDS 2.0: Incremental, Modular, Distributed, Multimodal Spoken Dialogue with Robotic Platforms</title>
-<link>https://www.semanticscholar.org/paper/4672c341acaa0653830304c7560633004d4540f5</link>
-<guid isPermaLink="false">4672c341acaa0653830304c7560633004d4540f5</guid>
-<description>By Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, Casey Kennington. SIGDIAL Conferences. (Met: Josue Torres-Fonseca)</description>
-<pw:authors>Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, Casey Kennington</pw:authors>
-<pw:met>Josue Torres-Fonseca</pw:met>
-<pw:venue>SIGDIAL Conferences</pw:venue>
+<title>Prompting Large Language Models for Italian Clinical Reports: A Benchmark Study</title>
+<link>https://www.semanticscholar.org/paper/e47955d0d41b8c80292c6997a11851fb9626da6c</link>
+<guid isPermaLink="false">e47955d0d41b8c80292c6997a11851fb9626da6c</guid>
+<description>By Livia Lilli, C. Masciocchi, Antonio Marchetti, Giovanni Arcuri, S. Patarnello. Proceedings of the 24th Workshop on Biomedical Language Processing. (Met: Livia Lilli)</description>
+<pw:authors>Livia Lilli, C. Masciocchi, Antonio Marchetti, Giovanni Arcuri, S. Patarnello</pw:authors>
+<pw:met>Livia Lilli</pw:met>
+<pw:venue>Proceedings of the 24th Workshop on Biomedical Language Processing</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
@@ -2088,6 +2114,19 @@
 <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Overview of the "Voight-Kampff" Generative AI Authorship Verification Task at PAN and ELOQUENT 2025</title>
+<link>https://www.semanticscholar.org/paper/bdb3e733666fbb80c31ed9eec1652ef08bcaebb7</link>
+<guid isPermaLink="false">bdb3e733666fbb80c31ed9eec1652ef08bcaebb7</guid>
+<description>By Janek Bevendorff, Yuxia Wang, Jussi Karlgren, Matti Wiegmann, Maik Fröbe, Akim Tsivgun, Jinyan Su, Zhuohan Xie, Mervat T. Abassy, Jonibek Mansurov et al.. Conference and Labs of the Evaluation Forum. (Met: Mervat Abassy)</description>
+<pw:authors>Janek Bevendorff, Yuxia Wang, Jussi Karlgren, Matti Wiegmann, Maik Fröbe, Akim Tsivgun, Jinyan Su, Zhuohan Xie, Mervat T. Abassy, Jonibek Mansurov et al.</pw:authors>
+<pw:met>Mervat Abassy</pw:met>
+<pw:venue>Conference and Labs of the Evaluation Forum</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>MedDecXtract: A Clinician-Support System for Extracting, Visualizing, and Annotating Medical Decisions in Clinical Narratives</title>
 <link>https://www.semanticscholar.org/paper/3018ceecf37751d5f2148e2fac78ef2ce5c00d77</link>
 <guid isPermaLink="false">3018ceecf37751d5f2148e2fac78ef2ce5c00d77</guid>
@@ -2108,45 +2147,6 @@
 <pw:authors>Mohamed Elgaar, Hadi Amiri</pw:authors>
 <pw:met>Mohamed Elgaar</pw:met>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Overview of the "Voight-Kampff" Generative AI Authorship Verification Task at PAN and ELOQUENT 2025</title>
-<link>https://www.semanticscholar.org/paper/bdb3e733666fbb80c31ed9eec1652ef08bcaebb7</link>
-<guid isPermaLink="false">bdb3e733666fbb80c31ed9eec1652ef08bcaebb7</guid>
-<description>By Janek Bevendorff, Yuxia Wang, Jussi Karlgren, Matti Wiegmann, Maik Fröbe, Akim Tsivgun, Jinyan Su, Zhuohan Xie, Mervat T. Abassy, Jonibek Mansurov et al.. Conference and Labs of the Evaluation Forum. (Met: Mervat Abassy)</description>
-<pw:authors>Janek Bevendorff, Yuxia Wang, Jussi Karlgren, Matti Wiegmann, Maik Fröbe, Akim Tsivgun, Jinyan Su, Zhuohan Xie, Mervat T. Abassy, Jonibek Mansurov et al.</pw:authors>
-<pw:met>Mervat Abassy</pw:met>
-<pw:venue>Conference and Labs of the Evaluation Forum</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Mamma Mia! Where's My Name? De-Identifying Italian Clinical Notes with Large Language Models</title>
-<link>https://www.semanticscholar.org/paper/8f5d35c5c2473628fc38735e50c826b9ce4db637</link>
-<guid isPermaLink="false">8f5d35c5c2473628fc38735e50c826b9ce4db637</guid>
-<description>By M. Miranda, Sébastien Bratières, S. Patarnello, Livia Lilli. Italian Conference on Computational Linguistics. (Met: Livia Lilli)</description>
-<pw:authors>M. Miranda, Sébastien Bratières, S. Patarnello, Livia Lilli</pw:authors>
-<pw:met>Livia Lilli</pw:met>
-<pw:venue>Italian Conference on Computational Linguistics</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Prompting Large Language Models for Italian Clinical Reports: A Benchmark Study</title>
-<link>https://www.semanticscholar.org/paper/e47955d0d41b8c80292c6997a11851fb9626da6c</link>
-<guid isPermaLink="false">e47955d0d41b8c80292c6997a11851fb9626da6c</guid>
-<description>By Livia Lilli, C. Masciocchi, Antonio Marchetti, Giovanni Arcuri, S. Patarnello. Proceedings of the 24th Workshop on Biomedical Language Processing. (Met: Livia Lilli)</description>
-<pw:authors>Livia Lilli, C. Masciocchi, Antonio Marchetti, Giovanni Arcuri, S. Patarnello</pw:authors>
-<pw:met>Livia Lilli</pw:met>
-<pw:venue>Proceedings of the 24th Workshop on Biomedical Language Processing</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
@@ -2868,19 +2868,6 @@
 <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Is Temperature the Creativity Parameter of Large Language Models?</title>
-<link>https://www.semanticscholar.org/paper/8e25c812a564e98058a90e30519b7644f7f46d57</link>
-<guid isPermaLink="false">8e25c812a564e98058a90e30519b7644f7f46d57</guid>
-<description>By Max Peeperkorn, Tom Kouwenhoven, Daniel G. Brown, Anna K. Jordanous. ICCC. (Met: Tom Kouwenhoven) arXiv:2405.00492</description>
-<pw:authors>Max Peeperkorn, Tom Kouwenhoven, Daniel G. Brown, Anna K. Jordanous</pw:authors>
-<pw:met>Tom Kouwenhoven</pw:met>
-<pw:venue>ICCC</pw:venue>
-<pw:arxiv>2405.00492</pw:arxiv>
-<pw:date>2024-05-01</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>A CURATEd CATalog: Rethinking the Extraction of Pretraining Corpora for Mid-Resourced Languages</title>
 <link>https://www.semanticscholar.org/paper/77a2e761ed2dc2360043280bb543c7add804983d</link>
 <guid isPermaLink="false">77a2e761ed2dc2360043280bb543c7add804983d</guid>
@@ -2889,6 +2876,19 @@
 <pw:met>Pedro Ortiz Suarez</pw:met>
 <pw:venue>International Conference on Language Resources and Evaluation</pw:venue>
 <pw:arxiv></pw:arxiv>
+<pw:date>2024-05-01</pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Is Temperature the Creativity Parameter of Large Language Models?</title>
+<link>https://www.semanticscholar.org/paper/8e25c812a564e98058a90e30519b7644f7f46d57</link>
+<guid isPermaLink="false">8e25c812a564e98058a90e30519b7644f7f46d57</guid>
+<description>By Max Peeperkorn, Tom Kouwenhoven, Daniel G. Brown, Anna K. Jordanous. ICCC. (Met: Tom Kouwenhoven) arXiv:2405.00492</description>
+<pw:authors>Max Peeperkorn, Tom Kouwenhoven, Daniel G. Brown, Anna K. Jordanous</pw:authors>
+<pw:met>Tom Kouwenhoven</pw:met>
+<pw:venue>ICCC</pw:venue>
+<pw:arxiv>2405.00492</pw:arxiv>
 <pw:date>2024-05-01</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
@@ -3248,9 +3248,9 @@
 <title>EduGym: An Environment and Notebook Suite for Reinforcement Learning Education</title>
 <link>https://www.semanticscholar.org/paper/32cb0981e9651003cee6605d7769c714b9011a47</link>
 <guid isPermaLink="false">32cb0981e9651003cee6605d7769c714b9011a47</guid>
-<description>By T. Moerland, Matthias Muller-Brockhausen, Zhao Yang, Andrius Bernatavicius, Koen Ponse, Tom Kouwenhoven, Andreas Sauter, Michiel van der Meer, Bram Renting, A. Plaat. . (Met: Tom Kouwenhoven, Michiel van der Meer) arXiv:2311.10590</description>
+<description>By T. Moerland, Matthias Muller-Brockhausen, Zhao Yang, Andrius Bernatavicius, Koen Ponse, Tom Kouwenhoven, Andreas Sauter, Michiel van der Meer, Bram Renting, A. Plaat. . (Met: Michiel van der Meer, Tom Kouwenhoven) arXiv:2311.10590</description>
 <pw:authors>T. Moerland, Matthias Muller-Brockhausen, Zhao Yang, Andrius Bernatavicius, Koen Ponse, Tom Kouwenhoven, Andreas Sauter, Michiel van der Meer, Bram Renting, A. Plaat</pw:authors>
-<pw:met>Tom Kouwenhoven, Michiel van der Meer</pw:met>
+<pw:met>Michiel van der Meer, Tom Kouwenhoven</pw:met>
 <pw:venue></pw:venue>
 <pw:arxiv>2311.10590</pw:arxiv>
 <pw:date>2023-11-17</pw:date>
@@ -3557,19 +3557,6 @@
 <pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>MuLER: Detailed and Scalable Reference-based Evaluation</title>
-<link>https://www.semanticscholar.org/paper/6152c9757309dbb99579a7869fcea091153e0fab</link>
-<guid isPermaLink="false">6152c9757309dbb99579a7869fcea091153e0fab</guid>
-<description>By Taelin Karidi, Leshem Choshen, Gal Patel, Omri Abend. Conference on Computational Natural Language Learning. (Met: Leshem Choshen) arXiv:2305.14991</description>
-<pw:authors>Taelin Karidi, Leshem Choshen, Gal Patel, Omri Abend</pw:authors>
-<pw:met>Leshem Choshen</pw:met>
-<pw:venue>Conference on Computational Natural Language Learning</pw:venue>
-<pw:arxiv>2305.14991</pw:arxiv>
-<pw:date>2023-05-24</pw:date>
-<pw:year>2023</pw:year>
-<pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Emergent inabilities? Inverse scaling over the course of pretraining</title>
 <link>https://www.semanticscholar.org/paper/5d2dbbcccf3a47a73f746296408b500f399dc8d0</link>
 <guid isPermaLink="false">5d2dbbcccf3a47a73f746296408b500f399dc8d0</guid>
@@ -3578,6 +3565,19 @@
 <pw:met>James A. Michaelov</pw:met>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2305.14681</pw:arxiv>
+<pw:date>2023-05-24</pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>MuLER: Detailed and Scalable Reference-based Evaluation</title>
+<link>https://www.semanticscholar.org/paper/6152c9757309dbb99579a7869fcea091153e0fab</link>
+<guid isPermaLink="false">6152c9757309dbb99579a7869fcea091153e0fab</guid>
+<description>By Taelin Karidi, Leshem Choshen, Gal Patel, Omri Abend. Conference on Computational Natural Language Learning. (Met: Leshem Choshen) arXiv:2305.14991</description>
+<pw:authors>Taelin Karidi, Leshem Choshen, Gal Patel, Omri Abend</pw:authors>
+<pw:met>Leshem Choshen</pw:met>
+<pw:venue>Conference on Computational Natural Language Learning</pw:venue>
+<pw:arxiv>2305.14991</pw:arxiv>
 <pw:date>2023-05-24</pw:date>
 <pw:year>2023</pw:year>
 <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
