@@ -2,6 +2,8 @@
 permalink: /robots.txt
 ---
 User-agent: *
-Disallow:
+# papers.html is intentionally crawlable so bots can read its noindex meta tag.
+# The feed can't carry one (XML), so block it here instead.
+Disallow: /assets/feeds/
 
 Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
