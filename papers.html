@@ -177,8 +177,15 @@
       const arxiv = px('arxiv') || (desc.match(/arXiv:([\w.\/-]+)/) || [,''])[1];
       const authors = px('authors') || (desc.match(/^By (.+?)\.\s/) || [,''])[1];
       const venue = px('venue');
-      return {title:g('title'), link:g('link'), date:new Date(g('pubDate')), met, arxiv, authors, venue};
-    }).filter(p => p.title);
+      const exact = px('date'), year = px('year');
+      // Three date precisions — exact month, year-only, unknown. Never invent a month.
+      let bucket;
+      if(exact){ const d = new Date(exact);
+        bucket = {key:exact, label:MONTHS[d.getMonth()]+' '+d.getFullYear(), shown:exact}; }
+      else if(year){ bucket = {key:year+'-00', label:year+' · month unknown', shown:year}; }
+      else { bucket = {key:'', label:'Date unknown', shown:''}; }
+      return {title:g('title'), link:g('link'), bucket, met, arxiv, authors, venue};
+    }).filter(p => p.title).sort((a,b) => b.bucket.key.localeCompare(a.bucket.key));
   }catch(e){
     list.innerHTML = '<div class="empty">COULD NOT LOAD THE FEED — TRY A HARD REFRESH.</div>';
     return;
@@ -220,7 +227,7 @@
 
     let html = '', lastMonth = '', n = 0;
     for(const p of shown){
-      const mk = isNaN(p.date) ? 'Undated' : MONTHS[p.date.getMonth()] + ' ' + p.date.getFullYear();
+      const mk = p.bucket.label;
       if(mk !== lastMonth){ html += (lastMonth?'</ol>':'') + `<div class="month">${mk}</div><ol>`; lastMonth = mk; }
       n++;
       const links = [
@@ -235,7 +242,7 @@
           <p class="byline">${markMet(p.authors, p.met)}</p>
           <div class="meta">
             ${p.venue ? `<span class="venue">${p.venue}</span>` : ''}
-            <span>${isNaN(p.date) ? '' : p.date.toISOString().slice(0,10)}</span>
+            <span>${p.bucket.shown}</span>
             ${links}
           </div>
         </div>
