@@ -7,6 +7,7 @@
     <meta name="description" content="Recent papers by researchers Antonio Lopardo has met at conferences." />
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <meta name="googlebot" content="noindex, nofollow" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -239,6 +240,42 @@
       .tag.met {
         color: var(--accent);
         border-color: var(--accent);
+      }
+
+      .rosterhead {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 0 0 8px;
+      }
+      .chips {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        margin: 0 0 22px;
+      }
+      .chip {
+        font: inherit;
+        font-size: 13.5px;
+        color: var(--ink);
+        background: none;
+        cursor: pointer;
+        border: 1px solid var(--rule);
+        padding: 3px 9px;
+      }
+      .chip:hover,
+      .chip.on {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      .chip.following {
+        border-style: dashed;
+      }
+      .chip .aff {
+        color: var(--faint);
+        font-size: 11.5px;
       }
       .meta {
         font-family: "IBM Plex Mono", monospace;
