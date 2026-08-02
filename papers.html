@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hallway Proceedings — papers from people I met</title>
+<meta name="description" content="A living table of contents: new papers from researchers Antonio Lopardo met at ACL 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf5ec; --ink:#181410; --faint:#6f6353;
+    --rule:#d8cdbb; --accent:#bc3417; --accent-2:#274690;
+    --hl:#f3e8cf;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#161310; --ink:#ece4d4; --faint:#9c8f7a;
+      --rule:#3a332a; --accent:#e8603f; --accent-2:#7d9be0;
+      --hl:#2a241b;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Newsreader",Georgia,serif; font-size:17px; line-height:1.5;
+    /* faint paper grain */
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--accent); color:var(--paper)}
+  .wrap{max-width:860px; margin:0 auto; padding:0 20px 96px}
+
+  /* ── Masthead ─────────────────────────────── */
+  header{padding:56px 0 0}
+  .overline{
+    font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--faint); display:flex; gap:1em; flex-wrap:wrap;
+  }
+  .overline .dot{color:var(--accent)}
+  h1{
+    font-family:"Fraunces",serif; font-weight:850; font-variation-settings:"opsz" 100;
+    font-size:clamp(44px,9vw,88px); line-height:.95; letter-spacing:-.02em;
+    margin:.25em 0 .15em;
+  }
+  h1 .amp{color:var(--accent); font-style:italic; font-weight:400}
+  .standfirst{
+    font-size:19px; font-style:italic; color:var(--faint); max-width:34em; margin:0 0 22px;
+  }
+  .standfirst a{color:var(--accent-2)}
+  .rule-thick{border:0; border-top:3px solid var(--ink); margin:0 0 2px}
+  .rule-thin{border:0; border-top:1px solid var(--ink); margin:0 0 26px}
+
+  /* ── Controls ─────────────────────────────── */
+  .controls{
+    display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+    font-family:"IBM Plex Mono",monospace; font-size:12.5px; margin-bottom:34px;
+  }
+  .controls input,.controls select{
+    font:inherit; color:var(--ink); background:transparent;
+    border:1px solid var(--rule); border-radius:0; padding:7px 10px; min-width:180px;
+  }
+  .controls input:focus,.controls select:focus{outline:2px solid var(--accent); outline-offset:1px}
+  .count{margin-left:auto; color:var(--faint); letter-spacing:.08em}
+
+  /* ── Month sections ───────────────────────── */
+  .month{
+    font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.28em;
+    text-transform:uppercase; color:var(--faint);
+    display:flex; align-items:center; gap:14px; margin:44px 0 10px;
+  }
+  .month::after{content:""; flex:1; border-top:1px solid var(--rule)}
+
+  /* ── Entries: proceedings TOC ─────────────── */
+  ol{list-style:none; margin:0; padding:0}
+  .entry{
+    display:grid; grid-template-columns:52px 1fr; gap:0 14px;
+    padding:16px 6px 15px; border-bottom:1px solid var(--rule);
+    opacity:0; transform:translateY(8px); animation:rise .5s ease forwards;
+  }
+  @keyframes rise{to{opacity:1; transform:none}}
+  .num{
+    font-family:"Fraunces",serif; font-weight:300; font-style:italic;
+    font-size:26px; color:var(--faint); line-height:1.15; transition:color .15s;
+  }
+  .entry:hover .num{color:var(--accent)}
+  .entry h2{
+    font-family:"Fraunces",serif; font-weight:640; font-size:21px; line-height:1.22;
+    margin:0 0 5px; letter-spacing:-.01em;
+  }
+  .entry h2 a{color:inherit; text-decoration:none; background:
+    linear-gradient(var(--accent),var(--accent)) left 1.12em/0 1px no-repeat}
+  .entry h2 a:hover{background-size:100% 1px}
+  .byline{font-size:15.5px; color:var(--faint); margin:0 0 7px}
+  .byline .met{
+    color:var(--ink); background:var(--hl); padding:0 .25em;
+    box-shadow:inset 0 -2px 0 var(--accent);
+  }
+  .meta{
+    font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.04em;
+    color:var(--faint); display:flex; gap:1.4em; flex-wrap:wrap; align-items:baseline;
+  }
+  .meta .venue{text-transform:uppercase; letter-spacing:.14em}
+  .meta a{color:var(--accent-2); text-decoration:none; border-bottom:1px solid transparent}
+  .meta a:hover{border-bottom-color:var(--accent-2)}
+  .meta a.alpha{color:var(--accent); font-weight:500}
+  .meta a.alpha:hover{border-bottom-color:var(--accent)}
+
+  .empty,.loading{
+    font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--faint);
+    padding:60px 0; text-align:center; letter-spacing:.08em;
+  }
+  footer{
+    margin-top:70px; font-family:"IBM Plex Mono",monospace; font-size:11px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--faint);
+    display:flex; justify-content:space-between; gap:1em; flex-wrap:wrap;
+  }
+  footer a{color:var(--accent-2); text-decoration:none}
+  @media (max-width:560px){
+    .entry{grid-template-columns:1fr}
+    .num{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="overline">
+      <span>Antonio Lopardo</span><span class="dot">●</span>
+      <span>Field notes</span><span class="dot">●</span>
+      <span>ACL 2026, San Diego</span>
+    </div>
+    <h1>Hallway <span class="amp">&amp;</span> Proceedings</h1>
+    <p class="standfirst">
+      A living table of contents: the last year of papers from researchers I actually met —
+      over tacos, on a carrier deck, at the poster board. Updated daily from
+      <a href="/assets/feeds/people-met-papers.xml">this RSS feed</a>.
+    </p>
+    <hr class="rule-thick"><hr class="rule-thin">
+  </header>
+
+  <div class="controls">
+    <input id="q" type="search" placeholder="search titles &amp; authors…" aria-label="Search papers">
+    <select id="who" aria-label="Filter by person met"><option value="">everyone I met</option></select>
+    <span class="count" id="count"></span>
+  </div>
+
+  <main id="list"><div class="loading">FETCHING THE PROCEEDINGS…</div></main>
+
+  <footer>
+    <span>Source: Semantic Scholar</span>
+    <span><a href="/assets/feeds/people-met-papers.xml">RSS</a> · refreshed daily 06:00 CET</span>
+  </footer>
+</div>
+
+<script>
+(async function(){
+  const list = document.getElementById('list');
+  const q = document.getElementById('q');
+  const who = document.getElementById('who');
+  const count = document.getElementById('count');
+  const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  let items = [];
+
+  try{
+    const res = await fetch('/assets/feeds/people-met-papers.xml', {cache:'no-cache'});
+    const xml = new DOMParser().parseFromString(await res.text(), 'application/xml');
+    items = [...xml.querySelectorAll('item')].map(it => {
+      const g = t => (it.querySelector(t)?.textContent || '').trim();
+      const desc = g('description');
+      const met = (desc.match(/\(Met: ([^)]+)\)/) || [,''])[1];
+      const arxiv = (desc.match(/arXiv:([\w.\/-]+)/) || [,''])[1];
+      const authors = (desc.match(/^By ([^.]+)\./) || [,''])[1];
+      const venue = (desc.match(/\.\s*([^.]*?)\.\s*\(Met:/) || [,''])[1].trim();
+      return {title:g('title'), link:g('link'), date:new Date(g('pubDate')), met, arxiv, authors, venue};
+    }).filter(p => p.title);
+  }catch(e){
+    list.innerHTML = '<div class="empty">COULD NOT LOAD THE FEED — TRY A HARD REFRESH.</div>';
+    return;
+  }
+
+  // person filter options
+  [...new Set(items.flatMap(p => p.met.split(', ').filter(Boolean)))].sort()
+    .forEach(n => who.append(new Option(n, n)));
+
+  function markMet(authors, met){
+    let out = authors;
+    met.split(', ').filter(Boolean).forEach(name => {
+      const esc = name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      out = out.replace(new RegExp(esc,'i'), m => `<span class="met">${m}</span>`);
+    });
+    return out;
+  }
+
+  function render(){
+    const term = q.value.toLowerCase();
+    const person = who.value;
+    const shown = items.filter(p =>
+      (!person || p.met.includes(person)) &&
+      (!term || (p.title + ' ' + p.authors).toLowerCase().includes(term)));
+    count.textContent = shown.length + ' / ' + items.length;
+    if(!shown.length){ list.innerHTML = '<div class="empty">NOTHING MATCHES.</div>'; return; }
+
+    let html = '', lastMonth = '', n = 0;
+    for(const p of shown){
+      const mk = isNaN(p.date) ? 'Undated' : MONTHS[p.date.getMonth()] + ' ' + p.date.getFullYear();
+      if(mk !== lastMonth){ html += (lastMonth?'</ol>':'') + `<div class="month">${mk}</div><ol>`; lastMonth = mk; }
+      n++;
+      const links = [
+        p.arxiv ? `<a class="alpha" href="https://www.alphaxiv.org/abs/${p.arxiv}" target="_blank" rel="noopener">alphaXiv</a>` : '',
+        p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" target="_blank" rel="noopener">arXiv</a>` : '',
+        p.link ? `<a href="${p.link}" target="_blank" rel="noopener">S2</a>` : ''
+      ].filter(Boolean).join(' ');
+      html += `<li class="entry" style="animation-delay:${Math.min(n*35,600)}ms">
+        <span class="num">${String(n).padStart(2,'0')}</span>
+        <div>
+          <h2><a href="${p.link || '#'}" target="_blank" rel="noopener">${p.title}</a></h2>
+          <p class="byline">${markMet(p.authors, p.met)}</p>
+          <div class="meta">
+            ${p.venue ? `<span class="venue">${p.venue}</span>` : ''}
+            <span>${isNaN(p.date) ? '' : p.date.toISOString().slice(0,10)}</span>
+            ${links}
+          </div>
+        </div>
+      </li>`;
+    }
+    list.innerHTML = html + '</ol>';
+  }
+
+  q.addEventListener('input', render);
+  who.addEventListener('change', render);
+  render();
+})();
+</script>
+</body>
+</html>
