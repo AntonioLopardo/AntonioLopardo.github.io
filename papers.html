@@ -100,6 +100,10 @@
     box-shadow:inset 0 -2px 0 var(--accent);
   }
   .byline .via{font-style:italic}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;border:1px solid var(--rule);padding:1px 5px;color:var(--faint);
+    margin-left:.45em;vertical-align:.14em}
+  .tag.met{color:var(--accent);border-color:var(--accent)}
   .meta{
     font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.04em;
     color:var(--faint); display:flex; gap:1.4em; flex-wrap:wrap; align-items:baseline;
@@ -143,7 +147,8 @@
 
   <div class="controls">
     <input id="q" type="search" placeholder="search titles &amp; authors…" aria-label="Search papers">
-    <select id="who" aria-label="Filter by person met"><option value="">everyone I met</option></select>
+    <select id="rel" aria-label="Filter by relationship"><option value="">met &amp; followed</option><option value="met">met in person</option><option value="following">following only</option></select>
+    <select id="who" aria-label="Filter by person"><option value="">everyone</option></select>
     <span class="count" id="count"></span>
   </div>
 
@@ -160,6 +165,7 @@
   const list = document.getElementById('list');
   const q = document.getElementById('q');
   const who = document.getElementById('who');
+  const rel = document.getElementById('rel');
   const count = document.getElementById('count');
   const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   let items = [];
@@ -178,13 +184,15 @@
       const authors = px('authors') || (desc.match(/^By (.+?)\.\s/) || [,''])[1];
       const venue = px('venue');
       const exact = px('date'), year = px('year');
+      const rels = Object.fromEntries(px('relationships').split('|').filter(Boolean)
+                                        .map(s => s.split('=')));
       // Three date precisions — exact month, year-only, unknown. Never invent a month.
       let bucket;
       if(exact){ const d = new Date(exact);
         bucket = {key:exact, label:MONTHS[d.getMonth()]+' '+d.getFullYear(), shown:exact}; }
       else if(year){ bucket = {key:year+'-00', label:year+' · month unknown', shown:year}; }
       else { bucket = {key:'', label:'Date unknown', shown:''}; }
-      return {title:g('title'), link:g('link'), bucket, met, arxiv, authors, venue};
+      return {title:g('title'), link:g('link'), bucket, met, arxiv, authors, venue, rels};
     }).filter(p => p.title).sort((a,b) => b.bucket.key.localeCompare(a.bucket.key));
   }catch(e){
     list.innerHTML = '<div class="empty">COULD NOT LOAD THE FEED — TRY A HARD REFRESH.</div>';
@@ -197,7 +205,10 @@
 
   // Highlight the person I met inside the author list. S2 often abbreviates first names
   // ("A. Gupta"), so fall back to a surname match before giving up.
-  function markMet(authors, met){
+  const badge = (name, rels) =>
+    `<span class="tag ${(rels||{})[name]==='met'?'met':''}">${(rels||{})[name]==='met'?'met':'follow'}</span>`;
+
+  function markMet(authors, met, rels){
     let out = authors || '';
     const unmatched = [];
     met.split(', ').filter(Boolean).forEach(name => {
@@ -205,12 +216,12 @@
       const surname = name.trim().split(/\s+/).pop();
       let re = new RegExp(esc(name),'i');
       if(!re.test(out)) re = new RegExp('[\\w.\'-]+\\s+' + esc(surname),'i');
-      if(re.test(out)) out = out.replace(re, m => `<span class="met">${m}</span>`);
+      if(re.test(out)) out = out.replace(re, m => `<span class="met">${m}</span>`+badge(name,rels));
       else unmatched.push(name);
     });
     // Never leave the connection invisible — name the contact explicitly if not found.
     if(unmatched.length){
-      const via = unmatched.map(n => `<span class="met">${n}</span>`).join(', ');
+      const via = unmatched.map(n => `<span class="met">${n}</span>`+badge(n,rels)).join(', ');
       out = out ? `${out} <span class="via">— via ${via}</span>` : `<span class="via">via ${via}</span>`;
     }
     return out;
@@ -218,8 +229,9 @@
 
   function render(){
     const term = q.value.toLowerCase();
-    const person = who.value;
+    const person = who.value, relf = rel.value;
     const shown = items.filter(p =>
+      (!relf || p.met.split(', ').some(n => (p.rels||{})[n] === relf)) &&
       (!person || p.met.includes(person)) &&
       (!term || (p.title + ' ' + p.authors).toLowerCase().includes(term)));
     count.textContent = shown.length + ' / ' + items.length;
@@ -239,7 +251,7 @@
         <span class="num">${String(n).padStart(2,'0')}</span>
         <div>
           <h2><a href="${p.link || '#'}" target="_blank" rel="noopener">${p.title}</a></h2>
-          <p class="byline">${markMet(p.authors, p.met)}</p>
+          <p class="byline">${markMet(p.authors, p.met, p.rels)}</p>
           <div class="meta">
             ${p.venue ? `<span class="venue">${p.venue}</span>` : ''}
             <span>${p.bucket.shown}</span>
@@ -253,6 +265,7 @@
 
   q.addEventListener('input', render);
   who.addEventListener('change', render);
+  rel.addEventListener('change', render);
   render();
 })();
 </script>
