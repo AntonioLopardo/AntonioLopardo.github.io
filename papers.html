@@ -97,6 +97,7 @@
     color:var(--ink); background:var(--hl); padding:0 .25em;
     box-shadow:inset 0 -2px 0 var(--accent);
   }
+  .byline .via{font-style:italic}
   .meta{
     font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.04em;
     color:var(--faint); display:flex; gap:1.4em; flex-wrap:wrap; align-items:baseline;
@@ -164,13 +165,16 @@
   try{
     const res = await fetch('/assets/feeds/people-met-papers.xml', {cache:'no-cache'});
     const xml = new DOMParser().parseFromString(await res.text(), 'application/xml');
+    const NS = 'https://antoniolopardo.github.io/ns/paper-watch';
     items = [...xml.querySelectorAll('item')].map(it => {
       const g = t => (it.querySelector(t)?.textContent || '').trim();
+      // Prefer structured pw:* fields; fall back to parsing the description (older feeds).
+      const px = t => (it.getElementsByTagNameNS(NS, t)[0]?.textContent || '').trim();
       const desc = g('description');
-      const met = (desc.match(/\(Met: ([^)]+)\)/) || [,''])[1];
-      const arxiv = (desc.match(/arXiv:([\w.\/-]+)/) || [,''])[1];
-      const authors = (desc.match(/^By ([^.]+)\./) || [,''])[1];
-      const venue = (desc.match(/\.\s*([^.]*?)\.\s*\(Met:/) || [,''])[1].trim();
+      const met = px('met') || (desc.match(/\(Met: ([^)]+)\)/) || [,''])[1];
+      const arxiv = px('arxiv') || (desc.match(/arXiv:([\w.\/-]+)/) || [,''])[1];
+      const authors = px('authors') || (desc.match(/^By (.+?)\.\s/) || [,''])[1];
+      const venue = px('venue');
       return {title:g('title'), link:g('link'), date:new Date(g('pubDate')), met, arxiv, authors, venue};
     }).filter(p => p.title);
   }catch(e){
@@ -182,12 +186,24 @@
   [...new Set(items.flatMap(p => p.met.split(', ').filter(Boolean)))].sort()
     .forEach(n => who.append(new Option(n, n)));
 
+  // Highlight the person I met inside the author list. S2 often abbreviates first names
+  // ("A. Gupta"), so fall back to a surname match before giving up.
   function markMet(authors, met){
-    let out = authors;
+    let out = authors || '';
+    const unmatched = [];
     met.split(', ').filter(Boolean).forEach(name => {
-      const esc = name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-      out = out.replace(new RegExp(esc,'i'), m => `<span class="met">${m}</span>`);
+      const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const surname = name.trim().split(/\s+/).pop();
+      let re = new RegExp(esc(name),'i');
+      if(!re.test(out)) re = new RegExp('[\\w.\'-]+\\s+' + esc(surname),'i');
+      if(re.test(out)) out = out.replace(re, m => `<span class="met">${m}</span>`);
+      else unmatched.push(name);
     });
+    // Never leave the connection invisible — name the contact explicitly if not found.
+    if(unmatched.length){
+      const via = unmatched.map(n => `<span class="met">${n}</span>`).join(', ');
+      out = out ? `${out} <span class="via">— via ${via}</span>` : `<span class="via">via ${via}</span>`;
+    }
     return out;
   }
 
