@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Sun, 02 Aug 2026 20:13:00 +0000</lastBuildDate>
+<lastBuildDate>Mon, 03 Aug 2026 04:10:31 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -2068,6 +2068,20 @@
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv>2606.05646</pw:arxiv>
+<pw:date>2026-06-04</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Humans'ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration</title>
+<link>https://www.semanticscholar.org/paper/d0600cd5ad96a12f4d1e6e33cf9fafee5cf91a3c</link>
+<guid isPermaLink="false">d0600cd5ad96a12f4d1e6e33cf9fafee5cf91a3c</guid>
+<description>By Jiaju Chen, Yuxuan Lu, Jiayi Su, Chaoran Chen, Songlin Xiao, Zhengyou Zhang, Yun Wang, Yunyao Li, Jian Zhao, Tongshuang Wu et al.. . (Met: Yunyao Li) arXiv:2606.06388</description>
+<pw:authors>Jiaju Chen, Yuxuan Lu, Jiayi Su, Chaoran Chen, Songlin Xiao, Zhengyou Zhang, Yun Wang, Yunyao Li, Jian Zhao, Tongshuang Wu et al.</pw:authors>
+<pw:met>Yunyao Li</pw:met>
+<pw:relationships>Yunyao Li=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2606.06388</pw:arxiv>
 <pw:date>2026-06-04</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
@@ -15093,34 +15107,6 @@
 <pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Normalised Precision at Fixed Recall for Evaluating TAR</title>
-<link>https://www.semanticscholar.org/paper/790e6c00feaa43af13637441c36186549060af9b</link>
-<guid isPermaLink="false">790e6c00feaa43af13637441c36186549060af9b</guid>
-<description>By Wojciech Kusa, Georgios Peikos, Moritz Staudinger, Aldo Lipani, Allan Hanbury. International Conference on the Theory of Information Retrieval. (Met: Aldo Lipani)</description>
-<pw:authors>Wojciech Kusa, Georgios Peikos, Moritz Staudinger, Aldo Lipani, Allan Hanbury</pw:authors>
-<pw:met>Aldo Lipani</pw:met>
-<pw:relationships>Aldo Lipani=following</pw:relationships>
-<pw:venue>International Conference on the Theory of Information Retrieval</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-08-02</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>An Analysis of Stopping Strategies in Conversational Search Systems</title>
-<link>https://www.semanticscholar.org/paper/a8eb02289b9f158135b0e53eebe1d6f271d78048</link>
-<guid isPermaLink="false">a8eb02289b9f158135b0e53eebe1d6f271d78048</guid>
-<description>By Xiao Fu, María Pérez-Ortiz, Aldo Lipani. International Conference on the Theory of Information Retrieval. (Met: Aldo Lipani)</description>
-<pw:authors>Xiao Fu, María Pérez-Ortiz, Aldo Lipani</pw:authors>
-<pw:met>Aldo Lipani</pw:met>
-<pw:relationships>Aldo Lipani=following</pw:relationships>
-<pw:venue>International Conference on the Theory of Information Retrieval</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-08-02</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Shaping Shared Languages: Human and Large Language Models' Inductive Biases in Emergent Communication</title>
 <link>https://www.semanticscholar.org/paper/de3cefcd6d142afa8e7ac59523ceb116ec136248</link>
 <guid isPermaLink="false">de3cefcd6d142afa8e7ac59523ceb116ec136248</guid>
@@ -17053,6 +17039,20 @@
 <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>StorySparkQA: Expert-Annotated QA Pairs with Real-World Knowledge for Children’s Story-Based Learning</title>
+<link>https://www.semanticscholar.org/paper/384dd8509978e62cb9ada1279733de01fafeec47</link>
+<guid isPermaLink="false">384dd8509978e62cb9ada1279733de01fafeec47</guid>
+<description>By Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuanzhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Dakuo Wang, Yuling Sun. Conference on Empirical Methods in Natural Language Processing. (Met: Yunyao Li) arXiv:2311.09756</description>
+<pw:authors>Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuanzhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Dakuo Wang, Yuling Sun</pw:authors>
+<pw:met>Yunyao Li</pw:met>
+<pw:relationships>Yunyao Li=met</pw:relationships>
+<pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
+<pw:arxiv>2311.09756</pw:arxiv>
+<pw:date>2023-11-16</pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages</title>
 <link>https://www.semanticscholar.org/paper/70546742ecfeb46ff41be90d88a4d5c27c55ed2d</link>
 <guid isPermaLink="false">70546742ecfeb46ff41be90d88a4d5c27c55ed2d</guid>
@@ -17804,6 +17804,20 @@
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2305.13304</pw:arxiv>
+<pw:date>2023-05-22</pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Beyond Labels: Empowering Human Annotators with Natural Language Explanations through a Novel Active-Learning Architecture</title>
+<link>https://www.semanticscholar.org/paper/1e5add53dca5ca9315882b003dfbaa4b28d480f4</link>
+<guid isPermaLink="false">1e5add53dca5ca9315882b003dfbaa4b28d480f4</guid>
+<description>By Bingsheng Yao, Ishan Jindal, Lucian Popa, Yannis Katsis, Sayan Ghosh, Lihong He, Yuxuan Lu, Shashank Srivastava, Yunyao Li, James A. Hendler et al.. Conference on Empirical Methods in Natural Language Processing. (Met: Yunyao Li) arXiv:2305.12710</description>
+<pw:authors>Bingsheng Yao, Ishan Jindal, Lucian Popa, Yannis Katsis, Sayan Ghosh, Lihong He, Yuxuan Lu, Shashank Srivastava, Yunyao Li, James A. Hendler et al.</pw:authors>
+<pw:met>Yunyao Li</pw:met>
+<pw:relationships>Yunyao Li=met</pw:relationships>
+<pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
+<pw:arxiv>2305.12710</pw:arxiv>
 <pw:date>2023-05-22</pw:date>
 <pw:year>2023</pw:year>
 <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
@@ -19268,10 +19282,10 @@
 <title>Label Sleuth: From Unlabeled Text to a Classifier in a Few Hours</title>
 <link>https://www.semanticscholar.org/paper/6f00dceaf0717e83f3b75c209b48936db1faf4ac</link>
 <guid isPermaLink="false">6f00dceaf0717e83f3b75c209b48936db1faf4ac</guid>
-<description>By Eyal Shnarch, Alon Halfon, Ariel Gera, Marina Danilevsky, Yannis Katsis, Leshem Choshen, M. Cooper, Dina Epelboim, Zheng Zhang, Dakuo Wang et al.. Conference on Empirical Methods in Natural Language Processing. (Met: Leshem Choshen) arXiv:2208.01483</description>
+<description>By Eyal Shnarch, Alon Halfon, Ariel Gera, Marina Danilevsky, Yannis Katsis, Leshem Choshen, M. Cooper, Dina Epelboim, Zheng Zhang, Dakuo Wang et al.. Conference on Empirical Methods in Natural Language Processing. (Met: Leshem Choshen, Yunyao Li) arXiv:2208.01483</description>
 <pw:authors>Eyal Shnarch, Alon Halfon, Ariel Gera, Marina Danilevsky, Yannis Katsis, Leshem Choshen, M. Cooper, Dina Epelboim, Zheng Zhang, Dakuo Wang et al.</pw:authors>
-<pw:met>Leshem Choshen</pw:met>
-<pw:relationships>Leshem Choshen=met</pw:relationships>
+<pw:met>Leshem Choshen, Yunyao Li</pw:met>
+<pw:relationships>Leshem Choshen=met|Yunyao Li=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2208.01483</pw:arxiv>
 <pw:date>2022-08-02</pw:date>
