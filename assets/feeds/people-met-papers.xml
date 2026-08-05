@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Tue, 04 Aug 2026 04:09:52 +0000</lastBuildDate>
+<lastBuildDate>Wed, 05 Aug 2026 04:09:26 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1189,6 +1189,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Self-supervised DXA representations encode multi-system disease risk, biological aging and heritability</title>
+<link>https://www.semanticscholar.org/paper/1006651b762e229b32cc001bb287c3f607749447</link>
+<guid isPermaLink="false">1006651b762e229b32cc001bb287c3f607749447</guid>
+<description>By G. Sasson, Zachary Levine, S. Shilo, S. Kohn, G. Lutsker, A. Godneva, A. Gabet, D. Krongauz, A. Weinberger, Yann LeCun et al.. . (Met: Yann LeCun) arXiv:2608.02208</description>
+<pw:authors>G. Sasson, Zachary Levine, S. Shilo, S. Kohn, G. Lutsker, A. Godneva, A. Gabet, D. Krongauz, A. Weinberger, Yann LeCun et al.</pw:authors>
+<pw:met>Yann LeCun</pw:met>
+<pw:relationships>Yann LeCun=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.02208</pw:arxiv>
+<pw:date>2026-08-03</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph Joint-Embedding Predictive Learning</title>
+<link>https://www.semanticscholar.org/paper/f4578e2fa551e6b991125e5f8770212337476fee</link>
+<guid isPermaLink="false">f4578e2fa551e6b991125e5f8770212337476fee</guid>
+<description>By Ruichen Xu, Jingxiang Qu, Wenhan Gao, Jiaxing Zhang, Linsey Pang, Ravid Shwartz-Ziv, Yann LeCun, Yuefan Deng. . (Met: Yann LeCun) arXiv:2608.00491</description>
+<pw:authors>Ruichen Xu, Jingxiang Qu, Wenhan Gao, Jiaxing Zhang, Linsey Pang, Ravid Shwartz-Ziv, Yann LeCun, Yuefan Deng</pw:authors>
+<pw:met>Yann LeCun</pw:met>
+<pw:relationships>Yann LeCun=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.00491</pw:arxiv>
+<pw:date>2026-08-01</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Unpacking Open Source Artificial Intelligence: Toward a Framework for Openness in Foundation Models</title>
@@ -11605,20 +11633,6 @@
 <pw:date>2025-01-28</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>A benchmark of expert-level academic questions to assess AI capabilities</title>
-<link>https://www.semanticscholar.org/paper/f03e30892324210c9e481caa16a340e62183ef80</link>
-<guid isPermaLink="false">f03e30892324210c9e481caa16a340e62183ef80</guid>
-<description>By Long Alice Nathaniel Adam Ryan Richard Jason Oliver Man Phan Gatti Li Khoja Kim Ren Hausenloy Zhang Mazeik, Long Phan, Alice Gatti, Nathaniel Li, Adam Khoja, Ryan Kim, Richard Ren, Jason Hausenloy, Oliver Zhang, Mantas Mazeika et al.. Nature. (Met: Alessandro Stolfo) arXiv:2501.14249</description>
-<pw:authors>Long Alice Nathaniel Adam Ryan Richard Jason Oliver Man Phan Gatti Li Khoja Kim Ren Hausenloy Zhang Mazeik, Long Phan, Alice Gatti, Nathaniel Li, Adam Khoja, Ryan Kim, Richard Ren, Jason Hausenloy, Oliver Zhang, Mantas Mazeika et al.</pw:authors>
-<pw:met>Alessandro Stolfo</pw:met>
-<pw:relationships>Alessandro Stolfo=met</pw:relationships>
-<pw:venue>Nature</pw:venue>
-<pw:arxiv>2501.14249</pw:arxiv>
-<pw:date>2025-01-24</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Fairness of Deep Ensembles: On the interplay between per-group task difficulty and under-representation</title>
