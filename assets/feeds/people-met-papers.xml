@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Wed, 05 Aug 2026 04:09:26 +0000</lastBuildDate>
+<lastBuildDate>Thu, 06 Aug 2026 04:07:37 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1189,6 +1189,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>string2string Studio: An Interactive, In-Browser Platform for String-to-String Algorithms</title>
+<link>https://www.semanticscholar.org/paper/c9053f9b455780e418fd9e925ae07506a72118b8</link>
+<guid isPermaLink="false">c9053f9b455780e418fd9e925ae07506a72118b8</guid>
+<description>By Mirac Suzgun, James Zou, Stuart M. Shieber, Dan Jurafsky. . (Met: Dan Jurafsky) arXiv:2608.03984</description>
+<pw:authors>Mirac Suzgun, James Zou, Stuart M. Shieber, Dan Jurafsky</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.03984</pw:arxiv>
+<pw:date>2026-08-04</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Dynamically Allocating Evaluation Effort for Model Ranking</title>
+<link>https://www.semanticscholar.org/paper/d0dab95e0c62b85ee78bfa45e737e354a85647c2</link>
+<guid isPermaLink="false">d0dab95e0c62b85ee78bfa45e737e354a85647c2</guid>
+<description>By Vilém Zouhar, Julia Kreutzer, A. Lavie, Tom Kocmi, Matt Post, Ondrej Bojar, Mrinmaya Sachan. . (Met: Mrinmaya Sachan) arXiv:2608.03437</description>
+<pw:authors>Vilém Zouhar, Julia Kreutzer, A. Lavie, Tom Kocmi, Matt Post, Ondrej Bojar, Mrinmaya Sachan</pw:authors>
+<pw:met>Mrinmaya Sachan</pw:met>
+<pw:relationships>Mrinmaya Sachan=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.03437</pw:arxiv>
+<pw:date>2026-08-04</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Self-supervised DXA representations encode multi-system disease risk, biological aging and heritability</title>
