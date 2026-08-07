@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Thu, 06 Aug 2026 04:07:37 +0000</lastBuildDate>
+<lastBuildDate>Fri, 07 Aug 2026 04:07:39 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -7984,8 +7984,8 @@
 <title>Devstral: Fine-tuning Language Models for Coding Agent Applications</title>
 <link>https://www.semanticscholar.org/paper/f91ff621fa356aa0c1bf40ab907bf659259857ab</link>
 <guid isPermaLink="false">f91ff621fa356aa0c1bf40ab907bf659259857ab</guid>
-<description>By Abhinav Rastogi, Adam Yang, Albert Q. Jiang, Alexander Liu, Alexandre Sablayrolles, Am'elie H'eliou, Am'elie Martin, Anmol Agarwal, Andy Ehrenberg, A. Lo et al.. arXiv.org. (Met: Graham Neubig) arXiv:2509.25193</description>
-<pw:authors>Abhinav Rastogi, Adam Yang, Albert Q. Jiang, Alexander Liu, Alexandre Sablayrolles, Am'elie H'eliou, Am'elie Martin, Anmol Agarwal, Andy Ehrenberg, A. Lo et al.</pw:authors>
+<description>By Abhinav Rastogi, Adam Yang, Albert Q. Jiang, Alexander Liu, Alexandre Sablayrolles, A. Héliou, Am'elie Martin, Anmol Agarwal, Andy Ehrenberg, A. Lo et al.. arXiv.org. (Met: Graham Neubig) arXiv:2509.25193</description>
+<pw:authors>Abhinav Rastogi, Adam Yang, Albert Q. Jiang, Alexander Liu, Alexandre Sablayrolles, A. Héliou, Am'elie Martin, Anmol Agarwal, Andy Ehrenberg, A. Lo et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -11439,20 +11439,6 @@
 <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Rethinking Word Similarity: Semantic Similarity through Classification Confusion</title>
-<link>https://www.semanticscholar.org/paper/3df24b7abb5a1a0a0c272ccb1bf7885fca436524</link>
-<guid isPermaLink="false">3df24b7abb5a1a0a0c272ccb1bf7885fca436524</guid>
-<description>By Kaitlyn Zhou, Haishan Gao, Sarah Chen, Dan Edelstein, Dan Jurafsky, C. Shani. North American Chapter of the Association for Computational Linguistics. (Met: Dan Jurafsky) arXiv:2502.05704</description>
-<pw:authors>Kaitlyn Zhou, Haishan Gao, Sarah Chen, Dan Edelstein, Dan Jurafsky, C. Shani</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>North American Chapter of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2502.05704</pw:arxiv>
-<pw:date>2025-02-08</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Causality can systematically address the monsters under the bench(marks)</title>
 <link>https://www.semanticscholar.org/paper/16275fa4d392bb502d1f532a67ce8cda05e3f7ec</link>
 <guid isPermaLink="false">16275fa4d392bb502d1f532a67ce8cda05e3f7ec</guid>
@@ -14144,8 +14130,8 @@
 <title>LiveXiv - A Multi-Modal Live Benchmark Based on Arxiv Papers Content</title>
 <link>https://www.semanticscholar.org/paper/22a226ce5e9fda1947cd26b72ef542e197e2329a</link>
 <guid isPermaLink="false">22a226ce5e9fda1947cd26b72ef542e197e2329a</guid>
-<description>By Nimrod Shabtay, Felipe Maia Polo, Sivan Doveh, Wei Lin, M. Mirza, Leshem Choshen, M. Yurochkin, Yuekai Sun, Assaf Arbelle, Leonid Karlinsky et al.. International Conference on Learning Representations. (Met: Leshem Choshen) arXiv:2410.10783</description>
-<pw:authors>Nimrod Shabtay, Felipe Maia Polo, Sivan Doveh, Wei Lin, M. Mirza, Leshem Choshen, M. Yurochkin, Yuekai Sun, Assaf Arbelle, Leonid Karlinsky et al.</pw:authors>
+<description>By Nimrod Shabtay, Felipe Maia Polo, Sivan Doveh, Wei Lin, M. J. Mirza, Leshem Choshen, M. Yurochkin, Yuekai Sun, Assaf Arbelle, Leonid Karlinsky et al.. International Conference on Learning Representations. (Met: Leshem Choshen) arXiv:2410.10783</description>
+<pw:authors>Nimrod Shabtay, Felipe Maia Polo, Sivan Doveh, Wei Lin, M. J. Mirza, Leshem Choshen, M. Yurochkin, Yuekai Sun, Assaf Arbelle, Leonid Karlinsky et al.</pw:authors>
 <pw:met>Leshem Choshen</pw:met>
 <pw:relationships>Leshem Choshen=met</pw:relationships>
 <pw:venue>International Conference on Learning Representations</pw:venue>
@@ -15133,20 +15119,6 @@
 <pw:date>2024-08-07</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Data Checklist: On Unit-Testing Datasets with Usable Information</title>
-<link>https://www.semanticscholar.org/paper/62f25b86bd88a7cfca6625113f287b1d409845da</link>
-<guid isPermaLink="false">62f25b86bd88a7cfca6625113f287b1d409845da</guid>
-<description>By Heidi C. Zhang, Shabnam Behzad, Kawin Ethayarajh, Dan Jurafsky. arXiv.org. (Met: Dan Jurafsky) arXiv:2408.02919</description>
-<pw:authors>Heidi C. Zhang, Shabnam Behzad, Kawin Ethayarajh, Dan Jurafsky</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.02919</pw:arxiv>
-<pw:date>2024-08-06</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 06 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Shaping Shared Languages: Human and Large Language Models' Inductive Biases in Emergent Communication</title>
