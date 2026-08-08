@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Fri, 07 Aug 2026 04:07:39 +0000</lastBuildDate>
+<lastBuildDate>Sat, 08 Aug 2026 04:07:58 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -879,6 +879,19 @@
 <pw:year></pw:year>
 </item>
 <item>
+<title>Analysis of Sycophancy Across Question-ing Styles A Comparative Study of Sycophancy Across Prompting Architectures and Large Language Models</title>
+<link>https://www.semanticscholar.org/paper/3b55f9b1d4d6321e0b6b02c97a57b6be951a11a1</link>
+<guid isPermaLink="false">3b55f9b1d4d6321e0b6b02c97a57b6be951a11a1</guid>
+<description>By Antia Alonso Cancela, Tom Kouwenhoven, Michiel van der Meer. . (Met: Michiel van der Meer, Tom Kouwenhoven)</description>
+<pw:authors>Antia Alonso Cancela, Tom Kouwenhoven, Michiel van der Meer</pw:authors>
+<pw:met>Michiel van der Meer, Tom Kouwenhoven</pw:met>
+<pw:relationships>Michiel van der Meer=met|Tom Kouwenhoven=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
 <title>Extracting a Prototypical Argumentative Pattern in Financial Q&amp;As</title>
 <link>https://www.semanticscholar.org/paper/51ee03c9a36c4f963f62a8aa073f01a15ade7240</link>
 <guid isPermaLink="false">51ee03c9a36c4f963f62a8aa073f01a15ade7240</guid>
@@ -1189,6 +1202,20 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Is Self-Pretraining really useful to improve diagnosis in medical Time Series?</title>
+<link>https://www.semanticscholar.org/paper/309462e765c728a9c392a17fea3defb2531b57b7</link>
+<guid isPermaLink="false">309462e765c728a9c392a17fea3defb2531b57b7</guid>
+<description>By Omar Coser, Antonio Orvieto, P. Soda, Loredana Zollo. . (Met: Antonio Orvieto) arXiv:2608.06122</description>
+<pw:authors>Omar Coser, Antonio Orvieto, P. Soda, Loredana Zollo</pw:authors>
+<pw:met>Antonio Orvieto</pw:met>
+<pw:relationships>Antonio Orvieto=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.06122</pw:arxiv>
+<pw:date>2026-08-06</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>string2string Studio: An Interactive, In-Browser Platform for String-to-String Algorithms</title>
@@ -15091,34 +15118,6 @@
 <pw:date>2024-08-08</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Could ChatGPT get an engineering degree? Evaluating higher education vulnerability to AI assistants</title>
-<link>https://www.semanticscholar.org/paper/547e851bd281ba396e92999c3a749edfd5530f85</link>
-<guid isPermaLink="false">547e851bd281ba396e92999c3a749edfd5530f85</guid>
-<description>By Beatriz Borges, Negar Foroutan, Deniz Bayazit, A. Sotnikova, Syrielle Montariol, Tanya Nazaretzky, Mohammadreza Banaei, Alireza Sakhaeirad, Philippe Servant, Seyed Parsa Neshaei et al.. Proceedings of the National Academy of Sciences of the United States of America. (Met: Antoine Bosselut) arXiv:2408.11841</description>
-<pw:authors>Beatriz Borges, Negar Foroutan, Deniz Bayazit, A. Sotnikova, Syrielle Montariol, Tanya Nazaretzky, Mohammadreza Banaei, Alireza Sakhaeirad, Philippe Servant, Seyed Parsa Neshaei et al.</pw:authors>
-<pw:met>Antoine Bosselut</pw:met>
-<pw:relationships>Antoine Bosselut=following</pw:relationships>
-<pw:venue>Proceedings of the National Academy of Sciences of the United States of America</pw:venue>
-<pw:arxiv>2408.11841</pw:arxiv>
-<pw:date>2024-08-07</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>A Logical Fallacy-Informed Framework for Argument Generation</title>
-<link>https://www.semanticscholar.org/paper/68125cedd3c5a77c8c9268503e83932cc9ac9c5d</link>
-<guid isPermaLink="false">68125cedd3c5a77c8c9268503e83932cc9ac9c5d</guid>
-<description>By Luca Mouchel, Debjit Paul, Shaobo Cui, Robert West, Antoine Bosselut, Boi Faltings. North American Chapter of the Association for Computational Linguistics. (Met: Antoine Bosselut) arXiv:2408.03618</description>
-<pw:authors>Luca Mouchel, Debjit Paul, Shaobo Cui, Robert West, Antoine Bosselut, Boi Faltings</pw:authors>
-<pw:met>Antoine Bosselut</pw:met>
-<pw:relationships>Antoine Bosselut=following</pw:relationships>
-<pw:venue>North American Chapter of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2408.03618</pw:arxiv>
-<pw:date>2024-08-07</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Shaping Shared Languages: Human and Large Language Models' Inductive Biases in Emergent Communication</title>
