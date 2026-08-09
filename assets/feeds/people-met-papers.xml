@@ -3,7 +3,7 @@
 <title>Papers from people I've met</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Sat, 08 Aug 2026 04:07:58 +0000</lastBuildDate>
+<lastBuildDate>Sun, 09 Aug 2026 04:08:58 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -585,19 +585,6 @@
 <guid isPermaLink="false">61e7f55d114c84c3c17adefefec84302f8389b9e</guid>
 <description>By Chen Bo, Calvin Zhang, G. Ramponi. . (Met: Giorgia Ramponi)</description>
 <pw:authors>Chen Bo, Calvin Zhang, G. Ramponi</pw:authors>
-<pw:met>Giorgia Ramponi</pw:met>
-<pw:relationships>Giorgia Ramponi=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
-<title>Non-Rectangular Robust MDPs with Normed Uncertainty Sets</title>
-<link>https://www.semanticscholar.org/paper/6d19be3ea99e2ca97b3bedd9220ce385b81cb20a</link>
-<guid isPermaLink="false">6d19be3ea99e2ca97b3bedd9220ce385b81cb20a</guid>
-<description>By Navdeep Kumar, Technion Adarsh, Gupta Finsynth, Aidene Mohamed, Elfatihi, G. Ramponi, K. Levy, Shie Mannor Technion. . (Met: Giorgia Ramponi)</description>
-<pw:authors>Navdeep Kumar, Technion Adarsh, Gupta Finsynth, Aidene Mohamed, Elfatihi, G. Ramponi, K. Levy, Shie Mannor Technion</pw:authors>
 <pw:met>Giorgia Ramponi</pw:met>
 <pw:relationships>Giorgia Ramponi=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -1213,6 +1200,20 @@
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv>2608.06122</pw:arxiv>
+<pw:date>2026-08-06</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Mortality Research With Artificial Intelligence Tools: Applying Language Models to the National Violent Death Reporting System Suicide Narratives, 2003-2023.</title>
+<link>https://www.semanticscholar.org/paper/aab56dbd09e8bc7395d256751e79a256a99920b4</link>
+<guid isPermaLink="false">aab56dbd09e8bc7395d256751e79a256a99920b4</guid>
+<description>By J. Blosnich, Jaspreet Ranjit, Swabha Swayamdipta. American Journal of Public Health. (Met: Swabha Swayamdipta)</description>
+<pw:authors>J. Blosnich, Jaspreet Ranjit, Swabha Swayamdipta</pw:authors>
+<pw:met>Swabha Swayamdipta</pw:met>
+<pw:relationships>Swabha Swayamdipta=following</pw:relationships>
+<pw:venue>American Journal of Public Health</pw:venue>
+<pw:arxiv></pw:arxiv>
 <pw:date>2026-08-06</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Thu, 06 Aug 2026 00:00:00 +0000</pubDate>
@@ -6555,11 +6556,11 @@
 <title>Measuring what Matters: Construct Validity in Large Language Model Benchmarks</title>
 <link>https://www.semanticscholar.org/paper/2d23402001da59509b1bc8ee629491e33f5cbbbf</link>
 <guid isPermaLink="false">2d23402001da59509b1bc8ee629491e33f5cbbbf</guid>
-<description>By Andrew M. Bean, R. Kearns, Angelika Romanou, Franziska Sofia Hafner, Harry Mayne, Jan Batzner, Negar Foroutan, Chris Schmitz, Karolina Korgul, Hunar Batra et al.. arXiv.org. (Met: Antoine Bosselut, María Grandury) arXiv:2511.04703</description>
+<description>By Andrew M. Bean, R. Kearns, Angelika Romanou, Franziska Sofia Hafner, Harry Mayne, Jan Batzner, Negar Foroutan, Chris Schmitz, Karolina Korgul, Hunar Batra et al.. Advances in Neural Information Processing Systems 38. (Met: Antoine Bosselut, María Grandury) arXiv:2511.04703</description>
 <pw:authors>Andrew M. Bean, R. Kearns, Angelika Romanou, Franziska Sofia Hafner, Harry Mayne, Jan Batzner, Negar Foroutan, Chris Schmitz, Karolina Korgul, Hunar Batra et al.</pw:authors>
 <pw:met>Antoine Bosselut, María Grandury</pw:met>
 <pw:relationships>Antoine Bosselut=following|María Grandury=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2511.04703</pw:arxiv>
 <pw:date>2025-11-03</pw:date>
 <pw:year>2025</pw:year>
@@ -6611,11 +6612,11 @@
 <title>Are Language Models Efficient Reasoners? A Perspective from Logic Programming</title>
 <link>https://www.semanticscholar.org/paper/cc3d6dd74dbd162d1f9e2ebc6282ef16d59c4d3c</link>
 <guid isPermaLink="false">cc3d6dd74dbd162d1f9e2ebc6282ef16d59c4d3c</guid>
-<description>By Andreas Opedal, Yanick Zengaffinen, Haruki Shirakami, Clemente Pasti, Mrinmaya Sachan, Abulhair Saparov, Ryan Cotterell, Bernhard Scholkopf. arXiv.org. (Met: Andreas Opedal, Bernhard Schölkopf, Mrinmaya Sachan) arXiv:2510.25626</description>
+<description>By Andreas Opedal, Yanick Zengaffinen, Haruki Shirakami, Clemente Pasti, Mrinmaya Sachan, Abulhair Saparov, Ryan Cotterell, Bernhard Scholkopf. Advances in Neural Information Processing Systems 38. (Met: Andreas Opedal, Bernhard Schölkopf, Mrinmaya Sachan) arXiv:2510.25626</description>
 <pw:authors>Andreas Opedal, Yanick Zengaffinen, Haruki Shirakami, Clemente Pasti, Mrinmaya Sachan, Abulhair Saparov, Ryan Cotterell, Bernhard Scholkopf</pw:authors>
 <pw:met>Andreas Opedal, Bernhard Schölkopf, Mrinmaya Sachan</pw:met>
 <pw:relationships>Andreas Opedal=following|Bernhard Schölkopf=following|Mrinmaya Sachan=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2510.25626</pw:arxiv>
 <pw:date>2025-10-29</pw:date>
 <pw:year>2025</pw:year>
@@ -6793,11 +6794,11 @@
 <title>Explaining and Mitigating Crosslingual Tokenizer Inequities</title>
 <link>https://www.semanticscholar.org/paper/67a3b9bbbcfc3e95b7329246373e18c2762242f1</link>
 <guid isPermaLink="false">67a3b9bbbcfc3e95b7329246373e18c2762242f1</guid>
-<description>By Catherine Arnett, Tyler Chang, Stella Biderman, Benjamin K. Bergen. arXiv.org. (Met: Catherine Arnett) arXiv:2510.21909</description>
+<description>By Catherine Arnett, Tyler Chang, Stella Biderman, Benjamin K. Bergen. Advances in Neural Information Processing Systems 38. (Met: Catherine Arnett) arXiv:2510.21909</description>
 <pw:authors>Catherine Arnett, Tyler Chang, Stella Biderman, Benjamin K. Bergen</pw:authors>
 <pw:met>Catherine Arnett</pw:met>
 <pw:relationships>Catherine Arnett=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2510.21909</pw:arxiv>
 <pw:date>2025-10-24</pw:date>
 <pw:year>2025</pw:year>
@@ -7913,11 +7914,11 @@
 <title>Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size</title>
 <link>https://www.semanticscholar.org/paper/d1445a3a68c328592c21af3f5d79e926a201140b</link>
 <guid isPermaLink="false">d1445a3a68c328592c21af3f5d79e926a201140b</guid>
-<description>By Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi. arXiv.org. (Met: Antonio Orvieto) arXiv:2508.15071</description>
+<description>By Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi. Advances in Neural Information Processing Systems 38. (Met: Antonio Orvieto) arXiv:2508.15071</description>
 <pw:authors>Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2508.15071</pw:arxiv>
 <pw:date>2025-08-20</pw:date>
 <pw:year>2025</pw:year>
@@ -8235,11 +8236,11 @@
 <title>Personalized Exercise Recommendation with Semantically-Grounded Knowledge Tracing</title>
 <link>https://www.semanticscholar.org/paper/3cc6900f24c061d219285c875a65dd34ea476c2a</link>
 <guid isPermaLink="false">3cc6900f24c061d219285c875a65dd34ea476c2a</guid>
-<description>By Yilmazcan Özyurt, Tunaberk Almaci, S. Feuerriegel, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2507.11060</description>
+<description>By Yilmazcan Özyurt, Tunaberk Almaci, S. Feuerriegel, Mrinmaya Sachan. Advances in Neural Information Processing Systems 38. (Met: Mrinmaya Sachan) arXiv:2507.11060</description>
 <pw:authors>Yilmazcan Özyurt, Tunaberk Almaci, S. Feuerriegel, Mrinmaya Sachan</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2507.11060</pw:arxiv>
 <pw:date>2025-07-15</pw:date>
 <pw:year>2025</pw:year>
@@ -8417,11 +8418,11 @@
 <title>RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling</title>
 <link>https://www.semanticscholar.org/paper/d6b4f9d82d7cb59ed39ba20bc7f711e0e6e93dc5</link>
 <guid isPermaLink="false">d6b4f9d82d7cb59ed39ba20bc7f711e0e6e93dc5</guid>
-<description>By Xiuying Wei, Anunay Yadav, Razvan Pascanu, Caglar Gulcehre. . (Met: Caglar Gulcehre) arXiv:2507.04416</description>
+<description>By Xiuying Wei, Anunay Yadav, Razvan Pascanu, Caglar Gulcehre. Advances in Neural Information Processing Systems 38. (Met: Caglar Gulcehre) arXiv:2507.04416</description>
 <pw:authors>Xiuying Wei, Anunay Yadav, Razvan Pascanu, Caglar Gulcehre</pw:authors>
 <pw:met>Caglar Gulcehre</pw:met>
 <pw:relationships>Caglar Gulcehre=following</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2507.04416</pw:arxiv>
 <pw:date>2025-07-06</pw:date>
 <pw:year>2025</pw:year>
@@ -8669,11 +8670,11 @@
 <title>Broken Tokens? Your Language Model can Secretly Handle Non-Canonical Tokenizations</title>
 <link>https://www.semanticscholar.org/paper/5bec2a6df12e4cc6034490e400abecfc7ae090fb</link>
 <guid isPermaLink="false">5bec2a6df12e4cc6034490e400abecfc7ae090fb</guid>
-<description>By Brian Siyuan Zheng, Alisa Liu, Orevaoghene Ahia, J. Hayase, Yejin Choi, Noah A. Smith. arXiv.org. (Met: Alisa Liu) arXiv:2506.19004</description>
+<description>By Brian Siyuan Zheng, Alisa Liu, Orevaoghene Ahia, J. Hayase, Yejin Choi, Noah A. Smith. Advances in Neural Information Processing Systems 38. (Met: Alisa Liu) arXiv:2506.19004</description>
 <pw:authors>Brian Siyuan Zheng, Alisa Liu, Orevaoghene Ahia, J. Hayase, Yejin Choi, Noah A. Smith</pw:authors>
 <pw:met>Alisa Liu</pw:met>
 <pw:relationships>Alisa Liu=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2506.19004</pw:arxiv>
 <pw:date>2025-06-23</pw:date>
 <pw:year>2025</pw:year>
@@ -8697,11 +8698,11 @@
 <title>Better Language Model Inversion by Compactly Representing Next-Token Distributions</title>
 <link>https://www.semanticscholar.org/paper/5c70de0579aabf9aa00f5b8f0444f27d6221f2aa</link>
 <guid isPermaLink="false">5c70de0579aabf9aa00f5b8f0444f27d6221f2aa</guid>
-<description>By Murtaza Nazir, Matthew Finlayson, John X. Morris, Xiang Ren, Swabha Swayamdipta. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2506.17090</description>
+<description>By Murtaza Nazir, Matthew Finlayson, John X. Morris, Xiang Ren, Swabha Swayamdipta. Advances in Neural Information Processing Systems 38. (Met: Swabha Swayamdipta) arXiv:2506.17090</description>
 <pw:authors>Murtaza Nazir, Matthew Finlayson, John X. Morris, Xiang Ren, Swabha Swayamdipta</pw:authors>
 <pw:met>Swabha Swayamdipta</pw:met>
 <pw:relationships>Swabha Swayamdipta=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2506.17090</pw:arxiv>
 <pw:date>2025-06-20</pw:date>
 <pw:year>2025</pw:year>
@@ -9075,11 +9076,11 @@
 <title>Transferring Linear Features Across Language Models With Model Stitching</title>
 <link>https://www.semanticscholar.org/paper/9855a9cca633223a08b27625d36e4b15cd8dfbcc</link>
 <guid isPermaLink="false">9855a9cca633223a08b27625d36e4b15cd8dfbcc</guid>
-<description>By Alan Chen, Jack Merullo, Alessandro Stolfo, Ellie Pavlick. . (Met: Alessandro Stolfo) arXiv:2506.06609</description>
+<description>By Alan Chen, Jack Merullo, Alessandro Stolfo, Ellie Pavlick. Advances in Neural Information Processing Systems 38. (Met: Alessandro Stolfo) arXiv:2506.06609</description>
 <pw:authors>Alan Chen, Jack Merullo, Alessandro Stolfo, Ellie Pavlick</pw:authors>
 <pw:met>Alessandro Stolfo</pw:met>
 <pw:relationships>Alessandro Stolfo=met</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2506.06609</pw:arxiv>
 <pw:date>2025-06-07</pw:date>
 <pw:year>2025</pw:year>
@@ -9467,11 +9468,11 @@
 <title>In Search of Adam's Secret Sauce</title>
 <link>https://www.semanticscholar.org/paper/67490cb5ee89b850dcb7cc123f354a42b5a11876</link>
 <guid isPermaLink="false">67490cb5ee89b850dcb7cc123f354a42b5a11876</guid>
-<description>By Antonio Orvieto, R. Gower. arXiv.org. (Met: Antonio Orvieto) arXiv:2505.21829</description>
+<description>By Antonio Orvieto, R. Gower. Advances in Neural Information Processing Systems 38. (Met: Antonio Orvieto) arXiv:2505.21829</description>
 <pw:authors>Antonio Orvieto, R. Gower</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2505.21829</pw:arxiv>
 <pw:date>2025-05-27</pw:date>
 <pw:year>2025</pw:year>
@@ -9551,11 +9552,11 @@
 <title>OSVI-WM: One-Shot Visual Imitation for Unseen Tasks using World-Model-Guided Trajectory Generation</title>
 <link>https://www.semanticscholar.org/paper/b6f6263a206c18e4fb9e01ed26af532a9bd44b3a</link>
 <guid isPermaLink="false">b6f6263a206c18e4fb9e01ed26af532a9bd44b3a</guid>
-<description>By Raktim Gautam Goswami, P. Krishnamurthy, Yann LeCun, F. Khorrami. arXiv.org. (Met: Yann LeCun) arXiv:2505.20425</description>
+<description>By Raktim Gautam Goswami, P. Krishnamurthy, Yann LeCun, F. Khorrami. Advances in Neural Information Processing Systems 38. (Met: Yann LeCun) arXiv:2505.20425</description>
 <pw:authors>Raktim Gautam Goswami, P. Krishnamurthy, Yann LeCun, F. Khorrami</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2505.20425</pw:arxiv>
 <pw:date>2025-05-26</pw:date>
 <pw:year>2025</pw:year>
@@ -9565,11 +9566,11 @@
 <title>ARM: Adaptive Reasoning Model</title>
 <link>https://www.semanticscholar.org/paper/74dadd23073faf65cb767f1f9467a0fc965ca7b3</link>
 <guid isPermaLink="false">74dadd23073faf65cb767f1f9467a0fc965ca7b3</guid>
-<description>By Siye Wu, Jian Xie, Yikai Zhang, Aili Chen, Kai Zhang, Yu Su, Yanghua Xiao. arXiv.org. (Met: Yu Su) arXiv:2505.20258</description>
+<description>By Siye Wu, Jian Xie, Yikai Zhang, Aili Chen, Kai Zhang, Yu Su, Yanghua Xiao. Advances in Neural Information Processing Systems 38. (Met: Yu Su) arXiv:2505.20258</description>
 <pw:authors>Siye Wu, Jian Xie, Yikai Zhang, Aili Chen, Kai Zhang, Yu Su, Yanghua Xiao</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2505.20258</pw:arxiv>
 <pw:date>2025-05-26</pw:date>
 <pw:year>2025</pw:year>
@@ -10755,11 +10756,11 @@
 <title>Fixed-Point RNNs: Interpolating from Diagonal to Dense</title>
 <link>https://www.semanticscholar.org/paper/05efdded456f2267227c32be65a554c6e598d0a7</link>
 <guid isPermaLink="false">05efdded456f2267227c32be65a554c6e598d0a7</guid>
-<description>By Sajad Movahedi, Felix Sarnthein, Nicola Muca Cirone, Antonio Orvieto. . (Met: Antonio Orvieto) arXiv:2503.10799</description>
+<description>By Sajad Movahedi, Felix Sarnthein, Nicola Muca Cirone, Antonio Orvieto. Advances in Neural Information Processing Systems 38. (Met: Antonio Orvieto) arXiv:2503.10799</description>
 <pw:authors>Sajad Movahedi, Felix Sarnthein, Nicola Muca Cirone, Antonio Orvieto</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2503.10799</pw:arxiv>
 <pw:date>2025-03-13</pw:date>
 <pw:year>2025</pw:year>
@@ -11161,11 +11162,11 @@
 <title>Learning from Reward-Free Offline Data: A Case for Planning with Latent Dynamics Models</title>
 <link>https://www.semanticscholar.org/paper/b9eb8ba8467d4e8d50c41d4e66f96fa6ec173193</link>
 <guid isPermaLink="false">b9eb8ba8467d4e8d50c41d4e66f96fa6ec173193</guid>
-<description>By Vlad Sobal, Wancong Zhang, Kynghyun Cho, Randall Balestriero, Tim G. J. Rudner, Yann LeCun. arXiv.org. (Met: Yann LeCun) arXiv:2502.14819</description>
+<description>By Vlad Sobal, Wancong Zhang, Kynghyun Cho, Randall Balestriero, Tim G. J. Rudner, Yann LeCun. Advances in Neural Information Processing Systems 38. (Met: Yann LeCun) arXiv:2502.14819</description>
 <pw:authors>Vlad Sobal, Wancong Zhang, Kynghyun Cho, Randall Balestriero, Tim G. J. Rudner, Yann LeCun</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2502.14819</pw:arxiv>
 <pw:date>2025-02-20</pw:date>
 <pw:year>2025</pw:year>
@@ -12166,6 +12167,20 @@
 <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Non-rectangular Robust MDPs with Normed Uncertainty Sets</title>
+<link>https://www.semanticscholar.org/paper/6d19be3ea99e2ca97b3bedd9220ce385b81cb20a</link>
+<guid isPermaLink="false">6d19be3ea99e2ca97b3bedd9220ce385b81cb20a</guid>
+<description>By Navdeep Kumar, Adarsh Gupta, Maxence Mohamed Elfatihi, G. Ramponi, K. Levy, Shie Mannor. Advances in Neural Information Processing Systems 38. (Met: Giorgia Ramponi)</description>
+<pw:authors>Navdeep Kumar, Adarsh Gupta, Maxence Mohamed Elfatihi, G. Ramponi, K. Levy, Shie Mannor</pw:authors>
+<pw:met>Giorgia Ramponi</pw:met>
+<pw:relationships>Giorgia Ramponi=following</pw:relationships>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Evaluating Numeracy of Language Models as a Natural Language Inference Task</title>
 <link>https://www.semanticscholar.org/paper/31e76e4b186a51e5f7471d8c508a280a6c1f217d</link>
 <guid isPermaLink="false">31e76e4b186a51e5f7471d8c508a280a6c1f217d</guid>
@@ -12328,6 +12343,20 @@
 <pw:met>Leshem Choshen</pw:met>
 <pw:relationships>Leshem Choshen=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text</title>
+<link>https://www.semanticscholar.org/paper/cdbe1a4644f5b560d3060550fec9efdf926d78dc</link>
+<guid isPermaLink="false">cdbe1a4644f5b560d3060550fec9efdf926d78dc</guid>
+<description>By Nikhil Kandpal, Brian Lester, Colin Raffel, Sebastian Majstorovic, Stella Biderman, Baber Abbasi, Luca Soldaini, Enrico Shippole, A. F. Cooper, Aviya Skowron et al.. Advances in Neural Information Processing Systems 38. (Met: Lintang Sutawika)</description>
+<pw:authors>Nikhil Kandpal, Brian Lester, Colin Raffel, Sebastian Majstorovic, Stella Biderman, Baber Abbasi, Luca Soldaini, Enrico Shippole, A. F. Cooper, Aviya Skowron et al.</pw:authors>
+<pw:met>Lintang Sutawika</pw:met>
+<pw:relationships>Lintang Sutawika=following</pw:relationships>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
@@ -12897,11 +12926,11 @@
 <title>TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks</title>
 <link>https://www.semanticscholar.org/paper/c13e8d0d00687e8fc04b4e263818abd451d8e4de</link>
 <guid isPermaLink="false">c13e8d0d00687e8fc04b4e263818abd451d8e4de</guid>
-<description>By Frank F. Xu, Yufan Song, Boxuan Li, Yuxuan Tang, Kritanjali Jain, Meng Bao, Z. Wang, Xuhui Zhou, Zhitong Guo, Murong Cao et al.. arXiv.org. (Met: Graham Neubig) arXiv:2412.14161</description>
+<description>By Frank F. Xu, Yufan Song, Boxuan Li, Yuxuan Tang, Kritanjali Jain, Meng Bao, Z. Wang, Xuhui Zhou, Zhitong Guo, Murong Cao et al.. Advances in Neural Information Processing Systems 38. (Met: Graham Neubig) arXiv:2412.14161</description>
 <pw:authors>Frank F. Xu, Yufan Song, Boxuan Li, Yuxuan Tang, Kritanjali Jain, Meng Bao, Z. Wang, Xuhui Zhou, Zhitong Guo, Murong Cao et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2412.14161</pw:arxiv>
 <pw:date>2024-12-18</pw:date>
 <pw:year>2024</pw:year>
@@ -13023,11 +13052,11 @@
 <title>Sloth: scaling laws for LLM skills to predict multi-benchmark performance across families</title>
 <link>https://www.semanticscholar.org/paper/041fcaa32a8dc362bd2644f575950fea042e4c53</link>
 <guid isPermaLink="false">041fcaa32a8dc362bd2644f575950fea042e4c53</guid>
-<description>By Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Yuekai Sun, M. Yurochkin. arXiv.org. (Met: Leshem Choshen) arXiv:2412.06540</description>
+<description>By Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Yuekai Sun, M. Yurochkin. Advances in Neural Information Processing Systems 38. (Met: Leshem Choshen) arXiv:2412.06540</description>
 <pw:authors>Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Yuekai Sun, M. Yurochkin</pw:authors>
 <pw:met>Leshem Choshen</pw:met>
 <pw:relationships>Leshem Choshen=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2412.06540</pw:arxiv>
 <pw:date>2024-12-09</pw:date>
 <pw:year>2024</pw:year>
@@ -14199,11 +14228,11 @@
 <title>On the Convergence of Single-Timescale Actor-Critic</title>
 <link>https://www.semanticscholar.org/paper/688c2dbddbf31d19fa5924e12bd283e52bba6f9d</link>
 <guid isPermaLink="false">688c2dbddbf31d19fa5924e12bd283e52bba6f9d</guid>
-<description>By Navdeep Kumar, Priyank Agrawal, G. Ramponi, K. Levy, Shie Mannor. . (Met: Giorgia Ramponi) arXiv:2410.08868</description>
+<description>By Navdeep Kumar, Priyank Agrawal, G. Ramponi, K. Levy, Shie Mannor. Advances in Neural Information Processing Systems 38. (Met: Giorgia Ramponi) arXiv:2410.08868</description>
 <pw:authors>Navdeep Kumar, Priyank Agrawal, G. Ramponi, K. Levy, Shie Mannor</pw:authors>
 <pw:met>Giorgia Ramponi</pw:met>
 <pw:relationships>Giorgia Ramponi=following</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
 <pw:arxiv>2410.08868</pw:arxiv>
 <pw:date>2024-10-11</pw:date>
 <pw:year>2024</pw:year>
