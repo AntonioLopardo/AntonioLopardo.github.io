@@ -16,3 +16,4 @@ assets/feeds/**
 
 # generated from scripts/paper_watch.py — do not reformat
 papers.html
+people-map.html
