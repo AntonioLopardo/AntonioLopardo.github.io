@@ -9,37 +9,73 @@
 @media(prefers-color-scheme:dark){:root{--paper:#161310;--ink:#ece4d4;--faint:#9c8f7a;--rule:#3a332a;--accent:#e8603f;--accent-2:#7d9be0;--hl:#2a241b}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:17px;line-height:1.5}
-.wrap{max-width:760px;margin:0 auto;padding:64px 20px 90px}
+.wrap{max-width:940px;margin:0 auto;padding:56px 20px 90px}
 .overline{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
 h1{font-family:"Fraunces",serif;font-weight:850;font-size:clamp(38px,7vw,64px);line-height:.98;letter-spacing:-.02em;margin:.2em 0 .12em}
-.standfirst{font-style:italic;color:var(--faint);margin:0 0 30px;font-size:18px}
-hr.a{border:0;border-top:3px solid var(--ink);margin:0 0 2px}hr.b{border:0;border-top:1px solid var(--ink);margin:0 0 30px}
-.cards{display:grid;gap:16px}
-a.card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;text-decoration:none;color:inherit;
-  border:1px solid var(--ink);padding:22px 24px;background:var(--paper);transition:background .12s,transform .12s}
-a.card:hover{background:var(--hl);transform:translateY(-2px)}
-.card .ic{font-size:34px;line-height:1}
-.card h2{font-family:"Fraunces",serif;font-weight:640;font-size:22px;margin:0 0 3px}
-.card p{margin:0;font-size:14.5px;color:var(--faint)}
-.card .go{font-family:"IBM Plex Mono",monospace;font-size:22px;color:var(--accent)}
-footer{margin-top:44px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.standfirst{font-style:italic;color:var(--faint);margin:0 0 22px;font-size:18px}
+hr.a{border:0;border-top:3px solid var(--ink);margin:0 0 2px}hr.b{border:0;border-top:1px solid var(--ink);margin:0 0 22px}
+.views{display:flex;gap:10px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin-bottom:8px}
+.views a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink);border:1px solid var(--ink);padding:8px 14px}
+.views a:hover{background:var(--hl)}
+.controls{display:flex;align-items:center;gap:12px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin:14px 0 4px}
+.controls input{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--rule);padding:7px 10px;min-width:200px}
+.controls .count{color:var(--faint)}
+.grouphead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:30px 0 12px;display:flex;align-items:center;gap:14px}
+.grouphead::after{content:"";flex:1;border-top:1px solid var(--rule)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:20px 12px}
+a.person{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;gap:7px}
+.ph,.mono{width:70px;height:70px;border-radius:50%;object-fit:cover;border:2.5px solid var(--accent-2)}
+a.person.met .ph,a.person.met .mono{border-color:var(--accent)}
+.mono{display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:20px;color:var(--paper)}
+a.person .nm{font-size:13.5px;line-height:1.2}
+a.person:hover .nm{color:var(--accent)}
+a.person:hover .ph,a.person:hover .mono{filter:brightness(1.06);transform:translateY(-2px)}
+a.person .ph,a.person .mono{transition:transform .12s,filter .12s}
+.empty{font-family:"IBM Plex Mono",monospace;color:var(--faint);padding:40px 0}
+footer{margin-top:50px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 footer a{color:var(--accent-2);text-decoration:none}
 </style></head><body><div class="wrap">
 <div class="overline">Antonio Lopardo</div>
 <h1>People</h1>
-<p class="standfirst">Researchers I have interacted with at conferences, and a few I just follow. Two ways to look at them.</p>
+<p class="standfirst">Researchers I have interacted with at conferences, and a few I just follow.</p>
 <hr class="a"><hr class="b">
-<div class="cards">
-  <a class="card" href="/people-map.html">
-    <span class="ic">🗺️</span>
-    <span><h2>Map</h2><p>Where they are based, around the world.</p></span>
-    <span class="go">→</span>
-  </a>
-  <a class="card" href="/papers.html">
-    <span class="ic">📄</span>
-    <span><h2>Papers feed</h2><p>Recent papers from all of them, filterable by person.</p></span>
-    <span class="go">→</span>
-  </a>
+<div class="views">
+  <a href="/people-map.html">🗺️ Map</a>
+  <a href="/papers.html">📄 Papers feed</a>
 </div>
+<div class="controls">
+  <input id="q" type="search" placeholder="filter by name or affiliation…">
+  <span class="count" id="count"></span>
+</div>
+<main id="list"></main>
 <footer><a href="/">← back to site</a></footer>
-</div></body></html>
+</div>
+<script>
+const DATA = {"people": [{"name": "Aditya Yadavalli", "rel": "met", "aff": "UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad", "photo": "aditya-yadavalli.jpg"}, {"name": "Akshat Gupta", "rel": "met", "aff": "UC Berkeley (BAIR)", "photo": "akshat-gupta.jpg"}, {"name": "Aldo Lipani", "rel": "following", "aff": "University College London", "photo": "aldo-lipani.jpg"}, {"name": "Alessandro Stolfo", "rel": "met", "aff": "ETH Zurich", "photo": "alessandro-stolfo.jpg"}, {"name": "Alexander Hoyle", "rel": "following", "aff": "University of Maryland / ETH Zurich", "photo": "alexander-hoyle.jpg"}, {"name": "Alisa Liu", "rel": "following", "aff": "University of Washington", "photo": "alisa-liu.jpg"}, {"name": "Amr Hegazy", "rel": "met", "aff": "German University in Cairo (GUC)", "photo": "amr-hegazy.jpg"}, {"name": "Andreas Opedal", "rel": "following", "aff": "ETH Zurich / MPI", "photo": "andreas-opedal.jpg"}, {"name": "Anna Serbina", "rel": "met", "aff": "USC (Los Angeles) — PhD student (since Aug '25)", "photo": "anna-serbina.jpg"}, {"name": "Antoine Bosselut", "rel": "following", "aff": "EPFL", "photo": "antoine-bosselut.jpg"}, {"name": "Antonio Orvieto", "rel": "following", "aff": "MPI / ELLIS Tübingen", "photo": "antonio-orvieto.jpg"}, {"name": "Barna Pásztor", "rel": "following", "aff": "ETH Zurich", "photo": "barna-pasztor.jpg"}, {"name": "Bernhard Schölkopf", "rel": "following", "aff": "MPI Tübingen", "photo": "bernhard-scholkopf.jpg"}, {"name": "Caglar Gulcehre", "rel": "following", "aff": "EPFL", "photo": "caglar-gulcehre.jpg"}, {"name": "Catherine Arnett", "rel": "met", "aff": "EleutherAI", "photo": "catherine-arnett.jpg"}, {"name": "Chen Zhao", "rel": "following", "aff": "NYU Shanghai", "photo": "chen-zhao.jpg"}, {"name": "Clara Isabel Meister", "rel": "following", "aff": "ETH Zurich", "photo": "clara-isabel-meister.jpg"}, {"name": "Dan Jurafsky", "rel": "following", "aff": "Stanford University", "photo": "dan-jurafsky.jpg"}, {"name": "Eleftheria Tsipidi", "rel": "met", "aff": "ETH Zurich — CS PhD (defended Apr '26), prev. Disney Research", "photo": "eleftheria-tsipidi.jpg"}, {"name": "Elliott Ash", "rel": "following", "aff": "ETH Zurich", "photo": "elliott-ash.jpg"}, {"name": "Ethan Gotlieb Wilcox", "rel": "following", "aff": "Georgetown / ETH Zurich", "photo": "ethan-gotlieb-wilcox.jpg"}, {"name": "Giorgia Ramponi", "rel": "following", "aff": "UZH.AI Hub, ETH AI Center", "photo": "giorgia-ramponi.jpg"}, {"name": "Gonzalo Meyoyan", "rel": "met", "aff": "UBA (Buenos Aires, `dc.uba.ar`)", "photo": "gonzalo-meyoyan.jpg"}, {"name": "Graham Neubig", "rel": "following", "aff": "Carnegie Mellon University", "photo": "graham-neubig.jpg"}, {"name": "Hanchi Sun", "rel": "met", "aff": "Lehigh PhD (Lichao Sun group)", "photo": "hanchi-sun.jpg"}, {"name": "Hanna Yukhymenko", "rel": "met", "aff": "ETH AI Center (Zürich) — Research Engineer", "photo": "hanna-yukhymenko.jpg"}, {"name": "Hyeongsoo Lim", "rel": "met", "aff": "Chung-Ang University (Seoul) — MSc, Ji Won Yoon NLP group", "photo": "hyeongsoo-lim.jpg"}, {"name": "Isabelle Augenstein", "rel": "following", "aff": "University of Copenhagen", "photo": "isabelle-augenstein.jpg"}, {"name": "Jakob Foerster", "rel": "following", "aff": "University of Oxford", "photo": "jakob-foerster.jpg"}, {"name": "James A. Michaelov", "rel": "met", "aff": "MIT postdoc; incoming Oxford", "photo": "james-a-michaelov.jpg"}, {"name": "Josef Valvoda", "rel": "following", "aff": "University of Cambridge", "photo": "josef-valvoda.jpg"}, {"name": "Josue Torres-Fonseca", "rel": "met", "aff": "UMich CSE PhD (Joyce Chai / SLED Lab)", "photo": "josue-torresfonseca.jpg"}, {"name": "Joël Niklaus", "rel": "following", "aff": "University of Bern", "photo": "joel-niklaus.jpg"}, {"name": "Julie Kallini", "rel": "following", "aff": "Stanford University", "photo": "julie-kallini.jpg"}, {"name": "Junyi Jessy Li", "rel": "following", "aff": "UT Austin", "photo": "junyi-jessy-li.jpg"}, {"name": "Katherine Van Koevering", "rel": "met", "aff": "Johns Hopkins — postdoc (Seattle)", "photo": "katherine-van-koevering.jpg"}, {"name": "Leshem Choshen", "rel": "met", "aff": "MIT-IBM → new PI at Weizmann", "photo": "leshem-choshen.jpg"}, {"name": "Lindia Tjuatja", "rel": "following", "aff": "CMU", "photo": "lindia-tjuatja.jpg"}, {"name": "Lintang Sutawika", "rel": "following", "aff": "EleutherAI / CMU", "photo": "lintang-sutawika.jpg"}, {"name": "Livia Lilli", "rel": "met", "aff": "Gemelli Generator RWD, Gemelli IRCCS (Rome) — data scientist / lead AI eng", "photo": "livia-lilli.jpg"}, {"name": "Lucia Domenichelli", "rel": "met", "aff": "ItaliaNLP Lab @ CNR-ILC (Pisa)", "photo": "lucia-domenichelli.jpg"}, {"name": "Maria Antoniak", "rel": "following", "aff": "Allen Institute for AI", "photo": "maria-antoniak.jpg"}, {"name": "Marzieh Fadaee", "rel": "following", "aff": "Cohere Labs", "photo": "marzieh-fadaee.jpg"}, {"name": "María Grandury", "rel": "following", "aff": "EPFL / SomosNLP", "photo": "maria-grandury.jpg"}, {"name": "Matthew Bone", "rel": "met", "aff": "Burning Glass Institute / Oxford Internet Institute — Data Scientist", "photo": "matthew-bone.jpg"}, {"name": "Maximo Rulli", "rel": "met", "aff": "Sapienza University (Rome) — Researcher (Scardapane/Devoto)", "photo": "maximo-rulli.jpg"}, {"name": "Mervat Abassy", "rel": "met", "aff": "MBZUAI — 2nd-yr MSc in NLP (Alexandria)", "photo": "mervat-abassy.jpg"}, {"name": "Michele Marzollo", "rel": "met", "aff": "Huawei — Research Engineer (since Jan '24)", "photo": "michele-marzollo.jpg"}, {"name": "Michiel van der Meer", "rel": "met", "aff": "Leiden University (LIACS) — postdoc", "photo": "michiel-van-der-meer.jpg"}, {"name": "Minjae Kim", "rel": "met", "aff": "LinqAlpha (Korea, financial-AI)", "photo": "minjae-kim.jpg"}, {"name": "Mohamed Elgaar", "rel": "met", "aff": "UMass Lowell PhD (finishing '26)", "photo": "mohamed-elgaar.jpg"}, {"name": "Mrinmaya Sachan", "rel": "met", "aff": "ETH Zurich", "photo": "mrinmaya-sachan.jpg"}, {"name": "Nathan Godey", "rel": "met", "aff": "Cornell University", "photo": "nathan-godey.jpg"}, {"name": "Oleksandr Finchuk", "rel": "met", "aff": "Bloomberg — Senior Security Data Engineer, NYC (since '23)", "photo": "oleksandr-finchuk.jpg"}, {"name": "Pedro Ortiz Suarez", "rel": "met", "aff": "Common Crawl Foundation", "photo": "pedro-ortiz-suarez.jpg"}, {"name": "Pietro Ferrazzi", "rel": "met", "aff": "FBK (Trento) + Univ. Padova — PhD candidate (since Oct '23)", "photo": "pietro-ferrazzi.jpg"}, {"name": "Poorvaja Penmetsa", "rel": "met", "aff": "HPE — AI & ML Engineer (since Nov '25). ⚠️ LinkedIn unverified (profile says Juniper, HPE-acquired", "photo": "poorvaja-penmetsa.jpg"}, {"name": "Raffaele Pisano", "rel": "met", "aff": "Babelscape srl (Rome) — Sapienza/Minerva NLP orbit (ChatMinerva)", "photo": "raffaele-pisano.jpg"}, {"name": "Samuel Kiegeland", "rel": "met", "aff": "ETH Zurich (Rycolab / Cotterell group) — Research Engineer", "photo": "samuel-kiegeland.jpg"}, {"name": "Sara Hooker", "rel": "following", "aff": "Cohere Labs", "photo": "sara-hooker.jpg"}, {"name": "Sattvik Sahai", "rel": "met", "aff": "Amazon — Applied Scientist II, AGI (LLMs for code, AI + security)", "photo": "sattvik-sahai.jpg"}, {"name": "Swabha Swayamdipta", "rel": "following", "aff": "USC", "photo": "swabha-swayamdipta.jpg"}, {"name": "Tiago Pimentel", "rel": "following", "aff": "ETH Zurich / Cambridge", "photo": "tiago-pimentel.jpg"}, {"name": "Tim Rocktäschel", "rel": "following", "aff": "UCL / Google DeepMind", "photo": "tim-rocktaschel.jpg"}, {"name": "Tim Vieira", "rel": "following", "aff": "Johns Hopkins University", "photo": "tim-vieira.jpg"}, {"name": "Tom Kouwenhoven", "rel": "met", "aff": "Leiden University (LIACS) — communicative AI, NLP/LLM + language evolution", "photo": "tom-kouwenhoven.jpg"}, {"name": "Xiaochuang Han", "rel": "following", "aff": "University of Washington", "photo": "xiaochuang-han.jpg"}, {"name": "Yann LeCun", "rel": "following", "aff": "Meta AI / NYU", "photo": "yann-lecun.jpg"}, {"name": "Yannick Detrois", "rel": "met", "aff": "EPFL / pleias — AI/LLM scientist", "photo": "yannick-detrois.jpg"}, {"name": "Yu Su", "rel": "following", "aff": "Ohio State University", "photo": "yu-su.jpg"}, {"name": "Yunyao Li", "rel": "met", "aff": "Adobe — Director of Machine Learning (CA)", "photo": "yunyao-li.jpg"}, {"name": "Zhaofeng Wu", "rel": "following", "aff": "MIT", "photo": "zhaofeng-wu.jpg"}, {"name": "Zhijing Jin", "rel": "following", "aff": "University of Toronto / Vector Institute", "photo": "zhijing-jin.jpg"}], "photos": "/assets/img/people"};
+const P=DATA.photos, people=DATA.people;
+const q=document.getElementById('q'), list=document.getElementById('list'), count=document.getElementById('count');
+function hue(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h}
+function initials(n){return n.split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase()}
+function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function face(p){
+  const cls=p.rel==='met'?'met':'';
+  const img=`<img class="ph" src="${P}/${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy" `
+    +`onerror="this.outerHTML=this.getAttribute('data-fb')" `
+    +`data-fb='<span class=&quot;mono&quot; style=&quot;background:hsl(${hue(p.name)} 42% 42%)&quot;>${initials(p.name)}</span>'>`;
+  return `<a class="person ${cls}" href="/papers.html?p=${encodeURIComponent(p.name)}" title="${esc(p.aff)}">`
+    +`${img}<span class="nm">${esc(p.name)}</span></a>`;
+}
+function group(label, arr){
+  if(!arr.length) return '';
+  return `<div class="grouphead">${label} · ${arr.length}</div><div class="grid">${arr.map(face).join('')}</div>`;
+}
+function render(){
+  const t=q.value.trim().toLowerCase();
+  const shown=people.filter(p=>!t||(p.name+' '+p.aff).toLowerCase().includes(t));
+  const met=shown.filter(p=>p.rel==='met').sort((a,b)=>a.name.localeCompare(b.name));
+  const fol=shown.filter(p=>p.rel!=='met').sort((a,b)=>a.name.localeCompare(b.name));
+  count.textContent=shown.length+' / '+people.length;
+  list.innerHTML=(group('Interacted with',met)+group('Following',fol))||'<div class="empty">NOBODY MATCHES.</div>';
+}
+q.addEventListener('input',render); render();
+</script></body></html>
