@@ -1,0 +1,2279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Mrinmaya Sachan</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/mrinmaya-sachan.jpg"
+          alt="Mrinmaya Sachan"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(42 42% 42%)">MS</span>'
+        />
+        <div>
+          <h1>Mrinmaya Sachan <span class="tag met">interacted with</span></h1>
+          <div class="aff">ETH Zurich</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="@mrinmayasachan" target="_blank" rel="noopener">@@mrinmayasachan</a
+        ><a href="https://www.linkedin.com/in/mrinmaya-sachan-80b08183" target="_blank" rel="noopener">LinkedIn</a
+        ><a href="https://scholar.google.com/citations?user=Tpp9ZjoAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="https://lre.inf.ethz.ch/" target="_blank" rel="noopener">Website</a
+        ><a href="/papers.html?p=Mrinmaya%20Sachan">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 197</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2608.03437" target="_blank" rel="noopener"
+            >Dynamically Allocating Evaluation Effort for Model Ranking</a
+          >
+          <div class="m">
+            <span>2026-08-04</span><a class="alpha" href="https://www.alphaxiv.org/abs/2608.03437" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2608.03437" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d0dab95e0c62b85ee78bfa45e737e354a85647c2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.06915" target="_blank" rel="noopener"
+            >ThinkBooster: A Unified Framework for Seamless Test-Time Scaling of LLM Reasoning</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-06-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.06915" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.06915" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/88c1b56ba1a00f698465450d7f3a1baca539552d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.01020" target="_blank" rel="noopener"
+            >Tackling the Root of Misinformation by Teaching Laypeople about Logical Fallacies via Socratic Questioning and Critical Argumentation</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-05-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.01020" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.01020" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a4d4b01c353703bb06e44b68cc65c8979be4b7f8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.30713" target="_blank" rel="noopener"
+            >Diversity Matters: Revisiting Test-Time Compute in Vision-Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.30713" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.30713" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8748f71dfe28e61c22efaf80e5b7254ebbcfb2a5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.31212" target="_blank" rel="noopener"
+            >Benchmarking and Enhancing Text-to-Image Models for Generating Visual Representations in Early Arithmetic Education</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.31212" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.31212" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/2788bbeb12e8be9147729d4bdf61921a660ce754" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.30170" target="_blank" rel="noopener"
+            >Unveiling the Visual Counting Bottleneck in Vision-Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.30170" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.30170" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8f6b457d3c3e86e27bcabf560359654de7340612" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.24597" target="_blank" rel="noopener">Learning to Reason Efficiently with A* Post-Training</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.24597" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.24597" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7c405a2dc0dc5a5e6e7c3e2ab695115a6cdecf88" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.12748" target="_blank" rel="noopener"
+            >Simulating Students or Sycophantic Problem Solving? On Misconception Faithfulness of LLM Simulators</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.12748" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.12748" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/55fa9979a9bfc50c770aa3b923335c44c943cef0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.12419" target="_blank" rel="noopener"
+            >GeoDial: A Multimodal Conversational Tutoring Dataset for Geometry Problem-Solving with Visual Tutor Turns</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.12419" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.12419" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d638c1a219ce44c76ca73e1c5caf01d1339f2ea8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.20500" target="_blank" rel="noopener"
+            >Efficient Test-Time Inference via Deterministic Exploration of Truncated Decoding Trees</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-04-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.20500" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.20500" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/160355a5ebc2be104c326a32c7521c17c3932f2c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.00818" target="_blank" rel="noopener"
+            >Misconception Acquisition Dynamics in Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Artificial Intelligence in Education</span><span>2026-04-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.00818" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.00818" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/de0c80568931a1a8d39dc693483e26a2ee8656bd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.15547" target="_blank" rel="noopener"
+            >Can LLMs Model Incorrect Student Reasoning? A Case Study on Distractor Generation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.15547" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.15547" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/29ca34f7217d9d60b19e52c845f643f51a66ccff" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.04678" target="_blank" rel="noopener"
+            >Post-Training Language Models for Crosslingual Consistency</a
+          >
+          <div class="m">
+            <span>2026-03-04</span><a class="alpha" href="https://www.alphaxiv.org/abs/2603.04678" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.04678" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/54a05d120268d2987aaaf95535eefd4f2dfaf4ae" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.16763" target="_blank" rel="noopener"
+            >When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.16763" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.16763" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c947a3c4cc64f33b4c6d90a599590f8c65a87261" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.04843" target="_blank" rel="noopener">Fluid Reasoning Representations</a>
+          <div class="m">
+            <span>2026-02-04</span><a class="alpha" href="https://www.alphaxiv.org/abs/2602.04843" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.04843" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b8320b60944eb8b708fa1e1238b0eb663b4a563c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.21210" target="_blank" rel="noopener"
+            >Uncovering Hidden Correctness in LLM Causal Reasoning via Symbolic Verification</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2026-01-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.21210" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.21210" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/31e6b18fc421369ff51964ae47cec461a3ad69af" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.18697" target="_blank" rel="noopener"
+            >Bridging Instead of Replacing Online Coding Communities with AI through Community-Enriched Chatbot Designs</a
+          >
+          <div class="m">
+            <span class="v">Proc. ACM Hum. Comput. Interact.</span><span>2026-01-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.18697" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.18697" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d9d628e3f0f0181941c954674fc3fe557b7a5467" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.08402" target="_blank" rel="noopener"
+            >PATS: Personality-Aware Teaching Strategies with Large Language Model Tutors</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2026-01-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.08402" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.08402" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ca38d08111154e2d3468f446ab582ce269f9d692" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4e3e20304ff77c75319998e2ad9b66a86106f750" target="_blank" rel="noopener"
+            >Early-Exit and Instant Confidence Translation Quality Estimation</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/4e3e20304ff77c75319998e2ad9b66a86106f750" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6d3fbc58ea8c6dfcddb580c08cd5b3f620f23714" target="_blank" rel="noopener"
+            >Optimizing Language Models for Crosslingual Knowledge Consistency</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/6d3fbc58ea8c6dfcddb580c08cd5b3f620f23714" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9b72b4af21f60db8be336e9b2ebb7fab57944fb2" target="_blank" rel="noopener"
+            >PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers in Overleaf</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/9b72b4af21f60db8be336e9b2ebb7fab57944fb2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f12138eb342598e6aacbe2ccfd9c11a8a9e98316" target="_blank" rel="noopener"
+            >Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/f12138eb342598e6aacbe2ccfd9c11a8a9e98316" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.09538" target="_blank" rel="noopener"
+            >Don&#x27;t Throw Away Your Beams: Improving Consistency-based Uncertainties in LLMs via Beam Search</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.09538" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.09538" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/75d3e18bddfb580d55e5bf44be4f82cfb74b5d65" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/14b682ffd5686087947737a28c0e42cf49065008" target="_blank" rel="noopener"
+            >Harmonizing Assistance: Moderating Visual and Textual Aids in AI-Enhanced Textbook Reading with IRead</a
+          >
+          <div class="m">
+            <span class="v">International Journal of Artificial Intelligence in Education</span><span>2025-11-11</span
+            ><a href="https://www.semanticscholar.org/paper/14b682ffd5686087947737a28c0e42cf49065008" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.06209" target="_blank" rel="noopener"
+            >ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models</a
+          >
+          <div class="m">
+            <span>2025-11-09</span><a class="alpha" href="https://www.alphaxiv.org/abs/2511.06209" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.06209" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7f538029c0be0764321f5a97a467d27013d481e8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.01033" target="_blank" rel="noopener"
+            >On the Emergence of Induction Heads for In-Context Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.01033" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.01033" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/10764bd245b9ab5c1c49fa89c17dd9ac5bbb3b17" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.25626" target="_blank" rel="noopener"
+            >Are Language Models Efficient Reasoners? A Perspective from Logic Programming</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-10-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.25626" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.25626" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cc3d6dd74dbd162d1f9e2ebc6282ef16d59c4d3c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.05987" target="_blank" rel="noopener"
+            >Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.05987" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.05987" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/316d8a70c7d32796bba57a5551ed8828d4a014f8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.23744" target="_blank" rel="noopener"
+            >Compose and Fuse: Revisiting the Foundational Bottlenecks in Multimodal Reasoning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-09-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.23744" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.23744" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a34f8bab4bda353a0acd7405a8aeb384faefd016" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.22437" target="_blank" rel="noopener"
+            >Chimera: Diagnosing Shortcut Learning in Visual-Language Understanding</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-09-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.22437" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.22437" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c0071a3a0c913a025804c6f32c094f7fb509c054" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.09013" target="_blank" rel="noopener"
+            >Can Vision-Language Models Solve Visual Math Equations?</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-09-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.09013" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.09013" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/2f17247df81844c8b1c761c9ee38e70807a1fa08" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.00072" target="_blank" rel="noopener"
+            >Test of Time: Rethinking Temporal Signal of Benchmark Contamination</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-08-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.00072" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.00072" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f749caa7fad1a583d9c4bca0d496d33a34249a2b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2508.18549" target="_blank" rel="noopener"
+            >COMET-poly: Machine Translation Metric Grounded in Other Candidates</a
+          >
+          <div class="m">
+            <span class="v">Conference on Machine Translation</span><span>2025-08-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2508.18549" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2508.18549" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/888dd0b6b863b6fcc7a31c9e1669b442ff4e4eed" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2508.15878" target="_blank" rel="noopener"
+            >Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving Challenges in Formal-Informal Pairs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-08-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2508.15878" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2508.15878" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f52cad72f79da3edfb320032cbd5da07fec93ad6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.12379" target="_blank" rel="noopener">Probing for Arithmetic Errors in Language Models</a>
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-07-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.12379" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.12379" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c13d100ccb7a759f7c31d9f369b775e3b7de5652" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.11060" target="_blank" rel="noopener"
+            >Personalized Exercise Recommendation with Semantically-Grounded Knowledge Tracing</a
+          >
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 38</span><span>2025-07-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.11060" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.11060" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3cc6900f24c061d219285c875a65dd34ea476c2a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.05010" target="_blank" rel="noopener"
+            >Co-DETECT: Collaborative Discovery of Edge Cases in Text Classification</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-07-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.05010" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.05010" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1460f10fd31e364c1f9177a7eca48f576114b8ef" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.01234" target="_blank" rel="noopener"
+            >The Medium Is Not the Message: Deconfounding Document Embeddings via Linear Concept Erasure</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-07-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.01234" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.01234" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9d7ff9b87e9f48972dd88d26cdc6b7cd81de29f6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.23276" target="_blank" rel="noopener"
+            >Corrupted by Reasoning: Reasoning Language Models Become Free-Riders in Public Goods Games</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.23276" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.23276" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c9f2bb9830d864b0667bf3a72ceadc35bc56ed62" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.19467" target="_blank" rel="noopener"
+            >Can Reasoning Help Large Language Models Capture Human Annotator Disagreement?</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2025-06-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.19467" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.19467" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4cd5575d388df2de4cfe52f845c721283cc7d9cf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.15679" target="_blank" rel="noopener">Dense SAE Latents Are Features, Not Bugs</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-06-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.15679" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.15679" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/eb73c035fc8b0ae4a115c6a436b83c0ecfc896aa" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.11938" target="_blank" rel="noopener"
+            >Improving Large Language Model Safety with Contrastive Representation Learning</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-06-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.11938" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.11938" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8bdf4beea35d4ddaeb700440c17ae5955b936b5e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.08702" target="_blank" rel="noopener"
+            >Educators&#x27; Perceptions of Large Language Models as Tutors: Comparing Human and AI Tutors in a Blind Text-only Setting</a
+          >
+          <div class="m">
+            <span class="v">Workshop on Innovative Use of NLP for Building Educational Applications</span><span>2025-06-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.08702" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.08702" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f7f397a5f51b94e3016db01cecc4aaae0d85594a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.03735" target="_blank" rel="noopener"
+            >Generating Pedagogically Meaningful Visuals for Math Word Problems: A New Benchmark and Analysis of Text-to-Image Models</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-06-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.03735" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.03735" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4769194b5d92a19dca3402740615307120bced07" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.21072" target="_blank" rel="noopener"
+            >Faithfulness-Aware Uncertainty Quantification for Fact-Checking the Output of Retrieval Augmented Generation</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-05-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.21072" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.21072" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e50ef82f320bf6172619b6a09f4099a77edd451e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.20045" target="_blank" rel="noopener"
+            >Efficient Hallucination Detection for LLMs Using Uncertainty-Aware Attention Heads</a
+          >
+          <div class="m">
+            <span>2025-05-26</span><a class="alpha" href="https://www.alphaxiv.org/abs/2505.20045" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.20045" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ee7694e254c0094d55b41960f778cd8d5eae8249" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.19099" target="_blank" rel="noopener"
+            >SeePhys: Does Seeing Help Thinking? - Benchmarking Vision-Based Physics Reasoning</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-05-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.19099" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.19099" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4a783247f1207cbc3ad6c08a2941e7e2b5661dfa" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.15607" target="_blank" rel="noopener"
+            >From Problem-Solving to Teaching Problem-Solving: Aligning LLMs with Pedagogy using Reinforcement Learning</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-05-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.15607" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.15607" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7b6679ac2b9a8074878464a8c2aeeaa2df4a82ce" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.12864" target="_blank" rel="noopener">LEXam: Benchmarking Legal Reasoning on 340 Law Exams</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.12864" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.12864" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/fa1c34bceadc987a20f65e353bf943a5acf72a46" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.08200" target="_blank" rel="noopener"
+            >A Head to Predict and a Head to Question: Pre-trained Uncertainty Quantification Heads for Hallucination Detection in LLM Outputs</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-05-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.08200" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.08200" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cca687992c11d54daed5d0c6e4d60c7f1e71bcbd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.17720" target="_blank" rel="noopener"
+            >Multilingual Performance Biases of Large Language Models in Education</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.17720" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.17720" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/2f6644d97226c1258d9b733a5762dde8aa27b2b5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.18940" target="_blank" rel="noopener"
+            >MathTutorBench: A Benchmark for Measuring Open-ended Pedagogical Capabilities of LLM Tutors</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-02-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.18940" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.18940" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b7fac69ac1838b6eaf8e06f133823b770ce8f0ae" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.11962" target="_blank" rel="noopener"
+            >Balancing Truthfulness and Informativeness with Uncertainty-Aware Instruction Fine-Tuning</a
+          >
+          <div class="m">
+            <span>2025-02-17</span><a class="alpha" href="https://www.alphaxiv.org/abs/2502.11962" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.11962" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c74401d4baa0b40dbc5c0dc7e88aa86bed70d56c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.07544" target="_blank" rel="noopener"
+            >Grammar Control in Dialogue Response Generation for Language Learning Chatbots</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2025-02-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.07544" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.07544" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4c6a690fe0a90c857b8691c617743825337315ae" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.06990" target="_blank" rel="noopener"
+            >Investigating the Zone of Proximal Development of Language Models for In-Context Learning</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2025-02-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.06990" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.06990" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e7892d897394aaa3ad78c1017dc74b00d878bed1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2501.18251" target="_blank" rel="noopener"
+            >How to Select Datapoints for Efficient Human Evaluation of NLG Models?</a
+          >
+          <div class="m">
+            <span class="v">Transactions of the Association for Computational Linguistics</span><span>2025-01-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2501.18251" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2501.18251" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7171d9ab5d205987d6c71d51d8ae418d886a4982" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/579a6aac47f38018bf28112b1e220d53ada46627" target="_blank" rel="noopener"
+            >The Medium Is Not the Message: Deconfounding Text Embeddings via Linear Concept Erasure</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/579a6aac47f38018bf28112b1e220d53ada46627" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/23438f8be247437bd1ca15175e3945693a83e5ad" target="_blank" rel="noopener"
+            >Beyond Memorization: Reasoning-Driven Synthesis as a Mitigation Strategy Against Benchmark Contamination</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/23438f8be247437bd1ca15175e3945693a83e5ad" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6d57a400ad1b956c9c9bdd22dfe61e18597f2c85" target="_blank" rel="noopener"
+            >Large Language Models for Education: Understanding the Needs of Stakeholders, Current Capabilities and the Path Forward</a
+          >
+          <div class="m">
+            <span class="v">Workshop on Innovative Use of NLP for Building Educational Applications</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/6d57a400ad1b956c9c9bdd22dfe61e18597f2c85" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/74212dd2e7f9aaca06b7b0e37a9824ba1abd6b98" target="_blank" rel="noopener"
+            >Can LLMs Effectively Simulate Human Learners? Teachers&#x27; Insights from Tutoring LLM Students</a
+          >
+          <div class="m">
+            <span class="v">Workshop on Innovative Use of NLP for Building Educational Applications</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/74212dd2e7f9aaca06b7b0e37a9824ba1abd6b98" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/972b2756b09f9e21a2f30e685383c1159818aadf" target="_blank" rel="noopener"
+            >Do Vision-Language Models Really Understand Visual Language?</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/972b2756b09f9e21a2f30e685383c1159818aadf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b6ffb6c17f22f46a590c396240dd23ec12f22b50" target="_blank" rel="noopener"
+            >Can Large Language Models Capture Human Annotator Disagreements?</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/b6ffb6c17f22f46a590c396240dd23ec12f22b50" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b8dd75d300fb140c197bb793c1ea32b5f8ad8bbe" target="_blank" rel="noopener"
+            >Are Large Language Models for Education Reliable Across Languages?</a
+          >
+          <div class="m">
+            <span class="v">Workshop on Innovative Use of NLP for Building Educational Applications</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/b8dd75d300fb140c197bb793c1ea32b5f8ad8bbe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.07773" target="_blank" rel="noopener"
+            >Pointwise Mutual Information as a Performance Gauge for Retrieval-Augmented Generation</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2024-11-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.07773" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.07773" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f4c00aac2b85c71cb81dfd9be112ec588fd7c34d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.18574" target="_blank" rel="noopener"
+            >SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-10-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.18574" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.18574" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f037488648e7d75133bcce227beb278f5a22da5d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.16128" target="_blank" rel="noopener"
+            >SMART: Self-learning Meta-strategy Agent for Reasoning Tasks</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.16128" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.16128" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9bc29b988ea02d669216e0d62724c30c26f7e94e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.14361" target="_blank" rel="noopener"
+            >Efficiently Computing Susceptibility to Context in Language Models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-10-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.14361" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.14361" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8580e3ef90b8057ba7e582280e4d04deeb5a71bb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.13502" target="_blank" rel="noopener"
+            >MathGAP: Out-of-Distribution Evaluation on Problems with Arbitrarily Complex Proofs</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-10-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.13502" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.13502" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6a928303ddc59aef19af87cd178fe70f4d279bbe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.12294" target="_blank" rel="noopener"
+            >LLM-based Cognitive Models of Students with Misconceptions</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.12294" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.12294" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/436936b3f0478d1cec91175ac53f696909a32bc0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.03781" target="_blank" rel="noopener"
+            >Towards the Pedagogical Steering of Large Language Models for Tutoring: A Case Study with Modeling Productive Failure</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-10-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.03781" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.03781" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d7b63f8ff1de3339084998003d728ad25275e0fe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.01727" target="_blank" rel="noopener"
+            >Automated Knowledge Concept Annotation and Question Representation Learning for Knowledge Tracing</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.01727" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.01727" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4326133e201561cb5eb2e64621d1174f05fe7bf0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.00193" target="_blank" rel="noopener"
+            >Do Vision-Language Models Really Understand Visual Language?</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-09-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.00193" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.00193" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4bee9cf0d3c397b1e67157eecc600f200efdce78" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2409.15981" target="_blank" rel="noopener"
+            >GPT-4 as a Homework Tutor can Improve Student Engagement and Learning Outcomes</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-09-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2409.15981" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2409.15981" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c659e7ae5bf4a848a60cf4fa95bad24bea23c6e0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.00004" target="_blank" rel="noopener"
+            >RETRO-LI: Small-Scale Retrieval Augmented Generation Supporting Noisy Similarity Searches and Domain Shift Generalization</a
+          >
+          <div class="m">
+            <span class="v">European Conference on Artificial Intelligence</span><span>2024-09-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.00004" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.00004" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8503ebf156e260394d5c54f87c404046b5051d80" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.11728" target="_blank" rel="noopener"
+            >AI-assisted Automated Short Answer Grading of Handwritten University Level Mathematics Exams</a
+          >
+          <div class="m">
+            <span>2024-08-21</span><a class="alpha" href="https://www.alphaxiv.org/abs/2408.11728" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.11728" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/531945a99b827ec65c009de23dbd8771243eaf5f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2407.16970" target="_blank" rel="noopener"
+            >Towards Aligning Language Models with Textual Feedback</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-07-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2407.16970" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2407.16970" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/70dcd5bda31413c00696a95a769ea55635c32b70" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2407.14309" target="_blank" rel="noopener"
+            >How to Engage Your Readers? Generating Guiding Questions to Promote Active Reading</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-07-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2407.14309" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2407.14309" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3ef30d7ac62792383e04f162fd574377b7a9bbb5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2407.09136" target="_blank" rel="noopener"
+            >Stepwise Verification and Remediation of Student Reasoning Errors with Large Language Model Tutors</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-07-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2407.09136" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2407.09136" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/696bc486d84cb33a152491676b6237e0e5e43061" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2407.02273" target="_blank" rel="noopener"
+            >Language Model Alignment in Multilingual Trolley Problems</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-07-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2407.02273" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2407.02273" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/296c43c8d10c204aa9cfb751211bdc967e58d835" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.16254" target="_blank" rel="noopener">Confidence Regulation Neurons in Language Models</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-06-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.16254" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.16254" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/932208192d319141f3e9041fc4d661615d77574a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.14162" target="_blank" rel="noopener"
+            >DIRAS: Efficient LLM Annotation of Document Relevance for Retrieval Augmented Generation</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2024-06-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.14162" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.14162" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4378be35bad35f7f81dc76286e7ce064d6cfc374" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.12419" target="_blank" rel="noopener">AI-Assisted Human Evaluation of Machine Translation</a>
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2024-06-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.12419" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.12419" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7e59fe96d896f66abafb6a772b0822a29d2b0568" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.11580" target="_blank" rel="noopener"
+            >Error Span Annotation: A Balanced Approach for Human Evaluation of Machine Translation</a
+          >
+          <div class="m">
+            <span class="v">Conference on Machine Translation</span><span>2024-06-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.11580" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.11580" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6a1405e2a32eb3f74c7882b94860d9761dda0f42" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.04216" target="_blank" rel="noopener"
+            >What Do Language Models Learn in Context? The Structured Task Hypothesis</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-06-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.04216" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.04216" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f3bad5a60065737ab19b3480a7392dbb6e2e3b6d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.02329" target="_blank" rel="noopener">On Affine Homotopy between Language Encoders</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-06-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.02329" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.02329" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a658fd1d2cb7191c6182cefb0f003c0c96e0c891" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2405.20318" target="_blank" rel="noopener"
+            >Quriosity: Analyzing Human Questioning Behavior and Causal Inquiry through Curiosity-Driven Queries</a
+          >
+          <div class="m">
+            <span class="v">IJCNLP-AACL</span><span>2024-05-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2405.20318" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2405.20318" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5873f14afdbd1c37f6b05ab96b69b60dab01b928" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2405.14808" target="_blank" rel="noopener"
+            >Implicit Personalization in Language Models: A Systematic Study</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2405.14808" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2405.14808" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1be92c813cb0f8bc147f6d77cde1a22beae60e93" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2405.04515" target="_blank" rel="noopener">A Transformer with Stack Attention</a>
+          <div class="m">
+            <span class="v">NAACL-HLT</span><span>2024-05-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2405.04515" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2405.04515" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5d7946b41dea3ed11dad48a53b1390d59b8c564e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2404.16698" target="_blank" rel="noopener"
+            >Cooperate or Collapse: Emergence of Sustainable Cooperation in a Society of LLM Agents</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-04-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2404.16698" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2404.16698" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7b508f5a3168e2ecfcb821752dcae576905a50c5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2405.02318" target="_blank" rel="noopener"
+            >Autoformalizing Natural Language to First-Order Logic: A Case Study in Logical Fallacy Detection</a
+          >
+          <div class="m">
+            <span class="v">IJCNLP-AACL</span><span>2024-04-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2405.02318" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2405.02318" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/99829812c2e5b2ee2669c839020addd2921dc673" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2404.11055" target="_blank" rel="noopener"
+            >Do LLMs Think Fast and Slow? A Causal Study on Sentiment Analysis</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-04-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2404.11055" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2404.11055" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/bc2ad540cb03cd513f96be3bdb81b5f296a4b09b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/db43ff15636402b43bbd798072d6927357ad40dc" target="_blank" rel="noopener"
+            >Slicing, Chatting, and Refining: A Concept-Based Approach for Machine Learning Model Validation with ConceptSlicer</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Intelligent User Interfaces</span><span>2024-03-18</span
+            ><a href="https://www.semanticscholar.org/paper/db43ff15636402b43bbd798072d6927357ad40dc" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2403.03307" target="_blank" rel="noopener"
+            >Book2Dial: Generating Teacher-Student Interactions from Textbooks for Cost-Effective Development of Educational Chatbots</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-03-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2403.03307" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2403.03307" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/387229badf09494d9397585da880c5c5de14812f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2402.13904" target="_blank" rel="noopener"
+            >Calibrating Large Language Models with Sample Consistency</a
+          >
+          <div class="m">
+            <span class="v">AAAI Conference on Artificial Intelligence</span><span>2024-02-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2402.13904" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2402.13904" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/992c554b1bf343eef3509579930b2552f1b6f1db" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2402.11655" target="_blank" rel="noopener"
+            >Competition of Mechanisms: Tracing How Language Models Handle Facts and Counterfactuals</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-02-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2402.11655" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2402.11655" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/585ab11510d0e8504289991919976afba64d4c96" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2402.11073" target="_blank" rel="noopener"
+            >AFaCTA: Assisting the Annotation of Factual Claim Detection with Reliable LLM Annotators</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-02-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2402.11073" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2402.11073" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0e314ddbf28514d92f2405b73941242c162ae0ba" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2402.09216" target="_blank" rel="noopener"
+            >AutoTutor meets Large Language Models: A Language Model Tutor with Rich Pedagogy and Guardrails</a
+          >
+          <div class="m">
+            <span class="v">ACM Conference on Learning @ Scale</span><span>2024-02-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2402.09216" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2402.09216" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cc1446a3ccb51bcf8f68827fe05c6841a963cfa3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2401.18070" target="_blank" rel="noopener"
+            >Do Language Models Exhibit the Same Cognitive Biases in Problem Solving as Human Learners?</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2024-01-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2401.18070" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2401.18070" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6f26ea6f51093253eab6e91fd7b4d90b17f932cf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2312.04350" target="_blank" rel="noopener"
+            >CLadder: Assessing Causal Reasoning in Language Models</a
+          >
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 36</span><span>2023-12-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2312.04350" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2312.04350" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6ac627f57b26354ab537734d820da4a6a7dde2c6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2311.16842" target="_blank" rel="noopener"
+            >RELIC: Investigating Large Language Model Responses using Self-Consistency</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Human Factors in Computing Systems</span><span>2023-11-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2311.16842" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2311.16842" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/edbfa8e27cf1065a30e6386a7a6313607503ea7e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2311.08605" target="_blank" rel="noopener"
+            >Exploring the Jungle of Bias: Political Bias Attribution in Language Models via Dependency Analysis</a
+          >
+          <div class="m">
+            <span class="v">NLP4PI</span><span>2023-11-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2311.08605" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2311.08605" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8da16018af8ad5f8fdd2470e6b4711298886f10e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2311.07961" target="_blank" rel="noopener">The ART of LLM Refinement: Ask, Refine, and Trust</a>
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2023-11-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2311.07961" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2311.07961" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b7db52a4ad0211bf0b18195d6d247b089da26048" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2311.02790" target="_blank" rel="noopener">CausalCite: A Causal Formulation of Paper Citations</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-11-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2311.02790" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2311.02790" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/bae9c39adf7070ef37ae989bc8716a88691c33f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2310.14491" target="_blank" rel="noopener"
+            >Towards a Mechanistic Interpretation of Multi-Step Reasoning Capabilities of Language Models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-10-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2310.14491" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2310.14491" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/70ca99ac3c21f353b3db948004510a09fdebc4f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2310.13671" target="_blank" rel="noopener"
+            >Let&#x27;s Synthesize Step by Step: Iterative Dataset Synthesis with Large Language Models by Extrapolating Errors from Small Models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-10-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2310.13671" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2310.13671" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/2166f1dc62759e9ed20955393b9c41683968d44b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2310.13544" target="_blank" rel="noopener"
+            >A Diachronic Perspective on User Trust in AI under Uncertainty</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-10-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2310.13544" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2310.13544" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/34ab87a0d5402fe299a9feeda19cd2f50c085bdf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2309.07870" target="_blank" rel="noopener"
+            >Agents: An Open-source Framework for Autonomous Language Agents</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023-09-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2309.07870" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2309.07870" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/012c552ef548582875349f8457b0645dabc3e662" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2306.16842" target="_blank" rel="noopener">Tokenization and the Noiseless Channel</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-06-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2306.16842" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2306.16842" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5917ba80a905aeba41487f7dcdb8b885f18689f5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2306.16837" target="_blank" rel="noopener">A Formal Perspective on Byte-Pair Encoding</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-06-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2306.16837" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2306.16837" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9a56e9b5c1a96e758163296d15e960dfae44ce61" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2306.05836" target="_blank" rel="noopener"
+            >Can Large Language Models Infer Causation from Correlation?</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2023-06-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2306.05836" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2306.05836" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0a94fbb5e1c93513523f00e75d672ef4553861f9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2306.04347" target="_blank" rel="noopener">World Models for Math Story Problems</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-06-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2306.04347" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2306.04347" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/30ea884a5b8e4cffe18ebfef6c033e5c37b79eeb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2306.03175" target="_blank" rel="noopener"
+            >Infusing Lattice Symmetry Priors in Attention Mechanisms for Sample-Efficient Abstract Geometric Reasoning</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2023-06-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2306.03175" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2306.03175" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/81cac3c2a2eccf20dac0489f8a16e06f98a2d506" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2306.02457" target="_blank" rel="noopener"
+            >Adaptive and Personalized Exercise Generation for Online Language Learning</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-06-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2306.02457" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2306.02457" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c8f8abf0e3e36acdba8f77aa4222051cd38ce726" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.18462" target="_blank" rel="noopener"
+            >Membership Inference Attacks against Language Models via Neighbourhood Comparison</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-05-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.18462" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.18462" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cb754310302086dfbbcd098263200e2a03f65874" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.15054" target="_blank" rel="noopener"
+            >A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-05-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.15054" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.15054" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5dc15ac1c92ab7492f121471823fb13a95d273ba" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.15057" target="_blank" rel="noopener"
+            >Linear-Time Modeling of Linguistic Structure: An Order-Theoretic Perspective</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-05-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.15057" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.15057" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/340ae8b712340d513f288a3b84416f29bde1de2b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.14555" target="_blank" rel="noopener"
+            >All Roads Lead to Rome? Exploring the Invariance of Transformers&#x27; Representations</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.14555" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.14555" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5067784287cbfa5ac0f43942cb2f824c3270d444" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.14007" target="_blank" rel="noopener"
+            >When Does Aggregating Multiple Skills with Multi-Task Learning Work? A Case Study in Financial NLP</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.14007" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.14007" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6ad83dbd9a2da9607ece139c797694fd95738f62" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.14536" target="_blank" rel="noopener"
+            >MathDial: A Dialogue Tutoring Dataset with Rich Pedagogical Properties Grounded in Math Reasoning Problems</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.14536" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.14536" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6cd26d124ffeb6ce301ef351aada27fa0852f81b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.13304" target="_blank" rel="noopener"
+            >RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023-05-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.13304" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.13304" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d9964ab436eefd21f923a4bc833c6b66692c7f00" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.12152" target="_blank" rel="noopener"
+            >Re-visiting Automated Topic Model Evaluation with Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-05-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.12152" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.12152" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a2943fe9c71f116cd08f5f43626033cb7039e966" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.11142" target="_blank" rel="noopener"
+            >Discourse Centric Evaluation of Machine Translation with a Densely Annotated Parallel Corpus</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023-05-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.11142" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.11142" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/604e8f0c7650924713f8614a9b9c238498090657" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.11170" target="_blank" rel="noopener">Efficient Prompting via Dynamic In-Context Learning</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023-05-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.11170" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.11170" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8ce6ad6d8a73757309d3b9f525cf15cb68e32397" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.10406" target="_blank" rel="noopener">Variational Classification</a>
+          <div class="m">
+            <span class="v">Trans. Mach. Learn. Res.</span><span>2023-05-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.10406" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.10406" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f950208a7e97a05389dc7c7411ec15f187b989be" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.05471" target="_blank" rel="noopener"
+            >Beyond Good Intentions: Reporting the Research Landscape of NLP for Social Good</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-05-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.05471" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.05471" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8eaebaf8fc01049ee2812607642f1ac0dabc6c6e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.01764" target="_blank" rel="noopener">Psychologically-Inspired Causal Prompts</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023-05-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.01764" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.01764" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0ce70a87d7f7f5b24c697c88ab8e8d938b15b474" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2304.14293" target="_blank" rel="noopener"
+            >Controlled Text Generation with Natural Language Instructions</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2023-04-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2304.14293" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2304.14293" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/48f4f65df8eb4c435dcb14851f876c270ce2cfd5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2304.08931" target="_blank" rel="noopener"
+            >Enhancing Textbooks with Visuals from the Web for Improved Learning</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-04-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2304.08931" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2304.08931" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/06f7eefcfe454a37a92459a9646a1feb6e7c0382" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2304.02541" target="_blank" rel="noopener"
+            >PWESuite: Phonetic Word Embeddings and Tasks They Facilitate</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2023-04-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2304.02541" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2304.02541" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/db14d05b18ec852f8afcd6d2d10bbd9eeaef8325" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2303.17574" target="_blank" rel="noopener"
+            >Elastic Weight Removal for Faithful and Abstractive Dialogue Generation</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2023-03-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2303.17574" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2303.17574" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/68f0695aad787fdfbce4ec3992fea78641b91552" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2302.13496" target="_blank" rel="noopener"
+            >Strategize Before Teaching: A Conversational Tutoring System with Pedagogy Self-Distillation</a
+          >
+          <div class="m">
+            <span class="v">Findings</span><span>2023-02-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2302.13496" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2302.13496" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8c29771d0298e704f1fef23171bd9e63c61c6f84" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2301.09919" target="_blank" rel="noopener"
+            >Opportunities and Challenges in Neural Dialog Tutoring</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2023-01-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2301.09919" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2301.09919" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/076d56635311fb75168dc11a094bf7d70e4178a9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2301.09008" target="_blank" rel="noopener"
+            >Poor Man’s Quality Estimation: Predicting Reference-Based MT Metrics Without the Reference</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2023-01-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2301.09008" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2301.09008" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5150857ca3f5526b26d724cdb70605668e3268fe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2212.00193" target="_blank" rel="noopener"
+            >Distilling Reasoning Capabilities into Smaller Language Models</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2022-12-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2212.00193" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2212.00193" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8fd462f6248d5e3f1b6602697c09489086b5655f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2211.12835" target="_blank" rel="noopener"
+            >Automatic Generation of Socratic Subquestions for Teaching Math Word Problems</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-11-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2211.12835" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2211.12835" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e6745fb621481ccb0ed53c267a37292e499c1b42" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.16637" target="_blank" rel="noopener"
+            >Beyond prompting: Making Pre-trained Language Models Better Zero-shot Learners by Clustering Representations</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-10-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.16637" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.16637" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5c7f3e8b4e07e1d1ad9e708b4219b18de5e798e9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.14678" target="_blank" rel="noopener"
+            >Investigating the Role of Centering Theory in the Context of Neural Coreference Resolution Systems</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2022-10-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.14678" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.14678" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0625b75e488fffeb2575401428186e72efe15982" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.14667" target="_blank" rel="noopener"
+            >A Bilingual Parallel Corpus with Discourse Annotations</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2022-10-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.14667" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.14667" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7c5ebb55c17308f808176e7caa52134b0e36977c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.14698" target="_blank" rel="noopener"
+            >Autoregressive Structured Prediction with Language Models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-10-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.14698" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.14698" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9fc461d7f3981fb7fa8ed74f072746903875b08d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.13918" target="_blank" rel="noopener"
+            >Differentially Private Language Models for Secure Data Sharing</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-10-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.13918" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.13918" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/af710ada8965f274e810053f716f966627a136d9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.13617" target="_blank" rel="noopener"
+            >Adapters for Enhanced Modeling of Multilingual Knowledge and Text</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-10-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.13617" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.13617" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9519b1cdad21528632819e9ecece00f987e3fd8c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.12023" target="_blank" rel="noopener"
+            >A Causal Framework to Quantify the Robustness of Mathematical Reasoning with Language Models</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2022-10-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.12023" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.12023" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9b45af10429681249fafb07c3b6012ea4ce63ffe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.03650" target="_blank" rel="noopener"
+            >Longtonotes: OntoNotes with Longer Coreference Chains</a
+          >
+          <div class="m">
+            <span class="v">Findings</span><span>2022-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.03650" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.03650" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1c04b98b6a749e65206b44a8a2d3895122975d62" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.01478" target="_blank" rel="noopener"
+            >When to Make Exceptions: Exploring Language Models as Accounts of Human Moral Judgment</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2022-10-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.01478" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.01478" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1c1ca2392155ddf30408a442e6b504b5d60d4f2a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2207.01736" target="_blank" rel="noopener">Probing via Prompting</a>
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2022-07-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2207.01736" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2207.01736" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/91496a0a35d541c32324d23a06990be089f6c830" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2205.03977" target="_blank" rel="noopener">A Structured Span Selector</a>
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2022-05-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2205.03977" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2205.03977" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4a310a5e3ae9698722fa74737370a421d49d13e3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2205.02293" target="_blank" rel="noopener"
+            >Original or Translated? A Causal Analysis of the Impact of Translationese on Machine Translation Performance</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2022-05-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2205.02293" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2205.02293" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c64c49571cea94efb31fab21ef255b2d4cecf707" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2203.10623" target="_blank" rel="noopener">Calibration of Machine Reading Systems at Scale</a>
+          <div class="m">
+            <span class="v">Findings</span><span>2022-03-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2203.10623" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2203.10623" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9b23fb9c472c202fd53aba9d0fcaf6ae469260b4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2203.04651" target="_blank" rel="noopener"
+            >Slangvolution: A Causal Analysis of Semantic Change and Frequency Dynamics in Slang</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2022-03-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2203.04651" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2203.04651" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/11821c8bb3b81774f41e5a2a7bfa987974af9213" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2202.13758" target="_blank" rel="noopener">Logical Fallacy Detection</a>
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-02-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2202.13758" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2202.13758" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/faaa21f4c2062d4099e4d24997a189f1c1400304" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2202.00964" target="_blank" rel="noopener"
+            >What Has Been Enhanced in my Knowledge-Enhanced Language Model?</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-02-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2202.00964" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2202.00964" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1ab45eff6ca001ff421d740a22d3f736f3574aaa" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2110.08470" target="_blank" rel="noopener"
+            >Case-based reasoning for better generalization in textual reinforcement learning</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2021-10-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2110.08470" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2110.08470" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/18e0cdc75e017b6112d674c3bd0ac5b3e35e4f82" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2110.08323" target="_blank" rel="noopener">Learning the Transformer Kernel</a>
+          <div class="m">
+            <span class="v">Trans. Mach. Learn. Res.</span><span>2021-10-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2110.08323" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2110.08323" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a25370452533bf47549243e97852b9cdf7a0ee0e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2110.03618" target="_blank" rel="noopener"
+            >Causal Direction of Data Collection Matters: Implications of Causal and Anticausal Learning for NLP</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2021-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2110.03618" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2110.03618" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/abdcbc579a9b63d19bda86569e220a54e4dad1ba" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2109.05438" target="_blank" rel="noopener"
+            >&quot;Let Your Characters Tell Their Story&quot;: A Dataset for Character-Centric Narrative Understanding</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2021-09-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2109.05438" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2109.05438" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/21233223e6f14006106f3acedd60e59af18816e1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2108.04657" target="_blank" rel="noopener">Differentiable Subset Pruning of Transformer Heads</a>
+          <div class="m">
+            <span class="v">Transactions of the Association for Computational Linguistics</span><span>2021-08-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2108.04657" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2108.04657" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7a27cc0cc37931e85315ed41333f01cb6de18c02" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2107.07610" target="_blank" rel="noopener"
+            >Self-Supervised Contrastive Learning with Adversarial Perturbations for Defending Word Substitution-based Attacks</a
+          >
+          <div class="m">
+            <span class="v">NAACL-HLT</span><span>2021-07-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2107.07610" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2107.07610" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7f07e3a5c26c3993a590988bd9daeab00d8e7a54" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2106.02359" target="_blank" rel="noopener"
+            >How Good Is NLP? A Sober Look at NLP Tasks through the Lens of Social Impact</a
+          >
+          <div class="m">
+            <span class="v">Findings</span><span>2021-06-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2106.02359" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2106.02359" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/21e3fec6532fb8355de79453d135d84ee882d251" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2105.02629" target="_blank" rel="noopener"
+            >Bird’s Eye: Probing for Linguistic Graph Structures with a Simple Information-Theoretic Approach</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2021-05-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2105.02629" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2105.02629" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/999d5aaa7e565f62bbcb7167a5e000777d417e12" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2103.11878" target="_blank" rel="noopener"
+            >BlonDe: An Automatic Evaluation Metric for Document-level Machine Translation</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2021-03-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2103.11878" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2103.11878" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/43d08fdbf3ba54f3afe8be6357674dad3f1a98b4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/886b9ffb6f26f8cea5c6f7aeb8d56e05876f777c" target="_blank" rel="noopener"
+            >Clustering Contextualized Representations of Text for Unsupervised Syntax Induction</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2020-10-24</span
+            ><a href="https://www.semanticscholar.org/paper/886b9ffb6f26f8cea5c6f7aeb8d56e05876f777c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2010.12784" target="_blank" rel="noopener"
+            >Deep Clustering of Text Representations for Supervision-Free Probing of Syntax</a
+          >
+          <div class="m">
+            <span class="v">AAAI Conference on Artificial Intelligence</span><span>2020-10-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2010.12784" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2010.12784" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c38184c7ed9d798c83dbb48c8231e5a950a9b420" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2010.11374" target="_blank" rel="noopener"
+            >Stronger Transformers for Neural Multi-Hop Question Generation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2020-10-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2010.11374" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2010.11374" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4d51dce0873d8df2aeeb4c4f2b000a9b2993eae4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2010.03790" target="_blank" rel="noopener"
+            >Text-based RL Agents with Commonsense Knowledge: New Challenges, Environments and Baselines</a
+          >
+          <div class="m">
+            <span class="v">AAAI Conference on Artificial Intelligence</span><span>2020-10-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2010.03790" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2010.03790" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c117a59fdad8ebf857d01082612093e9e6aa676e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/33d469c6d9fc09b59522d91b7696b15dc60a9a93" target="_blank" rel="noopener"
+            >Knowledge Graph Embedding Compression</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2020-07-01</span
+            ><a href="https://www.semanticscholar.org/paper/33d469c6d9fc09b59522d91b7696b15dc60a9a93" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2005.00811" target="_blank" rel="noopener"
+            >Enhancing Text-based Reinforcement Learning Agents with Commonsense Knowledge</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2020-05-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2005.00811" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2005.00811" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0cf3f09f1eaf9f2811883b2a34bf49a35703c5a4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8acc12ccc3487093314ee1d20c51ce73210ba8eb" target="_blank" rel="noopener"
+            >Towards Literate Artificial Intelligence</a
+          >
+          <div class="m">
+            <span>2020-02-26</span
+            ><a href="https://www.semanticscholar.org/paper/8acc12ccc3487093314ee1d20c51ce73210ba8eb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/c3722832c69a6e6e42fc314ec3feb56e18b5b51f" target="_blank" rel="noopener"
+            >Discourse in Multimedia: A Case Study in Extracting Geometry Knowledge from Textbooks</a
+          >
+          <div class="m">
+            <span class="v">Computational Linguistics</span><span>2020-01-01</span
+            ><a href="https://www.semanticscholar.org/paper/c3722832c69a6e6e42fc314ec3feb56e18b5b51f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1811.05546" target="_blank" rel="noopener"
+            >Discourse in Multimedia: A Case Study in Information Extraction</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2018-11-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1811.05546" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1811.05546" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/56e13ac67e383b80896436122cce5a34617a9513" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1808.08493" target="_blank" rel="noopener"
+            >Contextual Parameter Generation for Universal Neural Machine Translation</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2018-08-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1808.08493" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1808.08493" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a8a863e85a95919773868204d672f1260e0058ce" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e543047d7848934ce45966fbd61cef60c7b2b50d" target="_blank" rel="noopener"
+            >Parsing to Programs: A Framework for Situated QA</a
+          >
+          <div class="m">
+            <span class="v">Knowledge Discovery and Data Mining</span><span>2018-07-19</span
+            ><a href="https://www.semanticscholar.org/paper/e543047d7848934ce45966fbd61cef60c7b2b50d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a1e79bc3717486b311488bc67b319b3f6a44da14" target="_blank" rel="noopener"
+            >Self-Training for Jointly Learning to Ask and Answer Questions</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2018-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/a1e79bc3717486b311488bc67b319b3f6a44da14" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1711.07908" target="_blank" rel="noopener"
+            >Effective Use of Bidirectional Language Modeling for Transfer Learning in Biomedical Named Entity Recognition</a
+          >
+          <div class="m">
+            <span class="v">Machine Learning in Health Care</span><span>2017-11-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1711.07908" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1711.07908" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9223c95f0e600aee2dcf476094a5102adc386e0f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/81f466a535cdec4957989999f9ca381bc4fe14e9" target="_blank" rel="noopener"
+            >From Textbooks to Knowledge: A Case Study in Harvesting Axiomatic Knowledge from Textbooks to Solve Geometry Problems</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2017-09-01</span
+            ><a href="https://www.semanticscholar.org/paper/81f466a535cdec4957989999f9ca381bc4fe14e9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7220d7ec31f6dc6ad7030f601743b5392513a2d9" target="_blank" rel="noopener"
+            >Learning to Solve Geometry Problems from Natural Language Demonstrations in Textbooks</a
+          >
+          <div class="m">
+            <span class="v">International Workshop on Semantic Evaluation</span><span>2017-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/7220d7ec31f6dc6ad7030f601743b5392513a2d9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/2e107b544461cc10bcdaf39e506e35faf1af172b" target="_blank" rel="noopener"
+            >Machine Comprehension using Rich Semantic Representations</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2016-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/2e107b544461cc10bcdaf39e506e35faf1af172b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/992018dd6d98f37352437c19f16c5bc87c3b6f22" target="_blank" rel="noopener"
+            >Easy Questions First? A Case Study on Curriculum Learning for Question Answering</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2016-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/992018dd6d98f37352437c19f16c5bc87c3b6f22" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ccd377e34f2b3e1b89497e64a15894551a944faf" target="_blank" rel="noopener"
+            >Grounding Topic Models with Knowledge Bases</a
+          >
+          <div class="m">
+            <span class="v">International Joint Conference on Artificial Intelligence</span><span>2016-07-09</span
+            ><a href="https://www.semanticscholar.org/paper/ccd377e34f2b3e1b89497e64a15894551a944faf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1606.09239" target="_blank" rel="noopener">Learning Concept Taxonomies from Multi-modal Data</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2016-06-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1606.09239" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1606.09239" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f444568c64befd63d857f1007b0357c6f0e4de96" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1602.04375" target="_blank" rel="noopener"
+            >Science Question Answering using Instructional Materials</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2016-02-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1602.04375" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1602.04375" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/30e1e2b4cbfa31d79492bb17b01502693c43a8d9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f0ec580dcc448ecf91dcd0362c2b9e1cd78ecf54" target="_blank" rel="noopener"
+            >An Active Learning Approach to Coreference Resolution</a
+          >
+          <div class="m">
+            <span class="v">International Joint Conference on Artificial Intelligence</span><span>2015-07-25</span
+            ><a href="https://www.semanticscholar.org/paper/f0ec580dcc448ecf91dcd0362c2b9e1cd78ecf54" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f26e088bc4659a9b7fce28b6604d26de779bcf93" target="_blank" rel="noopener"
+            >Learning Answer-Entailing Structures for Machine Comprehension</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2015-07-01</span
+            ><a href="https://www.semanticscholar.org/paper/f26e088bc4659a9b7fce28b6604d26de779bcf93" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9cc098409b7197748f65c9785d5978b5818211e1" target="_blank" rel="noopener"
+            >Spatial compactness meets topical consistency: jointly modeling links and content for community detection</a
+          >
+          <div class="m">
+            <span class="v">Web Search and Data Mining</span><span>2014-02-24</span
+            ><a href="https://www.semanticscholar.org/paper/9cc098409b7197748f65c9785d5978b5818211e1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f86f37f43055fe2a94a71879d84577f872432bc3" target="_blank" rel="noopener"
+            >A Structured Distributional Semantic Model : Integrating Structure with Semantics</a
+          >
+          <div class="m">
+            <span class="v">CVSM@ACL</span><span>2013-08-05</span
+            ><a href="https://www.semanticscholar.org/paper/f86f37f43055fe2a94a71879d84577f872432bc3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/50f756b336b14449b2a32f221e46a9add8bb3ab7" target="_blank" rel="noopener"
+            >A Structured Distributional Semantic Model for Event Co-reference</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2013-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/50f756b336b14449b2a32f221e46a9add8bb3ab7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5cc7d945b90e9fdb0388c5e49e95ff464a1affe5" target="_blank" rel="noopener"
+            >Identifying Metaphorical Word Use with Tree Kernels</a
+          >
+          <div class="m">
+            <span>2013-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/5cc7d945b90e9fdb0388c5e49e95ff464a1affe5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/101b232c07b8869e9c3edd1512dd801eba28a941" target="_blank" rel="noopener"
+            >Solving electrical networks to incorporate supervision in random walks</a
+          >
+          <div class="m">
+            <span class="v">The Web Conference</span><span>2013-05-13</span
+            ><a href="https://www.semanticscholar.org/paper/101b232c07b8869e9c3edd1512dd801eba28a941" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/658393d7d2b8022d05e92118df87e2a52e6523fb" target="_blank" rel="noopener"
+            >Collective matrix factorization for co-clustering</a
+          >
+          <div class="m">
+            <span class="v">The Web Conference</span><span>2013-05-13</span
+            ><a href="https://www.semanticscholar.org/paper/658393d7d2b8022d05e92118df87e2a52e6523fb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9eda70601ea7b4f44739ca25b81eaa979b908c7d" target="_blank" rel="noopener"
+            >Using content and interactions for discovering communities in social networks</a
+          >
+          <div class="m">
+            <span class="v">The Web Conference</span><span>2012-04-16</span
+            ><a href="https://www.semanticscholar.org/paper/9eda70601ea7b4f44739ca25b81eaa979b908c7d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9c5ef9b0083b1d149cb18f0ca4138220b41405bf" target="_blank" rel="noopener"
+            >Using Text Reviews for Product Entity Completion</a
+          >
+          <div class="m">
+            <span class="v">International Joint Conference on Natural Language Processing</span><span>2011-11-01</span
+            ><a href="https://www.semanticscholar.org/paper/9c5ef9b0083b1d149cb18f0ca4138220b41405bf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5562fe46262a6849c149a445035ee9fc3fc118a0" target="_blank" rel="noopener"
+            >Probabilistic model for discovering topic based communities in social networks</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Information and Knowledge Management</span><span>2011-10-24</span
+            ><a href="https://www.semanticscholar.org/paper/5562fe46262a6849c149a445035ee9fc3fc118a0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8fc27e93842963f1fe99fd563b9f565d5125c369" target="_blank" rel="noopener"
+            >Using Abstract Information and Community Alignment Information for Link Prediction</a
+          >
+          <div class="m">
+            <span class="v">2010 Second International Conference on Machine Learning and Computing</span><span>2010-02-09</span
+            ><a href="https://www.semanticscholar.org/paper/8fc27e93842963f1fe99fd563b9f565d5125c369" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/01a6706e7b5c2a092df255ac8868b9acfa0c56fa" target="_blank" rel="noopener"
+            >Towards Understanding Semantic Degeneration in Text-Based Reinforcement Learning</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/01a6706e7b5c2a092df255ac8868b9acfa0c56fa" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/43ee74f1c56f6a29f3f75f04ebdcd476728cc81c" target="_blank" rel="noopener"
+            >Causal AI Scientist: Facilitating Causal Data Science with Large Language Models</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/43ee74f1c56f6a29f3f75f04ebdcd476728cc81c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/47e731c49814912c89d4324211facdc02b9a4e6f" target="_blank" rel="noopener"
+            >AI Poses Risks to Democratic and Social Systems</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/47e731c49814912c89d4324211facdc02b9a4e6f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/579f5b74d69dacd45473d01ff9535ef61ee11cf5" target="_blank" rel="noopener"
+            >Should I Agree with You? Simulating Persuasion and Decision Dynamics in Multi-Agent Moral Dilemmas</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/579f5b74d69dacd45473d01ff9535ef61ee11cf5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ba47ab62bbfcc7b7fcb9058232acb227491ad275" target="_blank" rel="noopener"
+            >Cooperate or Collapse: Emergence of Sustainability in a Society of LLM Agents</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/ba47ab62bbfcc7b7fcb9058232acb227491ad275" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

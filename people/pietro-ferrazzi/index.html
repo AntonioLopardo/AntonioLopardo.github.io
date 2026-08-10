@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Pietro Ferrazzi</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/pietro-ferrazzi.jpg"
+          alt="Pietro Ferrazzi"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(274 42% 42%)">PF</span>'
+        />
+        <div>
+          <h1>Pietro Ferrazzi <span class="tag met">interacted with</span></h1>
+          <div class="aff">FBK (Trento) + Univ. Padova — PhD candidate (since Oct &#x27;23)</div>
+          <div class="metat">met · ACL 2026 · 2026-07-04</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://scholar.google.com/citations?user=y60N1qsAAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Pietro%20Ferrazzi">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 11</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.12569" target="_blank" rel="noopener"
+            >eCREAM-MedCorpus A Large-Scale Corpus of Clinical Notes for Italian</a
+          >
+          <div class="m">
+            <span>2026-06-10</span><a class="alpha" href="https://www.alphaxiv.org/abs/2606.12569" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.12569" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9fe23ff713afa2dd2b562c02dee1a8e83be675c4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.09466" target="_blank" rel="noopener"
+            >DECSELFMASK: Leveraging Unlabeled Text via Self-Relevance-Guided Masking for Decoder-Only Classification</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.09466" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.09466" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/eb7f12dcdc5773e62116ea4e7328e1f5baaf93b2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7b81136b1ad93cf87d93a4a435547fe36b535c27" target="_blank" rel="noopener"
+            >Overview of the CRF 2026 Shared Task on Clinical Case Report Forms Filling</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the Language Resources and Evaluation Conference</span><span>2026-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/7b81136b1ad93cf87d93a4a435547fe36b535c27" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.23062" target="_blank" rel="noopener"
+            >Toward Automatic Filling of Case Report Forms: A Case Study on Data from an Italian Emergency Department</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.23062" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.23062" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/397656a69f2ccddfcd3ecef09b3bf37f9a42dc3d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.17475" target="_blank" rel="noopener"
+            >Small LLMs for Medical NLP: a Systematic Analysis of Few-Shot, Constraint Decoding, Fine-Tuning and Continual Pre-Training in Italian</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.17475" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.17475" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/93da3396fb682c5e7d4efcfc7d807c56295cdabd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/372669335121ff412f00c5b29302b3fac381e899" target="_blank" rel="noopener"
+            >Thesis Proposal: LLMs post-training for multilingual medical tasks. Instruction-Tuning, Continual-Pretraining or Reasoning?</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/372669335121ff412f00c5b29302b3fac381e899" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e32cc3ab4253cebc1cd46658d370b6e8f807396f" target="_blank" rel="noopener"
+            >EDEN: A Large-Scale Corpus of Clinical Notes for Italian</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/e32cc3ab4253cebc1cd46658d370b6e8f807396f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.11666" target="_blank" rel="noopener"
+            >Converting Annotated Clinical Cases into Structured Case Report Forms</a
+          >
+          <div class="m">
+            <span class="v">BioNLP@ACL</span><span>2025-06-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.11666" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.11666" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/86eb7fafbab11bc712d159f392d8d29e22bbe557" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.13180" target="_blank" rel="noopener"
+            >ViPlan: A Benchmark for Visual Planning with Symbolic Predicates and Vision-Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.13180" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.13180" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4be750b67884b81393f547cc63e5ce03df6ebbf4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/07c373c2963516cd0ac528623a745d3173638fd6" target="_blank" rel="noopener"
+            >A cost-effective approach to counterbalance the scarcity of medical datasets</a
+          >
+          <div class="m">
+            <span class="v">Frontiers in Disaster and Emergency Medicine</span><span>2025-05-09</span
+            ><a href="https://www.semanticscholar.org/paper/07c373c2963516cd0ac528623a745d3173638fd6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.20568" target="_blank" rel="noopener"
+            >Low-resource Information Extraction with the European Clinical Case Corpus</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-03-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.20568" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.20568" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b3c4f27cef55a786ee1f0630c44e19fa00c6b42a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

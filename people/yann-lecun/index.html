@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Yann LeCun</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/yann-lecun.jpg"
+          alt="Yann LeCun"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(339 42% 42%)">YL</span>'
+        />
+        <div>
+          <h1>Yann LeCun <span class="tag">following</span></h1>
+          <div class="aff">Meta AI / NYU</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/ylecun" target="_blank" rel="noopener">@ylecun</a><a href="/papers.html?p=Yann%20LeCun">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 80</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2608.02208" target="_blank" rel="noopener"
+            >Self-supervised DXA representations encode multi-system disease risk, biological aging and heritability</a
+          >
+          <div class="m">
+            <span>2026-08-03</span><a class="alpha" href="https://www.alphaxiv.org/abs/2608.02208" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2608.02208" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1006651b762e229b32cc001bb287c3f607749447" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2608.00491" target="_blank" rel="noopener"
+            >HP-JEPA: Hierarchical Partitioning for Multi-Resolution Graph Joint-Embedding Predictive Learning</a
+          >
+          <div class="m">
+            <span>2026-08-01</span><a class="alpha" href="https://www.alphaxiv.org/abs/2608.00491" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2608.00491" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f4578e2fa551e6b991125e5f8770212337476fee" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/1434abdc75086289a430c2306488771c8b5c783a" target="_blank" rel="noopener"
+            >Unpacking Open Source Artificial Intelligence: Toward a Framework for Openness in Foundation Models</a
+          >
+          <div class="m">
+            <span class="v">Communications of the ACM</span><span>2026-07-29</span
+            ><a href="https://www.semanticscholar.org/paper/1434abdc75086289a430c2306488771c8b5c783a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.22000" target="_blank" rel="noopener"
+            >Music-JEPA: Learning a World Model of Sound from Action</a
+          >
+          <div class="m">
+            <span>2026-07-24</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.22000" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.22000" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/aa719edaada5f83db6a151ca7f062f134927fce7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.18236" target="_blank" rel="noopener"
+            >Patch Policy: Efficient Embodied Control via Dense Visual Representations</a
+          >
+          <div class="m">
+            <span>2026-07-20</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.18236" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.18236" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/41401cb47d98892ae37b7a12d2a125afea245e76" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.04011" target="_blank" rel="noopener"
+            >Separating Representation from Reconstruction Enables Scalable Text Encoders</a
+          >
+          <div class="m">
+            <span>2026-07-04</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.04011" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.04011" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4f890d8373b93892ce2a50d87415653fc225a5a8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.32026" target="_blank" rel="noopener">AdaJEPA: An Adaptive Latent World Model</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.32026" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.32026" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6a2f658d6ea2d3a1f2d03b11d0cce65e9881bd96" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.23444" target="_blank" rel="noopener"
+            >SkyJEPA: Learning Long-Horizon World Models for Zero-Shot Sim-to-Real Control of Quadrotors</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.23444" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.23444" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/41620e8f40ae6f6103a3c1d4eab59f5830c963dd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.19398" target="_blank" rel="noopener"
+            >S-JEPA : Soft Clustering Anchors for Self-Supervised Speech Representation Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.19398" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.19398" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/54f505d19d73e12d3642a9a82cd4851235edf043" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.15956" target="_blank" rel="noopener"
+            >You Don&#x27;t Need Strong Assumptions: Visual Representation Learning via Temporal Differences</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.15956" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.15956" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/69b2f3313b31ea5592f6242f2a517b84011f9f24" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.08775" target="_blank" rel="noopener"
+            >Unifying Object-Centric World Models and Diffusion Policy: A Hierarchical Framework for Multi-Stage Robotic Tasks</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.08775" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.08775" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e218c1a1fcba59c463082f9a1824ebeecae50f65" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.26379" target="_blank" rel="noopener">When Does LeJEPA Learn a World Model?</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.26379" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.26379" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/36863b6dd7968bca4efb3f6e93cf06cb84568f0f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/20ba4363b7275178aaca520f9f16b39dad3a87d0" target="_blank" rel="noopener"
+            >Announcing the Shaw Prize in Computer Science</a
+          >
+          <div class="m">
+            <span class="v">Communications of the ACM</span><span>2026-05-21</span
+            ><a href="https://www.semanticscholar.org/paper/20ba4363b7275178aaca520f9f16b39dad3a87d0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.21800" target="_blank" rel="noopener"
+            >stable-worldmodel: A Platform for Reproducible World Modeling Research and Evaluation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.21800" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.21800" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8d62bb68ffa636edd5b72a8fc8fcd99f37aeb836" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.14759" target="_blank" rel="noopener"
+            >Crys-JEPA: Accelerating Crystal Discovery via Embedding Screening and Generative Refinement</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.14759" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.14759" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1692a95688453760a46c2f073574bf8a6c45173d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.06732" target="_blank" rel="noopener">On Training in Imagination</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.06732" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.06732" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7f012be3704ebd1ffaa7571f179368a7db8703f7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8f486c09cffd1d848db6da66591c430d683dae0f" target="_blank" rel="noopener"
+            >Spectral Graph Theory: The mathematics of self-supervised learning [Special Issue on the Mathematics of Deep Learning]</a
+          >
+          <div class="m">
+            <span class="v">IEEE Signal Processing Magazine</span><span>2026-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/8f486c09cffd1d848db6da66591c430d683dae0f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.03208" target="_blank" rel="noopener">Hierarchical Planning with Latent World Models</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-04-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.03208" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.03208" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/477e20594635eb0ced89bbf2dd9ec873278cf48d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener"
+            >Why AI systems don&#x27;t learn and what to do about it: Lessons on autonomous learning from cognitive science</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.15381" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4353f9b78c972e37273c1b77a440c3812215ca91" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.14482" target="_blank" rel="noopener"
+            >V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.14482" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.14482" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/42ca8bd0ae408eff0d3bd9f5e121f792876e83ea" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.13227" target="_blank" rel="noopener"
+            >Representation Learning for Spatiotemporal Physical Systems</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.13227" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.13227" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/23f953773609d673caf468aeea02da9c3f496592" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.19312" target="_blank" rel="noopener"
+            >LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.19312" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.19312" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/530dab86cb8034bc12a32d21508aaa3f2cc00aa1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.12231" target="_blank" rel="noopener">Temporal Straightening for Latent Planning</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.12231" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.12231" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8c9ae85bb64e6e872094065cb9c062f051c2ad1a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.05498" target="_blank" rel="noopener"
+            >The Spike, the Sparse and the Sink: Anatomy of Massive Activations and Attention Sinks</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.05498" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.05498" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9b65331305dfab8d4f48da6854ee7673c8c6eb99" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.05225" target="_blank" rel="noopener">AI+HW 2035: Shaping the Next Decade</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.05225" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.05225" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c3e09942658c43e607176e0b87192e91e15aeca1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.03276" target="_blank" rel="noopener"
+            >Beyond Language Modeling: An Exploration of Multimodal Pretraining</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.03276" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.03276" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/acb718a8659640ac1258d3bd391ddd9f1f2d7251" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.23643" target="_blank" rel="noopener"
+            >AI Must Embrace Specialization via Superhuman Adaptable Intelligence</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.23643" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.23643" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4fe6ee338373b796ed3b26cf6908c7db2ca56798" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.22617" target="_blank" rel="noopener"
+            >Semantic Tube Prediction: Beating LLM Data Efficiency with JEPA</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.22617" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.22617" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/aef0d84ac46f451d8083a7ae7bbafdbdfdad97ca" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.14272" target="_blank" rel="noopener"
+            >Radial-VCReg: More Informative Representation Learning Through Radial Gaussianization</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.14272" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.14272" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d925357d2eec7147ee3c67016854271998307323" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.11389" target="_blank" rel="noopener"
+            >Causal-JEPA: Learning World Models through Object-Level Latent Masking</a
+          >
+          <div class="m">
+            <span>2026-02-11</span><a class="alpha" href="https://www.alphaxiv.org/abs/2602.11389" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.11389" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/bed6ecff103c1a6f3a516d9b9d4847be8aff5294" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.08968" target="_blank" rel="noopener"
+            >stable-worldmodel-v1: Reproducible World Modeling Research and Evaluation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.08968" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.08968" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/952a89a0add88d80674c0554aa116a83d82763df" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.03604" target="_blank" rel="noopener"
+            >A Lightweight Library for Energy-Based Joint-Embedding Predictive Architectures</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.03604" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.03604" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7e65d820f13cf94be083495fd2c433c0886f5a9b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.01456" target="_blank" rel="noopener"
+            >Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.01456" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.01456" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/2e8ccd5997437eeb8001e58204e2b66eaad02142" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.00475" target="_blank" rel="noopener"
+            >Parallel Stochastic Gradient-Based Planning for World Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.00475" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.00475" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6209c4ab686552f9d644f56ff962018a67978e27" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.09040" target="_blank" rel="noopener"
+            >Soft Clustering Anchors for Self-Supervised Speech Representation Learning in Joint Embedding Prediction Architectures</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.09040" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.09040" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b02857368ab8aae447e7856eda66d0d926603792" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.16208" target="_blank" rel="noopener"
+            >Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.16208" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.16208" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0b457a087fa7c01f37de67065be19f3aa8583aa8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.05230" target="_blank" rel="noopener">Learning Latent Action World Models In The Wild</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.05230" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.05230" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/50509dcc04f3972ba0e10f4fe635aa92cbfac9fc" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7d909170d91e1b35b4b9a8ac01731d7aed2cd53e" target="_blank" rel="noopener"
+            >Causal-JEPA: Learning World Models through Object-Level Latent Interventions</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/7d909170d91e1b35b4b9a8ac01731d7aed2cd53e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.24497" target="_blank" rel="noopener"
+            >What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?</a
+          >
+          <div class="m">
+            <span class="v">Trans. Mach. Learn. Res.</span><span>2025-12-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.24497" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.24497" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/35fc38884dacfaf54e87d739fdb4104bc49b63e5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.00844" target="_blank" rel="noopener">Value-guided action planning with JEPA world models</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.00844" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.00844" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f2b50aa84f10b0f89293fc116e91f8a93f7f40e7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.21204" target="_blank" rel="noopener"
+            >SpidR-Adapt: A Universal Speech Representation Model for Few-Shot Adaptation</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-12-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.21204" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.21204" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d7bbb7d6e5c0d8a12a1ca83aec3e99a0e8dc9070" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.09929" target="_blank" rel="noopener"
+            >Closing the Train-Test Gap in World Models for Gradient-Based Planning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.09929" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.09929" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e898bb88dc7c1b6eb108f381b80f02588c24cf32" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.07168" target="_blank" rel="noopener"
+            >JEPA as a Neural Tokenizer: Learning Robust Speech Representations with Density Adaptive Attention</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.07168" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.07168" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b9cd560d320a1f677701f4060ae9dc9aa199d1ff" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.08544" target="_blank" rel="noopener"
+            >LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.08544" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.08544" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/988ef01812555a4e2a5810bd245a71f31896b36c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.04670" target="_blank" rel="noopener">Cambrian-S: Towards Spatial Supersensing in Video</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.04670" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.04670" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cd1d87e7e31a05a82b6b25bf231f831c39006ef1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.06477" target="_blank" rel="noopener"
+            >Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.06477" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.06477" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e958e9a8ccc0f285f59b0a9a0aa7ae896396985d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.05949" target="_blank" rel="noopener"
+            >Gaussian Embeddings: How JEPAs Secretly Learn Your Data Density</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.05949" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.05949" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8702a0e747ca525e79dd7667d17558f7d016da90" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.14252" target="_blank" rel="noopener"
+            >LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-09-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.14252" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.14252" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ee1c6d73dcbcde5eb204d47a7c04dc44078e9ddd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.19468" target="_blank" rel="noopener"
+            >Back to the Features: DINO as a Foundation for Video World Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-07-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.19468" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.19468" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6eab7b59bac9246b577dcbbadd0ab0a230bf5432" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.09985" target="_blank" rel="noopener"
+            >V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.09985" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.09985" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b202faf38efbffcb26470c702e1140b047d6f6e7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.20425" target="_blank" rel="noopener"
+            >OSVI-WM: One-Shot Visual Imitation for Unseen Tasks using World-Model-Guided Trajectory Generation</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-05-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.20425" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.20425" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b6f6263a206c18e4fb9e01ed26af532a9bd44b3a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.17117" target="_blank" rel="noopener"
+            >From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.17117" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.17117" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/69a4c84867d5cc15be298bf4ad728a6413691cbd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.01017" target="_blank" rel="noopener">Scaling Language-Free Visual Representation Learning</a>
+          <div class="m">
+            <span class="v">IEEE International Conference on Computer Vision</span><span>2025-04-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.01017" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.01017" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/aa5d0f6a14a9da689de842f6af61021e6d91aadf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.10622" target="_blank" rel="noopener">Transformers without Normalization</a>
+          <div class="m">
+            <span class="v">Computer Vision and Pattern Recognition</span><span>2025-03-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.10622" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.10622" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1e178f0c5bb9709ae5c7bdb60ecd76f00b0fcd86" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.14819" target="_blank" rel="noopener"
+            >Learning from Reward-Free Offline Data: A Case for Planning with Latent Dynamics Models</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-02-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.14819" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.14819" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b9eb8ba8467d4e8d50c41d4e66f96fa6ec173193" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.11831" target="_blank" rel="noopener"
+            >Intuitive physics understanding emerges from self-supervised pretraining on natural videos</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-02-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.11831" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.11831" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c5e7e68a6214f5f2726b5d1845968e5f93fcef1c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.02013" target="_blank" rel="noopener"
+            >Layer by Layer: Uncovering Hidden Representations in Language Models</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025-02-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.02013" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.02013" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ae22db103c2954a56787a6c91373ea161841f250" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3155eec98c4a72a774998966403caddddcbfe5e2" target="_blank" rel="noopener"
+            >Artificial Intelligence in Scientific Research: Transforming Data Analysis and Discovery</a
+          >
+          <div class="m">
+            <span class="v">International Journal of Innovative Computer Science and IT Research</span><span>2025-01-01</span
+            ><a href="https://www.semanticscholar.org/paper/3155eec98c4a72a774998966403caddddcbfe5e2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/2268d5094a7baad2fb680584465c5584fb195587" target="_blank" rel="noopener"
+            >Training compute-optimal transformer encoder models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/2268d5094a7baad2fb680584465c5584fb195587" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.14164" target="_blank" rel="noopener"
+            >MetaMorph: Multimodal Understanding and Generation via Instruction Tuning</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Computer Vision</span><span>2024-12-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.14164" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.14164" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/af548607b73fcd51683842d2fbefb3f97205e885" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.10925" target="_blank" rel="noopener"
+            >Video Representation Learning with Joint-Embedding Predictive Architectures</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-12-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.10925" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.10925" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8855ed01763594cd8b88989ff8b0fd1a40173e0c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.09563" target="_blank" rel="noopener"
+            >Does Representation Matter? Exploring Intermediate Layers in Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-12-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.09563" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.09563" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9020bd2c135513e300f5b21c9de00f2e7df035e8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.07169" target="_blank" rel="noopener"
+            >Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation</a
+          >
+          <div class="m">
+            <span class="v">Computer Vision and Pattern Recognition</span><span>2024-12-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.07169" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.07169" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c141182701a7eab1452c1767cc87d7c74f89967c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.03572" target="_blank" rel="noopener">Navigation World Models</a>
+          <div class="m">
+            <span class="v">Computer Vision and Pattern Recognition</span><span>2024-12-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.03572" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.03572" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9ca72cef4487494cd835e7abca65794407db62ee" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.15931" target="_blank" rel="noopener"
+            >Improving Pre-Trained Self-Supervised Embeddings Through Effective Entropy Maximization</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Artificial Intelligence and Statistics</span><span>2024-11-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.15931" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.15931" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/96199c65d118164ee47310a5decfd6df05937f96" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4c4d882c3e54612946d289fd159da8de98fb3200" target="_blank" rel="noopener"
+            >FAST INCREMENTAL LEARNING FOR AUTONOMOUS GROUND NAVIGATION</a
+          >
+          <div class="m">
+            <span class="v">SAE technical paper series</span><span>2024-11-15</span
+            ><a href="https://www.semanticscholar.org/paper/4c4d882c3e54612946d289fd159da8de98fb3200" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.04983" target="_blank" rel="noopener"
+            >DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2024-11-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.04983" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.04983" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/badf5d00486111d936b056e52f13c26c1bbbd573" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.02344" target="_blank" rel="noopener"
+            >Seq-VCR: Preventing Collapse in Intermediate Transformer Representations for Enhanced Reasoning</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-11-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.02344" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.02344" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6144237fadd0c21141d23d0200cb55998cca83e5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.21256" target="_blank" rel="noopener"
+            >Multi-modal AI for comprehensive breast cancer prognostication</a
+          >
+          <div class="m">
+            <span class="v">Nature Communications</span><span>2024-10-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.21256" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.21256" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/306174aab9874314deabbffeb81bfef4ce9579ca" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.11208" target="_blank" rel="noopener"
+            >PooDLe: Pooled and dense self-supervised learning from naturalistic videos</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-08-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2408.11208" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.11208" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/532c8800cd432fe93132eea875ada2681e2ac4a4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4e5d86ea8eacd341d13123852d50d1ef62738744" target="_blank" rel="noopener"
+            >LiveBench: A Challenging, Contamination-Free LLM Benchmark</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/4e5d86ea8eacd341d13123852d50d1ef62738744" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4deb72f9d9681eefd8145a89e845b83f598473a1" target="_blank" rel="noopener"
+            >𝕏-Sample Contrastive Loss: Improving Contrastive Learning with Sample Similarity Graphs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/4deb72f9d9681eefd8145a89e845b83f598473a1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/dee50de1da3d917e97ccde8ca103600842612383" target="_blank" rel="noopener"
+            >How Learning by Reconstruction Produces Uninformative Features For Perception</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/dee50de1da3d917e97ccde8ca103600842612383" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0380271e23c5a3348f9f8ad1906b692b22f8b75e" target="_blank" rel="noopener"
+            >Minimalistic Unsupervised Representation Learning with the Sparse Manifold Transform</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/0380271e23c5a3348f9f8ad1906b692b22f8b75e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a6eff86323b8813e91a9ba059c0bc2871a11e76f" target="_blank" rel="noopener"
+            >An Information Theory Perspective on Variance-Invariance-Covariance Regularization</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/a6eff86323b8813e91a9ba059c0bc2871a11e76f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5bd43ef66f6e003405d6a1a9eee48e8de82d7a53" target="_blank" rel="noopener"
+            >An Information Theory Perspective on Variance-Invariance-Covariance Regularization</a
+          >
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 36</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/5bd43ef66f6e003405d6a1a9eee48e8de82d7a53" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6df3dc585e32f3b1cb49228d94a5469c30d79d2b" target="_blank" rel="noopener"
+            >International Conference on Machine Learning June 2014, Bejing China Workshop Ulearbnbio Unsupervised Learning for Bioacoustic Data High
+            Performance Computer Acoustic Data Accelerator: a New System for Exploring Marine Mammal Acoustics for Big Data Applications</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/6df3dc585e32f3b1cb49228d94a5469c30d79d2b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9adb3a467cdc39637aca2a88a988d543cf45c72d" target="_blank" rel="noopener"
+            >Energy-based Models in Document Recognition and Computer Vision. 1. Two Challenges in Machine Learning</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/9adb3a467cdc39637aca2a88a988d543cf45c72d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/be2bd2ca84460ab58c5563789b8cd482e977ee76" target="_blank" rel="noopener"
+            >The Diashow Paradox: Stronger 3D-Aware Representations Emerge from Image Sets, Not Videos Anonymous ICCV submission</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/be2bd2ca84460ab58c5563789b8cd482e977ee76" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/cd245c43060ad4750ac7cd9d6dabd9c46c1175f3" target="_blank" rel="noopener"
+            >An Information-Theoretic Understanding of Maximum Manifold Capacity Representations</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/cd245c43060ad4750ac7cd9d6dabd9c46c1175f3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

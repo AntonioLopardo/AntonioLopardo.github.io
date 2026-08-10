@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Yunyao Li</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/yunyao-li.jpg"
+          alt="Yunyao Li"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(48 42% 42%)">YL</span>'
+        />
+        <div>
+          <h1>Yunyao Li <span class="tag met">interacted with</span></h1>
+          <div class="aff">Adobe — Director of Machine Learning (CA)</div>
+          <div class="metat">met · ACL 2026 · 2026-07-04</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/yunyao_li" target="_blank" rel="noopener">@yunyao_li</a
+        ><a href="https://www.linkedin.com/in/yunyao-li/" target="_blank" rel="noopener">LinkedIn</a
+        ><a href="https://scholar.google.com/citations?user=u5LmeasAAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Yunyao%20Li">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 96</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.06388" target="_blank" rel="noopener"
+            >Humans&#x27; ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.06388" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.06388" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d0600cd5ad96a12f4d1e6e33cf9fafee5cf91a3c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.21060" target="_blank" rel="noopener"
+            >Human-LLM Collaborative Feature Engineering for Tabular Data</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.21060" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.21060" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/32dcc9cc470bd9a5d477c7effb3ea594e9eee463" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d93ce91eee16915f247b2a5837a0d4a942a0725b" target="_blank" rel="noopener"
+            >ACL 2026 Industry Track: Overview</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track)</span
+            ><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/d93ce91eee16915f247b2a5837a0d4a942a0725b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9e05dd6d6e9ae63a1a2fc61edba37f43034ce6eb" target="_blank" rel="noopener"
+            >Unveiling unwillingness to communicate among EFL learners in flipped learning: an ecological perspective</a
+          >
+          <div class="m">
+            <span class="v">Innovation in Language Learning and Teaching</span><span>2025-01-31</span
+            ><a href="https://www.semanticscholar.org/paper/9e05dd6d6e9ae63a1a2fc61edba37f43034ce6eb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b4a117c484f8bed78f100d53302d010f105dbd36" target="_blank" rel="noopener"
+            >The Intersects of AI and Film: How Machine Learning Determines Narrative Structures and Creates Cultural Representation</a
+          >
+          <div class="m">
+            <span class="v">International Water and Irrigation</span><span>2025-01-17</span
+            ><a href="https://www.semanticscholar.org/paper/b4a117c484f8bed78f100d53302d010f105dbd36" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/abba4788fb8bff387e7c2f3df9783db40163783b" target="_blank" rel="noopener"
+            >ACL 2025 Industry Track: Overview</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/abba4788fb8bff387e7c2f3df9783db40163783b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.06099" target="_blank" rel="noopener"
+            >CoPrompter: User-Centric Evaluation of LLM Instruction Alignment for Improved Prompt Engineering</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Intelligent User Interfaces</span><span>2024-11-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.06099" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.06099" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/384acf1625ded9daa751b8bfe042f858da92c50e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2311.09756" target="_blank" rel="noopener"
+            >StorySparkQA: Expert-Annotated QA Pairs with Real-World Knowledge for Children’s Story-Based Learning</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-11-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2311.09756" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2311.09756" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/384dd8509978e62cb9ada1279733de01fafeec47" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2309.11669" target="_blank" rel="noopener"
+            >Construction of Paired Knowledge Graph - Text Datasets Informed by Cyclic Evaluation</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2023-09-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2309.11669" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2309.11669" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/bb86a2592e9efa196aefd6bbc39bf62a3202e9db" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ce6d9b882cc1ee5a76569be7d851a0401cf7e3f2" target="_blank" rel="noopener"
+            >SFPN: segmentation-based feature pyramid network for multi-focus image fusion</a
+          >
+          <div class="m">
+            <span class="v">Multimedia tools and applications</span><span>2023-07-31</span
+            ><a href="https://www.semanticscholar.org/paper/ce6d9b882cc1ee5a76569be7d851a0401cf7e3f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/de06aa33693a910c51d4cd76873296c302eaf476" target="_blank" rel="noopener"
+            >Deep Knowledge Tracking Based on Double Attention Mechanism and Cognitive Difficulty</a
+          >
+          <div class="m">
+            <span class="v">International Symposium on Computers and Communications</span><span>2023-07-09</span
+            ><a href="https://www.semanticscholar.org/paper/de06aa33693a910c51d4cd76873296c302eaf476" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/eb8db286e1f6fb618ce4e1165a27a5c7ce11a0c9" target="_blank" rel="noopener"
+            >Deep Homography Estimation With Feature Correlation Transformer</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Multimedia and Expo</span><span>2023-07-01</span
+            ><a href="https://www.semanticscholar.org/paper/eb8db286e1f6fb618ce4e1165a27a5c7ce11a0c9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/da4d45f4fd5c089e574e0e5f56baeb6c5b75a0b6" target="_blank" rel="noopener"
+            >Infrared and visible image fusion via mutual information maximization</a
+          >
+          <div class="m">
+            <span class="v">Computer Vision and Image Understanding</span><span>2023-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/da4d45f4fd5c089e574e0e5f56baeb6c5b75a0b6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.12710" target="_blank" rel="noopener"
+            >Beyond Labels: Empowering Human Annotators with Natural Language Explanations through a Novel Active-Learning Architecture</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-05-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.12710" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.12710" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1e5add53dca5ca9315882b003dfbaa4b28d480f4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2305.09464" target="_blank" rel="noopener"
+            >Growing and Serving Large Open-domain Knowledge Graphs</a
+          >
+          <div class="m">
+            <span class="v">SIGMOD Conference Companion</span><span>2023-05-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2305.09464" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2305.09464" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b6f229681cf0a3ba38884d281d89b2d498a853a8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5019d7b20eedf301ba183080c2349233afa41486" target="_blank" rel="noopener"
+            >Multi-scale homography estimation based on dual feature aggregation transformer</a
+          >
+          <div class="m">
+            <span class="v">IET Image Processing</span><span>2022-12-25</span
+            ><a href="https://www.semanticscholar.org/paper/5019d7b20eedf301ba183080c2349233afa41486" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.06408" target="_blank" rel="noopener"
+            >PriMeSRL-Eval: A Practical Quality Metric for Semantic Role Labeling Systems Evaluation</a
+          >
+          <div class="m">
+            <span class="v">Findings</span><span>2022-10-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.06408" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.06408" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6cb99af50b91fed276b7b6cee4c91cea5d222ae3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2208.01483" target="_blank" rel="noopener"
+            >Label Sleuth: From Unlabeled Text to a Classifier in a Few Hours</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2022-08-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2208.01483" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2208.01483" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6f00dceaf0717e83f3b75c209b48936db1faf4ac" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8d49dd0ad1de0b6ddf999afc5fb4f6bc486f4fdb" target="_blank" rel="noopener"
+            >Informed Patch Enhanced HyperGCN for skeleton-based action recognition</a
+          >
+          <div class="m">
+            <span class="v">Information Processing &amp; Management</span><span>2022-07-01</span
+            ><a href="https://www.semanticscholar.org/paper/8d49dd0ad1de0b6ddf999afc5fb4f6bc486f4fdb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/83e3b3b19bbe92a85265bcee6634738206662f03" target="_blank" rel="noopener"
+            >Universal Proposition Bank 2.0</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2022-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/83e3b3b19bbe92a85265bcee6634738206662f03" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/db6c7f291533d816847191634fb6b9b8b8c891e2" target="_blank" rel="noopener"
+            >Machine learning cutting forces in milling processes of functionally graded materials</a
+          >
+          <div class="m">
+            <span class="v">Advances in Computational Intelligence</span><span>2022-05-27</span
+            ><a href="https://www.semanticscholar.org/paper/db6c7f291533d816847191634fb6b9b8b8c891e2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6f80d1ade43ae048763d65c6e8e913d9a31de4be" target="_blank" rel="noopener"
+            >Accepted Tutorials at The Web Conference 2022</a
+          >
+          <div class="m">
+            <span class="v">The Web Conference</span><span>2022-04-25</span
+            ><a href="https://www.semanticscholar.org/paper/6f80d1ade43ae048763d65c6e8e913d9a31de4be" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ba065c7692485eb67ae3b54ed312564a0538ab0a" target="_blank" rel="noopener"
+            >Identifying Origin-Destination Trips from GPS Data – Application in Travel Time Reliability of Dedicated Trucks</a
+          >
+          <div class="m">
+            <span class="v">Promet - Traffic&amp;Transportation</span><span>2022-02-18</span
+            ><a href="https://www.semanticscholar.org/paper/ba065c7692485eb67ae3b54ed312564a0538ab0a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0ddd6dcf82032e0c5e10427502941b467167a518" target="_blank" rel="noopener"
+            >Deep Learning on Graphs for Natural Language Processing</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2021-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/0ddd6dcf82032e0c5e10427502941b467167a518" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2102.08445" target="_blank" rel="noopener"
+            >TableLab: An Interactive Table Extraction System with Adaptive Deep Learning</a
+          >
+          <div class="m">
+            <span class="v">IUI Companion</span><span>2021-02-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2102.08445" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2102.08445" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9dbb26e4f04f38aa2a11289cbc82a2d9ed533741" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6aced7d7303fd82f8c4218aea2f3387efdf1d3c1" target="_blank" rel="noopener"
+            >Making AI Machines Work for Humans in FoW</a
+          >
+          <div class="m">
+            <span class="v">SIGMOD record</span><span>2020-12-09</span
+            ><a href="https://www.semanticscholar.org/paper/6aced7d7303fd82f8c4218aea2f3387efdf1d3c1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f162b64756f01cdf04bc59c7592a77e4c8981656" target="_blank" rel="noopener"
+            >Question Answering over Knowledge Bases by Leveraging Semantic Parsing and Neuro-Symbolic Reasoning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2020-12-03</span
+            ><a href="https://www.semanticscholar.org/paper/f162b64756f01cdf04bc59c7592a77e4c8981656" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2011.14459" target="_blank" rel="noopener"
+            >Improved Semantic Role Labeling using Parameterized Neighborhood Memory Adaptation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2020-11-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2011.14459" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2011.14459" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7870e74d03d34ea7f7049b457e8a4aae2eec1929" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/fe48d8d201dcf7123c9ccff9af4d7e191aca72a3" target="_blank" rel="noopener"
+            >Learning Explainable Linguistic Expressions with Neural Inductive Logic Programming for Sentence Classification</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2020-11-01</span
+            ><a href="https://www.semanticscholar.org/paper/fe48d8d201dcf7123c9ccff9af4d7e191aca72a3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5ce0189f038cd5c308459a8d861720ecc4340755" target="_blank" rel="noopener"
+            >A Novel Workflow for Accurately and Efficiently Crowdsourcing Predicate Senses and Argument Labels</a
+          >
+          <div class="m">
+            <span class="v">Findings</span><span>2020-11-01</span
+            ><a href="https://www.semanticscholar.org/paper/5ce0189f038cd5c308459a8d861720ecc4340755" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2011.04732" target="_blank" rel="noopener"
+            >CLAR: A Cross-Lingual Argument Regularizer for Semantic Role Labeling</a
+          >
+          <div class="m">
+            <span class="v">Findings</span><span>2020-11-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2011.04732" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2011.04732" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/fe556f3bef51f79a79d1aaaaec699c4986a1cda7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e5872f4d3d067e0f89e7d394784532135ada85ce" target="_blank" rel="noopener"
+            >Estimation of Short-Term Online Taxi Travel Time Based on Neural Network</a
+          >
+          <div class="m">
+            <span class="v">Wireless Algorithms, Systems, and Applications</span><span>2020-09-13</span
+            ><a href="https://www.semanticscholar.org/paper/e5872f4d3d067e0f89e7d394784532135ada85ce" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ef77e579667dc6c8ddf1c8ac2760936c156df594" target="_blank" rel="noopener"
+            >Answering Complex Questions by Combining Information from Curated and Extracted Knowledge Bases</a
+          >
+          <div class="m">
+            <span class="v">NLI</span><span>2020-07-01</span
+            ><a href="https://www.semanticscholar.org/paper/ef77e579667dc6c8ddf1c8ac2760936c156df594" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4c70eb2ef48ec1aae22546e202e52bc0d1c820e2" target="_blank" rel="noopener"
+            >Ontology mediated information extraction in financial domain with Mastro System-T</a
+          >
+          <div class="m">
+            <span class="v">DSMM@SIGMOD</span><span>2020-06-14</span
+            ><a href="https://www.semanticscholar.org/paper/4c70eb2ef48ec1aae22546e202e52bc0d1c820e2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/37db7b51dc988a8a90aece71238c9d6245af16b3" target="_blank" rel="noopener"
+            >Learning Electronic Health Records through Hyperbolic Embedding of Medical Ontologies</a
+          >
+          <div class="m">
+            <span class="v">ACM International Conference on Bioinformatics, Computational Biology and Biomedicine</span><span>2019-09-04</span
+            ><a href="https://www.semanticscholar.org/paper/37db7b51dc988a8a90aece71238c9d6245af16b3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1907.11184" target="_blank" rel="noopener"
+            >HEIDL: Learning Linguistic Expressions with Deep Learning and Human-in-the-Loop</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2019-07-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1907.11184" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1907.11184" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3bb3a018bf8c0defd7eec3d98001aa9103fcb24a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1906.08042" target="_blank" rel="noopener"
+            >Low-resource Deep Entity Resolution with Transfer and Active Learning</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2019-06-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1906.08042" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1906.08042" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c57757597d0664a0f66d40108e50bf696044c9fe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1902.00031" target="_blank" rel="noopener"
+            >Bridging the Semantic Gap with SQL Query Logs in Natural Language Interfaces to Databases</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Data Engineering</span><span>2019-01-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1902.00031" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1902.00031" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/be04748e87facf2df63dc709d8d289766376d193" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0e2af7b138e28aadc2989456cf4632ef7c3a969f" target="_blank" rel="noopener"
+            >DIMSIM: An Accurate Chinese Phonetic Similarity Algorithm Based on Learned High Dimensional Encoding</a
+          >
+          <div class="m">
+            <span class="v">Conference on Computational Natural Language Learning</span><span>2018-10-01</span
+            ><a href="https://www.semanticscholar.org/paper/0e2af7b138e28aadc2989456cf4632ef7c3a969f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/11624b9e826ae8fab377bb43bf25a7aac4c7e2cd" target="_blank" rel="noopener"
+            >Natural Language Data Management and Interfaces</a
+          >
+          <div class="m">
+            <span class="v">Synthesis Lectures on Data Management</span><span>2018-08-13</span
+            ><a href="https://www.semanticscholar.org/paper/11624b9e826ae8fab377bb43bf25a7aac4c7e2cd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/804154bd907430c726d3dfff6f93cfc36819edcf" target="_blank" rel="noopener"
+            >Exploiting Structure in Representation of Named Entities using Active Learning</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Computational Linguistics</span><span>2018-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/804154bd907430c726d3dfff6f93cfc36819edcf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/2f3b5dd4dfcd2fe49c6731bebfac12eb5c5d236d" target="_blank" rel="noopener"
+            >SystemT: Declarative Text Understanding for Enterprise</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2018-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/2f3b5dd4dfcd2fe49c6731bebfac12eb5c5d236d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ac5e182916f401a2340d2d3ae624a9038bb24d84" target="_blank" rel="noopener"
+            >LUSTRE: An Interactive System for Entity Structured Representation and Variant Generation</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Data Engineering</span><span>2018-04-01</span
+            ><a href="https://www.semanticscholar.org/paper/ac5e182916f401a2340d2d3ae624a9038bb24d84" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7bc7d7e9f16c9a6e669224f3bdd6e95401493c45" target="_blank" rel="noopener"
+            >CROWD-IN-THE-LOOP: A Hybrid Approach for Annotating Semantic Roles</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2017-09-01</span
+            ><a href="https://www.semanticscholar.org/paper/7bc7d7e9f16c9a6e669224f3bdd6e95401493c45" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/37a457fbd16718eece8906ef582bdbd5892cbb80" target="_blank" rel="noopener"
+            >Creation and Interaction with Large-scale Domain-Specific Knowledge Bases</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the VLDB Endowment</span><span>2017-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/37a457fbd16718eece8906ef582bdbd5892cbb80" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a7cc75fec1ff44dbdb27c383b21558d27354993c" target="_blank" rel="noopener"
+            >Active Learning for Black-Box Semantic Role Labeling with Neural Factors</a
+          >
+          <div class="m">
+            <span class="v">International Joint Conference on Artificial Intelligence</span><span>2017-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/a7cc75fec1ff44dbdb27c383b21558d27354993c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/699dff3378b81e0a133e1cf9cb59c6ba58d9ead8" target="_blank" rel="noopener"
+            >Towards Re-defining Relation Understanding in Financial Domain</a
+          >
+          <div class="m">
+            <span class="v">DSMM@SIGMOD</span><span>2017-05-14</span
+            ><a href="https://www.semanticscholar.org/paper/699dff3378b81e0a133e1cf9cb59c6ba58d9ead8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b417e23381e624c25f2f5e231350df48c57791d7" target="_blank" rel="noopener"
+            >Natural Language Data Management and Interfaces: Recent Development and Open Challenges</a
+          >
+          <div class="m">
+            <span class="v">SIGMOD Conference</span><span>2017-05-09</span
+            ><a href="https://www.semanticscholar.org/paper/b417e23381e624c25f2f5e231350df48c57791d7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e250c6e87aab423c11fa42d349c563b92368db7b" target="_blank" rel="noopener"
+            >Synthesizing Extraction Rules from User Examples with SEER</a
+          >
+          <div class="m">
+            <span class="v">SIGMOD Conference</span><span>2017-05-09</span
+            ><a href="https://www.semanticscholar.org/paper/e250c6e87aab423c11fa42d349c563b92368db7b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8de0b78f0ed07467ab5d52b0a7fa0787ff55e106" target="_blank" rel="noopener"
+            >SEER: Auto-Generating Information Extraction Rules from User-Specified Examples</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Human Factors in Computing Systems</span><span>2017-05-02</span
+            ><a href="https://www.semanticscholar.org/paper/8de0b78f0ed07467ab5d52b0a7fa0787ff55e106" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8968a6fe206a74989a5156f3f67de3bf24f44747" target="_blank" rel="noopener"
+            >K-SRL: Instance-based Learning for Semantic Role Labeling</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Computational Linguistics</span><span>2016-12-01</span
+            ><a href="https://www.semanticscholar.org/paper/8968a6fe206a74989a5156f3f67de3bf24f44747" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a1a8a4c5705f6d71ef4bfeaadc47aa3e8b045326" target="_blank" rel="noopener"
+            >Multilingual Aliasing for Auto-Generating Proposition Banks</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Computational Linguistics</span><span>2016-12-01</span
+            ><a href="https://www.semanticscholar.org/paper/a1a8a4c5705f6d71ef4bfeaadc47aa3e8b045326" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ce4489c563d20b22e3f541eb4917b5fb661f3c39" target="_blank" rel="noopener"
+            >Multilingual Information Extraction with PolyglotIE</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Computational Linguistics</span><span>2016-12-01</span
+            ><a href="https://www.semanticscholar.org/paper/ce4489c563d20b22e3f541eb4917b5fb661f3c39" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/cbe85e3e78c4292bf771774f8159b0145e8cdc7b" target="_blank" rel="noopener"
+            >Towards Semi-Automatic Generation of Proposition Banks for Low-Resource Languages</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2016-11-01</span
+            ><a href="https://www.semanticscholar.org/paper/cbe85e3e78c4292bf771774f8159b0145e8cdc7b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/c37909ab29f250e1fb316e886d715e1a76ea9693" target="_blank" rel="noopener"
+            >POLYGLOT: Multilingual Semantic Role Labeling with Unified Labels</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2016-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/c37909ab29f250e1fb316e886d715e1a76ea9693" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/342bf4460eb3f5e7494c1ca8d6c4cfd4b3fca33b" target="_blank" rel="noopener"
+            >Transparent Machine Learning for Information Extraction: State-of-the-Art and the Future</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2015-09-01</span
+            ><a href="https://www.semanticscholar.org/paper/342bf4460eb3f5e7494c1ca8d6c4cfd4b3fca33b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e98d0ac651dd00ba690647ad62e2c8832e5b3434" target="_blank" rel="noopener"
+            >VINERy: A Visual IDE for Information Extraction</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the VLDB Endowment</span><span>2015-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/e98d0ac651dd00ba690647ad62e2c8832e5b3434" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8495df711f45b8e4345502f04b797aa2abd7f54b" target="_blank" rel="noopener"
+            >Generating High Quality Proposition Banks for Multilingual Semantic Role Labeling</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2015-07-01</span
+            ><a href="https://www.semanticscholar.org/paper/8495df711f45b8e4345502f04b797aa2abd7f54b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/12b07e276f7a94c70faf26ecaf970b44d09905b9" target="_blank" rel="noopener"
+            >XML based Keyword Search</a
+          >
+          <div class="m">
+            <span>2014-12-18</span
+            ><a href="https://www.semanticscholar.org/paper/12b07e276f7a94c70faf26ecaf970b44d09905b9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f0e1d1b2bf73b8655c185a7939c37418ea45be5f" target="_blank" rel="noopener"
+            >A Survey of Natural Language Query Builder Interface for Structured Databases using Dependency Parsing</a
+          >
+          <div class="m">
+            <span class="v">International Journal of Computer Applications</span><span>2014-12-18</span
+            ><a href="https://www.semanticscholar.org/paper/f0e1d1b2bf73b8655c185a7939c37418ea45be5f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d93f3802fc7f9c2b5c386cfa3f3066546587da1d" target="_blank" rel="noopener"
+            >Enterprise Search in the Big Data Era: Recent Developments and Open Challenges</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the VLDB Endowment</span><span>2014-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/d93f3802fc7f9c2b5c386cfa3f3066546587da1d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f8fd1dac2d60b3b8bc2bb06d637d648d1a9f318c" target="_blank" rel="noopener"
+            >VLDB 2014 Ph.D. Workshop - An Overview</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the VLDB Endowment</span><span>2014-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/f8fd1dac2d60b3b8bc2bb06d637d648d1a9f318c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e042ebe5835cb784457dc4df956fd0897b6dc969" target="_blank" rel="noopener"
+            >Understand users’ comprehension and preferences for composing information visualizations</a
+          >
+          <div class="m">
+            <span class="v">TCHI</span><span>2014-02-01</span
+            ><a href="https://www.semanticscholar.org/paper/e042ebe5835cb784457dc4df956fd0897b6dc969" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0692b9ad39145f57237199f3d4488667d5d9e5e7" target="_blank" rel="noopener"
+            >Rule-Based Information Extraction is Dead! Long Live Rule-Based Information Extraction Systems!</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2013-10-01</span
+            ><a href="https://www.semanticscholar.org/paper/0692b9ad39145f57237199f3d4488667d5d9e5e7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f75bd35568d908b02724045046f80d656251510f" target="_blank" rel="noopener"
+            >OpinionBlocks: A Crowd-Powered, Self-improving Interactive Visual Analytic System for Understanding Opinion Text</a
+          >
+          <div class="m">
+            <span class="v">IFIP TC13 International Conference on Human-Computer Interaction</span><span>2013-09-02</span
+            ><a href="https://www.semanticscholar.org/paper/f75bd35568d908b02724045046f80d656251510f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a581b30ee75baf04d07d4286496e8045f697833d" target="_blank" rel="noopener"
+            >Automatic Term Ambiguity Detection</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2013-08-01</span
+            ><a href="https://www.semanticscholar.org/paper/a581b30ee75baf04d07d4286496e8045f697833d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d9cc3bd5eb50f480fcbd8dcf2696d7050b8d938f" target="_blank" rel="noopener"
+            >I can do text analytics!: designing development tools for novice developers</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Human Factors in Computing Systems</span><span>2013-04-27</span
+            ><a href="https://www.semanticscholar.org/paper/d9cc3bd5eb50f480fcbd8dcf2696d7050b8d938f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bb89a8f0c1b69565f599671f6caffd2c1c4bb3f2" target="_blank" rel="noopener"
+            >Gumshoe quality toolkit: administering programmable search</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Information and Knowledge Management</span><span>2012-10-29</span
+            ><a href="https://www.semanticscholar.org/paper/bb89a8f0c1b69565f599671f6caffd2c1c4bb3f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0f129d9b9603a98bdd855bad63d59bc03988d527" target="_blank" rel="noopener"
+            >Image Enhancement by Lift-Wavelet Based Homomorphic Filtering</a
+          >
+          <div class="m">
+            <span>2012-10-16</span
+            ><a href="https://www.semanticscholar.org/paper/0f129d9b9603a98bdd855bad63d59bc03988d527" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6c3fcaf9bf63b8863615a2a7ba7c9abf0e6404c6" target="_blank" rel="noopener"
+            >Automatic suggestion of query-rewrite rules for enterprise search</a
+          >
+          <div class="m">
+            <span class="v">Annual International ACM SIGIR Conference on Research and Development in Information Retrieval</span
+            ><span>2012-08-12</span
+            ><a href="https://www.semanticscholar.org/paper/6c3fcaf9bf63b8863615a2a7ba7c9abf0e6404c6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4136e4152abf5ab5a1c672be15b5dadcfa4b55ae" target="_blank" rel="noopener"
+            >WizIE: A Best Practices Guided Development Environment for Information Extraction</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2012-07-10</span
+            ><a href="https://www.semanticscholar.org/paper/4136e4152abf5ab5a1c672be15b5dadcfa4b55ae" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9eb7d2fa48e782ec4ac7c0e973102d45e961ac7d" target="_blank" rel="noopener"
+            >Session details: Text mining</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the 20th ACM international conference on Information and knowledge management</span><span>2011-10-24</span
+            ><a href="https://www.semanticscholar.org/paper/9eb7d2fa48e782ec4ac7c0e973102d45e961ac7d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e0b5aba1533467faa75b612b3acd10b043ba887f" target="_blank" rel="noopener"
+            >Facilitating pattern discovery for relation extraction with semantic-signature-based clustering</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Information and Knowledge Management</span><span>2011-10-24</span
+            ><a href="https://www.semanticscholar.org/paper/e0b5aba1533467faa75b612b3acd10b043ba887f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6b450f61c46c1bf4309a430e3902ba28ef28738d" target="_blank" rel="noopener"
+            >SystemT: A Declarative Information Extraction System</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2011-06-21</span
+            ><a href="https://www.semanticscholar.org/paper/6b450f61c46c1bf4309a430e3902ba28ef28738d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ecccc39876d1194d3a6fb745408600a46d2e0f73" target="_blank" rel="noopener"
+            >A Graph Approach to Spelling Correction in Domain-Centric Search</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2011-06-19</span
+            ><a href="https://www.semanticscholar.org/paper/ecccc39876d1194d3a6fb745408600a46d2e0f73" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/002348c3a1aaad64aa4256843ba653efac490390" target="_blank" rel="noopener"
+            >The SystemT IDE: an integrated development environment for information extraction rules</a
+          >
+          <div class="m">
+            <span class="v">ACM SIGMOD Conference</span><span>2011-06-12</span
+            ><a href="https://www.semanticscholar.org/paper/002348c3a1aaad64aa4256843ba653efac490390" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a3866ae16e1805bc5f02dfcbc9219d3e55670ae9" target="_blank" rel="noopener"
+            >Selectivity estimation for extraction operators over text data</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Data Engineering</span><span>2011-04-11</span
+            ><a href="https://www.semanticscholar.org/paper/a3866ae16e1805bc5f02dfcbc9219d3e55670ae9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/1cf53c62906a48b9d607f94468bf777855199a28" target="_blank" rel="noopener"
+            >Domain Adaptation of Rule-Based Annotators for Named-Entity Recognition Tasks</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2010-10-09</span
+            ><a href="https://www.semanticscholar.org/paper/1cf53c62906a48b9d607f94468bf777855199a28" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/17ff074ae373cb95575ce8ca579f35b4088f02d6" target="_blank" rel="noopener"
+            >SystemT: An Algebraic Approach to Declarative Information Extraction</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2010-07-11</span
+            ><a href="https://www.semanticscholar.org/paper/17ff074ae373cb95575ce8ca579f35b4088f02d6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/389a994a5dff386650fb10328933fa7c58ce332f" target="_blank" rel="noopener"
+            >Enterprise information extraction: recent developments and open challenges</a
+          >
+          <div class="m">
+            <span class="v">SIGMOD Conference</span><span>2010-06-06</span
+            ><a href="https://www.semanticscholar.org/paper/389a994a5dff386650fb10328933fa7c58ce332f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/65f5cfd3113f023f4ee8c2f07ffc071199f41bf7" target="_blank" rel="noopener"
+            >Understanding queries in a search database system</a
+          >
+          <div class="m">
+            <span class="v">ACM SIGACT-SIGMOD-SIGART Symposium on Principles of Database Systems</span><span>2010-06-06</span
+            ><a href="https://www.semanticscholar.org/paper/65f5cfd3113f023f4ee8c2f07ffc071199f41bf7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a624f5cf466a4ffa54f62598e7c254102ad7b7d6" target="_blank" rel="noopener"
+            >Enabling enterprise mashups over unstructured text feeds with InfoSphere MashupHub and SystemT</a
+          >
+          <div class="m">
+            <span class="v">SIGMOD Conference</span><span>2009-06-29</span
+            ><a href="https://www.semanticscholar.org/paper/a624f5cf466a4ffa54f62598e7c254102ad7b7d6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9d743cfce4907321a10ffe6ac4352d0854060f32" target="_blank" rel="noopener"
+            >A new evidence model and its application for discriminating enemy operation intention</a
+          >
+          <div class="m">
+            <span class="v">Chinese Control and Decision Conference</span><span>2009-06-17</span
+            ><a href="https://www.semanticscholar.org/paper/9d743cfce4907321a10ffe6ac4352d0854060f32" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f7372b28ccfbd4464c247af2d1058d0922532584" target="_blank" rel="noopener"
+            >SystemT: a system for declarative information extraction</a
+          >
+          <div class="m">
+            <span class="v">SGMD</span><span>2009-03-20</span
+            ><a href="https://www.semanticscholar.org/paper/f7372b28ccfbd4464c247af2d1058d0922532584" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/1b38f6b1c2a3fbf0718f6319f7bbcdfa0e239568" target="_blank" rel="noopener"
+            >Regular Expression Learning for Information Extraction</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2008-10-25</span
+            ><a href="https://www.semanticscholar.org/paper/1b38f6b1c2a3fbf0718f6319f7bbcdfa0e239568" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/65a1744bc67ff0480563d3c3b8734a9cd8676909" target="_blank" rel="noopener"
+            >Implementation of UNDP 403 distance teacher training system using Struts+Hibernate Frame</a
+          >
+          <div class="m">
+            <span class="v">2008 First IEEE International Conference on Ubi-Media Computing</span><span>2008-07-22</span
+            ><a href="https://www.semanticscholar.org/paper/65a1744bc67ff0480563d3c3b8734a9cd8676909" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9ebab82bcb1b0f3121ef6291b951224fe7a38695" target="_blank" rel="noopener"
+            >Enabling Schema-Free XQuery with meaningful query focus</a
+          >
+          <div class="m">
+            <span class="v">The VLDB journal</span><span>2008-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/9ebab82bcb1b0f3121ef6291b951224fe7a38695" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/32801b2424627f04dd38d23a74f813d2aa73537e" target="_blank" rel="noopener"
+            >NaLIX: A generic natural language search environment for XML data</a
+          >
+          <div class="m">
+            <span class="v">TODS</span><span>2007-11-01</span
+            ><a href="https://www.semanticscholar.org/paper/32801b2424627f04dd38d23a74f813d2aa73537e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f14891587e67cc2ca5580f95c23567fdda83b4d5" target="_blank" rel="noopener"
+            >Enabling Domain-Awareness for a Generic Natural Language Interface</a
+          >
+          <div class="m">
+            <span class="v">AAAI Conference on Artificial Intelligence</span><span>2007-07-22</span
+            ><a href="https://www.semanticscholar.org/paper/f14891587e67cc2ca5580f95c23567fdda83b4d5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3378daafee8a6aa9914ec1ed272076b7d28f9ab0" target="_blank" rel="noopener"
+            >DaNaLIX: a domain-adaptive natural language interface for querying XML</a
+          >
+          <div class="m">
+            <span class="v">ACM SIGMOD Conference</span><span>2007-06-11</span
+            ><a href="https://www.semanticscholar.org/paper/3378daafee8a6aa9914ec1ed272076b7d28f9ab0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9a367afec7ade7e7d722f49f8336fc3bebf9c397" target="_blank" rel="noopener"
+            >Making database systems usable</a
+          >
+          <div class="m">
+            <span class="v">ACM SIGMOD Conference</span><span>2007-06-11</span
+            ><a href="https://www.semanticscholar.org/paper/9a367afec7ade7e7d722f49f8336fc3bebf9c397" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ea7ab32324be636f07fd3a3e2a868e25141a6875" target="_blank" rel="noopener"
+            >Getting work done on the web: supporting transactional queries</a
+          >
+          <div class="m">
+            <span class="v">Annual International ACM SIGIR Conference on Research and Development in Information Retrieval</span
+            ><span>2006-08-06</span
+            ><a href="https://www.semanticscholar.org/paper/ea7ab32324be636f07fd3a3e2a868e25141a6875" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/edfe5ec28dce6d45e1d4c0f44e10bf923fa65027" target="_blank" rel="noopener"
+            >Term Disambiguation in Natural Language Query for XML</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Flexible Query Answering Systems</span><span>2006-06-07</span
+            ><a href="https://www.semanticscholar.org/paper/edfe5ec28dce6d45e1d4c0f44e10bf923fa65027" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/af13083ad3ad5b024c9fb22078ec0f911bdcb623" target="_blank" rel="noopener"
+            >Constructing a Generic Natural Language Interface for an XML Database</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Extending Database Technology</span><span>2006-03-26</span
+            ><a href="https://www.semanticscholar.org/paper/af13083ad3ad5b024c9fb22078ec0f911bdcb623" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/41993f597e08e9af3fcbe0a10f192bde7742c4fd" target="_blank" rel="noopener"
+            >NaLIX: an interactive natural language interface for querying XML</a
+          >
+          <div class="m">
+            <span class="v">ACM SIGMOD Conference</span><span>2005-06-14</span
+            ><a href="https://www.semanticscholar.org/paper/41993f597e08e9af3fcbe0a10f192bde7742c4fd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ee60ef2cb9708c1a8e77898f2119dee9f20ad23e" target="_blank" rel="noopener"
+            >Schema-Free XQuery</a
+          >
+          <div class="m">
+            <span class="v">Very Large Data Bases Conference</span><span>2004-08-31</span
+            ><a href="https://www.semanticscholar.org/paper/ee60ef2cb9708c1a8e77898f2119dee9f20ad23e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

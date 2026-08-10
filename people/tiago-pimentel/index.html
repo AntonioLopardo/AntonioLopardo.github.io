@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Tiago Pimentel</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/tiago-pimentel.jpg"
+          alt="Tiago Pimentel"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(42 42% 42%)">TP</span>'
+        />
+        <div>
+          <h1>Tiago Pimentel <span class="tag">following</span></h1>
+          <div class="aff">ETH Zurich / Cambridge</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/tpimentelms" target="_blank" rel="noopener">@tpimentelms</a
+        ><a href="/papers.html?p=Tiago%20Pimentel">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 25</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.11875" target="_blank" rel="noopener"
+            >Invariant Learning Dynamics of Transformers in Inductive Reasoning Tasks</a
+          >
+          <div class="m">
+            <span>2026-07-13</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.11875" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.11875" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/05c1e495047e9de1a7031d6807e4b47574295cce" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.00267" target="_blank" rel="noopener"
+            >Validating Causal Abstraction Metrics on Simulated Complex Systems</a
+          >
+          <div class="m">
+            <span>2026-06-30</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.00267" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.00267" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ad091e443f312b475168b55f010022de8b832ad9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.23566" target="_blank" rel="noopener"
+            >LangMAP: A Language-Adaptive Approach to Tokenization</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.23566" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.23566" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/69e4135b75fc1dfafbf355aa23ff963a7bb45c98" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.09411" target="_blank" rel="noopener"
+            >Now You (Still) See Me: Detecting Evasive Steganographic Payloads in LLMs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.09411" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.09411" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1f400aa2b4f24a7cb204208709af3b910ccf7f38" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.22821" target="_blank" rel="noopener">Tokenisation via Convex Relaxations</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.22821" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.22821" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7e3066a202ca64ca0143b54ca5be2569adde7180" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.17655" target="_blank" rel="noopener">What Language is This? Ask Your Tokenizer</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.17655" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.17655" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b4fcd117eca0035b3b62cb41eff62ff444ccc961" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.15829" target="_blank" rel="noopener"
+            >Operationalising the Superficial Alignment Hypothesis via Task Complexity</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.15829" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.15829" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3f89f3a49007cd1093fb970152ec767fb0be1776" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.16832" target="_blank" rel="noopener"
+            >What Do Prosody and Text Convey? Characterizing How Meaningful Information is Distributed Across Multiple Channels</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-12-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.16832" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.16832" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3a6dec2e9e8a99987b614ffce6cdd215bd3f5ba2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.07832" target="_blank" rel="noopener">Do Generalisation Results Generalise?</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-12-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.07832" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.07832" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9349a6fdcbc95661f5bbccab50a7b79b6031b130" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.15709" target="_blank" rel="noopener">Tokenisation over Bounded Alphabets is Hard</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.15709" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.15709" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/587ff6b8dc6078978ec01271d4c96b851e691e1b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.01033" target="_blank" rel="noopener"
+            >On the Emergence of Induction Heads for In-Context Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.01033" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.01033" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/10764bd245b9ab5c1c49fa89c17dd9ac5bbb3b17" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.26643" target="_blank" rel="noopener"
+            >Convergence and Divergence of Language Models under Different Random Seeds</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-09-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.26643" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.26643" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/995ccf8ac9393888f9dcc7e673ae927ea1d972a3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.08802" target="_blank" rel="noopener"
+            >The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-07-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.08802" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.08802" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b4d81c89c973b6d207dbc0562760200b7d7974ed" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.03149" target="_blank" rel="noopener">Causal Estimation of Tokenisation Bias</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-06-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.03149" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.03149" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5e853d8d42aa493e5660a960f0cd27a15b814e72" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.07659" target="_blank" rel="noopener"
+            >Using Information Theory to Characterize Prosodic Typology: The Case of Tone, Pitch-Accent and Stress-Accent</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-05-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.07659" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.07659" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7d280f37d2061dceaf029ddf644477911dc38c11" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.11630" target="_blank" rel="noopener"
+            >The time scale of redundancy between prosody and linguistic context</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-03-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.11630" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.11630" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8465b3aa4e905d8ab76a6b3a06a298ff5d242d4c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.15210" target="_blank" rel="noopener">Tokenisation is NP-Complete</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-12-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.15210" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.15210" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3460b540ff09bb2b2c5e8d21c26290533a440446" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.17676" target="_blank" rel="noopener">Towards a Similarity-adjusted Surprisal Theory</a>
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-10-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.17676" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.17676" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9d37dcdb0da3dc561f8bfca49d33ff09b11c732c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.10810" target="_blank" rel="noopener">Local and Global Decoding in Text Generation</a>
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-10-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.10810" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.10810" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/40fb258232e5cd8e4c68b10064de45e448c2725a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/19b8f8b386f030dc5bd2dfcad71fcc1d90a728fd" target="_blank" rel="noopener"
+            >Language Imbalance Can Boost Cross-lingual Generalisation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/19b8f8b386f030dc5bd2dfcad71fcc1d90a728fd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8ce3f729c24c50882d5e4fc2e3f7de882c99308a" target="_blank" rel="noopener"
+            >On the Usefulness of Embeddings, Clusters and Strings for Text Generation Evaluation</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/8ce3f729c24c50882d5e4fc2e3f7de882c99308a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e475cfbc38b53095b4510258e381ef51d2ade58a" target="_blank" rel="noopener"
+            >Generating Text from Language Models</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/e475cfbc38b53095b4510258e381ef51d2ade58a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e78dec2acce8ae78ca640e4dea8841655d2314be" target="_blank" rel="noopener"
+            >Language Model Quality Correlates with Psychometric Predictive Power in Multiple Languages</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/e78dec2acce8ae78ca640e4dea8841655d2314be" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/71ab9e4886e2eb7db8d61fcd6a69a0d11a42b365" target="_blank" rel="noopener"
+            >States Hidden in Hidden States: LLMs Emerge Discrete State Representations Implicitly Anonymous ACL submission</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/71ab9e4886e2eb7db8d61fcd6a69a0d11a42b365" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/706b60bf96a617cd7295a88a922168a7f4d4d80f" target="_blank" rel="noopener"
+            >Explorer SIGMORPHON 2021 Shared Task on Morphological Reinflection: Generalization Across Languages</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/706b60bf96a617cd7295a88a922168a7f4d4d80f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

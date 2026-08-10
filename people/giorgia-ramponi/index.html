@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Giorgia Ramponi</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/giorgia-ramponi.jpg"
+          alt="Giorgia Ramponi"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(354 42% 42%)">GR</span>'
+        />
+        <div>
+          <h1>Giorgia Ramponi <span class="tag">following</span></h1>
+          <div class="aff">UZH.AI Hub, ETH AI Center</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://sites.google.com/view/alpi-lab" target="_blank" rel="noopener">Website</a
+        ><a href="/papers.html?p=Giorgia%20Ramponi">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 20</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.22810" target="_blank" rel="noopener"
+            >Multi-agent imitation learning with function approximation: Linear Markov games and beyond</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.22810" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.22810" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c5e159716a33c129b834add0eb76863f769f4dca" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.12273" target="_blank" rel="noopener">Aligning Language Models from User Interactions</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.12273" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.12273" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/87b89b4d9d20a5fde688833a7174568a723d58f9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.15206" target="_blank" rel="noopener"
+            >MAVRL: Learning Reward Functions from Multiple Feedback Types with Amortized Variational Inference</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.15206" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.15206" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4551d455739a32faa9870f89ea7fe2137abc257c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.01505" target="_blank" rel="noopener"
+            >Optimal Sample Complexity for Single Time-Scale Actor-Critic with Momentum</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.01505" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.01505" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6acf7fa5602f7cc74c078083b314cb135ef5c7a6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ce75d4f832e13be2c8821073890f33bdf4ab8933" target="_blank" rel="noopener"
+            >From Words To Rewards: Leveraging Natural Language For Reinforcement Learning</a
+          >
+          <div class="m">
+            <span class="v">Trans. Mach. Learn. Res.</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/ce75d4f832e13be2c8821073890f33bdf4ab8933" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.09325" target="_blank" rel="noopener">Rate optimal learning of equilibria from data</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.09325" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.09325" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6baa8662bf5274aba218843605031abbdf8a223d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.26605" target="_blank" rel="noopener"
+            >Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-09-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.26605" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.26605" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6d82ca5b7742ca1a1b97f812b06f281c99ddf678" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2508.18817" target="_blank" rel="noopener">Learning Acrobatic Flight from Preferences</a>
+          <div class="m">
+            <span>2025-08-26</span><a class="alpha" href="https://www.alphaxiv.org/abs/2508.18817" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2508.18817" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3ddc1529e1cdd253956999f1c01f1a7f69fdb6de" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.23276" target="_blank" rel="noopener"
+            >Corrupted by Reasoning: Reasoning Language Models Become Free-Riders in Public Goods Games</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.23276" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.23276" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c9f2bb9830d864b0667bf3a72ceadc35bc56ed62" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.07054" target="_blank" rel="noopener"
+            >Policy Gradient with Tree Search: Avoiding Local Optimas through Lookahead</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.07054" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.07054" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/440b64669cc402ce9ae6824a0b7288925feac1f9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.17610" target="_blank" rel="noopener"
+            >Learning Equilibria from Data: Provably Efficient Multi-Agent Imitation Learning</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.17610" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.17610" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/950386d0a86436f42fb8c21bb78c3911facd957e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.02735" target="_blank" rel="noopener">Clustered KL-barycenter design for policy evaluation</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-03-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.02735" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.02735" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/00f37e67fb07c6b31c9c82e2a37bfe15ba2712e5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.09432" target="_blank" rel="noopener"
+            >Dual Formulation for Non-Rectangular Lp Robust Markov Decision Processes</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-02-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.09432" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.09432" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6b0d973ab2c9d46b92948f9370560b37c3fffc9d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6d19be3ea99e2ca97b3bedd9220ce385b81cb20a" target="_blank" rel="noopener"
+            >Non-rectangular Robust MDPs with Normed Uncertainty Sets</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/6d19be3ea99e2ca97b3bedd9220ce385b81cb20a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.15046" target="_blank" rel="noopener"
+            >On Feasible Rewards in Multi-Agent Inverse Reinforcement Learning</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-11-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.15046" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.15046" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/efe5e616c4e9eac6b93df1db09647eb973097ae7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.18871" target="_blank" rel="noopener"
+            >Learning Collusion in Episodic, Inventory-Constrained Markets</a
+          >
+          <div class="m">
+            <span class="v">Adaptive Agents and Multi-Agent Systems</span><span>2024-10-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.18871" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.18871" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1de8689fb41d0535ace3a1dd8adbfc6d203a94d8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.08868" target="_blank" rel="noopener">On the Convergence of Single-Timescale Actor-Critic</a>
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 38</span><span>2024-10-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.08868" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.08868" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/688c2dbddbf31d19fa5924e12bd283e52bba6f9d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/226cb3a6b51707a9eeb1c5f2176fdcecc8ff272b" target="_blank" rel="noopener"
+            >Reinforcement Learning from Human Text Feedback: Learning a Reward Model from Human Text Input</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/226cb3a6b51707a9eeb1c5f2176fdcecc8ff272b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/61e7f55d114c84c3c17adefefec84302f8389b9e" target="_blank" rel="noopener"
+            >HIP-RL: Hallucinated Inputs for Preference-based Reinforcement Learning in Continuous Domains</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/61e7f55d114c84c3c17adefefec84302f8389b9e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d748c4370bbe530e9d3b83a305693e4a3fa60e38" target="_blank" rel="noopener"
+            >On Imitation in Mean-ﬁeld Games</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/d748c4370bbe530e9d3b83a305693e4a3fa60e38" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>
