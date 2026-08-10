@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Tim Vieira</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/tim-vieira.jpg"
+          alt="Tim Vieira"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(278 42% 42%)">TV</span>'
+        />
+        <div>
+          <h1>Tim Vieira <span class="tag">following</span></h1>
+          <div class="aff">Johns Hopkins University</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/xtimv" target="_blank" rel="noopener">@xtimv</a><a href="/papers.html?p=Tim%20Vieira">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 14</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.28147" target="_blank" rel="noopener">On the Proper Treatment of Units in Surprisal Theory</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-04-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.28147" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.28147" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ec5a33cdcb66588cf7a07d94de6619e3f886214a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.21191" target="_blank" rel="noopener">Prefix Parsing is Just Parsing</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-04-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.21191" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.21191" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ddb83a238fcc59b2b12276ce07379fce5526d1be" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.15672" target="_blank" rel="noopener">Faster LLM Inference via Sequential Monte Carlo</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-04-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.15672" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.15672" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/363bf7c86aa5da77018f8fa03ebef1067e467157" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.05193" target="_blank" rel="noopener">Transducing Language Models</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.05193" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.05193" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/181a1c2396a83c1f20afc3df1df9f2f5f73c44a7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.05432" target="_blank" rel="noopener"
+            >Ensembling Language Models with Sequential Monte Carlo</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.05432" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.05432" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7c1fdf39ed0c712ed17d875156028a1f6213a363" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.13242" target="_blank" rel="noopener"
+            >Automating the Analysis and Improvement of Dynamic Programming Algorithms with Applications to Natural Language Processing</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.13242" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.13242" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d36c86106d5ad72c463a09200dfcfb6e316de9e0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.23665" target="_blank" rel="noopener"
+            >Automating the Analysis of Parsing Algorithms (and other Dynamic Programs)</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.23665" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.23665" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/96e389a6649c6c4c934cafcdca74c7ff15793e9e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.07956" target="_blank" rel="noopener">Language Models over Canonical Byte-Pair Encodings</a>
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025-06-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.07956" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.07956" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/bd0c7745f4115d55598faddf1c0f46469b4c1e38" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.07154" target="_blank" rel="noopener"
+            >Syntactic Control of Language Models by Posterior Inference</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-06-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.07154" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.07154" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/033090970629fb136ca9b7681af819bcf65b04c0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.13139" target="_blank" rel="noopener"
+            >Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2025-04-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.13139" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.13139" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7874c6e5d7313a98b832918d5cb7f1b10ffea4fb" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.10637" target="_blank" rel="noopener"
+            >Better Estimation of the Kullback-Leibler Divergence Between Language Models</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-04-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.10637" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.10637" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cb8780e91d7f03d81970b5c714368a669033542a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.05410" target="_blank" rel="noopener"
+            >Fast Controlled Generation from Language Models with Adaptive Weighted Rejection Sampling</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.05410" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.05410" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1407966036a1d70124f822b16bd961526de88295" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2412.03719" target="_blank" rel="noopener"
+            >From Language Models over Tokens to Language Models over Characters</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2024-12-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2412.03719" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2412.03719" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/149e40bc74eb7b339fd20dd771d966fa0aa6ac74" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.02691" target="_blank" rel="noopener"
+            >On the Proper Treatment of Tokenization in Psycholinguistics</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-10-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.02691" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.02691" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/af792790190de98cca7651150612eaf2a03813f7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

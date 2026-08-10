@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Mervat Abassy</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/mervat-abassy.jpg"
+          alt="Mervat Abassy"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(66 42% 42%)">MA</span>'
+        />
+        <div>
+          <h1>Mervat Abassy <span class="tag met">interacted with</span></h1>
+          <div class="aff">MBZUAI — 2nd-yr MSc in NLP (Alexandria)</div>
+          <div class="metat">met · ACL 2026 · 2026-07-06</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://scholar.google.com/citations?user=sHBAeRQAAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Mervat%20Abassy">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 10</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.03936" target="_blank" rel="noopener"
+            >Can Dialects Be Steered Like Languages? Sparse Neurons and Distributed Directions in Arabic LLMs</a
+          >
+          <div class="m">
+            <span>2026-07-04</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.03936" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.03936" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/267821c1ea08b995a54b9989662551fda4a541d4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.00294" target="_blank" rel="noopener">Uncovering Temporal Framing in the News</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-05-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.00294" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.00294" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/655452d6202bb4b3c58e1e2bf2abf0c2f6b0e95d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.27766" target="_blank" rel="noopener"
+            >Instruction-Guided Poetry Generation in Arabic and Its Dialects</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-04-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.27766" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.27766" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8395c5804f9180a6faa5155427e9fba916e19c99" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2508.13130" target="_blank" rel="noopener"
+            >MuDRiC: Multi-Dialect Reasoning for Arabic Commonsense Validation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-08-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2508.13130" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2508.13130" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/135e820bd5d8fd07234abdaddaa5822ac231b146" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.11614" target="_blank" rel="noopener"
+            >Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-02-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.11614" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.11614" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/239f789f788fdfd59782fce4e98012bc6fe58f39" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2501.11012" target="_blank" rel="noopener"
+            >GenAI Content Detection Task 1: English and Multilingual Machine-Generated Text Detection: AI vs. Human</a
+          >
+          <div class="m">
+            <span class="v">COLING Workshops</span><span>2025-01-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2501.11012" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2501.11012" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4482c422214a0f640e51436f6ae5c4779fe85e89" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bdb3e733666fbb80c31ed9eec1652ef08bcaebb7" target="_blank" rel="noopener"
+            >Overview of the &quot;Voight-Kampff&quot; Generative AI Authorship Verification Task at PAN and ELOQUENT 2025</a
+          >
+          <div class="m">
+            <span class="v">Conference and Labs of the Evaluation Forum</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/bdb3e733666fbb80c31ed9eec1652ef08bcaebb7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ad32f7a3e30bc40d0d6b0ff8b129f4f6713c14c6" target="_blank" rel="noopener"
+            >Arab Twitter Reactions to the Russo-Ukrainian War with Semi-Supervised Learning Techniques</a
+          >
+          <div class="m">
+            <span class="v">Novel Intelligent and Leading Emerging Sciences Conference</span><span>2024-10-19</span
+            ><a href="https://www.semanticscholar.org/paper/ad32f7a3e30bc40d0d6b0ff8b129f4f6713c14c6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.04284" target="_blank" rel="noopener"
+            >LLM-DetectAIve: a Tool for Fine-Grained Machine-Generated Text Detection</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-08-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2408.04284" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.04284" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ea4c0ab66529cac83f0b2b50eaef305da6a297e1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d2e65291e3da0dfdd2cdb1b5619fd9785416d9fa" target="_blank" rel="noopener"
+            >Overview of the 2nd “Voight-Kampff” Generative AI Authorship Verification Task at PAN and ELOQUENT 2025</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/d2e65291e3da0dfdd2cdb1b5619fd9785416d9fa" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

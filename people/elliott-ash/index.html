@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Elliott Ash</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/elliott-ash.jpg"
+          alt="Elliott Ash"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(209 42% 42%)">EA</span>'
+        />
+        <div>
+          <h1>Elliott Ash <span class="tag">following</span></h1>
+          <div class="aff">ETH Zurich</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/ellliottt" target="_blank" rel="noopener">@ellliottt</a><a href="/papers.html?p=Elliott%20Ash">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 12</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/78fe5d501072d6289be7d77806cb738859db00bd" target="_blank" rel="noopener"
+            >Demand for Conversational AI</a
+          >
+          <div class="m">
+            <span class="v">CESifo working papers</span><span>2026-05-13</span
+            ><a href="https://www.semanticscholar.org/paper/78fe5d501072d6289be7d77806cb738859db00bd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.05010" target="_blank" rel="noopener"
+            >Co-DETECT: Collaborative Discovery of Edge Cases in Text Classification</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-07-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.05010" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.05010" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1460f10fd31e364c1f9177a7eca48f576114b8ef" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.01234" target="_blank" rel="noopener"
+            >The Medium Is Not the Message: Deconfounding Document Embeddings via Linear Concept Erasure</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-07-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.01234" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.01234" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9d7ff9b87e9f48972dd88d26cdc6b7cd81de29f6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.19467" target="_blank" rel="noopener"
+            >Can Reasoning Help Large Language Models Capture Human Annotator Disagreement?</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2025-06-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.19467" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.19467" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4cd5575d388df2de4cfe52f845c721283cc7d9cf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.12864" target="_blank" rel="noopener">LEXam: Benchmarking Legal Reasoning on 340 Law Exams</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.12864" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.12864" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/fa1c34bceadc987a20f65e353bf943a5acf72a46" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/c6e3017546c522b086446151b9e8d76f4c6a2619" target="_blank" rel="noopener"
+            >A Machine Learning Approach to Analyze and Support Anti-Corruption Policy</a
+          >
+          <div class="m">
+            <span class="v">Social Science Research Network</span><span>2025-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/c6e3017546c522b086446151b9e8d76f4c6a2619" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.11962" target="_blank" rel="noopener"
+            >Balancing Truthfulness and Informativeness with Uncertainty-Aware Instruction Fine-Tuning</a
+          >
+          <div class="m">
+            <span>2025-02-17</span><a class="alpha" href="https://www.alphaxiv.org/abs/2502.11962" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.11962" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c74401d4baa0b40dbc5c0dc7e88aa86bed70d56c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/579a6aac47f38018bf28112b1e220d53ada46627" target="_blank" rel="noopener"
+            >The Medium Is Not the Message: Deconfounding Text Embeddings via Linear Concept Erasure</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/579a6aac47f38018bf28112b1e220d53ada46627" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/a428c44a7024044badcbac12020bcce4a0afd113" target="_blank" rel="noopener"
+            >LePaRD: A Large-Scale Dataset of Judicial Citations to Precedent</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/a428c44a7024044badcbac12020bcce4a0afd113" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0f637c74479fbbb2578fac407ddd17a50c7e2042" target="_blank" rel="noopener"
+            >Political Polarization and Judicial Selection</a
+          >
+          <div class="m">
+            <span class="v">Journal of Political Institutions and Political Economy</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/0f637c74479fbbb2578fac407ddd17a50c7e2042" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d0b81d55521583f90406f04ee678008fd06cbcee" target="_blank" rel="noopener"
+            >Having Your Day in Robot Court</a
+          >
+          <div class="m">
+            <span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/d0b81d55521583f90406f04ee678008fd06cbcee" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4faaf07c0fdc124150869e96d4f50e393bff35d8" target="_blank" rel="noopener"
+            >LARGE LANGUAGE MODELS IN ECONOMICS</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/4faaf07c0fdc124150869e96d4f50e393bff35d8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

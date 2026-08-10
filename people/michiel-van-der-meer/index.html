@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Michiel van der Meer</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/michiel-van-der-meer.jpg"
+          alt="Michiel van der Meer"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(298 42% 42%)">MV</span>'
+        />
+        <div>
+          <h1>Michiel van der Meer <span class="tag met">interacted with</span></h1>
+          <div class="aff">Leiden University (LIACS) — postdoc</div>
+          <div class="metat">met · ACL 2026 · 2026-07-06</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/mtichiel" target="_blank" rel="noopener">@mtichiel</a
+        ><a href="https://www.linkedin.com/in/michiel-meer/" target="_blank" rel="noopener">LinkedIn</a
+        ><a href="https://scholar.google.com/citations?user=rSOe9c4AAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Michiel%20van%20der%20Meer">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 25</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.20138" target="_blank" rel="noopener"
+            >Learning to Prompt: Improving Student Engagement with Adaptive LLM-based High-School Tutoring</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.20138" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.20138" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8a0824f1f33a506f0b0b956eed1091025b5a417c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.28351" target="_blank" rel="noopener"
+            >Not All Subjectivity Is the Same! Defining Desiderata for the Evaluation of Subjectivity in NLP</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.28351" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.28351" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5ed302cd2f4123cb8ecf6f1258cdca8ce66a1ec8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.04161" target="_blank" rel="noopener">Traces of Social Competence in Large Language Models</a>
+          <div class="m">
+            <span class="v">Conference on Computational Natural Language Learning</span><span>2026-03-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.04161" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.04161" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a46a0e25a13f00c24e2d960e32132c0c83c09621" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.11753" target="_blank" rel="noopener"
+            >HintsOfTruth: A Multimodal Checkworthiness Detection Dataset with Real and Synthetic Claims</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-02-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.11753" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.11753" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/57706cce20148e703d1943c3ea55ba5c1283c49e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2405.09439" target="_blank" rel="noopener"
+            >Facilitating Opinion Diversity through Hybrid NLP Approaches</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2024-05-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2405.09439" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2405.09439" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/7e37a7672ac34115cc2ce5bc6764827cdbc756ce" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2404.15720" target="_blank" rel="noopener"
+            >Annotator-Centric Active Learning for Subjective NLP Tasks</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-04-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2404.15720" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2404.15720" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0bd68693587fbf7d9190bcc373fbafa4a0af177d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2403.09713" target="_blank" rel="noopener">A Hybrid Intelligence Method for Argument Mining</a>
+          <div class="m">
+            <span class="v">Journal of Artificial Intelligence Research</span><span>2024-03-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2403.09713" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2403.09713" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e17b38fce9bd6acdd805c80b06b675fc48089e47" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2402.01535" target="_blank" rel="noopener"
+            >An Empirical Analysis of Diversity in Argument Summarization</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2024-02-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2402.01535" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2402.01535" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5b64ddf01a92fa2b96272712dfeb87987f67d160" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2311.10590" target="_blank" rel="noopener"
+            >EduGym: An Environment and Notebook Suite for Reinforcement Learning Education</a
+          >
+          <div class="m">
+            <span>2023-11-17</span><a class="alpha" href="https://www.alphaxiv.org/abs/2311.10590" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2311.10590" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/32cb0981e9651003cee6605d7769c714b9011a47" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2310.15757" target="_blank" rel="noopener"
+            >Do Differences in Values Influence Disagreements in Online Discussions?</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-10-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2310.15757" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2310.15757" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9d13bfdb337f113bb8f41552352b9ce3e70e1a18" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2308.01080" target="_blank" rel="noopener"
+            >Leveraging Few-Shot Data Augmentation and Waterfall Prompting for Response Generation</a
+          >
+          <div class="m">
+            <span class="v">DSTC</span><span>2023-08-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2308.01080" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2308.01080" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/657e364ec6932558f426583dc31953e547bf6575" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2209.08966" target="_blank" rel="noopener"
+            >Will It Blend? Mixing Training Paradigms &amp; Prompting for Argument Quality Prediction</a
+          >
+          <div class="m">
+            <span class="v">Workshop on Argument Mining</span><span>2022-09-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2209.08966" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2209.08966" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/eda36cdf6dbe28624bfad6482ca8e1575ab76d99" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2205.02388" target="_blank" rel="noopener"
+            >Interactive Grounded Language Understanding in a Collaborative Environment: IGLU 2021</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2022-05-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2205.02388" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2205.02388" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/11c2e98be11a39c36a15499f9fac9c3b9e68c061" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/c11be3b6cac0b7f5ba50d67918fcc14f90ed44bf" target="_blank" rel="noopener"
+            >What values should an agent align with?</a
+          >
+          <div class="m">
+            <span class="v">Autonomous Agents and Multi-Agent Systems</span><span>2022-03-28</span
+            ><a href="https://www.semanticscholar.org/paper/c11be3b6cac0b7f5ba50d67918fcc14f90ed44bf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2107.12711" target="_blank" rel="noopener"
+            >Reason against the machine? Future directions for mass online deliberation</a
+          >
+          <div class="m">
+            <span class="v">Frontiers in Political Science</span><span>2021-07-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2107.12711" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2107.12711" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/def8671d3c64b2ce795dafdf041e83c93095bbc7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/1fc7bc8819c62d0c4caab8d7666cb71dd364f07a" target="_blank" rel="noopener"
+            >Axies: Identifying and Evaluating Context-Specific Values</a
+          >
+          <div class="m">
+            <span class="v">Adaptive Agents and Multi-Agent Systems</span><span>2021-05-03</span
+            ><a href="https://www.semanticscholar.org/paper/1fc7bc8819c62d0c4caab8d7666cb71dd364f07a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3bdfa3311ae1474334ebae58f0c22a3226ec3369" target="_blank" rel="noopener"
+            >A Collaborative Platform for Identifying Context-Specific Values</a
+          >
+          <div class="m">
+            <span class="v">Adaptive Agents and Multi-Agent Systems</span><span>2021-05-03</span
+            ><a href="https://www.semanticscholar.org/paper/3bdfa3311ae1474334ebae58f0c22a3226ec3369" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2001.04418" target="_blank" rel="noopener"
+            >Exploiting Language Instructions for Interpretable and Compositional Reinforcement Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2020-01-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2001.04418" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2001.04418" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4e91c1fde4030c9518932c7a0b46358bb93ba91a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8ab6c40cf7a4388eef994a495c64205284c22639" target="_blank" rel="noopener"
+            >Team Qualification Document for RoboCup 2019, Sydney, Australia : Dutch Nao Team</a
+          >
+          <div class="m">
+            <span>2019-01-16</span
+            ><a href="https://www.semanticscholar.org/paper/8ab6c40cf7a4388eef994a495c64205284c22639" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3483bd78b47ee31d213d60e09489e6f1f490d5ad" target="_blank" rel="noopener"
+            >Team Qualification Document for RoboCup 2018, Montreal, Canada: Dutch Nao Team</a
+          >
+          <div class="m">
+            <span>2018-01-31</span
+            ><a href="https://www.semanticscholar.org/paper/3483bd78b47ee31d213d60e09489e6f1f490d5ad" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/48bdbc4203713cfa7297e0e50a0456bb3321c2e0" target="_blank" rel="noopener"
+            >The Roasted Tomato Challenge for a Humanoid Robot</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Autonomous Robot Systems and Competitions</span><span>2016-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/48bdbc4203713cfa7297e0e50a0456bb3321c2e0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/df49b72cd842c1cfbe6a91a1cb21265c64e9ea3e" target="_blank" rel="noopener"
+            >Dutch Nao Team : Team Qualification Document for RoboCup 2016, Leipzig, Germany</a
+          >
+          <div class="m">
+            <span>2015-12-01</span
+            ><a href="https://www.semanticscholar.org/paper/df49b72cd842c1cfbe6a91a1cb21265c64e9ea3e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3b55f9b1d4d6321e0b6b02c97a57b6be951a11a1" target="_blank" rel="noopener"
+            >Analysis of Sycophancy Across Question-ing Styles A Comparative Study of Sycophancy Across Prompting Architectures and Large Language
+            Models</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/3b55f9b1d4d6321e0b6b02c97a57b6be951a11a1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/51ee03c9a36c4f963f62a8aa073f01a15ade7240" target="_blank" rel="noopener"
+            >Extracting a Prototypical Argumentative Pattern in Financial Q&amp;As</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/51ee03c9a36c4f963f62a8aa073f01a15ade7240" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d74e0ae0dadf6dc12ddce16a548812aed51f7993" target="_blank" rel="noopener"
+            >Do Differences in Values Inﬂuence Disagreements in Online Discussions?</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/d74e0ae0dadf6dc12ddce16a548812aed51f7993" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Tim Rocktäschel</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/tim-rocktaschel.jpg"
+          alt="Tim Rocktäschel"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(130 42% 42%)">TR</span>'
+        />
+        <div>
+          <h1>Tim Rocktäschel <span class="tag">following</span></h1>
+          <div class="aff">UCL / Google DeepMind</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/_rockt" target="_blank" rel="noopener">@_rockt</a
+        ><a href="/papers.html?p=Tim%20Rockt%C3%A4schel">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 24</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.08340" target="_blank" rel="noopener"
+            >Benchmarking Open-Ended Multi-Agent Coordination in Language Agents</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.08340" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.08340" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/81802f8b2d19113f2c5673b6da80c87cf67c144f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.01931" target="_blank" rel="noopener"
+            >DéjàQ: Open-Ended Evolution of Diverse, Learnable and Verifiable Problems</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.01931" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.01931" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e56841cb1a4a1a201be8459f4e46887cbe34f7f0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/01a9a2a919ee50fbf809c10f4666636418dabb88" target="_blank" rel="noopener"
+            >Check Your Work: Structured Checklist Feedback for Improving Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/01a9a2a919ee50fbf809c10f4666636418dabb88" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f107fcaf4ac446fa5c7baa0193ede0a9b7555f5f" target="_blank" rel="noopener"
+            >ACRM: Multi-Agent Trajectory Learning for Automated Credit Risk Model Refreshing in Production</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track)</span
+            ><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/f107fcaf4ac446fa5c7baa0193ede0a9b7555f5f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bdf62d98131d639adb68d4c8ee009125d5927175" target="_blank" rel="noopener"
+            >Towards Uncovering How Large Language ModelsWork: An Interpretability Perspective</a
+          >
+          <div class="m">
+            <span class="v">SIGKDD Explorations</span><span>2025-12-30</span
+            ><a href="https://www.semanticscholar.org/paper/bdf62d98131d639adb68d4c8ee009125d5927175" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.13341" target="_blank" rel="noopener">Imagined Autocurricula</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-09-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.13341" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.13341" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/45a2ecc97d32c8bd6465ab020848f0bd603724c1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.03581" target="_blank" rel="noopener"
+            >Learning When to Plan: Efficiently Allocating Test-Time Compute for LLM Agents</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-09-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2509.03581" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.03581" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d012770866b46856d24fba0e930bc87a069522c8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.18777" target="_blank" rel="noopener"
+            >Programming by Backprop: An Instruction is Worth 100 Examples When Finetuning LLMs</a
+          >
+          <div class="m">
+            <span>2025-06-23</span><a class="alpha" href="https://www.alphaxiv.org/abs/2506.18777" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.18777" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/12cecec05d75348c62fd374e7d2592d65e17aadc" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.05213" target="_blank" rel="noopener"
+            >LLM-First Search: Self-Guided Exploration of the Solution Space</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.05213" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.05213" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/544628b7a19bfc2ad624419000ff81fc8bdd9eca" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.08295" target="_blank" rel="noopener"
+            >D3PO: Preference-Based Alignment of Discrete Diffusion Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-03-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.08295" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.08295" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/477be96c1a1208dabe30011a8f287ea2586906bf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.14074" target="_blank" rel="noopener">Investigating Non-Transitivity in LLM-as-a-Judge</a>
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025-02-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.14074" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.14074" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5997e69e637ba532b287124af85e48e02b98f432" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6284588722907965160e81eb85d37dbb3f702ee0" target="_blank" rel="noopener"
+            >InterFeedback: Unveiling Interactive Intelligence of Large Multimodal Models with Human Feedback</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/6284588722907965160e81eb85d37dbb3f702ee0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/65f646776ffd4a946b39ab42985450974c4bb238" target="_blank" rel="noopener"
+            >Programming by Backprop: LLMs Acquire Reusable Algorithmic Abstractions During Code Training</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/65f646776ffd4a946b39ab42985450974c4bb238" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f138a3754099fed333f49ce60003f98c042caeb7" target="_blank" rel="noopener"
+            >Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/f138a3754099fed333f49ce60003f98c042caeb7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.13543" target="_blank" rel="noopener"
+            >BALROG: Benchmarking Agentic LLM and VLM Reasoning On Games</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-11-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.13543" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.13543" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/faf5f373bd9944028664ea3e7da2d6a1fe3bf335" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.12580" target="_blank" rel="noopener"
+            >Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-11-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.12580" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.12580" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/75a1909815a8e4036a5fc212b545982506fc481e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.03608" target="_blank" rel="noopener"
+            >TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.03608" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.03608" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/82068d5f0126575e6b41dc4aa0653dd85939c91d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/320da764bd416e7c0dcc1b89fd16cf73560ea852" target="_blank" rel="noopener"
+            >Mechanistically analyzing the effects of fine-tuning on procedurally defined tasks</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/320da764bd416e7c0dcc1b89fd16cf73560ea852" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e0147a8c1410e383ebd41988f69b3e5ec0076195" target="_blank" rel="noopener"
+            >The Goldilocks of Pragmatic Understanding: Fine-Tuning Strategy Matters for Implicature Resolution by LLMs</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/e0147a8c1410e383ebd41988f69b3e5ec0076195" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0d7e478a9b4ac757035862879b5df0c22830fa2d" target="_blank" rel="noopener"
+            >JaxMARL: Multi-Agent RL Environments in JAX</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/0d7e478a9b4ac757035862879b5df0c22830fa2d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/932d9e103b51da6a349802d180d51fd68b345d2d" target="_blank" rel="noopener"
+            >Graph Memory-based Editing for Large Language Models</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/932d9e103b51da6a349802d180d51fd68b345d2d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/51db583f89e0191c7ebf3fe212c5271c98b33c6b" target="_blank" rel="noopener"
+            >Conference on Empirical Methods in Natural Language Processing Proceedings of the Fourth International Workshop on Natural Language
+            Processing for Social Media Socialnlp@emnlp2016 Chairs&#x27; Welcome Identifying and Categorizing Disaster-related Tweets Why Do They
+            Leave: Modeling Participation in Online</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/51db583f89e0191c7ebf3fe212c5271c98b33c6b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7e0e12c8a2a9d70d7af8fabdbee6fda6e569a859" target="_blank" rel="noopener"
+            >A Systematic Literature Review of Adapter-based Approaches to Knowledge-enhanced Language Models</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/7e0e12c8a2a9d70d7af8fabdbee6fda6e569a859" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f98ef89ca455a8a75be3892dc3fbfa75ef91fdde" target="_blank" rel="noopener"
+            >On Reward Functions For Self-Improving Chain-of-Thought Reasoning Without Supervised Datasets (Abridged Version)</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/f98ef89ca455a8a75be3892dc3fbfa75ef91fdde" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

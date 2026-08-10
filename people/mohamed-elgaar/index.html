@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Mohamed Elgaar</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/mohamed-elgaar.jpg"
+          alt="Mohamed Elgaar"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(329 42% 42%)">ME</span>'
+        />
+        <div>
+          <h1>Mohamed Elgaar <span class="tag met">interacted with</span></h1>
+          <div class="aff">UMass Lowell PhD (finishing &#x27;26)</div>
+          <div class="metat">met · ACL 2026 · 2026-07-04</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://scholar.google.com/citations?user=xF9fh9MAAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Mohamed%20Elgaar">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 12</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.03942" target="_blank" rel="noopener"
+            >Linguistic Blind Spots in Clinical Decision Extraction</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the 1st Workshop on Linguistic Analysis for Health (HeaLing 2026)</span><span>2026-02-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.03942" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.03942" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/80f119376bf7f262a10f92435fdc76e025849b3a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.21698" target="_blank" rel="noopener"
+            >Curriculum Learning for LLM Pretraining: An Analysis of Learning Dynamics</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.21698" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.21698" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b6d1d0c950ec5e10ee98ba1da7e35cd8050f4169" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/fd20b844027003bcf5a07f8f9efe34324a91d594" target="_blank" rel="noopener"
+            >Overview of the Medical Decision Extraction, Analysis, and Classification Task (MedExACT) of BioNLP 2026</a
+          >
+          <div class="m">
+            <span class="v">BioNLP@ACL</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/fd20b844027003bcf5a07f8f9efe34324a91d594" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3018ceecf37751d5f2148e2fac78ef2ce5c00d77" target="_blank" rel="noopener"
+            >MedDecXtract: A Clinician-Support System for Extracting, Visualizing, and Annotating Medical Decisions in Clinical Narratives</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/3018ceecf37751d5f2148e2fac78ef2ce5c00d77" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ed3c9651e2f191fd20ddf587c6cbfe18dc0ea9b6" target="_blank" rel="noopener"
+            >LingConv: An Interactive Toolkit for Controlled Paraphrase Generation with Linguistic Attribute Control</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/ed3c9651e2f191fd20ddf587c6cbfe18dc0ea9b6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.24201" target="_blank" rel="noopener"
+            >LingGen: Scalable Multi-Attribute Linguistic Control via Power-Law Masking</a
+          >
+          <div class="m">
+            <span class="v">Conference of the European Chapter of the Association for Computational Linguistics</span><span>2024-10-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.24201" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.24201" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1caa5d5b4b66e22b9d88eb4c1adededfa410c549" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.24199" target="_blank" rel="noopener">Linguistically-Controlled Paraphrase Generation</a>
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024-10-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.24199" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.24199" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4794e3dcfc89cba9a7d99ab637046ebb74bc79d8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.12980" target="_blank" rel="noopener"
+            >MedDec: A Dataset for Extracting Medical Decisions from Discharge Summaries</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-08-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2408.12980" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.12980" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/270905b8b62e7056ee0f2495bd455ec95879f353" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2407.13660" target="_blank" rel="noopener"
+            >CogniVoice: Multimodal and Multilingual Fusion Networks for Mild Cognitive Impairment Assessment from Spontaneous Speech</a
+          >
+          <div class="m">
+            <span class="v">Interspeech</span><span>2024-07-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2407.13660" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2407.13660" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/75be5c947f8e8d37a577a0bb6f3343cbbdb192e1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2310.20121" target="_blank" rel="noopener"
+            >Ling-CL: Understanding NLP Models through Linguistic Curricula</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2023-10-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2310.20121" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2310.20121" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9aef17bcbb9fb6cad2cd6b0aa1c3ad053a31291e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2307.07412" target="_blank" rel="noopener">HuCurl: Human-induced Curriculum Discovery</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2023-07-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2307.07412" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2307.07412" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3dd06e5078a082bf456c26a19455c904e4c97937" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/07bbea9ef3f332250d279b843f84061652ec1ae9" target="_blank" rel="noopener"
+            >Multi-Speaker and Multi-Domain Emotional Voice Conversion Using Factorized Hierarchical Variational Autoencoder</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Acoustics, Speech, and Signal Processing</span><span>2020-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/07bbea9ef3f332250d279b843f84061652ec1ae9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

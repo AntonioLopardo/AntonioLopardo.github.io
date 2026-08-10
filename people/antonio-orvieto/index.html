@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Antonio Orvieto</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/antonio-orvieto.jpg"
+          alt="Antonio Orvieto"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(214 42% 42%)">AO</span>'
+        />
+        <div>
+          <h1>Antonio Orvieto <span class="tag">following</span></h1>
+          <div class="aff">MPI / ELLIS Tübingen</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/orvieto_antonio" target="_blank" rel="noopener">@orvieto_antonio</a
+        ><a href="/papers.html?p=Antonio%20Orvieto">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 46</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2608.06122" target="_blank" rel="noopener"
+            >Is Self-Pretraining really useful to improve diagnosis in medical Time Series?</a
+          >
+          <div class="m">
+            <span>2026-08-06</span><a class="alpha" href="https://www.alphaxiv.org/abs/2608.06122" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2608.06122" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/309462e765c728a9c392a17fea3defb2531b57b7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2607.13631" target="_blank" rel="noopener"
+            >How the Hessian-Spectrum of Neural Networks Depends on Data</a
+          >
+          <div class="m">
+            <span>2026-07-15</span><a class="alpha" href="https://www.alphaxiv.org/abs/2607.13631" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2607.13631" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/78df44c4634ea76b4760153062a274c83d8c8635" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.23637" target="_blank" rel="noopener">Muown Implicitly Performs Angular Step-size Decay</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.23637" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.23637" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b2b0aa5cbfe239aad2deb0deed4f34a5df1de2e3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.18206" target="_blank" rel="noopener"
+            >Fixed-Point Reasoners: Stable and Adaptive Deep Looped Transformers</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.18206" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.18206" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/55b7d88561f426a54fa39ab4c2538070c7d9cd4e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.14259" target="_blank" rel="noopener">Beyond a Single Explanation of the Adam-SGD Gap</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.14259" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.14259" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/df5d7ed10e885d427dd29b02efd76e1d2d428973" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.21070" target="_blank" rel="noopener"
+            >Towards Understanding Self-Pretraining for Sequence Classification</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.21070" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.21070" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6dd4e4d8f33287e90a50c08e3b7fab7de5c719fe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.19141" target="_blank" rel="noopener"
+            >GRASP: Deterministic argument ranking in interaction graphs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.19141" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.19141" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3d66596a5787e82de913564e572040463d0517a5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.10797" target="_blank" rel="noopener">Muown: Row-Norm Control for Muon Optimization</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.10797" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.10797" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4d3151a26c8d4511d5d0e55d5a3b6e4637ffa9d4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/2f908cb21dd605fa9afb4d215bb848f115c7557a" target="_blank" rel="noopener"
+            >Sequence Modeling Architectures: Foundations [Special Issue on the Mathematics of Deep Learning]</a
+          >
+          <div class="m">
+            <span class="v">IEEE Signal Processing Magazine</span><span>2026-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/2f908cb21dd605fa9afb4d215bb848f115c7557a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.15958" target="_blank" rel="noopener"
+            >Deriving Hyperparameter Scaling Laws via Modern Optimization Theory</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.15958" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.15958" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/05540ce82da3aa9b3974ae82b366c2edb04d0e01" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2603.15957" target="_blank" rel="noopener">GASP: Guided Asymmetric Self-Play For Coding LLMs</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-03-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2603.15957" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2603.15957" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f72872cafddac4867df4ae524c7c825c4950062d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.12021" target="_blank" rel="noopener"
+            >Improved state mixing in higher-order and block diagonal linear recurrent networks</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.12021" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.12021" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e83decfa613eb11afabf0979bf3985ed3315b1ea" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.06702" target="_blank" rel="noopener"
+            >Explaining Grokking in Transformers through the Lens of Inductive Bias</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.06702" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.06702" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0cd21df5210f30f1798a58d6abb9863c772faa27" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.09000" target="_blank" rel="noopener"
+            >Universal Dynamics of Warmup Stable Decay: understanding WSD beyond Transformers</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.09000" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.09000" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/68827568c466ef7096bf3b1b4b94c3edb58aee65" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/40dccfac40613f0de8f308abae36ae9ea344e962" target="_blank" rel="noopener"
+            >GitChameleon 2.0: Evaluating AI Code Generation Against Python Library Version Incompatibilities</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/40dccfac40613f0de8f308abae36ae9ea344e962" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e0d19427b12b410e02b9c78bf4b12b19c39ab8f2" target="_blank" rel="noopener"
+            >Are Current AI Systems Unlocking Knowledge Discovery in Genomics?</a
+          >
+          <div class="m">
+            <span class="v">Daedalus</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/e0d19427b12b410e02b9c78bf4b12b19c39ab8f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.10858" target="_blank" rel="noopener"
+            >Scaling Behavior of Discrete Diffusion Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.10858" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.10858" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0672dfb6976a1752d2559902f727602a4dab7f01" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.20516" target="_blank" rel="noopener">Adam Simplified: Bias Correction Debunked</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.20516" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.20516" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/55be063045eeb8953bd6319dcf778a943a789f33" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2511.17388" target="_blank" rel="noopener">Selective Rotary Position Embedding</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-11-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2511.17388" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2511.17388" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/13ea42a4879f39eb13cb0aae7c2d53e2c574826c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.09389" target="_blank" rel="noopener"
+            >Design Principles for Sequence Models via Coefficient Dynamics</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.09389" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.09389" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/98ae3407a0ac03dc644e8b5c23412acd66c2ea0e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.04686" target="_blank" rel="noopener"
+            >How does the optimizer implicitly bias the model merging loss landscape?</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.04686" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.04686" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/166a3df139de180f5233d03a27a846269ebf42a6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2508.19029" target="_blank" rel="noopener"
+            >Revisiting associative recall in modern recurrent models</a
+          >
+          <div class="m">
+            <span>2025-08-26</span><a class="alpha" href="https://www.alphaxiv.org/abs/2508.19029" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2508.19029" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/91fd141738858eff0f31ae5db208f269e4d3f982" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2508.15071" target="_blank" rel="noopener"
+            >Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size</a
+          >
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 38</span><span>2025-08-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2508.15071" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2508.15071" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d1445a3a68c328592c21af3f5d79e926a201140b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.12367" target="_blank" rel="noopener"
+            >GitChameleon: Evaluating AI Code Generation Against Python Library Version Incompatibilities</a
+          >
+          <div class="m">
+            <span>2025-07-16</span><a class="alpha" href="https://www.alphaxiv.org/abs/2507.12367" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.12367" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d49b5e7c6bd09120575d52f7cd50e85afc3100d5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.11228" target="_blank" rel="noopener"
+            >Gradient Descent on Logistic Regression: Do Large Step-Sizes Work with Data on the Sphere?</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-07-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.11228" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.11228" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/2b4da1344091720059a1ef2e96c54124b19e0336" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.10015" target="_blank" rel="noopener"
+            >(Almost) Free Modality Stitching of Foundation Models</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-07-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.10015" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.10015" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/99b759feb3d6d6db4829024614280c2a2a9c8006" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.22712" target="_blank" rel="noopener"
+            >Generalized Linear Mode Connectivity for Transformers</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-06-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.22712" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.22712" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9a1a9d3dda4be2fb3ffc0b1f64476275b0adca52" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.12543" target="_blank" rel="noopener"
+            >Is your batch size the problem? Revisiting the Adam-SGD gap in language modeling</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.12543" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.12543" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f30a6f998c5b79bdfa25c77f9624445581d5f5bf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.00181" target="_blank" rel="noopener"
+            >On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach</a
+          >
+          <div class="m">
+            <span>2025-05-30</span><a class="alpha" href="https://www.alphaxiv.org/abs/2506.00181" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.00181" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f699f09fe6ecf336fa660b09f9c1a7ee650f9604" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.21829" target="_blank" rel="noopener">In Search of Adam&#x27;s Secret Sauce</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-05-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.21829" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.21829" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/67490cb5ee89b850dcb7cc123f354a42b5a11876" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.06446" target="_blank" rel="noopener"
+            >Can you Finetune your Binoculars? Embedding Text Watermarks into the Weights of Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.06446" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.06446" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5ca4ea932c08a63e49e967202504708ee18fc870" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.10799" target="_blank" rel="noopener"
+            >Fixed-Point RNNs: Interpolating from Diagonal to Dense</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-03-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.10799" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.10799" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/05efdded456f2267227c32be65a554c6e598d0a7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.04482" target="_blank" rel="noopener">Generalized Interpolating Discrete Diffusion</a>
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025-03-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.04482" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.04482" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b8dc0d04a24121f8c41baa3cc053c93dd7b807a8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.09287" target="_blank" rel="noopener"
+            >An Uncertainty Principle for Linear Recurrent Neural Networks</a
+          >
+          <div class="m">
+            <span class="v">Annual Conference Computational Learning Theory</span><span>2025-02-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.09287" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.09287" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d340771f2af544d895be20f5cb92a4b97b643982" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.06761" target="_blank" rel="noopener">When, Where and Why to Average Weights?</a>
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025-02-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.06761" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.06761" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3490273f577a673310c42ba1674153aa1f21f784" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/293ad60e61a1b77361b5e269c3c348ea0260502f" target="_blank" rel="noopener"
+            >Adaptive Methods through the Lens of SDEs: Theoretical Insights on the Role of Noise</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/293ad60e61a1b77361b5e269c3c348ea0260502f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6c2663c543f8d2c7879ea8018afa0cba21d977a0" target="_blank" rel="noopener"
+            >Fixed-Point RNNs: From Diagonal to Dense in a Few Iterations</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/6c2663c543f8d2c7879ea8018afa0cba21d977a0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.15958" target="_blank" rel="noopener"
+            >Adaptive Methods through the Lens of SDEs: Theoretical Insights on the Role of Noise</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-11-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.15958" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.15958" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/be1a28b24891acffa3b6d4226a85c390e42f254f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.00151" target="_blank" rel="noopener"
+            >NIMBA: Towards Robust and Principled Processing of Point Clouds With SSMs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.00151" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.00151" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5bf89a79cb1d24f4a4c8a8d8136871072fa8242a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.12455" target="_blank" rel="noopener"
+            >Loss Landscape Characterization of Neural Networks without Over-Parametrization</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-10-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.12455" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.12455" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ad98f0ecfaf1bf5fe287589e395ff7b8d1897607" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.12025" target="_blank" rel="noopener"
+            >Geometric Inductive Biases of Deep Networks: The Role of Data and Architecture</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-10-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.12025" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.12025" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9d852269f69fda092aa6c7ce5e1013b7aa694103" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/468855eabfc3c84eb83518e9ce959dc4df0d10b7" target="_blank" rel="noopener"
+            >Universality of Linear Recurrences Followed by Non-linear Projections: Finite-Width Guarantees and Benefits of Complex Eigenvalues</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/468855eabfc3c84eb83518e9ce959dc4df0d10b7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bbbed70ab3e2b3717e3af69007e36be7426935f7" target="_blank" rel="noopener"
+            >Why do Learning Rates Transfer? Reconciling Optimization and Scaling Limits for Deep Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/bbbed70ab3e2b3717e3af69007e36be7426935f7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/0ea57f2d1d2715b5c4fece4dd96dac238d028f00" target="_blank" rel="noopener"
+            >Recurrent Distance-Encoding Neural Networks for Graph Representation Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/0ea57f2d1d2715b5c4fece4dd96dac238d028f00" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/380259d55b8084d5be7da5aea264e69e64b99bd3" target="_blank" rel="noopener"
+            >Achieving a Better Stability-Plasticity Trade-off via Auxiliary Networks in Continual Learning (Appendix)</a
+          >
+          <div class="m">
+            <span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/380259d55b8084d5be7da5aea264e69e64b99bd3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ae4cef877b1082719f258e30c0c1b054629c8e2e" target="_blank" rel="noopener"
+            >Escaping Random Teacher Initialization Enhances Signal Propagation and Representation</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/ae4cef877b1082719f258e30c0c1b054629c8e2e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

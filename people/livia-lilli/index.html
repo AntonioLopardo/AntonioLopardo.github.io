@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Livia Lilli</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/livia-lilli.jpg"
+          alt="Livia Lilli"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(285 42% 42%)">LL</span>'
+        />
+        <div>
+          <h1>Livia Lilli <span class="tag met">interacted with</span></h1>
+          <div class="aff">Gemelli Generator RWD, Gemelli IRCCS (Rome) — data scientist / lead AI eng</div>
+          <div class="metat">met · ACL 2026 · 2026-07-04</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://scholar.google.com/citations?user=RKLb-XMAAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Livia%20Lilli">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 17</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5ba48115b967d95f5920273385153da5748d0881" target="_blank" rel="noopener"
+            >A Real-Time Clinical Text Information Extractor via LLM.</a
+          >
+          <div class="m">
+            <span class="v">Studies in Health Technology and Informatics</span><span>2026-05-21</span
+            ><a href="https://www.semanticscholar.org/paper/5ba48115b967d95f5920273385153da5748d0881" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/96c84619f9ac829392728e71d4d82d58eea71f3f" target="_blank" rel="noopener"
+            >From Report to Record: Prompt-Based Information Extraction from Gynecology Oncology Reports Using LLMs.</a
+          >
+          <div class="m">
+            <span class="v">Studies in Health Technology and Informatics</span><span>2026-05-21</span
+            ><a href="https://www.semanticscholar.org/paper/96c84619f9ac829392728e71d4d82d58eea71f3f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ba6d0aaafcad1e5a2f6d8c1108798f5481f8a593" target="_blank" rel="noopener"
+            >Digital GO: A Clinical Decision-Support Dashboard for Gynecologic Oncology Tumor Board.</a
+          >
+          <div class="m">
+            <span class="v">Studies in Health Technology and Informatics</span><span>2026-05-21</span
+            ><a href="https://www.semanticscholar.org/paper/ba6d0aaafcad1e5a2f6d8c1108798f5481f8a593" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5b0e1ea25741d5b0bd4d11adac1fe0a8857de00d" target="_blank" rel="noopener"
+            >GO–digital: prompt-based information extraction from gynecologic oncology reports using llms and a clinical decision-support dashboard</a
+          >
+          <div class="m">
+            <span class="v">International Journal of Gynecological Cancer</span><span>2026-02-01</span
+            ><a href="https://www.semanticscholar.org/paper/5b0e1ea25741d5b0bd4d11adac1fe0a8857de00d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b828c1583a063701eb25f7159fda96557d1b2515" target="_blank" rel="noopener"
+            >Natural language processing as consultation service platform or clinical decision support system in gynecologic oncology: a systematic
+            review.</a
+          >
+          <div class="m">
+            <span class="v">International Journal of Gynecological Cancer</span><span>2026-02-01</span
+            ><a href="https://www.semanticscholar.org/paper/b828c1583a063701eb25f7159fda96557d1b2515" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b89d658acfabea73ee077f31af422f7125c7a6e4" target="_blank" rel="noopener"
+            >Identification of clinical phenotypes and disease trajectories in SLE using AI through a natural language processing framework.</a
+          >
+          <div class="m">
+            <span class="v">Rheumatology</span><span>2026-02-01</span
+            ><a href="https://www.semanticscholar.org/paper/b89d658acfabea73ee077f31af422f7125c7a6e4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/24ab222120e60f63032fc66a8e53d28261b63c51" target="_blank" rel="noopener"
+            >Segmentation Matters: Exploring LLM-Based Strategies for Temporal Clinical Event Identification in Oncology Reports</a
+          >
+          <div class="m">
+            <span class="v">BioNLP@ACL</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/24ab222120e60f63032fc66a8e53d28261b63c51" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6f9a64086b220a57ed1175886059a3406ae91337" target="_blank" rel="noopener"
+            >Benchmarking Large Language Models for Italian Medical Text Classification: Are Generative Models the Best Choice?</a
+          >
+          <div class="m">
+            <span class="v">Studies in Health Technology and Informatics</span><span>2025-10-02</span
+            ><a href="https://www.semanticscholar.org/paper/6f9a64086b220a57ed1175886059a3406ae91337" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e9c38700973c51954f841c87406475c3ca8994ba" target="_blank" rel="noopener"
+            >Leveraging ChatGPT-4 for Evidence Synthesis: A Case Study on the Use of a Large Language Model in a Systematic Review.</a
+          >
+          <div class="m">
+            <span class="v">Studies in Health Technology and Informatics</span><span>2025-10-02</span
+            ><a href="https://www.semanticscholar.org/paper/e9c38700973c51954f841c87406475c3ca8994ba" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/148f5df1d10c2c008642c6137dc1758f154fdd9c" target="_blank" rel="noopener"
+            >Prediction of 1-Year Activity in Systemic Lupus Erythematosus: Hierarchical Machine Learning Approach</a
+          >
+          <div class="m">
+            <span class="v">JMIR Formative Research</span><span>2025-08-22</span
+            ><a href="https://www.semanticscholar.org/paper/148f5df1d10c2c008642c6137dc1758f154fdd9c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/5e3359959c4ad1abed7efead21bf21db8420536f" target="_blank" rel="noopener"
+            >Privacy in Italian Clinical Reports: A NLP-Based Anonymization Approach</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Healthcare Informatics</span><span>2025-06-18</span
+            ><a href="https://www.semanticscholar.org/paper/5e3359959c4ad1abed7efead21bf21db8420536f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7ece401a2ea238c16b1e411e94810c89a95dad8a" target="_blank" rel="noopener"
+            >Improving Clinical Report Classification with Sentence Boundary Detection</a
+          >
+          <div class="m">
+            <span class="v">IEEE International Conference on Healthcare Informatics</span><span>2025-06-18</span
+            ><a href="https://www.semanticscholar.org/paper/7ece401a2ea238c16b1e411e94810c89a95dad8a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bc68d9636fc06857cb41c5e9d0cca3c86070ef36" target="_blank" rel="noopener"
+            >Gemelli SLE Data Mart: A Real World Evidence Framework for the Evolution of Systemic Lupus Erythematousus Patients.</a
+          >
+          <div class="m">
+            <span class="v">Studies in Health Technology and Informatics</span><span>2025-05-15</span
+            ><a href="https://www.semanticscholar.org/paper/bc68d9636fc06857cb41c5e9d0cca3c86070ef36" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ee6c95283c2f17eb4ffa247cc2ebe3106c6d8ab5" target="_blank" rel="noopener"
+            >MISTIC: a novel approach for metastasis classification in Italian electronic health records using transformers</a
+          >
+          <div class="m">
+            <span class="v">BMC Medical Informatics and Decision Making</span><span>2025-04-10</span
+            ><a href="https://www.semanticscholar.org/paper/ee6c95283c2f17eb4ffa247cc2ebe3106c6d8ab5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8f5d35c5c2473628fc38735e50c826b9ce4db637" target="_blank" rel="noopener"
+            >Mamma Mia! Where&#x27;s My Name? De-Identifying Italian Clinical Notes with Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">Italian Conference on Computational Linguistics</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/8f5d35c5c2473628fc38735e50c826b9ce4db637" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e47955d0d41b8c80292c6997a11851fb9626da6c" target="_blank" rel="noopener"
+            >Prompting Large Language Models for Italian Clinical Reports: A Benchmark Study</a
+          >
+          <div class="m">
+            <span class="v">BioNLP@ACL</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/e47955d0d41b8c80292c6997a11851fb9626da6c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/ff27f2e06d2f4f9e6cfd83d66d7c5e3e960e6004" target="_blank" rel="noopener"
+            >A Calibrated Multiexit Neural Network for Detecting Urothelial Cancer Cells</a
+          >
+          <div class="m">
+            <span class="v">Comput. Math. Methods Medicine</span><span>2021-06-13</span
+            ><a href="https://www.semanticscholar.org/paper/ff27f2e06d2f4f9e6cfd83d66d7c5e3e960e6004" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

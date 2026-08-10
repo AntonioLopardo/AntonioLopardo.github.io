@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Yu Su</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/yu-su.jpg"
+          alt="Yu Su"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(318 42% 42%)">YS</span>'
+        />
+        <div>
+          <h1>Yu Su <span class="tag">following</span></h1>
+          <div class="aff">Ohio State University</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/ysu_nlp" target="_blank" rel="noopener">@ysu_nlp</a><a href="/papers.html?p=Yu%20Su">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 39</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.29537" target="_blank" rel="noopener"
+            >OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.29537" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.29537" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/91522113ac6b81e4b6acdab8a8e612557d53449c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.24954" target="_blank" rel="noopener"
+            >Nemotron 3 Nano Omni: Efficient and Open Multimodal Intelligence</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-04-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.24954" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.24954" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/789c4d5029c44caa10567d9301fbdae990baca7b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/98f36c5493ede4b0b06df40596cad054a8e6958a" target="_blank" rel="noopener"
+            >Multimodal Depression Detection Through Conversational Interactions with an Emotion-Aware Social Robot: Pilot Study</a
+          >
+          <div class="m">
+            <span class="v">JMIR Formative Research</span><span>2026-04-27</span
+            ><a href="https://www.semanticscholar.org/paper/98f36c5493ede4b0b06df40596cad054a8e6958a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.11977" target="_blank" rel="noopener"
+            >Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.11977" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.11977" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/92f110c93e9c9990129dfbf601b8d7254855dedf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.08558" target="_blank" rel="noopener">Agent Learning via Early Experience</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.08558" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.08558" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c58ec5cabdb70ae1c08afb1e5a2c7bffd23a04b1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.04673" target="_blank" rel="noopener"
+            >Watch and Learn: Learning to Use Computers from Online Videos</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.04673" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.04673" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8f85ff48706cdacb6a3f8643bc4bbb09cc6d4019" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.14293" target="_blank" rel="noopener"
+            >WebGuard: Building a Generalizable Guardrail for Web Agents</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-07-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.14293" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.14293" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/627c43f76d22197a4517d87f42be78076b5f14c5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.21506" target="_blank" rel="noopener"
+            >Mind2Web 2: Evaluating Agentic Search with Agent-as-a-Judge</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-06-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.21506" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.21506" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/87e0d4f6e4fb8c16d69c4444de7319d7698b1711" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.05606" target="_blank" rel="noopener"
+            >OPeRA: A Dataset of Observation, Persona, Rationale, and Action for Evaluating LLMs on Human Online Shopping Behavior Simulation</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-06-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.05606" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.05606" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/be0ddf343f51de9effc566d17de2ca255cdcf806" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.23883" target="_blank" rel="noopener"
+            >BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-05-29</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.23883" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.23883" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/af5f9b40cb20df4cf0f3c0c767e9855738918554" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.21936" target="_blank" rel="noopener"
+            >RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.21936" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.21936" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/39361a6a3d86f8831de8537965ec4f9f65ea31f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.20258" target="_blank" rel="noopener">ARM: Adaptive Reasoning Model</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-05-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.20258" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.20258" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/74dadd23073faf65cb767f1f9467a0fc965ca7b3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.20168" target="_blank" rel="noopener"
+            >MICE for CATs: Model-Internal Confidence Estimation for Calibrating Agents with Tools</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2025-04-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.20168" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.20168" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4f9ea82e5eccb871f3fc2907485d0e087044b2e3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.14822" target="_blank" rel="noopener"
+            >Completing A Systematic Review in Hours instead of Months with Interactive AI Agents</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-04-21</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.14822" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.14822" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3a7d07c638a10781c6c0e3170115ce82dfb111c5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.07079" target="_blank" rel="noopener"
+            >SkillWeaver: Web Agents can Self-Improve by Discovering and Honing Skills</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.07079" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.07079" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/69768fdcb8c2bbf5c658c737b33d9c95ea98f60f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.01382" target="_blank" rel="noopener"
+            >An Illusion of Progress? Assessing the Current State of Web Agents</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.01382" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.01382" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e17d67990721add9597890e777cb337ef9a20973" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.01990" target="_blank" rel="noopener"
+            >Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-03-31</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.01990" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.01990" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/305a7422a34a89fb79a84a9cdbecbae5021d6d83" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.10857" target="_blank" rel="noopener"
+            >Towards Understanding Graphical Perception in Large Multimodal Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-03-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.10857" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.10857" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/dc23a07b148d74d85dfd953d79248878744723d4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.14296" target="_blank" rel="noopener"
+            >On the Trustworthiness of Generative Foundation Models: Guideline, Assessment, and Perspective</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-02-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.14296" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.14296" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/961aeb868bac4632f16fa6b276bb11d3458c152f" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.14802" target="_blank" rel="noopener"
+            >From RAG to Memory: Non-Parametric Continual Learning for Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2025-02-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.14802" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.14802" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b79b3a401119bc610b6e2db738aeee531b40aaf0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.11357" target="_blank" rel="noopener"
+            >Explorer: Scaling Exploration-driven Web Trajectory Synthesis for Multimodal Web Agents</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-02-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.11357" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.11357" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/26acd2d4b5d2bed7e25250d3f2f222b5611ee8ef" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.06755" target="_blank" rel="noopener"
+            >Interpretable and Testable Vision Features via Sparse Autoencoders</a
+          >
+          <div class="m">
+            <span>2025-02-10</span><a class="alpha" href="https://www.alphaxiv.org/abs/2502.06755" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.06755" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f44dc25ece96a63436420e0a6e40a299222800fd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2501.11309" target="_blank" rel="noopener"
+            >Finer-CAM: Spotting the Difference Reveals Finer Details for Visual Explanation</a
+          >
+          <div class="m">
+            <span class="v">Computer Vision and Pattern Recognition</span><span>2025-01-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2501.11309" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2501.11309" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0a1cfe126be0b989ad6e1de57fa75dc1f5eee299" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2501.09333" target="_blank" rel="noopener"
+            >Prompt-CAM: Making Vision Transformers Interpretable for Fine-Grained Analysis</a
+          >
+          <div class="m">
+            <span class="v">Computer Vision and Pattern Recognition</span><span>2025-01-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2501.09333" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2501.09333" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/90fb3a13c474c656aa97f2b95312b4e8c99934d9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3901c036ccfd184b38a8358fd41b62ae593f3ef6" target="_blank" rel="noopener"
+            >Static Segmentation by Tracking: A Frustratingly Label-Efficient Approach to Fine-Grained Segmentation</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/3901c036ccfd184b38a8358fd41b62ae593f3ef6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/226ebe8dff0953f5a554d3285437a039147683f0" target="_blank" rel="noopener"
+            >Discovering Severe Adverse Reactions from Pharmacokinetic Drug-Drug Interactions through Literature Analysis and Electronic Health Record
+            Verification</a
+          >
+          <div class="m">
+            <span class="v">Clinical pharmacology and therapy</span><span>2024-11-25</span
+            ><a href="https://www.semanticscholar.org/paper/226ebe8dff0953f5a554d3285437a039147683f0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.16537" target="_blank" rel="noopener"
+            >RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics</a
+          >
+          <div class="m">
+            <span class="v">Computer Vision and Pattern Recognition</span><span>2024-11-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.16537" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.16537" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ba8f1e36ca5f16a61d679f1ddf7b2cb3e298b354" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.06559" target="_blank" rel="noopener"
+            >Is Your LLM Secretly a World Model of the Internet? Model-Based Planning for Web Agents</a
+          >
+          <div class="m">
+            <span class="v">Trans. Mach. Learn. Res.</span><span>2024-11-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.06559" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.06559" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/db256d018825b8385fa995265461eb5224ca0cfe" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.05080" target="_blank" rel="noopener"
+            >ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.05080" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.05080" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/45b7c7448768b51b6dbd9b76495c9cd9d110bd91" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.05243" target="_blank" rel="noopener"
+            >Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-10-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.05243" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.05243" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/a15a4cabe7653a87efc3302552fbc88b25d19dc1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.02642" target="_blank" rel="noopener"
+            >Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-10-03</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.02642" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.02642" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c78422dff7c4dbf0aa7e41f08aa610a0d317eb3d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2409.16223" target="_blank" rel="noopener">Fine-Tuning is Fine, if Calibrated</a>
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-09-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2409.16223" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2409.16223" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/32dc52c748b938786f9c194134fd9d8a69a063a8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2409.02813" target="_blank" rel="noopener"
+            >MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-09-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2409.02813" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2409.02813" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/881ebd6d94065e5157f2290009b147b87eaf4ec9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.16176" target="_blank" rel="noopener"
+            >VLM4Bio: A Benchmark Dataset to Evaluate Pretrained Vision-Language Models for Trait Discovery from Biological Images</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024-08-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2408.16176" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.16176" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/06d48c241db2e383e9c3d0af2d06f2b392051d1d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.06327" target="_blank" rel="noopener"
+            >VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-08-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2408.06327" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.06327" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f1f63620e87facef02234e82864c4b8adee081ec" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/82127368891cadd395bcf99eded5066e4c968e87" target="_blank" rel="noopener"
+            >WebOlympus: An Open Platform for Web Agents on Live Websites</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/82127368891cadd395bcf99eded5066e4c968e87" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bc8f78c40e62f68d164b153deb11ba29e26ad147" target="_blank" rel="noopener"
+            >Language Agents: Foundations, Prospects, and Risks</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/bc8f78c40e62f68d164b153deb11ba29e26ad147" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/9815f586f329a098df83ca872799880bd5cb1a15" target="_blank" rel="noopener"
+            >Adaptive Chameleon or Stubborn Sloth: Unraveling the Behavior of Large Language Models in Knowledge Clashes</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/9815f586f329a098df83ca872799880bd5cb1a15" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f5ad8e791d252eeed10594d7ec5ea0d34929c0df" target="_blank" rel="noopener"
+            >Towards a Robust and Generalizable Embodied Agent</a
+          >
+          <div class="m">
+            <span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/f5ad8e791d252eeed10594d7ec5ea0d34929c0df" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

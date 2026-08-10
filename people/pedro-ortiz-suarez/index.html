@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Pedro Ortiz Suarez</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/pedro-ortiz-suarez.jpg"
+          alt="Pedro Ortiz Suarez"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(330 42% 42%)">PO</span>'
+        />
+        <div>
+          <h1>Pedro Ortiz Suarez <span class="tag met">interacted with</span></h1>
+          <div class="aff">Common Crawl Foundation</div>
+          <div class="metat">met · ACL 2026 · 2026-07-07</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://scholar.google.com/citations?user=5sNdyvkAAAAJ" target="_blank" rel="noopener">Google Scholar</a
+        ><a href="/papers.html?p=Pedro%20Ortiz%20Suarez">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 40</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.24067" target="_blank" rel="noopener"
+            >Colour Contrast on the Web: A WCAG 2.1 Level AA Compliance Audit of Common Crawl&#x27;s Top 500 Domains</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.24067" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.24067" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d3953e5a75991bc9adbb8de146dacbdc85b8d990" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.08951" target="_blank" rel="noopener">How Should We Model the Probability of a Language?</a>
+          <div class="m">
+            <span class="v">VarDial@EAC</span><span>2026-02-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.08951" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.08951" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4c1e4ca3f66a8a3a4b562aea59729ec196173164" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.18026" target="_blank" rel="noopener"
+            >CommonLID: Re-evaluating State-of-the-Art Language Identification Performance on Web Data</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026-01-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.18026" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.18026" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/08aebd9f6d3550fe2ac3d0c0bc0673c2de6eec2c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.14576" target="_blank" rel="noopener"
+            >Low-Resource, High-Impact: Building Corpora for Inclusive Language Technologies</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-16</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.14576" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.14576" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b95a9015554b7b6273fd5e67403762f22e164a59" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.11192" target="_blank" rel="noopener"
+            >SciLaD: A Large-Scale, Transparent, Reproducible Dataset for Natural Scientific Language Processing</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-12-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.11192" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.11192" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/13b6a265d4023d50967745f56a22e8c5806c2c53" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/530a088d23b780cbd1e74ea4637a1db7463d7ca1" target="_blank" rel="noopener"
+            >A Framework for Ethical Data Removal from Language Resources: An Example from Low-Resource Language Communities</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the AAAI Symposium Series</span><span>2025-11-23</span
+            ><a href="https://www.semanticscholar.org/paper/530a088d23b780cbd1e74ea4637a1db7463d7ca1" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.00152" target="_blank" rel="noopener"
+            >Table Understanding and (Multimodal) LLMs: A Cross-Domain Case Study on Scientific vs. Non-Scientific Data</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the 4th Table Representation Learning Workshop</span><span>2025-06-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.00152" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.00152" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/21a8d74bff88ea3fe0eb25bba3fa7bceaf601c22" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.06547" target="_blank" rel="noopener"
+            >KréyoLID From Language Identification Towards Language Mining</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-03-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.06547" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.06547" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0b69638d33185d76214a8d6907496a3377a037f6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/da3c2c2f6ee5aa13d9b573d8e7bb910b8adc124b" target="_blank" rel="noopener"
+            >Identifying Rare Languages in Common Crawl Data is a Needles-in-a-Haystack Problem</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/da3c2c2f6ee5aa13d9b573d8e7bb910b8adc124b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/97e783730dbedd888e2e0d4557516b18b344e078" target="_blank" rel="noopener"
+            >Building Data Infrastructure for Low-Resource Languages</a
+          >
+          <div class="m">
+            <span class="v">Proceedings of the Eighth Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2025)</span
+            ><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/97e783730dbedd888e2e0d4557516b18b344e078" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.08800" target="_blank" rel="noopener">Data Processing for the OpenGPT-X Model Family</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.08800" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.08800" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ac9b69932beba2fc38611490ecfc30b30256f9b3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.03730" target="_blank" rel="noopener"
+            >Teuken-7B-Base &amp; Teuken-7B-Instruct: Towards European LLMs</a
+          >
+          <div class="m">
+            <span class="v">European Conference on Artificial Intelligence</span><span>2024-09-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.03730" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.03730" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/087da36d123799f63245a34ff43e2f03dbf42e62" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/91363ce8685f312eefa24a15a4311c548ab54ec4" target="_blank" rel="noopener"
+            >Documenting Geographically and Contextually Diverse Language Data Sources</a
+          >
+          <div class="m">
+            <span class="v">NEJLT</span><span>2024-09-12</span
+            ><a href="https://www.semanticscholar.org/paper/91363ce8685f312eefa24a15a4311c548ab54ec4" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2408.04554" target="_blank" rel="noopener"
+            >Molyé: A Corpus-based Approach to Language Contact in Colonial France</a
+          >
+          <div class="m">
+            <span class="v">NLP4DH</span><span>2024-08-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2408.04554" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2408.04554" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/bb07adcc14ce6870c2389621740f2724619981fd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2406.08707" target="_blank" rel="noopener"
+            >mOSCAR: A Large-scale Multilingual and Multimodal Document-level Corpus</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-06-13</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2406.08707" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2406.08707" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cdd061bef669b399e8ba03039df6187e8561d1e5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/77a2e761ed2dc2360043280bb543c7add804983d" target="_blank" rel="noopener"
+            >A CURATEd CATalog: Rethinking the Extraction of Pretraining Corpora for Mid-Resourced Languages</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2024-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/77a2e761ed2dc2360043280bb543c7add804983d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2310.08754" target="_blank" rel="noopener"
+            >Tokenizer Choice For LLM Training: Negligible or Crucial?</a
+          >
+          <div class="m">
+            <span class="v">NAACL-HLT</span><span>2023-10-12</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2310.08754" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2310.08754" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/64384525318f934fa085de86badc24403487d38a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2309.10923" target="_blank" rel="noopener"
+            >Semi-automatic staging area for high-quality structured data extraction from scientific literature</a
+          >
+          <div class="m">
+            <span class="v">Science and Technology of Advanced Materials: Methods</span><span>2023-09-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2309.10923" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2309.10923" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6f52527304c4ec30fc4b8b769c7df480cd313626" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2303.03915" target="_blank" rel="noopener"
+            >The BigScience ROOTS Corpus: A 1.6TB Composite Multilingual Dataset</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2023-03-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2303.03915" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2303.03915" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/16c64f74ce0e6a59b0709c0d8e66596a5bc08ed6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2212.10440" target="_blank" rel="noopener"
+            >Perplexed by Quality: A Perplexity-based Method for Adult and Harmful Content Detection in Multilingual Heterogeneous Web Data</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2022-12-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2212.10440" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2212.10440" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f92ccdc17ec435e92b4bcc7b976820d6ed48f16e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2211.05100" target="_blank" rel="noopener"
+            >BLOOM: A 176B-Parameter Open-Access Multilingual Language Model</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2022-11-09</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2211.05100" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2211.05100" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/964bd39b546f0f6625ff3b9ef1083f797807ef2e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2210.15600" target="_blank" rel="noopener"
+            >Automatic extraction of materials and properties from superconductors scientific literature</a
+          >
+          <div class="m">
+            <span class="v">Science and Technology of Advanced Materials: Methods</span><span>2022-10-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2210.15600" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2210.15600" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/1a188751d2dcb8e5710add51751bf252e0b653b7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3a2541fcee2f77f037faecea348559b8d0bae072" target="_blank" rel="noopener"
+            >BERTrade: Using Contextual Embeddings to Parse Old French</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2022-06-01</span
+            ><a href="https://www.semanticscholar.org/paper/3a2541fcee2f77f037faecea348559b8d0bae072" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2202.09452" target="_blank" rel="noopener"
+            >From FreEM to D’AlemBERT: a Large Corpus and a Language Model for Early Modern French</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2022-02-18</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2202.09452" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2202.09452" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d04673a204845396eb20f9fa6f48361332b8d757" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2201.10066" target="_blank" rel="noopener"
+            >Documenting Geographically and Contextually Diverse Data Sources: The BigScience Catalogue of Language Data and Resources</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2022-01-25</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2201.10066" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2201.10066" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cdc554a3e8d3758e68bedebcb32473c100ef50fc" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2201.06642" target="_blank" rel="noopener"
+            >Towards a Cleaner Document-Oriented Multilingual Crawled Corpus</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2022-01-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2201.06642" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2201.06642" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/645a317c9305207e95d03b5756a65e7e850f32d5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d77ad36898a623b2e82d96a0b8d9920204ca60bf" target="_blank" rel="noopener"
+            >Ungoliant: An Optimized Pipeline for the Generation of a Very Large-Scale Multilingual Web Corpus</a
+          >
+          <div class="m">
+            <span>2021-06-23</span
+            ><a href="https://www.semanticscholar.org/paper/d77ad36898a623b2e82d96a0b8d9920204ca60bf" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/904094211adb14c76f0f42fc38ee10a8938395f2" target="_blank" rel="noopener"
+            >A dataset for automatic detection of places in (early) modern French texts</a
+          >
+          <div class="m">
+            <span>2021-05-28</span
+            ><a href="https://www.semanticscholar.org/paper/904094211adb14c76f0f42fc38ee10a8938395f2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2103.12028" target="_blank" rel="noopener"
+            >Quality at a Glance: An Audit of Web-Crawled Multilingual Datasets</a
+          >
+          <div class="m">
+            <span class="v">Transactions of the Association for Computational Linguistics</span><span>2021-03-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2103.12028" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2103.12028" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6803adc7d8b891be652d18815f830f7a42a0f5b5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d171d4bb3b92744d6e1e629f933afa49de903175" target="_blank" rel="noopener"
+            >SinNer@Clef-Hipe2020 : Sinful adaptation of SotA models for Named Entity Recognition in French and German</a
+          >
+          <div class="m">
+            <span class="v">Conference and Labs of the Evaluation Forum</span><span>2020-09-23</span
+            ><a href="https://www.semanticscholar.org/paper/d171d4bb3b92744d6e1e629f933afa49de903175" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/bc3c662d2b6f5159202d703d201a9283687d43b9" target="_blank" rel="noopener"
+            >Building a User-Generated Content North-African Arabizi Treebank: Tackling Hell</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2020-07-05</span
+            ><a href="https://www.semanticscholar.org/paper/bc3c662d2b6f5159202d703d201a9283687d43b9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2006.06202" target="_blank" rel="noopener"
+            >A Monolingual Approach to Contextualized Word Embeddings for Mid-Resource Languages</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2020-06-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2006.06202" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2006.06202" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/528dd0da358b4939d99eeb92548deccfeac48bd6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6bd49f289d601cb7f67fb2078c259851ed5c8bf0" target="_blank" rel="noopener"
+            >Les modèles de langue contextuels Camembert pour le français : impact de la taille et de l’hétérogénéité des données d’entrainement (C
+            AMEM BERT Contextual Language Models for French: Impact of Training Data Size and Heterogeneity )</a
+          >
+          <div class="m">
+            <span class="v">JEPTALNRECITAL</span><span>2020-06-08</span
+            ><a href="https://www.semanticscholar.org/paper/6bd49f289d601cb7f67fb2078c259851ed5c8bf0" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/309c6fbb484f8ca0e662be1799d9f020ff9a0d3e" target="_blank" rel="noopener"
+            >French Contextualized Word-Embeddings with a sip of CaBeRnet: a New French Balanced Reference Corpus</a
+          >
+          <div class="m">
+            <span class="v">CMLC</span><span>2020-05-16</span
+            ><a href="https://www.semanticscholar.org/paper/309c6fbb484f8ca0e662be1799d9f020ff9a0d3e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2005.13236" target="_blank" rel="noopener"
+            >Establishing a New State-of-the-Art for French Named Entity Recognition</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Language Resources and Evaluation</span><span>2020-05-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2005.13236" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2005.13236" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/05d6af4dc79ff045249e2732a17d855af66500b5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/1911.03894" target="_blank" rel="noopener">CamemBERT: a Tasty French Language Model</a>
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2019-11-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/1911.03894" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/1911.03894" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b61c6405f4de381758e8b52a20313554d68a9d85" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b23993e8ef88369c8f3587390af4003566524c84" target="_blank" rel="noopener"
+            >How OCR Performance can Impact on the Automatic Extraction of Dictionary Content Structures</a
+          >
+          <div class="m">
+            <span>2019-09-18</span
+            ><a href="https://www.semanticscholar.org/paper/b23993e8ef88369c8f3587390af4003566524c84" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/92343cecdc990380de362b969eec60081959f507" target="_blank" rel="noopener"
+            >Asynchronous Pipeline for Processing Huge Corpora on Medium to Low Resource Infrastructures</a
+          >
+          <div class="m">
+            <span>2019-07-22</span
+            ><a href="https://www.semanticscholar.org/paper/92343cecdc990380de362b969eec60081959f507" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/7c522588dae5cb340d8350efa422542515260735" target="_blank" rel="noopener"
+            >ElChat: Adapting Chat Language Models Using Only Target Unlabeled Language Data</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/7c522588dae5cb340d8350efa422542515260735" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/8d4141ede4ea753915ab7ba4835e067bcfcc187e" target="_blank" rel="noopener"
+            >A Data-driven Approach to Natural Language Processing for Contemporary and Historical French</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/8d4141ede4ea753915ab7ba4835e067bcfcc187e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

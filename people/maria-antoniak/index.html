@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Maria Antoniak</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/maria-antoniak.jpg"
+          alt="Maria Antoniak"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(23 42% 42%)">MA</span>'
+        />
+        <div>
+          <h1>Maria Antoniak <span class="tag">following</span></h1>
+          <div class="aff">Allen Institute for AI</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/maria_antoniak" target="_blank" rel="noopener">@maria_antoniak</a
+        ><a href="/papers.html?p=Maria%20Antoniak">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 26</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/f07a9b0064d19140cc05121ebd5515571569c288" target="_blank" rel="noopener"
+            >Defining the Problem, Setting the Standard? Platform Narratives and Interventions for Digital Well-Being</a
+          >
+          <div class="m">
+            <span class="v">Conference on Fairness, Accountability and Transparency</span><span>2026-06-25</span
+            ><a href="https://www.semanticscholar.org/paper/f07a9b0064d19140cc05121ebd5515571569c288" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.22748" target="_blank" rel="noopener">AI Fiction in the Wild</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.22748" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.22748" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f0a0a72bf3c320d254009b6bb21fa3cf2e1befb5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.19468" target="_blank" rel="noopener"
+            >Characterizing Narrative Content in Web-scale LLM Pretraining Data</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.19468" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.19468" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/61919e640b3f0fd6767b6e475b13e08f3a334fb3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/79ac462d5ed37e9b069fdb8392b4e71fbbfa35da" target="_blank" rel="noopener"
+            >A reporting checklist for large language models in behavioural science</a
+          >
+          <div class="m">
+            <span class="v">Nature Human Behaviour</span><span>2026-06-09</span
+            ><a href="https://www.semanticscholar.org/paper/79ac462d5ed37e9b069fdb8392b4e71fbbfa35da" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2604.16403" target="_blank" rel="noopener"
+            >Computational hermeneutics: evaluating generative AI as a cultural technology</a
+          >
+          <div class="m">
+            <span class="v">Frontiers Artif. Intell.</span><span>2026-02-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2604.16403" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2604.16403" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/b89a02857d56404c672ea3bfc8b26aef9b97fbd9" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2601.17036" target="_blank" rel="noopener"
+            >LLM-Generated or Human-Written? Comparing Review and Non-Review Papers on ArXiv</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-01-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2601.17036" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2601.17036" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cf825609ee2a27d2567b323209910aaceac56ed8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2512.15925" target="_blank" rel="noopener"
+            >Social Story Frames: Contextual Reasoning about Narrative Intent and Reception</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-12-17</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2512.15925" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2512.15925" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8d31a4936909376472f59fd4bfe4ae6990a67878" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.16713" target="_blank" rel="noopener"
+            >so much depends / upon / a whitespace: Why Whitespace Matters for Poets and LLMs</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-10-19</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.16713" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.16713" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9de6880543476d6e52032c8f01aacc9a45a16841" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.04226" target="_blank" rel="noopener"
+            >Epistemic Diversity and Knowledge Collapse in Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.04226" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.04226" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/10f163d312af816e83dfe9c92578327355be286d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/79d0777d706c2dac63de60dd5f3dd53ebf14408c" target="_blank" rel="noopener"
+            >Introducing the Anthology for Computers and the Humanities</a
+          >
+          <div class="m">
+            <span class="v">Anthology of Computers and the Humanities</span><span>2025-09-25</span
+            ><a href="https://www.semanticscholar.org/paper/79d0777d706c2dac63de60dd5f3dd53ebf14408c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.00784" target="_blank" rel="noopener"
+            >Research Borderlands: Analysing Writing Across Research Cultures</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025-06-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.00784" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.00784" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6e9d93f5a62fc27bc1d0d271f3e811225db0f120" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.22793" target="_blank" rel="noopener"
+            >Evaluation of Cultural Competence of Vision-Language Models</a
+          >
+          <div class="m">
+            <span>2025-05-28</span><a class="alpha" href="https://www.alphaxiv.org/abs/2505.22793" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.22793" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e52be73650899411d6491eaa3f578abffba8ad9c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.23785" target="_blank" rel="noopener"
+            >Meaning Is Not A Metric: Using LLMs to make cultural context legible at scale</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.23785" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.23785" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/6327f2bf5812c0f477975d9122008263a1457b3b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.20960" target="_blank" rel="noopener">Multi-Modal Framing Analysis of News</a>
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2025-03-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.20960" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.20960" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/38a453251caf65a099f555eacc253c61cbea5505" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2503.12072" target="_blank" rel="noopener"
+            >Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models</a
+          >
+          <div class="m">
+            <span class="v">North American Chapter of the Association for Computational Linguistics</span><span>2025-03-15</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2503.12072" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2503.12072" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/74d058a1b5acb55c9d74bf2a42b50b20e019e519" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.19190" target="_blank" rel="noopener"
+            >Provocations from the Humanities for Generative AI Research</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-02-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.19190" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.19190" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ec25748148f57014af58cf13ceff815caf7a8ae3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.16390" target="_blank" rel="noopener"
+            >Automatic Detection of Research Values from Scientific Abstracts Across Computer Science Subfields</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-02-23</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.16390" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.16390" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/790dd3412e01d266432eaa6ed694f58af633eae6" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/c19a0555123f164fe6df7dfd726c43dee53dc414" target="_blank" rel="noopener"
+            >Cultural Evaluations of Vision-Language Models Have a Lot to Learn from Cultural Theory</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/c19a0555123f164fe6df7dfd726c43dee53dc414" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/c55517d0aefed5c65b582c50bb870fe1e2424c21" target="_blank" rel="noopener"
+            >CulturalBench: A Robust, Diverse and Challenging Benchmark for Measuring LMs&#x27; Cultural Knowledge Through Human-AI Red-Teaming</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/c55517d0aefed5c65b582c50bb870fe1e2424c21" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e023efe751e234ca4a23941df1d4d8b1526ed05e" target="_blank" rel="noopener"
+            >Clinician as editor: notes in the era of AI scribes.</a
+          >
+          <div class="m">
+            <span class="v">The Lancet</span><span>2024-11-01</span
+            ><a href="https://www.semanticscholar.org/paper/e023efe751e234ca4a23941df1d4d8b1526ed05e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2411.05025" target="_blank" rel="noopener"
+            >LLMs as Research Tools: A Large Scale Survey of Researchers&#x27; Usage and Perceptions</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-10-30</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2411.05025" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2411.05025" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/4397ad9a1b11692ac85668f678330fcb63152585" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.02677" target="_blank" rel="noopener"
+            >CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming</a
+          >
+          <div class="m">
+            <span>2024-10-03</span><a class="alpha" href="https://www.alphaxiv.org/abs/2410.02677" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.02677" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/e7551242d3b18cdf35aed564e26ab45e8d46fcc5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/4d5f870f0fa143ed68adab3c8b03bebcaf4feddc" target="_blank" rel="noopener"
+            >The Empirical Variability of Narrative Perceptions of Social Media Texts</a
+          >
+          <div class="m">
+            <span class="v">Conference on Empirical Methods in Natural Language Processing</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/4d5f870f0fa143ed68adab3c8b03bebcaf4feddc" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/d159fd1df66ac204e66ebfa8be2af797d1839855" target="_blank" rel="noopener"
+            >CulturalBench: a Robust, Diverse and Challenging Benchmark on Measuring the (Lack of) Cultural Knowledge of LLMs</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/d159fd1df66ac204e66ebfa8be2af797d1839855" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/1099b7571e7c921ee2024152b3153c98a9c12932" target="_blank" rel="noopener"
+            >Reception History in Many Dimensions: New Research on Book Reviews</a
+          >
+          <div class="m">
+            <span class="v">Digital Humanities Conference</span><span>2023</span
+            ><a href="https://www.semanticscholar.org/paper/1099b7571e7c921ee2024152b3153c98a9c12932" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3bbb701f0e7534fd4dad9f412edfd3c49e453cfd" target="_blank" rel="noopener"
+            >“ Don’t Take This Out of Context! ” On the Need for Contextual Models and Evaluations for Stylistic Rewriting</a
+          >
+          <div class="m">
+            <span></span
+            ><a href="https://www.semanticscholar.org/paper/3bbb701f0e7534fd4dad9f412edfd3c49e453cfd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>

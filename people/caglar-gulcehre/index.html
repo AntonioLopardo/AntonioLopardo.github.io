@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #faf5ec;
+        --ink: #181410;
+        --faint: #6f6353;
+        --rule: #d8cdbb;
+        --accent: #bc3417;
+        --accent-2: #274690;
+        --hl: #f3e8cf;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #161310;
+          --ink: #ece4d4;
+          --faint: #9c8f7a;
+          --rule: #3a332a;
+          --accent: #e8603f;
+          --accent-2: #7d9be0;
+          --hl: #2a241b;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Newsreader", Georgia, serif;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 52px 20px 90px;
+      }
+      .overline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      .overline a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .overline a:hover {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin: 0.15em 0 0.1em;
+      }
+      a {
+        color: var(--accent-2);
+      }
+      .mono {
+        display: grid;
+        place-items: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--paper);
+      }
+    </style>
+    <title>Caglar Gulcehre</title>
+    <style>
+      .overline {
+        margin-bottom: 26px;
+      }
+      .hd {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .ph,
+      .hd .mono {
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: none;
+        font-size: 30px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 44px);
+        line-height: 1;
+      }
+      .aff {
+        color: var(--faint);
+        font-size: 16.5px;
+        margin-top: 4px;
+      }
+      .tag {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 1px solid var(--rule);
+        padding: 2px 7px;
+        color: var(--faint);
+        vertical-align: 0.2em;
+        margin-left: 0.5em;
+      }
+      .tag.met {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      .metat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        margin-top: 8px;
+      }
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 6px;
+      }
+      .contacts a {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid var(--rule);
+        padding: 6px 11px;
+      }
+      .contacts a:hover {
+        border-color: var(--accent);
+        background: var(--hl);
+      }
+      hr.b {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 26px 0 6px;
+      }
+      .sec {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin: 22px 0 10px;
+      }
+      ol.papers {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      ol.papers li {
+        padding: 13px 2px;
+        border-bottom: 1px solid var(--rule);
+      }
+      ol.papers .t {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--ink);
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      ol.papers .t:hover {
+        color: var(--accent);
+      }
+      ol.papers .m {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11.5px;
+        color: var(--faint);
+        display: flex;
+        gap: 1.3em;
+        flex-wrap: wrap;
+        margin-top: 5px;
+      }
+      ol.papers .m .v {
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+      }
+      ol.papers .m a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+      ol.papers .m a.alpha {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .none {
+        color: var(--faint);
+        font-style: italic;
+      }
+      footer {
+        margin-top: 44px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="overline"><a href="/people/">← People</a></div>
+      <div class="hd">
+        <img
+          class="ph"
+          src="/assets/img/people/caglar-gulcehre.jpg"
+          alt="Caglar Gulcehre"
+          loading="lazy"
+          onerror="this.outerHTML=this.getAttribute('data-fb')"
+          data-fb='<span class="ph" style="background:hsl(143 42% 42%)">CG</span>'
+        />
+        <div>
+          <h1>Caglar Gulcehre <span class="tag">following</span></h1>
+          <div class="aff">EPFL</div>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="https://x.com/caglarml" target="_blank" rel="noopener">@caglarml</a
+        ><a href="/papers.html?p=Caglar%20Gulcehre">Papers in the feed →</a>
+      </div>
+      <hr class="b" />
+      <div class="sec">Papers · 35</div>
+      <ol class="papers">
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/1f82f75b5f13e358f1ecc9311c482d7741f400c7" target="_blank" rel="noopener"
+            >Context-Aware Toxicity Detection in Game Chat: Domain-Adaptive Pretraining with Match Metadata under Limited Labels</a
+          >
+          <div class="m">
+            <span class="v">Games</span><span>2026-07-17</span
+            ><a href="https://www.semanticscholar.org/paper/1f82f75b5f13e358f1ecc9311c482d7741f400c7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.08892" target="_blank" rel="noopener">Diffuse AI Control on Fuzzy Tasks</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-08</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.08892" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.08892" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/8227287fff1b8336add43f7e1d415c8993254919" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2606.02241" target="_blank" rel="noopener"
+            >BlockGen: Flexible Blockwise Sequence Modeling with Hybrid Samplers</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-06-01</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2606.02241" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2606.02241" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9ee821a710e7393f3fd1ab8188cbfadc6c31d8c8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.28640" target="_blank" rel="noopener"
+            >Augmenting Attention with Exponentially Decaying Memory Improves Query-Aware KV Sparsity</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-27</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.28640" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.28640" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d7dd4c90d980981ca090027bffe6c988e400bf1e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.27564" target="_blank" rel="noopener"
+            >The Future of Facts: Tracing the Factual Generation-Verification Gap</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-26</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.27564" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.27564" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/03145c9ae3dc1b6abdb587d03ef1df861476bca2" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2605.11125" target="_blank" rel="noopener">Language Modeling with Hyperspherical Flows</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-05-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2605.11125" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2605.11125" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/45c920ce3ce60be4198eeab2e8724309d5f8b15b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/2f908cb21dd605fa9afb4d215bb848f115c7557a" target="_blank" rel="noopener"
+            >Sequence Modeling Architectures: Foundations [Special Issue on the Mathematics of Deep Learning]</a
+          >
+          <div class="m">
+            <span class="v">IEEE Signal Processing Magazine</span><span>2026-05-01</span
+            ><a href="https://www.semanticscholar.org/paper/2f908cb21dd605fa9afb4d215bb848f115c7557a" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.21185" target="_blank" rel="noopener"
+            >The Diffusion Duality, Chapter II: Ψ-Samplers and Efficient Curriculum</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.21185" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.21185" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/46b330ea722acdb5bf824842257ded7f5d244bee" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2602.18196" target="_blank" rel="noopener"
+            >RAT+: Train Dense, Infer Sparse - Recurrence Augmented Attention for Dilated Inference</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2026-02-20</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2602.18196" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2602.18196" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d76feb4e3dcad47fb31d634c3bd3899f56c56c6b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/b855b205593d00ec5548ae15b9b52e2b9eed52aa" target="_blank" rel="noopener"
+            >Apertus: Democratizing Open and Compliant LLMs for Global Language Environments</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/b855b205593d00ec5548ae15b9b52e2b9eed52aa" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/fe6d1275b2034212e540e420bfe85accd13c3199" target="_blank" rel="noopener"
+            >Learning Vision-Language Alignment in Unified LLMs with 24 Text Tokens per Image</a
+          >
+          <div class="m">
+            <span class="v">International Workshop on Spoken Language Translation</span><span>2026</span
+            ><a href="https://www.semanticscholar.org/paper/fe6d1275b2034212e540e420bfe85accd13c3199" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.19304" target="_blank" rel="noopener"
+            >Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-22</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.19304" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.19304" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cde3fd42c60d02d13877dd87f37c3c9f50ebd3ab" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2510.09462" target="_blank" rel="noopener"
+            >Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-10-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2510.09462" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2510.09462" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/c1806ad7d9201e05ca0f5a7e9baac485ce4051cd" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2509.14233" target="_blank" rel="noopener"
+            >Apertus: Democratizing Open and Compliant LLMs for Global Language Environments</a
+          >
+          <div class="m">
+            <span>2025-09-17</span><a class="alpha" href="https://www.alphaxiv.org/abs/2509.14233" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2509.14233" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ffa18585a16330b9f585ca0578f8d2c4000dfd01" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.08068" target="_blank" rel="noopener"
+            >Quantile Reward Policy Optimization: Alignment with Pointwise Regression and Exact Partition Functions</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025-07-10</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.08068" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.08068" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/265fdd781ac5f96f0e6ae37fbca0a370ee7c1b26" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2507.04416" target="_blank" rel="noopener"
+            >RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling</a
+          >
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 38</span><span>2025-07-06</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2507.04416" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2507.04416" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/d6b4f9d82d7cb59ed39ba20bc7f711e0e6e93dc5" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.10165" target="_blank" rel="noopener"
+            >The 2025 PNPL Competition: Speech Detection and Phoneme Classification in the LibriBrain Dataset</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.10165" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.10165" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/662dfb1a22885ed2dd57fac213eee967e2acfa30" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2506.05296" target="_blank" rel="noopener">Control Tax: The Price of Keeping AI in Check</a>
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-06-05</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2506.05296" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2506.05296" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/3e46f170e864e6db6cb4c3a8c4b6299fe97258f7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2505.18883" target="_blank" rel="noopener"
+            >Partition Generative Modeling: Masked Modeling Without Masks</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-05-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2505.18883" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2505.18883" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cbf225a4aac6717c0e05cd24eed336e28a1d8b0c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.05108" target="_blank" rel="noopener"
+            >Algorithm Discovery With LLMs: Evolutionary Search Meets Reinforcement Learning</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-07</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.05108" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.05108" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/fbc0b5e1b822796d7ae97268def2e0993b5da644" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2504.01534" target="_blank" rel="noopener"
+            >Context-Aware Toxicity Detection in Multiplayer Games: Integrating Domain-Adaptive Pretraining and Match Metadata</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-04-02</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2504.01534" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2504.01534" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/5d7c0898e2db186f65ada4c44d27a886437d7db8" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.10178" target="_blank" rel="noopener"
+            >From Markov to Laplace: How Mamba In-Context Learns Markov Chains</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025-02-14</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.10178" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.10178" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/0b9fc6949d4570a33d28b4a40e0a7f87b55d463b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2502.02619" target="_blank" rel="noopener"
+            >Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards</a
+          >
+          <div class="m">
+            <span class="v">International Conference on AI in Finance</span><span>2025-02-04</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2502.02619" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2502.02619" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/048f734acf9f97c1c6392baf4ad1f5d12e101e6b" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/dc2a293db3e12e19da1d048bff3424ac7f1432a3" target="_blank" rel="noopener"
+            >Apertus: Democratizing Open and Compliant LLMs for Global Language Environments</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/dc2a293db3e12e19da1d048bff3424ac7f1432a3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/582d16d9c77343d09de340e788555839cf83884c" target="_blank" rel="noopener"
+            >One-Step is Enough: Sparse Autoencoders for Text-to-Image Diffusion Models</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/582d16d9c77343d09de340e788555839cf83884c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/fa4fc864e38593efbc095605ac657155dcb50c7c" target="_blank" rel="noopener"
+            >RAT: Bridging RNN Efficiency and Attention Accuracy in Language Modeling</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2025</span
+            ><a href="https://www.semanticscholar.org/paper/fa4fc864e38593efbc095605ac657155dcb50c7c" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.22366" target="_blank" rel="noopener"
+            >One-Step is Enough: Sparse Autoencoders for Text-to-Image Diffusion Models</a
+          >
+          <div class="m">
+            <span>2024-10-28</span><a class="alpha" href="https://www.alphaxiv.org/abs/2410.22366" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.22366" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/9c32808525ce5d10b7c317b0b40be914f80936f3" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.21035" target="_blank" rel="noopener"
+            >Beyond Autoregression: Fast LLMs via Self-Distillation Through Time</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Learning Representations</span><span>2024-10-28</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.21035" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.21035" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/ada78211c9beb284d75fc0679b49d2ef0f5a5346" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2410.18574" target="_blank" rel="noopener"
+            >SIKeD: Self-guided Iterative Knowledge Distillation for mathematical reasoning</a
+          >
+          <div class="m">
+            <span class="v">Annual Meeting of the Association for Computational Linguistics</span><span>2024-10-24</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2410.18574" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2410.18574" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/f037488648e7d75133bcce227beb278f5a22da5d" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://arxiv.org/abs/2409.07606" target="_blank" rel="noopener"
+            >The Role of Deep Learning Regularizations on Actors in Offline RL</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024-09-11</span
+            ><a class="alpha" href="https://www.alphaxiv.org/abs/2409.07606" target="_blank" rel="noopener">alphaXiv</a>
+            <a href="https://arxiv.org/abs/2409.07606" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://www.semanticscholar.org/paper/cd3e162970393d1d53a602735e1ae0296f16dd1e" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/468855eabfc3c84eb83518e9ce959dc4df0d10b7" target="_blank" rel="noopener"
+            >Universality of Linear Recurrences Followed by Non-linear Projections: Finite-Width Guarantees and Benefits of Complex Eigenvalues</a
+          >
+          <div class="m">
+            <span class="v">International Conference on Machine Learning</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/468855eabfc3c84eb83518e9ce959dc4df0d10b7" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/3e0433ce1738b1e4fe909f02e3d7e777ed2db426" target="_blank" rel="noopener"
+            >The Effect of Scheduling and Preemption on the Efficiency of LLM Inference Serving</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/3e0433ce1738b1e4fe909f02e3d7e777ed2db426" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/6a26d18b146528996fe0a1e2f40d330bd7e40969" target="_blank" rel="noopener"
+            >Fleet of Agents: Coordinated Problem Solving with Large Language Models using Genetic Particle Filtering</a
+          >
+          <div class="m">
+            <span class="v">arXiv.org</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/6a26d18b146528996fe0a1e2f40d330bd7e40969" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/71ba470aabbd72b4ef2604747024631ebbd60850" target="_blank" rel="noopener"
+            >Building on Efficient Foundations: Effective Training of LLMs with Structured Feedforward Layers</a
+          >
+          <div class="m">
+            <span class="v">Advances in Neural Information Processing Systems 37</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/71ba470aabbd72b4ef2604747024631ebbd60850" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+        <li>
+          <a class="t" href="https://www.semanticscholar.org/paper/e4e52c4a5611d10c17115e5f302cbb122ecafdee" target="_blank" rel="noopener"
+            >Building on Efficient Foundations: Effective Training of LLMs with Structured Feedforward Layers</a
+          >
+          <div class="m">
+            <span class="v">Neural Information Processing Systems</span><span>2024</span
+            ><a href="https://www.semanticscholar.org/paper/e4e52c4a5611d10c17115e5f302cbb122ecafdee" target="_blank" rel="noopener">S2</a>
+          </div>
+        </li>
+      </ol>
+      <footer><a href="/people/">← all people</a> · <a href="/people-map.html">map</a></footer>
+    </div>
+  </body>
+</html>
