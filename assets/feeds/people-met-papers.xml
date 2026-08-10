@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:pw="https://antoniolopardo.github.io/ns/paper-watch"><channel>
-<title>Papers from people I've met</title>
+<title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
-<description>Papers by researchers I've met at conferences, via Semantic Scholar.</description>
-<lastBuildDate>Mon, 10 Aug 2026 04:17:27 +0000</lastBuildDate>
+<description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
+<lastBuildDate>Mon, 10 Aug 2026 14:17:05 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -340,6 +340,84 @@
 <pw:authors>Kaiyue Feng, Yilun Zhao, Yixin Liu, Y. Tianyu, Chen Zhao, John Sous, Arman Cohan</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Speech and Language Processing. Dependency Parsing</title>
+<link>https://www.semanticscholar.org/paper/273f54ea6f3631a78d9dd442609bb2033cfb1ffe</link>
+<guid isPermaLink="false">273f54ea6f3631a78d9dd442609bb2033cfb1ffe</guid>
+<description>By Dan Jurafsky, James H Martin. . (Met: Dan Jurafsky)</description>
+<pw:authors>Dan Jurafsky, James H Martin</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Speech and Language Processing: an Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition. 8 Speech Synthesis</title>
+<link>https://www.semanticscholar.org/paper/2e29eb333558b5bb05f397e1dca8a91ea7cc71c7</link>
+<guid isPermaLink="false">2e29eb333558b5bb05f397e1dca8a91ea7cc71c7</guid>
+<description>By Dan Jurafsky, James H Martin, Dave Barry. . (Met: Dan Jurafsky)</description>
+<pw:authors>Dan Jurafsky, James H Martin, Dave Barry</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Speech and Language Processing. Part-of-speech Tagging</title>
+<link>https://www.semanticscholar.org/paper/5cb45b2cac474387f05347c1c36c605b50bacaf7</link>
+<guid isPermaLink="false">5cb45b2cac474387f05347c1c36c605b50bacaf7</guid>
+<description>By Dan Jurafsky. . (Met: Dan Jurafsky)</description>
+<pw:authors>Dan Jurafsky</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>VERY EARLY DRAFT The Beginner ' s Guide to the ICSI Speech Software</title>
+<link>https://www.semanticscholar.org/paper/7bbbcd23ecdf76d847981cfed7cd676c4dabbd73</link>
+<guid isPermaLink="false">7bbbcd23ecdf76d847981cfed7cd676c4dabbd73</guid>
+<description>By Dan Jurafsky. . (Met: Dan Jurafsky)</description>
+<pw:authors>Dan Jurafsky</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Speech and Language Processing. Hidden Markov Models</title>
+<link>https://www.semanticscholar.org/paper/9bab2981e58bd6d7c4c02326c063587b66877222</link>
+<guid isPermaLink="false">9bab2981e58bd6d7c4c02326c063587b66877222</guid>
+<description>By Dan Jurafsky, James H Martin. . (Met: Dan Jurafsky)</description>
+<pw:authors>Dan Jurafsky, James H Martin</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Speech and Language Processing. Chapter 7 Logistic Regression</title>
+<link>https://www.semanticscholar.org/paper/dda48d8a91f7927c27d6e76627221a2a0cf74968</link>
+<guid isPermaLink="false">dda48d8a91f7927c27d6e76627221a2a0cf74968</guid>
+<description>By Dan Jurafsky. . (Met: Dan Jurafsky)</description>
+<pw:authors>Dan Jurafsky</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -16415,6 +16493,20 @@
 <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Model Alignment as Prospect Theoretic Optimization</title>
+<link>https://www.semanticscholar.org/paper/942bb109cfcaef46e2d2e5573bed0db764be657b</link>
+<guid isPermaLink="false">942bb109cfcaef46e2d2e5573bed0db764be657b</guid>
+<description>By Kawin Ethayarajh, Winnie Xu, Niklas Muennighoff, Dan Jurafsky, Douwe Kiela. International Conference on Machine Learning. (Met: Dan Jurafsky)</description>
+<pw:authors>Kawin Ethayarajh, Winnie Xu, Niklas Muennighoff, Dan Jurafsky, Douwe Kiela</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue>International Conference on Machine Learning</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Bayesian Prompt Ensembles: Model Uncertainty Estimation for Black-Box Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/55f50127a87d07e51316c163c2123b115fff126b</link>
 <guid isPermaLink="false">55f50127a87d07e51316c163c2123b115fff126b</guid>
@@ -18327,6 +18419,62 @@
 <pw:met>Clara Isabel Meister, Ethan Gotlieb Wilcox, Tiago Pimentel</pw:met>
 <pw:relationships>Clara Isabel Meister=following|Ethan Gotlieb Wilcox=following|Tiago Pimentel=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Navigating the Grey Area: Expressions of Overconfidence and Uncertainty in Language Models</title>
+<link>https://www.semanticscholar.org/paper/1fa4469e5bc5d096572902fe14b0d66078a24c47</link>
+<guid isPermaLink="false">1fa4469e5bc5d096572902fe14b0d66078a24c47</guid>
+<description>By Kaitlyn Zhou, Dan Jurafsky, Tatsunori Hashimoto. arXiv.org. (Met: Dan Jurafsky)</description>
+<pw:authors>Kaitlyn Zhou, Dan Jurafsky, Tatsunori Hashimoto</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Multilingual BERT has an Accent: Evaluating English Influences on Fluency in Multilingual Models</title>
+<link>https://www.semanticscholar.org/paper/b631d06522776d23336c58911921bf2aeaae2738</link>
+<guid isPermaLink="false">b631d06522776d23336c58911921bf2aeaae2738</guid>
+<description>By Isabel Papadimitriou, Kezia Lopez, Dan Jurafsky. SIGTYP. (Met: Dan Jurafsky)</description>
+<pw:authors>Isabel Papadimitriou, Kezia Lopez, Dan Jurafsky</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue>SIGTYP</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Mini But Mighty: Efficient Multilingual Pretraining with Linguistically-Informed Data Selection</title>
+<link>https://www.semanticscholar.org/paper/bba7358adc89091934ab32abce9ed5e251ee35e4</link>
+<guid isPermaLink="false">bba7358adc89091934ab32abce9ed5e251ee35e4</guid>
+<description>By Tolúlopé Ògúnrèmí, Dan Jurafsky, Christopher Manning. Findings. (Met: Dan Jurafsky)</description>
+<pw:authors>Tolúlopé Ògúnrèmí, Dan Jurafsky, Christopher Manning</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue>Findings</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>When Do Pre-Training Biases Propagate to Downstream Tasks? A Case Study in Text Summarization</title>
+<link>https://www.semanticscholar.org/paper/f48287e9ed131ff8ffa79b66717887c5af74f203</link>
+<guid isPermaLink="false">f48287e9ed131ff8ffa79b66717887c5af74f203</guid>
+<description>By Faisal Ladhak, Esin Durmus, Mirac Suzgun, Tianyi Zhang, Dan Jurafsky, K. McKeown, Tatsunori Hashimoto. Conference of the European Chapter of the Association for Computational Linguistics. (Met: Dan Jurafsky)</description>
+<pw:authors>Faisal Ladhak, Esin Durmus, Mirac Suzgun, Tianyi Zhang, Dan Jurafsky, K. McKeown, Tatsunori Hashimoto</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue>Conference of the European Chapter of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2023</pw:year>
