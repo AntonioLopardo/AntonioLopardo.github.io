@@ -167,7 +167,11 @@ function render(){
   list.innerHTML=html+'</ol>';
 }
 q.addEventListener('input',render);who.addEventListener('change',render);
-rel.addEventListener('change',render);lim.addEventListener('change',render);render();
+rel.addEventListener('change',render);lim.addEventListener('change',render);
+// Deep-link from the /people directory: ?p=Name focuses that one person.
+const _pp=new URLSearchParams(location.search).get('p');
+if(_pp&&people.includes(_pp)){who.value=_pp;rel.value='';}
+render();
 
 // ── private notes: right-click a face → passphrase → decrypt in-browser ──
 const NC=document.getElementById('notecard');
