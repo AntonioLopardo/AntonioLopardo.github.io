@@ -32,6 +32,8 @@ ol{list-style:none;margin:0;padding:0}
 .face,.mono{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
 .mono{display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.02em;color:var(--paper)}
 .faces{display:flex;flex-direction:column;gap:6px;align-items:center}
+body.faces-off .face,body.faces-off .mono,body.faces-off .faces{display:none!important}
+body.faces-off .chip{padding-left:12px}
 h2{font-family:"Fraunces",serif;font-weight:640;font-size:20px;line-height:1.25;margin:0 0 5px}
 h2 a{color:inherit;text-decoration:none}h2 a:hover{color:var(--accent)}
 .byline{font-size:15px;color:var(--faint);margin:0 0 6px}
@@ -63,6 +65,7 @@ footer{margin-top:56px;font-family:"IBM Plex Mono",monospace;font-size:11px;lett
     <option value="500">500 papers</option>
     <option value="0">all papers</option>
   </select>
+  <select id="faces"><option value="1">show faces</option><option value="0">hide faces</option></select>
   <span class="count" id="count"></span>
 </div>
 <div class="roster" id="roster"></div>
@@ -74,7 +77,7 @@ const DATA = {"papers": [{"title": "Journal Pre-proof An Analysis of Work Saved 
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const q=document.getElementById('q'),who=document.getElementById('who'),count=document.getElementById('count'),
       list=document.getElementById('list'),roster=document.getElementById('roster'),
-      rel=document.getElementById('rel'),lim=document.getElementById('lim');
+      rel=document.getElementById('rel'),lim=document.getElementById('lim'),faces=document.getElementById('faces');
 // Three date precisions: exact month, year-only, unknown. Never invent a month.
 function bucket(p){
   if(p.date){const d=new Date(p.date);
@@ -144,5 +147,5 @@ function render(){
   list.innerHTML=html+'</ol>';
 }
 q.addEventListener('input',render);who.addEventListener('change',render);
-rel.addEventListener('change',render);lim.addEventListener('change',render);render();
+rel.addEventListener('change',render);lim.addEventListener('change',render);faces.addEventListener('change',()=>document.body.classList.toggle('faces-off',faces.value==='0'));render();
 </script></body></html>
