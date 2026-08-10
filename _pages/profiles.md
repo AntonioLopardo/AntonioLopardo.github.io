@@ -1,28 +1,13 @@
 ---
-layout: profiles
+layout: page
 permalink: /people/
 title: people
-description: members of the lab or group
+description: "researchers I have interacted with and follow: mapped, and their recent papers"
 nav: true
 nav_order: 7
-
-profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
-  - align: right
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
-  - align: left
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
 ---
+
+Two views of the researchers whose work I follow: people I have interacted with at conferences, plus a few I just follow.
+
+- [**Map**]({{ '/people-map.html' | relative_url }}): where they are based, around the world.
+- [**Papers feed**]({{ '/papers.html' | relative_url }}): recent papers from all of them, filterable by person.
