@@ -19,7 +19,11 @@ hr.a{border:0;border-top:3px solid var(--ink);margin:0 0 2px}hr.b{border:0;borde
 .count{margin-left:auto;color:var(--faint)}
 /* roster strip */
 .roster{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}
-.rosterhead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:16px 0 8px}
+.rosterhead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:16px 0 8px;background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:.5em}
+.rosterhead:hover{color:var(--accent)}
+.rosterhead .caret{transition:transform .15s;font-size:9px}
+.rgroup.collapsed .caret{transform:rotate(-90deg)}
+.rgroup.collapsed .roster{display:none}
 .chip{display:flex;align-items:center;gap:7px;border:1px solid var(--rule);padding:4px 9px 4px 4px;cursor:pointer;background:none;font:inherit;font-size:13px;color:var(--ink)}
 .chip:hover,.chip.on{border-color:var(--accent);background:var(--hl)}
 .chip.following{border-style:dashed}
@@ -32,8 +36,6 @@ ol{list-style:none;margin:0;padding:0}
 .face,.mono{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
 .mono{display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.02em;color:var(--paper)}
 .faces{display:flex;flex-direction:column;gap:6px;align-items:center}
-body.faces-off .face,body.faces-off .mono,body.faces-off .faces{display:none!important}
-body.faces-off .chip{padding-left:12px}
 h2{font-family:"Fraunces",serif;font-weight:640;font-size:20px;line-height:1.25;margin:0 0 5px}
 h2 a{color:inherit;text-decoration:none}h2 a:hover{color:var(--accent)}
 .byline{font-size:15px;color:var(--faint);margin:0 0 6px}
@@ -65,7 +67,6 @@ footer{margin-top:56px;font-family:"IBM Plex Mono",monospace;font-size:11px;lett
     <option value="500">500 papers</option>
     <option value="0">all papers</option>
   </select>
-  <select id="faces"><option value="1">show faces</option><option value="0">hide faces</option></select>
   <span class="count" id="count"></span>
 </div>
 <div class="roster" id="roster"></div>
@@ -77,7 +78,7 @@ const DATA = {"papers": [{"title": "Journal Pre-proof An Analysis of Work Saved 
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const q=document.getElementById('q'),who=document.getElementById('who'),count=document.getElementById('count'),
       list=document.getElementById('list'),roster=document.getElementById('roster'),
-      rel=document.getElementById('rel'),lim=document.getElementById('lim'),faces=document.getElementById('faces');
+      rel=document.getElementById('rel'),lim=document.getElementById('lim');
 // Three date precisions: exact month, year-only, unknown. Never invent a month.
 function bucket(p){
   if(p.date){const d=new Date(p.date);
@@ -105,11 +106,14 @@ function avatar(name,cls){
 const rels=DATA.rels||{};
 people.forEach(n=>who.append(new Option(n,n)));
 const chip=n=>`<button class="chip ${rels[n]}" data-n="${n}">${avatar(n)}${n}</button>`;
-const group=(label,list)=>list.length?`<div class="rosterhead">${label} · ${list.length}</div>
-  <div class="roster">${list.map(chip).join('')}</div>`:'';
+const group=(label,list)=>list.length?`<section class="rgroup"><button class="rosterhead" type="button" aria-expanded="true">${label} · ${list.length} <span class="caret">\u25be</span></button>
+  <div class="roster">${list.map(chip).join('')}</div></section>`:'';
 roster.outerHTML=group('Interacted with',people.filter(n=>rels[n]==='met'))
                 +group('Following',people.filter(n=>rels[n]!=='met'));
-document.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+document.addEventListener('click',e=>{
+  const h=e.target.closest('.rosterhead');
+  if(h){const g=h.closest('.rgroup');const c=g.classList.toggle('collapsed');h.setAttribute('aria-expanded',String(!c));return;}
+  const b=e.target.closest('.chip');if(!b)return;
   who.value=(who.value===b.dataset.n)?'':b.dataset.n;render();});
 function markMet(authors,met){
   let out=authors||'';const missing=[];
@@ -147,5 +151,5 @@ function render(){
   list.innerHTML=html+'</ol>';
 }
 q.addEventListener('input',render);who.addEventListener('change',render);
-rel.addEventListener('change',render);lim.addEventListener('change',render);faces.addEventListener('change',()=>document.body.classList.toggle('faces-off',faces.value==='0'));render();
+rel.addEventListener('change',render);lim.addEventListener('change',render);render();
 </script></body></html>
