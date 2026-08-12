@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Tue, 11 Aug 2026 04:07:45 +0000</lastBuildDate>
+<lastBuildDate>Wed, 12 Aug 2026 04:10:12 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1189,6 +1189,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Matryoshka Language Model Suites</title>
+<link>https://www.semanticscholar.org/paper/8d21d24d271fbef81a23f452fa0a5e80329062e2</link>
+<guid isPermaLink="false">8d21d24d271fbef81a23f452fa0a5e80329062e2</guid>
+<description>By Nathan Godey, Yoav Artzi. . (Met: Nathan Godey) arXiv:2608.09703</description>
+<pw:authors>Nathan Godey, Yoav Artzi</pw:authors>
+<pw:met>Nathan Godey</pw:met>
+<pw:relationships>Nathan Godey=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.09703</pw:arxiv>
+<pw:date>2026-08-10</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Explicit Boundary Markers for Subword Vocabularies</title>
+<link>https://www.semanticscholar.org/paper/b1bc9697851b4fe54990c6d7fe963c63fdd3d8b5</link>
+<guid isPermaLink="false">b1bc9697851b4fe54990c6d7fe963c63fdd3d8b5</guid>
+<description>By Sander Land, Clara Meister. . (Met: Clara Isabel Meister) arXiv:2608.08847</description>
+<pw:authors>Sander Land, Clara Meister</pw:authors>
+<pw:met>Clara Isabel Meister</pw:met>
+<pw:relationships>Clara Isabel Meister=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.08847</pw:arxiv>
+<pw:date>2026-08-09</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Is Self-Pretraining really useful to improve diagnosis in medical Time Series?</title>
@@ -5338,8 +5366,8 @@
 <title>Unified Text-Image Generation with Weakness-Targeted Post-Training</title>
 <link>https://www.semanticscholar.org/paper/e1b69f7d219345251922f2b28f46e0f986d0bcac</link>
 <guid isPermaLink="false">e1b69f7d219345251922f2b28f46e0f986d0bcac</guid>
-<description>By Jiahui Chen, Philippe Hansen-Estruch, Xiaochuang Han, Yushi Hu, Emily Dinan, Amita Kamath, M. Drozdzal, Reyhane Askari Hemmat, Luke Zettlemoyer, Marjan Ghazvininejad. arXiv.org. (Met: Xiaochuang Han) arXiv:2601.04339</description>
-<pw:authors>Jiahui Chen, Philippe Hansen-Estruch, Xiaochuang Han, Yushi Hu, Emily Dinan, Amita Kamath, M. Drozdzal, Reyhane Askari Hemmat, Luke Zettlemoyer, Marjan Ghazvininejad</pw:authors>
+<description>By Jiahui Chen, Philippe Hansen-Estruch, Xiaochuang Han, Yushi Hu, Emily Dinan, Amita Kamath, M. Drozdzal, Reyhane Askari Hemmat, Luke S. Zettlemoyer, Marjan Ghazvininejad. arXiv.org. (Met: Xiaochuang Han) arXiv:2601.04339</description>
+<pw:authors>Jiahui Chen, Philippe Hansen-Estruch, Xiaochuang Han, Yushi Hu, Emily Dinan, Amita Kamath, M. Drozdzal, Reyhane Askari Hemmat, Luke S. Zettlemoyer, Marjan Ghazvininejad</pw:authors>
 <pw:met>Xiaochuang Han</pw:met>
 <pw:relationships>Xiaochuang Han=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
