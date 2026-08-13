@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Wed, 12 Aug 2026 04:10:12 +0000</lastBuildDate>
+<lastBuildDate>Thu, 13 Aug 2026 04:10:30 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -710,19 +710,6 @@
 <pw:year></pw:year>
 </item>
 <item>
-<title>Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension</title>
-<link>https://www.semanticscholar.org/paper/fbb80fc8712633d9da936d851f0095a80cea6aa1</link>
-<guid isPermaLink="false">fbb80fc8712633d9da936d851f0095a80cea6aa1</guid>
-<description>By Amanda Bertsch, Luca Soldaini, Matthew R. Gormley, Graham Neubig, Hanna Hajishirzi, Kyle Lo, D. Groeneveld. . (Met: Graham Neubig)</description>
-<pw:authors>Amanda Bertsch, Luca Soldaini, Matthew R. Gormley, Graham Neubig, Hanna Hajishirzi, Kyle Lo, D. Groeneveld</pw:authors>
-<pw:met>Graham Neubig</pw:met>
-<pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
 <title>Multi-Task Learning with Self-Supervised Objectives can Improve Worst-Group Outcomes</title>
 <link>https://www.semanticscholar.org/paper/02cd101b8c274997ff0382c8689d17b724267065</link>
 <guid isPermaLink="false">02cd101b8c274997ff0382c8689d17b724267065</guid>
@@ -1189,6 +1176,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Mitigating Context Interference for Reliable and Efficient Search Agents</title>
+<link>https://www.semanticscholar.org/paper/9494e560a19dac9b8a4ecce373996d82b2586423</link>
+<guid isPermaLink="false">9494e560a19dac9b8a4ecce373996d82b2586423</guid>
+<description>By Boyang Xue, Bin Wu, Shuofei Qiao, Sheng Wang, Rui Wang, Yiming Du, Hongru Wang, Jeff Z. Pan, Emine Yilmaz, Kam-Fai Wong et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Aldo Lipani) arXiv:2608.10743</description>
+<pw:authors>Boyang Xue, Bin Wu, Shuofei Qiao, Sheng Wang, Rui Wang, Yiming Du, Hongru Wang, Jeff Z. Pan, Emine Yilmaz, Kam-Fai Wong et al.</pw:authors>
+<pw:met>Aldo Lipani</pw:met>
+<pw:relationships>Aldo Lipani=following</pw:relationships>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv>2608.10743</pw:arxiv>
+<pw:date>2026-08-11</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Cracks in the Foundation: Seemingly Minor Architectural Choices Impact Long Context Extension</title>
+<link>https://www.semanticscholar.org/paper/fbb80fc8712633d9da936d851f0095a80cea6aa1</link>
+<guid isPermaLink="false">fbb80fc8712633d9da936d851f0095a80cea6aa1</guid>
+<description>By Amanda Bertsch, Luca Soldaini, Matthew R. Gormley, Graham Neubig, Hanna Hajishirzi, Kyle Lo, D. Groeneveld. . (Met: Graham Neubig) arXiv:2608.10296</description>
+<pw:authors>Amanda Bertsch, Luca Soldaini, Matthew R. Gormley, Graham Neubig, Hanna Hajishirzi, Kyle Lo, D. Groeneveld</pw:authors>
+<pw:met>Graham Neubig</pw:met>
+<pw:relationships>Graham Neubig=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.10296</pw:arxiv>
+<pw:date>2026-08-10</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Matryoshka Language Model Suites</title>
@@ -5426,20 +5441,6 @@
 <pw:authors>Immanuel Abdi, Akshat Gupta, Micah Mok, Alexander Lu, Nicholas Lee, G. Anumanchipalli</pw:authors>
 <pw:met>Akshat Gupta</pw:met>
 <pw:relationships>Akshat Gupta=met</pw:relationships>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Mitigating Context Interference for Reliable and Efficient Search Agents</title>
-<link>https://www.semanticscholar.org/paper/9494e560a19dac9b8a4ecce373996d82b2586423</link>
-<guid isPermaLink="false">9494e560a19dac9b8a4ecce373996d82b2586423</guid>
-<description>By Boyang Xue, Bin Wu, Shuofei Qiao, Sheng Wang, Rui Wang, Yiming Du, Hongru Wang, Jeff Z. Pan, Emine Yilmaz, Kam-Fai Wong et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Aldo Lipani)</description>
-<pw:authors>Boyang Xue, Bin Wu, Shuofei Qiao, Sheng Wang, Rui Wang, Yiming Du, Hongru Wang, Jeff Z. Pan, Emine Yilmaz, Kam-Fai Wong et al.</pw:authors>
-<pw:met>Aldo Lipani</pw:met>
-<pw:relationships>Aldo Lipani=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -15091,48 +15092,6 @@
 <pw:date>2024-08-13</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Does Liking Yellow Imply Driving a School Bus? Semantic Leakage in Language Models</title>
-<link>https://www.semanticscholar.org/paper/17d46cfdd0a8b76829a3888d433f2a1a1a2f91da</link>
-<guid isPermaLink="false">17d46cfdd0a8b76829a3888d433f2a1a1a2f91da</guid>
-<description>By Hila Gonen, Terra Blevins, Alisa Liu, Luke S. Zettlemoyer, Noah A. Smith. North American Chapter of the Association for Computational Linguistics. (Met: Alisa Liu) arXiv:2408.06518</description>
-<pw:authors>Hila Gonen, Terra Blevins, Alisa Liu, Luke S. Zettlemoyer, Noah A. Smith</pw:authors>
-<pw:met>Alisa Liu</pw:met>
-<pw:relationships>Alisa Liu=following</pw:relationships>
-<pw:venue>North American Chapter of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2408.06518</pw:arxiv>
-<pw:date>2024-08-12</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery</title>
-<link>https://www.semanticscholar.org/paper/33161a5a9b5dcb635b5a97475e6a6209a69ada7d</link>
-<guid isPermaLink="false">33161a5a9b5dcb635b5a97475e6a6209a69ada7d</guid>
-<description>By Chris Lu, Cong Lu, R. Lange, Jakob Foerster, Jeff Clune, David Ha. arXiv.org. (Met: Jakob Foerster) arXiv:2408.06292</description>
-<pw:authors>Chris Lu, Cong Lu, R. Lange, Jakob Foerster, Jeff Clune, David Ha</pw:authors>
-<pw:met>Jakob Foerster</pw:met>
-<pw:relationships>Jakob Foerster=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.06292</pw:arxiv>
-<pw:date>2024-08-12</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>VisualAgentBench: Towards Large Multimodal Models as Visual Foundation Agents</title>
-<link>https://www.semanticscholar.org/paper/f1f63620e87facef02234e82864c4b8adee081ec</link>
-<guid isPermaLink="false">f1f63620e87facef02234e82864c4b8adee081ec</guid>
-<description>By Xiao Liu, Tianjie Zhang, Yu Gu, Iat Long Iong, Yifan Xu, Xixuan Song, Shudan Zhang, Hanyu Lai, Xinyi Liu, Hanlin Zhao et al.. arXiv.org. (Met: Yu Su) arXiv:2408.06327</description>
-<pw:authors>Xiao Liu, Tianjie Zhang, Yu Gu, Iat Long Iong, Yifan Xu, Xixuan Song, Shudan Zhang, Hanyu Lai, Xinyi Liu, Hanlin Zhao et al.</pw:authors>
-<pw:met>Yu Su</pw:met>
-<pw:relationships>Yu Su=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.06327</pw:arxiv>
-<pw:date>2024-08-12</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>LLM-DetectAIve: a Tool for Fine-Grained Machine-Generated Text Detection</title>
