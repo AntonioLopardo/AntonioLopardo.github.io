@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 13 Aug 2026 04:10:30 +0000</lastBuildDate>
+<lastBuildDate>Fri, 14 Aug 2026 04:11:01 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1221,8 +1221,8 @@
 </item>
 <item>
 <title>Explicit Boundary Markers for Subword Vocabularies</title>
-<link>https://www.semanticscholar.org/paper/b1bc9697851b4fe54990c6d7fe963c63fdd3d8b5</link>
-<guid isPermaLink="false">b1bc9697851b4fe54990c6d7fe963c63fdd3d8b5</guid>
+<link>https://www.semanticscholar.org/paper/8727f56e27413beba879109141b36af73b657391</link>
+<guid isPermaLink="false">8727f56e27413beba879109141b36af73b657391</guid>
 <description>By Sander Land, Clara Meister. . (Met: Clara Isabel Meister) arXiv:2608.08847</description>
 <pw:authors>Sander Land, Clara Meister</pw:authors>
 <pw:met>Clara Isabel Meister</pw:met>
@@ -1319,8 +1319,8 @@
 </item>
 <item>
 <title>Unpacking Open Source Artificial Intelligence: Toward a Framework for Openness in Foundation Models</title>
-<link>https://www.semanticscholar.org/paper/1434abdc75086289a430c2306488771c8b5c783a</link>
-<guid isPermaLink="false">1434abdc75086289a430c2306488771c8b5c783a</guid>
+<link>https://www.semanticscholar.org/paper/c7ea2d31f10e5da26738a4feda7638e667bf1322</link>
+<guid isPermaLink="false">c7ea2d31f10e5da26738a4feda7638e667bf1322</guid>
 <description>By Camille François, Adrien Basdevant, Victor Storchan, Kevin Bankston, Ayah Bdeir, B. Behlendorf, Mérouane Debbah, Sayash Kapoor, Yann LeCun, Mark Surman et al.. Communications of the ACM. (Met: Yann LeCun)</description>
 <pw:authors>Camille François, Adrien Basdevant, Victor Storchan, Kevin Bankston, Ayah Bdeir, B. Behlendorf, Mérouane Debbah, Sayash Kapoor, Yann LeCun, Mark Surman et al.</pw:authors>
 <pw:met>Yann LeCun</pw:met>
