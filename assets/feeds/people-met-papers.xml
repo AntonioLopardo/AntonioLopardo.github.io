@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 14 Aug 2026 04:11:01 +0000</lastBuildDate>
+<lastBuildDate>Sat, 15 Aug 2026 04:07:02 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -697,19 +697,6 @@
 <pw:year></pw:year>
 </item>
 <item>
-<title>Position: Humans are Missing from AI Coding Agent Research</title>
-<link>https://www.semanticscholar.org/paper/d51b4ca48b4b56e0aa1c2161e95dcedd4b789f63</link>
-<guid isPermaLink="false">d51b4ca48b4b56e0aa1c2161e95dcedd4b789f63</guid>
-<description>By Z. Wang, John Yang, K. Lieret, Alexa R. Tartaglini, Valerie Chen, Yuxiang Wei, Zijian Wang, Lingming Zhang, Karthik R. Narasimhan, Ludwig Schmidt et al.. . (Met: Graham Neubig)</description>
-<pw:authors>Z. Wang, John Yang, K. Lieret, Alexa R. Tartaglini, Valerie Chen, Yuxiang Wei, Zijian Wang, Lingming Zhang, Karthik R. Narasimhan, Ludwig Schmidt et al.</pw:authors>
-<pw:met>Graham Neubig</pw:met>
-<pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
 <title>Multi-Task Learning with Self-Supervised Objectives can Improve Worst-Group Outcomes</title>
 <link>https://www.semanticscholar.org/paper/02cd101b8c274997ff0382c8689d17b724267065</link>
 <guid isPermaLink="false">02cd101b8c274997ff0382c8689d17b724267065</guid>
@@ -1178,6 +1165,20 @@
 <pw:year></pw:year>
 </item>
 <item>
+<title>It's How You Ask: Gender-Associated Linguistic Bias in LLMs</title>
+<link>https://www.semanticscholar.org/paper/a3f175e0a6f581dbd11fdb129a7c14b13a6a099d</link>
+<guid isPermaLink="false">a3f175e0a6f581dbd11fdb129a7c14b13a6a099d</guid>
+<description>By K. V. Koevering, Anjalie Field. . (Met: Katherine Van Koevering) arXiv:2608.13328</description>
+<pw:authors>K. V. Koevering, Anjalie Field</pw:authors>
+<pw:met>Katherine Van Koevering</pw:met>
+<pw:relationships>Katherine Van Koevering=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.13328</pw:arxiv>
+<pw:date>2026-08-13</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Mitigating Context Interference for Reliable and Efficient Search Agents</title>
 <link>https://www.semanticscholar.org/paper/9494e560a19dac9b8a4ecce373996d82b2586423</link>
 <guid isPermaLink="false">9494e560a19dac9b8a4ecce373996d82b2586423</guid>
@@ -1526,6 +1527,20 @@
 <pw:date>2026-07-05</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Humans are Missing from AI Coding Agent Research</title>
+<link>https://www.semanticscholar.org/paper/d51b4ca48b4b56e0aa1c2161e95dcedd4b789f63</link>
+<guid isPermaLink="false">d51b4ca48b4b56e0aa1c2161e95dcedd4b789f63</guid>
+<description>By Z. Wang, John Yang, K. Lieret, Alexa R. Tartaglini, Valerie Chen, Yuxiang Wei, Zijian Wang, Lingming Zhang, Karthik R. Narasimhan, Ludwig Schmidt et al.. . (Met: Graham Neubig) arXiv:2608.12355</description>
+<pw:authors>Z. Wang, John Yang, K. Lieret, Alexa R. Tartaglini, Valerie Chen, Yuxiang Wei, Zijian Wang, Lingming Zhang, Karthik R. Narasimhan, Ludwig Schmidt et al.</pw:authors>
+<pw:met>Graham Neubig</pw:met>
+<pw:relationships>Graham Neubig=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.12355</pw:arxiv>
+<pw:date>2026-07-04</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Can Dialects Be Steered Like Languages? Sparse Neurons and Distributed Directions in Arabic LLMs</title>
@@ -2671,6 +2686,20 @@
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2605.19141</pw:arxiv>
+<pw:date>2026-05-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Leveraging Latent Visual Reasoning in Silence</title>
+<link>https://www.semanticscholar.org/paper/d54a87de953e72ff56f6afa76b91f02a15df7ec6</link>
+<guid isPermaLink="false">d54a87de953e72ff56f6afa76b91f02a15df7ec6</guid>
+<description>By Dongyao Zhu, Zhen Wang, Xinquan Xiao, Han Jiang, Saeed Vahidian, Wei-Lun Chao, Tanya Y. Berger-Wolf, Yu Su, R. Vatsavai, Jianyang Gu. arXiv.org. (Met: Yu Su) arXiv:2605.18641</description>
+<pw:authors>Dongyao Zhu, Zhen Wang, Xinquan Xiao, Han Jiang, Saeed Vahidian, Wei-Lun Chao, Tanya Y. Berger-Wolf, Yu Su, R. Vatsavai, Jianyang Gu</pw:authors>
+<pw:met>Yu Su</pw:met>
+<pw:relationships>Yu Su=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2605.18641</pw:arxiv>
 <pw:date>2026-05-18</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
@@ -13403,8 +13432,8 @@
 <title>BALROG: Benchmarking Agentic LLM and VLM Reasoning On Games</title>
 <link>https://www.semanticscholar.org/paper/faf5f373bd9944028664ea3e7da2d6a1fe3bf335</link>
 <guid isPermaLink="false">faf5f373bd9944028664ea3e7da2d6a1fe3bf335</guid>
-<description>By Davide Paglieri, Bartlomiej Cupial, S. Coward, Ulyana Piterbarg, Maciej Wolczyk, Akbir Khan, Eduardo Pignatelli, Lukasz Kuci'nski, Lerrel Pinto, Rob Fergus et al.. International Conference on Learning Representations. (Met: Tim Rocktäschel) arXiv:2411.13543</description>
-<pw:authors>Davide Paglieri, Bartlomiej Cupial, S. Coward, Ulyana Piterbarg, Maciej Wolczyk, Akbir Khan, Eduardo Pignatelli, Lukasz Kuci'nski, Lerrel Pinto, Rob Fergus et al.</pw:authors>
+<description>By Davide Paglieri, Bartlomiej Cupial, Samuel Coward, Ulyana Piterbarg, Maciej Wolczyk, Akbir Khan, Eduardo Pignatelli, Lukasz Kuci'nski, Lerrel Pinto, Rob Fergus et al.. International Conference on Learning Representations. (Met: Tim Rocktäschel) arXiv:2411.13543</description>
+<pw:authors>Davide Paglieri, Bartlomiej Cupial, Samuel Coward, Ulyana Piterbarg, Maciej Wolczyk, Akbir Khan, Eduardo Pignatelli, Lukasz Kuci'nski, Lerrel Pinto, Rob Fergus et al.</pw:authors>
 <pw:met>Tim Rocktäschel</pw:met>
 <pw:relationships>Tim Rocktäschel=following</pw:relationships>
 <pw:venue>International Conference on Learning Representations</pw:venue>
