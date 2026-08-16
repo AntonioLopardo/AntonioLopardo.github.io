@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sat, 15 Aug 2026 04:07:02 +0000</lastBuildDate>
+<lastBuildDate>Sun, 16 Aug 2026 04:07:17 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1390,8 +1390,8 @@
 </item>
 <item>
 <title>Context-Aware Toxicity Detection in Game Chat: Domain-Adaptive Pretraining with Match Metadata under Limited Labels</title>
-<link>https://www.semanticscholar.org/paper/1f82f75b5f13e358f1ecc9311c482d7741f400c7</link>
-<guid isPermaLink="false">1f82f75b5f13e358f1ecc9311c482d7741f400c7</guid>
+<link>https://www.semanticscholar.org/paper/54502dcd4cd960b994768a631cd7ff5ef5cb75ef</link>
+<guid isPermaLink="false">54502dcd4cd960b994768a631cd7ff5ef5cb75ef</guid>
 <description>By Adrien Schurger-Foy, Rafal Kocielnik, Caglar Gulcehre, R. M. Alvarez. Games. (Met: Caglar Gulcehre)</description>
 <pw:authors>Adrien Schurger-Foy, Rafal Kocielnik, Caglar Gulcehre, R. M. Alvarez</pw:authors>
 <pw:met>Caglar Gulcehre</pw:met>
@@ -3156,8 +3156,8 @@
 <title>SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/a5e883cf30c85a3d9f5279ae67ce12f2977b5790</link>
 <guid isPermaLink="false">a5e883cf30c85a3d9f5279ae67ce12f2977b5790</guid>
-<description>By Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, Casey Kennington, Joyce Chai. arXiv.org. (Met: Josue Torres-Fonseca) arXiv:2604.19638</description>
-<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, Casey Kennington, Joyce Chai</pw:authors>
+<description>By Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai. arXiv.org. (Met: Josue Torres-Fonseca) arXiv:2604.19638</description>
+<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai</pw:authors>
 <pw:met>Josue Torres-Fonseca</pw:met>
 <pw:relationships>Josue Torres-Fonseca=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5676,8 +5676,8 @@
 <title>SafetyALFRED: Evaluating Safety-Conscious Planning of Vision Language Models</title>
 <link>https://www.semanticscholar.org/paper/9f4aec061f28ce9cd05a37296269f63b5a79867b</link>
 <guid isPermaLink="false">9f4aec061f28ce9cd05a37296269f63b5a79867b</guid>
-<description>By Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, Casey Kennington, Joyce Chai. Annual Meeting of the Association for Computational Linguistics. (Met: Josue Torres-Fonseca)</description>
-<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, Casey Kennington, Joyce Chai</pw:authors>
+<description>By Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai. Annual Meeting of the Association for Computational Linguistics. (Met: Josue Torres-Fonseca)</description>
+<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai</pw:authors>
 <pw:met>Josue Torres-Fonseca</pw:met>
 <pw:relationships>Josue Torres-Fonseca=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -15084,26 +15084,12 @@
 <title>The future of open human feedback</title>
 <link>https://www.semanticscholar.org/paper/a4c993601acdaeaf161f3c43def3c5726dcd5103</link>
 <guid isPermaLink="false">a4c993601acdaeaf161f3c43def3c5726dcd5103</guid>
-<description>By Shachar Don-Yehiya, Ben Burtenshaw, R. Astudillo, Cailean Osborne, Mimansa Jaiswal, Tzu-Sheng Kuo, Wenting Zhao, Idan Shenfeld, Andi Peng, M. Yurochkin et al.. Nature Machine Intelligence. (Met: Leshem Choshen, Sara Hooker) arXiv:2408.16961</description>
+<description>By Shachar Don-Yehiya, Ben Burtenshaw, R. Astudillo, Cailean Osborne, Mimansa Jaiswal, Tzu-Sheng Kuo, Wenting Zhao, Idan Shenfeld, Andi Peng, M. Yurochkin et al.. Nature Machine Intelligence. (Met: Leshem Choshen) arXiv:2408.16961</description>
 <pw:authors>Shachar Don-Yehiya, Ben Burtenshaw, R. Astudillo, Cailean Osborne, Mimansa Jaiswal, Tzu-Sheng Kuo, Wenting Zhao, Idan Shenfeld, Andi Peng, M. Yurochkin et al.</pw:authors>
-<pw:met>Leshem Choshen, Sara Hooker</pw:met>
-<pw:relationships>Leshem Choshen=met|Sara Hooker=following</pw:relationships>
+<pw:met>Leshem Choshen</pw:met>
+<pw:relationships>Leshem Choshen=met</pw:relationships>
 <pw:venue>Nature Machine Intelligence</pw:venue>
 <pw:arxiv>2408.16961</pw:arxiv>
-<pw:date>2024-08-15</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>JPEG-LM: LLMs as Image Generators with Canonical Codec Representations</title>
-<link>https://www.semanticscholar.org/paper/fb58e778b68f91c30806052bf195f20e98a85eff</link>
-<guid isPermaLink="false">fb58e778b68f91c30806052bf195f20e98a85eff</guid>
-<description>By Xiaochuang Han, Marjan Ghazvininejad, Pang Wei Koh, Yulia Tsvetkov. arXiv.org. (Met: Xiaochuang Han) arXiv:2408.08459</description>
-<pw:authors>Xiaochuang Han, Marjan Ghazvininejad, Pang Wei Koh, Yulia Tsvetkov</pw:authors>
-<pw:met>Xiaochuang Han</pw:met>
-<pw:relationships>Xiaochuang Han=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.08459</pw:arxiv>
 <pw:date>2024-08-15</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
