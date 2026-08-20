@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Wed, 19 Aug 2026 04:07:55 +0000</lastBuildDate>
+<lastBuildDate>Thu, 20 Aug 2026 04:07:52 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1163,6 +1163,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>TokEval: A Tokenizer Evaluation Suite</title>
+<link>https://www.semanticscholar.org/paper/ba0a8743d2dc10a09f5425953deaa0d3677afadc</link>
+<guid isPermaLink="false">ba0a8743d2dc10a09f5425953deaa0d3677afadc</guid>
+<description>By Clara Meister. . (Met: Clara Isabel Meister) arXiv:2608.18062</description>
+<pw:authors>Clara Meister</pw:authors>
+<pw:met>Clara Isabel Meister</pw:met>
+<pw:relationships>Clara Isabel Meister=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.18062</pw:arxiv>
+<pw:date>2026-08-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>The IOL-AI Challenge: An Open Challenge towards Advancing Linguistic Reasoning</title>
+<link>https://www.semanticscholar.org/paper/e8b97fe5e9f5988f3e8e7a43bcde4ecf9ec05037</link>
+<guid isPermaLink="false">e8b97fe5e9f5988f3e8e7a43bcde4ecf9ec05037</guid>
+<description>By Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea, Sara Rajaee, A. Piperski, Ana Meta Dolinar, B. Iomdin, Andrey Nikulin, Mariya Shmatova, Marzieh Fadaee et al.. . (Met: Marzieh Fadaee) arXiv:2608.18011</description>
+<pw:authors>Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea, Sara Rajaee, A. Piperski, Ana Meta Dolinar, B. Iomdin, Andrey Nikulin, Mariya Shmatova, Marzieh Fadaee et al.</pw:authors>
+<pw:met>Marzieh Fadaee</pw:met>
+<pw:relationships>Marzieh Fadaee=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.18011</pw:arxiv>
+<pw:date>2026-08-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Advancing Open and Reproducible Relational Learning: RelArena-$\alpha$, TabPFN-Rel and RPI</title>
@@ -4021,14 +4049,14 @@
 <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>N-gram-like Language Models Predict Reading Time Best</title>
-<link>https://www.semanticscholar.org/paper/4d75cba5456ea0a4639dd85ef66d5ba2284ae3ab</link>
-<guid isPermaLink="false">4d75cba5456ea0a4639dd85ef66d5ba2284ae3ab</guid>
-<description>By James A. Michaelov, Roger Levy. arXiv.org. (Met: James A. Michaelov) arXiv:2603.09872</description>
+<title>N-gram-like Language Models Predict Naturalistic Reading Time Best</title>
+<link>https://www.semanticscholar.org/paper/710a5694c6bbbabdea0a6fd63d7dfb0f077f7a88</link>
+<guid isPermaLink="false">710a5694c6bbbabdea0a6fd63d7dfb0f077f7a88</guid>
+<description>By James A. Michaelov, Roger Levy. . (Met: James A. Michaelov) arXiv:2603.09872</description>
 <pw:authors>James A. Michaelov, Roger Levy</pw:authors>
 <pw:met>James A. Michaelov</pw:met>
 <pw:relationships>James A. Michaelov=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue></pw:venue>
 <pw:arxiv>2603.09872</pw:arxiv>
 <pw:date>2026-03-10</pw:date>
 <pw:year>2026</pw:year>
