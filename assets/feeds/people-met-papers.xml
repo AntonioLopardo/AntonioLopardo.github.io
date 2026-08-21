@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 20 Aug 2026 04:07:52 +0000</lastBuildDate>
+<lastBuildDate>Fri, 21 Aug 2026 04:07:36 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -9873,20 +9873,6 @@
 <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning</title>
-<link>https://www.semanticscholar.org/paper/69a4c84867d5cc15be298bf4ad728a6413691cbd</link>
-<guid isPermaLink="false">69a4c84867d5cc15be298bf4ad728a6413691cbd</guid>
-<description>By C. Shani, Dan Jurafsky, Yann LeCun, Ravid Shwartz-Ziv. arXiv.org. (Met: Dan Jurafsky, Yann LeCun) arXiv:2505.17117</description>
-<pw:authors>C. Shani, Dan Jurafsky, Yann LeCun, Ravid Shwartz-Ziv</pw:authors>
-<pw:met>Dan Jurafsky, Yann LeCun</pw:met>
-<pw:relationships>Dan Jurafsky=following|Yann LeCun=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2505.17117</pw:arxiv>
-<pw:date>2025-05-21</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity</title>
 <link>https://www.semanticscholar.org/paper/12f567cc86bc744a772994b31320c677864a5961</link>
 <guid isPermaLink="false">12f567cc86bc744a772994b31320c677864a5961</guid>
@@ -9904,8 +9890,8 @@
 <title>Mechanistic evaluation of Transformers and state space models</title>
 <link>https://www.semanticscholar.org/paper/61a68e730cf1819f9a4c2c351ff3fd38ed45f6cd</link>
 <guid isPermaLink="false">61a68e730cf1819f9a4c2c351ff3fd38ed45f6cd</guid>
-<description>By Aryaman Arora, Neil Rathi, Nikil Selvam, R'obert Cs'ordas, Daniel Jurafsky, Christopher Potts. arXiv.org. (Met: Dan Jurafsky) arXiv:2505.15105</description>
-<pw:authors>Aryaman Arora, Neil Rathi, Nikil Selvam, R'obert Cs'ordas, Daniel Jurafsky, Christopher Potts</pw:authors>
+<description>By Aryaman Arora, Neil Rathi, Nikil Selvam, Róbert Csordás, Daniel Jurafsky, Christopher Potts. arXiv.org. (Met: Dan Jurafsky) arXiv:2505.15105</description>
+<pw:authors>Aryaman Arora, Neil Rathi, Nikil Selvam, Róbert Csordás, Daniel Jurafsky, Christopher Potts</pw:authors>
 <pw:met>Dan Jurafsky</pw:met>
 <pw:relationships>Dan Jurafsky=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -9924,6 +9910,20 @@
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2505.15607</pw:arxiv>
+<pw:date>2025-05-21</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning</title>
+<link>https://www.semanticscholar.org/paper/69a4c84867d5cc15be298bf4ad728a6413691cbd</link>
+<guid isPermaLink="false">69a4c84867d5cc15be298bf4ad728a6413691cbd</guid>
+<description>By C. Shani, Daniel Jurafsky, Yann LeCun, Ravid Shwartz-Ziv. arXiv.org. (Met: Yann LeCun) arXiv:2505.17117</description>
+<pw:authors>C. Shani, Daniel Jurafsky, Yann LeCun, Ravid Shwartz-Ziv</pw:authors>
+<pw:met>Yann LeCun</pw:met>
+<pw:relationships>Yann LeCun=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2505.17117</pw:arxiv>
 <pw:date>2025-05-21</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
@@ -11903,7 +11903,7 @@
 <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Multiple Choice Questions: Reasoning Makes Large Language Models (LLMs) More Self-Confident, specially When They are Wrong</title>
+<title>Multiple Choice Questions: Reasoning Makes Large Language Models More Self-Confident, Especially When They Are Wrong</title>
 <link>https://www.semanticscholar.org/paper/99e5c08d05a33e0d2f513491827f8348254ca3cb</link>
 <guid isPermaLink="false">99e5c08d05a33e0d2f513491827f8348254ca3cb</guid>
 <description>By Tairan Fu, Javier Conde, Gonzalo Martínez, María Grandury, Pedro Reviriego. IEEE Intelligent Systems. (Met: María Grandury) arXiv:2501.09775</description>
@@ -13894,8 +13894,8 @@
 <title>MrT5: Dynamic Token Merging for Efficient Byte-level Language Models</title>
 <link>https://www.semanticscholar.org/paper/e35f446697d1692b27d500a2d30eda813e5249c9</link>
 <guid isPermaLink="false">e35f446697d1692b27d500a2d30eda813e5249c9</guid>
-<description>By Julie Kallini, Shikhar Murty, Christopher D. Manning, Christopher Potts, R'obert Csord'as. International Conference on Learning Representations. (Met: Julie Kallini) arXiv:2410.20771</description>
-<pw:authors>Julie Kallini, Shikhar Murty, Christopher D. Manning, Christopher Potts, R'obert Csord'as</pw:authors>
+<description>By Julie Kallini, Shikhar Murty, Christopher D. Manning, Christopher Potts, Róbert Csordás. International Conference on Learning Representations. (Met: Julie Kallini) arXiv:2410.20771</description>
+<pw:authors>Julie Kallini, Shikhar Murty, Christopher D. Manning, Christopher Potts, Róbert Csordás</pw:authors>
 <pw:met>Julie Kallini</pw:met>
 <pw:relationships>Julie Kallini=following</pw:relationships>
 <pw:venue>International Conference on Learning Representations</pw:venue>
@@ -15118,34 +15118,6 @@
 <pw:relationships>Leshem Choshen=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2408.10646</pw:arxiv>
-<pw:date>2024-08-20</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>To Code, or Not To Code? Exploring Impact of Code in Pre-training</title>
-<link>https://www.semanticscholar.org/paper/4cae2af5b09b746f6616bd5152c05b77e66316f4</link>
-<guid isPermaLink="false">4cae2af5b09b746f6616bd5152c05b77e66316f4</guid>
-<description>By Viraat Aryabumi, Yixuan Su, Raymond Ma, Adrien Morisot, Ivan Zhang, Acyr F. Locatelli, Marzieh Fadaee, A. Ustun, Sara Hooker. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2408.10914</description>
-<pw:authors>Viraat Aryabumi, Yixuan Su, Raymond Ma, Adrien Morisot, Ivan Zhang, Acyr F. Locatelli, Marzieh Fadaee, A. Ustun, Sara Hooker</pw:authors>
-<pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
-<pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.10914</pw:arxiv>
-<pw:date>2024-08-20</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>PooDLe: Pooled and dense self-supervised learning from naturalistic videos</title>
-<link>https://www.semanticscholar.org/paper/532c8800cd432fe93132eea875ada2681e2ac4a4</link>
-<guid isPermaLink="false">532c8800cd432fe93132eea875ada2681e2ac4a4</guid>
-<description>By Alex N. Wang, Christopher Hoang, Yuwen Xiong, Yann LeCun, Mengye Ren. International Conference on Learning Representations. (Met: Yann LeCun) arXiv:2408.11208</description>
-<pw:authors>Alex N. Wang, Christopher Hoang, Yuwen Xiong, Yann LeCun, Mengye Ren</pw:authors>
-<pw:met>Yann LeCun</pw:met>
-<pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue>International Conference on Learning Representations</pw:venue>
-<pw:arxiv>2408.11208</pw:arxiv>
 <pw:date>2024-08-20</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
