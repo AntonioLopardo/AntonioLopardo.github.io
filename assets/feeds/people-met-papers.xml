@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 21 Aug 2026 04:07:36 +0000</lastBuildDate>
+<lastBuildDate>Sat, 22 Aug 2026 04:06:50 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1163,6 +1163,20 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Green BOA: Determining the environmental break-even point for ML-based data compression</title>
+<link>https://www.semanticscholar.org/paper/2f71311480f49cee8c07d209fd7fdd6a3f5ce45b</link>
+<guid isPermaLink="false">2f71311480f49cee8c07d209fd7fdd6a3f5ce45b</guid>
+<description>By C. Doglioni, Akshat Gupta, Thomas J Elliott, Hanzila Hussain, Sanjiban Sengupta. . (Met: Akshat Gupta) arXiv:2608.19994</description>
+<pw:authors>C. Doglioni, Akshat Gupta, Thomas J Elliott, Hanzila Hussain, Sanjiban Sengupta</pw:authors>
+<pw:met>Akshat Gupta</pw:met>
+<pw:relationships>Akshat Gupta=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.19994</pw:arxiv>
+<pw:date>2026-08-20</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>TokEval: A Tokenizer Evaluation Suite</title>
@@ -3184,8 +3198,8 @@
 <title>BOA constrictor: a Mamba-based lossless compressor for scientific data</title>
 <link>https://www.semanticscholar.org/paper/3005ab3988c3b70f71ca950c3a22dec1f02b6ea6</link>
 <guid isPermaLink="false">3005ab3988c3b70f71ca950c3a22dec1f02b6ea6</guid>
-<description>By Akshat Gupta, C. Doglioni, T. J. Elliott. Machine Learning: Science and Technology. (Met: Akshat Gupta)</description>
-<pw:authors>Akshat Gupta, C. Doglioni, T. J. Elliott</pw:authors>
+<description>By Akshat Gupta, C. Doglioni, Thomas J Elliott. Machine Learning: Science and Technology. (Met: Akshat Gupta)</description>
+<pw:authors>Akshat Gupta, C. Doglioni, Thomas J Elliott</pw:authors>
 <pw:met>Akshat Gupta</pw:met>
 <pw:relationships>Akshat Gupta=met</pw:relationships>
 <pw:venue>Machine Learning: Science and Technology</pw:venue>
@@ -15079,20 +15093,6 @@
 <pw:date>2024-08-22</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 22 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Mathematical modeling of free vibration of star-shaped auxetic rectangular plate</title>
-<link>https://www.semanticscholar.org/paper/5a4c3041f36029eae283e5e37bc0d6ba23329124</link>
-<guid isPermaLink="false">5a4c3041f36029eae283e5e37bc0d6ba23329124</guid>
-<description>By N. Mohandesi, M. Talebitooti, Marzieh Fadaee. Archive of applied mechanics (1991). (Met: Marzieh Fadaee)</description>
-<pw:authors>N. Mohandesi, M. Talebitooti, Marzieh Fadaee</pw:authors>
-<pw:met>Marzieh Fadaee</pw:met>
-<pw:relationships>Marzieh Fadaee=following</pw:relationships>
-<pw:venue>Archive of applied mechanics (1991)</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-08-21</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>AI-assisted Automated Short Answer Grading of Handwritten University Level Mathematics Exams</title>
