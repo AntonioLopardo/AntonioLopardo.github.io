@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sat, 22 Aug 2026 04:06:50 +0000</lastBuildDate>
+<lastBuildDate>Sun, 23 Aug 2026 04:07:44 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1854,8 +1854,8 @@
 <title>CALIBER: Calibrating Confidence Before and After Reasoning in Language Models</title>
 <link>https://www.semanticscholar.org/paper/6ec05f62305603a785066ae32ae1d58f61f6adfe</link>
 <guid isPermaLink="false">6ec05f62305603a785066ae32ae1d58f61f6adfe</guid>
-<description>By Conor Finlay, Joshua Kurien, Saurabh Dash, Marzieh Fadaee, B. Ermiş. arXiv.org. (Met: Marzieh Fadaee) arXiv:2606.24281</description>
-<pw:authors>Conor Finlay, Joshua Kurien, Saurabh Dash, Marzieh Fadaee, B. Ermiş</pw:authors>
+<description>By Conor Finlay, Joshua Kurien, Saurabh Dash, Marzieh Fadaee, B. Ermi̇ş. arXiv.org. (Met: Marzieh Fadaee) arXiv:2606.24281</description>
+<pw:authors>Conor Finlay, Joshua Kurien, Saurabh Dash, Marzieh Fadaee, B. Ermi̇ş</pw:authors>
 <pw:met>Marzieh Fadaee</pw:met>
 <pw:relationships>Marzieh Fadaee=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -2498,8 +2498,8 @@
 <title>Soft-SVeRL: Self-Verified Reinforcement Learning with Soft Rewards</title>
 <link>https://www.semanticscholar.org/paper/204b0ea4ae93e096b11e3ab7c69ac8b8df6fc9eb</link>
 <guid isPermaLink="false">204b0ea4ae93e096b11e3ab7c69ac8b8df6fc9eb</guid>
-<description>By Saurabh Dash, Pierre Clavier, John Dang, Matthias Gall'e, Marzieh Fadaee, Ahmet Ustun, B. Ermiş. arXiv.org. (Met: Marzieh Fadaee) arXiv:2605.28561</description>
-<pw:authors>Saurabh Dash, Pierre Clavier, John Dang, Matthias Gall'e, Marzieh Fadaee, Ahmet Ustun, B. Ermiş</pw:authors>
+<description>By Saurabh Dash, Pierre Clavier, John Dang, Matthias Gall'e, Marzieh Fadaee, Ahmet Ustun, B. Ermi̇ş. arXiv.org. (Met: Marzieh Fadaee) arXiv:2605.28561</description>
+<pw:authors>Saurabh Dash, Pierre Clavier, John Dang, Matthias Gall'e, Marzieh Fadaee, Ahmet Ustun, B. Ermi̇ş</pw:authors>
 <pw:met>Marzieh Fadaee</pw:met>
 <pw:relationships>Marzieh Fadaee=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5396,8 +5396,8 @@
 <title>SimMerge: Learning to Select Merge Operators from Similarity Signals</title>
 <link>https://www.semanticscholar.org/paper/566329d2e2ad607fb629f822f9aa13347a2dd877</link>
 <guid isPermaLink="false">566329d2e2ad607fb629f822f9aa13347a2dd877</guid>
-<description>By Oliver Bolton, Aakanksha, Arash Ahmadian, Sara Hooker, Marzieh Fadaee, B. Ermiş. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2601.09473</description>
-<pw:authors>Oliver Bolton, Aakanksha, Arash Ahmadian, Sara Hooker, Marzieh Fadaee, B. Ermiş</pw:authors>
+<description>By Oliver Bolton, Aakanksha, Arash Ahmadian, Sara Hooker, Marzieh Fadaee, B. Ermi̇ş. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2601.09473</description>
+<pw:authors>Oliver Bolton, Aakanksha, Arash Ahmadian, Sara Hooker, Marzieh Fadaee, B. Ermi̇ş</pw:authors>
 <pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -9540,8 +9540,8 @@
 <title>The State of Multilingual LLM Safety Research: From Measuring the Language Gap to Mitigating It</title>
 <link>https://www.semanticscholar.org/paper/85002e39a08881cb7f6cbaf8c59c8ad174243fc2</link>
 <guid isPermaLink="false">85002e39a08881cb7f6cbaf8c59c8ad174243fc2</guid>
-<description>By Zheng-Xin Yong, B. Ermiş, Marzieh Fadaee, Stephen H. Bach, Julia Kreutzer. Conference on Empirical Methods in Natural Language Processing. (Met: Marzieh Fadaee) arXiv:2505.24119</description>
-<pw:authors>Zheng-Xin Yong, B. Ermiş, Marzieh Fadaee, Stephen H. Bach, Julia Kreutzer</pw:authors>
+<description>By Zheng-Xin Yong, B. Ermi̇ş, Marzieh Fadaee, Stephen H. Bach, Julia Kreutzer. Conference on Empirical Methods in Natural Language Processing. (Met: Marzieh Fadaee) arXiv:2505.24119</description>
+<pw:authors>Zheng-Xin Yong, B. Ermi̇ş, Marzieh Fadaee, Stephen H. Bach, Julia Kreutzer</pw:authors>
 <pw:met>Marzieh Fadaee</pw:met>
 <pw:relationships>Marzieh Fadaee=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -9652,8 +9652,8 @@
 <title>The Multilingual Divide and Its Impact on Global AI Safety</title>
 <link>https://www.semanticscholar.org/paper/ad322e955cc063c982bd04c516863fdf95a0ee9c</link>
 <guid isPermaLink="false">ad322e955cc063c982bd04c516863fdf95a0ee9c</guid>
-<description>By Aidan Peppin, Julia Kreutzer, Alice Schoenauer Sebag, Kelly Marchisio, B. Ermiş, John Dang, Samuel Cahyawijaya, Shivalika Singh, Seraphina Goldfarb-Tarrant, Viraat Aryabumi et al.. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2505.21344</description>
-<pw:authors>Aidan Peppin, Julia Kreutzer, Alice Schoenauer Sebag, Kelly Marchisio, B. Ermiş, John Dang, Samuel Cahyawijaya, Shivalika Singh, Seraphina Goldfarb-Tarrant, Viraat Aryabumi et al.</pw:authors>
+<description>By Aidan Peppin, Julia Kreutzer, Alice Schoenauer Sebag, Kelly Marchisio, B. Ermi̇ş, John Dang, Samuel Cahyawijaya, Shivalika Singh, Seraphina Goldfarb-Tarrant, Viraat Aryabumi et al.. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2505.21344</description>
+<pw:authors>Aidan Peppin, Julia Kreutzer, Alice Schoenauer Sebag, Kelly Marchisio, B. Ermi̇ş, John Dang, Samuel Cahyawijaya, Shivalika Singh, Seraphina Goldfarb-Tarrant, Viraat Aryabumi et al.</pw:authors>
 <pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -12886,8 +12886,8 @@
 <title>Multilingual Arbitration: Optimizing Data Pools to Accelerate Multilingual Progress</title>
 <link>https://www.semanticscholar.org/paper/a864f48746d8276df2ff3ca31455a20fb81b19a0</link>
 <guid isPermaLink="false">a864f48746d8276df2ff3ca31455a20fb81b19a0</guid>
-<description>By Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermiş, Sara Hooker. Annual Meeting of the Association for Computational Linguistics. (Met: Sara Hooker)</description>
-<pw:authors>Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermiş, Sara Hooker</pw:authors>
+<description>By Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermi̇ş, Sara Hooker. Annual Meeting of the Association for Computational Linguistics. (Met: Sara Hooker)</description>
+<pw:authors>Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermi̇ş, Sara Hooker</pw:authors>
 <pw:met>Sara Hooker</pw:met>
 <pw:relationships>Sara Hooker=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -14370,8 +14370,8 @@
 <title>Mix Data or Merge Models? Optimizing for Diverse Multi-Task Learning</title>
 <link>https://www.semanticscholar.org/paper/618c672932cf32410ddc095e1408f4f5af992548</link>
 <guid isPermaLink="false">618c672932cf32410ddc095e1408f4f5af992548</guid>
-<description>By Aakanksha, Arash Ahmadian, Seraphina Goldfarb-Tarrant, B. Ermiş, Marzieh Fadaee, Sara Hooker. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2410.10801</description>
-<pw:authors>Aakanksha, Arash Ahmadian, Seraphina Goldfarb-Tarrant, B. Ermiş, Marzieh Fadaee, Sara Hooker</pw:authors>
+<description>By Aakanksha, Arash Ahmadian, Seraphina Goldfarb-Tarrant, B. Ermi̇ş, Marzieh Fadaee, Sara Hooker. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2410.10801</description>
+<pw:authors>Aakanksha, Arash Ahmadian, Seraphina Goldfarb-Tarrant, B. Ermi̇ş, Marzieh Fadaee, Sara Hooker</pw:authors>
 <pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -15014,8 +15014,8 @@
 <title>Multilingual Arbitrage: Optimizing Data Pools to Accelerate Multilingual Progress</title>
 <link>https://www.semanticscholar.org/paper/3c6c150b40394b01b1a91ed9e4b848478824a849</link>
 <guid isPermaLink="false">3c6c150b40394b01b1a91ed9e4b848478824a849</guid>
-<description>By Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermiş, Sara Hooker. arXiv.org. (Met: Sara Hooker) arXiv:2408.14960</description>
-<pw:authors>Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermiş, Sara Hooker</pw:authors>
+<description>By Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermi̇ş, Sara Hooker. arXiv.org. (Met: Sara Hooker) arXiv:2408.14960</description>
+<pw:authors>Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermi̇ş, Sara Hooker</pw:authors>
 <pw:met>Sara Hooker</pw:met>
 <pw:relationships>Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
