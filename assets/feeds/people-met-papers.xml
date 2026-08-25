@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Mon, 24 Aug 2026 04:07:36 +0000</lastBuildDate>
+<lastBuildDate>Tue, 25 Aug 2026 04:06:38 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1168,8 +1168,8 @@
 <title>Green BOA: Determining the environmental break-even point for ML-based data compression</title>
 <link>https://www.semanticscholar.org/paper/2f71311480f49cee8c07d209fd7fdd6a3f5ce45b</link>
 <guid isPermaLink="false">2f71311480f49cee8c07d209fd7fdd6a3f5ce45b</guid>
-<description>By C. Doglioni, Akshat Gupta, Thomas J Elliott, Hanzila Hussain, Sanjiban Sengupta. . (Met: Akshat Gupta) arXiv:2608.19994</description>
-<pw:authors>C. Doglioni, Akshat Gupta, Thomas J Elliott, Hanzila Hussain, Sanjiban Sengupta</pw:authors>
+<description>By C. Doglioni, Thomas J Elliott, Akshat Gupta, Hanzila Hussain, Sanjiban Sengupta, Zhengkai Sun. . (Met: Akshat Gupta) arXiv:2608.19994</description>
+<pw:authors>C. Doglioni, Thomas J Elliott, Akshat Gupta, Hanzila Hussain, Sanjiban Sengupta, Zhengkai Sun</pw:authors>
 <pw:met>Akshat Gupta</pw:met>
 <pw:relationships>Akshat Gupta=met</pw:relationships>
 <pw:venue></pw:venue>
@@ -15037,20 +15037,6 @@
 <pw:date>2024-08-26</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>A layer-wise analysis of Mandarin and English suprasegmentals in SSL speech models</title>
-<link>https://www.semanticscholar.org/paper/e5d97e716c37b390c12a04b17ae694c8ca3f4928</link>
-<guid isPermaLink="false">e5d97e716c37b390c12a04b17ae694c8ca3f4928</guid>
-<description>By Anton de la Fuente, Dan Jurafsky. Interspeech. (Met: Dan Jurafsky) arXiv:2408.13678</description>
-<pw:authors>Anton de la Fuente, Dan Jurafsky</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>Interspeech</pw:venue>
-<pw:arxiv>2408.13678</pw:arxiv>
-<pw:date>2024-08-24</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>MedDec: A Dataset for Extracting Medical Decisions from Discharge Summaries</title>
