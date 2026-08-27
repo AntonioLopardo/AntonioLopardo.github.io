@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Wed, 26 Aug 2026 04:07:24 +0000</lastBuildDate>
+<lastBuildDate>Thu, 27 Aug 2026 04:07:36 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1178,6 +1178,20 @@
 <pw:year></pw:year>
 </item>
 <item>
+<title>Beyond Static and Linear: What Attention Constraints Best Fit Human Reading Times?</title>
+<link>https://www.semanticscholar.org/paper/9822c7acc4966d2b9accc5be9e6e109039827392</link>
+<guid isPermaLink="false">9822c7acc4966d2b9accc5be9e6e109039827392</guid>
+<description>By Lanni Bu, Xiulin Yang, Christian Clark, A. Warstadt, E. Wilcox. . (Met: Ethan Gotlieb Wilcox) arXiv:2608.23818</description>
+<pw:authors>Lanni Bu, Xiulin Yang, Christian Clark, A. Warstadt, E. Wilcox</pw:authors>
+<pw:met>Ethan Gotlieb Wilcox</pw:met>
+<pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.23818</pw:arxiv>
+<pw:date>2026-08-24</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>SelFusion: Self-distillation for Diffusion Language Models</title>
 <link>https://www.semanticscholar.org/paper/4d4f7f1c85d29c2bbe16abb0eb6a5a42be296c6d</link>
 <guid isPermaLink="false">4d4f7f1c85d29c2bbe16abb0eb6a5a42be296c6d</guid>
@@ -1262,9 +1276,9 @@
 <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>RecurrentGPT: Expressive Depth through Recurrent Modulation in Transformers</title>
-<link>https://www.semanticscholar.org/paper/c06c66bbe7332fe3063a77cb4b68a8924ed39d96</link>
-<guid isPermaLink="false">c06c66bbe7332fe3063a77cb4b68a8924ed39d96</guid>
+<title>Gated Recurrent Transformers: Expressive Depth through Recurrent Modulation in Transformers</title>
+<link>https://www.semanticscholar.org/paper/c03a778e0990fb4d29374f667023896b97a03cde</link>
+<guid isPermaLink="false">c03a778e0990fb4d29374f667023896b97a03cde</guid>
 <description>By Amr Hegazy, Amr Alanwar, Mostafa Elhoushi. . (Met: Amr Hegazy) arXiv:2608.15062</description>
 <pw:authors>Amr Hegazy, Amr Alanwar, Mostafa Elhoushi</pw:authors>
 <pw:met>Amr Hegazy</pw:met>
@@ -10533,8 +10547,8 @@
 <title>Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation</title>
 <link>https://www.semanticscholar.org/paper/9459e4f6d573b3dc78bce8aa02870b0cabca1a07</link>
 <guid isPermaLink="false">9459e4f6d573b3dc78bce8aa02870b0cabca1a07</guid>
-<description>By Israfel Salazar, Manuel Fern'andez Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.. arXiv.org. (Met: Marzieh Fadaee, María Grandury, Sara Hooker) arXiv:2504.07072</description>
-<pw:authors>Israfel Salazar, Manuel Fern'andez Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.</pw:authors>
+<description>By Israfel Salazar, M. F. Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.. arXiv.org. (Met: Marzieh Fadaee, María Grandury, Sara Hooker) arXiv:2504.07072</description>
+<pw:authors>Israfel Salazar, M. F. Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.</pw:authors>
 <pw:met>Marzieh Fadaee, María Grandury, Sara Hooker</pw:met>
 <pw:relationships>Marzieh Fadaee=following|María Grandury=following|Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -15036,34 +15050,6 @@
 <pw:date>2024-08-27</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Claim Verification in the Age of Large Language Models: A Survey</title>
-<link>https://www.semanticscholar.org/paper/7c689e168a1b07f8c2cc320f88e0fc89ef1ac73d</link>
-<guid isPermaLink="false">7c689e168a1b07f8c2cc320f88e0fc89ef1ac73d</guid>
-<description>By A. Dmonte, Roland Oruche, Marcos Zampieri, Prasad Calyam, Isabelle Augenstein. Annual Meeting of the Association for Computational Linguistics. (Met: Isabelle Augenstein) arXiv:2408.14317</description>
-<pw:authors>A. Dmonte, Roland Oruche, Marcos Zampieri, Prasad Calyam, Isabelle Augenstein</pw:authors>
-<pw:met>Isabelle Augenstein</pw:met>
-<pw:relationships>Isabelle Augenstein=following</pw:relationships>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2408.14317</pw:arxiv>
-<pw:date>2024-08-26</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Crowd-Calibrator: Can Annotator Disagreement Inform Calibration in Subjective Tasks?</title>
-<link>https://www.semanticscholar.org/paper/82af358d2d17feb4f28187c73e170b3167192b59</link>
-<guid isPermaLink="false">82af358d2d17feb4f28187c73e170b3167192b59</guid>
-<description>By Urja Khurana, Eric T. Nalisnick, Antske Fokkens, Swabha Swayamdipta. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2408.14141</description>
-<pw:authors>Urja Khurana, Eric T. Nalisnick, Antske Fokkens, Swabha Swayamdipta</pw:authors>
-<pw:met>Swabha Swayamdipta</pw:met>
-<pw:relationships>Swabha Swayamdipta=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.14141</pw:arxiv>
-<pw:date>2024-08-26</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>MedDec: A Dataset for Extracting Medical Decisions from Discharge Summaries</title>
