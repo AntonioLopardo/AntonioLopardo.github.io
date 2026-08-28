@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 27 Aug 2026 04:07:36 +0000</lastBuildDate>
+<lastBuildDate>Fri, 28 Aug 2026 04:14:22 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1178,6 +1178,34 @@
 <pw:year></pw:year>
 </item>
 <item>
+<title>Skill Issue: Are Skills Language-Invariant in LLMs?</title>
+<link>https://www.semanticscholar.org/paper/11f3586b396c0887a5801e968c73f2dd3079b43d</link>
+<guid isPermaLink="false">11f3586b396c0887a5801e968c73f2dd3079b43d</guid>
+<description>By Bobby Cheng, Adam Gaber, Zheng-Yuan Liu, Catherine Arnett, Omer Goldman, Cheston Tan, Leshem Choshen. . (Met: Catherine Arnett, Leshem Choshen) arXiv:2608.25832</description>
+<pw:authors>Bobby Cheng, Adam Gaber, Zheng-Yuan Liu, Catherine Arnett, Omer Goldman, Cheston Tan, Leshem Choshen</pw:authors>
+<pw:met>Catherine Arnett, Leshem Choshen</pw:met>
+<pw:relationships>Catherine Arnett=met|Leshem Choshen=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.25832</pw:arxiv>
+<pw:date>2026-08-26</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Apples to Apples? Towards Comparable Crosslingual Language Model Evaluation</title>
+<link>https://www.semanticscholar.org/paper/3927e82c059f8285b8e0413c0a69ae2e5a538bdb</link>
+<guid isPermaLink="false">3927e82c059f8285b8e0413c0a69ae2e5a538bdb</guid>
+<description>By Xiulin Yang, Ethan Wilcox, Catherine Arnett. . (Met: Catherine Arnett, Ethan Gotlieb Wilcox) arXiv:2608.25089</description>
+<pw:authors>Xiulin Yang, Ethan Wilcox, Catherine Arnett</pw:authors>
+<pw:met>Catherine Arnett, Ethan Gotlieb Wilcox</pw:met>
+<pw:relationships>Catherine Arnett=met|Ethan Gotlieb Wilcox=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.25089</pw:arxiv>
+<pw:date>2026-08-25</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Beyond Static and Linear: What Attention Constraints Best Fit Human Reading Times?</title>
 <link>https://www.semanticscholar.org/paper/9822c7acc4966d2b9accc5be9e6e109039827392</link>
 <guid isPermaLink="false">9822c7acc4966d2b9accc5be9e6e109039827392</guid>
@@ -1276,7 +1304,7 @@
 <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Gated Recurrent Transformers: Expressive Depth through Recurrent Modulation in Transformers</title>
+<title>Gated Recurrent Transformers: Expressive Depth through Recurrent Modulation</title>
 <link>https://www.semanticscholar.org/paper/c03a778e0990fb4d29374f667023896b97a03cde</link>
 <guid isPermaLink="false">c03a778e0990fb4d29374f667023896b97a03cde</guid>
 <description>By Amr Hegazy, Amr Alanwar, Mostafa Elhoushi. . (Met: Amr Hegazy) arXiv:2608.15062</description>
@@ -2469,8 +2497,8 @@
 <title>Language Models Learn Constructional Semantics, Not To Mention Syntax: Investigating LM Understanding of Paired-Focus Constructions</title>
 <link>https://www.semanticscholar.org/paper/93abdbd94d08fe75339aa06a83cbd72766f413e4</link>
 <guid isPermaLink="false">93abdbd94d08fe75339aa06a83cbd72766f413e4</guid>
-<description>By Wesley Scivetti, E. Wilcox, Nathan Schneider, Kanishka Misra, Leonie Weissweiler. Conference on Computational Natural Language Learning. (Met: Ethan Gotlieb Wilcox) arXiv:2605.31586</description>
-<pw:authors>Wesley Scivetti, E. Wilcox, Nathan Schneider, Kanishka Misra, Leonie Weissweiler</pw:authors>
+<description>By Wesley Scivetti, Ethan Wilcox, Nathan Schneider, Kanishka Misra, Leonie Weissweiler. Conference on Computational Natural Language Learning. (Met: Ethan Gotlieb Wilcox) arXiv:2605.31586</description>
+<pw:authors>Wesley Scivetti, Ethan Wilcox, Nathan Schneider, Kanishka Misra, Leonie Weissweiler</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Conference on Computational Natural Language Learning</pw:venue>
@@ -2660,20 +2688,6 @@
 <pw:date>2026-05-22</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>The efficiency-gain illusion: People underestimate the rate of AI use and overestimate its benefits on simple tasks</title>
-<link>https://www.semanticscholar.org/paper/0e3f0367e8cefb00cb2eb1b1cc4e1c06a5e47225</link>
-<guid isPermaLink="false">0e3f0367e8cefb00cb2eb1b1cc4e1c06a5e47225</guid>
-<description>By Sunny Yu, Myra Cheng, Ahmad Jabbar, Ilia Sucholutsky, Katherine M. Collins, Dan Jurafsky, Robert D. Hawkins. arXiv.org. (Met: Dan Jurafsky) arXiv:2605.22687</description>
-<pw:authors>Sunny Yu, Myra Cheng, Ahmad Jabbar, Ilia Sucholutsky, Katherine M. Collins, Dan Jurafsky, Robert D. Hawkins</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2605.22687</pw:arxiv>
-<pw:date>2026-05-21</pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 21 May 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Evaluating Commercial AI Chatbots as News Intermediaries</title>
@@ -3701,8 +3715,8 @@
 <title>Comparing the Humanness of Machine-Generated and Human-Authored Text</title>
 <link>https://www.semanticscholar.org/paper/64d2fc3c99bea3eb19ea419cc6c8e5d08032b662</link>
 <guid isPermaLink="false">64d2fc3c99bea3eb19ea419cc6c8e5d08032b662</guid>
-<description>By Autumn Toney, Leticia Bode, T. Ventura, E. Wilcox, Lisa Singh. ACM Computing Surveys. (Met: Ethan Gotlieb Wilcox)</description>
-<pw:authors>Autumn Toney, Leticia Bode, T. Ventura, E. Wilcox, Lisa Singh</pw:authors>
+<description>By Autumn Toney, Leticia Bode, T. Ventura, Ethan Wilcox, Lisa Singh. ACM Computing Surveys. (Met: Ethan Gotlieb Wilcox)</description>
+<pw:authors>Autumn Toney, Leticia Bode, T. Ventura, Ethan Wilcox, Lisa Singh</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>ACM Computing Surveys</pw:venue>
@@ -4653,8 +4667,8 @@
 <title>Information-Theoretic Storage Cost in Sentence Comprehension</title>
 <link>https://www.semanticscholar.org/paper/6659a935090ca0d0b77b41515d871f9cb63cf00e</link>
 <guid isPermaLink="false">6659a935090ca0d0b77b41515d871f9cb63cf00e</guid>
-<description>By Kohei Kajikawa, Shinnosuke Isono, E. Wilcox. Conference on Computational Natural Language Learning. (Met: Ethan Gotlieb Wilcox) arXiv:2602.18217</description>
-<pw:authors>Kohei Kajikawa, Shinnosuke Isono, E. Wilcox</pw:authors>
+<description>By Kohei Kajikawa, Shinnosuke Isono, Ethan Wilcox. Conference on Computational Natural Language Learning. (Met: Ethan Gotlieb Wilcox) arXiv:2602.18217</description>
+<pw:authors>Kohei Kajikawa, Shinnosuke Isono, Ethan Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Conference on Computational Natural Language Learning</pw:venue>
@@ -4919,8 +4933,8 @@
 <title>A Unified Assessment of the Poverty of the Stimulus Argument for Neural Language Models</title>
 <link>https://www.semanticscholar.org/paper/0ad9e9854135047b8f4ff6216c7ff2cdb7f20df8</link>
 <guid isPermaLink="false">0ad9e9854135047b8f4ff6216c7ff2cdb7f20df8</guid>
-<description>By Xiulin Yang, A. Bisazza, Nathan Schneider, E. Wilcox. arXiv.org. (Met: Ethan Gotlieb Wilcox) arXiv:2602.09992</description>
-<pw:authors>Xiulin Yang, A. Bisazza, Nathan Schneider, E. Wilcox</pw:authors>
+<description>By Xiulin Yang, A. Bisazza, Nathan Schneider, Ethan Wilcox. arXiv.org. (Met: Ethan Gotlieb Wilcox) arXiv:2602.09992</description>
+<pw:authors>Xiulin Yang, A. Bisazza, Nathan Schneider, Ethan Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5199,8 +5213,8 @@
 <title>Function Words as Statistical Cues for Language Learning</title>
 <link>https://www.semanticscholar.org/paper/ff4ab3285d29e8031b4bc783d0f834528c3275f2</link>
 <guid isPermaLink="false">ff4ab3285d29e8031b4bc783d0f834528c3275f2</guid>
-<description>By Xiulin Yang, Heidi R. Getz, E. Wilcox. Annual Meeting of the Association for Computational Linguistics. (Met: Ethan Gotlieb Wilcox) arXiv:2601.21191</description>
-<pw:authors>Xiulin Yang, Heidi R. Getz, E. Wilcox</pw:authors>
+<description>By Xiulin Yang, Heidi R. Getz, Ethan Wilcox. Annual Meeting of the Association for Computational Linguistics. (Met: Ethan Gotlieb Wilcox) arXiv:2601.21191</description>
+<pw:authors>Xiulin Yang, Heidi R. Getz, Ethan Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -5736,6 +5750,20 @@
 <pw:met>Caglar Gulcehre, María Grandury</pw:met>
 <pw:relationships>Caglar Gulcehre=following|María Grandury=following</pw:relationships>
 <pw:venue>International Workshop on Spoken Language Translation</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>L1 Influence in L2 Language Models: A Human-centric Approach</title>
+<link>https://www.semanticscholar.org/paper/5cc370523e35ccf9198869b5bdeea9ccf2165238</link>
+<guid isPermaLink="false">5cc370523e35ccf9198869b5bdeea9ccf2165238</guid>
+<description>By Laura Barbenel, Lily Goulder, A. O'Driscoll, Suchir Salhan, Catherine Arnett, Andrew Caines, Paula Buttery. Proceedings of the 1st Workshop on Computational Developmental Linguistics (CDL). (Met: Catherine Arnett)</description>
+<pw:authors>Laura Barbenel, Lily Goulder, A. O'Driscoll, Suchir Salhan, Catherine Arnett, Andrew Caines, Paula Buttery</pw:authors>
+<pw:met>Catherine Arnett</pw:met>
+<pw:relationships>Catherine Arnett=met</pw:relationships>
+<pw:venue>Proceedings of the 1st Workshop on Computational Developmental Linguistics (CDL)</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2026</pw:year>
@@ -6557,8 +6585,8 @@
 <title>Predicting the Emergence of Induction Heads in Language Model Pretraining</title>
 <link>https://www.semanticscholar.org/paper/7c377684b9a74aebc64d29264fcf9daffe0d6143</link>
 <guid isPermaLink="false">7c377684b9a74aebc64d29264fcf9daffe0d6143</guid>
-<description>By Tatsuya Aoyama, E. Wilcox, N. Schneider. . (Met: Ethan Gotlieb Wilcox) arXiv:2511.16893</description>
-<pw:authors>Tatsuya Aoyama, E. Wilcox, N. Schneider</pw:authors>
+<description>By Tatsuya Aoyama, Ethan Wilcox, N. Schneider. . (Met: Ethan Gotlieb Wilcox) arXiv:2511.16893</description>
+<pw:authors>Tatsuya Aoyama, Ethan Wilcox, N. Schneider</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -6781,8 +6809,8 @@
 <title>Accumulating Context Changes the Beliefs of Language Models</title>
 <link>https://www.semanticscholar.org/paper/84d184526b7dfc974b79a66968d65fed5fdcf700</link>
 <guid isPermaLink="false">84d184526b7dfc974b79a66968d65fed5fdcf700</guid>
-<description>By Jiayi Geng, Howard Chen, R. Liu, Manoel Horta Ribeiro, Robb Willer, Graham Neubig, Thomas L. Griffiths. arXiv.org. (Met: Graham Neubig) arXiv:2511.01805</description>
-<pw:authors>Jiayi Geng, Howard Chen, R. Liu, Manoel Horta Ribeiro, Robb Willer, Graham Neubig, Thomas L. Griffiths</pw:authors>
+<description>By Jia-Yi Geng, Howard Chen, R. Liu, Manoel Horta Ribeiro, Robb Willer, Graham Neubig, Thomas L. Griffiths. arXiv.org. (Met: Graham Neubig) arXiv:2511.01805</description>
+<pw:authors>Jia-Yi Geng, Howard Chen, R. Liu, Manoel Horta Ribeiro, Robb Willer, Graham Neubig, Thomas L. Griffiths</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6879,8 +6907,8 @@
 <title>Using MoTR to Probe Agreement Processing in Russian</title>
 <link>https://www.semanticscholar.org/paper/c988aa5644788386e48300a251cf4ba022f69e33</link>
 <guid isPermaLink="false">c988aa5644788386e48300a251cf4ba022f69e33</guid>
-<description>By Metehan Oğuz, Cui Ding, E. Wilcox, Zuzanna Fuchs. Open Mind. (Met: Ethan Gotlieb Wilcox)</description>
-<pw:authors>Metehan Oğuz, Cui Ding, E. Wilcox, Zuzanna Fuchs</pw:authors>
+<description>By Metehan Oğuz, Cui Ding, Ethan Wilcox, Zuzanna Fuchs. Open Mind. (Met: Ethan Gotlieb Wilcox)</description>
+<pw:authors>Metehan Oğuz, Cui Ding, Ethan Wilcox, Zuzanna Fuchs</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Open Mind</pw:venue>
@@ -9427,8 +9455,8 @@
 <title>Unpacking Let Alone: Human-Scale Models Generalize to a Rare Construction in Form but not Meaning</title>
 <link>https://www.semanticscholar.org/paper/13eeae6c7e5a9a08629f8e0ddbe0703330b2279e</link>
 <guid isPermaLink="false">13eeae6c7e5a9a08629f8e0ddbe0703330b2279e</guid>
-<description>By Wesley Scivetti, Tatsuya Aoyama, E. Wilcox, Nathan Schneider. Conference on Empirical Methods in Natural Language Processing. (Met: Ethan Gotlieb Wilcox) arXiv:2506.04408</description>
-<pw:authors>Wesley Scivetti, Tatsuya Aoyama, E. Wilcox, Nathan Schneider</pw:authors>
+<description>By Wesley Scivetti, Tatsuya Aoyama, Ethan Wilcox, Nathan Schneider. Conference on Empirical Methods in Natural Language Processing. (Met: Ethan Gotlieb Wilcox) arXiv:2506.04408</description>
+<pw:authors>Wesley Scivetti, Tatsuya Aoyama, Ethan Wilcox, Nathan Schneider</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -10225,8 +10253,8 @@
 <title>The Leaderboard Illusion</title>
 <link>https://www.semanticscholar.org/paper/dc3b7ca920f25223101ba36227a894d37c238df1</link>
 <guid isPermaLink="false">dc3b7ca920f25223101ba36227a894d37c238df1</guid>
-<description>By Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yuntian Deng, Shayne Longpre, Noah Smith et al.. Neural Information Processing Systems. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2504.20879</description>
-<pw:authors>Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yuntian Deng, Shayne Longpre, Noah Smith et al.</pw:authors>
+<description>By Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yun-Tian Deng, Shayne Longpre, Noah Smith et al.. Neural Information Processing Systems. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2504.20879</description>
+<pw:authors>Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yun-Tian Deng, Shayne Longpre, Noah Smith et al.</pw:authors>
 <pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>Neural Information Processing Systems</pw:venue>
@@ -11261,8 +11289,8 @@
 <title>Anything Goes? A Crosslinguistic Study of (Im)possible Language Learning in LMs</title>
 <link>https://www.semanticscholar.org/paper/e9e5abc4f6c5f47d38aa02dfd3046f2fed703d4e</link>
 <guid isPermaLink="false">e9e5abc4f6c5f47d38aa02dfd3046f2fed703d4e</guid>
-<description>By Xiulin Yang, Tatsuya Aoyama, Yuekun Yao, E. Wilcox. Annual Meeting of the Association for Computational Linguistics. (Met: Ethan Gotlieb Wilcox) arXiv:2502.18795</description>
-<pw:authors>Xiulin Yang, Tatsuya Aoyama, Yuekun Yao, E. Wilcox</pw:authors>
+<description>By Xiulin Yang, Tatsuya Aoyama, Yuekun Yao, Ethan Wilcox. Annual Meeting of the Association for Computational Linguistics. (Met: Ethan Gotlieb Wilcox) arXiv:2502.18795</description>
+<pw:authors>Xiulin Yang, Tatsuya Aoyama, Yuekun Yao, Ethan Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -11317,8 +11345,8 @@
 <title>Language Models Grow Less Humanlike beyond Phase Transition</title>
 <link>https://www.semanticscholar.org/paper/a762bcd85b96ce422da9e4eb597fc220d1bf8c61</link>
 <guid isPermaLink="false">a762bcd85b96ce422da9e4eb597fc220d1bf8c61</guid>
-<description>By Tatsuya Aoyama, E. Wilcox. Annual Meeting of the Association for Computational Linguistics. (Met: Ethan Gotlieb Wilcox) arXiv:2502.18802</description>
-<pw:authors>Tatsuya Aoyama, E. Wilcox</pw:authors>
+<description>By Tatsuya Aoyama, Ethan Wilcox. Annual Meeting of the Association for Computational Linguistics. (Met: Ethan Gotlieb Wilcox) arXiv:2502.18802</description>
+<pw:authors>Tatsuya Aoyama, Ethan Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -15024,34 +15052,6 @@
 <pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Can Unconfident LLM Annotations Be Used for Confident Conclusions?</title>
-<link>https://www.semanticscholar.org/paper/1067fe60e8884459893c0ff7a4d89241c214cfa1</link>
-<guid isPermaLink="false">1067fe60e8884459893c0ff7a4d89241c214cfa1</guid>
-<description>By Kristina Gligori'c, Tijana Zrnic, Cinoo Lee, Emmanuel J. Candès, Dan Jurafsky. North American Chapter of the Association for Computational Linguistics. (Met: Dan Jurafsky) arXiv:2408.15204</description>
-<pw:authors>Kristina Gligori'c, Tijana Zrnic, Cinoo Lee, Emmanuel J. Candès, Dan Jurafsky</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>North American Chapter of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2408.15204</pw:arxiv>
-<pw:date>2024-08-27</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Multilingual Arbitrage: Optimizing Data Pools to Accelerate Multilingual Progress</title>
-<link>https://www.semanticscholar.org/paper/3c6c150b40394b01b1a91ed9e4b848478824a849</link>
-<guid isPermaLink="false">3c6c150b40394b01b1a91ed9e4b848478824a849</guid>
-<description>By Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermi̇ş, Sara Hooker. arXiv.org. (Met: Sara Hooker) arXiv:2408.14960</description>
-<pw:authors>Ayomide Odumakinde, Daniel D'souza, Pat Verga, B. Ermi̇ş, Sara Hooker</pw:authors>
-<pw:met>Sara Hooker</pw:met>
-<pw:relationships>Sara Hooker=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.14960</pw:arxiv>
-<pw:date>2024-08-27</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>MedDec: A Dataset for Extracting Medical Decisions from Discharge Summaries</title>
 <link>https://www.semanticscholar.org/paper/270905b8b62e7056ee0f2495bd455ec95879f353</link>
 <guid isPermaLink="false">270905b8b62e7056ee0f2495bd455ec95879f353</guid>
@@ -18569,8 +18569,8 @@
 <title>Targeted Syntactic Evaluations with Pseudo-languages</title>
 <link>https://www.semanticscholar.org/paper/802ff8dbb195d03eb0935e80677594aaa3176c66</link>
 <guid isPermaLink="false">802ff8dbb195d03eb0935e80677594aaa3176c66</guid>
-<description>By NP Vnon., Alfred V. Aho, Jeffrey D Ullman. 1972, The Theory, Aixiu An, Peng Qian, E. Wilcox, S. Bhattamishra, Kabir Ahuja, Navin Goyal et al.. . (Met: Ethan Gotlieb Wilcox)</description>
-<pw:authors>NP Vnon., Alfred V. Aho, Jeffrey D Ullman. 1972, The Theory, Aixiu An, Peng Qian, E. Wilcox, S. Bhattamishra, Kabir Ahuja, Navin Goyal et al.</pw:authors>
+<description>By NP Vnon., Alfred V. Aho, Jeffrey D Ullman. 1972, The Theory, Aixiu An, Peng Qian, Ethan Wilcox, S. Bhattamishra, Kabir Ahuja, Navin Goyal et al.. . (Met: Ethan Gotlieb Wilcox)</description>
+<pw:authors>NP Vnon., Alfred V. Aho, Jeffrey D Ullman. 1972, The Theory, Aixiu An, Peng Qian, Ethan Wilcox, S. Bhattamishra, Kabir Ahuja, Navin Goyal et al.</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following</pw:relationships>
 <pw:venue></pw:venue>
