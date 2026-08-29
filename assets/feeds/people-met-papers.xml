@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 28 Aug 2026 04:14:22 +0000</lastBuildDate>
+<lastBuildDate>Sat, 29 Aug 2026 04:07:24 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -765,8 +765,8 @@
 <title>Analyzing the Sample Complexity of Model-Free Opponent Shaping</title>
 <link>https://www.semanticscholar.org/paper/5d6bc5d825df3a05ea9a333da21dab3afed60d3f</link>
 <guid isPermaLink="false">5d6bc5d825df3a05ea9a333da21dab3afed60d3f</guid>
-<description>By Kitty Fung, Qizhen Zhang, Chris Lu, Timon Willi, Jakob Foerster. . (Met: Jakob Foerster)</description>
-<pw:authors>Kitty Fung, Qizhen Zhang, Chris Lu, Timon Willi, Jakob Foerster</pw:authors>
+<description>By Kitty Fung, Qizhen Zhang, Chris Lu, Timon Willi, Jakob N. Foerster. . (Met: Jakob Foerster)</description>
+<pw:authors>Kitty Fung, Qizhen Zhang, Chris Lu, Timon Willi, Jakob N. Foerster</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -1176,6 +1176,48 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Cross-Lingual Alignment Without Joint Training: Do Monolingual Language Models Converge on Universal Representations?</title>
+<link>https://www.semanticscholar.org/paper/4427c927122896ff39b1bf55c573ce2f6fb4318d</link>
+<guid isPermaLink="false">4427c927122896ff39b1bf55c573ce2f6fb4318d</guid>
+<description>By Ej Zhou, Suchir Salhan, Catherine Arnett, Anna Korhonen. . (Met: Catherine Arnett) arXiv:2608.27115</description>
+<pw:authors>Ej Zhou, Suchir Salhan, Catherine Arnett, Anna Korhonen</pw:authors>
+<pw:met>Catherine Arnett</pw:met>
+<pw:relationships>Catherine Arnett=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.27115</pw:arxiv>
+<pw:date>2026-08-27</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Stochastic Estimation of Transduced Language Models</title>
+<link>https://www.semanticscholar.org/paper/54b89cd1fcb9453173bee4ccc25757eef9d4fa75</link>
+<guid isPermaLink="false">54b89cd1fcb9453173bee4ccc25757eef9d4fa75</guid>
+<description>By Vésteinn Snæbjarnarson, Samuel Kiegeland, Manuel de Prada Corral, Ryan Cotterell, Tim Vieira. . (Met: Samuel Kiegeland, Tim Vieira) arXiv:2608.27428</description>
+<pw:authors>Vésteinn Snæbjarnarson, Samuel Kiegeland, Manuel de Prada Corral, Ryan Cotterell, Tim Vieira</pw:authors>
+<pw:met>Samuel Kiegeland, Tim Vieira</pw:met>
+<pw:relationships>Samuel Kiegeland=met|Tim Vieira=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.27428</pw:arxiv>
+<pw:date>2026-08-27</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>LeVJEPA: Efficient&amp;Scalable Video Pretraining without the Heuristics</title>
+<link>https://www.semanticscholar.org/paper/437cb869d42d536ad1b2f35399c99ab79ec65d5a</link>
+<guid isPermaLink="false">437cb869d42d536ad1b2f35399c99ab79ec65d5a</guid>
+<description>By Lukas Kuhn, Lucas Maes, Giuseppe Serra, Quentin Le Lidec, Yann LeCun, Randall Balestriero, Florian Buettner. . (Met: Yann LeCun) arXiv:2608.27395</description>
+<pw:authors>Lukas Kuhn, Lucas Maes, Giuseppe Serra, Quentin Le Lidec, Yann LeCun, Randall Balestriero, Florian Buettner</pw:authors>
+<pw:met>Yann LeCun</pw:met>
+<pw:relationships>Yann LeCun=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2608.27395</pw:arxiv>
+<pw:date>2026-08-27</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Skill Issue: Are Skills Language-Invariant in LLMs?</title>
@@ -1671,8 +1713,8 @@
 <title>Co-LMLM: Continuous-Query Limited Memory Language Models</title>
 <link>https://www.semanticscholar.org/paper/0cb5d368d2d39cbdd4056986074d7a9ef3d2395d</link>
 <guid isPermaLink="false">0cb5d368d2d39cbdd4056986074d7a9ef3d2395d</guid>
-<description>By Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi. . (Met: Nathan Godey) arXiv:2607.07707</description>
-<pw:authors>Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi</pw:authors>
+<description>By Yair Feldman, Lin-Xi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi. . (Met: Nathan Godey) arXiv:2607.07707</description>
+<pw:authors>Yair Feldman, Lin-Xi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:relationships>Nathan Godey=met</pw:relationships>
 <pw:venue></pw:venue>
@@ -1881,8 +1923,8 @@
 <title>OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks</title>
 <link>https://www.semanticscholar.org/paper/91522113ac6b81e4b6acdab8a8e612557d53449c</link>
 <guid isPermaLink="false">91522113ac6b81e4b6acdab8a8e612557d53449c</guid>
-<description>By Mengqi Yuan, Zilong Zhou, Xinzhuang Xiong, Weiming Wu, Jiayan Sun, Jiamin Song, Kaiqian Cui, Bowen Wang, Haoyuan Wu, Yitong Li et al.. arXiv.org. (Met: Yu Su) arXiv:2606.29537</description>
-<pw:authors>Mengqi Yuan, Zilong Zhou, Xinzhuang Xiong, Weiming Wu, Jiayan Sun, Jiamin Song, Kaiqian Cui, Bowen Wang, Haoyuan Wu, Yitong Li et al.</pw:authors>
+<description>By Mengqi Yuan, Zilong Zhou, Xinzhuang Xiong, Weiming Wu, Jia-Yan Sun, Jiamin Song, Kaiqian Cui, Bowen Wang, Haoyuan Wu, Yitong Li et al.. arXiv.org. (Met: Yu Su) arXiv:2606.29537</description>
+<pw:authors>Mengqi Yuan, Zilong Zhou, Xinzhuang Xiong, Weiming Wu, Jia-Yan Sun, Jiamin Song, Kaiqian Cui, Bowen Wang, Haoyuan Wu, Yitong Li et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -4345,8 +4387,8 @@
 <title>Towards end-to-end automation of AI research</title>
 <link>https://www.semanticscholar.org/paper/b73e2b7ffbb00b03b795dc8b5e732a8859470249</link>
 <guid isPermaLink="false">b73e2b7ffbb00b03b795dc8b5e732a8859470249</guid>
-<description>By Chris Lu, Cong Lu, R. Lange, Yutaro Yamada, Shengran Hu, Jakob Foerster, David Ha, Jeff Clune. Nature. (Met: Jakob Foerster) arXiv:2606.15497</description>
-<pw:authors>Chris Lu, Cong Lu, R. Lange, Yutaro Yamada, Shengran Hu, Jakob Foerster, David Ha, Jeff Clune</pw:authors>
+<description>By Chris Lu, Cong Lu, R. Lange, Yutaro Yamada, Shengran Hu, Jakob N. Foerster, David Ha, Jeff Clune. Nature. (Met: Jakob Foerster) arXiv:2606.15497</description>
+<pw:authors>Chris Lu, Cong Lu, R. Lange, Yutaro Yamada, Shengran Hu, Jakob N. Foerster, David Ha, Jeff Clune</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue>Nature</pw:venue>
@@ -9679,8 +9721,8 @@
 <title>RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments</title>
 <link>https://www.semanticscholar.org/paper/39361a6a3d86f8831de8537965ec4f9f65ea31f2</link>
 <guid isPermaLink="false">39361a6a3d86f8831de8537965ec4f9f65ea31f2</guid>
-<description>By Zeyi Liao, Jaylen Jones, Linxi Jiang, Eric Fosler-Lussier, Yu Su, Zhiqiang Lin, Huan Sun. arXiv.org. (Met: Yu Su) arXiv:2505.21936</description>
-<pw:authors>Zeyi Liao, Jaylen Jones, Linxi Jiang, Eric Fosler-Lussier, Yu Su, Zhiqiang Lin, Huan Sun</pw:authors>
+<description>By Zeyi Liao, Jaylen Jones, Lin-Xi Jiang, Eric Fosler-Lussier, Yu Su, Zhiqiang Lin, Huan Sun. arXiv.org. (Met: Yu Su) arXiv:2505.21936</description>
+<pw:authors>Zeyi Liao, Jaylen Jones, Lin-Xi Jiang, Eric Fosler-Lussier, Yu Su, Zhiqiang Lin, Huan Sun</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -10519,8 +10561,8 @@
 <title>The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search</title>
 <link>https://www.semanticscholar.org/paper/39983a80f111f7f6e793f02c5725a14bca76b32d</link>
 <guid isPermaLink="false">39983a80f111f7f6e793f02c5725a14bca76b32d</guid>
-<description>By Yutaro Yamada, R. Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob Foerster, Jeff Clune, David Ha. arXiv.org. (Met: Jakob Foerster) arXiv:2504.08066</description>
-<pw:authors>Yutaro Yamada, R. Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob Foerster, Jeff Clune, David Ha</pw:authors>
+<description>By Yutaro Yamada, R. Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob N. Foerster, Jeff Clune, David Ha. arXiv.org. (Met: Jakob Foerster) arXiv:2504.08066</description>
+<pw:authors>Yutaro Yamada, R. Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob N. Foerster, Jeff Clune, David Ha</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -15008,48 +15050,6 @@
 <pw:date>2024-09-01</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>AI generates covertly racist decisions about people based on their dialect</title>
-<link>https://www.semanticscholar.org/paper/b3bbe4c88fa851d928d27d14df07f1a1c76f1948</link>
-<guid isPermaLink="false">b3bbe4c88fa851d928d27d14df07f1a1c76f1948</guid>
-<description>By Valentin Hofmann, Pratyusha Kalluri, Dan Jurafsky, Sharese King. Nature. (Met: Dan Jurafsky)</description>
-<pw:authors>Valentin Hofmann, Pratyusha Kalluri, Dan Jurafsky, Sharese King</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>Nature</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-08-28</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Nexus: Specialization meets Adaptability for Efficiently Training Mixture of Experts</title>
-<link>https://www.semanticscholar.org/paper/c814eb8684f2ce07a4f21a7ed4c06c75d63fea23</link>
-<guid isPermaLink="false">c814eb8684f2ce07a4f21a7ed4c06c75d63fea23</guid>
-<description>By Nikolas Gritsch, Qizhen Zhang, Acyr F. Locatelli, Sara Hooker, A. Ustun. arXiv.org. (Met: Sara Hooker) arXiv:2408.15901</description>
-<pw:authors>Nikolas Gritsch, Qizhen Zhang, Acyr F. Locatelli, Sara Hooker, A. Ustun</pw:authors>
-<pw:met>Sara Hooker</pw:met>
-<pw:relationships>Sara Hooker=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2408.15901</pw:arxiv>
-<pw:date>2024-08-28</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>VLM4Bio: A Benchmark Dataset to Evaluate Pretrained Vision-Language Models for Trait Discovery from Biological Images</title>
-<link>https://www.semanticscholar.org/paper/06d48c241db2e383e9c3d0af2d06f2b392051d1d</link>
-<guid isPermaLink="false">06d48c241db2e383e9c3d0af2d06f2b392051d1d</guid>
-<description>By M. Maruf, Arka Daw, Kazi Sajeed Mehrab, Harish Babu Manogaran, Abhilash Neog, Medha Sawhney, Mridul Khurana, J. Balhoff, Yasin Bakiş, B. Altıntaş et al.. Neural Information Processing Systems. (Met: Yu Su) arXiv:2408.16176</description>
-<pw:authors>M. Maruf, Arka Daw, Kazi Sajeed Mehrab, Harish Babu Manogaran, Abhilash Neog, Medha Sawhney, Mridul Khurana, J. Balhoff, Yasin Bakiş, B. Altıntaş et al.</pw:authors>
-<pw:met>Yu Su</pw:met>
-<pw:relationships>Yu Su=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
-<pw:arxiv>2408.16176</pw:arxiv>
-<pw:date>2024-08-28</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>MedDec: A Dataset for Extracting Medical Decisions from Discharge Summaries</title>
