@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sat, 29 Aug 2026 04:07:24 +0000</lastBuildDate>
+<lastBuildDate>Sun, 30 Aug 2026 04:07:06 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1223,8 +1223,8 @@
 <title>Skill Issue: Are Skills Language-Invariant in LLMs?</title>
 <link>https://www.semanticscholar.org/paper/11f3586b396c0887a5801e968c73f2dd3079b43d</link>
 <guid isPermaLink="false">11f3586b396c0887a5801e968c73f2dd3079b43d</guid>
-<description>By Bobby Cheng, Adam Gaber, Zheng-Yuan Liu, Catherine Arnett, Omer Goldman, Cheston Tan, Leshem Choshen. . (Met: Catherine Arnett, Leshem Choshen) arXiv:2608.25832</description>
-<pw:authors>Bobby Cheng, Adam Gaber, Zheng-Yuan Liu, Catherine Arnett, Omer Goldman, Cheston Tan, Leshem Choshen</pw:authors>
+<description>By Bobby Cheng, Adam Gaber, Zhengzhe Liu, Catherine Arnett, Omer Goldman, Cheston Tan, Leshem Choshen. . (Met: Catherine Arnett, Leshem Choshen) arXiv:2608.25832</description>
+<pw:authors>Bobby Cheng, Adam Gaber, Zhengzhe Liu, Catherine Arnett, Omer Goldman, Cheston Tan, Leshem Choshen</pw:authors>
 <pw:met>Catherine Arnett, Leshem Choshen</pw:met>
 <pw:relationships>Catherine Arnett=met|Leshem Choshen=met</pw:relationships>
 <pw:venue></pw:venue>
@@ -2357,8 +2357,8 @@
 <title>Now You (Still) See Me: Detecting Evasive Steganographic Payloads in LLMs</title>
 <link>https://www.semanticscholar.org/paper/1f400aa2b4f24a7cb204208709af3b910ccf7f38</link>
 <guid isPermaLink="false">1f400aa2b4f24a7cb204208709af3b910ccf7f38</guid>
-<description>By Charles Westphal, T. Douglas, K. Navaie, Tiago Pimentel, F. Rosas. arXiv.org. (Met: Tiago Pimentel) arXiv:2606.09411</description>
-<pw:authors>Charles Westphal, T. Douglas, K. Navaie, Tiago Pimentel, F. Rosas</pw:authors>
+<description>By Charles Westphal, T. Douglas, K. Navaie, Tiago Pimentel, Fernando E. Rosas. arXiv.org. (Met: Tiago Pimentel) arXiv:2606.09411</description>
+<pw:authors>Charles Westphal, T. Douglas, K. Navaie, Tiago Pimentel, Fernando E. Rosas</pw:authors>
 <pw:met>Tiago Pimentel</pw:met>
 <pw:relationships>Tiago Pimentel=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5876,6 +5876,20 @@
 <pw:met>James A. Michaelov</pw:met>
 <pw:relationships>James A. Michaelov=met</pw:relationships>
 <pw:venue>Journal of Memory and Language</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Large Language Models as Distributional Baselines for Language Tasks</title>
+<link>https://www.semanticscholar.org/paper/67b5900953e4a5484664aac15cc7613dc7820c0a</link>
+<guid isPermaLink="false">67b5900953e4a5484664aac15cc7613dc7820c0a</guid>
+<description>By Sean Trott, James A. Michaelov, Cameron R. Jones, Tyler A. Chang, Benjamin K. Bergen. Open Mind. (Met: James A. Michaelov)</description>
+<pw:authors>Sean Trott, James A. Michaelov, Cameron R. Jones, Tyler A. Chang, Benjamin K. Bergen</pw:authors>
+<pw:met>James A. Michaelov</pw:met>
+<pw:relationships>James A. Michaelov=met</pw:relationships>
+<pw:venue>Open Mind</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2026</pw:year>
@@ -12563,8 +12577,8 @@
 <title>rrSDS 2.0: Incremental, Modular, Distributed, Multimodal Spoken Dialogue with Robotic Platforms</title>
 <link>https://www.semanticscholar.org/paper/4672c341acaa0653830304c7560633004d4540f5</link>
 <guid isPermaLink="false">4672c341acaa0653830304c7560633004d4540f5</guid>
-<description>By Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, Casey Kennington. SIGDIAL Conferences. (Met: Josue Torres-Fonseca)</description>
-<pw:authors>Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, Casey Kennington</pw:authors>
+<description>By Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, C. Kennington. SIGDIAL Conferences. (Met: Josue Torres-Fonseca)</description>
+<pw:authors>Anna Manaseryan, Porter Rigby, Brooke Matthews, Catherine Henry, Josue Torres-Fonseca, Ryan Whetten, Enoch Levandovsky, C. Kennington</pw:authors>
 <pw:met>Josue Torres-Fonseca</pw:met>
 <pw:relationships>Josue Torres-Fonseca=met</pw:relationships>
 <pw:venue>SIGDIAL Conferences</pw:venue>
@@ -15853,8 +15867,8 @@
 <title>Lossless and Near-Lossless Compression for Foundation Models</title>
 <link>https://www.semanticscholar.org/paper/af0d10afb526eb8e2418a1da796fe8d81a14a687</link>
 <guid isPermaLink="false">af0d10afb526eb8e2418a1da796fe8d81a14a687</guid>
-<description>By Moshik Hershcovitch, Leshem Choshen, Andrew Wood, Ilias Enmouri, Peter Chin, S. Sundararaman, Danny Harnik. arXiv.org. (Met: Leshem Choshen) arXiv:2404.15198</description>
-<pw:authors>Moshik Hershcovitch, Leshem Choshen, Andrew Wood, Ilias Enmouri, Peter Chin, S. Sundararaman, Danny Harnik</pw:authors>
+<description>By Moshe Hershcovitch, Leshem Choshen, Andrew Wood, Ilias Enmouri, Peter Chin, S. Sundararaman, Danny Harnik. arXiv.org. (Met: Leshem Choshen) arXiv:2404.15198</description>
+<pw:authors>Moshe Hershcovitch, Leshem Choshen, Andrew Wood, Ilias Enmouri, Peter Chin, S. Sundararaman, Danny Harnik</pw:authors>
 <pw:met>Leshem Choshen</pw:met>
 <pw:relationships>Leshem Choshen=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
