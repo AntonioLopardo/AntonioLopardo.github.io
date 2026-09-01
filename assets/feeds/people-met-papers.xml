@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Mon, 31 Aug 2026 04:06:44 +0000</lastBuildDate>
+<lastBuildDate>Tue, 01 Sep 2026 04:09:17 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -2945,8 +2945,8 @@
 <title>Crys-JEPA: Accelerating Crystal Discovery via Embedding Screening and Generative Refinement</title>
 <link>https://www.semanticscholar.org/paper/1692a95688453760a46c2f073574bf8a6c45173d</link>
 <guid isPermaLink="false">1692a95688453760a46c2f073574bf8a6c45173d</guid>
-<description>By Nian Liu, Nikita Kazeev, Stephen G Dale, Artem Maevskiy, Yuwei Zeng, Ryoji Kubo, Pengru Huang, T. Laurent, Yann LeCun, Kostya S. Novoselov et al.. arXiv.org. (Met: Yann LeCun) arXiv:2605.14759</description>
-<pw:authors>Nian Liu, Nikita Kazeev, Stephen G Dale, Artem Maevskiy, Yuwei Zeng, Ryoji Kubo, Pengru Huang, T. Laurent, Yann LeCun, Kostya S. Novoselov et al.</pw:authors>
+<description>By Nian Liu, Nikita Kazeev, Stephen G Dale, A. Maevskiy, Yuwei Zeng, Ryoji Kubo, Pengru Huang, T. Laurent, Yann LeCun, Kostya S. Novoselov et al.. arXiv.org. (Met: Yann LeCun) arXiv:2605.14759</description>
+<pw:authors>Nian Liu, Nikita Kazeev, Stephen G Dale, A. Maevskiy, Yuwei Zeng, Ryoji Kubo, Pengru Huang, T. Laurent, Yann LeCun, Kostya S. Novoselov et al.</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -4569,8 +4569,8 @@
 <title>Toward Automatic Filling of Case Report Forms: A Case Study on Data from an Italian Emergency Department</title>
 <link>https://www.semanticscholar.org/paper/397656a69f2ccddfcd3ecef09b3bf37f9a42dc3d</link>
 <guid isPermaLink="false">397656a69f2ccddfcd3ecef09b3bf37f9a42dc3d</guid>
-<description>By Gabriela Anna Kaczmarek, Pietro Ferrazzi, Lorenzo Porta, Vicky Rubini, Bernardo Magnini. arXiv.org. (Met: Pietro Ferrazzi) arXiv:2602.23062</description>
-<pw:authors>Gabriela Anna Kaczmarek, Pietro Ferrazzi, Lorenzo Porta, Vicky Rubini, Bernardo Magnini</pw:authors>
+<description>By G. Kaczmarek, Pietro Ferrazzi, Lorenzo Porta, Vicky Rubini, Bernardo Magnini. arXiv.org. (Met: Pietro Ferrazzi) arXiv:2602.23062</description>
+<pw:authors>G. Kaczmarek, Pietro Ferrazzi, Lorenzo Porta, Vicky Rubini, Bernardo Magnini</pw:authors>
 <pw:met>Pietro Ferrazzi</pw:met>
 <pw:relationships>Pietro Ferrazzi=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -7033,8 +7033,8 @@
 <title>Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents</title>
 <link>https://www.semanticscholar.org/paper/80af1501c0d70528ed775550320e8e0051ad5bfb</link>
 <guid isPermaLink="false">80af1501c0d70528ed775550320e8e0051ad5bfb</guid>
-<description>By Yueqi Song, Ketan Ramaneti, Zaid Sheikh, Ziru Chen, Boyu Gou, Tianbao Xie, Yiheng Xu, Danyang Zhang, Apurva Gandhi, Fan Yang et al.. arXiv.org. (Met: Graham Neubig) arXiv:2510.24702</description>
-<pw:authors>Yueqi Song, Ketan Ramaneti, Zaid Sheikh, Ziru Chen, Boyu Gou, Tianbao Xie, Yiheng Xu, Danyang Zhang, Apurva Gandhi, Fan Yang et al.</pw:authors>
+<description>By Yueqi Song, Ketan Ramaneti, Zaid Sheikh, Zi-Ru Chen, Boyu Gou, Tianbao Xie, Yiheng Xu, Danyang Zhang, Apurva Gandhi, Fan Yang et al.. arXiv.org. (Met: Graham Neubig) arXiv:2510.24702</description>
+<pw:authors>Yueqi Song, Ketan Ramaneti, Zaid Sheikh, Zi-Ru Chen, Boyu Gou, Tianbao Xie, Yiheng Xu, Danyang Zhang, Apurva Gandhi, Fan Yang et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -7369,8 +7369,8 @@
 <title>Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation</title>
 <link>https://www.semanticscholar.org/paper/92f110c93e9c9990129dfbf601b8d7254855dedf</link>
 <guid isPermaLink="false">92f110c93e9c9990129dfbf601b8d7254855dedf</guid>
-<description>By Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir, Zachary S. Siegel, Boyi Wei, Tianci Xue, Ziru Chen, Felix Chen, Saiteja Utpala et al.. arXiv.org. (Met: Yu Su) arXiv:2510.11977</description>
-<pw:authors>Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir, Zachary S. Siegel, Boyi Wei, Tianci Xue, Ziru Chen, Felix Chen, Saiteja Utpala et al.</pw:authors>
+<description>By Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir, Zachary S. Siegel, Boyi Wei, Tianci Xue, Zi-Ru Chen, Felix Chen, Saiteja Utpala et al.. arXiv.org. (Met: Yu Su) arXiv:2510.11977</description>
+<pw:authors>Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir, Zachary S. Siegel, Boyi Wei, Tianci Xue, Zi-Ru Chen, Felix Chen, Saiteja Utpala et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -17393,8 +17393,8 @@
 <title>Semi-automatic staging area for high-quality structured data extraction from scientific literature</title>
 <link>https://www.semanticscholar.org/paper/6f52527304c4ec30fc4b8b769c7df480cd313626</link>
 <guid isPermaLink="false">6f52527304c4ec30fc4b8b769c7df480cd313626</guid>
-<description>By Luca Foppiano, Tomoya Mato, Kensei Terashima, Pedro Ortiz Suarez, Taku Tou, Chikako Sakai, Wei-Sheng Wang, Toshiyuki Amagasa, Yoshihiko Takano, Masashi Ishii. Science and Technology of Advanced Materials: Methods. (Met: Pedro Ortiz Suarez) arXiv:2309.10923</description>
-<pw:authors>Luca Foppiano, Tomoya Mato, Kensei Terashima, Pedro Ortiz Suarez, Taku Tou, Chikako Sakai, Wei-Sheng Wang, Toshiyuki Amagasa, Yoshihiko Takano, Masashi Ishii</pw:authors>
+<description>By Luca Foppiano, Tomoya Mato, Kensei Terashima, Pedro Ortiz Suarez, Taku Tou, Chikako Sakai, Wei-Sheng Wang, Toshiyuki Amagasa, Y. Takano, Masashi Ishii. Science and Technology of Advanced Materials: Methods. (Met: Pedro Ortiz Suarez) arXiv:2309.10923</description>
+<pw:authors>Luca Foppiano, Tomoya Mato, Kensei Terashima, Pedro Ortiz Suarez, Taku Tou, Chikako Sakai, Wei-Sheng Wang, Toshiyuki Amagasa, Y. Takano, Masashi Ishii</pw:authors>
 <pw:met>Pedro Ortiz Suarez</pw:met>
 <pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
 <pw:venue>Science and Technology of Advanced Materials: Methods</pw:venue>
