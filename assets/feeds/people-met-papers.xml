@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Tue, 01 Sep 2026 04:09:17 +0000</lastBuildDate>
+<lastBuildDate>Wed, 02 Sep 2026 04:08:23 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1321,8 +1321,8 @@
 <title>The IOL-AI Challenge: An Open Challenge towards Advancing Linguistic Reasoning</title>
 <link>https://www.semanticscholar.org/paper/e8b97fe5e9f5988f3e8e7a43bcde4ecf9ec05037</link>
 <guid isPermaLink="false">e8b97fe5e9f5988f3e8e7a43bcde4ecf9ec05037</guid>
-<description>By Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea, Sara Rajaee, A. Piperski, Ana Meta Dolinar, B. Iomdin, Andrey Nikulin, Mariya Shmatova, Marzieh Fadaee et al.. . (Met: Marzieh Fadaee) arXiv:2608.18011</description>
-<pw:authors>Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea, Sara Rajaee, A. Piperski, Ana Meta Dolinar, B. Iomdin, Andrey Nikulin, Mariya Shmatova, Marzieh Fadaee et al.</pw:authors>
+<description>By Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea, Sara Rajaee, A. Piperski, Ana Meta Dolinar, B. Iomdin, A. Nikulin, Mariya Shmatova, Marzieh Fadaee et al.. . (Met: Marzieh Fadaee) arXiv:2608.18011</description>
+<pw:authors>Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea, Sara Rajaee, A. Piperski, Ana Meta Dolinar, B. Iomdin, A. Nikulin, Mariya Shmatova, Marzieh Fadaee et al.</pw:authors>
 <pw:met>Marzieh Fadaee</pw:met>
 <pw:relationships>Marzieh Fadaee=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -2791,8 +2791,8 @@
 <title>Digital GO: A Clinical Decision-Support Dashboard for Gynecologic Oncology Tumor Board.</title>
 <link>https://www.semanticscholar.org/paper/ba6d0aaafcad1e5a2f6d8c1108798f5481f8a593</link>
 <guid isPermaLink="false">ba6d0aaafcad1e5a2f6d8c1108798f5481f8a593</guid>
-<description>By C. Dachena, A. Luraschi, C. de Maria, M. Criscione, Andrea Rosati, Federica Tomassini, Giovanni Paolo Tobia, S. Patarnello, A. Fagotti, Livia Lilli. Studies in Health Technology and Informatics. (Met: Livia Lilli)</description>
-<pw:authors>C. Dachena, A. Luraschi, C. de Maria, M. Criscione, Andrea Rosati, Federica Tomassini, Giovanni Paolo Tobia, S. Patarnello, A. Fagotti, Livia Lilli</pw:authors>
+<description>By C. Dachena, A. Luraschi, Carolina de Maria, M. Criscione, Andrea Rosati, Federica Tomassini, Giovanni Paolo Tobia, S. Patarnello, A. Fagotti, Livia Lilli. Studies in Health Technology and Informatics. (Met: Livia Lilli)</description>
+<pw:authors>C. Dachena, A. Luraschi, Carolina de Maria, M. Criscione, Andrea Rosati, Federica Tomassini, Giovanni Paolo Tobia, S. Patarnello, A. Fagotti, Livia Lilli</pw:authors>
 <pw:met>Livia Lilli</pw:met>
 <pw:relationships>Livia Lilli=met</pw:relationships>
 <pw:venue>Studies in Health Technology and Informatics</pw:venue>
@@ -2909,6 +2909,20 @@
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2605.19141</pw:arxiv>
+<pw:date>2026-05-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Riemannian Networks over Full-Rank Correlation Matrices</title>
+<link>https://www.semanticscholar.org/paper/70ef09a7505315ee02706fb08bb2860ea2561415</link>
+<guid isPermaLink="false">70ef09a7505315ee02706fb08bb2860ea2561415</guid>
+<description>By Ziheng Chen, Xiao-jun Wu, B. Schölkopf, N. Sebe. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2605.19073</description>
+<pw:authors>Ziheng Chen, Xiao-jun Wu, B. Schölkopf, N. Sebe</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2605.19073</pw:arxiv>
 <pw:date>2026-05-18</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
@@ -3463,8 +3477,8 @@
 <title>Stargazer: A Scalable Model-Fitting Benchmark Environment for AI Agents under Astrophysical Constraints</title>
 <link>https://www.semanticscholar.org/paper/a3953f166cfb59a0774480af6e9f55e539b0d7a4</link>
 <guid isPermaLink="false">a3953f166cfb59a0774480af6e9f55e539b0d7a4</guid>
-<description>By Xinge Liu, Terry Jingchen Zhang, Bernhard Schölkopf, Zhijing Jin, Kristen Menou. arXiv.org. (Met: Zhijing Jin) arXiv:2604.15664</description>
-<pw:authors>Xinge Liu, Terry Jingchen Zhang, Bernhard Schölkopf, Zhijing Jin, Kristen Menou</pw:authors>
+<description>By Xinge Liu, Terry Jingchen Zhang, Bernhard Scholkopf, Zhijing Jin, Kristen Menou. arXiv.org. (Met: Zhijing Jin) arXiv:2604.15664</description>
+<pw:authors>Xinge Liu, Terry Jingchen Zhang, Bernhard Scholkopf, Zhijing Jin, Kristen Menou</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -3584,6 +3598,20 @@
 <pw:date>2026-04-13</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Sim-to-Real Transfer for Muscle-Actuated Robots via Generalized Actuator Networks</title>
+<link>https://www.semanticscholar.org/paper/90ae844c822f112d4a48523be5afecfdb691dff8</link>
+<guid isPermaLink="false">90ae844c822f112d4a48523be5afecfdb691dff8</guid>
+<description>By Jan Schneider, Mridul Mahajan, Le Chen, Simon Guist, B. Schölkopf, Ingmar Posner, Dieter Büchler. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2604.09487</description>
+<pw:authors>Jan Schneider, Mridul Mahajan, Le Chen, Simon Guist, B. Schölkopf, Ingmar Posner, Dieter Büchler</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2604.09487</pw:arxiv>
+<pw:date>2026-04-10</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>What do Language Models Learn and When? The Implicit Curriculum Hypothesis</title>
@@ -3939,8 +3967,8 @@
 <title>Deriving Hyperparameter Scaling Laws via Modern Optimization Theory</title>
 <link>https://www.semanticscholar.org/paper/05540ce82da3aa9b3974ae82b366c2edb04d0e01</link>
 <guid isPermaLink="false">05540ce82da3aa9b3974ae82b366c2edb04d0e01</guid>
-<description>By Egor Shulgin, Dimitri von Rutte, Tianyue H. Zhang, Niccolo Ajroldi, Bernhard Scholkopf, Antonio Orvieto. arXiv.org. (Met: Antonio Orvieto) arXiv:2603.15958</description>
-<pw:authors>Egor Shulgin, Dimitri von Rutte, Tianyue H. Zhang, Niccolo Ajroldi, Bernhard Scholkopf, Antonio Orvieto</pw:authors>
+<description>By Egor Shulgin, Dimitri von Rutte, Tianyue H. Zhang, Niccolò Ajroldi, Bernhard Scholkopf, Antonio Orvieto. arXiv.org. (Met: Antonio Orvieto) arXiv:2603.15958</description>
+<pw:authors>Egor Shulgin, Dimitri von Rutte, Tianyue H. Zhang, Niccolò Ajroldi, Bernhard Scholkopf, Antonio Orvieto</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5241,8 +5269,8 @@
 <title>LoRA and Privacy: When Random Projections Help (and When They Don't)</title>
 <link>https://www.semanticscholar.org/paper/1d43860d1fb7e2cd8bc69ea6ed2c0c991453d7b1</link>
 <guid isPermaLink="false">1d43860d1fb7e2cd8bc69ea6ed2c0c991453d7b1</guid>
-<description>By Yaxian Hu, Johanna Dungler, Bernhard Scholkopf, Amartya Sanyal. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2601.21719</description>
-<pw:authors>Yaxian Hu, Johanna Dungler, Bernhard Scholkopf, Amartya Sanyal</pw:authors>
+<description>By Yaxi Hu, Johanna Dungler, Bernhard Scholkopf, Amartya Sanyal. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2601.21719</description>
+<pw:authors>Yaxi Hu, Johanna Dungler, Bernhard Scholkopf, Amartya Sanyal</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5409,8 +5437,8 @@
 <title>Analyzing Diffusion and Autoregressive Vision Language Models in Multimodal Embedding Space</title>
 <link>https://www.semanticscholar.org/paper/cefb975ce698430692d089ff33c9c4a5ac79c4bb</link>
 <guid isPermaLink="false">cefb975ce698430692d089ff33c9c4a5ac79c4bb</guid>
-<description>By Zi-Han Wang, Siyue Zhang, Yilun Zhao, Jingyi Yang, Tingyu Song, A. Luu, Chen Zhao. arXiv.org. (Met: Chen Zhao) arXiv:2602.06056</description>
-<pw:authors>Zi-Han Wang, Siyue Zhang, Yilun Zhao, Jingyi Yang, Tingyu Song, A. Luu, Chen Zhao</pw:authors>
+<description>By Zi-Han Wang, Siyue Zhang, Yilun Zhao, Jingyi Yang, Tingyu Song, A. Lưu, Chen Zhao. arXiv.org. (Met: Chen Zhao) arXiv:2602.06056</description>
+<pw:authors>Zi-Han Wang, Siyue Zhang, Yilun Zhao, Jingyi Yang, Tingyu Song, A. Lưu, Chen Zhao</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6011,8 +6039,8 @@
 <title>PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers in Overleaf</title>
 <link>https://www.semanticscholar.org/paper/9b72b4af21f60db8be336e9b2ebb7fab57944fb2</link>
 <guid isPermaLink="false">9b72b4af21f60db8be336e9b2ebb7fab57944fb2</guid>
-<description>By Jiarui Liu, Terry Jingchen Zhang, Ryan Faulkner, Xuanqiang Angelo Huang, Vilém Zouhar, Dominik Glandorf, Isabel Dahlgren, Rishit Dagli, Yuen Chen, Felix Leeb et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Mrinmaya Sachan)</description>
-<pw:authors>Jiarui Liu, Terry Jingchen Zhang, Ryan Faulkner, Xuanqiang Angelo Huang, Vilém Zouhar, Dominik Glandorf, Isabel Dahlgren, Rishit Dagli, Yuen Chen, Felix Leeb et al.</pw:authors>
+<description>By Jiarui Liu, Terry Jingchen Zhang, Ryan Faulkner, X. Huang, Vilém Zouhar, Dominik Glandorf, Isabel Dahlgren, Rishit Dagli, Yuen Chen, Felix Leeb et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Mrinmaya Sachan)</description>
+<pw:authors>Jiarui Liu, Terry Jingchen Zhang, Ryan Faulkner, X. Huang, Vilém Zouhar, Dominik Glandorf, Isabel Dahlgren, Rishit Dagli, Yuen Chen, Felix Leeb et al.</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -6487,8 +6515,8 @@
 <title>A Latent Variable Framework for Scaling Laws in Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/a784df0b188b5a05cff4e57833735a2063bb30a2</link>
 <guid isPermaLink="false">a784df0b188b5a05cff4e57833735a2063bb30a2</guid>
-<description>By Peiyao Cai, Chengyu Cui, Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Mikhail Yurochkin, Moulinath Banerjee, Yuekai Sun, Kean Ming Tan, Gongjun Xu. arXiv.org. (Met: Leshem Choshen) arXiv:2512.06553</description>
-<pw:authors>Peiyao Cai, Chengyu Cui, Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Mikhail Yurochkin, Moulinath Banerjee, Yuekai Sun, Kean Ming Tan, Gongjun Xu</pw:authors>
+<description>By Peiyao Cai, Chengyu Cui, Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Mikhail Yurochkin, Moulinath Banerjee, Yuekai Sun, Ke-An-Ming Tan, Gongjun Xu. arXiv.org. (Met: Leshem Choshen) arXiv:2512.06553</description>
+<pw:authors>Peiyao Cai, Chengyu Cui, Felipe Maia Polo, Seamus Somerstep, Leshem Choshen, Mikhail Yurochkin, Moulinath Banerjee, Yuekai Sun, Ke-An-Ming Tan, Gongjun Xu</pw:authors>
 <pw:met>Leshem Choshen</pw:met>
 <pw:relationships>Leshem Choshen=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6818,6 +6846,20 @@
 <pw:date>2025-11-05</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Dexterous Robotic Piano Playing at Scale</title>
+<link>https://www.semanticscholar.org/paper/0496e89eb3abd27ef4786767505d7fa47c70e442</link>
+<guid isPermaLink="false">0496e89eb3abd27ef4786767505d7fa47c70e442</guid>
+<description>By Le Chen, Yi Zhao, Jan Schneider, Quankai Gao, Simon Guist, Cheng Qian, Juho Kannala, B. Schölkopf, J. Pajarinen, Dieter Büchler. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2511.02504</description>
+<pw:authors>Le Chen, Yi Zhao, Jan Schneider, Quankai Gao, Simon Guist, Cheng Qian, Juho Kannala, B. Schölkopf, J. Pajarinen, Dieter Büchler</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv>2511.02504</pw:arxiv>
+<pw:date>2025-11-04</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Tue, 04 Nov 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Training Proactive and Personalized LLM Agents</title>
@@ -7425,8 +7467,8 @@
 <title>MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval</title>
 <link>https://www.semanticscholar.org/paper/0d4bc21a7d3c57556e1f4a680a965e6a699995e4</link>
 <guid isPermaLink="false">0d4bc21a7d3c57556e1f4a680a965e6a699995e4</guid>
-<description>By Siyue Zhang, Yuan Gao, Xiao Zhou, Yilun Zhao, Tingyu Song, Arman Cohan, A. Luu, Chen Zhao. arXiv.org. (Met: Chen Zhao) arXiv:2510.09510</description>
-<pw:authors>Siyue Zhang, Yuan Gao, Xiao Zhou, Yilun Zhao, Tingyu Song, Arman Cohan, A. Luu, Chen Zhao</pw:authors>
+<description>By Siyue Zhang, Yuan Gao, Xiao Zhou, Yilun Zhao, Tingyu Song, Arman Cohan, A. Lưu, Chen Zhao. arXiv.org. (Met: Chen Zhao) arXiv:2510.09510</description>
+<pw:authors>Siyue Zhang, Yuan Gao, Xiao Zhou, Yilun Zhao, Tingyu Song, Arman Cohan, A. Lưu, Chen Zhao</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -7803,8 +7845,8 @@
 <title>Convergence and Divergence of Language Models under Different Random Seeds</title>
 <link>https://www.semanticscholar.org/paper/995ccf8ac9393888f9dcc7e673ae927ea1d972a3</link>
 <guid isPermaLink="false">995ccf8ac9393888f9dcc7e673ae927ea1d972a3</guid>
-<description>By Finlay Fehlauer, Kyle Mahowald, Tiago Pimentel. Conference on Empirical Methods in Natural Language Processing. (Met: Tiago Pimentel) arXiv:2509.26643</description>
-<pw:authors>Finlay Fehlauer, Kyle Mahowald, Tiago Pimentel</pw:authors>
+<description>By F. Fehlauer, Kyle Mahowald, Tiago Pimentel. Conference on Empirical Methods in Natural Language Processing. (Met: Tiago Pimentel) arXiv:2509.26643</description>
+<pw:authors>F. Fehlauer, Kyle Mahowald, Tiago Pimentel</pw:authors>
 <pw:met>Tiago Pimentel</pw:met>
 <pw:relationships>Tiago Pimentel=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -8209,8 +8251,8 @@
 <title>Enhancing Optimizer Stability: Momentum Adaptation of The NGN Step-size</title>
 <link>https://www.semanticscholar.org/paper/d1445a3a68c328592c21af3f5d79e926a201140b</link>
 <guid isPermaLink="false">d1445a3a68c328592c21af3f5d79e926a201140b</guid>
-<description>By Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi. Advances in Neural Information Processing Systems 38. (Met: Antonio Orvieto) arXiv:2508.15071</description>
-<pw:authors>Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi</pw:authors>
+<description>By Rustem Islamov, Niccolò Ajroldi, Antonio Orvieto, Aurélien Lucchi. Advances in Neural Information Processing Systems 38. (Met: Antonio Orvieto) arXiv:2508.15071</description>
+<pw:authors>Rustem Islamov, Niccolò Ajroldi, Antonio Orvieto, Aurélien Lucchi</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>Advances in Neural Information Processing Systems 38</pw:venue>
@@ -9287,8 +9329,8 @@
 <title>Educators' Perceptions of Large Language Models as Tutors: Comparing Human and AI Tutors in a Blind Text-only Setting</title>
 <link>https://www.semanticscholar.org/paper/f7f397a5f51b94e3016db01cecc4aaae0d85594a</link>
 <guid isPermaLink="false">f7f397a5f51b94e3016db01cecc4aaae0d85594a</guid>
-<description>By Sankalan Pal Chowdhury, Terry Jingchen Zhang, Donya Rooein, Dirk Hovy, T. Käser, Mrinmaya Sachan. Workshop on Innovative Use of NLP for Building Educational Applications. (Met: Mrinmaya Sachan) arXiv:2506.08702</description>
-<pw:authors>Sankalan Pal Chowdhury, Terry Jingchen Zhang, Donya Rooein, Dirk Hovy, T. Käser, Mrinmaya Sachan</pw:authors>
+<description>By Sankalan Pal Chowdhury, Terry Jingchen Zhang, Donya Rooein, Dirk Hovy, Tanja Käser, Mrinmaya Sachan. Workshop on Innovative Use of NLP for Building Educational Applications. (Met: Mrinmaya Sachan) arXiv:2506.08702</description>
+<pw:authors>Sankalan Pal Chowdhury, Terry Jingchen Zhang, Donya Rooein, Dirk Hovy, Tanja Käser, Mrinmaya Sachan</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Workshop on Innovative Use of NLP for Building Educational Applications</pw:venue>
@@ -9408,6 +9450,20 @@
 <pw:date>2025-06-06</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Learning Joint Interventional Effects from Single-Variable Interventions in Additive Models</title>
+<link>https://www.semanticscholar.org/paper/ec9d0b4b3e58ae0ca7e2278d3118bd497c91bd35</link>
+<guid isPermaLink="false">ec9d0b4b3e58ae0ca7e2278d3118bd497c91bd35</guid>
+<description>By Armin Keki'c, Sergio Hernan Garrido Mejia, B. Schölkopf. International Conference on Machine Learning. (Met: Bernhard Schölkopf) arXiv:2506.04945</description>
+<pw:authors>Armin Keki'c, Sergio Hernan Garrido Mejia, B. Schölkopf</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue>International Conference on Machine Learning</pw:venue>
+<pw:arxiv>2506.04945</pw:arxiv>
+<pw:date>2025-06-05</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Control Tax: The Price of Keeping AI in Check</title>
@@ -9774,6 +9830,20 @@
 <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Are Language Models Consequentialist or Deontological Moral Reasoners?</title>
+<link>https://www.semanticscholar.org/paper/e0f7694ce4b7f82608d2408668bc4679e546dd6f</link>
+<guid isPermaLink="false">e0f7694ce4b7f82608d2408668bc4679e546dd6f</guid>
+<description>By Keenan Samway, Max Kleiman-Weiner, David Guzman Piedrahita, Rada Mihalcea, Bernhard Scholkopf, Zhijing Jin. Conference on Empirical Methods in Natural Language Processing. (Met: Bernhard Schölkopf, Zhijing Jin) arXiv:2505.21479</description>
+<pw:authors>Keenan Samway, Max Kleiman-Weiner, David Guzman Piedrahita, Rada Mihalcea, Bernhard Scholkopf, Zhijing Jin</pw:authors>
+<pw:met>Bernhard Schölkopf, Zhijing Jin</pw:met>
+<pw:relationships>Bernhard Schölkopf=following|Zhijing Jin=following</pw:relationships>
+<pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
+<pw:arxiv>2505.21479</pw:arxiv>
+<pw:date>2025-05-27</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>The Multilingual Divide and Its Impact on Global AI Safety</title>
 <link>https://www.semanticscholar.org/paper/ad322e955cc063c982bd04c516863fdf95a0ee9c</link>
 <guid isPermaLink="false">ad322e955cc063c982bd04c516863fdf95a0ee9c</guid>
@@ -9797,20 +9867,6 @@
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2505.21072</pw:arxiv>
-<pw:date>2025-05-27</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Are Language Models Consequentialist or Deontological Moral Reasoners?</title>
-<link>https://www.semanticscholar.org/paper/e0f7694ce4b7f82608d2408668bc4679e546dd6f</link>
-<guid isPermaLink="false">e0f7694ce4b7f82608d2408668bc4679e546dd6f</guid>
-<description>By Keenan Samway, Max Kleiman-Weiner, David Guzman Piedrahita, Rada Mihalcea, Bernhard Schölkopf, Zhijing Jin. Conference on Empirical Methods in Natural Language Processing. (Met: Zhijing Jin) arXiv:2505.21479</description>
-<pw:authors>Keenan Samway, Max Kleiman-Weiner, David Guzman Piedrahita, Rada Mihalcea, Bernhard Schölkopf, Zhijing Jin</pw:authors>
-<pw:met>Zhijing Jin</pw:met>
-<pw:relationships>Zhijing Jin=following</pw:relationships>
-<pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
-<pw:arxiv>2505.21479</pw:arxiv>
 <pw:date>2025-05-27</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
@@ -9875,8 +9931,8 @@
 <title>Structuring the Unstructured: A Multi-Agent System for Extracting and Querying Financial KPIs and Guidance</title>
 <link>https://www.semanticscholar.org/paper/ad4e498c313275239dc0a5fc6f4e24bc827d256c</link>
 <guid isPermaLink="false">ad4e498c313275239dc0a5fc6f4e24bc827d256c</guid>
-<description>By Chanyeol Choi, Alejandro Lopez-Lira, Jihoon Kwon, Minjae Kim, Juneha Hwang, Mi-Hee Ha, Chaewoon Kim, Jaeseon Ha, Suyeol Yun, J. Kim. arXiv.org. (Met: Minjae Kim) arXiv:2505.19197</description>
-<pw:authors>Chanyeol Choi, Alejandro Lopez-Lira, Jihoon Kwon, Minjae Kim, Juneha Hwang, Mi-Hee Ha, Chaewoon Kim, Jaeseon Ha, Suyeol Yun, J. Kim</pw:authors>
+<description>By Chanyeol Choi, Alejandro Lopez-Lira, Yongjae Lee, Jihoon Kwon, Minjae Kim, Juneha Hwang, Mi-Hee Ha, Chaewoon Kim, Jaeseon Ha, Suyeol Yun et al.. arXiv.org. (Met: Minjae Kim) arXiv:2505.19197</description>
+<pw:authors>Chanyeol Choi, Alejandro Lopez-Lira, Yongjae Lee, Jihoon Kwon, Minjae Kim, Juneha Hwang, Mi-Hee Ha, Chaewoon Kim, Jaeseon Ha, Suyeol Yun et al.</pw:authors>
 <pw:met>Minjae Kim</pw:met>
 <pw:relationships>Minjae Kim=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -9903,8 +9959,8 @@
 <title>When Ethics and Payoffs Diverge: LLM Agents in Morally Charged Social Dilemmas</title>
 <link>https://www.semanticscholar.org/paper/6939aa7d0a504b2c913517b59e11f4916e970b20</link>
 <guid isPermaLink="false">6939aa7d0a504b2c913517b59e11f4916e970b20</guid>
-<description>By Steffen Backmann, David Guzman Piedrahita, Emanuel Tewolde, Rada Mihalcea, Bernhard Schölkopf, Zhijing Jin. arXiv.org. (Met: Zhijing Jin) arXiv:2505.19212</description>
-<pw:authors>Steffen Backmann, David Guzman Piedrahita, Emanuel Tewolde, Rada Mihalcea, Bernhard Schölkopf, Zhijing Jin</pw:authors>
+<description>By Steffen Backmann, David Guzman Piedrahita, Terry Jingchen Zhang, Emanuel Tewolde, Rada Mihalcea, Bernhard Scholkopf, Zhijing Jin. arXiv.org. (Met: Zhijing Jin) arXiv:2505.19212</description>
+<pw:authors>Steffen Backmann, David Guzman Piedrahita, Terry Jingchen Zhang, Emanuel Tewolde, Rada Mihalcea, Bernhard Scholkopf, Zhijing Jin</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -10001,8 +10057,8 @@
 <title>Diffusion vs. Autoregressive Language Models: A Text Embedding Perspective</title>
 <link>https://www.semanticscholar.org/paper/738b8d70e58ac200ef41c8cdc8c8ecc4cf242123</link>
 <guid isPermaLink="false">738b8d70e58ac200ef41c8cdc8c8ecc4cf242123</guid>
-<description>By Siyue Zhang, Yilun Zhao, L. Geng, Arman Cohan, A. Luu, Chen Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao) arXiv:2505.15045</description>
-<pw:authors>Siyue Zhang, Yilun Zhao, L. Geng, Arman Cohan, A. Luu, Chen Zhao</pw:authors>
+<description>By Siyue Zhang, Yilun Zhao, L. Geng, Arman Cohan, A. Lưu, Chen Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao) arXiv:2505.15045</description>
+<pw:authors>Siyue Zhang, Yilun Zhao, L. Geng, Arman Cohan, A. Lưu, Chen Zhao</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -10183,8 +10239,8 @@
 <title>Online Learning and Unlearning</title>
 <link>https://www.semanticscholar.org/paper/90e356c19d92988203eb5abf6676fbf876c5301a</link>
 <guid isPermaLink="false">90e356c19d92988203eb5abf6676fbf876c5301a</guid>
-<description>By Yaxian Hu, Bernhard Scholkopf, Amartya Sanyal. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2505.08557</description>
-<pw:authors>Yaxian Hu, Bernhard Scholkopf, Amartya Sanyal</pw:authors>
+<description>By Yaxi Hu, Bernhard Scholkopf, Amartya Sanyal. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2505.08557</description>
+<pw:authors>Yaxi Hu, Bernhard Scholkopf, Amartya Sanyal</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -10309,8 +10365,8 @@
 <title>The Leaderboard Illusion</title>
 <link>https://www.semanticscholar.org/paper/dc3b7ca920f25223101ba36227a894d37c238df1</link>
 <guid isPermaLink="false">dc3b7ca920f25223101ba36227a894d37c238df1</guid>
-<description>By Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yun-Tian Deng, Shayne Longpre, Noah Smith et al.. Neural Information Processing Systems. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2504.20879</description>
-<pw:authors>Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yun-Tian Deng, Shayne Longpre, Noah Smith et al.</pw:authors>
+<description>By Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yun-Tian Deng, Shayne Longpre, Noah A. Smith et al.. Neural Information Processing Systems. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2504.20879</description>
+<pw:authors>Shivalika Singh, Yiyang Nan, Alex Wang, Daniel D'souza, Sayash Kapoor, A. Ustun, Sanmi Koyejo, Yun-Tian Deng, Shayne Longpre, Noah A. Smith et al.</pw:authors>
 <pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>Neural Information Processing Systems</pw:venue>
@@ -10659,8 +10715,8 @@
 <title>Can you Finetune your Binoculars? Embedding Text Watermarks into the Weights of Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/5ca4ea932c08a63e49e967202504708ee18fc870</link>
 <guid isPermaLink="false">5ca4ea932c08a63e49e967202504708ee18fc870</guid>
-<description>By Fay Elhassan, Niccolo Ajroldi, Antonio Orvieto, Jonas Geiping. arXiv.org. (Met: Antonio Orvieto) arXiv:2504.06446</description>
-<pw:authors>Fay Elhassan, Niccolo Ajroldi, Antonio Orvieto, Jonas Geiping</pw:authors>
+<description>By Fay Elhassan, Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping. arXiv.org. (Met: Antonio Orvieto) arXiv:2504.06446</description>
+<pw:authors>Fay Elhassan, Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -11317,10 +11373,10 @@
 <title>Causality Is Key to Understand and Balance Multiple Goals in Trustworthy ML and Foundation Models</title>
 <link>https://www.semanticscholar.org/paper/974080d7755dfd40d3105c0319e3b25b7150eb72</link>
 <guid isPermaLink="false">974080d7755dfd40d3105c0319e3b25b7150eb72</guid>
-<description>By R. Binkyte, Ivaxi Sheth, Zhijing Jin, Mohammad Havaei, Bernhard Schölkopf, Mario Fritz. arXiv.org. (Met: Zhijing Jin) arXiv:2502.21123</description>
-<pw:authors>R. Binkyte, Ivaxi Sheth, Zhijing Jin, Mohammad Havaei, Bernhard Schölkopf, Mario Fritz</pw:authors>
-<pw:met>Zhijing Jin</pw:met>
-<pw:relationships>Zhijing Jin=following</pw:relationships>
+<description>By R. Binkyte, Ivaxi Sheth, Zhijing Jin, M. Havaei, Bernhard Scholkopf, Mario Fritz. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin) arXiv:2502.21123</description>
+<pw:authors>R. Binkyte, Ivaxi Sheth, Zhijing Jin, M. Havaei, Bernhard Scholkopf, Mario Fritz</pw:authors>
+<pw:met>Bernhard Schölkopf, Zhijing Jin</pw:met>
+<pw:relationships>Bernhard Schölkopf=following|Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2502.21123</pw:arxiv>
 <pw:date>2025-02-28</pw:date>
@@ -11723,8 +11779,8 @@
 <title>When, Where and Why to Average Weights?</title>
 <link>https://www.semanticscholar.org/paper/3490273f577a673310c42ba1674153aa1f21f784</link>
 <guid isPermaLink="false">3490273f577a673310c42ba1674153aa1f21f784</guid>
-<description>By Niccolo Ajroldi, Antonio Orvieto, Jonas Geiping. International Conference on Machine Learning. (Met: Antonio Orvieto) arXiv:2502.06761</description>
-<pw:authors>Niccolo Ajroldi, Antonio Orvieto, Jonas Geiping</pw:authors>
+<description>By Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping. International Conference on Machine Learning. (Met: Antonio Orvieto) arXiv:2502.06761</description>
+<pw:authors>Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>International Conference on Machine Learning</pw:venue>
@@ -12059,8 +12115,8 @@
 <title>PokerBench: Training Large Language Models to become Professional Poker Players</title>
 <link>https://www.semanticscholar.org/paper/699f1dde7e43ff59e37e25c6bef142c50b126af5</link>
 <guid isPermaLink="false">699f1dde7e43ff59e37e25c6bef142c50b126af5</guid>
-<description>By Richard Zhuang, Akshat Gupta, Richard Yang, Aniket Rahane, Zheng Li, G. Anumanchipalli. AAAI Conference on Artificial Intelligence. (Met: Akshat Gupta) arXiv:2501.08328</description>
-<pw:authors>Richard Zhuang, Akshat Gupta, Richard Yang, Aniket Rahane, Zheng Li, G. Anumanchipalli</pw:authors>
+<description>By Richard Zhuang, Akshat Gupta, Richard Yang, Aniket Rahane, Zhengyu Li, G. Anumanchipalli. AAAI Conference on Artificial Intelligence. (Met: Akshat Gupta) arXiv:2501.08328</description>
+<pw:authors>Richard Zhuang, Akshat Gupta, Richard Yang, Aniket Rahane, Zhengyu Li, G. Anumanchipalli</pw:authors>
 <pw:met>Akshat Gupta</pw:met>
 <pw:relationships>Akshat Gupta=met</pw:relationships>
 <pw:venue>AAAI Conference on Artificial Intelligence</pw:venue>
@@ -12353,8 +12409,8 @@
 <title>MRAG: A Modular Retrieval Framework for Time-Sensitive Question Answering</title>
 <link>https://www.semanticscholar.org/paper/a3138d2b184f9e24cbe1668e6918f5654cb1e354</link>
 <guid isPermaLink="false">a3138d2b184f9e24cbe1668e6918f5654cb1e354</guid>
-<description>By Siyue Zhang, Yuxiang Xue, Yiming Zhang, Xiaobao Wu, A. Luu, Chen Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao)</description>
-<pw:authors>Siyue Zhang, Yuxiang Xue, Yiming Zhang, Xiaobao Wu, A. Luu, Chen Zhao</pw:authors>
+<description>By Siyue Zhang, Yuxiang Xue, Yiming Zhang, Xiaobao Wu, A. Lưu, Chen Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao)</description>
+<pw:authors>Siyue Zhang, Yuxiang Xue, Yiming Zhang, Xiaobao Wu, A. Lưu, Chen Zhao</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -13515,8 +13571,8 @@
 <title>INCLUDE: Evaluating Multilingual Language Understanding with Regional Knowledge</title>
 <link>https://www.semanticscholar.org/paper/574130ae32cc7e55971a6382c344953906cdd707</link>
 <guid isPermaLink="false">574130ae32cc7e55971a6382c344953906cdd707</guid>
-<description>By Angelika Romanou, Negar Foroutan, A. Sotnikova, Zeming Chen, Sree Harsha Nelaturu, Shivalika Singh, Rishabh Maheshwary, Micol Altomare, Mohamed A. Haggag, A. Snegha et al.. International Conference on Learning Representations. (Met: Antoine Bosselut, Joël Niklaus, Marzieh Fadaee, Sara Hooker) arXiv:2411.19799</description>
-<pw:authors>Angelika Romanou, Negar Foroutan, A. Sotnikova, Zeming Chen, Sree Harsha Nelaturu, Shivalika Singh, Rishabh Maheshwary, Micol Altomare, Mohamed A. Haggag, A. Snegha et al.</pw:authors>
+<description>By Angelika Romanou, Negar Foroutan, A. Sotnikova, Zeming Chen, Sree Harsha Nelaturu, Shivalika Singh, Rishabh Maheshwary, Micol Altomare, M. Haggag, A. Snegha et al.. International Conference on Learning Representations. (Met: Antoine Bosselut, Joël Niklaus, Marzieh Fadaee, Sara Hooker) arXiv:2411.19799</description>
+<pw:authors>Angelika Romanou, Negar Foroutan, A. Sotnikova, Zeming Chen, Sree Harsha Nelaturu, Shivalika Singh, Rishabh Maheshwary, Micol Altomare, M. Haggag, A. Snegha et al.</pw:authors>
 <pw:met>Antoine Bosselut, Joël Niklaus, Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Antoine Bosselut=following|Joël Niklaus=following|Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>International Conference on Learning Representations</pw:venue>
@@ -13722,6 +13778,20 @@
 <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>SPARTAN: A Sparse Transformer World Model Attending to What Matters</title>
+<link>https://www.semanticscholar.org/paper/ab6a98195fbe47078cf23c25ee699ce705c0d83c</link>
+<guid isPermaLink="false">ab6a98195fbe47078cf23c25ee699ce705c0d83c</guid>
+<description>By A. Lei, B. Schölkopf, Ingmar Posner. Neural Information Processing Systems. (Met: Bernhard Schölkopf) arXiv:2411.06890</description>
+<pw:authors>A. Lei, B. Schölkopf, Ingmar Posner</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue>Neural Information Processing Systems</pw:venue>
+<pw:arxiv>2411.06890</pw:arxiv>
+<pw:date>2024-11-11</pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Training Neural Networks as Recognizers of Formal Languages</title>
 <link>https://www.semanticscholar.org/paper/d8a0ec9dfe40c6174c722ffb2691afe8c62233e1</link>
 <guid isPermaLink="false">d8a0ec9dfe40c6174c722ffb2691afe8c62233e1</guid>
@@ -13857,6 +13927,20 @@
 <pw:relationships>Antoine Bosselut=following</pw:relationships>
 <pw:venue>North American Chapter of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2411.02280</pw:arxiv>
+<pw:date>2024-11-04</pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Imagining and building wise machines: The centrality of AI metacognition</title>
+<link>https://www.semanticscholar.org/paper/411a038625b8cfb2dc2ed774bfd6e14b66c05014</link>
+<guid isPermaLink="false">411a038625b8cfb2dc2ed774bfd6e14b66c05014</guid>
+<description>By Samuel G. B. Johnson, Amir-Hossein Karimi, Y. Bengio, Nick Chater, Tobias Gerstenberg, Kate Larson, Sydney Levine, Melanie Mitchell, Iyad Rahwan, B. Schölkopf et al.. Trends in Cognitive Sciences. (Met: Bernhard Schölkopf) arXiv:2411.02478</description>
+<pw:authors>Samuel G. B. Johnson, Amir-Hossein Karimi, Y. Bengio, Nick Chater, Tobias Gerstenberg, Kate Larson, Sydney Levine, Melanie Mitchell, Iyad Rahwan, B. Schölkopf et al.</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue>Trends in Cognitive Sciences</pw:venue>
+<pw:arxiv>2411.02478</pw:arxiv>
 <pw:date>2024-11-04</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
@@ -14033,8 +14117,8 @@
 <title>Multi-modal AI for comprehensive breast cancer prognostication</title>
 <link>https://www.semanticscholar.org/paper/306174aab9874314deabbffeb81bfef4ce9579ca</link>
 <guid isPermaLink="false">306174aab9874314deabbffeb81bfef4ce9579ca</guid>
-<description>By J. Witowski, K. Zeng, J. Cappadona, J. Elayoubi, K. Choucair, E. Chiru, N. Chan, Young-Joon Kang, Frederick Howard, I. Ostrovnaya et al.. Nature Communications. (Met: Yann LeCun) arXiv:2410.21256</description>
-<pw:authors>J. Witowski, K. Zeng, J. Cappadona, J. Elayoubi, K. Choucair, E. Chiru, N. Chan, Young-Joon Kang, Frederick Howard, I. Ostrovnaya et al.</pw:authors>
+<description>By J. Witowski, K. Zeng, J. Cappadona, J. Elayoubi, K. Choucair, E. Chiru, N. Chan, Young-Joon Kang, F. Howard, I. Ostrovnaya et al.. Nature Communications. (Met: Yann LeCun) arXiv:2410.21256</description>
+<pw:authors>J. Witowski, K. Zeng, J. Cappadona, J. Elayoubi, K. Choucair, E. Chiru, N. Chan, Young-Joon Kang, F. Howard, I. Ostrovnaya et al.</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue>Nature Communications</pw:venue>
@@ -14313,8 +14397,8 @@
 <title>Unlocking Legal Knowledge: A Multilingual Dataset for Judicial Summarization in Switzerland</title>
 <link>https://www.semanticscholar.org/paper/37fcbc20ae96d2f681de20b10e7b902b0d299ab4</link>
 <guid isPermaLink="false">37fcbc20ae96d2f681de20b10e7b902b0d299ab4</guid>
-<description>By Luca Rolshoven, Vishvaksenan Rasiah, Srinanda Brugger Bose, Matthias Sturmer, Joel Niklaus. Conference on Empirical Methods in Natural Language Processing. (Met: Joël Niklaus) arXiv:2410.13456</description>
-<pw:authors>Luca Rolshoven, Vishvaksenan Rasiah, Srinanda Brugger Bose, Matthias Sturmer, Joel Niklaus</pw:authors>
+<description>By Luca Rolshoven, Vishvaksenan Rasiah, Srinanda Brugger Bose, M. Sturmer, Joel Niklaus. Conference on Empirical Methods in Natural Language Processing. (Met: Joël Niklaus) arXiv:2410.13456</description>
+<pw:authors>Luca Rolshoven, Vishvaksenan Rasiah, Srinanda Brugger Bose, M. Sturmer, Joel Niklaus</pw:authors>
 <pw:met>Joël Niklaus</pw:met>
 <pw:relationships>Joël Niklaus=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -14327,8 +14411,8 @@
 <title>From Citations to Criticality: Predicting Legal Decision Influence in the Multilingual Swiss Jurisprudence</title>
 <link>https://www.semanticscholar.org/paper/bc3bb96e73433e29275f4d52622be4d2440322c1</link>
 <guid isPermaLink="false">bc3bb96e73433e29275f4d52622be4d2440322c1</guid>
-<description>By Ronja Stern, Ken Kawamura, Matthias Sturmer, Ilias Chalkidis, Joel Niklaus. Annual Meeting of the Association for Computational Linguistics. (Met: Joël Niklaus) arXiv:2410.13460</description>
-<pw:authors>Ronja Stern, Ken Kawamura, Matthias Sturmer, Ilias Chalkidis, Joel Niklaus</pw:authors>
+<description>By Ronja Stern, Ken Kawamura, M. Sturmer, Ilias Chalkidis, Joel Niklaus. Annual Meeting of the Association for Computational Linguistics. (Met: Joël Niklaus) arXiv:2410.13460</description>
+<pw:authors>Ronja Stern, Ken Kawamura, M. Sturmer, Ilias Chalkidis, Joel Niklaus</pw:authors>
 <pw:met>Joël Niklaus</pw:met>
 <pw:relationships>Joël Niklaus=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -14355,8 +14439,8 @@
 <title>Loss Landscape Characterization of Neural Networks without Over-Parametrization</title>
 <link>https://www.semanticscholar.org/paper/ad98f0ecfaf1bf5fe287589e395ff7b8d1897607</link>
 <guid isPermaLink="false">ad98f0ecfaf1bf5fe287589e395ff7b8d1897607</guid>
-<description>By Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi. Neural Information Processing Systems. (Met: Antonio Orvieto) arXiv:2410.12455</description>
-<pw:authors>Rustem Islamov, Niccolo Ajroldi, Antonio Orvieto, Aurélien Lucchi</pw:authors>
+<description>By Rustem Islamov, Niccolò Ajroldi, Antonio Orvieto, Aurélien Lucchi. Neural Information Processing Systems. (Met: Antonio Orvieto) arXiv:2410.12455</description>
+<pw:authors>Rustem Islamov, Niccolò Ajroldi, Antonio Orvieto, Aurélien Lucchi</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>Neural Information Processing Systems</pw:venue>
@@ -14803,8 +14887,8 @@
 <title>SynTQA: Synergistic Table-based Question Answering via Mixture of Text-to-SQL and E2E TQA</title>
 <link>https://www.semanticscholar.org/paper/6e2a7acd06f3ce26cc0ec77ea42bdc15c7559298</link>
 <guid isPermaLink="false">6e2a7acd06f3ce26cc0ec77ea42bdc15c7559298</guid>
-<description>By Siyue Zhang, A. Luu, Chen Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao) arXiv:2409.16682</description>
-<pw:authors>Siyue Zhang, A. Luu, Chen Zhao</pw:authors>
+<description>By Siyue Zhang, A. Lưu, Chen Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao) arXiv:2409.16682</description>
+<pw:authors>Siyue Zhang, A. Lưu, Chen Zhao</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -15050,20 +15134,6 @@
 <pw:date>2024-09-02</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Leveraging body-worn camera footage to assess the effects of training on officer communication during traffic stops</title>
-<link>https://www.semanticscholar.org/paper/ad7deaaaf5efd9e1612d34cbccebe2846478de48</link>
-<guid isPermaLink="false">ad7deaaaf5efd9e1612d34cbccebe2846478de48</guid>
-<description>By Nicholas P. Camp, Rob Voigt, M. Hamedani, Dan Jurafsky, Jennifer L. Eberhardt. PNAS Nexus. (Met: Dan Jurafsky)</description>
-<pw:authors>Nicholas P. Camp, Rob Voigt, M. Hamedani, Dan Jurafsky, Jennifer L. Eberhardt</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>PNAS Nexus</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-09-01</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>MedDec: A Dataset for Extracting Medical Decisions from Discharge Summaries</title>
@@ -15710,20 +15780,6 @@
 <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>A CURATEd CATalog: Rethinking the Extraction of Pretraining Corpora for Mid-Resourced Languages</title>
-<link>https://www.semanticscholar.org/paper/77a2e761ed2dc2360043280bb543c7add804983d</link>
-<guid isPermaLink="false">77a2e761ed2dc2360043280bb543c7add804983d</guid>
-<description>By Jorge Palomar-Giner, J. Saiz, Ferran Espuña, Mario Mina, Severino Da Dalt, Joan Llop, Malte Ostendorff, Pedro Ortiz Suarez, Georg Rehm, Aitor Gonzalez-Agirre et al.. International Conference on Language Resources and Evaluation. (Met: Pedro Ortiz Suarez)</description>
-<pw:authors>Jorge Palomar-Giner, J. Saiz, Ferran Espuña, Mario Mina, Severino Da Dalt, Joan Llop, Malte Ostendorff, Pedro Ortiz Suarez, Georg Rehm, Aitor Gonzalez-Agirre et al.</pw:authors>
-<pw:met>Pedro Ortiz Suarez</pw:met>
-<pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
-<pw:venue>International Conference on Language Resources and Evaluation</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-05-01</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Is Temperature the Creativity Parameter of Large Language Models?</title>
 <link>https://www.semanticscholar.org/paper/8e25c812a564e98058a90e30519b7644f7f46d57</link>
 <guid isPermaLink="false">8e25c812a564e98058a90e30519b7644f7f46d57</guid>
@@ -15811,8 +15867,8 @@
 <title>Do LLMs Think Fast and Slow? A Causal Study on Sentiment Analysis</title>
 <link>https://www.semanticscholar.org/paper/bc2ad540cb03cd513f96be3bdb81b5f296a4b09b</link>
 <guid isPermaLink="false">bc2ad540cb03cd513f96be3bdb81b5f296a4b09b</guid>
-<description>By Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez Adauto, Rada Mihalcea, Bernhard Schölkopf, Mrinmaya Sachan. Conference on Empirical Methods in Natural Language Processing. (Met: Mrinmaya Sachan) arXiv:2404.11055</description>
-<pw:authors>Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez Adauto, Rada Mihalcea, Bernhard Schölkopf, Mrinmaya Sachan</pw:authors>
+<description>By Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez, Rada Mihalcea, Bernhard Scholkopf, Mrinmaya Sachan. Conference on Empirical Methods in Natural Language Processing. (Met: Mrinmaya Sachan) arXiv:2404.11055</description>
+<pw:authors>Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez, Rada Mihalcea, Bernhard Scholkopf, Mrinmaya Sachan</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -16466,6 +16522,34 @@
 <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>On the Causal Nature of Sentiment Analysis</title>
+<link>https://www.semanticscholar.org/paper/2830f18631ec91e3519b3d9a2b7a2c67524e6bc4</link>
+<guid isPermaLink="false">2830f18631ec91e3519b3d9a2b7a2c67524e6bc4</guid>
+<description>By Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez, Rada Mihalcea, Bernhard Scholkopf, Mrinmaya Sachan. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin)</description>
+<pw:authors>Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez, Rada Mihalcea, Bernhard Scholkopf, Mrinmaya Sachan</pw:authors>
+<pw:met>Bernhard Schölkopf, Zhijing Jin</pw:met>
+<pw:relationships>Bernhard Schölkopf=following|Zhijing Jin=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>CausalQuest: Collecting Natural Causal Questions for AI Agents</title>
+<link>https://www.semanticscholar.org/paper/a9f4d9125d6044a119b0a823efeb524a55159d0d</link>
+<guid isPermaLink="false">a9f4d9125d6044a119b0a823efeb524a55159d0d</guid>
+<description>By Roberto Ceraolo, Dmitrii Kharlapenko, Amélie Reymond, Rada Mihalcea, Mrinmaya Sachan, Bernhard Scholkopf, Zhijing Jin. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin)</description>
+<pw:authors>Roberto Ceraolo, Dmitrii Kharlapenko, Amélie Reymond, Rada Mihalcea, Mrinmaya Sachan, Bernhard Scholkopf, Zhijing Jin</pw:authors>
+<pw:met>Bernhard Schölkopf, Zhijing Jin</pw:met>
+<pw:relationships>Bernhard Schölkopf=following|Zhijing Jin=following</pw:relationships>
+<pw:venue>arXiv.org</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2024</pw:year>
+<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>The Effect of Scheduling and Preemption on the Efficiency of LLM Inference Serving</title>
 <link>https://www.semanticscholar.org/paper/3e0433ce1738b1e4fe909f02e3d7e777ed2db426</link>
 <guid isPermaLink="false">3e0433ce1738b1e4fe909f02e3d7e777ed2db426</guid>
@@ -16970,20 +17054,6 @@
 <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>On the Causal Nature of Sentiment Analysis</title>
-<link>https://www.semanticscholar.org/paper/2830f18631ec91e3519b3d9a2b7a2c67524e6bc4</link>
-<guid isPermaLink="false">2830f18631ec91e3519b3d9a2b7a2c67524e6bc4</guid>
-<description>By Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez, Rada Mihalcea, Bernhard Schölkopf, Mrinmaya Sachan. arXiv.org. (Met: Zhijing Jin)</description>
-<pw:authors>Zhiheng Lyu, Zhijing Jin, Fernando Gonzalez, Rada Mihalcea, Bernhard Schölkopf, Mrinmaya Sachan</pw:authors>
-<pw:met>Zhijing Jin</pw:met>
-<pw:relationships>Zhijing Jin=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Multilingual Trolley Problems for Language Models</title>
 <link>https://www.semanticscholar.org/paper/442ce43f79f7fa93269bdd88dcc7aa5457855c2c</link>
 <guid isPermaLink="false">442ce43f79f7fa93269bdd88dcc7aa5457855c2c</guid>
@@ -17003,20 +17073,6 @@
 <guid isPermaLink="false">69b56cfa76c991bc2a327948264acab928cf1944</guid>
 <description>By Giorgio Piatti, Zhijing Jin, Max Kleiman-Weiner, Bernhard Schölkopf, Mrinmaya Sachan, Rada Mihalcea. arXiv.org. (Met: Zhijing Jin)</description>
 <pw:authors>Giorgio Piatti, Zhijing Jin, Max Kleiman-Weiner, Bernhard Schölkopf, Mrinmaya Sachan, Rada Mihalcea</pw:authors>
-<pw:met>Zhijing Jin</pw:met>
-<pw:relationships>Zhijing Jin=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>CausalQuest: Collecting Natural Causal Questions for AI Agents</title>
-<link>https://www.semanticscholar.org/paper/a9f4d9125d6044a119b0a823efeb524a55159d0d</link>
-<guid isPermaLink="false">a9f4d9125d6044a119b0a823efeb524a55159d0d</guid>
-<description>By Roberto Ceraolo, Dmitrii Kharlapenko, Amélie Reymond, Rada Mihalcea, Mrinmaya Sachan, Bernhard Schölkopf, Zhijing Jin. arXiv.org. (Met: Zhijing Jin)</description>
-<pw:authors>Roberto Ceraolo, Dmitrii Kharlapenko, Amélie Reymond, Rada Mihalcea, Mrinmaya Sachan, Bernhard Schölkopf, Zhijing Jin</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -18426,6 +18482,20 @@
 <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Let's focus on AI's tangible risks rather than speculating about its potential to pose an existential threat</title>
+<link>https://www.semanticscholar.org/paper/9af91c9bbb96b6d3baf9ebe1d7959d92d4e718ae</link>
+<guid isPermaLink="false">9af91c9bbb96b6d3baf9ebe1d7959d92d4e718ae</guid>
+<description>By Nuria Oliver, B. Schölkopf, Florence d'Alché, Nicolò Cesa-Bianchi, Sepp Hochreiter, Serge Belongie. . (Met: Bernhard Schölkopf)</description>
+<pw:authors>Nuria Oliver, B. Schölkopf, Florence d'Alché, Nicolò Cesa-Bianchi, Sepp Hochreiter, Serge Belongie</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2023</pw:year>
+<pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Out-of-Variable Generalization</title>
 <link>https://www.semanticscholar.org/paper/e54842a4540b9af95f24dcc4cd58482594e10908</link>
 <guid isPermaLink="false">e54842a4540b9af95f24dcc4cd58482594e10908</guid>
@@ -19294,6 +19364,20 @@
 <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Learning to Drop Out: An Adversarial Approach to Training Sequence VAEs</title>
+<link>https://www.semanticscholar.org/paper/d290ae5929081fbbb07bc8a3080f6cbca80ffdc6</link>
+<guid isPermaLink="false">d290ae5929081fbbb07bc8a3080f6cbca80ffdc6</guid>
+<description>By DJordje Miladinovi'c, Kumar Shridhar, Kushal Jain, Max B. Paulus, J. Buhmann, Mrinmaya Sachan, Carl Allen. Neural Information Processing Systems. (Met: Mrinmaya Sachan) arXiv:2209.12590</description>
+<pw:authors>DJordje Miladinovi'c, Kumar Shridhar, Kushal Jain, Max B. Paulus, J. Buhmann, Mrinmaya Sachan, Carl Allen</pw:authors>
+<pw:met>Mrinmaya Sachan</pw:met>
+<pw:relationships>Mrinmaya Sachan=met</pw:relationships>
+<pw:venue>Neural Information Processing Systems</pw:venue>
+<pw:arxiv>2209.12590</pw:arxiv>
+<pw:date>2022-09-26</pw:date>
+<pw:year>2022</pw:year>
+<pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Will It Blend? Mixing Training Paradigms &amp; Prompting for Argument Quality Prediction</title>
 <link>https://www.semanticscholar.org/paper/eda36cdf6dbe28624bfad6482ca8e1575ab76d99</link>
 <guid isPermaLink="false">eda36cdf6dbe28624bfad6482ca8e1575ab76d99</guid>
@@ -19647,8 +19731,8 @@
 <title>The ZuCo benchmark on cross-subject reading task classification with EEG and eye-tracking data</title>
 <link>https://www.semanticscholar.org/paper/f2d2a1ae83b921e05953b093a27fae7152b849de</link>
 <guid isPermaLink="false">f2d2a1ae83b921e05953b093a27fae7152b849de</guid>
-<description>By Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, N. Langer. bioRxiv. (Met: Samuel Kiegeland)</description>
-<pw:authors>Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, N. Langer</pw:authors>
+<description>By Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, Nicolas Langer. bioRxiv. (Met: Samuel Kiegeland)</description>
+<pw:authors>Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, Nicolas Langer</pw:authors>
 <pw:met>Samuel Kiegeland</pw:met>
 <pw:relationships>Samuel Kiegeland=met</pw:relationships>
 <pw:venue>bioRxiv</pw:venue>
@@ -19759,8 +19843,8 @@
 <title>Reading Task Classification Using EEG and Eye-Tracking Data</title>
 <link>https://www.semanticscholar.org/paper/53dc8f6fc5673ed234573bfd46c185c90d24ffa6</link>
 <guid isPermaLink="false">53dc8f6fc5673ed234573bfd46c185c90d24ffa6</guid>
-<description>By Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, N. Langer. arXiv.org. (Met: Samuel Kiegeland) arXiv:2112.06310</description>
-<pw:authors>Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, N. Langer</pw:authors>
+<description>By Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, Nicolas Langer. arXiv.org. (Met: Samuel Kiegeland) arXiv:2112.06310</description>
+<pw:authors>Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, Nicolas Langer</pw:authors>
 <pw:met>Samuel Kiegeland</pw:met>
 <pw:relationships>Samuel Kiegeland=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -22027,8 +22111,8 @@
 <title>The SystemT IDE: an integrated development environment for information extraction rules</title>
 <link>https://www.semanticscholar.org/paper/002348c3a1aaad64aa4256843ba653efac490390</link>
 <guid isPermaLink="false">002348c3a1aaad64aa4256843ba653efac490390</guid>
-<description>By Laura Chiticariu, Vivian Chu, Sajib Dasgupta, Thilo W. Goetz, C. T. H. Ho, R. Krishnamurthy, Alexander Lang, Yunyao Li, B. Liu, S. Raghavan et al.. ACM SIGMOD Conference. (Met: Yunyao Li)</description>
-<pw:authors>Laura Chiticariu, Vivian Chu, Sajib Dasgupta, Thilo W. Goetz, C. T. H. Ho, R. Krishnamurthy, Alexander Lang, Yunyao Li, B. Liu, S. Raghavan et al.</pw:authors>
+<description>By Laura Chiticariu, Vivian Chu, Sajib Dasgupta, T. Goetz, C. T. H. Ho, R. Krishnamurthy, Alexander Lang, Yunyao Li, Bin Liu, S. Raghavan et al.. ACM SIGMOD Conference. (Met: Yunyao Li)</description>
+<pw:authors>Laura Chiticariu, Vivian Chu, Sajib Dasgupta, T. Goetz, C. T. H. Ho, R. Krishnamurthy, Alexander Lang, Yunyao Li, Bin Liu, S. Raghavan et al.</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>ACM SIGMOD Conference</pw:venue>
