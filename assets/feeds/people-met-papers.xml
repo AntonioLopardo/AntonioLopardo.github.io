@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 04 Sep 2026 04:07:13 +0000</lastBuildDate>
+<lastBuildDate>Sat, 05 Sep 2026 04:06:37 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1204,6 +1204,20 @@
 <pw:date>2026-09-02</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>VakyArth: Evaluating Pragmatic Competence in LLMs across Indic Languages</title>
+<link>https://www.semanticscholar.org/paper/3e7721f8f26e2d723231e985d403b7b738d570af</link>
+<guid isPermaLink="false">3e7721f8f26e2d723231e985d403b7b738d570af</guid>
+<description>By Usneek Singh, Poorvaja Veera, B. Kumar, Parth Nanda, Anand Madhusoodanan, Geyang Guo, Wei Xu, Junyi Jessy Li. . (Met: Junyi Jessy Li) arXiv:2609.01788</description>
+<pw:authors>Usneek Singh, Poorvaja Veera, B. Kumar, Parth Nanda, Anand Madhusoodanan, Geyang Guo, Wei Xu, Junyi Jessy Li</pw:authors>
+<pw:met>Junyi Jessy Li</pw:met>
+<pw:relationships>Junyi Jessy Li=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.01788</pw:arxiv>
+<pw:date>2026-09-01</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Predicting Program Exit Code with LLMs and Programming Language Semantics</title>
@@ -15176,20 +15190,6 @@
 <pw:date>2024-09-08</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark</title>
-<link>https://www.semanticscholar.org/paper/881ebd6d94065e5157f2290009b147b87eaf4ec9</link>
-<guid isPermaLink="false">881ebd6d94065e5157f2290009b147b87eaf4ec9</guid>
-<description>By Xiang Yue, Tianyu Zheng, Yuansheng Ni, Yubo Wang, Kai Zhang, Shengbang Tong, Yuxuan Sun, Ming Yin, Botao Yu, Ge Zhang et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Graham Neubig, Yu Su) arXiv:2409.02813</description>
-<pw:authors>Xiang Yue, Tianyu Zheng, Yuansheng Ni, Yubo Wang, Kai Zhang, Shengbang Tong, Yuxuan Sun, Ming Yin, Botao Yu, Ge Zhang et al.</pw:authors>
-<pw:met>Graham Neubig, Yu Su</pw:met>
-<pw:relationships>Graham Neubig=following|Yu Su=following</pw:relationships>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2409.02813</pw:arxiv>
-<pw:date>2024-09-04</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Unforgettable Generalization in Language Models</title>
