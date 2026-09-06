@@ -96,10 +96,10 @@
   <header>
     <p class="eyebrow">Post-training · 2025–26 · ten reports on one schema</p>
     <h1>LLM report diff</h1>
-    <p class="lede">Ten model reports — seven from the onboarding reading list plus DeepSeek V4, Gemma 4 and GLM-5 — each read against the same skeleton: <b>SFT → preference → verifiable-reward RL</b>. OLMo 3 is the reference because it publishes every stage. Each tab opens with the thesis and the pipeline, then a <b>stage-by-stage ledger</b>: what the data was, who it was distilled from, which pipelines synthesized it, how it was filtered, the algorithm, the rewards and environments, and the schedule — with the numbers the reports actually give.</p>
+    <p class="lede">Ten model reports — seven from the onboarding reading list plus DeepSeek V4, Gemma 4 and GLM-5 — each read against the same skeleton: <b>SFT → preference → verifiable-reward RL</b>. OLMo 3 is the reference because it publishes every stage. Each tab opens with the thesis and the pipeline, then a <b>stage-by-stage ledger</b>: what the data was, who it was distilled from, which pipelines synthesized it, how it was filtered, the algorithm, the rewards and environments, and the schedule — with the numbers the reports actually give. The self-play papers from the same list have their own note: <a href="/notes/self-play.html">self-play for reasoning</a>.</p>
     <div class="legend"><span><i class="sw k-pre"></i>pretrain / base</span><span><i class="sw k-sft"></i>SFT · distillation</span><span><i class="sw k-pref"></i>preference · RLHF</span><span><i class="sw k-rlvr"></i>verifiable-reward RL</span><span><i class="sw k-other"></i>other</span></div>
   </header>
-  <nav class="tabs" role="tablist" aria-label="Models"><button role="tab" id="t-olmo" aria-controls="p-olmo" aria-selected="true" class="ref">OLMo 3</button><button role="tab" id="t-phi" aria-controls="p-phi" aria-selected="false" class="">Phi-4-reasoning</button><button role="tab" id="t-nemo3" aria-controls="p-nemo3" aria-selected="false" class="">Nemotron 3 Super</button><button role="tab" id="t-lnemo" aria-controls="p-lnemo" aria-selected="false" class="">Llama-Nemotron</button><button role="tab" id="t-kimi" aria-controls="p-kimi" aria-selected="false" class="">Kimi K3</button><button role="tab" id="t-qwen" aria-controls="p-qwen" aria-selected="false" class="">Qwen 3.8</button><button role="tab" id="t-apertus" aria-controls="p-apertus" aria-selected="false" class="">Apertus 1.0 → 1.5</button><button role="tab" id="t-dsv4" aria-controls="p-dsv4" aria-selected="false" class="">DeepSeek V4</button><button role="tab" id="t-gemma4" aria-controls="p-gemma4" aria-selected="false" class="">Gemma 4</button><button role="tab" id="t-glm5" aria-controls="p-glm5" aria-selected="false" class="">GLM-5</button><span class="tsep"></span><button role="tab" id="t-compare" aria-controls="p-compare" aria-selected="false">Compare</button><button role="tab" id="t-selfplay" aria-controls="p-selfplay" aria-selected="false">Self-play</button></nav>
+  <nav class="tabs" role="tablist" aria-label="Models"><button role="tab" id="t-olmo" aria-controls="p-olmo" aria-selected="true" class="ref">OLMo 3</button><button role="tab" id="t-phi" aria-controls="p-phi" aria-selected="false" class="">Phi-4-reasoning</button><button role="tab" id="t-nemo3" aria-controls="p-nemo3" aria-selected="false" class="">Nemotron 3 Super</button><button role="tab" id="t-lnemo" aria-controls="p-lnemo" aria-selected="false" class="">Llama-Nemotron</button><button role="tab" id="t-kimi" aria-controls="p-kimi" aria-selected="false" class="">Kimi K3</button><button role="tab" id="t-qwen" aria-controls="p-qwen" aria-selected="false" class="">Qwen 3.8</button><button role="tab" id="t-apertus" aria-controls="p-apertus" aria-selected="false" class="">Apertus 1.0 → 1.5</button><button role="tab" id="t-dsv4" aria-controls="p-dsv4" aria-selected="false" class="">DeepSeek V4</button><button role="tab" id="t-gemma4" aria-controls="p-gemma4" aria-selected="false" class="">Gemma 4</button><button role="tab" id="t-glm5" aria-controls="p-glm5" aria-selected="false" class="">GLM-5</button><span class="tsep"></span><button role="tab" id="t-compare" aria-controls="p-compare" aria-selected="false">Compare</button></nav>
   
 <section class="panel" id="p-olmo" role="tabpanel" aria-labelledby="t-olmo" >
   <div class="ph"><div><p class="org">Ai2 · Nov 2025 · report Dec 2025 · <a href="https://arxiv.org/abs/2512.13961">source</a> · <a href="https://arxiv.org/abs/2512.13961">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2512.13961">alphaXiv</a></p><h2>OLMo 3 — the reference skeleton <span class="refbadge">reference</span></h2></div></div>
@@ -719,85 +719,6 @@
     <li><b>Synthetic data has become an industrial function.</b> Nemotron names about a dozen generation pipelines with counts; Llama-Nemotron ships 33M synthetic samples; OLMo publishes exact prompt tables. Apertus is the outlier that reuses rather than generates — by policy.</li>
     <li><b>Expert-then-merge is the 2026 pattern.</b> Kimi K3 (nine effort×domain experts → MOPD), DeepSeek V4 (more than ten specialists → full-vocabulary OPD, replacing the mixed RL stage outright), GLM-5 (cross-stage OPD from its own earlier checkpoints). None of the 2025 reports do this; all three 2026 frontier reports do.</li>
     <li><b>Openness tracks thesis.</b> The two fully-open models are the two whose thesis is about openness. Product models release weights and keep the data.</li>
-  </ul></div>
-</section>
-<section class="panel" id="p-selfplay" role="tabpanel" aria-labelledby="t-selfplay" hidden>
-  <div class="ph"><div><p class="org">The Self-reasoning section of the list</p><h2>Self-play</h2></div></div>
-  <p class="sub">Same loop every time — something proposes a task, something solves it, something verifies. What differs is <b>where the task comes from</b> and <b>who is allowed to be the verifier</b>. Ordered by how much external grounding they keep.</p>
-  <div class="legend"><span><i class="sw lp"></i>proposer</span><span><i class="sw ls"></i>solver</span><span><i class="sw lv"></i>verifier</span><span><i class="sw lgx"></i>external grounding</span><span><i class="sw rewsw"></i>reward</span></div>
-  <div class="spgrid"><div class="card sp"><div class="sph"><h3>STaR <span class="yr">2022</span></h3><span class="sl"><a href="https://arxiv.org/abs/2203.14465">source</a> · <a href="https://arxiv.org/abs/2203.14465">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2203.14465">alphaXiv</a></span></div>
-      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="STaR self-play loop">
-<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
-<rect class="lg" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">labeled questions</text>
-<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
-<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">dataset (fixed)</text>
-<polyline class="ledge" points="302,31 360,31 360,86"/>
-<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">question + answer key</text>
-<polyline class="ledge" points="360,122 360,174 304,174"/>
-<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">model → rationale</text>
-<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
-<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">answer match</text>
-<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">keep correct rationales → SFT</text>
-<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">—</text>
-<text class="lt2" x="414" y="228" text-anchor="end">STaR</text></svg></div>
-      <ul class="facts"><li>Sample a rationale + answer; keep the ones whose answer matches; fine-tune on them; repeat.</li><li>Rationalization: for failures, show the answer as a hint and keep the rationale that reaches it.</li><li>Not really self-play — the questions and answers are given. The self-generated part is the reasoning trace.</li><li>Failure mode: nothing forces diversity or difficulty; the loop can converge on easy items.</li></ul></div><div class="card sp"><div class="sph"><h3>Absolute Zero <span class="yr">May 2025</span></h3><span class="sl"><a href="https://arxiv.org/abs/2505.03335">source</a> · <a href="https://arxiv.org/abs/2505.03335">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2505.03335">alphaXiv</a></span></div>
-      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="Absolute Zero self-play loop">
-<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
-<rect class="lg none" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">no external data</text>
-<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
-<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">proposer (same model)</text>
-<polyline class="ledge" points="302,31 360,31 360,86"/>
-<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">Python program task</text>
-<polyline class="ledge" points="360,122 360,174 304,174"/>
-<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">solver (same model)</text>
-<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
-<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">code executor</text>
-<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">correctness</text>
-<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">learnability (mid success rate)</text>
-<text class="lt2" x="414" y="228" text-anchor="end">Absolute Zero</text></svg></div>
-      <ul class="facts"><li>One model plays both roles. Tasks are programs in three modes: deduction (program+input → output), abduction (program+output → input), induction (I/O pairs → program).</li><li>The verifier is a Python executor, so correctness is exact and no data is needed.</li><li>Proposer is rewarded for tasks the solver sometimes solves — not always, not never.</li><li>Grounded by execution, but only in the space of things a program can express.</li></ul></div><div class="card sp"><div class="sph"><h3>R-Zero <span class="yr">Aug 2025</span></h3><span class="sl"><a href="https://arxiv.org/abs/2508.05004">source</a> · <a href="https://arxiv.org/abs/2508.05004">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2508.05004">alphaXiv</a></span></div>
-      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="R-Zero self-play loop">
-<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
-<rect class="lg none" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">no external data</text>
-<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
-<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">Challenger</text>
-<polyline class="ledge" points="302,31 360,31 360,86"/>
-<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">generated question</text>
-<polyline class="ledge" points="360,122 360,174 304,174"/>
-<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">Solver</text>
-<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
-<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">majority vote (pseudo-label)</text>
-<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">1 if matches majority</text>
-<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">Gaussian peak at 50% + repetition penalty</text>
-<text class="lt2" x="414" y="228" text-anchor="end">R-Zero</text></svg></div>
-      <ul class="facts"><li>Two copies of the base model co-evolve with GRPO. Challenger is rewarded when Solver's accuracy is ≈50% — maximum uncertainty.</li><li>No verifier: the label is the Solver's own majority vote over 10 samples. Keep only questions with 3–7 of 10 agreeing.</li><li>Qwen3-4B-Base: +6.5 math, +7.5 general reasoning after three iterations.</li><li>Collapses: pseudo-label accuracy decays 79% → 63% by iteration 3; 0.6B models collapse after one round.</li></ul></div><div class="card sp"><div class="sph"><h3>SPICE <span class="yr">Oct 2025</span></h3><span class="sl"><a href="https://arxiv.org/abs/2510.24684">source</a> · <a href="https://arxiv.org/abs/2510.24684">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.24684">alphaXiv</a></span></div>
-      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="SPICE self-play loop">
-<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
-<rect class="lg" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">corpus documents</text>
-<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
-<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">Challenger</text>
-<polyline class="ledge" points="302,31 360,31 360,86"/>
-<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">question w/ extractable answer</text>
-<polyline class="ledge" points="360,122 360,174 304,174"/>
-<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">Reasoner (no doc access)</text>
-<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
-<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">doc-extracted gold</text>
-<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">1 if correct</text>
-<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">variance-based Gaussian at 50%</text>
-<text class="lt2" x="414" y="228" text-anchor="end">SPICE</text></svg></div>
-      <ul class="facts"><li>Same LLM, two roles, but the Challenger reads a real document and writes a question whose answer is extractable from it. The Reasoner never sees the document — information asymmetry.</li><li>Grounding fixes R-Zero's failure: the label comes from the text, not from the model agreeing with itself.</li><li>Both roles trained jointly with Dr. GRPO, separate advantages. Corpora: Nemotron-CC-Math, NaturalReasoning.</li><li>+8.9 math, +9.8 general reasoning across Qwen3-4B/8B and OctoThinker-3B/8B.</li></ul></div></div>
-  <div class="scroller" style="margin-top:22px"><table class="cmp small"><thead><tr><th></th><th>STaR</th><th>Absolute Zero</th><th>R-Zero</th><th>SPICE</th></tr></thead><tbody>
-    <tr><th>Task source</th><td>labeled dataset</td><td>self-generated programs</td><td>self-generated questions</td><td>questions grounded in corpus documents</td></tr>
-    <tr><th>Verifier</th><td>answer key</td><td>code executor</td><td>majority vote of the solver itself</td><td>answer extracted from the document</td></tr>
-    <tr><th>Difficulty targeting</th><td>none</td><td>learnability (mid success)</td><td>Gaussian peak at 50%</td><td>variance-based, peak at 50%</td></tr>
-    <tr><th>Algorithm</th><td>rejection-sampling SFT</td><td>RL, both roles</td><td>GRPO, both roles</td><td>Dr. GRPO, both roles</td></tr>
-    <tr><th>Failure mode</th><td>no pressure toward hard items</td><td>confined to program-expressible tasks</td><td>pseudo-label decay → collapse in 1–3 iters</td><td>bounded by corpus quality and coverage</td></tr>
-  </tbody></table></div>
-  <div class="card" style="margin-top:22px"><p class="ct">Where the model reports already contain pieces of this</p><ul class="facts">
-    <li>Kimi K3's knowledge-graph task synthesis is a proposer grounded in retrieved web material — SPICE's move, minus the co-evolving reward. Its mock-app workspaces built by web-searching agents are proposers for environments, not just questions.</li>
-    <li>Nemotron's PAIR-style jailbreak attacker is a narrow adversarial proposer; its conversational-tool-use pipeline (drop all-success / all-fail scenarios) is the 50% band applied offline.</li>
-    <li>Llama-Nemotron and OLMo both use majority vote as the label when no gold answer exists — R-Zero's pseudo-labeling, used cautiously and one-shot rather than iterated.</li>
-    <li>The open question SPICE poses to R-Zero — <em>who is allowed to be the verifier</em> — is the same question RLVR poses to RLHF, one level down.</li>
   </ul></div>
 </section>
   <p class="foot">Sources are the linked reports; “not disclosed” means absent from them. Pipeline boxes are not to scale — stage volumes are in mixed units and are labeled instead. Counts are quoted as printed in each report; where a report's table and prose disagree (Apertus SFT: 4.18M vs “~3.8M”) the table is used.</p>
