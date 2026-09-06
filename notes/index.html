@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:opsz,wght@6..72,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf5ec;--ink:#181410;--faint:#6f6353;--rule:#d8cdbb;--accent:#bc3417;--accent-2:#274690;--hl:#f3e8cf}
+@media(prefers-color-scheme:dark){:root{--paper:#161310;--ink:#ece4d4;--faint:#9c8f7a;--rule:#3a332a;--accent:#e8603f;--accent-2:#7d9be0;--hl:#2a241b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:17px;line-height:1.5}
+.wrap{max-width:820px;margin:0 auto;padding:52px 20px 90px}
+.overline{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.overline a{color:inherit;text-decoration:none}.overline a:hover{color:var(--accent)}
+h1{font-family:"Fraunces",serif;font-weight:850;font-size:clamp(38px,7vw,66px);line-height:.98;letter-spacing:-.02em;margin:.2em 0 .1em}
+.standfirst{font-style:italic;color:var(--faint);margin:0 0 20px}
+hr.a{border:0;border-top:3px solid var(--ink);margin:0 0 2px}hr.b{border:0;border-top:1px solid var(--ink);margin:0 0 24px}
+.section{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:14px;margin:40px 0 6px}
+.section::after{content:"";flex:1;border-top:1px solid var(--rule)}
+ol{list-style:none;margin:0;padding:0}
+.entry{padding:16px 4px;border-bottom:1px solid var(--rule)}
+h2{font-family:"Fraunces",serif;font-weight:640;font-size:21px;line-height:1.25;margin:0 0 4px}
+h2 a{color:inherit;text-decoration:none}h2 a:hover{color:var(--accent)}
+.desc{margin:0 0 6px}
+.desc a{color:var(--accent-2);text-decoration:none}.desc a:hover{text-decoration:underline}
+.meta{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);display:flex;gap:1.3em;flex-wrap:wrap}
+.meta a{color:var(--accent-2);text-decoration:none}.meta a.alpha{color:var(--accent);font-weight:500}
+.meta a:hover{text-decoration:underline}
+.meta .kind{text-transform:uppercase;letter-spacing:.13em}
+.note{background:var(--hl);border-left:3px solid var(--accent);padding:12px 16px;margin:8px 0 6px}
+.note p{margin:0 0 8px}.note p:last-child{margin:0}
+footer{margin-top:56px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+footer a{color:inherit}
+</style></head><body><div class="wrap">
+<div class="overline"><a href="/">antoniolopardo.github.io</a> · unlisted</div>
+<h1>Notes</h1>
+<p class="standfirst">Pages I generate while reading, short notes on things I keep having to re-derive, and the sources I trust enough to go back to.</p>
+<hr class="a"><hr class="b">
+
+<!--
+  HOW TO ADD AN ENTRY — copy one <li class="entry"> block into the right section.
+    <h2><a href="URL">Title</a></h2>          the link
+    <p class="desc">One line on what it is.</p>
+    <div class="meta"><span class="kind">page|note|source</span><span>YYYY-MM</span><a href="...">extra link</a></div>
+  Notes can carry a <div class="note"> with a few paragraphs.
+-->
+
+<div class="section">Pages</div>
+<ol>
+  <li class="entry">
+    <h2><a href="/post-training-diff.html">Post-training diff</a></h2>
+    <p class="desc">Ten 2025–26 model reports read against one skeleton (SFT → preference → verifiable-reward RL): per-model pipeline diagrams, stage-by-stage ledgers of data, distillation, synthetic pipelines, rewards and environments, a cross-model table, and the self-play papers' loops. OLMo 3 is the reference.</p>
+    <div class="meta"><span class="kind">page</span><span>2026-09</span><span>OLMo 3 · Phi-4-reasoning · Nemotron 3 Super · Llama-Nemotron · Kimi K3 · Qwen 3.8 · Apertus · DeepSeek V4 · Gemma 4 · GLM-5</span></div>
+  </li>
+  <li class="entry">
+    <h2><a href="/papers.html">Papers from people I like</a></h2>
+    <p class="desc">New papers from researchers I follow or have met, grouped by month, with alphaXiv links. Refreshed daily.</p>
+    <div class="meta"><span class="kind">page</span><span>live</span><a href="/assets/feeds/people-met-papers.xml">RSS</a></div>
+  </li>
+  <li class="entry">
+    <h2><a href="/people-map.html">People I know, mapped</a></h2>
+    <p class="desc">Where the people in my research CRM are, on a map.</p>
+    <div class="meta"><span class="kind">page</span><span>live</span><a href="/people/">list view</a></div>
+  </li>
+</ol>
+
+<div class="section">Notes</div>
+<ol>
+  <li class="entry">
+    <h2>Multi-token prediction (MTP)</h2>
+    <div class="note">
+      <p>A normal LM head predicts token <em>t+1</em> from the hidden state at <em>t</em>. An MTP head is a small extra block — in DeepSeek-V3's version a single lightweight transformer layer per extra step — that takes the same hidden state plus the embedding of token <em>t+1</em> and predicts <em>t+2</em>. It has its own cross-entropy loss, added to the main loss with a weight (Nemotron 3 Super uses 0.3). The backbone is shared; only the head is extra.</p>
+      <p>Two reasons it survives into 2026 models: the training signal is denser and slightly forward-looking, and at inference the head is a <em>draft model that lives inside the main model</em> — it proposes <em>t+2</em> cheaply, the main model verifies in one batched pass, and accepted tokens cost nothing. DeepSeek-V3 reports an acceptance rate above 80% for the first MTP head and roughly 1.8× decoding throughput. That is why Nemotron, Kimi K3, DeepSeek V4 and Gemma 4 all ship one.</p>
+      <p>Two consequences show up in the post-training reports. RL moves the backbone and the draft's acceptance rate collapses, so Nemotron ends with an <em>MTP healing</em> stage that retrains only the heads. Kimi K3 goes further and fine-tunes its MTP layer into an EAGLE-3-style draft with a loss that maximizes acceptance rate directly instead of a KL surrogate. The metric that matters for a draft is acceptance rate, not accuracy.</p>
+    </div>
+    <div class="meta"><span class="kind">note</span><span>2026-09</span>
+      <a href="https://sebastianraschka.com/llm-architecture-gallery/mtp/">Raschka · architecture gallery</a>
+      <a href="https://arxiv.org/abs/2404.19737">Gloeckle et al. 2024</a><a class="alpha" href="https://www.alphaxiv.org/abs/2404.19737">alphaXiv</a>
+      <a href="https://arxiv.org/abs/2412.19437">DeepSeek-V3 §2.2</a><a class="alpha" href="https://www.alphaxiv.org/abs/2412.19437">alphaXiv</a>
+      <a href="https://arxiv.org/abs/2503.01840">EAGLE-3</a>
+    </div>
+  </li>
+</ol>
+
+<div class="section">Sources</div>
+<ol>
+  <li class="entry">
+    <h2><a href="https://magazine.sebastianraschka.com/">Ahead of AI — Sebastian Raschka</a></h2>
+    <p class="desc">Architecture comparisons and post-training explainers with code. Companion pieces: the <a href="https://sebastianraschka.com/llm-architecture-gallery/">LLM Architecture Gallery</a> and the <a href="https://github.com/rasbt/LLMs-from-scratch">LLMs-from-scratch</a> repo (KV cache in <code>ch04/03_kv-cache</code>, sampling in <code>ch05</code>, MoE in <code>ch04/07_moe</code>).</p>
+    <div class="meta"><span class="kind">source</span></div>
+  </li>
+  <li class="entry">
+    <h2><a href="https://www.interconnects.ai/">Interconnects — Nathan Lambert</a></h2>
+    <p class="desc">Open-model post-training from the people who publish the recipes; the best running commentary on OLMo, Tülu and RLVR.</p>
+    <div class="meta"><span class="kind">source</span><a href="https://allenai.org/blog/olmo3">OLMo 3</a><a href="https://allenai.org/blog/tulu-3-technical">Tülu 3</a></div>
+  </li>
+  <li class="entry">
+    <h2><a href="https://www.alphaxiv.org/">alphaXiv</a></h2>
+    <p class="desc">Full-text arXiv with discussion; swap <code>arxiv.org/abs/ID</code> for <code>alphaxiv.org/abs/ID</code>. <a href="https://huggingface.co/papers">HF Papers</a> for the community signal on the same ID.</p>
+    <div class="meta"><span class="kind">source</span></div>
+  </li>
+  <li class="entry">
+    <h2><a href="https://www.apertus-ai.org/pages/research">Apertus — Swiss AI Initiative</a></h2>
+    <p class="desc">The fully open Swiss model family and its research collection (QRPO, opt-out compliance, memorization). The 1.5 technical report is still listed as coming soon.</p>
+    <div class="meta"><span class="kind">source</span><a href="https://arxiv.org/abs/2509.14233">Apertus 1.0 report</a></div>
+  </li>
+</ol>
+
+<footer><a href="/">home</a> · hand-edited · last touched 2026-09-06</footer>
+</div></body></html>
