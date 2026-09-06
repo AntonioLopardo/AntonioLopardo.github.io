@@ -18,7 +18,10 @@ hr.a{border:0;border-top:3px solid var(--ink);margin:0 0 2px}hr.b{border:0;borde
 .section{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:14px;margin:40px 0 6px}
 .section::after{content:"";flex:1;border-top:1px solid var(--rule)}
 ol{list-style:none;margin:0;padding:0}
-.entry{padding:16px 4px;border-bottom:1px solid var(--rule)}
+.entry{padding:16px 4px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:148px minmax(0,1fr);gap:18px;align-items:start}
+.entry .thumb{display:block;width:148px;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;border:1px solid var(--rule);border-radius:3px;background:#fff;margin-top:5px}
+.entry .thumb:hover{border-color:var(--accent)}
+@media(max-width:560px){.entry{grid-template-columns:minmax(0,1fr)}.entry .thumb{width:200px;margin-top:0}}
 h2{font-family:"Fraunces",serif;font-weight:640;font-size:21px;line-height:1.25;margin:0 0 4px}
 h2 a{color:inherit;text-decoration:none}h2 a:hover{color:var(--accent)}
 .desc{margin:0 0 6px}
@@ -39,6 +42,9 @@ footer a{color:inherit}
 
 <!--
   HOW TO ADD AN ENTRY — copy one <li class="entry"> block into the right section.
+    <a class="thumb-link" href="URL"><img class="thumb" src="/notes/thumbs/NAME.jpg" ...></a>
+      480×300 JPEG: headless Chrome --window-size=1280,800 --screenshot, then sips -z 300 480
+    <div class="body"> … </div>                 wraps the three lines below
     <h2><a href="URL">Title</a></h2>          the link
     <p class="desc">One line on what it is.</p>
     <div class="meta"><span class="kind">page|note|source</span><span>YYYY-MM</span><a href="...">extra link</a></div>
@@ -48,31 +54,45 @@ footer a{color:inherit}
 <div class="section">Pages</div>
 <ol>
   <li class="entry">
-    <h2><a href="/model-post-training-diff.html">LLM report diff</a></h2>
+    <a class="thumb-link" href="/model-post-training-diff.html"><img class="thumb" src="/notes/thumbs/diff.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="/model-post-training-diff.html">LLM report diff</a></h2>
     <p class="desc">Ten 2025–26 model reports read against one skeleton (SFT → preference → verifiable-reward RL): per-model pipeline diagrams, stage-by-stage ledgers of data, distillation, synthetic pipelines, rewards and environments, a cross-model table, and the self-play papers' loops. OLMo 3 is the reference.</p>
     <div class="meta"><span class="kind">page</span><span>2026-09</span><a href="/model-post-training-diff.html#olmo">OLMo 3</a> <a href="/model-post-training-diff.html#phi">Phi-4-reasoning</a> <a href="/model-post-training-diff.html#nemo3">Nemotron 3 Super</a> <a href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a href="/model-post-training-diff.html#kimi">Kimi K3</a> <a href="/model-post-training-diff.html#qwen">Qwen 3.8</a> <a href="/model-post-training-diff.html#apertus">Apertus</a> <a href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <a href="/model-post-training-diff.html#gemma4">Gemma 4</a> <a href="/model-post-training-diff.html#glm5">GLM-5</a> <a href="/model-post-training-diff.html#compare">Compare</a></div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="/notes/post-training-algorithms.html">Post-training algorithms</a></h2>
+    <a class="thumb-link" href="/notes/post-training-algorithms.html"><img class="thumb" src="/notes/thumbs/algos.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="/notes/post-training-algorithms.html">Post-training algorithms</a></h2>
     <p class="desc">Every post-training method in eight families, one card each, cross-linked to the reports that ship them, with the loss written out for the ten that carry the disagreements.</p>
     <div class="meta"><span class="kind">page</span><span>2026-09</span><a href="/notes/post-training-algorithms.html#A">Imitation & distillation</a><a href="/notes/post-training-algorithms.html#B">Reward signals</a><a href="/notes/post-training-algorithms.html#C">Direct alignment</a><a href="/notes/post-training-algorithms.html#D">Policy gradient, critic-free</a><a href="/notes/post-training-algorithms.html#E">Policy gradient, with critic</a><a href="/notes/post-training-algorithms.html#F">Off-policy corrections</a><a href="/notes/post-training-algorithms.html#G">Sampling & curriculum</a><a href="/notes/post-training-algorithms.html#H">Odds and ends</a></div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="/papers.html">Papers from people I like</a></h2>
+    <a class="thumb-link" href="/papers.html"><img class="thumb" src="/notes/thumbs/papers.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="/papers.html">Papers from people I like</a></h2>
     <p class="desc">New papers from researchers I follow or have met, grouped by month, with alphaXiv links. Refreshed daily.</p>
     <div class="meta"><span class="kind">page</span><span>live</span><a href="/assets/feeds/people-met-papers.xml">RSS</a></div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="/people-map.html">People I know, mapped</a></h2>
+    <a class="thumb-link" href="/people-map.html"><img class="thumb" src="/notes/thumbs/map.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="/people-map.html">People I know, mapped</a></h2>
     <p class="desc">Where the people in my research CRM are, on a map.</p>
     <div class="meta"><span class="kind">page</span><span>live</span><a href="/people/">list view</a></div>
+    </div>
   </li>
 </ol>
 
 <div class="section">Notes</div>
 <ol>
   <li class="entry">
-    <h2><a href="/notes/mtp.html">Multi-token prediction (MTP)</a></h2>
+    <a class="thumb-link" href="/notes/mtp.html"><img class="thumb" src="/notes/thumbs/mtp.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="/notes/mtp.html">Multi-token prediction (MTP)</a></h2>
     <p class="desc">A small extra head predicts the token after next from the same hidden state — denser training signal, and a draft model that lives inside the main model. Two diagrams, the three-line math, where it appears in DeepSeek-V3/V4, Nemotron 3 Super, Kimi K3, Gemma 4 and GLM-5, and why RL breaks it.</p>
     <div class="meta"><span class="kind">note</span><span>2026-09</span>
       <a href="https://sebastianraschka.com/llm-architecture-gallery/mtp/">Raschka · architecture gallery</a>
@@ -80,35 +100,51 @@ footer a{color:inherit}
       <a href="https://arxiv.org/abs/2412.19437">DeepSeek-V3 §2.2</a><a class="alpha" href="https://www.alphaxiv.org/abs/2412.19437">alphaXiv</a>
       <a href="https://arxiv.org/abs/2503.01840">EAGLE-3</a>
     </div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="/notes/self-play.html">Self-play for reasoning</a></h2>
+    <a class="thumb-link" href="/notes/self-play.html"><img class="thumb" src="/notes/thumbs/selfplay.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="/notes/self-play.html">Self-play for reasoning</a></h2>
     <p class="desc">STaR, Absolute Zero, R-Zero and SPICE as one loop drawn four times. The two slots that differ — where the task comes from and who is allowed to verify — the shared 50%-difficulty target, where the model reports already use pieces of it, and why self-labeling collapses.</p>
     <div class="meta"><span class="kind">note</span><span>2026-09</span></div>
+    </div>
   </li>
 </ol>
 
 <div class="section">Sources</div>
 <ol>
   <li class="entry">
-    <h2><a href="https://magazine.sebastianraschka.com/">Ahead of AI — Sebastian Raschka</a></h2>
+    <a class="thumb-link" href="https://magazine.sebastianraschka.com/"><img class="thumb" src="/notes/thumbs/raschka.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="https://magazine.sebastianraschka.com/">Ahead of AI — Sebastian Raschka</a></h2>
     <p class="desc">Architecture comparisons and post-training explainers with code. Companion pieces: the <a href="https://sebastianraschka.com/llm-architecture-gallery/">LLM Architecture Gallery</a> and the <a href="https://github.com/rasbt/LLMs-from-scratch">LLMs-from-scratch</a> repo (KV cache in <code>ch04/03_kv-cache</code>, sampling in <code>ch05</code>, MoE in <code>ch04/07_moe</code>).</p>
     <div class="meta"><span class="kind">source</span></div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="https://www.interconnects.ai/">Interconnects — Nathan Lambert</a></h2>
+    <a class="thumb-link" href="https://www.interconnects.ai/"><img class="thumb" src="/notes/thumbs/interconnects.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="https://www.interconnects.ai/">Interconnects — Nathan Lambert</a></h2>
     <p class="desc">Open-model post-training from the people who publish the recipes; the best running commentary on OLMo, Tülu and RLVR.</p>
     <div class="meta"><span class="kind">source</span><a href="https://allenai.org/blog/olmo3">OLMo 3</a><a href="https://allenai.org/blog/tulu-3-technical">Tülu 3</a></div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="https://www.alphaxiv.org/">alphaXiv</a></h2>
+    <a class="thumb-link" href="https://www.alphaxiv.org/"><img class="thumb" src="/notes/thumbs/alphaxiv.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="https://www.alphaxiv.org/">alphaXiv</a></h2>
     <p class="desc">Full-text arXiv with discussion; swap <code>arxiv.org/abs/ID</code> for <code>alphaxiv.org/abs/ID</code>.</p>
     <div class="meta"><span class="kind">source</span></div>
+    </div>
   </li>
   <li class="entry">
-    <h2><a href="https://huggingface.co/papers">Papers with Code → Hugging Face Papers</a></h2>
+    <a class="thumb-link" href="https://huggingface.co/papers"><img class="thumb" src="/notes/thumbs/hfpapers.jpg" alt="" width="480" height="300" loading="lazy"></a>
+    <div class="body">
+      <h2><a href="https://huggingface.co/papers">Papers with Code → Hugging Face Papers</a></h2>
     <p class="desc">Papers with Code was shut down in 2025 and <code>paperswithcode.com</code> now redirects here; the method and leaderboard pages are gone. HF Papers keeps the daily/trending feed and the community signal per arXiv ID. For method-level explainers the nearest living replacement is Raschka's architecture gallery above.</p>
     <div class="meta"><span class="kind">source</span><a href="https://huggingface.co/papers/trending">trending</a></div>
+    </div>
   </li>
 </ol>
 
