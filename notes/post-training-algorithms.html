@@ -19,7 +19,12 @@
   .fk{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600; color:var(--keep); border:1px solid var(--keep-line); border-radius:4px; padding:1px 7px; margin-right:10px; vertical-align:middle;}
   .fsub{color:var(--ink-2); margin:0 0 14px; max-width:70ch;}
   .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;} @media (max-width:760px){ .grid{grid-template-columns:1fr;} }
-  .algo{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:14px 16px 12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:6px;}
+  .algo{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:0; box-shadow:var(--shadow); scroll-margin-top:70px;}
+  .algo summary{list-style:none; cursor:pointer; padding:14px 16px 12px; display:flex; flex-direction:column; gap:6px; border-radius:10px;} .algo summary::-webkit-details-marker{display:none;}
+  .algo summary:hover{background:var(--surface-2);} .algo summary:focus-visible{outline:2px solid var(--keep); outline-offset:-2px;}
+  .algo[open]{grid-column:1 / -1; border-color:var(--keep-line);} .algo[open] summary{border-bottom:1px solid var(--rule-soft); border-radius:10px 10px 0 0;}
+  .rbody{padding:6px 18px 12px;}
+  .am .more{margin-left:auto; color:var(--keep); font-weight:600;} .am .more::after{content:" ▸";} .algo[open] .am .more::after{content:" ▾";} .am{display:flex; flex-wrap:wrap; align-items:center; gap:4px;}
   .ah{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap;} .ah h3{font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:15.5px; margin:0;}
   .yr{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3);}
   .obj{margin:0; font-size:14px; color:var(--ink); max-width:none;} .fix{margin:0; font-size:13.5px; color:var(--ink-2); max-width:none;}
@@ -30,7 +35,6 @@
   .mblock .math{box-shadow:none; background:var(--surface-2); border-color:var(--rule-soft);} .mnote{margin:10px 0 0; font-size:14px; color:var(--ink-2); max-width:none;} .mnote b{color:var(--ink);}
   .cell{fill:var(--surface); stroke:var(--rule); stroke-width:1;} .cell.hot{fill:var(--draw-soft); stroke:var(--draw-line);} .cell.warm{fill:var(--keep-soft); stroke:var(--keep-line);} .cell.empty{fill:none; stroke:var(--rule-soft); stroke-dasharray:3 3;}
   .strip{fill:var(--pre-soft); stroke:var(--pre); stroke-width:1;}
-  .ah h3 a{color:inherit; border:none;} .ah h3 a:hover{color:var(--keep);} .am .more{margin-left:6px; border:none; color:var(--keep);}
   .refsec{border-top:1px solid var(--rule); padding-top:26px;}
   .ref{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:16px 20px 12px; box-shadow:var(--shadow); margin-bottom:16px; scroll-margin-top:16px;}
   .rh{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;} .rh h3{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:20px; margin:0;} .rh .up{margin-left:auto; font-family:"IBM Plex Mono",monospace; font-size:11px; border:none; color:var(--ink-3);}
@@ -110,29 +114,11 @@
   <p class="corep">If you only read ten: <span class="core"><a href="#ref-grpo">GRPO</a> · <a href="#ref-dr-grpo">Dr. GRPO</a> · <a href="#ref-dapo">DAPO</a> · <a href="#ref-gspo">GSPO</a> · <a href="#ref-cispo">CISPO</a> · <a href="#ref-vapo">VAPO</a> · <a href="#ref-truncated-masked-importance-sampling">Truncated / masked importance sampling</a> · <a href="#ref-icepop">IcePop</a> · <a href="#ref-on-policy-distillation-opd">On-policy distillation (OPD)</a> · <a href="#ref-dpo">DPO</a> · <a href="#ref-qrpo-quantile-reward">QRPO (quantile reward)</a></span></p>
   <nav class="tabs" role="tablist" aria-label="Families"><button role="tab" id="t-A" aria-controls="p-A" aria-selected="true"><span class="tk">A</span>Imitation &amp; distillation</button><button role="tab" id="t-B" aria-controls="p-B" aria-selected="false"><span class="tk">B</span>Reward signals</button><button role="tab" id="t-C" aria-controls="p-C" aria-selected="false"><span class="tk">C</span>Direct alignment</button><button role="tab" id="t-D" aria-controls="p-D" aria-selected="false"><span class="tk">D</span>Policy gradient · critic-free</button><button role="tab" id="t-E" aria-controls="p-E" aria-selected="false"><span class="tk">E</span>Policy gradient · critic</button><button role="tab" id="t-F" aria-controls="p-F" aria-selected="false"><span class="tk">F</span>Off-policy corrections</button><button role="tab" id="t-G" aria-controls="p-G" aria-selected="false"><span class="tk">G</span>Sampling &amp; curriculum</button><button role="tab" id="t-H" aria-controls="p-H" aria-selected="false"><span class="tk">H</span>Odds and ends</button></nav>
   <section class="panel" id="p-A" role="tabpanel" aria-labelledby="t-A" >
-  <div id="fam-A"><h2><span class="fk">A</span>Imitation and distillation</h2><p class="fsub">Learn from demonstrations — someone else's, your own filtered ones, or a teacher's token distributions.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-sft">SFT</a></h3><span class="yr">— · book</span></div>
+  <div id="fam-A"><h2><span class="fk">A</span>Imitation and distillation</h2><p class="fsub">Learn from demonstrations — someone else's, your own filtered ones, or a teacher's token distributions.</p><div class="grid"><details class="algo" id="ref-sft"><summary>
+      <div class="ah"><h3>SFT</h3><span class="yr">— · book</span></div>
       <p class="obj">Maximize log-likelihood of curated prompt–response pairs; token-level cross-entropy.</p>
-      <div class="am"><a href="https://rlhfbook.com/">RLHF Book</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="more" href="#ref-sft">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-rejection-sampling-ft-star-rest-em">Rejection-sampling FT / STaR / ReST-EM</a></h3><span class="yr">2022–23 · Zelikman; Google</span></div>
-      <p class="obj">Sample K responses, keep those a verifier accepts, SFT on them; iterate.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2312.06585">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2312.06585">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-rejection-sampling-ft-star-rest-em">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-off-policy-distillation">Off-policy distillation</a></h3><span class="yr">2015→ · Hinton; Phi-4; Llama-Nemotron</span></div>
-      <p class="obj">SFT on a stronger teacher's traces.</p>
-      <div class="am"><a href="https://arxiv.org/abs/1503.02531">arXiv</a> · <a href="https://www.alphaxiv.org/abs/1503.02531">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-off-policy-distillation">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-gkd-generalized-knowledge-distillation">GKD (generalized knowledge distillation)</a></h3><span class="yr">2023 · Google DeepMind</span></div>
-      <p class="obj">Distill on student-generated sequences, per-token, with reverse KL or JSD instead of forward KL on teacher data.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2306.13649">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2306.13649">alphaXiv</a> <a class="more" href="#ref-gkd-generalized-knowledge-distillation">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-on-policy-distillation-opd">On-policy distillation (OPD)</a></h3><span class="yr">2025 · Qwen3; Thinking Machines</span></div>
-      <p class="obj">Student samples; reward per token = sg[log π_T(y_t) − log π_θ(y_t)]; optimize with the RL machinery.</p>
-      <div class="am"><a href="https://thinkingmachines.ai/blog/on-policy-distillation/">Thinking Machines blog</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#qwen">Qwen</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <a class="more" href="#ref-on-policy-distillation-opd">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-multi-teacher-full-vocabulary-opd">Multi-teacher / full-vocabulary OPD</a></h3><span class="yr">2026 · Kimi K3; DeepSeek V4</span></div>
-      <p class="obj">Σ_i w_i · KL(π_θ ‖ π_Ei) on student samples, one teacher per domain (and per effort level).</p>
-      <div class="am"><a href="https://arxiv.org/abs/2606.19348">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2606.19348">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <a class="more" href="#ref-multi-teacher-full-vocabulary-opd">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-cross-stage-opd">Cross-stage OPD</a></h3><span class="yr">2026 · GLM-5</span></div>
-      <p class="obj">Same objective, but the teachers are the model's own final checkpoints from earlier stages (SFT, reasoning RL, general RL).</p>
-      <div class="am"><a href="https://arxiv.org/abs/2602.15763">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.15763">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-cross-stage-opd">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-delta-learning">Delta learning</a></h3><span class="yr">2025 · Ai2 (Geng et al.)</span></div>
-      <p class="obj">Preference-tune on pairs whose *difference* is informative even when both sides are weak: chosen from a stronger model, rejected from a much weaker one.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2507.06187">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.06187">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-delta-learning">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-pivotrl">PivotRL</a></h3><span class="yr">2026 · NVIDIA</span></div>
-      <p class="obj">Turn-level RL over offline SFT expert trajectories: update only at ‘pivot’ turns where the policy is uncertain, reward similarity to the expert action.</p>
-      <div class="am"><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super §3.2.4</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="more" href="#ref-pivotrl">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-A"><h2 class="refh">Reference · Imitation and distillation</h2><article class="ref" id="ref-sft">
-      <div class="rh"><h3>SFT</h3><span class="yr">— · book</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Maximize log-likelihood of curated prompt–response pairs; token-level cross-entropy.</p>
-      <div class="fx">\[\mathcal{L}_{\text{SFT}}(\theta)= -\sum_{t}\log \pi_\theta\!\left(y_t \mid x, y_{&lt;t}\right)\]</div>
+      <div class="am"><a href="https://rlhfbook.com/">RLHF Book</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{SFT}}(\theta)= -\sum_{t}\log \pi_\theta\!\left(y_t \mid x, y_{&lt;t}\right)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>The starting point; every later objective is a modification of what this does to the logits.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Maximum likelihood on curated pairs teaches format immediately and skill slowly: Phi-4 saw the think-tag format appear within a few hundred steps while accuracy kept climbing for 16k steps. What the loss is averaged over matters as much as the data.</dd></div>
@@ -140,10 +126,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Response length drifts with the normalization choice, not the data.</li><li>Forgetting of base-model capabilities when the mixture is narrow; Phi-4 saw none on general benchmarks with a broad mix.</li><li>Exposure bias: the model never sees its own mistakes as context — the motivation for every on-policy method below.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-rejection-sampling-ft-star-rest-em">
-      <div class="rh"><h3>Rejection-sampling FT / STaR / ReST-EM</h3><span class="yr">2022–23 · Zelikman; Google</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Sample K responses, keep those a verifier accepts, SFT on them; iterate.</p>
-      <div class="fx">\[\mathcal{D}_{k+1}=\{(x,y)\;:\; y\sim\pi_k(\cdot\mid x),\; V(x,y)=1\},\qquad \pi_{k+1}=\arg\max_\pi \sum_{(x,y)\in\mathcal{D}_{k+1}}\log \pi(y\mid x)\]</div>
+      </dl></div></details><details class="algo" id="ref-rejection-sampling-ft-star-rest-em"><summary>
+      <div class="ah"><h3>Rejection-sampling FT / STaR / ReST-EM</h3><span class="yr">2022–23 · Zelikman; Google</span></div>
+      <p class="obj">Sample K responses, keep those a verifier accepts, SFT on them; iterate.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2312.06585">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2312.06585">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{D}_{k+1}=\{(x,y)\;:\; y\sim\pi_k(\cdot\mid x),\; V(x,y)=1\},\qquad \pi_{k+1}=\arg\max_\pi \sum_{(x,y)\in\mathcal{D}_{k+1}}\log \pi(y\mid x)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>SFT where the demonstrations are your own accepted samples. ReST-EM shows this is expectation–maximization: sampling-and-filtering is the E-step, fine-tuning the M-step.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>No gradient passes through the reward, so it is stable and cheap; the model sees its own successful trajectories, which halves the exposure-bias problem. STaR adds rationalization: on failures, show the answer as a hint and keep the rationale that reaches it.</dd></div>
@@ -151,10 +138,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Nothing pushes toward hard prompts; the accepted set skews easy unless you filter for difficulty.</li><li>Diversity collapses across iterations without temperature or dedup control.</li><li>Majority-vote labels drift on hard items — the R-Zero failure in slow motion.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2312.06585">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2312.06585">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-off-policy-distillation">
-      <div class="rh"><h3>Off-policy distillation</h3><span class="yr">2015→ · Hinton; Phi-4; Llama-Nemotron</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">SFT on a stronger teacher's traces.</p>
-      <div class="fx">\[\mathcal{L}=\;-\sum_t \log \pi_\theta(y^{T}_t\mid x, y^{T}_{&lt;t}),\quad y^{T}\sim \pi_{T}(\cdot\mid x)\qquad\text{or}\qquad \sum_t \mathrm{KL}\!\left(\pi_T(\cdot\mid x,y_{&lt;t})\,\|\,\pi_\theta(\cdot\mid x,y_{&lt;t})\right)\]</div>
+      </dl></div></details><details class="algo" id="ref-off-policy-distillation"><summary>
+      <div class="ah"><h3>Off-policy distillation</h3><span class="yr">2015→ · Hinton; Phi-4; Llama-Nemotron</span></div>
+      <p class="obj">SFT on a stronger teacher's traces.</p>
+      <div class="am"><a href="https://arxiv.org/abs/1503.02531">arXiv</a> · <a href="https://www.alphaxiv.org/abs/1503.02531">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}=\;-\sum_t \log \pi_\theta(y^{T}_t\mid x, y^{T}_{&lt;t}),\quad y^{T}\sim \pi_{T}(\cdot\mid x)\qquad\text{or}\qquad \sum_t \mathrm{KL}\!\left(\pi_T(\cdot\mid x,y_{&lt;t})\,\|\,\pi_\theta(\cdot\mid x,y_{&lt;t})\right)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>SFT on a stronger model's outputs (sequence level) or forward KL on its logits (token level). The data distribution is the teacher's, not the student's.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The dominant 2025 recipe because it is one forward pass per example and needs no verifier. The student inherits the teacher's behaviour — including its ceiling and its mistakes — so prompt selection ends up being the main lever.</dd></div>
@@ -162,10 +150,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Ceiling = teacher (Llama-Nemotron shows it explicitly).</li><li>Train/inference mismatch: the student is trained on prefixes it would never produce.</li><li>Proprietary teachers make the recipe non-reproducible (Phi-4, Gemma).</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/1503.02531">arXiv</a> · <a href="https://www.alphaxiv.org/abs/1503.02531">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-gkd-generalized-knowledge-distillation">
-      <div class="rh"><h3>GKD (generalized knowledge distillation)</h3><span class="yr">2023 · Google DeepMind</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Distill on student-generated sequences, per-token, with reverse KL or JSD instead of forward KL on teacher data.</p>
-      <div class="fx">\[\mathcal{L}_{\text{GKD}}=(1-\lambda)\,\mathbb{E}_{y\sim\mathcal{D}}\!\left[\mathcal{D}(\pi_T\|\pi_\theta)(y)\right]+\lambda\,\mathbb{E}_{y\sim\pi_\theta}\!\left[\mathcal{D}(\pi_T\|\pi_\theta)(y)\right],\quad \mathcal{D}\in\{\text{fwd KL},\ \text{rev KL},\ \text{JSD}_\beta\}\]</div>
+      </dl></div></details><details class="algo" id="ref-gkd-generalized-knowledge-distillation"><summary>
+      <div class="ah"><h3>GKD (generalized knowledge distillation)</h3><span class="yr">2023 · Google DeepMind</span></div>
+      <p class="obj">Distill on student-generated sequences, per-token, with reverse KL or JSD instead of forward KL on teacher data.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2306.13649">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2306.13649">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{GKD}}=(1-\lambda)\,\mathbb{E}_{y\sim\mathcal{D}}\!\left[\mathcal{D}(\pi_T\|\pi_\theta)(y)\right]+\lambda\,\mathbb{E}_{y\sim\pi_\theta}\!\left[\mathcal{D}(\pi_T\|\pi_\theta)(y)\right],\quad \mathcal{D}\in\{\text{fwd KL},\ \text{rev KL},\ \text{JSD}_\beta\}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Two dials on distillation: what fraction of training sequences are sampled from the student (λ), and which divergence is used per token.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Sampling from the student fixes exposure bias; reverse KL is mode-seeking, so a small student stops smearing mass over teacher modes it cannot represent. The combination is what every 2025–26 ‘on-policy distillation’ reuses.</dd></div>
@@ -173,10 +162,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Reverse KL can under-cover when the student is far from the teacher early on; JSD interpolates.</li><li>Teacher quality on the student's off-distribution prefixes is the hidden assumption.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2306.13649">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2306.13649">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-on-policy-distillation-opd">
-      <div class="rh"><h3>On-policy distillation (OPD)</h3><span class="yr">2025 · Qwen3; Thinking Machines</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Student samples; reward per token = sg[log π_T(y_t) − log π_θ(y_t)]; optimize with the RL machinery.</p>
-      <div class="fx">\[\hat{A}_t=\operatorname{sg}\!\left[\log \pi_T(y_t\mid x,y_{&lt;t})-\log \pi_\theta(y_t\mid x,y_{&lt;t})\right],\qquad y\sim\pi_\theta,\quad \nabla\mathcal{J}=\mathbb{E}\!\left[\sum_t \hat{A}_t\,\nabla\log\pi_\theta(y_t\mid\cdot)\right]\]</div>
+      </dl></div></details><details class="algo" id="ref-on-policy-distillation-opd"><summary>
+      <div class="ah"><h3>On-policy distillation (OPD)</h3><span class="yr">2025 · Qwen3; Thinking Machines</span></div>
+      <p class="obj">Student samples; reward per token = sg[log π_T(y_t) − log π_θ(y_t)]; optimize with the RL machinery.</p>
+      <div class="am"><a href="https://thinkingmachines.ai/blog/on-policy-distillation/">Thinking Machines blog</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#qwen">Qwen</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\hat{A}_t=\operatorname{sg}\!\left[\log \pi_T(y_t\mid x,y_{&lt;t})-\log \pi_\theta(y_t\mid x,y_{&lt;t})\right],\qquad y\sim\pi_\theta,\quad \nabla\mathcal{J}=\mathbb{E}\!\left[\sum_t \hat{A}_t\,\nabla\log\pi_\theta(y_t\mid\cdot)\right]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>GKD's reverse-KL term rewritten as a per-token advantage so the existing RL trainer can run it: sample from the student, score each token by the teacher's log-ratio.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Dense reward at every token instead of one scalar at the end; the teacher supplies credit assignment. Thinking Machines report reasoning parity with RL at roughly a tenth of the GPU hours, and that it repairs capabilities lost during a domain fine-tune.</dd></div>
@@ -184,10 +174,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>The per-token estimate of the KL is high-variance (DeepSeek V4's stated reason for full-vocabulary OPD).</li><li>Teacher must be reasonable on the student's prefixes; a teacher that never sees such states gives noisy advantages.</li><li>Ceiling is the teacher's knowledge, though the student can be more sample-efficient at using it.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#qwen">Qwen</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://thinkingmachines.ai/blog/on-policy-distillation/">Thinking Machines blog</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-multi-teacher-full-vocabulary-opd">
-      <div class="rh"><h3>Multi-teacher / full-vocabulary OPD</h3><span class="yr">2026 · Kimi K3; DeepSeek V4</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Σ_i w_i · KL(π_θ ‖ π_Ei) on student samples, one teacher per domain (and per effort level).</p>
-      <div class="fx">\[\mathcal{L}_{\text{OPD}}(\theta)=\sum_{i=1}^{N} w_i\;\mathbb{E}_{y\sim\pi_\theta}\Big[\mathrm{KL}\big(\pi_\theta(\cdot\mid x,y_{&lt;t})\,\|\,\pi_{E_i}(\cdot\mid x,y_{&lt;t})\big)\Big]\quad\text{(full vocabulary, every position)}\]</div>
+      </dl></div></details><details class="algo" id="ref-multi-teacher-full-vocabulary-opd"><summary>
+      <div class="ah"><h3>Multi-teacher / full-vocabulary OPD</h3><span class="yr">2026 · Kimi K3; DeepSeek V4</span></div>
+      <p class="obj">Σ_i w_i · KL(π_θ ‖ π_Ei) on student samples, one teacher per domain (and per effort level).</p>
+      <div class="am"><a href="https://arxiv.org/abs/2606.19348">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2606.19348">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{OPD}}(\theta)=\sum_{i=1}^{N} w_i\;\mathbb{E}_{y\sim\pi_\theta}\Big[\mathrm{KL}\big(\pi_\theta(\cdot\mid x,y_{&lt;t})\,\|\,\pi_{E_i}(\cdot\mid x,y_{&lt;t})\big)\Big]\quad\text{(full vocabulary, every position)}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Train one specialist per domain (and per reasoning effort) with SFT + GRPO, then merge them into one student by reverse-KL OPD. DeepSeek V4 computes the KL over all |V| logits rather than the sampled-token estimate.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Reverse KL is mode-seeking per prompt: on a math prompt the student's samples are scored mainly by the math expert, so it learns whichever expert is relevant without weight merging or a mixed RL run that pits objectives against each other.</dd></div>
@@ -195,10 +186,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Choosing w_i and which teacher scores which prompt is a routing problem in disguise.</li><li>Materializing |V|&gt;100k logits per teacher per token is the engineering bottleneck.</li><li>A student cannot exceed the union of its teachers.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2606.19348">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2606.19348">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-cross-stage-opd">
-      <div class="rh"><h3>Cross-stage OPD</h3><span class="yr">2026 · GLM-5</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Same objective, but the teachers are the model's own final checkpoints from earlier stages (SFT, reasoning RL, general RL).</p>
-      <div class="fx">\[\hat{A}_{i,t}=\operatorname{sg}\!\left[\log\frac{\pi^{\text{infer}}_{\theta_{\text{teacher}}}(y_{i,t}\mid x,y_{i,&lt;t})}{\pi^{\text{train}}_{\theta}(y_{i,t}\mid x,y_{i,&lt;t})}\right],\qquad G=1,\;\text{batch}=1024\]</div>
+      </dl></div></details><details class="algo" id="ref-cross-stage-opd"><summary>
+      <div class="ah"><h3>Cross-stage OPD</h3><span class="yr">2026 · GLM-5</span></div>
+      <p class="obj">Same objective, but the teachers are the model's own final checkpoints from earlier stages (SFT, reasoning RL, general RL).</p>
+      <div class="am"><a href="https://arxiv.org/abs/2602.15763">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.15763">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\hat{A}_{i,t}=\operatorname{sg}\!\left[\log\frac{\pi^{\text{infer}}_{\theta_{\text{teacher}}}(y_{i,t}\mid x,y_{i,&lt;t})}{\pi^{\text{train}}_{\theta}(y_{i,t}\mid x,y_{i,&lt;t})}\right],\qquad G=1,\;\text{batch}=1024\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Same estimator as OPD; the teachers are the model's own final checkpoints from SFT, reasoning RL and general RL, prompted on their own stages' data.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Sequential RL stages erode each other's gains; distilling from the earlier checkpoints restores them cheaply at the end. With a teacher gap as the advantage there is no need for a group, so throughput goes up.</dd></div>
@@ -206,10 +198,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>It is a regularizer toward past selves, not a source of new capability.</li><li>Inference-engine teacher logprobs bring the train/infer mismatch back in through the advantage.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2602.15763">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.15763">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-delta-learning">
-      <div class="rh"><h3>Delta learning</h3><span class="yr">2025 · Ai2 (Geng et al.)</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Preference-tune on pairs whose *difference* is informative even when both sides are weak: chosen from a stronger model, rejected from a much weaker one.</p>
-      <div class="fx">\[\mathcal{L}_{\text{DPO}}\big(x,\;y_c\sim\pi_{\text{strong}},\;y_r\sim\pi_{\text{weak}}\big)\qquad\text{quality}(y_c)\;\text{may be low; only}\;\;\Delta=q(y_c)-q(y_r)\;\;\text{needs to be large}\]</div>
+      </dl></div></details><details class="algo" id="ref-delta-learning"><summary>
+      <div class="ah"><h3>Delta learning</h3><span class="yr">2025 · Ai2 (Geng et al.)</span></div>
+      <p class="obj">Preference-tune on pairs whose *difference* is informative even when both sides are weak: chosen from a stronger model, rejected from a much weaker one.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2507.06187">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.06187">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{DPO}}\big(x,\;y_c\sim\pi_{\text{strong}},\;y_r\sim\pi_{\text{weak}}\big)\qquad\text{quality}(y_c)\;\text{may be low; only}\;\;\Delta=q(y_c)-q(y_r)\;\;\text{needs to be large}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Ordinary DPO on pairs whose two sides come from models of different strength. The hypothesis: the useful signal is the delta, so weak absolute data still teaches.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Preference tuning moves the policy along the direction chosen−rejected; that direction is informative even when both samples are worse than the policy. SFT on the same chosen samples would drag the policy down toward them.</dd></div>
@@ -217,10 +210,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Needs a genuine capability gap between the two sources; a length gap will be learned instead (OLMo caps chosen−rejected length at 100 tokens in the Instruct variant).</li><li>Rejected responses are left unfiltered on purpose — a wrong rejected sample is still a useful contrast.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2507.06187">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.06187">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-pivotrl">
-      <div class="rh"><h3>PivotRL</h3><span class="yr">2026 · NVIDIA</span><a class="up" href="#fam-A" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Turn-level RL over offline SFT expert trajectories: update only at ‘pivot’ turns where the policy is uncertain, reward similarity to the expert action.</p>
-      <div class="fx">\[r_t=\operatorname{sim}\!\big(a_t^{\pi},\;a_t^{\text{expert}}\big)\quad\text{only at pivot turns } t\in\mathcal{P}=\{t:\ H[\pi(\cdot\mid s_t)]\ \text{high}\}\]</div>
+      </dl></div></details><details class="algo" id="ref-pivotrl"><summary>
+      <div class="ah"><h3>PivotRL</h3><span class="yr">2026 · NVIDIA</span></div>
+      <p class="obj">Turn-level RL over offline SFT expert trajectories: update only at ‘pivot’ turns where the policy is uncertain, reward similarity to the expert action.</p>
+      <div class="am"><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super §3.2.4</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r_t=\operatorname{sim}\!\big(a_t^{\pi},\;a_t^{\text{expert}}\big)\quad\text{only at pivot turns } t\in\mathcal{P}=\{t:\ H[\pi(\cdot\mid s_t)]\ \text{high}\}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Turn-level RL that reuses offline SFT expert trajectories: run the policy at the turns where it is uncertain, reward similarity to the expert's action, skip the rest.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Between SFT (cheap, degrades out of domain) and end-to-end RL (robust, one live rollout per update) — credit for similar actions rather than exact imitation, on the turns that matter.</dd></div>
@@ -228,29 +222,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>A similarity reward is a learned or heuristic signal over actions — gameable, and domain-specific by construction.</li><li>Pivot detection depends on the policy's entropy estimate being calibrated.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super §3.2.4</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-B" role="tabpanel" aria-labelledby="t-B" hidden>
-  <div id="fam-B"><h2><span class="fk">B</span>Reward and verification signals</h2><p class="fsub">What the optimizer is pointed at. Everything downstream is only as good as this.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-bradley-terry-reward-model">Bradley–Terry reward model</a></h3><span class="yr">2017→ · book</span></div>
+  <div id="fam-B"><h2><span class="fk">B</span>Reward and verification signals</h2><p class="fsub">What the optimizer is pointed at. Everything downstream is only as good as this.</p><div class="grid"><details class="algo" id="ref-bradley-terry-reward-model"><summary>
+      <div class="ah"><h3>Bradley–Terry reward model</h3><span class="yr">2017→ · book</span></div>
       <p class="obj">Train r_φ so that σ(r(y_w) − r(y_l)) matches human pairwise preferences.</p>
-      <div class="am"><a href="https://rlhfbook.com/">RLHF Book</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="more" href="#ref-bradley-terry-reward-model">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-orm-vs-prm">ORM vs PRM</a></h3><span class="yr">2023 · OpenAI (Lightman et al.)</span></div>
-      <p class="obj">Outcome reward on the final answer vs process reward on each step.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2305.20050">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2305.20050">alphaXiv</a> <a class="more" href="#ref-orm-vs-prm">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-verifiable-rewards-rlvr">Verifiable rewards (RLVR)</a></h3><span class="yr">2024 · Ai2 Tülu 3; DeepSeek-R1</span></div>
-      <p class="obj">Replace the reward model with a checker: math answer match, unit tests, constraint verifiers.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2411.15124">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2411.15124">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="more" href="#ref-verifiable-rewards-rlvr">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-llm-as-judge-genrm">LLM-as-judge / GenRM</a></h3><span class="yr">2023–24 · Zheng et al.; Zhang et al.</span></div>
-      <p class="obj">A language model scores or compares responses, optionally with chain-of-thought before the verdict.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2408.15240">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2408.15240">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <a class="more" href="#ref-llm-as-judge-genrm">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-rubrics-as-rewards">Rubrics as rewards</a></h3><span class="yr">2025 · Scale AI et al.</span></div>
-      <p class="obj">Judge against a per-prompt checklist rather than a holistic score.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2507.17746">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.17746">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <a class="more" href="#ref-rubrics-as-rewards">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-actor-as-judge">Actor-as-judge</a></h3><span class="yr">2026 · DeepSeek V4</span></div>
-      <p class="obj">No separate reward model: apply RL to the policy's own judging, so generating and evaluating are trained jointly.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2606.19348">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2606.19348">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <a class="more" href="#ref-actor-as-judge">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-warm-weight-averaged-reward-models">WARM (weight-averaged reward models)</a></h3><span class="yr">2024 · Google DeepMind</span></div>
-      <p class="obj">Average several fine-tuned RMs' weights for a more robust, less hackable reward.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2401.12187">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2401.12187">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a> <a class="more" href="#ref-warm-weight-averaged-reward-models">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-length-aware-and-budget-rewards">Length-aware and budget rewards</a></h3><span class="yr">2025–26 · Phi-4; DAPO; Kimi</span></div>
-      <p class="obj">Shape reward by output length: penalize overlong correct answers, reward longer thinking when wrong, or hard −1 beyond a per-problem budget τ·b₀.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <a class="more" href="#ref-length-aware-and-budget-rewards">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-B"><h2 class="refh">Reference · Reward and verification signals</h2><article class="ref" id="ref-bradley-terry-reward-model">
-      <div class="rh"><h3>Bradley–Terry reward model</h3><span class="yr">2017→ · book</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Train r_φ so that σ(r(y_w) − r(y_l)) matches human pairwise preferences.</p>
-      <div class="fx">\[\mathcal{L}(\phi)=-\mathbb{E}_{(x,y_w,y_l)}\log\sigma\!\big(r_\phi(x,y_w)-r_\phi(x,y_l)\big),\qquad P(y_w\succ y_l)=\sigma\!\big(r_\phi(x,y_w)-r_\phi(x,y_l)\big)\]</div>
+      <div class="am"><a href="https://rlhfbook.com/">RLHF Book</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}(\phi)=-\mathbb{E}_{(x,y_w,y_l)}\log\sigma\!\big(r_\phi(x,y_w)-r_\phi(x,y_l)\big),\qquad P(y_w\succ y_l)=\sigma\!\big(r_\phi(x,y_w)-r_\phi(x,y_l)\big)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>A scalar head on a language model trained so that reward differences reproduce human pairwise preferences.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Cheap to query at RL time and smooth to optimize against; the price is that it is a proxy, and RL is very good at finding where the proxy and the intent diverge.</dd></div>
@@ -258,10 +236,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Over-optimization: reward keeps rising while quality falls — the reason for KL penalties, WARM, and early stopping.</li><li>Length and style biases baked into the preference data become the reward.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-orm-vs-prm">
-      <div class="rh"><h3>ORM vs PRM</h3><span class="yr">2023 · OpenAI (Lightman et al.)</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Outcome reward on the final answer vs process reward on each step.</p>
-      <div class="fx">\[r_{\text{ORM}}(x,y)\in\{0,1\}\ \text{on the final answer}\qquad\text{vs}\qquad r_{\text{PRM}}(x,y)=\{r_1,\dots,r_S\},\ \text{one score per reasoning step}\]</div>
+      </dl></div></details><details class="algo" id="ref-orm-vs-prm"><summary>
+      <div class="ah"><h3>ORM vs PRM</h3><span class="yr">2023 · OpenAI (Lightman et al.)</span></div>
+      <p class="obj">Outcome reward on the final answer vs process reward on each step.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2305.20050">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2305.20050">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r_{\text{ORM}}(x,y)\in\{0,1\}\ \text{on the final answer}\qquad\text{vs}\qquad r_{\text{PRM}}(x,y)=\{r_1,\dots,r_S\},\ \text{one score per reasoning step}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Outcome supervision scores the answer; process supervision scores each step.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>PRMs give credit assignment and catch right-answer-wrong-reasoning, but need step labels and are easy to game once optimized against. The 2025–26 frontier reports use outcome rewards and let long chains of thought do their own credit assignment.</dd></div>
@@ -269,10 +248,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Step labels are expensive and ambiguous.</li><li>A PRM under RL pressure rewards steps that look good rather than steps that are right.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2305.20050">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2305.20050">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-verifiable-rewards-rlvr">
-      <div class="rh"><h3>Verifiable rewards (RLVR)</h3><span class="yr">2024 · Ai2 Tülu 3; DeepSeek-R1</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Replace the reward model with a checker: math answer match, unit tests, constraint verifiers.</p>
-      <div class="fx">\[r(x,y)=\mathbb{1}\!\left[\,\mathrm{verify}(x,y)\,\right]\qquad\text{(answer match, unit tests, constraint checkers)}\]</div>
+      </dl></div></details><details class="algo" id="ref-verifiable-rewards-rlvr"><summary>
+      <div class="ah"><h3>Verifiable rewards (RLVR)</h3><span class="yr">2024 · Ai2 Tülu 3; DeepSeek-R1</span></div>
+      <p class="obj">Replace the reward model with a checker: math answer match, unit tests, constraint verifiers.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2411.15124">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2411.15124">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r(x,y)=\mathbb{1}\!\left[\,\mathrm{verify}(x,y)\,\right]\qquad\text{(answer match, unit tests, constraint checkers)}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Replace the reward model with a program: the reward is whether the output passes a check.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>No proxy to over-optimize; the model can only game the checker itself. This is what made reasoning RL work at scale and why every 2026 report lists its environments.</dd></div>
@@ -280,10 +260,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Equivalence checking is brittle (formats, units); most reports add an LLM verifier fallback.</li><li>Test suites get gamed — GLM-5's slide renderer needed patching against truncation and spacing hacks.</li><li>Only where a checker exists; hence GenRMs for the rest.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2411.15124">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2411.15124">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-llm-as-judge-genrm">
-      <div class="rh"><h3>LLM-as-judge / GenRM</h3><span class="yr">2023–24 · Zheng et al.; Zhang et al.</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">A language model scores or compares responses, optionally with chain-of-thought before the verdict.</p>
-      <div class="fx">\[r(x,y)=f\!\big(J_\psi(x,y)\big)\quad\text{or}\quad P(y_a\succ y_b)=J_\psi(x,y_a,y_b),\qquad J_\psi\ \text{reasons in text before the verdict}\]</div>
+      </dl></div></details><details class="algo" id="ref-llm-as-judge-genrm"><summary>
+      <div class="ah"><h3>LLM-as-judge / GenRM</h3><span class="yr">2023–24 · Zheng et al.; Zhang et al.</span></div>
+      <p class="obj">A language model scores or compares responses, optionally with chain-of-thought before the verdict.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2408.15240">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2408.15240">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r(x,y)=f\!\big(J_\psi(x,y)\big)\quad\text{or}\quad P(y_a\succ y_b)=J_\psi(x,y_a,y_b),\qquad J_\psi\ \text{reasons in text before the verdict}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>A language model produces the reward — as a score, a pairwise verdict, or a rubric-filled scorepad — usually after chain-of-thought.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Extends RL to everything that cannot be checked by a program. Generative judging is more robust to gaming than a scalar head because the judge can explain, and the explanation can be audited.</dd></div>
@@ -291,10 +272,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Verbosity bias (Kimi auto-fails candidates longer than σ×ℓ₀), position bias, self-preference.</li><li>Judge cost dominates rollout cost at scale.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2408.15240">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2408.15240">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-rubrics-as-rewards">
-      <div class="rh"><h3>Rubrics as rewards</h3><span class="yr">2025 · Scale AI et al.</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Judge against a per-prompt checklist rather than a holistic score.</p>
-      <div class="fx">\[r(x,y)=\sum_{k} w_k\;\mathbb{1}\!\left[\text{criterion}_k(x)\ \text{is met by}\ y\right]\]</div>
+      </dl></div></details><details class="algo" id="ref-rubrics-as-rewards"><summary>
+      <div class="ah"><h3>Rubrics as rewards</h3><span class="yr">2025 · Scale AI et al.</span></div>
+      <p class="obj">Judge against a per-prompt checklist rather than a holistic score.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2507.17746">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.17746">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r(x,y)=\sum_{k} w_k\;\mathbb{1}\!\left[\text{criterion}_k(x)\ \text{is met by}\ y\right]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Instead of a holistic judgment, the judge checks a per-prompt list of criteria written in advance.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Turns a vague preference into a checklist the policy cannot easily talk its way around, and makes the reward auditable after the fact.</dd></div>
@@ -302,10 +284,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Rubric writing is the annotation cost that returns.</li><li>Criteria that are easy to satisfy literally get satisfied literally.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2507.17746">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.17746">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-actor-as-judge">
-      <div class="rh"><h3>Actor-as-judge</h3><span class="yr">2026 · DeepSeek V4</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">No separate reward model: apply RL to the policy's own judging, so generating and evaluating are trained jointly.</p>
-      <div class="fx">\[\pi_\theta\ \text{is both policy and GRM:}\quad \max_\theta\ \mathbb{E}\big[r_{\text{judge}}\big]\ +\ \mathbb{E}\big[r_{\text{task}}\big]\quad\text{with}\quad r_{\text{task}}=J_{\pi_\theta}(x,y)\]</div>
+      </dl></div></details><details class="algo" id="ref-actor-as-judge"><summary>
+      <div class="ah"><h3>Actor-as-judge</h3><span class="yr">2026 · DeepSeek V4</span></div>
+      <p class="obj">No separate reward model: apply RL to the policy's own judging, so generating and evaluating are trained jointly.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2606.19348">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2606.19348">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\pi_\theta\ \text{is both policy and GRM:}\quad \max_\theta\ \mathbb{E}\big[r_{\text{judge}}\big]\ +\ \mathbb{E}\big[r_{\text{task}}\big]\quad\text{with}\quad r_{\text{task}}=J_{\pi_\theta}(x,y)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>No separate reward model: the actor network is trained by RL to judge, and its judgments reward its generations.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Judging and generating share reasoning, so improving one improves the other; DeepSeek V4 claims strong scoring from a minimal set of human annotations.</dd></div>
@@ -313,10 +296,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Self-preference and self-reinforcing errors — R-Zero's collapse mechanism, held off by rubrics and human seed data.</li><li>Hard to audit: the judge changes every step.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#dsv4">DeepSeek V4</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2606.19348">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2606.19348">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-warm-weight-averaged-reward-models">
-      <div class="rh"><h3>WARM (weight-averaged reward models)</h3><span class="yr">2024 · Google DeepMind</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Average several fine-tuned RMs' weights for a more robust, less hackable reward.</p>
-      <div class="fx">\[r_{\bar\phi},\qquad \bar\phi=\tfrac{1}{M}\sum_{m=1}^{M}\phi_m,\quad \phi_m\ \text{fine-tuned from a shared init with different seeds / data orders}\]</div>
+      </dl></div></details><details class="algo" id="ref-warm-weight-averaged-reward-models"><summary>
+      <div class="ah"><h3>WARM (weight-averaged reward models)</h3><span class="yr">2024 · Google DeepMind</span></div>
+      <p class="obj">Average several fine-tuned RMs' weights for a more robust, less hackable reward.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2401.12187">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2401.12187">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r_{\bar\phi},\qquad \bar\phi=\tfrac{1}{M}\sum_{m=1}^{M}\phi_m,\quad \phi_m\ \text{fine-tuned from a shared init with different seeds / data orders}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Average the weights of several reward models instead of ensembling their outputs.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Weight averaging keeps what the RMs agree on and discards the idiosyncrasies each one over-fits — which is where reward hacking lives. One model's inference cost.</dd></div>
@@ -324,10 +308,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Requires linear mode connectivity — a shared pretrained init.</li><li>Averaging cannot fix a bias present in all members.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2401.12187">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2401.12187">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-length-aware-and-budget-rewards">
-      <div class="rh"><h3>Length-aware and budget rewards</h3><span class="yr">2025–26 · Phi-4; DAPO; Kimi</span><a class="up" href="#fam-B" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Shape reward by output length: penalize overlong correct answers, reward longer thinking when wrong, or hard −1 beyond a per-problem budget τ·b₀.</p>
-      <div class="fx">\[\text{Phi-4:}\ R=\tfrac{8}{13}R_{\text{acc}}(L)+\tfrac{1}{13}R_{\text{rep}},\quad R_{\text{acc}}\in[0.5,1]\ \text{(correct, cosine in }L)\ \ \text{or}\ [-1,-0.5]\ \text{(incorrect)}\]</div><div class="fx">\[\text{Kimi K3:}\ r(y)=-1\ \ \text{if}\ T(y)&gt;\tau\cdot b_0(x)\qquad\qquad\text{DAPO:}\ r_{\text{len}}=-\frac{L-(L_{\max}-L_{\text{cache}})}{L_{\text{cache}}}\ \text{on the last } L_{\text{cache}}\ \text{tokens}\]</div>
+      </dl></div></details><details class="algo" id="ref-length-aware-and-budget-rewards"><summary>
+      <div class="ah"><h3>Length-aware and budget rewards</h3><span class="yr">2025–26 · Phi-4; DAPO; Kimi</span></div>
+      <p class="obj">Shape reward by output length: penalize overlong correct answers, reward longer thinking when wrong, or hard −1 beyond a per-problem budget τ·b₀.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{Phi-4:}\ R=\tfrac{8}{13}R_{\text{acc}}(L)+\tfrac{1}{13}R_{\text{rep}},\quad R_{\text{acc}}\in[0.5,1]\ \text{(correct, cosine in }L)\ \ \text{or}\ [-1,-0.5]\ \text{(incorrect)}\]</div><div class="fx">\[\text{Kimi K3:}\ r(y)=-1\ \ \text{if}\ T(y)&gt;\tau\cdot b_0(x)\qquad\qquad\text{DAPO:}\ r_{\text{len}}=-\frac{L-(L_{\max}-L_{\text{cache}})}{L_{\text{cache}}}\ \text{on the last } L_{\text{cache}}\ \text{tokens}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Make the reward depend on output length so that reasoning effort is trained rather than prompted.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Right answers get shorter, wrong answers are encouraged to think longer (Phi-4); a per-problem budget with a multiplier τ yields low/high/max effort experts (Kimi); a soft ramp near the cap avoids punishing good traces that were truncated (DAPO).</dd></div>
@@ -335,31 +320,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Set too tight, the penalty kills exploration; set on the wrong side, the model learns to truncate.</li><li>Length is a proxy for effort; the judge-side counterpart is Kimi's verbosity control.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-C" role="tabpanel" aria-labelledby="t-C" hidden>
-  <div id="fam-C"><h2><span class="fk">C</span>Direct alignment (offline)</h2><p class="fsub">Skip the reward model and the rollouts: optimize the policy on a fixed dataset of preferences or scored samples.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-dpo">DPO</a></h3><span class="yr">2023 · Stanford</span></div>
+  <div id="fam-C"><h2><span class="fk">C</span>Direct alignment (offline)</h2><p class="fsub">Skip the reward model and the rollouts: optimize the policy on a fixed dataset of preferences or scored samples.</p><div class="grid"><details class="algo" id="ref-dpo"><summary>
+      <div class="ah"><h3>DPO</h3><span class="yr">2023 · Stanford</span></div>
       <p class="obj">Closed-form of KL-regularized RLHF: logistic loss on the implicit reward β·log π_θ/π_ref between chosen and rejected.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2305.18290">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2305.18290">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-dpo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-ipo">IPO</a></h3><span class="yr">2023 · Google DeepMind</span></div>
-      <p class="obj">Regress the implicit reward gap onto a constant 1/(2β) instead of a logistic loss.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2310.12036">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2310.12036">alphaXiv</a> <a class="more" href="#ref-ipo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-kto">KTO</a></h3><span class="yr">2024 · Contextual AI</span></div>
-      <p class="obj">Prospect-theory loss on unpaired ‘good’ / ‘bad’ examples — no pairs needed.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2402.01306">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.01306">alphaXiv</a> <a class="more" href="#ref-kto">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-orpo">ORPO</a></h3><span class="yr">2024 · KAIST</span></div>
-      <p class="obj">Odds-ratio penalty added to the SFT loss; no reference model.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2403.07691">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2403.07691">alphaXiv</a> <a class="more" href="#ref-orpo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-simpo">SimPO</a></h3><span class="yr">2024 · Princeton</span></div>
-      <p class="obj">Length-normalized implicit reward with a target margin; no reference model.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2405.14734">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2405.14734">alphaXiv</a> <a class="more" href="#ref-simpo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-apo-anchored">APO (anchored)</a></h3><span class="yr">2024 · Contextual AI</span></div>
-      <p class="obj">Contrastive objectives that specify whether the chosen response should rise, the rejected fall, or both, relative to the model's current outputs.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2408.06266">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2408.06266">alphaXiv</a> <a class="more" href="#ref-apo-anchored">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-rpo-reward-aware">RPO (reward-aware)</a></h3><span class="yr">2024–25 · NVIDIA</span></div>
-      <p class="obj">Regress the implicit reward gap onto the reward model's actual gap, not just the binary order.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2502.00203">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2502.00203">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="more" href="#ref-rpo-reward-aware">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-qrpo-quantile-reward">QRPO (quantile reward)</a></h3><span class="yr">2025 · EPFL / Apertus</span></div>
-      <p class="obj">Regress β·log π_θ/π_ref onto a quantile-transformed absolute reward, for which the KL-regularized optimum's partition function is exact.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2507.08068">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.08068">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#apertus">Apertus</a> <a class="more" href="#ref-qrpo-quantile-reward">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-iterative-online-dpo">Iterative / online DPO</a></h3><span class="yr">2024 · many</span></div>
-      <p class="obj">Regenerate pairs from the current policy each round, judge them, DPO again.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2402.04792">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.04792">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-iterative-online-dpo">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-C"><h2 class="refh">Reference · Direct alignment (offline)</h2><article class="ref" id="ref-dpo">
-      <div class="rh"><h3>DPO</h3><span class="yr">2023 · Stanford</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Closed-form of KL-regularized RLHF: logistic loss on the implicit reward β·log π_θ/π_ref between chosen and rejected.</p>
-      <div class="fx">\[\mathcal{L}_{\text{DPO}}=-\mathbb{E}\log\sigma\!\left(\beta\log\frac{\pi_\theta(y_w\mid x)}{\pi_{\text{ref}}(y_w\mid x)}-\beta\log\frac{\pi_\theta(y_l\mid x)}{\pi_{\text{ref}}(y_l\mid x)}\right)\]</div>
+      <div class="am"><a href="https://arxiv.org/abs/2305.18290">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2305.18290">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{DPO}}=-\mathbb{E}\log\sigma\!\left(\beta\log\frac{\pi_\theta(y_w\mid x)}{\pi_{\text{ref}}(y_w\mid x)}-\beta\log\frac{\pi_\theta(y_l\mid x)}{\pi_{\text{ref}}(y_l\mid x)}\right)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>The KL-regularized RLHF optimum π* ∝ π_ref·exp(r/β) solved for r and substituted into the Bradley–Terry loss: the policy is its own reward model.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>One offline pass on pairs, no reward model, no rollouts. It became the default second stage of 2024–25 and is still OLMo 3's.</dd></div>
@@ -367,10 +334,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Both completions' likelihoods can fall — probability mass leaks to unseen outputs (the motivation for QRPO, APO).</li><li>Relative signal only: two bad answers are treated like a good one vs a bad one.</li><li>Length bias: chosen tends to be longer; SimPO and OLMo's 100-token cap address it.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2305.18290">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2305.18290">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-ipo">
-      <div class="rh"><h3>IPO</h3><span class="yr">2023 · Google DeepMind</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Regress the implicit reward gap onto a constant 1/(2β) instead of a logistic loss.</p>
-      <div class="fx">\[\mathcal{L}_{\text{IPO}}=\mathbb{E}\left[\left(h_\theta(y_w,y_l)-\frac{1}{2\tau}\right)^2\right],\qquad h_\theta=\log\frac{\pi_\theta(y_w)\pi_{\text{ref}}(y_l)}{\pi_\theta(y_l)\pi_{\text{ref}}(y_w)}\]</div>
+      </dl></div></details><details class="algo" id="ref-ipo"><summary>
+      <div class="ah"><h3>IPO</h3><span class="yr">2023 · Google DeepMind</span></div>
+      <p class="obj">Regress the implicit reward gap onto a constant 1/(2β) instead of a logistic loss.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2310.12036">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2310.12036">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{IPO}}=\mathbb{E}\left[\left(h_\theta(y_w,y_l)-\frac{1}{2\tau}\right)^2\right],\qquad h_\theta=\log\frac{\pi_\theta(y_w)\pi_{\text{ref}}(y_l)}{\pi_\theta(y_l)\pi_{\text{ref}}(y_w)}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Replace DPO's logistic loss with a squared loss that targets a fixed margin.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>DPO's loss keeps pushing the margin to infinity on deterministic preferences, which over-fits; a regression target caps it.</dd></div>
@@ -378,10 +346,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Sensitive to τ.</li><li>Still a relative, offline signal.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2310.12036">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2310.12036">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-kto">
-      <div class="rh"><h3>KTO</h3><span class="yr">2024 · Contextual AI</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Prospect-theory loss on unpaired ‘good’ / ‘bad’ examples — no pairs needed.</p>
-      <div class="fx">\[\mathcal{L}_{\text{KTO}}=\mathbb{E}\big[\lambda_y-v(x,y)\big],\quad v(x,y)=\begin{cases}\lambda_D\,\sigma\!\big(\beta(r_\theta(x,y)-z_0)\big)&amp; y\ \text{desirable}\\ \lambda_U\,\sigma\!\big(\beta(z_0-r_\theta(x,y))\big)&amp; y\ \text{undesirable}\end{cases},\quad r_\theta=\log\frac{\pi_\theta}{\pi_{\text{ref}}},\ z_0\approx\mathrm{KL}(\pi_\theta\|\pi_{\text{ref}})\]</div>
+      </dl></div></details><details class="algo" id="ref-kto"><summary>
+      <div class="ah"><h3>KTO</h3><span class="yr">2024 · Contextual AI</span></div>
+      <p class="obj">Prospect-theory loss on unpaired ‘good’ / ‘bad’ examples — no pairs needed.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2402.01306">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.01306">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{KTO}}=\mathbb{E}\big[\lambda_y-v(x,y)\big],\quad v(x,y)=\begin{cases}\lambda_D\,\sigma\!\big(\beta(r_\theta(x,y)-z_0)\big)&amp; y\ \text{desirable}\\ \lambda_U\,\sigma\!\big(\beta(z_0-r_\theta(x,y))\big)&amp; y\ \text{undesirable}\end{cases},\quad r_\theta=\log\frac{\pi_\theta}{\pi_{\text{ref}}},\ z_0\approx\mathrm{KL}(\pi_\theta\|\pi_{\text{ref}})\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>A prospect-theory utility over unpaired good/bad examples; no comparisons needed.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Thumbs-up/thumbs-down data is far more plentiful than pairs, and loss-aversion weighting (λ_U &gt; λ_D) matches how humans treat bad outputs.</dd></div>
@@ -389,10 +358,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>z₀ estimated per batch — noisy at small batch.</li><li>Relative to a reference, like DPO.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2402.01306">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.01306">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-orpo">
-      <div class="rh"><h3>ORPO</h3><span class="yr">2024 · KAIST</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Odds-ratio penalty added to the SFT loss; no reference model.</p>
-      <div class="fx">\[\mathcal{L}_{\text{ORPO}}=\mathcal{L}_{\text{SFT}}(y_w)+\lambda\,\mathcal{L}_{\text{OR}},\quad \mathcal{L}_{\text{OR}}=-\log\sigma\!\left(\log\frac{\text{odds}_\theta(y_w\mid x)}{\text{odds}_\theta(y_l\mid x)}\right),\ \ \text{odds}_\theta(y)=\frac{\pi_\theta(y)}{1-\pi_\theta(y)}\]</div>
+      </dl></div></details><details class="algo" id="ref-orpo"><summary>
+      <div class="ah"><h3>ORPO</h3><span class="yr">2024 · KAIST</span></div>
+      <p class="obj">Odds-ratio penalty added to the SFT loss; no reference model.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2403.07691">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2403.07691">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{ORPO}}=\mathcal{L}_{\text{SFT}}(y_w)+\lambda\,\mathcal{L}_{\text{OR}},\quad \mathcal{L}_{\text{OR}}=-\log\sigma\!\left(\log\frac{\text{odds}_\theta(y_w\mid x)}{\text{odds}_\theta(y_l\mid x)}\right),\ \ \text{odds}_\theta(y)=\frac{\pi_\theta(y)}{1-\pi_\theta(y)}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Fold a preference penalty into SFT so one stage replaces SFT → DPO; no reference model.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The odds ratio is a much weaker push than a log-probability ratio, so it can be applied during SFT without the collapse a DPO term would cause there.</dd></div>
@@ -400,10 +370,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Weaker ceiling than a separate preference stage at larger scale.</li><li>Needs pairs during SFT.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2403.07691">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2403.07691">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-simpo">
-      <div class="rh"><h3>SimPO</h3><span class="yr">2024 · Princeton</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Length-normalized implicit reward with a target margin; no reference model.</p>
-      <div class="fx">\[r_\theta(x,y)=\frac{\beta}{|y|}\log\pi_\theta(y\mid x),\qquad \mathcal{L}_{\text{SimPO}}=-\log\sigma\!\big(r_\theta(x,y_w)-r_\theta(x,y_l)-\gamma\big)\]</div>
+      </dl></div></details><details class="algo" id="ref-simpo"><summary>
+      <div class="ah"><h3>SimPO</h3><span class="yr">2024 · Princeton</span></div>
+      <p class="obj">Length-normalized implicit reward with a target margin; no reference model.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2405.14734">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2405.14734">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r_\theta(x,y)=\frac{\beta}{|y|}\log\pi_\theta(y\mid x),\qquad \mathcal{L}_{\text{SimPO}}=-\log\sigma\!\big(r_\theta(x,y_w)-r_\theta(x,y_l)-\gamma\big)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Length-normalized average log-probability as the implicit reward, a target margin γ, and no reference model.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Aligns the reward with what generation actually optimizes (average log-prob) and removes DPO's length bias at the source; half the memory of DPO.</dd></div>
@@ -411,10 +382,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Without π_ref there is nothing anchoring the policy; over-training degrades faster.</li><li>γ and β interact; needs a sweep.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2405.14734">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2405.14734">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-apo-anchored">
-      <div class="rh"><h3>APO (anchored)</h3><span class="yr">2024 · Contextual AI</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Contrastive objectives that specify whether the chosen response should rise, the rejected fall, or both, relative to the model's current outputs.</p>
-      <div class="fx">\[\mathcal{L}_{\text{APO-zero}}=-\sigma\!\big(\hat r_\theta(y_w)\big)+\sigma\!\big(\hat r_\theta(y_l)\big),\qquad \mathcal{L}_{\text{APO-down}}=-\sigma\!\big(\hat r_\theta(y_w)\big)+\sigma\!\big(\hat r_\theta(y_w)-\hat r_\theta(y_l)\big),\quad \hat r_\theta=\beta\log\frac{\pi_\theta}{\pi_{\text{ref}}}\]</div>
+      </dl></div></details><details class="algo" id="ref-apo-anchored"><summary>
+      <div class="ah"><h3>APO (anchored)</h3><span class="yr">2024 · Contextual AI</span></div>
+      <p class="obj">Contrastive objectives that specify whether the chosen response should rise, the rejected fall, or both, relative to the model's current outputs.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2408.06266">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2408.06266">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{APO-zero}}=-\sigma\!\big(\hat r_\theta(y_w)\big)+\sigma\!\big(\hat r_\theta(y_l)\big),\qquad \mathcal{L}_{\text{APO-down}}=-\sigma\!\big(\hat r_\theta(y_w)\big)+\sigma\!\big(\hat r_\theta(y_w)-\hat r_\theta(y_l)\big),\quad \hat r_\theta=\beta\log\frac{\pi_\theta}{\pi_{\text{ref}}}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Make the objective say which side should move: APO-zero pushes chosen up and rejected down; APO-down pushes both down but the rejected more.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>DPO is under-specified about absolute likelihoods. If the pairs are better than the model, chosen should rise (zero); if they are worse, both should fall with the delta preserved (down).</dd></div>
@@ -422,10 +394,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Choosing the variant requires knowing whether your data is above or below the policy.</li><li>Same offline limits as DPO.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2408.06266">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2408.06266">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-rpo-reward-aware">
-      <div class="rh"><h3>RPO (reward-aware)</h3><span class="yr">2024–25 · NVIDIA</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Regress the implicit reward gap onto the reward model's actual gap, not just the binary order.</p>
-      <div class="fx">\[\mathcal{L}_{\text{RPO}}=\mathbb{E}\left[\Big(\beta\log\frac{\pi_\theta(y_a)}{\pi_{\text{ref}}(y_a)}-\beta\log\frac{\pi_\theta(y_b)}{\pi_{\text{ref}}(y_b)}-\eta\,\big(r^*(y_a)-r^*(y_b)\big)\Big)^2\right]\]</div>
+      </dl></div></details><details class="algo" id="ref-rpo-reward-aware"><summary>
+      <div class="ah"><h3>RPO (reward-aware)</h3><span class="yr">2024–25 · NVIDIA</span></div>
+      <p class="obj">Regress the implicit reward gap onto the reward model's actual gap, not just the binary order.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2502.00203">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2502.00203">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{L}_{\text{RPO}}=\mathbb{E}\left[\Big(\beta\log\frac{\pi_\theta(y_a)}{\pi_{\text{ref}}(y_a)}-\beta\log\frac{\pi_\theta(y_b)}{\pi_{\text{ref}}(y_b)}-\eta\,\big(r^*(y_a)-r^*(y_b)\big)\Big)^2\right]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Regress the policy's implicit reward gap onto the reward model's actual gap, instead of only the sign of the preference.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Two responses that differ slightly should move the policy slightly; DPO moves them as if the preference were absolute and over-fits. NVIDIA's unified framework shows DPO, IPO and others as special cases of the distance term.</dd></div>
@@ -433,10 +406,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Needs a reward model good enough to be worth matching.</li><li>η couples the two scales and needs tuning.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2502.00203">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2502.00203">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-qrpo-quantile-reward">
-      <div class="rh"><h3>QRPO (quantile reward)</h3><span class="yr">2025 · EPFL / Apertus</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Regress β·log π_θ/π_ref onto a quantile-transformed absolute reward, for which the KL-regularized optimum's partition function is exact.</p>
-      <div class="fx">\[\pi^*(y\mid x)=\frac{\pi_{\text{ref}}(y\mid x)\,e^{r(x,y)/\beta}}{Z(x)}\qquad\Longrightarrow\qquad \beta\log\frac{\pi^*(y\mid x)}{\pi_{\text{ref}}(y\mid x)}=r(x,y)-\beta\log Z(x)\]</div><div class="fx">\[\text{replace } r \text{ by } r_q(x,y)=F\big(\text{quantile of } r(x,y)\text{ under } y\sim\pi_{\text{ref}}(\cdot\mid x)\big)\ \text{so that } Z(x) \text{ is known in closed form;}\quad \mathcal{L}=\Big(\beta\log\tfrac{\pi_\theta(y\mid x)}{\pi_{\text{ref}}(y\mid x)}-r_q(x,y)+\beta\log Z(x)\Big)^2\]</div>
+      </dl></div></details><details class="algo" id="ref-qrpo-quantile-reward"><summary>
+      <div class="ah"><h3>QRPO (quantile reward)</h3><span class="yr">2025 · EPFL / Apertus</span></div>
+      <p class="obj">Regress β·log π_θ/π_ref onto a quantile-transformed absolute reward, for which the KL-regularized optimum's partition function is exact.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2507.08068">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.08068">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#apertus">Apertus</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\pi^*(y\mid x)=\frac{\pi_{\text{ref}}(y\mid x)\,e^{r(x,y)/\beta}}{Z(x)}\qquad\Longrightarrow\qquad \beta\log\frac{\pi^*(y\mid x)}{\pi_{\text{ref}}(y\mid x)}=r(x,y)-\beta\log Z(x)\]</div><div class="fx">\[\text{replace } r \text{ by } r_q(x,y)=F\big(\text{quantile of } r(x,y)\text{ under } y\sim\pi_{\text{ref}}(\cdot\mid x)\big)\ \text{so that } Z(x) \text{ is known in closed form;}\quad \mathcal{L}=\Big(\beta\log\tfrac{\pi_\theta(y\mid x)}{\pi_{\text{ref}}(y\mid x)}-r_q(x,y)+\beta\log Z(x)\Big)^2\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Regress the log-ratio onto an absolute reward. The trick: transform the reward through its quantile under the reference policy, which makes the otherwise intractable partition function computable exactly.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Pointwise absolute rewards carry more information than pairs, DAA-style offline training keeps stability and cost, and regressing to the true optimum avoids DPO's habit of pushing both completions down.</dd></div>
@@ -444,10 +418,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Needs reference samples per prompt to estimate the quantile — Apertus draws 10 from the SFT model.</li><li>Exact form of the transform and Z depends on the reward-distribution assumption; check the paper before quoting.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#apertus">Apertus</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2507.08068">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.08068">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-iterative-online-dpo">
-      <div class="rh"><h3>Iterative / online DPO</h3><span class="yr">2024 · many</span><a class="up" href="#fam-C" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Regenerate pairs from the current policy each round, judge them, DPO again.</p>
-      <div class="fx">\[\text{for round } k:\quad y_a,y_b\sim\pi_{k}(\cdot\mid x),\quad (y_w,y_l)=\text{judge}(x,y_a,y_b),\quad \pi_{k+1}=\text{DPO}(\pi_k;\ \{(x,y_w,y_l)\})\]</div>
+      </dl></div></details><details class="algo" id="ref-iterative-online-dpo"><summary>
+      <div class="ah"><h3>Iterative / online DPO</h3><span class="yr">2024 · many</span></div>
+      <p class="obj">Regenerate pairs from the current policy each round, judge them, DPO again.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2402.04792">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.04792">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{for round } k:\quad y_a,y_b\sim\pi_{k}(\cdot\mid x),\quad (y_w,y_l)=\text{judge}(x,y_a,y_b),\quad \pi_{k+1}=\text{DPO}(\pi_k;\ \{(x,y_w,y_l)\})\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Regenerate the pairs from the current policy each round so the preference data stays on-policy.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Most of DPO's gap to PPO-style RLHF comes from the data being off-policy; a few rounds of regeneration close much of it at a fraction of the infrastructure.</dd></div>
@@ -455,35 +430,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Judge biases compound across rounds.</li><li>Length creep unless controlled (OLMo caps at 100 tokens difference).</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2402.04792">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.04792">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-D" role="tabpanel" aria-labelledby="t-D" hidden>
-  <div id="fam-D"><h2><span class="fk">D</span>Policy gradient, critic-free</h2><p class="fsub">Sample a group per prompt, use the group as the baseline, no value network. Where almost all 2025–26 movement is.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-reinforce">REINFORCE</a></h3><span class="yr">1992 · Williams</span></div>
+  <div id="fam-D"><h2><span class="fk">D</span>Policy gradient, critic-free</h2><p class="fsub">Sample a group per prompt, use the group as the baseline, no value network. Where almost all 2025–26 movement is.</p><div class="grid"><details class="algo" id="ref-reinforce"><summary>
+      <div class="ah"><h3>REINFORCE</h3><span class="yr">1992 · Williams</span></div>
       <p class="obj">∇J = E[(r − b)·∇log π(y|x)]; a baseline b reduces variance.</p>
-      <div class="am"><a href="https://rlhfbook.com/">RLHF Book</a> <a class="more" href="#ref-reinforce">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-remax">ReMax</a></h3><span class="yr">2023 · HKUST</span></div>
-      <p class="obj">Baseline = reward of the greedy decode of the same prompt.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2310.10505">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2310.10505">alphaXiv</a> <a class="more" href="#ref-remax">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-rloo">RLOO</a></h3><span class="yr">2024 · Cohere</span></div>
-      <p class="obj">Baseline for sample k = mean reward of the other K−1 samples.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2402.14740">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.14740">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="more" href="#ref-rloo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-reinforce">REINFORCE++</a></h3><span class="yr">2025 · OpenRLHF</span></div>
-      <p class="obj">REINFORCE with PPO's token-level KL penalty and reward normalization, no critic.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2501.03262">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2501.03262">alphaXiv</a> <a class="more" href="#ref-reinforce">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-grpo">GRPO</a></h3><span class="yr">2024 · DeepSeek</span></div>
-      <p class="obj">PPO-style clipped ratio per token; advantage = (R_i − mean_G) / std_G broadcast to all tokens; KL term in the loss.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2402.03300">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.03300">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-grpo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-dr-grpo">Dr. GRPO</a></h3><span class="yr">2025 · Sea AI Lab</span></div>
-      <p class="obj">GRPO minus 1/|o_i| and minus /std_G.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2503.20783">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.20783">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-dr-grpo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-dapo">DAPO</a></h3><span class="yr">2025 · ByteDance Seed</span></div>
-      <p class="obj">Clip-higher (ε_high 0.28), dynamic sampling, token-level loss, overlong shaping, no KL.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-dapo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-gspo">GSPO</a></h3><span class="yr">2025 · Qwen</span></div>
-      <p class="obj">Importance ratio and clipping at the sequence level: s_i = (π_θ(y_i)/π_old(y_i))^{1/|y_i|}.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2507.18071">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.18071">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#qwen">Qwen</a> <a class="more" href="#ref-gspo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-gmpo">GMPO</a></h3><span class="yr">2025 · ICLR 2026</span></div>
-      <p class="obj">Maximize the geometric rather than arithmetic mean of token-level rewards.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2507.20673">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.20673">alphaXiv</a> <a class="more" href="#ref-gmpo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-sapo">SAPO</a></h3><span class="yr">2025 · Qwen</span></div>
-      <p class="obj">Replace hard clipping with a smooth temperature-controlled gate on off-policy tokens.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2511.20347">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2511.20347">alphaXiv</a> <a class="more" href="#ref-sapo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-cispo">CISPO</a></h3><span class="yr">2025 · MiniMax</span></div>
-      <p class="obj">Clip the importance weight, detach it, and keep the plain REINFORCE gradient for every token.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2506.13585">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2506.13585">alphaXiv</a> <a class="more" href="#ref-cispo">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-D"><h2 class="refh">Reference · Policy gradient, critic-free</h2><article class="ref" id="ref-reinforce">
-      <div class="rh"><h3>REINFORCE</h3><span class="yr">1992 · Williams</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">∇J = E[(r − b)·∇log π(y|x)]; a baseline b reduces variance.</p>
-      <div class="fx">\[\nabla_\theta\mathcal{J}=\mathbb{E}_{y\sim\pi_\theta}\!\left[\big(R(x,y)-b(x)\big)\,\nabla_\theta\log\pi_\theta(y\mid x)\right]\]</div>
+      <div class="am"><a href="https://rlhfbook.com/">RLHF Book</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\nabla_\theta\mathcal{J}=\mathbb{E}_{y\sim\pi_\theta}\!\left[\big(R(x,y)-b(x)\big)\,\nabla_\theta\log\pi_\theta(y\mid x)\right]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>The score-function estimator with a baseline b to reduce variance; the sequence is one action.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Everything below is REINFORCE with a better baseline (group mean, leave-one-out, a critic) and/or a trust region (PPO clip). For LLMs with a single terminal reward, per-token value estimation buys little, which is why critic-free methods dominate.</dd></div>
@@ -491,10 +444,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>High variance without a good baseline.</li><li>No trust region: one bad batch can move the policy a long way.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-remax">
-      <div class="rh"><h3>ReMax</h3><span class="yr">2023 · HKUST</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Baseline = reward of the greedy decode of the same prompt.</p>
-      <div class="fx">\[b(x)=R\big(x,\ \bar y\big),\quad \bar y=\text{greedy decode of }\pi_{\theta}(\cdot\mid x)\]</div>
+      </dl></div></details><details class="algo" id="ref-remax"><summary>
+      <div class="ah"><h3>ReMax</h3><span class="yr">2023 · HKUST</span></div>
+      <p class="obj">Baseline = reward of the greedy decode of the same prompt.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2310.10505">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2310.10505">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[b(x)=R\big(x,\ \bar y\big),\quad \bar y=\text{greedy decode of }\pi_{\theta}(\cdot\mid x)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Use the reward of the greedy completion as the baseline.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>One extra deterministic sample per prompt replaces a value network; the greedy reward tracks the policy's current level closely.</dd></div>
@@ -502,10 +456,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Greedy output may not be representative on multimodal reward landscapes.</li><li>Superseded in practice by group baselines.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2310.10505">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2310.10505">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-rloo">
-      <div class="rh"><h3>RLOO</h3><span class="yr">2024 · Cohere</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Baseline for sample k = mean reward of the other K−1 samples.</p>
-      <div class="fx">\[\hat A_k=R(x,y_k)-\frac{1}{K-1}\sum_{i\neq k}R(x,y_i),\qquad \nabla\mathcal{J}=\frac{1}{K}\sum_k \hat A_k\,\nabla\log\pi_\theta(y_k\mid x)\]</div>
+      </dl></div></details><details class="algo" id="ref-rloo"><summary>
+      <div class="ah"><h3>RLOO</h3><span class="yr">2024 · Cohere</span></div>
+      <p class="obj">Baseline for sample k = mean reward of the other K−1 samples.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2402.14740">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.14740">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\hat A_k=R(x,y_k)-\frac{1}{K-1}\sum_{i\neq k}R(x,y_i),\qquad \nabla\mathcal{J}=\frac{1}{K}\sum_k \hat A_k\,\nabla\log\pi_\theta(y_k\mid x)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Sample K completions per prompt; each one's baseline is the mean reward of the other K−1.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Unbiased (the baseline excludes the sample itself), no critic, and the group already exists if you sample multiple completions for a verifier. GRPO is this with a std normalization and PPO clipping added.</dd></div>
@@ -513,10 +468,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>No trust region; relies on small learning rates.</li><li>K trades variance against cost.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2402.14740">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.14740">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-reinforce">
-      <div class="rh"><h3>REINFORCE++</h3><span class="yr">2025 · OpenRLHF</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">REINFORCE with PPO's token-level KL penalty and reward normalization, no critic.</p>
-      <div class="fx">\[\hat A_t=R(x,y)-\beta\sum_{s\ge t}\mathrm{KL}_s,\quad \text{then batch-normalized};\qquad \text{PPO-style clip, no critic}\]</div>
+      </dl></div></details><details class="algo" id="ref-reinforce"><summary>
+      <div class="ah"><h3>REINFORCE++</h3><span class="yr">2025 · OpenRLHF</span></div>
+      <p class="obj">REINFORCE with PPO's token-level KL penalty and reward normalization, no critic.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2501.03262">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2501.03262">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\hat A_t=R(x,y)-\beta\sum_{s\ge t}\mathrm{KL}_s,\quad \text{then batch-normalized};\qquad \text{PPO-style clip, no critic}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>REINFORCE with PPO's token-level KL penalty, advantage normalization across the global batch, and clipping.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Keeps PPO's stabilizers and drops the value model; the global (not per-prompt) normalization is the distinguishing choice.</dd></div>
@@ -524,10 +480,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Global normalization mixes prompts of different difficulty into one scale.</li><li>Not widely adopted in 2026 frontier reports.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2501.03262">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2501.03262">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-grpo">
-      <div class="rh"><h3>GRPO</h3><span class="yr">2024 · DeepSeek</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">PPO-style clipped ratio per token; advantage = (R_i − mean_G) / std_G broadcast to all tokens; KL term in the loss.</p>
-      <div class="fx">\[\mathcal{J}_{\text{GRPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|o_i|}\sum_{t=1}^{|o_i|}\min\!\Big(r_{i,t}\hat A_i,\ \mathrm{clip}(r_{i,t},1-\varepsilon,1+\varepsilon)\hat A_i\Big)\right]-\beta\,\mathrm{KL}(\pi_\theta\|\pi_{\text{ref}})\]</div><div class="fx">\[r_{i,t}=\frac{\pi_\theta(o_{i,t}\mid x,o_{i,&lt;t})}{\pi_{\theta_{\text{old}}}(o_{i,t}\mid x,o_{i,&lt;t})},\qquad \hat A_i=\frac{R_i-\operatorname{mean}(R_{1..G})}{\operatorname{std}(R_{1..G})}\]</div>
+      </dl></div></details><details class="algo" id="ref-grpo"><summary>
+      <div class="ah"><h3>GRPO</h3><span class="yr">2024 · DeepSeek</span></div>
+      <p class="obj">PPO-style clipped ratio per token; advantage = (R_i − mean_G) / std_G broadcast to all tokens; KL term in the loss.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2402.03300">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.03300">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}_{\text{GRPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|o_i|}\sum_{t=1}^{|o_i|}\min\!\Big(r_{i,t}\hat A_i,\ \mathrm{clip}(r_{i,t},1-\varepsilon,1+\varepsilon)\hat A_i\Big)\right]-\beta\,\mathrm{KL}(\pi_\theta\|\pi_{\text{ref}})\]</div><div class="fx">\[r_{i,t}=\frac{\pi_\theta(o_{i,t}\mid x,o_{i,&lt;t})}{\pi_{\theta_{\text{old}}}(o_{i,t}\mid x,o_{i,&lt;t})},\qquad \hat A_i=\frac{R_i-\operatorname{mean}(R_{1..G})}{\operatorname{std}(R_{1..G})}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>PPO's clipped objective with the group's normalized reward as the advantage for every token in a sequence, and a KL term added to the loss rather than the reward.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Removes the value network (which at policy size doubles memory) while keeping PPO's trust region. The group of G samples doubles as the baseline and as the data for a verifier.</dd></div>
@@ -535,10 +492,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Length bias: 1/|o_i| makes long wrong answers cheaper per token → responses grow.</li><li>Difficulty bias: /std inflates advantages on near-solved and near-impossible prompts.</li><li>Symmetric clip starves low-probability tokens of probability gain → entropy collapse.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2402.03300">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2402.03300">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-dr-grpo">
-      <div class="rh"><h3>Dr. GRPO</h3><span class="yr">2025 · Sea AI Lab</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">GRPO minus 1/|o_i| and minus /std_G.</p>
-      <div class="fx">\[\mathcal{J}=\mathbb{E}\!\left[\frac{1}{G}\sum_i\ \sum_t\min\!\Big(r_{i,t}\hat A_i,\ \mathrm{clip}(\cdot)\hat A_i\Big)\right],\qquad \hat A_i=R_i-\operatorname{mean}(R_{1..G})\quad\text{(no }1/|o_i|,\ \text{no}\ /\!\operatorname{std})\]</div>
+      </dl></div></details><details class="algo" id="ref-dr-grpo"><summary>
+      <div class="ah"><h3>Dr. GRPO</h3><span class="yr">2025 · Sea AI Lab</span></div>
+      <p class="obj">GRPO minus 1/|o_i| and minus /std_G.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2503.20783">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.20783">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}=\mathbb{E}\!\left[\frac{1}{G}\sum_i\ \sum_t\min\!\Big(r_{i,t}\hat A_i,\ \mathrm{clip}(\cdot)\hat A_i\Big)\right],\qquad \hat A_i=R_i-\operatorname{mean}(R_{1..G})\quad\text{(no }1/|o_i|,\ \text{no}\ /\!\operatorname{std})\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>GRPO with the two normalizations deleted: sum tokens (or divide by a constant) and use the unnormalized group-centered reward.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The original objective is a biased estimator of the policy gradient; removing the length term stops responses from lengthening for the wrong reason, and removing the std term stops easy/hard questions from being over-weighted.</dd></div>
@@ -546,10 +504,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Without per-sequence averaging, batch loss scales with total tokens — combine with token-level normalization (DAPO) in practice.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2503.20783">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.20783">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-dapo">
-      <div class="rh"><h3>DAPO</h3><span class="yr">2025 · ByteDance Seed</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Clip-higher (ε_high 0.28), dynamic sampling, token-level loss, overlong shaping, no KL.</p>
-      <div class="fx">\[\mathcal{J}_{\text{DAPO}}=\mathbb{E}\!\left[\frac{1}{\sum_i|o_i|}\sum_{i}\sum_{t}\min\!\Big(r_{i,t}\hat A_i,\ \mathrm{clip}(r_{i,t},1-\varepsilon_{\text{low}},1+\varepsilon_{\text{high}})\hat A_i\Big)\right]\quad\text{s.t.}\ 0&lt;\#\{o_i\ \text{correct}\}&lt;G\]</div><div class="fx">\[\varepsilon_{\text{low}}=0.20,\ \varepsilon_{\text{high}}=0.28;\qquad\text{no KL};\qquad r=r_{\text{acc}}+r_{\text{len}}\ \text{(soft overlong penalty)}\]</div>
+      </dl></div></details><details class="algo" id="ref-dapo"><summary>
+      <div class="ah"><h3>DAPO</h3><span class="yr">2025 · ByteDance Seed</span></div>
+      <p class="obj">Clip-higher (ε_high 0.28), dynamic sampling, token-level loss, overlong shaping, no KL.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}_{\text{DAPO}}=\mathbb{E}\!\left[\frac{1}{\sum_i|o_i|}\sum_{i}\sum_{t}\min\!\Big(r_{i,t}\hat A_i,\ \mathrm{clip}(r_{i,t},1-\varepsilon_{\text{low}},1+\varepsilon_{\text{high}})\hat A_i\Big)\right]\quad\text{s.t.}\ 0&lt;\#\{o_i\ \text{correct}\}&lt;G\]</div><div class="fx">\[\varepsilon_{\text{low}}=0.20,\ \varepsilon_{\text{high}}=0.28;\qquad\text{no KL};\qquad r=r_{\text{acc}}+r_{\text{len}}\ \text{(soft overlong penalty)}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Four fixes to GRPO: clip-higher, dynamic sampling, token-level loss, overlong reward shaping — plus dropping the KL term.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Each fix targets a measured failure: entropy collapse (clip), vanishing effective batch as accuracy rises (sampling), long-response under-weighting (token-level), and noisy penalties on truncated traces (shaping).</dd></div>
@@ -557,10 +516,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Dynamic sampling oversamples ~3× — OLMo's active sampling exists to avoid that cost.</li><li>Dropping KL is safe for verifiable rewards; less so against learned reward models.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-gspo">
-      <div class="rh"><h3>GSPO</h3><span class="yr">2025 · Qwen</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Importance ratio and clipping at the sequence level: s_i = (π_θ(y_i)/π_old(y_i))^{1/|y_i|}.</p>
-      <div class="fx">\[s_i(\theta)=\left(\frac{\pi_\theta(y_i\mid x)}{\pi_{\theta_{\text{old}}}(y_i\mid x)}\right)^{1/|y_i|},\qquad \mathcal{J}_{\text{GSPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_i\min\!\Big(s_i\hat A_i,\ \mathrm{clip}(s_i,1-\varepsilon,1+\varepsilon)\hat A_i\Big)\right],\quad \varepsilon\approx 3\!\times\!10^{-4}\]</div>
+      </dl></div></details><details class="algo" id="ref-gspo"><summary>
+      <div class="ah"><h3>GSPO</h3><span class="yr">2025 · Qwen</span></div>
+      <p class="obj">Importance ratio and clipping at the sequence level: s_i = (π_θ(y_i)/π_old(y_i))^{1/|y_i|}.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2507.18071">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.18071">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#qwen">Qwen</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[s_i(\theta)=\left(\frac{\pi_\theta(y_i\mid x)}{\pi_{\theta_{\text{old}}}(y_i\mid x)}\right)^{1/|y_i|},\qquad \mathcal{J}_{\text{GSPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_i\min\!\Big(s_i\hat A_i,\ \mathrm{clip}(s_i,1-\varepsilon,1+\varepsilon)\hat A_i\Big)\right],\quad \varepsilon\approx 3\!\times\!10^{-4}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Move the importance ratio and the clipping from tokens to whole sequences, length-normalized.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The reward is per sequence, so a per-token ratio is the wrong unit: token ratios accumulate noise over long outputs and, in MoE models, flip when expert routing differs between rollout and training. The sequence ratio averages that out and made Qwen3's RL stable without routing replay.</dd></div>
@@ -568,10 +528,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Clips whole sequences: a good trajectory with a few surprising tokens is dropped entirely (SAPO's motivation).</li><li>Loses token-level credit assignment.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#qwen">Qwen</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2507.18071">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.18071">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-gmpo">
-      <div class="rh"><h3>GMPO</h3><span class="yr">2025 · ICLR 2026</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Maximize the geometric rather than arithmetic mean of token-level rewards.</p>
-      <div class="fx">\[\mathcal{J}_{\text{GMPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_i \Big(\prod_{t}\mathrm{clip}\big(r_{i,t}, e^{-\varepsilon_1}, e^{\varepsilon_2}\big)\Big)^{1/|o_i|}\hat A_i\right]\]</div>
+      </dl></div></details><details class="algo" id="ref-gmpo"><summary>
+      <div class="ah"><h3>GMPO</h3><span class="yr">2025 · ICLR 2026</span></div>
+      <p class="obj">Maximize the geometric rather than arithmetic mean of token-level rewards.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2507.20673">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.20673">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}_{\text{GMPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_i \Big(\prod_{t}\mathrm{clip}\big(r_{i,t}, e^{-\varepsilon_1}, e^{\varepsilon_2}\big)\Big)^{1/|o_i|}\hat A_i\right]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Maximize the geometric mean of token-level ratios (equivalently, the mean log-ratio) rather than the arithmetic mean.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The geometric mean is insensitive to a few outlier tokens with extreme ratios, so the importance-ratio range stays stable and the clip range can be widened (e.g. e^{±0.4}) for more exploration.</dd></div>
@@ -579,10 +540,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Reduces to GSPO-like behaviour in the limit; the two are bridged by SSPO.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2507.20673">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2507.20673">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-sapo">
-      <div class="rh"><h3>SAPO</h3><span class="yr">2025 · Qwen</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Replace hard clipping with a smooth temperature-controlled gate on off-policy tokens.</p>
-      <div class="fx">\[\mathcal{J}_{\text{SAPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_i\frac{1}{|o_i|}\sum_t g_\tau\!\big(r_{i,t}\big)\,\hat A_i\right],\qquad g_\tau\ \text{a smooth, temperature-controlled gate replacing } \min/\mathrm{clip}\]</div>
+      </dl></div></details><details class="algo" id="ref-sapo"><summary>
+      <div class="ah"><h3>SAPO</h3><span class="yr">2025 · Qwen</span></div>
+      <p class="obj">Replace hard clipping with a smooth temperature-controlled gate on off-policy tokens.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2511.20347">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2511.20347">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}_{\text{SAPO}}=\mathbb{E}\!\left[\frac{1}{G}\sum_i\frac{1}{|o_i|}\sum_t g_\tau\!\big(r_{i,t}\big)\,\hat A_i\right],\qquad g_\tau\ \text{a smooth, temperature-controlled gate replacing } \min/\mathrm{clip}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Replace hard clipping with a soft gate that attenuates off-policy tokens continuously instead of zeroing them.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Hard clipping throws away all gradient beyond the boundary; a smooth gate keeps a little signal from surprising tokens while still damping them, and can be made sequence-coherent (like GSPO) and token-adaptive (like GRPO) at once.</dd></div>
@@ -590,10 +552,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Gate shape and temperature are new hyperparameters; a follow-up paper studies them systematically.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2511.20347">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2511.20347">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-cispo">
-      <div class="rh"><h3>CISPO</h3><span class="yr">2025 · MiniMax</span><a class="up" href="#fam-D" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Clip the importance weight, detach it, and keep the plain REINFORCE gradient for every token.</p>
-      <div class="fx">\[\mathcal{J}_{\text{CISPO}}=\mathbb{E}\!\left[\frac{1}{\sum_i|o_i|}\sum_i\sum_t\operatorname{sg}\!\Big(\min\big(r_{i,t},\ \varepsilon^{\text{IS}}_{\text{high}}\big)\Big)\,\hat A_i\,\log\pi_\theta(o_{i,t}\mid x,o_{i,&lt;t})\right]\]</div>
+      </dl></div></details><details class="algo" id="ref-cispo"><summary>
+      <div class="ah"><h3>CISPO</h3><span class="yr">2025 · MiniMax</span></div>
+      <p class="obj">Clip the importance weight, detach it, and keep the plain REINFORCE gradient for every token.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2506.13585">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2506.13585">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}_{\text{CISPO}}=\mathbb{E}\!\left[\frac{1}{\sum_i|o_i|}\sum_i\sum_t\operatorname{sg}\!\Big(\min\big(r_{i,t},\ \varepsilon^{\text{IS}}_{\text{high}}\big)\Big)\,\hat A_i\,\log\pi_\theta(o_{i,t}\mid x,o_{i,&lt;t})\right]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Clip the importance weight and detach it; keep the plain REINFORCE gradient for every token instead of clipping the update.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>PPO/GRPO clipping zeroes the gradient of tokens whose ratio left the trust region — and those are exactly the low-probability fork tokens (“however”, “wait”, “recheck”) that reasoning depends on. CISPO bounds the weight but never drops the token.</dd></div>
@@ -601,17 +564,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Detached weights mean the objective is no longer a surrogate with a trust-region guarantee.</li><li>The clip constant is setting-dependent.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2506.13585">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2506.13585">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-E" role="tabpanel" aria-labelledby="t-E" hidden>
-  <div id="fam-E"><h2><span class="fk">E</span>Policy gradient, with a critic</h2><p class="fsub">The value network is not dead; it just costs more than most labs want to pay.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-ppo">PPO</a></h3><span class="yr">2017 · OpenAI</span></div>
+  <div id="fam-E"><h2><span class="fk">E</span>Policy gradient, with a critic</h2><p class="fsub">The value network is not dead; it just costs more than most labs want to pay.</p><div class="grid"><details class="algo" id="ref-ppo"><summary>
+      <div class="ah"><h3>PPO</h3><span class="yr">2017 · OpenAI</span></div>
       <p class="obj">Clipped surrogate with GAE advantages from a learned value function; token-level KL to a reference.</p>
-      <div class="am"><a href="https://arxiv.org/abs/1707.06347">arXiv</a> · <a href="https://www.alphaxiv.org/abs/1707.06347">alphaXiv</a> <a class="more" href="#ref-ppo">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-vapo">VAPO</a></h3><span class="yr">2025 · ByteDance Seed</span></div>
-      <p class="obj">PPO plus: value pretraining, decoupled GAE (λ=1 for the critic, length-adaptive λ for the policy), clip-higher, token-level loss, positive-example LM loss, group sampling.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2504.05118">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2504.05118">alphaXiv</a> <a class="more" href="#ref-vapo">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-E"><h2 class="refh">Reference · Policy gradient, with a critic</h2><article class="ref" id="ref-ppo">
-      <div class="rh"><h3>PPO</h3><span class="yr">2017 · OpenAI</span><a class="up" href="#fam-E" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Clipped surrogate with GAE advantages from a learned value function; token-level KL to a reference.</p>
-      <div class="fx">\[\mathcal{J}_{\text{PPO}}=\mathbb{E}_t\!\left[\min\!\Big(\rho_t\hat A_t,\ \mathrm{clip}(\rho_t,1-\varepsilon,1+\varepsilon)\hat A_t\Big)\right],\quad \hat A_t=\sum_{l}(\gamma\lambda)^l\delta_{t+l},\ \ \delta_t=r_t+\gamma V(s_{t+1})-V(s_t)\]</div>
+      <div class="am"><a href="https://arxiv.org/abs/1707.06347">arXiv</a> · <a href="https://www.alphaxiv.org/abs/1707.06347">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\mathcal{J}_{\text{PPO}}=\mathbb{E}_t\!\left[\min\!\Big(\rho_t\hat A_t,\ \mathrm{clip}(\rho_t,1-\varepsilon,1+\varepsilon)\hat A_t\Big)\right],\quad \hat A_t=\sum_{l}(\gamma\lambda)^l\delta_{t+l},\ \ \delta_t=r_t+\gamma V(s_{t+1})-V(s_t)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Clipped surrogate with GAE advantages from a learned value function; token-level KL to a reference folded into r_t.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The original RLHF optimizer (InstructGPT). The critic provides per-token credit assignment; the clip provides a trust region. Four models in memory (policy, ref, RM, value) is the cost.</dd></div>
@@ -619,10 +578,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Value model of policy size; GAE tuning; instability from value-estimate errors on long sequences (VAPO's target).</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/1707.06347">arXiv</a> · <a href="https://www.alphaxiv.org/abs/1707.06347">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-vapo">
-      <div class="rh"><h3>VAPO</h3><span class="yr">2025 · ByteDance Seed</span><a class="up" href="#fam-E" title="back to the cards">↑ cards</a></div>
-      <p class="robj">PPO plus: value pretraining, decoupled GAE (λ=1 for the critic, length-adaptive λ for the policy), clip-higher, token-level loss, positive-example LM loss, group sampling.</p>
-      <div class="fx">\[\text{PPO}\ +\ \text{value pretraining}\ +\ \lambda_{\text{critic}}=1,\ \lambda_{\text{policy}}=1-\frac{1}{\alpha\,\ell}\ +\ \varepsilon_{\text{high}}\uparrow\ +\ \text{token-level loss}\ +\ \mathcal{L}_{\text{NLL}}(\text{positive samples})\ +\ \text{group sampling}\]</div>
+      </dl></div></details><details class="algo" id="ref-vapo"><summary>
+      <div class="ah"><h3>VAPO</h3><span class="yr">2025 · ByteDance Seed</span></div>
+      <p class="obj">PPO plus: value pretraining, decoupled GAE (λ=1 for the critic, length-adaptive λ for the policy), clip-higher, token-level loss, positive-example LM loss, group sampling.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2504.05118">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2504.05118">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{PPO}\ +\ \text{value pretraining}\ +\ \lambda_{\text{critic}}=1,\ \lambda_{\text{policy}}=1-\frac{1}{\alpha\,\ell}\ +\ \varepsilon_{\text{high}}\uparrow\ +\ \text{token-level loss}\ +\ \mathcal{L}_{\text{NLL}}(\text{positive samples})\ +\ \text{group sampling}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>PPO with a set of fixes for long chain-of-thought: warm up the critic on a frozen policy, use different GAE λ for critic and policy with the policy's λ growing with response length, raise the upper clip, token-level averaging, an SFT term on correct samples, and multiple samples per prompt.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The argument that value-based RL has the higher ceiling once the critic is trained properly: dense credit assignment along a long chain beats a single sequence-level advantage.</dd></div>
@@ -630,25 +590,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Full critic cost at policy size.</li><li>Not adopted by the 2026 open reports here, all of which are critic-free.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2504.05118">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2504.05118">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-F" role="tabpanel" aria-labelledby="t-F" hidden>
-  <div id="fam-F"><h2><span class="fk">F</span>Off-policy and asynchrony corrections</h2><p class="fsub">2026's new layer: the sampler and the learner are different programs, different precisions, and often different model versions.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-truncated-masked-importance-sampling">Truncated / masked importance sampling</a></h3><span class="yr">2025 · Yao et al.</span></div>
+  <div id="fam-F"><h2><span class="fk">F</span>Off-policy and asynchrony corrections</h2><p class="fsub">2026's new layer: the sampler and the learner are different programs, different precisions, and often different model versions.</p><div class="grid"><details class="algo" id="ref-truncated-masked-importance-sampling"><summary>
+      <div class="ah"><h3>Truncated / masked importance sampling</h3><span class="yr">2025 · Yao et al.</span></div>
       <p class="obj">Multiply the loss by min(π_learner/π_sampler, C) (TIS), or mask tokens whose ratio leaves [1/C, C] (MIS).</p>
-      <div class="am"><a href="https://fengyao.notion.site/off-policy-rl">Yao et al. blog</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="more" href="#ref-truncated-masked-importance-sampling">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-icepop">IcePop</a></h3><span class="yr">2025 · Ant Group (Ring-1T)</span></div>
-      <p class="obj">Zero out tokens whose train/infer ratio is outside [1/β, β] and clip the rest; β = 2 in GLM-5.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2510.18855">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.18855">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-icepop">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-direct-double-sided-is">Direct double-sided IS</a></h3><span class="yr">2026 · GLM-5</span></div>
-      <p class="obj">Ratio against the rollout log-probs directly (no stored old policy), mask outside [1−ε_l, 1+ε_h].</p>
-      <div class="am"><a href="https://arxiv.org/abs/2602.15763">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.15763">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-direct-double-sided-is">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-vcpo-stable-asynchrony">VCPO (Stable Asynchrony)</a></h3><span class="yr">2026 · MIT Han Lab</span></div>
-      <p class="obj">Control the variance of importance weights under high policy lag instead of truncating them.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2602.17616">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.17616">alphaXiv</a> <a class="more" href="#ref-vcpo-stable-asynchrony">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-partial-rollouts">Partial rollouts</a></h3><span class="yr">2025 · Kimi k1.5 → K3</span></div>
-      <p class="obj">Pause generation when a fraction λ of the N×K trajectories finish; resume the stragglers next iteration.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2501.12599">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2501.12599">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <a class="more" href="#ref-partial-rollouts">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-routing-indexer-replay">Routing / indexer replay</a></h3><span class="yr">2025–26 · R3; GLM-5</span></div>
-      <p class="obj">Record the MoE routing (or sparse-attention top-k) chosen at rollout and replay it in training.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2510.23027">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.23027">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-routing-indexer-replay">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-F"><h2 class="refh">Reference · Off-policy and asynchrony corrections</h2><article class="ref" id="ref-truncated-masked-importance-sampling">
-      <div class="rh"><h3>Truncated / masked importance sampling</h3><span class="yr">2025 · Yao et al.</span><a class="up" href="#fam-F" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Multiply the loss by min(π_learner/π_sampler, C) (TIS), or mask tokens whose ratio leaves [1/C, C] (MIS).</p>
-      <div class="fx">\[\rho_t=\frac{\pi_{\text{learner}}(y_t\mid\cdot)}{\pi_{\text{sampler}}(y_t\mid\cdot)}\quad\text{(same weights, different engine)};\qquad\text{TIS:}\ \ \mathcal{L}_t\leftarrow\min(\rho_t,C)\,\mathcal{L}_t,\ \ C\approx 2;\qquad\text{MIS:}\ \ \mathcal{L}_t\leftarrow\mathbb{1}[\rho_t\in[1/C,C]]\,\rho_t\,\mathcal{L}_t\]</div>
+      <div class="am"><a href="https://fengyao.notion.site/off-policy-rl">Yao et al. blog</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\rho_t=\frac{\pi_{\text{learner}}(y_t\mid\cdot)}{\pi_{\text{sampler}}(y_t\mid\cdot)}\quad\text{(same weights, different engine)};\qquad\text{TIS:}\ \ \mathcal{L}_t\leftarrow\min(\rho_t,C)\,\mathcal{L}_t,\ \ C\approx 2;\qquad\text{MIS:}\ \ \mathcal{L}_t\leftarrow\mathbb{1}[\rho_t\in[1/C,C]]\,\rho_t\,\mathcal{L}_t\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Correct for the fact that the inference engine that produced the rollouts computes slightly different probabilities than the trainer, by importance-weighting each token and bounding the weight.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Yao et al. showed that vLLM-vs-trainer numerics alone make ‘on-policy’ RL off-policy enough to destabilize training; a truncated weight fixes the bias without letting rare tokens explode the variance.</dd></div>
@@ -656,10 +604,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>A one-sided truncation is biased; masking discards data.</li><li>Async training adds a second, larger mismatch (stale policy) on top.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://fengyao.notion.site/off-policy-rl">Yao et al. blog</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-icepop">
-      <div class="rh"><h3>IcePop</h3><span class="yr">2025 · Ant Group (Ring-1T)</span><a class="up" href="#fam-F" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Zero out tokens whose train/infer ratio is outside [1/β, β] and clip the rest; β = 2 in GLM-5.</p>
-      <div class="fx">\[\rho_{i,t}=\frac{\pi^{\text{train}}_{\theta_{\text{old}}}(y_{i,t}\mid\cdot)}{\pi^{\text{infer}}_{\theta_{\text{old}}}(y_{i,t}\mid\cdot)},\qquad \text{pop}(\rho)=\begin{cases}\rho &amp; 1/\beta\le\rho\le\beta\\ 0&amp;\text{otherwise}\end{cases},\quad \beta=2\]</div>
+      </dl></div></details><details class="algo" id="ref-icepop"><summary>
+      <div class="ah"><h3>IcePop</h3><span class="yr">2025 · Ant Group (Ring-1T)</span></div>
+      <p class="obj">Zero out tokens whose train/infer ratio is outside [1/β, β] and clip the rest; β = 2 in GLM-5.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2510.18855">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.18855">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\rho_{i,t}=\frac{\pi^{\text{train}}_{\theta_{\text{old}}}(y_{i,t}\mid\cdot)}{\pi^{\text{infer}}_{\theta_{\text{old}}}(y_{i,t}\mid\cdot)},\qquad \text{pop}(\rho)=\begin{cases}\rho &amp; 1/\beta\le\rho\le\beta\\ 0&amp;\text{otherwise}\end{cases},\quad \beta=2\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Mask tokens whose train/inference probability ratio is outside a band and clip the rest; the GRPO ratio and clipping stay as they were.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>At trillion-parameter MoE scale the mismatch is large enough to diverge training within steps; discarding the worst tokens is cheaper than making the engines agree.</dd></div>
@@ -667,10 +616,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Throws away exactly the tokens where the two engines disagree most — which may be informative.</li><li>Does not address the discrete mismatch in expert routing or sparse-attention indexing (routing replay does).</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2510.18855">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.18855">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-direct-double-sided-is">
-      <div class="rh"><h3>Direct double-sided IS</h3><span class="yr">2026 · GLM-5</span><a class="up" href="#fam-F" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Ratio against the rollout log-probs directly (no stored old policy), mask outside [1−ε_l, 1+ε_h].</p>
-      <div class="fx">\[r_t(\theta)=\frac{\pi_\theta(a_t\mid s_t)}{\pi_{\text{rollout}}(a_t\mid s_t)},\qquad \mathcal{L}=\mathbb{E}_t\!\left[f(r_t;\varepsilon_\ell,\varepsilon_h)\,\hat A_t\,\log\pi_\theta(a_t\mid s_t)\right],\quad f(x)=\begin{cases}x&amp;1-\varepsilon_\ell&lt;x&lt;1+\varepsilon_h\\0&amp;\text{otherwise}\end{cases}\]</div>
+      </dl></div></details><details class="algo" id="ref-direct-double-sided-is"><summary>
+      <div class="ah"><h3>Direct double-sided IS</h3><span class="yr">2026 · GLM-5</span></div>
+      <p class="obj">Ratio against the rollout log-probs directly (no stored old policy), mask outside [1−ε_l, 1+ε_h].</p>
+      <div class="am"><a href="https://arxiv.org/abs/2602.15763">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.15763">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[r_t(\theta)=\frac{\pi_\theta(a_t\mid s_t)}{\pi_{\text{rollout}}(a_t\mid s_t)},\qquad \mathcal{L}=\mathbb{E}_t\!\left[f(r_t;\varepsilon_\ell,\varepsilon_h)\,\hat A_t\,\log\pi_\theta(a_t\mid s_t)\right],\quad f(x)=\begin{cases}x&amp;1-\varepsilon_\ell&lt;x&lt;1+\varepsilon_h\\0&amp;\text{otherwise}\end{cases}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Take the ratio directly against the log-probabilities recorded at rollout (no stored π_old), and mask tokens outside a two-sided band.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>In fully asynchronous agentic RL the rollout engine is updated several times during one trajectory, so tracking every behaviour policy is infeasible; the recorded rollout log-probs are used as the behaviour proxy instead.</dd></div>
@@ -678,10 +628,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Accepts a controlled off-policy bias by construction.</li><li>Band width is another pair of hyperparameters.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2602.15763">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.15763">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-vcpo-stable-asynchrony">
-      <div class="rh"><h3>VCPO (Stable Asynchrony)</h3><span class="yr">2026 · MIT Han Lab</span><a class="up" href="#fam-F" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Control the variance of importance weights under high policy lag instead of truncating them.</p>
-      <div class="fx">\[\text{control}\ \operatorname{Var}\big[\rho_t\,\hat A_t\,\nabla\log\pi_\theta\big]\ \text{under policy lag } k\ \text{rather than truncating } \rho_t\]</div>
+      </dl></div></details><details class="algo" id="ref-vcpo-stable-asynchrony"><summary>
+      <div class="ah"><h3>VCPO (Stable Asynchrony)</h3><span class="yr">2026 · MIT Han Lab</span></div>
+      <p class="obj">Control the variance of importance weights under high policy lag instead of truncating them.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2602.17616">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.17616">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{control}\ \operatorname{Var}\big[\rho_t\,\hat A_t\,\nabla\log\pi_\theta\big]\ \text{under policy lag } k\ \text{rather than truncating } \rho_t\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Treat asynchrony as a variance problem: stale rollouts yield heavy-tailed importance weights, so control the variance of the weighted estimator directly instead of clipping weights.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Under high lag a handful of trajectories dominate every update; truncation removes them but also the signal. Variance control keeps the throughput benefit of asynchrony without the collapse.</dd></div>
@@ -689,10 +640,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>New; not yet in a frontier report.</li><li>Adds an estimator of the variance to maintain.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2602.17616">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2602.17616">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-partial-rollouts">
-      <div class="rh"><h3>Partial rollouts</h3><span class="yr">2025 · Kimi k1.5 → K3</span><a class="up" href="#fam-F" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Pause generation when a fraction λ of the N×K trajectories finish; resume the stragglers next iteration.</p>
-      <div class="fx">\[\text{sample } K \text{ per prompt for } N \text{ prompts;\ pause generation when } \lambda N K \text{ trajectories finish;\ resume the rest next iteration}\]</div>
+      </dl></div></details><details class="algo" id="ref-partial-rollouts"><summary>
+      <div class="ah"><h3>Partial rollouts</h3><span class="yr">2025 · Kimi k1.5 → K3</span></div>
+      <p class="obj">Pause generation when a fraction λ of the N×K trajectories finish; resume the stragglers next iteration.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2501.12599">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2501.12599">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{sample } K \text{ per prompt for } N \text{ prompts;\ pause generation when } \lambda N K \text{ trajectories finish;\ resume the rest next iteration}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Do not wait for the slowest trajectories; train on the finished fraction and let the unfinished ones continue under the next policy version.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Long-horizon agentic rollouts have a heavy tail; waiting for stragglers idles the cluster. A trajectory that spans policy versions is tolerated by per-token regularization of the update.</dd></div>
@@ -700,10 +652,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Data staleness grows with λ; needs an off-policy correction (above).</li><li>Requires environments that can pause and resume.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#kimi">Kimi K3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2501.12599">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2501.12599">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-routing-indexer-replay">
-      <div class="rh"><h3>Routing / indexer replay</h3><span class="yr">2025–26 · R3; GLM-5</span><a class="up" href="#fam-F" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Record the MoE routing (or sparse-attention top-k) chosen at rollout and replay it in training.</p>
-      <div class="fx">\[\text{record}\ \{\text{expert ids}\}_t\ (\text{or top-}k\ \text{indices})\ \text{at rollout, replay them in training so that } \pi^{\text{train}}(y_t)\ \text{uses the same discrete selection as } \pi^{\text{infer}}(y_t)\]</div>
+      </dl></div></details><details class="algo" id="ref-routing-indexer-replay"><summary>
+      <div class="ah"><h3>Routing / indexer replay</h3><span class="yr">2025–26 · R3; GLM-5</span></div>
+      <p class="obj">Record the MoE routing (or sparse-attention top-k) chosen at rollout and replay it in training.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2510.23027">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.23027">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{record}\ \{\text{expert ids}\}_t\ (\text{or top-}k\ \text{indices})\ \text{at rollout, replay them in training so that } \pi^{\text{train}}(y_t)\ \text{uses the same discrete selection as } \pi^{\text{infer}}(y_t)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>For MoE and sparse attention, force the training forward pass to reuse the discrete choices made during rollout.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The token-probability mismatch is only half the story: if the training pass routes a token to different experts (or selects different top-k keys), the probabilities differ by construction. Replay removes that source entirely.</dd></div>
@@ -711,23 +664,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Storage and communication cost of the recorded choices.</li><li>Freezing the indexer/router during RL limits what RL can change.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2510.23027">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.23027">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-G" role="tabpanel" aria-labelledby="t-G" hidden>
-  <div id="fam-G"><h2><span class="fk">G</span>Sampling and curriculum machinery</h2><p class="fsub">Which prompts, which groups, and how much entropy — the knobs that decide whether any of the above learns anything.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-difficulty-filtering">Difficulty filtering</a></h3><span class="yr">2025 · everyone</span></div>
+  <div id="fam-G"><h2><span class="fk">G</span>Sampling and curriculum machinery</h2><p class="fsub">Which prompts, which groups, and how much entropy — the knobs that decide whether any of the above learns anything.</p><div class="grid"><details class="algo" id="ref-difficulty-filtering"><summary>
+      <div class="ah"><h3>Difficulty filtering</h3><span class="yr">2025 · everyone</span></div>
       <p class="obj">Drop prompts the current model already solves (or never solves) before RL; sort the rest by pass rate.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <a class="more" href="#ref-difficulty-filtering">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-dynamic-sampling-active-sampling">Dynamic sampling → active sampling</a></h3><span class="yr">2025 · DAPO; OLMo 3</span></div>
-      <p class="obj">Refill the batch with prompts whose group reward has non-zero variance.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2512.13961">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2512.13961">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-dynamic-sampling-active-sampling">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-clip-higher-and-entropy-control">Clip-higher and entropy control</a></h3><span class="yr">2025 · DAPO; CE-GPPO; Cui et al.</span></div>
-      <p class="obj">Raise ε_high so low-probability tokens can grow; or preserve gradients from clipped tokens with a bounded coefficient.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2505.22617">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2505.22617">alphaXiv</a> <a class="more" href="#ref-clip-higher-and-entropy-control">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-multi-environment-joint-training">Multi-environment joint training</a></h3><span class="yr">2026 · Nemotron 3 Super</span></div>
-      <p class="obj">Train one policy on all environments at once rather than sequentially.</p>
-      <div class="am"><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super §3.2.1</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <a class="more" href="#ref-multi-environment-joint-training">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-self-play-task-generation">Self-play task generation</a></h3><span class="yr">2022–25 · STaR → SPICE</span></div>
-      <p class="obj">Let a proposer manufacture the curriculum at the solver's 50% boundary.</p>
-      <div class="am"><a href="/notes/self-play.html">Self-play note</a> <a class="more" href="#ref-self-play-task-generation">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-G"><h2 class="refh">Reference · Sampling and curriculum machinery</h2><article class="ref" id="ref-difficulty-filtering">
-      <div class="rh"><h3>Difficulty filtering</h3><span class="yr">2025 · everyone</span><a class="up" href="#fam-G" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Drop prompts the current model already solves (or never solves) before RL; sort the rest by pass rate.</p>
-      <div class="fx">\[\hat p(x)=\frac{1}{K}\sum_{k=1}^{K}\mathbb{1}[\text{correct}(y_k)],\ \ y_k\sim\pi_{\text{current}};\qquad \text{keep } x \iff 0&lt;\hat p(x)&lt;\tau\]</div>
+      <div class="am"><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\hat p(x)=\frac{1}{K}\sum_{k=1}^{K}\mathbb{1}[\text{correct}(y_k)],\ \ y_k\sim\pi_{\text{current}};\qquad \text{keep } x \iff 0&lt;\hat p(x)&lt;\tau\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Estimate each prompt's pass rate with K samples from the model about to be trained and drop the solved (and sometimes the hopeless) ones.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>GRPO's advantage is zero when all samples agree, so solved prompts are dead weight; the informative band is where the model is inconsistent. Every report reinvents this with its own threshold.</dd></div>
@@ -735,10 +678,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>The filter is relative to a checkpoint and goes stale as training proceeds — hence dynamic/active sampling.</li><li>Filtering on pass@1 may discard prompts where pass@k gains would appear.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#phi">Phi-4</a> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="ship" href="/model-post-training-diff.html#lnemo">Llama-Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2503.14476">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2503.14476">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-dynamic-sampling-active-sampling">
-      <div class="rh"><h3>Dynamic sampling → active sampling</h3><span class="yr">2025 · DAPO; OLMo 3</span><a class="up" href="#fam-G" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Refill the batch with prompts whose group reward has non-zero variance.</p>
-      <div class="fx">\[\text{batch}=\{x:\ \operatorname{std}(R_{1..G}(x))&gt;0\};\qquad\text{DAPO: oversample }\sim\!3\times;\qquad\text{OlmoRL: refill continuously from the async queue}\]</div>
+      </dl></div></details><details class="algo" id="ref-dynamic-sampling-active-sampling"><summary>
+      <div class="ah"><h3>Dynamic sampling → active sampling</h3><span class="yr">2025 · DAPO; OLMo 3</span></div>
+      <p class="obj">Refill the batch with prompts whose group reward has non-zero variance.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2512.13961">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2512.13961">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{batch}=\{x:\ \operatorname{std}(R_{1..G}(x))&gt;0\};\qquad\text{DAPO: oversample }\sim\!3\times;\qquad\text{OlmoRL: refill continuously from the async queue}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Keep the batch full of prompts whose groups have non-zero advantage, by oversampling (DAPO) or by continuously pulling from asynchronous actors until the quota of informative groups is met (OLMo).</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>As accuracy rises, more groups are all-correct and the effective batch shrinks, so training slows and destabilizes; refilling keeps the gradient magnitude constant.</dd></div>
@@ -746,10 +690,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Oversampling wastes rollouts; active sampling needs an async framework to be cheap.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2512.13961">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2512.13961">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-clip-higher-and-entropy-control">
-      <div class="rh"><h3>Clip-higher and entropy control</h3><span class="yr">2025 · DAPO; CE-GPPO; Cui et al.</span><a class="up" href="#fam-G" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Raise ε_high so low-probability tokens can grow; or preserve gradients from clipped tokens with a bounded coefficient.</p>
-      <div class="fx">\[\varepsilon_{\text{high}}&gt;\varepsilon_{\text{low}}\ \text{so that } \pi_\theta(y_t)\ \text{may grow past } (1+\varepsilon_{\text{low}})\pi_{\text{old}}(y_t);\qquad \Delta H\ \propto\ -\operatorname{Cov}_{y}\big(\log\pi_\theta(y),\ \hat A(y)\big)\]</div>
+      </dl></div></details><details class="algo" id="ref-clip-higher-and-entropy-control"><summary>
+      <div class="ah"><h3>Clip-higher and entropy control</h3><span class="yr">2025 · DAPO; CE-GPPO; Cui et al.</span></div>
+      <p class="obj">Raise ε_high so low-probability tokens can grow; or preserve gradients from clipped tokens with a bounded coefficient.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2505.22617">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2505.22617">alphaXiv</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\varepsilon_{\text{high}}&gt;\varepsilon_{\text{low}}\ \text{so that } \pi_\theta(y_t)\ \text{may grow past } (1+\varepsilon_{\text{low}})\pi_{\text{old}}(y_t);\qquad \Delta H\ \propto\ -\operatorname{Cov}_{y}\big(\log\pi_\theta(y),\ \hat A(y)\big)\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Widen the upper clip so rare tokens can gain probability; more generally, manage policy entropy explicitly, since Cui et al. show the entropy change is driven by the covariance between log-probability and advantage.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Entropy collapse is the characteristic failure of reasoning RL: the policy sharpens, exploration dies, and performance plateaus predictably. Covariance-based interventions (Clip-Cov, KL-Cov) and gradient-preserving clipping (CE-GPPO) keep it up.</dd></div>
@@ -757,10 +702,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Too much entropy is just noise; the controls trade sample efficiency for exploration.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2505.22617">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2505.22617">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-multi-environment-joint-training">
-      <div class="rh"><h3>Multi-environment joint training</h3><span class="yr">2026 · Nemotron 3 Super</span><a class="up" href="#fam-G" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Train one policy on all environments at once rather than sequentially.</p>
-      <div class="fx">\[\min_\theta\ \sum_{e\in\mathcal{E}} w_e\,\mathcal{J}_e(\theta)\quad\text{in one batch, vs. }\ \mathcal{J}_{e_1}\to\mathcal{J}_{e_2}\to\cdots\ \text{sequentially}\]</div>
+      </dl></div></details><details class="algo" id="ref-multi-environment-joint-training"><summary>
+      <div class="ah"><h3>Multi-environment joint training</h3><span class="yr">2026 · Nemotron 3 Super</span></div>
+      <p class="obj">Train one policy on all environments at once rather than sequentially.</p>
+      <div class="am"><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super §3.2.1</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\min_\theta\ \sum_{e\in\mathcal{E}} w_e\,\mathcal{J}_e(\theta)\quad\text{in one batch, vs. }\ \mathcal{J}_{e_1}\to\mathcal{J}_{e_2}\to\cdots\ \text{sequentially}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Optimize the policy on all RL environments in every batch instead of one domain at a time.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Sequential domain RL regresses the previous domains; a mixed batch keeps every update informed by the whole distribution. The alternative fix is cross-stage distillation (GLM-5).</dd></div>
@@ -768,10 +714,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Slow environments (SWE containers) bottleneck a mixed batch — Nemotron isolates SWE-RL for that reason.</li><li>Per-environment weights w_e are a curriculum in disguise.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="ship" href="/model-post-training-diff.html#glm5">GLM-5</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super §3.2.1</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-self-play-task-generation">
-      <div class="rh"><h3>Self-play task generation</h3><span class="yr">2022–25 · STaR → SPICE</span><a class="up" href="#fam-G" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Let a proposer manufacture the curriculum at the solver's 50% boundary.</p>
-      <div class="fx">\[x\sim\pi_{\text{prop}},\quad r_{\text{prop}}=f(\hat p(x))\ \text{peaking at } \hat p=\tfrac12,\quad r_{\text{solve}}=\mathbb{1}[\text{verified}]\]</div>
+      </dl></div></details><details class="algo" id="ref-self-play-task-generation"><summary>
+      <div class="ah"><h3>Self-play task generation</h3><span class="yr">2022–25 · STaR → SPICE</span></div>
+      <p class="obj">Let a proposer manufacture the curriculum at the solver's 50% boundary.</p>
+      <div class="am"><a href="/notes/self-play.html">Self-play note</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[x\sim\pi_{\text{prop}},\quad r_{\text{prop}}=f(\hat p(x))\ \text{peaking at } \hat p=\tfrac12,\quad r_{\text{solve}}=\mathbb{1}[\text{verified}]\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Let a proposer manufacture the training distribution at the solver's 50% boundary.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>The logical endpoint of difficulty filtering: instead of filtering a fixed pool, generate the boundary directly.</dd></div>
@@ -779,21 +726,13 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Who verifies is the whole question; self-labelling collapses in 1–3 iterations (R-Zero).</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd>— (not in the ten reports)</dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="/notes/self-play.html">Self-play note</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section><section class="panel" id="p-H" role="tabpanel" aria-labelledby="t-H" hidden>
-  <div id="fam-H"><h2><span class="fk">H</span>Odds and ends worth a card</h2><p class="fsub">Not a family; things that show up in the reports and deserve a name.</p><div class="grid"><div class="algo"><div class="ah"><h3><a href="#ref-bond-best-of-n-distillation">BOND (best-of-N distillation)</a></h3><span class="yr">2024 · Google DeepMind</span></div>
+  <div id="fam-H"><h2><span class="fk">H</span>Odds and ends worth a card</h2><p class="fsub">Not a family; things that show up in the reports and deserve a name.</p><div class="grid"><details class="algo" id="ref-bond-best-of-n-distillation"><summary>
+      <div class="ah"><h3>BOND (best-of-N distillation)</h3><span class="yr">2024 · Google DeepMind</span></div>
       <p class="obj">Distill the best-of-N sampling policy into the model via Jeffreys divergence.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2407.14622">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2407.14622">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a> <a class="more" href="#ref-bond-best-of-n-distillation">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-warp-weight-averaged-rewarded-policies">WARP (weight-averaged rewarded policies)</a></h3><span class="yr">2024 · Google DeepMind</span></div>
-      <p class="obj">EMA anchors, spherical interpolation of independently RL'd policies, interpolate toward init.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2406.16768">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2406.16768">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a> <a class="more" href="#ref-warp-weight-averaged-rewarded-policies">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-model-souping">Model souping</a></h3><span class="yr">2022 · Wortsman et al.</span></div>
-      <p class="obj">Linearly average checkpoints.</p>
-      <div class="am"><a href="https://arxiv.org/abs/2203.05482">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2203.05482">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <a class="more" href="#ref-model-souping">details ↓</a></div></div><div class="algo"><div class="ah"><h3><a href="#ref-mtp-healing">MTP healing</a></h3><span class="yr">2026 · Nemotron 3 Super</span></div>
-      <p class="obj">After RL, retrain only the multi-token-prediction heads with the trunk frozen.</p>
-      <div class="am"><a href="/notes/mtp.html">MTP note</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <a class="more" href="#ref-mtp-healing">details ↓</a></div></div></div></div>
-  <div class="refsec" id="ref-H"><h2 class="refh">Reference · Odds and ends worth a card</h2><article class="ref" id="ref-bond-best-of-n-distillation">
-      <div class="rh"><h3>BOND (best-of-N distillation)</h3><span class="yr">2024 · Google DeepMind</span><a class="up" href="#fam-H" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Distill the best-of-N sampling policy into the model via Jeffreys divergence.</p>
-      <div class="fx">\[\pi_{\text{BoN}}(y\mid x)\ \propto\ \pi(y\mid x)\,F_\pi(y)^{N-1},\quad F_\pi(y)=P_{y'\sim\pi}\big[r(y')\le r(y)\big];\qquad \min_\theta\ \mathcal{D}_{\text{Jeffreys}}\big(\pi_\theta\,\|\,\pi_{\text{BoN}}\big)\ \text{iteratively}\]</div>
+      <div class="am"><a href="https://arxiv.org/abs/2407.14622">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2407.14622">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\pi_{\text{BoN}}(y\mid x)\ \propto\ \pi(y\mid x)\,F_\pi(y)^{N-1},\quad F_\pi(y)=P_{y'\sim\pi}\big[r(y')\le r(y)\big];\qquad \min_\theta\ \mathcal{D}_{\text{Jeffreys}}\big(\pi_\theta\,\|\,\pi_{\text{BoN}}\big)\ \text{iteratively}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Distill the best-of-N sampling distribution into the policy, using the reward's CDF under the current policy to define the target and a Jeffreys divergence to fit it.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Best-of-N is a strong but expensive inference-time policy; matching it in the weights gives most of its quality at one sample per prompt, with the KL-to-reference regularization implicit in N.</dd></div>
@@ -801,10 +740,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Needs many samples per prompt to estimate F_π.</li><li>Inherits the reward model's biases like any RLHF.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2407.14622">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2407.14622">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-warp-weight-averaged-rewarded-policies">
-      <div class="rh"><h3>WARP (weight-averaged rewarded policies)</h3><span class="yr">2024 · Google DeepMind</span><a class="up" href="#fam-H" title="back to the cards">↑ cards</a></div>
-      <p class="robj">EMA anchors, spherical interpolation of independently RL'd policies, interpolate toward init.</p>
-      <div class="fx">\[\text{(1) EMA anchor } \theta_{\text{ema}} \text{ as the KL reference};\quad\text{(2) SLERP-merge } M \text{ independently RL'd policies};\quad\text{(3) LITI: interpolate the merge toward the init}\]</div>
+      </dl></div></details><details class="algo" id="ref-warp-weight-averaged-rewarded-policies"><summary>
+      <div class="ah"><h3>WARP (weight-averaged rewarded policies)</h3><span class="yr">2024 · Google DeepMind</span></div>
+      <p class="obj">EMA anchors, spherical interpolation of independently RL'd policies, interpolate toward init.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2406.16768">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2406.16768">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\text{(1) EMA anchor } \theta_{\text{ema}} \text{ as the KL reference};\quad\text{(2) SLERP-merge } M \text{ independently RL'd policies};\quad\text{(3) LITI: interpolate the merge toward the init}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Three weight-averaging moves inside RLHF: an EMA anchor for the KL, spherical interpolation of independently trained policies, and a final interpolation toward initialization.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Weight averaging trades a little reward for a lot of KL: merged policies sit on a better reward–KL frontier than any single run, and the EMA anchor lets each run move further safely.</dd></div>
@@ -812,10 +752,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Only works between checkpoints in the same basin (shared init).</li><li>Costs M RL runs.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#gemma4">Gemma 4</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2406.16768">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2406.16768">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-model-souping">
-      <div class="rh"><h3>Model souping</h3><span class="yr">2022 · Wortsman et al.</span><a class="up" href="#fam-H" title="back to the cards">↑ cards</a></div>
-      <p class="robj">Linearly average checkpoints.</p>
-      <div class="fx">\[\theta_{\text{soup}}=\sum_m \alpha_m\,\theta_m,\quad \sum\alpha_m=1\quad\text{(uniform, or greedy over held-out accuracy)}\]</div>
+      </dl></div></details><details class="algo" id="ref-model-souping"><summary>
+      <div class="ah"><h3>Model souping</h3><span class="yr">2022 · Wortsman et al.</span></div>
+      <p class="obj">Linearly average checkpoints.</p>
+      <div class="am"><a href="https://arxiv.org/abs/2203.05482">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2203.05482">alphaXiv</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\theta_{\text{soup}}=\sum_m \alpha_m\,\theta_m,\quad \sum\alpha_m=1\quad\text{(uniform, or greedy over held-out accuracy)}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>Average the weights of fine-tuned checkpoints that share an initialization.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>Fine-tunes from one init usually lie in one loss basin, so their average is often better than any member and costs nothing at inference.</dd></div>
@@ -823,10 +764,11 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Averaging across different data mixes or long RL runs can leave the basin.</li><li>Uniform soups can underperform greedy selection.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#olmo">OLMo 3</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="https://arxiv.org/abs/2203.05482">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2203.05482">alphaXiv</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article><article class="ref" id="ref-mtp-healing">
-      <div class="rh"><h3>MTP healing</h3><span class="yr">2026 · Nemotron 3 Super</span><a class="up" href="#fam-H" title="back to the cards">↑ cards</a></div>
-      <p class="robj">After RL, retrain only the multi-token-prediction heads with the trunk frozen.</p>
-      <div class="fx">\[\min_{\phi_{\text{MTP}}}\ \mathcal{L}_{\text{MTP}}\quad\text{with the trunk } \theta \text{ frozen, on the RLVR prompts}\]</div>
+      </dl></div></details><details class="algo" id="ref-mtp-healing"><summary>
+      <div class="ah"><h3>MTP healing</h3><span class="yr">2026 · Nemotron 3 Super</span></div>
+      <p class="obj">After RL, retrain only the multi-token-prediction heads with the trunk frozen.</p>
+      <div class="am"><a href="/notes/mtp.html">MTP note</a> <span class="sep">·</span> <a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a> <span class="more">details</span></div></summary>
+      <div class="rbody"><div class="fx">\[\min_{\phi_{\text{MTP}}}\ \mathcal{L}_{\text{MTP}}\quad\text{with the trunk } \theta \text{ frozen, on the RLVR prompts}\]</div>
       <dl class="ledger">
         <div class="lr"><dt>What changed</dt><dd>After RL, retrain only the multi-token-prediction heads.</dd></div>
         <div class="lr"><dt>Why it works</dt><dd>RL moved the trunk, so the draft heads no longer predict what the trunk will emit and the speculative-decoding acceptance rate collapses; a short heads-only pass restores it.</dd></div>
@@ -834,7 +776,7 @@
         <div class="lr"><dt>Pitfalls</dt><dd><ul><li>Forgetting to do it silently removes the deployed speedup — see the MTP note.</li></ul></dd></div>
         <div class="lr"><dt>Where it ships</dt><dd><a class="ship" href="/model-post-training-diff.html#nemo3">Nemotron</a></dd></div>
         <div class="lr"><dt>Sources</dt><dd><a href="/notes/mtp.html">MTP note</a> · <a href="https://rlhfbook.com/">RLHF Book</a></dd></div>
-      </dl></article></div>
+      </dl></div></details></div></div>
 </section>
 
   <section>
@@ -859,7 +801,7 @@
     var h = (location.hash || "").replace(/^#/, ""); if (!h) return false;
     if (document.getElementById("t-" + h)) { show("t-" + h, false); window.scrollTo({top:0}); return true; }
     var el = document.getElementById(h); var pn = el && panelOf(el);
-    if (pn) { show("t-" + pn.id.replace(/^p-/, ""), false); setTimeout(function(){ el.scrollIntoView({block:"start"}); }, 0); return true; }
+    if (pn) { show("t-" + pn.id.replace(/^p-/, ""), false); if (el.tagName === "DETAILS") el.open = true; setTimeout(function(){ el.scrollIntoView({block:"start"}); }, 0); return true; }
     return false;
   }
   tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.id, true); window.scrollTo({top: document.querySelector(".tabs").offsetTop - 8}); }); });
