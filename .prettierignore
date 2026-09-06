@@ -18,3 +18,6 @@ assets/feeds/**
 papers.html
 people-map.html
 people/index.html
+
+# standalone comparison page — do not reformat
+post-training-diff.html
