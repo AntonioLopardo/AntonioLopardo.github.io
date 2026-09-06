@@ -40,50 +40,50 @@
 
   <section>
     <h2>Fig 1 · Family map</h2>
-    <figure><div class="scroller"><svg viewBox="0 0 760 414" role="img" aria-label="Family map: rows are the signal type (demonstrations, preferences, verifiable or scalar reward); columns are how on-policy the data is (offline, own samples filtered, own samples rewarded online, own samples scored against a teacher). Each cell lists the algorithms that live there. A strip below lists the off-policy corrections that apply to the online columns.">
-<text class="st2" x="150" y="22">how on-policy the data is →</text>
-<text class="sh" x="225.0" y="38" text-anchor="middle">offline data</text><text class="st2" x="225.0" y="52" text-anchor="middle">someone else's or fixed</text>
-<text class="sh" x="375.0" y="38" text-anchor="middle">own samples, filtered</text><text class="st2" x="375.0" y="52" text-anchor="middle">rejection / verifier</text>
-<text class="sh" x="525.0" y="38" text-anchor="middle">own samples, rewarded</text><text class="st2" x="525.0" y="52" text-anchor="middle">online RL</text>
-<text class="sh" x="675.0" y="38" text-anchor="middle">own samples vs a teacher</text><text class="st2" x="675.0" y="52" text-anchor="middle">on-policy distillation</text>
-<text class="sh" x="140" y="110.0" text-anchor="end">demonstrations</text>
-<rect class="cell" x="153" y="63" width="144" height="86" rx="5"/>
-<text class="st" x="225.0" y="82" text-anchor="middle">SFT</text>
-<text class="st" x="225.0" y="97" text-anchor="middle">off-policy distillation</text>
-<rect class="cell" x="303" y="63" width="144" height="86" rx="5"/>
-<text class="st" x="375.0" y="82" text-anchor="middle">RFT · STaR · ReST-EM</text>
-<rect class="cell empty" x="453" y="63" width="144" height="86" rx="5"/>
-<rect class="cell warm" x="603" y="63" width="144" height="86" rx="5"/>
-<text class="st" x="675.0" y="82" text-anchor="middle">GKD · OPD · MOPD</text>
-<text class="st" x="675.0" y="97" text-anchor="middle">cross-stage OPD</text>
-<text class="st" x="675.0" y="112" text-anchor="middle">PivotRL</text>
-<text class="sh" x="140" y="202.0" text-anchor="end">preferences</text>
-<rect class="cell" x="153" y="155" width="144" height="86" rx="5"/>
-<text class="st" x="225.0" y="174" text-anchor="middle">DPO · IPO · KTO · ORPO</text>
-<text class="st" x="225.0" y="189" text-anchor="middle">SimPO · APO · RPO</text>
-<text class="st" x="225.0" y="204" text-anchor="middle">QRPO · Delta learning</text>
-<rect class="cell empty" x="303" y="155" width="144" height="86" rx="5"/>
-<rect class="cell hot" x="453" y="155" width="144" height="86" rx="5"/>
-<text class="st" x="525.0" y="174" text-anchor="middle">online DPO</text>
-<text class="st" x="525.0" y="189" text-anchor="middle">online RPO</text>
-<text class="st" x="525.0" y="204" text-anchor="middle">RLHF (PPO+RM)</text>
-<text class="st" x="525.0" y="219" text-anchor="middle">BOND / WARP</text>
-<rect class="cell empty" x="603" y="155" width="144" height="86" rx="5"/>
-<text class="sh" x="140" y="294.0" text-anchor="end">verifiable / scalar reward</text>
-<rect class="cell empty" x="153" y="247" width="144" height="86" rx="5"/>
-<rect class="cell" x="303" y="247" width="144" height="86" rx="5"/>
-<text class="st" x="375.0" y="266" text-anchor="middle">expert iteration</text>
-<rect class="cell hot" x="453" y="247" width="144" height="86" rx="5"/>
-<text class="st" x="525.0" y="266" text-anchor="middle">REINFORCE · RLOO</text>
-<text class="st" x="525.0" y="281" text-anchor="middle">REINFORCE++ · GRPO</text>
-<text class="st" x="525.0" y="296" text-anchor="middle">Dr. GRPO · DAPO · GSPO</text>
-<text class="st" x="525.0" y="311" text-anchor="middle">GMPO · SAPO · CISPO</text>
-<text class="st" x="525.0" y="326" text-anchor="middle">PPO · VAPO</text>
-<rect class="cell empty" x="603" y="247" width="144" height="86" rx="5"/>
-<rect class="strip" x="453" y="350" width="294" height="48" rx="5"/>
-<text class="sh" x="600" y="369" text-anchor="middle">corrections for the online columns</text>
-<text class="st" x="600" y="387" text-anchor="middle">TIS / MIS · IcePop · double-sided IS · VCPO · partial rollouts · routing replay</text>
-<text class="st2" x="140" y="380" text-anchor="end">signal type ↑</text>
+    <figure><div class="scroller"><svg viewBox="0 0 1042 544" role="img" aria-label="Family map: rows are the signal type (demonstrations, preferences, verifiable or scalar reward); columns are how on-policy the data is (offline, own samples filtered, own samples rewarded online, own samples scored against a teacher). Each cell lists the algorithms that live there. A strip below lists the off-policy corrections that apply to the online columns.">
+<text class="st2" x="210" y="18">how on-policy the data is →</text>
+<text class="sh" x="312.5" y="46" text-anchor="middle">offline data</text><text class="st2" x="312.5" y="63" text-anchor="middle">someone else's, or fixed</text>
+<text class="sh" x="517.5" y="46" text-anchor="middle">own samples, filtered</text><text class="st2" x="517.5" y="63" text-anchor="middle">rejection / verifier</text>
+<text class="sh" x="722.5" y="46" text-anchor="middle">own samples, rewarded</text><text class="st2" x="722.5" y="63" text-anchor="middle">online RL</text>
+<text class="sh" x="927.5" y="46" text-anchor="middle">own samples vs a teacher</text><text class="st2" x="927.5" y="63" text-anchor="middle">on-policy distillation</text>
+<text class="sh" x="196" y="136.0" text-anchor="end">demonstrations</text>
+<rect class="cell" x="216" y="82" width="193" height="112" rx="6"/>
+<text class="st" x="312.5" y="134.0" text-anchor="middle">SFT</text>
+<text class="st" x="312.5" y="150.0" text-anchor="middle">off-policy distillation</text>
+<rect class="cell" x="421" y="82" width="193" height="112" rx="6"/>
+<text class="st" x="517.5" y="142.0" text-anchor="middle">RFT · STaR · ReST-EM</text>
+<rect class="cell empty" x="626" y="82" width="193" height="112" rx="6"/>
+<rect class="cell warm" x="831" y="82" width="193" height="112" rx="6"/>
+<text class="st" x="927.5" y="126.0" text-anchor="middle">GKD · OPD · MOPD</text>
+<text class="st" x="927.5" y="142.0" text-anchor="middle">cross-stage OPD</text>
+<text class="st" x="927.5" y="158.0" text-anchor="middle">PivotRL</text>
+<text class="sh" x="196" y="260.0" text-anchor="end">preferences</text>
+<rect class="cell" x="216" y="206" width="193" height="112" rx="6"/>
+<text class="st" x="312.5" y="250.0" text-anchor="middle">DPO · IPO · KTO · ORPO</text>
+<text class="st" x="312.5" y="266.0" text-anchor="middle">SimPO · APO · RPO · QRPO</text>
+<text class="st" x="312.5" y="282.0" text-anchor="middle">Delta learning</text>
+<rect class="cell empty" x="421" y="206" width="193" height="112" rx="6"/>
+<rect class="cell hot" x="626" y="206" width="193" height="112" rx="6"/>
+<text class="st" x="722.5" y="250.0" text-anchor="middle">online DPO · online RPO</text>
+<text class="st" x="722.5" y="266.0" text-anchor="middle">RLHF (PPO + RM)</text>
+<text class="st" x="722.5" y="282.0" text-anchor="middle">BOND / WARP</text>
+<rect class="cell empty" x="831" y="206" width="193" height="112" rx="6"/>
+<text class="sh" x="196" y="384.0" text-anchor="end">verifiable or scalar reward</text>
+<rect class="cell empty" x="216" y="330" width="193" height="112" rx="6"/>
+<rect class="cell" x="421" y="330" width="193" height="112" rx="6"/>
+<text class="st" x="517.5" y="390.0" text-anchor="middle">expert iteration</text>
+<rect class="cell hot" x="626" y="330" width="193" height="112" rx="6"/>
+<text class="st" x="722.5" y="358.0" text-anchor="middle">REINFORCE · RLOO</text>
+<text class="st" x="722.5" y="374.0" text-anchor="middle">REINFORCE++ · GRPO</text>
+<text class="st" x="722.5" y="390.0" text-anchor="middle">Dr. GRPO · DAPO · GSPO</text>
+<text class="st" x="722.5" y="406.0" text-anchor="middle">GMPO · SAPO · CISPO</text>
+<text class="st" x="722.5" y="422.0" text-anchor="middle">PPO · VAPO</text>
+<rect class="cell empty" x="831" y="330" width="193" height="112" rx="6"/>
+<rect class="strip" x="626" y="464" width="398" height="62" rx="6"/>
+<text class="sh" x="825" y="486" text-anchor="middle">corrections for the online columns</text>
+<text class="st" x="825" y="506" text-anchor="middle">TIS / MIS · IcePop · double-sided IS</text>
+<text class="st" x="825" y="520" text-anchor="middle">VCPO · partial rollouts · routing replay</text>
+<text class="st2" x="196" y="500" text-anchor="end">signal type ↑</text>
 </svg></div>
     <figcaption>Two axes explain most of the taxonomy. Down: what the signal is — a demonstration, a preference, or a reward you can compute. Across: how on-policy the data is — a fixed dataset, your own samples filtered by a verifier, your own samples scored online, or your own samples scored against a teacher's distribution. The amber column is where 2025 happened (the GRPO family); the teal column is where 2026 is happening (on-policy distillation replacing mixed RL). The grey strip is the layer nobody had to think about until the sampler and the learner became different programs.</figcaption></figure>
   </section>
