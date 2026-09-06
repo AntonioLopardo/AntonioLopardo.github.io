@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Post-Training Diff</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+  :root{ --paper:#F1F3F6; --surface:#FFFFFF; --surface-2:#E7EBEF; --ink:#141920; --ink-2:#4B5560; --ink-3:#7C8894; --rule:#D3D9DF; --rule-soft:#E3E8EC;
+    --sft:#0A6A62; --sft-line:#0F8078; --sft-soft:#D9EDEB; --rl:#A24E06; --rl-line:#C4650F; --rl-soft:#FAE8D5; --pref:#6B3F8C; --pref-line:#7E4FA3; --pref-soft:#ECE1F4;
+    --pre:#5B6672; --pre-soft:#E3E7EB; --cut:#AEB7C0; --cut-soft:#EDF0F2; --ok:#0A6A62; --no:#9B3B2E; --part:#8A6A12; --on-accent:#FFFFFF;
+    --shadow:0 1px 2px rgba(20,25,32,.05), 0 8px 24px -12px rgba(20,25,32,.18); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --paper:#0F1319; --surface:#171C23; --surface-2:#202730; --ink:#E9EDF1; --ink-2:#A7B2BD; --ink-3:#79848F; --rule:#2A323C; --rule-soft:#222A33;
+    --sft:#3FC0B1; --sft-line:#3FC0B1; --sft-soft:#0E3330; --rl:#F0A03C; --rl-line:#F0A03C; --rl-soft:#3A2711; --pref:#C08BD9; --pref-line:#C08BD9; --pref-soft:#2C1D38;
+    --pre:#A7B2BD; --pre-soft:#252D37; --cut:#4E5A66; --cut-soft:#1C232B; --ok:#3FC0B1; --no:#E2705F; --part:#D9A93A; --on-accent:#0F1319; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6); } }
+  :root[data-theme="dark"]{ --paper:#0F1319; --surface:#171C23; --surface-2:#202730; --ink:#E9EDF1; --ink-2:#A7B2BD; --ink-3:#79848F; --rule:#2A323C; --rule-soft:#222A33;
+    --sft:#3FC0B1; --sft-line:#3FC0B1; --sft-soft:#0E3330; --rl:#F0A03C; --rl-line:#F0A03C; --rl-soft:#3A2711; --pref:#C08BD9; --pref-line:#C08BD9; --pref-soft:#2C1D38;
+    --pre:#A7B2BD; --pre-soft:#252D37; --cut:#4E5A66; --cut-soft:#1C232B; --ok:#3FC0B1; --no:#E2705F; --part:#D9A93A; --on-accent:#0F1319; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6); }
+  body{background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--sft); text-decoration:none; border-bottom:1px solid var(--sft-soft);} a:hover{border-bottom-color:var(--sft);}
+  .page{max-width:1080px; margin:0 auto; padding:52px 24px 96px;} @media (max-width:640px){ .page{padding:32px 14px 64px;} }
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--sft); margin:0 0 12px;}
+  h1{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:clamp(30px,5vw,44px); line-height:1.12; letter-spacing:-.015em; margin:0 0 14px; text-wrap:balance;}
+  .lede{max-width:66ch; margin:0 0 22px; color:var(--ink-2); font-size:17px;} .lede b{color:var(--ink); font-weight:600;}
+  .legend{display:flex; flex-wrap:wrap; gap:14px 18px; font-size:12.5px; color:var(--ink-2); margin:0 0 18px;} .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .sw{width:13px; height:13px; border-radius:3px; display:inline-block; border:1px solid transparent;}
+  .sw.k-pre,.dot.k-pre{background:var(--pre-soft); border-color:var(--pre);} .sw.k-sft,.dot.k-sft{background:var(--sft-soft); border-color:var(--sft-line);} .sw.k-pref,.dot.k-pref{background:var(--pref-soft); border-color:var(--pref-line);} .sw.k-rlvr,.dot.k-rlvr{background:var(--rl-soft); border-color:var(--rl-line);} .sw.k-other,.dot.k-other{background:var(--cut-soft); border-color:var(--cut);}
+  .sw.lp{background:var(--rl-soft); border-color:var(--rl-line);} .sw.ls{background:var(--sft-soft); border-color:var(--sft-line);} .sw.lv{background:var(--pref-soft); border-color:var(--pref-line);} .sw.lgx{background:var(--pre-soft); border-color:var(--pre);} .sw.rewsw{background:transparent; border:1.5px dashed var(--rl-line);}
+  .tabs{position:sticky; top:0; z-index:5; background:var(--paper); padding:8px 0 10px; border-bottom:1px solid var(--rule); display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:26px;}
+  .tabs button{font-family:"IBM Plex Mono",monospace; font-size:12.5px; font-weight:500; color:var(--ink-2); background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:7px 12px; cursor:pointer;}
+  .tabs button:hover{color:var(--ink); border-color:var(--ink-3);} .tabs button:focus-visible{outline:2px solid var(--sft); outline-offset:2px;}
+  .tabs button[aria-selected="true"]{background:var(--ink); border-color:var(--ink); color:var(--paper);} .tabs button.ref[aria-selected="false"]{border-color:var(--sft-line); color:var(--sft);}
+  .tsep{width:1px; height:22px; background:var(--rule); margin:0 6px;}
+  .panel{display:flex; flex-direction:column; gap:18px;} .ph{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;}
+  .org{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3); margin:0 0 4px; letter-spacing:.04em;}
+  h2{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:28px; letter-spacing:-.01em; margin:0; text-wrap:balance; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .refbadge{font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--sft); border:1px solid var(--sft-line); border-radius:4px; padding:2px 8px;}
+  .thesis{margin:0; padding:14px 18px; background:var(--surface); border-left:3px solid var(--rl-line); border-radius:0 8px 8px 0; font-size:16px; color:var(--ink);}
+  .thesis .tl{display:block; font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--rl); margin-bottom:4px;}
+  .sub{max-width:70ch; margin:0 0 6px; color:var(--ink-2); font-size:15px;}
+  .two{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;} @media (max-width:760px){ .two{grid-template-columns:1fr;} }
+  .card{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:16px 18px 14px; box-shadow:var(--shadow);} .card.wide{padding-bottom:6px;} .card.diffcard{border-left:3px solid var(--sft-line);}
+  .ct{font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin:0 0 10px;}
+  .facts{margin:0; padding-left:18px; font-size:14px; color:var(--ink-2); display:flex; flex-direction:column; gap:6px;} .facts li::marker{color:var(--ink-3);} .facts b{color:var(--ink); font-weight:600;}
+  .stagelist{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:5px; font-size:13.5px; color:var(--ink);}
+  .stagelist li{display:flex; align-items:baseline; gap:8px;} .stagelist li span{color:var(--ink-3); font-family:"IBM Plex Mono",monospace; font-size:11px; margin-left:auto; text-align:right;}
+  .dot{width:10px; height:10px; border-radius:3px; display:inline-block; border:1px solid transparent; flex:0 0 auto; position:relative; top:1px;}
+  .scroller{overflow-x:auto;} .glyph{display:block; width:100%; max-width:240px; height:auto; margin:0 0 10px;}
+  .gc.on{fill:var(--sft-soft); stroke:var(--sft-line); stroke-width:1;} .gc.off{fill:var(--surface-2); stroke:var(--rule); stroke-width:1;} .gc.attn{fill:var(--pre-soft); stroke:var(--pre); stroke-width:1;}
+  .chips{display:flex; flex-wrap:wrap; gap:6px;} .chip{font-family:"IBM Plex Mono",monospace; font-size:11px; padding:3px 8px; border-radius:4px; border:1px solid var(--rule); color:var(--ink-2); background:var(--surface-2);}
+  .chip.ok{border-color:var(--ok); color:var(--ok);} .chip.no{border-color:var(--no); color:var(--no);} .chip.part{border-color:var(--part); color:var(--part);} .chips.mini .chip{font-size:10px; padding:2px 6px;}
+  .card.wide svg{display:block; width:100%; height:auto; min-width:640px; color:var(--ink-3);}
+  .k-pre{fill:var(--pre-soft); stroke:var(--pre); stroke-width:1.2;} .k-sft{fill:var(--sft-soft); stroke:var(--sft-line); stroke-width:1.4;} .k-pref{fill:var(--pref-soft); stroke:var(--pref-line); stroke-width:1.4;} .k-rlvr{fill:var(--rl-soft); stroke:var(--rl-line); stroke-width:1.4;} .k-other{fill:var(--cut-soft); stroke:var(--cut); stroke-width:1.2; stroke-dasharray:4 3;}
+  .pn{fill:var(--ink); font-family:"IBM Plex Sans",sans-serif; font-size:13px; font-weight:600;} .ps,.pd{fill:var(--ink-2); font-family:"IBM Plex Mono",monospace; font-size:10.5px;} .parrow{stroke:currentColor; stroke-width:1.3; marker-end:url(#pa);}
+  /* ledger */
+  .ledgerh{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:20px; margin:8px 0 -6px;}
+  .stages{display:flex; flex-direction:column; gap:14px;}
+  .stagecard{background:var(--surface); border:1px solid var(--rule); border-left-width:5px; border-radius:10px; padding:14px 18px 12px; box-shadow:var(--shadow);}
+  .stagecard.k-pre{border-left-color:var(--pre); fill:none; stroke:none;} .stagecard.k-sft{border-left-color:var(--sft-line); fill:none; stroke:none;} .stagecard.k-pref{border-left-color:var(--pref-line); fill:none; stroke:none;} .stagecard.k-rlvr{border-left-color:var(--rl-line); fill:none; stroke:none;} .stagecard.k-other{border-left-color:var(--cut); border-left-style:dashed; fill:none; stroke:none; stroke-dasharray:none;}
+  .sch{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+  .sidx{font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; color:var(--ink-3); border:1px solid var(--rule); border-radius:4px; padding:1px 6px;}
+  .sn{font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:16px; color:var(--ink);} .ss{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-3);}
+  .ledger{margin:0; display:flex; flex-direction:column; gap:0;}
+  .ledger .lr{display:grid; grid-template-columns:150px minmax(0,1fr); gap:14px; padding:8px 0; border-top:1px solid var(--rule-soft);}
+  @media (max-width:640px){ .ledger .lr{grid-template-columns:1fr; gap:2px;} }
+  .ledger dt{font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); padding-top:3px;}
+  .ledger dd{margin:0; font-size:14px; color:var(--ink-2); line-height:1.55;}
+  /* compare */
+  table.cmp{border-collapse:collapse; width:100%; font-size:12.5px; min-width:1100px;} table.cmp th, table.cmp td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--rule-soft); vertical-align:top;}
+  table.cmp thead th{font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; letter-spacing:.06em; color:var(--ink); border-bottom:1px solid var(--rule); position:sticky; top:52px; background:var(--paper);}
+  table.cmp tbody th{font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); white-space:nowrap;}
+  table.cmp td{color:var(--ink-2);} table.cmp td.ref{background:var(--sft-soft); color:var(--ink);} table.cmp.small{min-width:720px;}
+  /* self-play */
+  .spgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;} @media (max-width:820px){ .spgrid{grid-template-columns:1fr;} }
+  .card.sp svg{display:block; width:100%; height:auto; color:var(--ink-3); margin:4px 0 10px;}
+  .sph{display:flex; justify-content:space-between; align-items:baseline; gap:10px;} .sph h3{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:19px; margin:0;} .sph .yr{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); font-weight:400; margin-left:6px;} .sph a{font-family:"IBM Plex Mono",monospace; font-size:12px;}
+  .lp{fill:var(--rl-soft); stroke:var(--rl-line); stroke-width:1.4;} .ls{fill:var(--sft-soft); stroke:var(--sft-line); stroke-width:1.4;} .lv{fill:var(--pref-soft); stroke:var(--pref-line); stroke-width:1.4;} .lx{fill:var(--surface-2); stroke:var(--ink-3); stroke-width:1;}
+  .lg{fill:var(--pre-soft); stroke:var(--pre); stroke-width:1.2;} .lg.none{fill:none; stroke:var(--cut); stroke-dasharray:3 3;}
+  .lt{fill:var(--ink); font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:600;} .lt2{fill:var(--ink-2); font-family:"IBM Plex Mono",monospace; font-size:10.5px;} .lr{fill:var(--rl); font-family:"IBM Plex Mono",monospace; font-size:10px; font-weight:600;}
+  .ledge{stroke:currentColor; stroke-width:1.3; fill:none; marker-end:url(#la);} .lrew{stroke:var(--rl-line); stroke-width:1.3; fill:none; stroke-dasharray:4 3; marker-end:url(#lb);} .rewhead{fill:var(--rl-line);}
+  .foot{margin-top:36px; font-size:13px; color:var(--ink-3); max-width:70ch;}
+</style>
+
+<div class="page">
+  <header>
+    <p class="eyebrow">Post-training · 2025–26 · seven reports on one schema</p>
+    <h1>Post-training diff</h1>
+    <p class="lede">Seven model reports from the onboarding reading list, each read against the same skeleton: <b>SFT → preference → verifiable-reward RL</b>. OLMo 3 is the reference because it publishes every stage. Each tab opens with the thesis and the pipeline, then a <b>stage-by-stage ledger</b>: what the data was, who it was distilled from, which pipelines synthesized it, how it was filtered, the algorithm, the rewards and environments, and the schedule — with the numbers the reports actually give.</p>
+    <div class="legend"><span><i class="sw k-pre"></i>pretrain / base</span><span><i class="sw k-sft"></i>SFT · distillation</span><span><i class="sw k-pref"></i>preference · RLHF</span><span><i class="sw k-rlvr"></i>verifiable-reward RL</span><span><i class="sw k-other"></i>other</span></div>
+  </header>
+  <nav class="tabs" role="tablist" aria-label="Models"><button role="tab" id="t-olmo" aria-controls="p-olmo" aria-selected="true" class="ref">OLMo 3</button><button role="tab" id="t-phi" aria-controls="p-phi" aria-selected="false" class="">Phi-4-reasoning</button><button role="tab" id="t-nemo3" aria-controls="p-nemo3" aria-selected="false" class="">Nemotron 3 Super</button><button role="tab" id="t-lnemo" aria-controls="p-lnemo" aria-selected="false" class="">Llama-Nemotron</button><button role="tab" id="t-kimi" aria-controls="p-kimi" aria-selected="false" class="">Kimi K3</button><button role="tab" id="t-qwen" aria-controls="p-qwen" aria-selected="false" class="">Qwen 3.8</button><button role="tab" id="t-apertus" aria-controls="p-apertus" aria-selected="false" class="">Apertus 1.0 → 1.5</button><span class="tsep"></span><button role="tab" id="t-compare" aria-controls="p-compare" aria-selected="false">Compare</button><button role="tab" id="t-selfplay" aria-controls="p-selfplay" aria-selected="false">Self-play</button></nav>
+  
+<section class="panel" id="p-olmo" role="tabpanel" aria-labelledby="t-olmo" >
+  <div class="ph"><div><p class="org">Ai2 · Nov 2025 · report Dec 2025 · <a href="https://arxiv.org/abs/2512.13961">source</a></p><h2>OLMo 3 — the reference skeleton <span class="refbadge">reference</span></h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>The model flow is the product: every stage, dataset, checkpoint and the RL code are released so the recipe itself can be studied, forked, and benchmarked against.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph dense"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>7B and 32B, dense</li><li>Dolma 3: 5.93T tokens → Dolmino 100B mid-training → Longmino long-context</li><li>8k → 65k context</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip ok">pretrain data · yes</span><span class="chip ok">post-train data · yes</span><span class="chip ok">code · yes</span><span class="chip ok">checkpoints · yes</span><span class="chip ok">recipe · yes</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>Pretrain<span>Dolma 3 · 5.93T</span></li><li><i class="dot k-sft"></i>SFT<span>Dolci Think SFT · 2.27M</span></li><li><i class="dot k-pref"></i>DPO<span>Delta Learning · 200k pairs</span></li><li><i class="dot k-rlvr"></i>RLVR<span>OlmoRL · Dolci-Think-RL ~105k</span></li><li><i class="dot k-rlvr"></i>RL-Zero path<span>RLVR from base · no SFT</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 1190 150" role="img" aria-label="Post-training pipeline: Pretrain then SFT then DPO then RLVR then RL-Zero path">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="176" height="56" rx="6"/>
+<text class="pn" x="96.0" y="49" text-anchor="middle">1 · Pretrain</text>
+<text class="ps" x="96.0" y="68" text-anchor="middle">Dolma 3 · 5.93T</text>
+<text class="pd" x="96.0" y="102" text-anchor="middle">Dolmino 100B mid-train</text>
+<text class="pd" x="96.0" y="118" text-anchor="middle">Longmino ctx extension</text>
+<line class="parrow" x1="186" y1="54" x2="209" y2="54"/>
+<rect class="k-sft" x="212" y="26" width="208" height="56" rx="6"/>
+<text class="pn" x="316.0" y="49" text-anchor="middle">2 · SFT</text>
+<text class="ps" x="316.0" y="68" text-anchor="middle">Dolci Think SFT · 2.27M</text>
+<text class="pd" x="316.0" y="102" text-anchor="middle">QwQ-32B + DeepSeek R1 traces</text>
+<text class="pd" x="316.0" y="118" text-anchor="middle">2 epochs · checkpoint soup</text>
+<text class="pd" x="316.0" y="134" text-anchor="middle">8× throughput on OLMo-core</text>
+<line class="parrow" x1="422" y1="54" x2="445" y2="54"/>
+<rect class="k-pref" x="448" y="26" width="235" height="56" rx="6"/>
+<text class="pn" x="565.5" y="49" text-anchor="middle">3 · DPO</text>
+<text class="ps" x="565.5" y="68" text-anchor="middle">Delta Learning · 200k pairs</text>
+<text class="pd" x="565.5" y="102" text-anchor="middle">chosen: Qwen3-32B (thinking)</text>
+<text class="pd" x="565.5" y="118" text-anchor="middle">rejected: Qwen3-0.6B (thinking)</text>
+<text class="pd" x="565.5" y="134" text-anchor="middle">1 epoch · early stopping matters</text>
+<line class="parrow" x1="685" y1="54" x2="708" y2="54"/>
+<rect class="k-rlvr" x="711" y="26" width="241" height="56" rx="6"/>
+<text class="pn" x="831.5" y="49" text-anchor="middle">4 · RLVR</text>
+<text class="ps" x="831.5" y="68" text-anchor="middle">OlmoRL · Dolci-Think-RL ~105k</text>
+<text class="pd" x="831.5" y="102" text-anchor="middle">GRPO + DAPO + Dr GRPO tricks</text>
+<text class="pd" x="831.5" y="118" text-anchor="middle">fully async · continuous batching</text>
+<text class="pd" x="831.5" y="134" text-anchor="middle">32k rollouts, mean &gt;10k</text>
+<line class="parrow" x1="954" y1="54" x2="977" y2="54"/>
+<rect class="k-rlvr" x="980" y="26" width="202" height="56" rx="6"/>
+<text class="pn" x="1081.0" y="49" text-anchor="middle">5 · RL-Zero path</text>
+<text class="ps" x="1081.0" y="68" text-anchor="middle">RLVR from base · no SFT</text>
+<text class="pd" x="1081.0" y="102" text-anchor="middle">Dolci RL-Zero · 13.3k math</text>
+<text class="pd" x="1081.0" y="118" text-anchor="middle">simple prompts beat &lt;think&gt;</text>
+<text class="pd" x="1081.0" y="134" text-anchor="middle">pass@32 rises too</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">Pretrain</span><span class="ss">Dolma 3 · 5.93T</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>Dolma 3 (5.93T tokens), then a 100B-token Dolmino mid-training mix, then Longmino for context extension to 65k. All released.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">2</span><span class="sn">SFT</span><span class="ss">Dolci Think SFT · 2.27M</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>2,268,468 prompts (7B). Math: OpenThoughts3 math 753k (kept at 16× repetition) + STEM 99k + SYNTHETIC-2 verified 105k. Code: Dolci Python Algorithms 467k + OpenThoughts3 code 89k + Nemotron post-training code 114k. Precise IF: Persona IF 223k + Precise IF 136k. Chat: WildChat 83k, OpenAssistant 7k. Safety: CoCoNot 10k, WildGuardMix 38k, WildJailbreak 41k. Aya 99k, TableGPT 5k, identity 290.</dd></div><div class="lr"><dt>Distilled from</dt><dd>QwQ-32B regenerates incomplete OpenThoughts3 math traces at 32k (vs the original 16k), writes up to 16 code responses per prompt, and answers precise-IF prompts. DeepSeek R1 supplies chat, safety, science and other-domain traces. GPT-4.1 writes the unit tests that filter the code responses.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Persona-IF prompts regenerated with Nemotron-Personas; code prompts from AceCoder, The Algorithms, Llama-Nemotron post-training and OpenCodeReasoning get fresh QwQ solutions verified against GPT-4.1 test cases; IF responses kept only if every constraint verifier passes.</dd></div><div class="lr"><dt>Filtering</dt><dd>Heuristics drop non-commercial licenses, incomplete chains, failed constraint/test checks, mentions of other model developers, repetition, and traces with excessive Chinese characters or political content. Topic filter uses the OpenAI query taxonomy. Decontamination: 8-gram matching, 50% overlap threshold, with math-symbol exceptions.</dd></div><div class="lr"><dt>Schedule</dt><dd>Mixing ablated on a 100k OpenThoughts3 base mix + ≤100k per category. Two epochs, learning-rate sweep, then a linear soup of the two best-LR checkpoints via mergekit. Switching from Open Instruct to OLMo-core gave 8× throughput.</dd></div></dl>
+    </div>
+<div class="stagecard k-pref">
+      <div class="sch"><span class="sidx">3</span><span class="sn">DPO</span><span class="ss">Delta Learning · 200k pairs</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>200,000 prompts: WildChat 40.7k, UltraFeedback 32.8k, FLAN 19.7k, Precise IF 19.4k, OpenThoughts3 science 19k, Python Algorithms 13.2k, Persona MATH 10.7k, Evol CodeAlpaca 7.6k, WildJailbreak 5.6k, WildGuardMix 5.3k, Aya 4.1k, and smaller sets.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Every pair is machine-made with one rule: chosen = Qwen3 32B in thinking mode, rejected = Qwen3 0.6B in thinking mode. The observation that motivated it: further SFT on Qwen3-32B traces outright hurt the SFT model, so the traces are turned into a contrastive signal instead.</dd></div><div class="lr"><dt>Algorithm</dt><dd>Plain DPO, one epoch, sweeping learning rate and dataset size — early stopping is important. Rejected responses are left unfiltered on the theory that a bad rejection is a useful contrast.</dd></div><div class="lr"><dt>Note</dt><dd>The Instruct path adds GPT-4.1-judged pairs with a delta-aware twist (always include a weak model, pick the worst as rejected), synthetic multi-turn self-talk and synthetic-context conversations, and a length-bias cap of 100 tokens between chosen and rejected. Modernizing the old UltraFeedback pipeline with a better judge alone made things worse.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">4</span><span class="sn">RLVR</span><span class="ss">OlmoRL · Dolci-Think-RL ~105k</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>104,869 prompts for Think (171,950 for Instruct). Precise IF: IF-RLVR 30.2k. Math: OMEGA 15k, AceReason 6.6k, Open-Reasoner-Zero 3k, Klear-Reasoner 3k, DAPO-Math 2.6k. Code: AceCoder 9.8k, Klear code 8k, SYNTHETIC-2 3k, Nemotron code 2.3k. General chat: Tülu 3 SFT 7.1k, WildChat-4.8M 7.1k, Multi-Subject RLVR 7.1k.</dd></div><div class="lr"><dt>Rewards / verifiers</dt><dd>Math: rule-based SymPy equivalence, 0/1. Code: test cases executed on AWS Lambda, either pass-rate or all-pass. IF: constraint functions, 1 only if every constraint holds. Chat with reference: Qwen3-32B (thinking off) judge scores 0–1 against the reference. Open chat: same judge, no reference. Puzzle and length-control verifiers were tried and dropped.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Code RL data built by problem rewriting → solution generation → test generation, keeping items whose solution passes &gt;80% of the generated tests. Chat references rewritten with GPT-4.1; prompts kept only if a Qwen2.5-7B-OpenThoughts2 sampler scores mean F1 between 0.1 and 0.8 over eight tries — removes both noise and impossibles.</dd></div><div class="lr"><dt>Filtering</dt><dd>Offline difficulty filter: 8 rollouts from the DPO checkpoint at temperature 1, drop prompts with pass rate &gt;62.5% (7B). The 32B skipped this and relied on active sampling over the 7B-filtered set. Named OMEGA subtasks the model struggled with were downsampled 50%.</dd></div><div class="lr"><dt>Algorithm</dt><dd>GRPO with: zero-gradient group filtering; active sampling to keep batch size constant; token-level loss; no KL; clip-higher; truncated importance sampling between vLLM and trainer logprobs; no standard-deviation normalization in the advantage (Dr GRPO) to remove the difficulty bias.</dd></div><div class="lr"><dt>Scale</dt><dd>Fully asynchronous: DeepSpeed learner + a pool of vLLM actors, continuous batching, in-flight weight updates. At 32k max / 14.6k mean length, static batching would waste up to 54% of compute. 32B run: 8 training nodes vs 20 inference nodes; 7B: 2 vs 7, roughly 14× the compute on inference. A step averaged 1000 s of which 125 s was training. The 7B run took 15 days on the old stack and 6 on the new one; the 32B Think went 750 → 2300 steps for 3.1 and had not saturated.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">5</span><span class="sn">RL-Zero path</span><span class="ss">RLVR from base · no SFT</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>Math: DAPO deduplicated and English-only, plus one representative per semantic cluster from Klear-Reasoner, Open-Reasoner-Zero and OMEGA, decontaminated against pretraining and mid-training data, then offline-filtered to drop prompts solved 8/8 by the base model → 13.3k prompts. Code, IF and chat subsampled from Dolci-Think-RL.</dd></div><div class="lr"><dt>Finding</dt><dd>Simple per-domain prompt templates greatly outperform post-training templates like &lt;think&gt;&lt;/think&gt; when starting from a base that never saw special formatting. Training at 16k response length, evaluating at 32k and temperature 1: AIME pass@1 jumps in the first few hundred steps, then climbs slowly; pass@32 also rises, so diversity is preserved.</dd></div><div class="lr"><dt>Note</dt><dd>Positioned as a clean benchmark for RL algorithms — fully open pretraining data means spurious rewards from contaminated mid-training can be ruled out.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">What makes it the reference</p><ul class="facts"><li>This is the baseline every other tab is diffed against.</li><li>Distinctive: Delta-Learning DPO (rejected = a much weaker version of the same family), verifiers for chat via an LM judge inside RLVR, and an RL-Zero path that skips SFT entirely.</li><li>Everything is released, including the RL infrastructure — which is the thesis, not a side effect.</li></ul></div>
+</section>
+<section class="panel" id="p-phi" role="tabpanel" aria-labelledby="t-phi" hidden>
+  <div class="ph"><div><p class="org">Microsoft · Apr 2025 · <a href="https://arxiv.org/abs/2504.21318">source</a></p><h2>Phi-4-reasoning </h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>Curation beats scale: a 14B model approaches DeepSeek-R1 by SFT-ing on “teachable” prompts with o3-mini traces; a 90-step GRPO pass on ~6k math problems adds a further increment.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph dense"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>14B dense (Phi-4 base; chosen over the mid-train checkpoint for its safety post-training)</li><li>RoPE base frequency doubled → 32k context</li><li>two unused placeholder tokens repurposed as &lt;think&gt; / &lt;/think&gt;</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip no">post-train data · no</span><span class="chip no">code · no</span><span class="chip no">checkpoints · no</span><span class="chip part">recipe · partial</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>Base<span>Phi-4 · 14B</span></li><li><i class="dot k-sft"></i>SFT<span>1.4M pairs · 8.3B unique tokens</span></li><li><i class="dot k-rlvr"></i>GRPO<span>-plus only · 90 steps · ~6.4k problems</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 842 150" role="img" aria-label="Post-training pipeline: Base then SFT then GRPO">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="202" height="56" rx="6"/>
+<text class="pn" x="109.0" y="49" text-anchor="middle">1 · Base</text>
+<text class="ps" x="109.0" y="68" text-anchor="middle">Phi-4 · 14B</text>
+<text class="pd" x="109.0" y="102" text-anchor="middle">synthetic-heavy pretraining</text>
+<line class="parrow" x1="212" y1="54" x2="235" y2="54"/>
+<rect class="k-sft" x="238" y="26" width="294" height="56" rx="6"/>
+<text class="pn" x="385.0" y="49" text-anchor="middle">2 · SFT</text>
+<text class="ps" x="385.0" y="68" text-anchor="middle">1.4M pairs · 8.3B unique tokens</text>
+<text class="pd" x="385.0" y="102" text-anchor="middle">o3-mini traces (medium ≈ R1, high better)</text>
+<text class="pd" x="385.0" y="118" text-anchor="middle">“teachable” seed filter</text>
+<text class="pd" x="385.0" y="134" text-anchor="middle">16k steps · bs 32 · 32k ctx</text>
+<line class="parrow" x1="534" y1="54" x2="557" y2="54"/>
+<rect class="k-rlvr" x="560" y="26" width="274" height="56" rx="6"/>
+<text class="pn" x="697.0" y="49" text-anchor="middle">3 · GRPO</text>
+<text class="ps" x="697.0" y="68" text-anchor="middle">-plus only · 90 steps · ~6.4k problems</text>
+<text class="pd" x="697.0" y="102" text-anchor="middle">rule-based length-aware reward</text>
+<text class="pd" x="697.0" y="118" text-anchor="middle">G=8 · bs 64 · 32 H100</text>
+<text class="pd" x="697.0" y="134" text-anchor="middle">no code, no preference stage</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">Base</span><span class="ss">Phi-4 · 14B</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>Phi-4 was already pretrained on reasoning-oriented synthetic data; the reasoning models start from the post-trained Phi-4, not the mid-train checkpoint.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">2</span><span class="sn">SFT</span><span class="ss">1.4M pairs · 8.3B unique tokens</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>A single seed database shared with RL: questions from web sources, existing datasets and licensed collections, plus synthetic questions grounded in filtered web content. STEM and coding dominate; general QA and alignment/safety prompts are included. Final mixture ~1.4M prompt–response pairs, 8.3B unique tokens, 16B tokens trained (2+ passes).</dd></div><div class="lr"><dt>Filtering</dt><dd>“Teachable” = at the edge of Phi-4's ability and reasoning-heavy rather than recall. Where no ground truth exists, the plurality answer of a strong reference model is the proxy, and difficulty is the agreement rate of weaker models (Phi-4, GPT-4o) with that proxy; seeds with a meaningful gap are kept. Rubric-based LLM evaluators score the number and complexity of reasoning steps. Decontaminated against AIME-2024, MATH, GPQA, LiveCodeBench, OmniMATH, SWE-Bench Verified and ~15 more.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Seeds are rewritten into verifiable forms — a proof problem becomes a numeric-answer problem, coding problems become word problems. Synthetic math seeds with short final answers gave a consistent +3–10% on AIME 2022–24 and made the data usable for RL verification later.</dd></div><div class="lr"><dt>Distilled from</dt><dd>o3-mini. Medium reasoning effort matched DeepSeek-R1 as a teacher but was more token-efficient; high effort was stronger on every task and longer, which is why context was extended to 32k. Safety responses came from the same teacher with Responsible-AI guidelines in the prompt, removed at training time.</dd></div><div class="lr"><dt>Schedule</dt><dd>~16k steps, global batch 32, 32k context, AdamW lr 1e-5 (grid 1e-6 to 2e-5), 450-step warmup, weight decay 1e-4. A fixed reasoning system message is required — removing or randomizing it hurt. Mixture weights are epoch counts per source cluster, tuned per domain and simply concatenated (“additive” property). Response length slightly decreases over SFT, unlike RL.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">3</span><span class="sn">GRPO</span><span class="ss">-plus only · 90 steps · ~6.4k problems</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>72,401 math prompts from the seed database; 64 sampled per iteration; the selected checkpoint (best AIME-24) is step 90, i.e. ~6.4k problems × 8 rollouts. No coding data — visible in the LiveCodeBench numbers.</dd></div><div class="lr"><dt>Rewards / verifiers</dt><dd>Rule-based. Answer extracted from \boxed{}, checked by equivalence rules with an LLM verifier as fallback. Length-aware accuracy: correct answers score 1.0 down to 0.5 via a cosine schedule once they exceed 25,600 tokens; incorrect answers score −1.0 rising to −0.5 as length approaches 3,702 tokens — i.e. be concise when right, think longer when wrong. Missing end token → −0.5; broken &lt;think&gt; block → −1.0. Repetition penalty on 5-gram frequency. Final reward = 8/13·accuracy + 1/13·repetition.</dd></div><div class="lr"><dt>Algorithm</dt><dd>GRPO in verl: batch 64 on 32 H100, lr 5e-8 with 10-step cosine warmup, group size 8, KL β = 0.001, entropy γ = 0.001, 32k max length (tested to 64k).</dd></div><div class="lr"><dt>Finding</dt><dd>Traces get longer with accuracy held or improved; a single small math-only RL pass moved non-math benchmarks (planning, calendar) as well.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">Diff vs. OLMo 3</p><ul class="facts"><li>No preference stage of any kind — SFT straight into a tiny GRPO pass.</li><li>One teacher, proprietary: not reproducible outside Microsoft, which weakens ‘curation beats scale’ as a general claim.</li><li>RL data is a 6k subset of the same seeds used for SFT; the pass@k comparison between -reasoning and -plus is never shown.</li><li>Same difficulty-filtering instinct as Nemotron and OLMo's RL curricula, applied to SFT prompts instead.</li></ul></div>
+</section>
+<section class="panel" id="p-nemo3" role="tabpanel" aria-labelledby="t-nemo3" hidden>
+  <div class="ph"><div><p class="org">NVIDIA · Apr 2026 · <a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">source</a></p><h2>Nemotron 3 Super </h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>Throughput at parity: match GPT-OSS-120B and Qwen3.5-122B on benchmarks while serving 2–7× more tokens per GPU — with an industrial synthetic-data operation feeding a four-stage RL pipeline.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph hybrid"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>120B total · 12B active · LatentMoE</li><li>hybrid Mamba-Attention, MTP heads for speculative decoding</li><li>pre-trained in NVFP4 · 25T tokens (20T diversity + 5T quality) · 1M context</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip part">pretrain data · partial</span><span class="chip ok">post-train data · yes</span><span class="chip part">code · partial</span><span class="chip ok">checkpoints · yes</span><span class="chip ok">recipe · yes</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>Pretrain<span>25T · NVFP4</span></li><li><i class="dot k-sft"></i>SFT stage 1<span>7M samples · 80B tok</span></li><li><i class="dot k-sft"></i>SFT stage 2<span>85% blend + long-context</span></li><li><i class="dot k-rlvr"></i>RLVR<span>21 envs · 37 datasets · 3 rounds</span></li><li><i class="dot k-rlvr"></i>SWE-RL<span>20B tok · end-to-end</span></li><li><i class="dot k-pref"></i>RLHF<span>18B tok · principle GenRM</span></li><li><i class="dot k-other"></i>MTP healing<span>heads only</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 1644 150" role="img" aria-label="Post-training pipeline: Pretrain then SFT stage 1 then SFT stage 2 then RLVR then SWE-RL then RLHF then MTP healing">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="202" height="56" rx="6"/>
+<text class="pn" x="109.0" y="49" text-anchor="middle">1 · Pretrain</text>
+<text class="ps" x="109.0" y="68" text-anchor="middle">25T · NVFP4</text>
+<text class="pd" x="109.0" y="102" text-anchor="middle">80% diversity / 20% quality</text>
+<line class="parrow" x1="212" y1="54" x2="235" y2="54"/>
+<rect class="k-sft" x="238" y="26" width="222" height="56" rx="6"/>
+<text class="pn" x="349.0" y="49" text-anchor="middle">2 · SFT stage 1</text>
+<text class="ps" x="349.0" y="68" text-anchor="middle">7M samples · 80B tok</text>
+<text class="pd" x="349.0" y="102" text-anchor="middle">token-level global loss</text>
+<text class="pd" x="349.0" y="118" text-anchor="middle">256k packing · bs 64 · lr 1e-5</text>
+<text class="pd" x="349.0" y="134" text-anchor="middle">committee distillation</text>
+<line class="parrow" x1="462" y1="54" x2="485" y2="54"/>
+<rect class="k-sft" x="488" y="26" width="182" height="56" rx="6"/>
+<text class="pn" x="579.0" y="49" text-anchor="middle">3 · SFT stage 2</text>
+<text class="ps" x="579.0" y="68" text-anchor="middle">85% blend + long-context</text>
+<text class="pd" x="579.0" y="102" text-anchor="middle">per-conversation loss</text>
+<text class="pd" x="579.0" y="118" text-anchor="middle">512k packing · bs 32</text>
+<text class="pd" x="579.0" y="134" text-anchor="middle">reasoning modes + budget</text>
+<line class="parrow" x1="672" y1="54" x2="695" y2="54"/>
+<rect class="k-rlvr" x="698" y="26" width="235" height="56" rx="6"/>
+<text class="pn" x="815.5" y="49" text-anchor="middle">4 · RLVR</text>
+<text class="ps" x="815.5" y="68" text-anchor="middle">21 envs · 37 datasets · 3 rounds</text>
+<text class="pd" x="815.5" y="102" text-anchor="middle">async GRPO · masked IS ratio</text>
+<text class="pd" x="815.5" y="118" text-anchor="middle">256 prompts × 16 · bs 4096</text>
+<text class="pd" x="815.5" y="134" text-anchor="middle">gen 49k → 64k</text>
+<line class="parrow" x1="935" y1="54" x2="958" y2="54"/>
+<rect class="k-rlvr" x="961" y="26" width="215" height="56" rx="6"/>
+<text class="pn" x="1068.5" y="49" text-anchor="middle">5 · SWE-RL</text>
+<text class="ps" x="1068.5" y="68" text-anchor="middle">20B tok · end-to-end</text>
+<text class="pd" x="1068.5" y="102" text-anchor="middle">Apptainer container / rollout</text>
+<text class="pd" x="1068.5" y="118" text-anchor="middle">OpenHands agent loop</text>
+<text class="pd" x="1068.5" y="134" text-anchor="middle">binary test reward</text>
+<line class="parrow" x1="1178" y1="54" x2="1201" y2="54"/>
+<rect class="k-pref" x="1204" y="26" width="222" height="56" rx="6"/>
+<text class="pn" x="1315.0" y="49" text-anchor="middle">6 · RLHF</text>
+<text class="ps" x="1315.0" y="68" text-anchor="middle">18B tok · principle GenRM</text>
+<text class="pd" x="1315.0" y="102" text-anchor="middle">GenRM init Qwen3-235B-Thinking</text>
+<text class="pd" x="1315.0" y="118" text-anchor="middle">HelpSteer3 + lmarena-140k</text>
+<text class="pd" x="1315.0" y="134" text-anchor="middle">used inside RLVR too</text>
+<line class="parrow" x1="1428" y1="54" x2="1451" y2="54"/>
+<rect class="k-other" x="1454" y="26" width="182" height="56" rx="6"/>
+<text class="pn" x="1545.0" y="49" text-anchor="middle">7 · MTP healing</text>
+<text class="ps" x="1545.0" y="68" text-anchor="middle">heads only</text>
+<text class="pd" x="1545.0" y="102" text-anchor="middle">rest of the model frozen</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">Pretrain</span><span class="ss">25T · NVFP4</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>25T tokens in two phases: 20T for breadth, 5T of high-quality data for benchmark accuracy. First model pre-trained in NVFP4.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">2</span><span class="sn">SFT stage 1</span><span class="ss">7M samples · 80B tok</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>Over 7M samples. Reused from Nemotron 3 Nano: Chat, Infinibyte, Formal Proofs. Regenerated with new teachers (DeepSeek v3.2, Kimi K2): Competition Math, Competition Code, Conversational Tool Use, Multilingual, Science. The rest are new pipelines listed below; agentic data's share of the blend was raised sharply.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Agentic CLI: NeMo Data Designer writes 20k queries from a 24-action taxonomy, GPT-OSS-120B judges them down to 15k tasks (each with an AGENTS.md-style spec), plus 3k SWE tasks with a real repo/commit and 10k Node.js web-dev tasks from a 100-task taxonomy; Qwen3-Coder-480B and MiniMax M2.5 are run inside Codex, OpenCode, Qwen Code CLI and Stirrup and their interactions recorded, then normalized to OpenAI tool format. Software engineering: SWE-Gym, R2E-Gym (problem statements rewritten by Qwen3-Coder-480B), SWE-rebench, OpenHands trajectories distilled from Qwen3-Coder-480B. Long context: cluster pretraining docs by topic, concatenate to 128k/256k/512k, LLM-write multi-hop QA needing 4–7 steps, sample 8 traces, keep the shortest majority-vote answer; plus rule-chained sequential tasks over Qwen3-235B-Thinking snippets and SQL-verified questions over Nemotron-Personas records. Financial: 565 SecQue seeds × S&amp;P 500 × FY2019–24, GPT-OSS-120B paraphrases, GenSelect (5 candidates, Qwen3-235B picks, Qwen3-30B checks answerability) → 366,243 QA pairs with traces. CUDA: 100k samples from DeepSeek-R1 + GPT-OSS-120B, seeds from OSS libraries, NVIDIA APIs and BackendBench, kernels executed, validated and ranked by speed; repair/optimize tuples from an internal CUDA agent using error messages and Nsight logs. Safety: existing prompt libraries plus synthetic over-refusal, bias, copyright and prompt-injection prompts; a response-policy classifier picks the mode, then deliberative-alignment two-stage generation (safety reasoning trace, then answer), moderation-classifier filter. Search: Wikidata SPARQL hub entities, 4–8-hop random walks → question → obfuscation → MiniMax-M2 solves with Tavily web search, ~12 tool calls per trajectory. Terminal: 84,864 samples (68,924 synthetic + Cascade-Math 8,125 + Cascade-Code 7,815), DeepSeek-V3.2 in Dockerized execution loops under the Terminus 2 scaffold. Multilingual: line-by-line translation into 6 languages with Qwen2.5-14B-Instruct, format repaired by Qwen3-4B-Thinking. SQL: 96.5k text-to-SQL across 3 dialects, 60 sectors, ~700 topics, 90 concept buckets, distractor tables injected, validated by dialect parsers and five LLM critics. Conversational tool use: six-stage fully synthetic pipeline (domain → policy+tools → scenario → 16 simulated interactions → LM judge on outcome and process → drop all-success/all-fail scenarios) → 279,116 conversations across 838 domains (Nano had 15,588 across 5), using Qwen3-235B Thinking/Instruct, Qwen3-32B, DeepSeek-R1-0528, DeepSeek-V3.2, gpt-oss-120b. General tool use: tool sets from ToolEyes, API-Bank, UltraTools, AutoTools, xLAM, Glaive, Toucan-1.5M; a User-LLM / Assistant-LLM / Tool-LLM three-role simulation seeded with Nemotron-Personas, judged per turn and per trajectory with rule checks, scaled with DeepSeek-V3.2 and GLM-4.7 → 1.5M trajectories.</dd></div><div class="lr"><dt>Algorithm</dt><dd>Token-level global average loss over the packed batch — every output token weighted equally. Shared-weight MTP head trained alongside with a 0.3-scaled auxiliary loss.</dd></div><div class="lr"><dt>Schedule</dt><dd>256k-token sequence packing, global batch 64, constant lr 1e-5, 30k warmup samples.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">3</span><span class="sn">SFT stage 2</span><span class="ss">85% blend + long-context</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>85% of the stage-1 blend plus 256k- and 512k-token long-context samples.</dd></div><div class="lr"><dt>Algorithm</dt><dd>Per-conversation normalized loss, averaged equally across conversations, so long outputs stop dominating. Reason for the split: single-stage SFT caused a marked degradation on long-input / short-output tasks.</dd></div><div class="lr"><dt>Note</dt><dd>Reasoning control lives here. Off mode: traces stripped from a random 3% of samples. Low-effort mode (new): 2% of SFT samples generated by GPT-OSS-120B in its low-effort mode over math, STEM QA and IF. Inference-time budget control: a 350-step semi-on-policy SFT that collects the model's own rollouts and truncates 12% of traces to random budgets.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">4</span><span class="sn">RLVR</span><span class="ss">21 envs · 37 datasets · 3 rounds</span></div>
+      <dl class="ledger"><div class="lr"><dt>Environments</dt><dd>21 environments over 37 datasets, mostly open-sourced in NeMo Gym: competition math with and without a Python tool; a new formal-proof verification environment; competition code plus single-step SWE patch generation; harder curated STEM; a multi-challenge instruction-following set with rubric rewards; two safety environments (over-refusal reduction, and jailbreak robustness where a PAIR-style iterative attacker mines high-success prompts against an early SFT-only checkpoint); the Nano long-context environment; conversational and terminal tool use; Reasoning Gym.</dd></div><div class="lr"><dt>Filtering</dt><dd>Drop prompts the SFT model answers correctly every time, then sort the rest by difficulty (curriculum). Low-effort prompts start at 2% of RL prompts (math, STEM, coding held out from SFT) and are reduced to 1% (math, STEM), with reward adjusted for token count.</dd></div><div class="lr"><dt>Finding</dt><dd>Training all environments jointly gives stable gains; single-environment RL causes severe regressions on everything else. Three rounds: 25, 30 and 26 environment types, the later two with low-effort mode.</dd></div><div class="lr"><dt>Algorithm</dt><dd>Asynchronous GRPO. Training and inference on separate GPUs; inference workers fill a rollout buffer; new weights are pushed as soon as available, so one trajectory can contain tokens from several model versions; the KV cache is not recomputed after an update; policy lag capped at one step. Train/inference logprob mismatch handled by masking the importance-sampling ratio. 256 prompts × 16 responses per step, batch 4096 = one gradient update per rollout, max generation 49k rising to 64k. A principle-following GenRM is used inside this stage as well as in the later RLHF stage.</dd></div><div class="lr"><dt>Note</dt><dd>PivotRL for agentic domains (programming, search, terminal, conversational tools): turn-level RL that reuses offline SFT expert trajectories, updates only on “pivot” turns where the policy is uncertain, and rewards similarity to the expert action rather than an exact match — chosen because SFT was cheap but degraded out-of-domain and end-to-end RL was too expensive for every domain.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">5</span><span class="sn">SWE-RL</span><span class="ss">20B tok · end-to-end</span></div>
+      <dl class="ledger"><div class="lr"><dt>Environments</dt><dd>Each rollout launches an Apptainer container with the target repository, runs an OpenHands agent loop to produce a patch, and scores it against ground-truth tests for a binary reward. OpenCode and Codex agent classes are implemented inside OpenHands so the same harness trains against Claude Code– and Codex-CLI–style tool formats.</dd></div><div class="lr"><dt>Schedule</dt><dd>Run as its own stage because SWE rollouts are slow and long-context and would bottleneck a mixed batch; batching and rollout settings are tuned for long-horizon trajectories. 20B tokens.</dd></div></dl>
+    </div>
+<div class="stagecard k-pref">
+      <div class="sch"><span class="sidx">6</span><span class="sn">RLHF</span><span class="ss">18B tok · principle GenRM</span></div>
+      <dl class="ledger"><div class="lr"><dt>Rewards / verifiers</dt><dd>A principle-following generative reward model initialized from Qwen3-235B-A22B-Thinking-2507 and trained on HelpSteer3, the commercially usable subset of lmarena-140k, and newer human preference data. Principles steer behaviour on identity and safety topics.</dd></div><div class="lr"><dt>Schedule</dt><dd>Applied throughout multi-environment RL and again as a separate final stage for instruction following, robustness and interaction quality. 18B tokens.</dd></div></dl>
+    </div>
+<div class="stagecard k-other">
+      <div class="sch"><span class="sidx">7</span><span class="sn">MTP healing</span><span class="ss">heads only</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>Retrain the MTP heads on the RLVR prompts with all other weights frozen, restoring speculative-decoding acceptance after RL moved the backbone.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">Diff vs. OLMo 3</p><ul class="facts"><li>Four RL stages against OLMo's one; preference done with a GenRM inside RL rather than a DPO stage.</li><li>Roughly a dozen named synthetic-data pipelines with a committee of open teachers, versus Dolci's published mix from two teachers.</li><li>The key claim: 21 environments trained jointly is stable, single-environment RL regresses everything else.</li><li>PivotRL is a deliberate SFT/RL hybrid for agentic domains — offline expert trajectories, on-policy updates at uncertain turns.</li></ul></div>
+</section>
+<section class="panel" id="p-lnemo" role="tabpanel" aria-labelledby="t-lnemo" hidden>
+  <div class="ph"><div><p class="org">NVIDIA · May 2025 · <a href="https://arxiv.org/abs/2505.00949">source</a></p><h2>Llama-Nemotron </h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>Efficient reasoning: derive the architecture from Llama 3 by NAS, distill 33M samples of reasoning from DeepSeek-R1 with an on/off toggle, and spend RL only on the largest model where it can surpass the teacher.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph dense"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>Nano 8B · Super 49B · Ultra 253B</li><li>from Llama 3.1-8B / 3.3-70B / 3.1-405B via Puzzle NAS: block-wise local distillation + mixed-integer assembly; FFN Fusion on Ultra</li><li>recovery: knowledge distillation + continued pretraining (Ultra +88B tokens)</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip ok">post-train data · yes</span><span class="chip ok">code · yes</span><span class="chip part">checkpoints · partial</span><span class="chip ok">recipe · yes</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>NAS + recovery<span>Puzzle · KD · CPT</span></li><li><i class="dot k-sft"></i>SFT<span>33.0M samples · R1-distilled</span></li><li><i class="dot k-rlvr"></i>Reasoning RL<span>Ultra only · GRPO · science</span></li><li><i class="dot k-rlvr"></i>IF RL<span>RLOO · &lt;120 steps</span></li><li><i class="dot k-pref"></i>RLHF<span>online RPO / GRPO</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 1176 150" role="img" aria-label="Post-training pipeline: NAS + recovery then SFT then Reasoning RL then IF RL then RLHF">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="176" height="56" rx="6"/>
+<text class="pn" x="96.0" y="49" text-anchor="middle">1 · NAS + recovery</text>
+<text class="ps" x="96.0" y="68" text-anchor="middle">Puzzle · KD · CPT</text>
+<text class="pd" x="96.0" y="102" text-anchor="middle">block-wise distillation</text>
+<text class="pd" x="96.0" y="118" text-anchor="middle">+88B tokens (Ultra)</text>
+<line class="parrow" x1="186" y1="54" x2="209" y2="54"/>
+<rect class="k-sft" x="212" y="26" width="208" height="56" rx="6"/>
+<text class="pn" x="316.0" y="49" text-anchor="middle">2 · SFT</text>
+<text class="ps" x="316.0" y="68" text-anchor="middle">33.0M samples · R1-distilled</text>
+<text class="pd" x="316.0" y="102" text-anchor="middle">math 66.8% · code 30.6%</text>
+<text class="pd" x="316.0" y="118" text-anchor="middle">paired on/off responses</text>
+<text class="pd" x="316.0" y="134" text-anchor="middle">per-size schedules</text>
+<line class="parrow" x1="422" y1="54" x2="445" y2="54"/>
+<rect class="k-rlvr" x="448" y="26" width="208" height="56" rx="6"/>
+<text class="pn" x="552.0" y="49" text-anchor="middle">3 · Reasoning RL</text>
+<text class="ps" x="552.0" y="68" text-anchor="middle">Ultra only · GRPO · science</text>
+<text class="pd" x="552.0" y="102" text-anchor="middle">72 prompts × 16 · bs 576</text>
+<text class="pd" x="552.0" y="118" text-anchor="middle">LLM-judged accuracy + format</text>
+<text class="pd" x="552.0" y="134" text-anchor="middle">~140k H100 hours</text>
+<line class="parrow" x1="658" y1="54" x2="681" y2="54"/>
+<rect class="k-rlvr" x="684" y="26" width="241" height="56" rx="6"/>
+<text class="pn" x="804.5" y="49" text-anchor="middle">4 · IF RL</text>
+<text class="ps" x="804.5" y="68" text-anchor="middle">RLOO · &lt;120 steps</text>
+<text class="pd" x="804.5" y="102" text-anchor="middle">synthetic 1–10-constraint prompts</text>
+<text class="pd" x="804.5" y="118" text-anchor="middle">IFEval-style verifier</text>
+<line class="parrow" x1="927" y1="54" x2="950" y2="54"/>
+<rect class="k-pref" x="953" y="26" width="215" height="56" rx="6"/>
+<text class="pn" x="1060.5" y="49" text-anchor="middle">5 · RLHF</text>
+<text class="ps" x="1060.5" y="68" text-anchor="middle">online RPO / GRPO</text>
+<text class="pd" x="1060.5" y="102" text-anchor="middle">Llama-3.1-Nemotron-70B-Reward</text>
+<text class="pd" x="1060.5" y="118" text-anchor="middle">HelpSteer2 prompts</text>
+<text class="pd" x="1060.5" y="134" text-anchor="middle">Arena Hard 69.1 → 88.1</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">NAS + recovery</span><span class="ss">Puzzle · KD · CPT</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>Puzzle searches per-block replacements (removed attention, narrower FFNs) under a throughput target and assembles them with mixed-integer programming; the result is healed by block-wise local distillation, then knowledge distillation and continued pretraining. This replaces pretraining from scratch.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">2</span><span class="sn">SFT</span><span class="ss">33.0M samples · R1-distilled</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>33,011,757 samples. Math 22.1M (66.8%): 2.2M reasoning-on, 19.8M reasoning-off. Code 10.1M (30.6%): 0.99M on, 9.1M off. Science 709k (all reasoning-on). Chat 40k, instruction following 56k, safety 31k. Released as Llama-Nemotron-Post-Training-Dataset.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Math: Art of Problem Solving forums scraped (Middle School excluded); Qwen2.5-32B-Instruct extracts problems, classifies out proofs / multiple-choice / yes-no / invalid, extracts final answers; LLM-based decontamination. Code: 28,904 competitive problems from TACO, APPS, CodeContests, CodeForces (&lt;0.3% contamination after checks with Llama-3.3-70B and Qwen2.5-32B judges). Science: StackOverflow QA plus synthetic MCQs — topics from Nemotron-4-340B, questions from Qwen2.5 at several difficulty levels, OpenMathInstruct-2-style variations. General: synthetic open/closed QA, extraction and brainstorming prompts plus permissive real prompts; 20k ShareGPT/WildChat prompts improved by a Feedback → Edit → Select model trio.</dd></div><div class="lr"><dt>Distilled from</dt><dd>Reasoning-on: DeepSeek-R1, 16 solutions per math problem, multiple per code problem (temp 0.6, top-p 0.95 via SGLang, &lt;think&gt; tags requested), multiple science traces. Reasoning-off: Qwen2.5-Math-7B-Instruct (64 per math problem), Llama-3.1-Nemotron-70B-Instruct for general prompts, Llama-3.3-70B-Instruct elsewhere. General responses rejection-sampled with the Llama-3.1-Nemotron-70B reward model.</dd></div><div class="lr"><dt>Filtering</dt><dd>Math solutions kept only if the answer matches, judged by Qwen2.5-32B; the plurality answer is the ground truth when none can be extracted. Code: reasoning trace must be present, code must sit outside the think block, Tree-sitter syntax check → ~488k Python samples. Science: majority vote when no gold answer. Ablation: code data from 25k to 736k samples kept improving; hard CodeContests problems gave the biggest jumps.</dd></div><div class="lr"><dt>Schedule</dt><dd>Nano: three stages — reasoning-only (code/math/science) for 4 epochs at lr 1e-4 to prevent repetitive completions, then mixed on/off data, then a small chat/IF/tool blend; batch 256, 32k packing. Super: full set, 1 epoch, lr 5e-6, 16k. Ultra: 24k packing, warmup to 1e-5 then cosine to 1e-6, restarted with fresh optimizer state after gradient explosions. Higher learning rates were needed for long traces because of length-dependent token averaging.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">3</span><span class="sn">Reasoning RL</span><span class="ss">Ultra only · GRPO · science</span></div>
+      <dl class="ledger"><div class="lr"><dt>Filtering</dt><dd>Generate 8 responses per question with LN-Super, compute pass rate, discard prompts at ≥0.75. Curriculum: a Gaussian target distribution over pass rates that slides from easy to hard across sequential batches (ablation: stabler and higher GPQA than random order).</dd></div><div class="lr"><dt>Rewards / verifiers</dt><dd>Accuracy: Llama-3.3-70B-Instruct judges whether the answer matches a ground truth that may be a number, sentence or paragraph. Format: reasoning must sit between &lt;think&gt; tags in on mode and be absent in off mode.</dd></div><div class="lr"><dt>Algorithm</dt><dd>GRPO, 72 prompts × 16 responses at temperature 1 / top-p 1, global batch 576, two gradient updates per rollout, trained to convergence on GPQA-Diamond. NeMo-Aligner with vLLM generation and Megatron training co-located on 72 nodes × 8 H100: TP8 with sequence parallel, CP2, PP18, DP2. FP8 generation gave 1.8× (32 tok/s/GPU/prompt). ~140k H100 hours.</dd></div><div class="lr"><dt>Finding</dt><dd>Distillation caps the student at the teacher; Ultra's SFT model approached R1 but could not pass it. RL let it, setting the open-model GPQA state of the art at the time. Preliminary runs showed RL underperforming distillation for smaller models, so Nano and Super get none.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">4</span><span class="sn">IF RL</span><span class="ss">RLOO · &lt;120 steps</span></div>
+      <dl class="ledger"><div class="lr"><dt>Rewards / verifiers</dt><dd>Synthetic prompts with one to ten detailed constraints, scored by an IFEval-style verifier. RLOO, batch 128, fewer than 120 steps, for Super and Ultra; improved reasoning benchmarks as well as IF.</dd></div></dl>
+    </div>
+<div class="stagecard k-pref">
+      <div class="sch"><span class="sidx">5</span><span class="sn">RLHF</span><span class="ss">online RPO / GRPO</span></div>
+      <dl class="ledger"><div class="lr"><dt>Algorithm</dt><dd>Super: two iterations of online RPO maximizing Llama-3.1-Nemotron-70B-Reward on HelpSteer2 prompts — lr 4e-7, KL β 1e-5, reward scale 3.0, batch 64, 500 steps each. Ultra: GRPO instead, 8 samples per prompt, 30 steps, lr 3e-7, batch 288.</dd></div><div class="lr"><dt>Finding</dt><dd>Arena Hard 69.1 → 88.1 for the 49B Super, and every other benchmark except IFEval improved even though neither the prompts nor the reward model target math, code or science.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">Diff vs. OLMo 3</p><ul class="facts"><li>The architecture is derived, not designed — NAS from Llama 3 stands in for pretraining.</li><li>RL only at 253B; OLMo runs RLVR at 7B and 32B. The report's own ablation says RL loses to distillation at small sizes.</li><li>On/off toggle via paired SFT data and a system prompt, versus OLMo's two separately trained paths.</li><li>Preference is online RL with a learned reward model (RPO / GRPO), not offline DPO.</li></ul></div>
+</section>
+<section class="panel" id="p-kimi" role="tabpanel" aria-labelledby="t-kimi" hidden>
+  <div class="ph"><div><p class="org">Moonshot · Jul 2026 · <a href="https://arxiv.org/abs/2607.24653">source</a></p><h2>Kimi K3 </h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>Open frontier intelligence: train nine domain × effort RL experts on white-box agentic environments at million-token context, then merge them back into one model by on-policy distillation.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph hybrid"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc attn" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>2.8T total · 104B active · 896 experts, top-16 (“Stable LatentMoE”)</li><li>hybrid: Kimi Delta Attention (linear, channel-wise forget gates) + Gated MLA; attention residuals to all earlier layers</li><li>1M context, no explicit positional encoding · native multimodal (MoonViT-V2) · MTP layer</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip no">post-train data · no</span><span class="chip part">code · partial</span><span class="chip no">checkpoints · no</span><span class="chip part">recipe · partial</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>Pretrain<span>tokens undisclosed</span></li><li><i class="dot k-sft"></i>SFT<span>cold start · sizes undisclosed</span></li><li><i class="dot k-rlvr"></i>RL · 9 experts<span>3 domains × 3 efforts</span></li><li><i class="dot k-other"></i>MOPD<span>merge 9 experts → 1</span></li><li><i class="dot k-other"></i>Deployment<span>EAGLE-3 draft · QAT</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 1236 150" role="img" aria-label="Post-training pipeline: Pretrain then SFT then RL · 9 experts then MOPD then Deployment">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="222" height="56" rx="6"/>
+<text class="pn" x="119.0" y="49" text-anchor="middle">1 · Pretrain</text>
+<text class="ps" x="119.0" y="68" text-anchor="middle">tokens undisclosed</text>
+<text class="pd" x="119.0" y="102" text-anchor="middle">4-stage ctx curriculum 8k → 1M</text>
+<text class="pd" x="119.0" y="118" text-anchor="middle">2.5× efficiency vs K2</text>
+<line class="parrow" x1="232" y1="54" x2="255" y2="54"/>
+<rect class="k-sft" x="258" y="26" width="261" height="56" rx="6"/>
+<text class="pn" x="388.5" y="49" text-anchor="middle">2 · SFT</text>
+<text class="ps" x="388.5" y="68" text-anchor="middle">cold start · sizes undisclosed</text>
+<text class="pd" x="388.5" y="102" text-anchor="middle">trajectories from prior Kimi experts</text>
+<text class="pd" x="388.5" y="118" text-anchor="middle">verification + human-in-the-loop</text>
+<text class="pd" x="388.5" y="134" text-anchor="middle">QAT from here on</text>
+<line class="parrow" x1="521" y1="54" x2="544" y2="54"/>
+<rect class="k-rlvr" x="547" y="26" width="241" height="56" rx="6"/>
+<text class="pn" x="667.5" y="49" text-anchor="middle">3 · RL · 9 experts</text>
+<text class="ps" x="667.5" y="68" text-anchor="middle">3 domains × 3 efforts</text>
+<text class="pd" x="667.5" y="102" text-anchor="middle">partial rollouts · stale-tolerant</text>
+<text class="pd" x="667.5" y="118" text-anchor="middle">GRM tournament for non-verifiable</text>
+<text class="pd" x="667.5" y="134" text-anchor="middle">budget τ: max → high → low</text>
+<line class="parrow" x1="790" y1="54" x2="813" y2="54"/>
+<rect class="k-other" x="816" y="26" width="195" height="56" rx="6"/>
+<text class="pn" x="913.5" y="49" text-anchor="middle">4 · MOPD</text>
+<text class="ps" x="913.5" y="68" text-anchor="middle">merge 9 experts → 1</text>
+<text class="pd" x="913.5" y="102" text-anchor="middle">on-policy distillation</text>
+<text class="pd" x="913.5" y="118" text-anchor="middle">per-token log-ratio reward</text>
+<text class="pd" x="913.5" y="134" text-anchor="middle">top-k variant: no gain</text>
+<line class="parrow" x1="1013" y1="54" x2="1036" y2="54"/>
+<rect class="k-other" x="1039" y="26" width="189" height="56" rx="6"/>
+<text class="pn" x="1133.5" y="49" text-anchor="middle">5 · Deployment</text>
+<text class="ps" x="1133.5" y="68" text-anchor="middle">EAGLE-3 draft · QAT</text>
+<text class="pd" x="1133.5" y="102" text-anchor="middle">MTP layer → draft model</text>
+<text class="pd" x="1133.5" y="118" text-anchor="middle">LK loss = −log Σ min(p,q)</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">Pretrain</span><span class="ss">tokens undisclosed</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>Token count is not stated. Four-stage long-context curriculum from 8k to 1M; the report claims 2.5× scaling efficiency over Kimi K2 from hyperparameter work.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">2</span><span class="sn">SFT</span><span class="ss">cold start · sizes undisclosed</span></div>
+      <dl class="ledger"><div class="lr"><dt>Synthetic</dt><dd>Agentic trajectories synthesized by domain-specialized models from earlier Kimi releases, passed through multi-stage verification and human-in-the-loop annotation, serialized in an XTML chat template. Sources and volumes are not given.</dd></div><div class="lr"><dt>Note</dt><dd>Quantization-aware training starts at SFT and runs through RL: MoE expert weights in MXFP4, activations MXFP8, everything else in higher precision; rollout and training share the scheme, removing the train/inference mismatch.</dd></div></dl>
+    </div>
+<div class="stagecard k-rlvr">
+      <div class="sch"><span class="sidx">3</span><span class="sn">RL · 9 experts</span><span class="ss">3 domains × 3 efforts</span></div>
+      <dl class="ledger"><div class="lr"><dt>Environments</dt><dd>Three domains, each a single RL expert per effort level: general (experience, vision, reasoning, faithfulness, search, knowledge work), general agents (long-horizon assistant, deep research, paragraph writing), coding agents (SWE, coding experience, GPU kernels, web dev). A unified white-box harness represents tools, system prompts, context management, skills, memories and subagents as composable modules, so training can instantiate Kimi Code, Claude Code, Codex, OpenClaw, Hermes or invented harnesses and rotate them across task groups.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Knowledge-graph-guided task synthesis: agents recursively expand a concept DAG from coarse seeds by web search, deduplicating against existing nodes; sampled nodes plus ancestor context become web queries; retrieved real materials are turned into tasks of a chosen type (coding, knowledge, vision). Verifiable agentic problems include multi-step web research, professional workflows (investment banking, data analysis, legal) run for dozens to hundreds of steps in sandboxes, and visual reasoning where the model crops, zooms and computes with a Python tool. Kernel tasks from repositories such as Flash Linear Attention span CUDA, Triton, CuTe DSL, Gluon, ThunderKittens and TileLang in BF16/FP8/FP4. Personal-assistant tasks run in mock Gmail, Notion, Slack and Canvas over multiple simulated days with dozens of interdependent events — a rollout can reach thousands of tool calls and millions of tokens; initial workspaces are built by agents searching the web.</dd></div><div class="lr"><dt>Rewards / verifiers</dt><dd>Verifiable tasks: direct correctness. Kernels: zero reward above a numerical error threshold, 0.5 for matching an expert implementation rising toward 1 at the hardware roofline, with a hacking detector for CUDA-graph replay, input caching and precision reduction. Non-verifiable: an Agentic Generative Reward Model with a mandatory protocol — read the output, write a rubric, score each candidate, record scores — run as tournament-style binary comparisons; a candidate exceeding σ × the cold-start verbosity automatically loses. Assistant events are judged per event by deterministic rules or LLM evaluators.</dd></div><div class="lr"><dt>Algorithm</dt><dd>Partial rollouts: sample K completions for N prompts, pause generation once a fraction λ of the N×K trajectories finish, resume the rest next iteration; one long trajectory naturally spans iterations, and a per-token regularizer keeps updates local so stale data stays stable. Optimization follows Kimi K2.5. Effort control: each problem gets a budget b₀ from the cold-start model and a −1 reward if output exceeds τ·b₀ (thinking tokens for general tasks, all output including tool arguments for agentic); τ is annealed max → high → low per domain under human guidance.</dd></div><div class="lr"><dt>Scale</dt><dd>Co-located RL to keep a 1M-context run within a few hundred GPUs. External CPU-DRAM KV-cache pool with write-back, training states offloaded to NVMe between phases, an auto-throttling request scheduler, and reference-model weights streamed through the policy's gradient buffers. AgentENV Firecracker microVMs: incremental checkpoints at 133 ms and resumes at 49 ms; sandboxes paused while waiting on inference (up to 98% of their lifetime), forked for side-effect-free judging, snapshotted for recovery; tens of thousands live at once.</dd></div><div class="lr"><dt>Finding</dt><dd>Scaling RL FLOPs raises average tool-call steps and scores together across coding, tool use, web dev, search, professional workflows, office deliverables, chart reading and visual puzzles.</dd></div></dl>
+    </div>
+<div class="stagecard k-other">
+      <div class="sch"><span class="sidx">4</span><span class="sn">MOPD</span><span class="ss">merge 9 experts → 1</span></div>
+      <dl class="ledger"><div class="lr"><dt>Algorithm</dt><dd>Multi-Teacher On-Policy Distillation. For a sampled domain and effort level, the matching expert is the teacher; the per-token reward is clip(log π_teacher / π_student, ±R_max) with a stop-gradient on the teacher, plugged into the same RL machinery (so partial rollouts still apply). Finer-grained top-k distillation objectives showed no advantage.</dd></div></dl>
+    </div>
+<div class="stagecard k-other">
+      <div class="sch"><span class="sidx">5</span><span class="sn">Deployment</span><span class="ss">EAGLE-3 draft · QAT</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>The pretrained MTP layer is fine-tuned into an EAGLE-3-style draft with the target frozen, unrolled seven steps, fusing features from the 1st, 4th and final attention-residual blocks, and trained on the acceptance-rate loss directly rather than a KL surrogate.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">Diff vs. OLMo 3</p><ul class="facts"><li>Expert-then-merge: nine RL experts consolidated by on-policy distillation, versus OLMo's single RL run.</li><li>Preference comes from a tournament GenRM inside RL; there is no DPO stage.</li><li>Task synthesis from an agent-built knowledge graph is the nearest any model report gets to self-play.</li><li>Releases weights and kernels, not data — the opposite openness profile to OLMo. SFT is a black box.</li></ul></div>
+</section>
+<section class="panel" id="p-qwen" role="tabpanel" aria-labelledby="t-qwen" hidden>
+  <div class="ph"><div><p class="org">Alibaba · Aug 2026 · <a href="https://github.com/QwenLM/Qwen3.8">source</a></p><h2>Qwen 3.8 </h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>A release, not a report: the recipe is undisclosed as of Sept 2026. What is public is the lineup and the inference-time controls.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph moe"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc off" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>Qwen3.8-27B: dense, multimodal, 262k native context (1M via YaRN), Apache 2.0</li><li>Qwen3.8-Max / 2.4T-A95B: MoE, text-only open weights, revenue-share license</li><li>reasoning_effort dial · preserve_thinking keeps prior reasoning in context</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip no">post-train data · no</span><span class="chip part">code · partial</span><span class="chip no">checkpoints · no</span><span class="chip no">recipe · no</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>Pretrain<span>undisclosed</span></li><li><i class="dot k-other"></i>Post-training<span>not disclosed</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 396 150" role="img" aria-label="Post-training pipeline: Pretrain then Post-training">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="176" height="56" rx="6"/>
+<text class="pn" x="96.0" y="49" text-anchor="middle">1 · Pretrain</text>
+<text class="ps" x="96.0" y="68" text-anchor="middle">undisclosed</text>
+<line class="parrow" x1="186" y1="54" x2="209" y2="54"/>
+<rect class="k-other" x="212" y="26" width="176" height="56" rx="6"/>
+<text class="pn" x="300.0" y="49" text-anchor="middle">2 · Post-training</text>
+<text class="ps" x="300.0" y="68" text-anchor="middle">not disclosed</text>
+<text class="pd" x="300.0" y="102" text-anchor="middle">no report as of 2026-09</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">Pretrain</span><span class="ss">undisclosed</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>No technical report; no token counts.</dd></div></dl>
+    </div>
+<div class="stagecard k-other">
+      <div class="sch"><span class="sidx">2</span><span class="sn">Post-training</span><span class="ss">not disclosed</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>Nothing published for 3.8. The Qwen3 (2025) family precedent — long-CoT cold start → reasoning RL → thinking-mode fusion → general RL, GSPO as the RL algorithm, strong-to-weak distillation off-policy then on-policy — is a hypothesis for 3.8, not a fact.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">Diff vs. OLMo 3</p><ul class="facts"><li>Nothing to diff on the pipeline yet. The concrete difference is at inference: a continuous reasoning_effort dial rather than OLMo's discrete Think/Instruct paths.</li><li>Two licenses for two sizes is itself a statement about where the value is believed to sit.</li></ul></div>
+</section>
+<section class="panel" id="p-apertus" role="tabpanel" aria-labelledby="t-apertus" hidden>
+  <div class="ph"><div><p class="org">ETH · EPFL · CSCS · Sep 2025 / Jul 2026 · <a href="https://arxiv.org/abs/2509.14233">source</a></p><h2>Apertus 1.0 → 1.5 </h2></div></div>
+  <p class="thesis"><span class="tl">Thesis</span>Compliance and multilinguality, fully open. 1.0 puts the contribution upstream of post-training and aligns with an offline absolute-reward method; 1.5 adds a thinking mode whose recipe is still unpublished.</p>
+  <div class="two">
+    <div class="card"><p class="ct">Architecture</p><svg viewBox="0 0 240 22" class="glyph" role="img" aria-label="architecture glyph dense"><rect class="gc on" x="0" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="15" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="30" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="45" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="60" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="75" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="90" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="105" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="120" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="135" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="150" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="165" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="180" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="195" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="210" y="4" width="12" height="14" rx="2"/><rect class="gc on" x="225" y="4" width="12" height="14" rx="2"/></svg><ul class="facts"><li>8B and 70B dense · xIELU activation, QK-norm, GQA · AdEMAMix optimizer</li><li>15T tokens, ~40% non-English across 1,800+ languages · 131k byte-level BPE</li><li>retroactive robots.txt opt-out · Goldfish loss masks 2% of tokens by 50-token context hash</li><li>1.5: continued pretraining +4T (8B) / +2T (70B) multimodal tokens · image + experimental audio · 262k context · Apache 2.0</li></ul></div>
+    <div class="card"><p class="ct">Openness</p><div class="chips"><span class="chip ok">weights · yes</span><span class="chip ok">pretrain data · yes</span><span class="chip ok">post-train data · yes</span><span class="chip ok">code · yes</span><span class="chip ok">checkpoints · yes</span><span class="chip part">recipe · partial</span></div>
+      <p class="ct" style="margin-top:14px">Stages</p><ol class="stagelist"><li><i class="dot k-pre"></i>Pretrain<span>15T · compliant</span></li><li><i class="dot k-sft"></i>SFT<span>4.18M examples · 8 mixture iterations</span></li><li><i class="dot k-pref"></i>QRPO<span>offline · absolute rewards</span></li><li><i class="dot k-pre"></i>1.5 cont. pretrain<span>+4T / +2T · multimodal</span></li><li><i class="dot k-other"></i>1.5 post-train<span>recipe not yet published</span></li></ol></div>
+  </div>
+  <div class="card wide"><p class="ct">Pipeline</p><div class="scroller"><svg viewBox="0 0 1255 150" role="img" aria-label="Post-training pipeline: Pretrain then SFT then QRPO then 1.5 cont. pretrain then 1.5 post-train">
+<defs><marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<rect class="k-pre" x="8" y="26" width="176" height="56" rx="6"/>
+<text class="pn" x="96.0" y="49" text-anchor="middle">1 · Pretrain</text>
+<text class="ps" x="96.0" y="68" text-anchor="middle">15T · compliant</text>
+<text class="pd" x="96.0" y="102" text-anchor="middle">Goldfish loss</text>
+<text class="pd" x="96.0" y="118" text-anchor="middle">PII / toxicity filtered</text>
+<line class="parrow" x1="186" y1="54" x2="209" y2="54"/>
+<rect class="k-sft" x="212" y="26" width="268" height="56" rx="6"/>
+<text class="pn" x="346.0" y="49" text-anchor="middle">2 · SFT</text>
+<text class="ps" x="346.0" y="68" text-anchor="middle">4.18M examples · 8 mixture iterations</text>
+<text class="pd" x="346.0" y="102" text-anchor="middle">licence-filtered, decontaminated</text>
+<text class="pd" x="346.0" y="118" text-anchor="middle">no new distillation</text>
+<text class="pd" x="346.0" y="134" text-anchor="middle">seq 4,096 · AdEMAMix</text>
+<line class="parrow" x1="482" y1="54" x2="505" y2="54"/>
+<rect class="k-pref" x="508" y="26" width="268" height="56" rx="6"/>
+<text class="pn" x="642.0" y="49" text-anchor="middle">3 · QRPO</text>
+<text class="ps" x="642.0" y="68" text-anchor="middle">offline · absolute rewards</text>
+<text class="pd" x="642.0" y="102" text-anchor="middle">Skywork-Reward-V2 for standard</text>
+<text class="pd" x="642.0" y="118" text-anchor="middle">Qwen3-32B + Charter for controversial</text>
+<text class="pd" x="642.0" y="134" text-anchor="middle">DPO run only as ablation</text>
+<line class="parrow" x1="778" y1="54" x2="801" y2="54"/>
+<rect class="k-pre" x="804" y="26" width="200" height="56" rx="6"/>
+<text class="pn" x="904.0" y="49" text-anchor="middle">4 · 1.5 cont. pretrain</text>
+<text class="ps" x="904.0" y="68" text-anchor="middle">+4T / +2T · multimodal</text>
+<text class="pd" x="904.0" y="102" text-anchor="middle">same architecture</text>
+<text class="pd" x="904.0" y="118" text-anchor="middle">262k context</text>
+<line class="parrow" x1="1006" y1="54" x2="1029" y2="54"/>
+<rect class="k-other" x="1032" y="26" width="215" height="56" rx="6"/>
+<text class="pn" x="1139.5" y="49" text-anchor="middle">5 · 1.5 post-train</text>
+<text class="ps" x="1139.5" y="68" text-anchor="middle">recipe not yet published</text>
+<text class="pd" x="1139.5" y="102" text-anchor="middle">“improved recipe”: IF, tools,</text>
+<text class="pd" x="1139.5" y="118" text-anchor="middle">thinking mode</text>
+<text class="pd" x="1139.5" y="134" text-anchor="middle">report pending (Jul → ?)</text>
+</svg></div></div>
+  <h3 class="ledgerh">Stage by stage</h3>
+  <div class="stages"><div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">1</span><span class="sn">Pretrain</span><span class="ss">15T · compliant</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>15T tokens from openly available sources with retroactive robots.txt exclusions, PII and toxicity filtering, and the Goldfish objective to suppress verbatim memorization.</dd></div></dl>
+    </div>
+<div class="stagecard k-sft">
+      <div class="sch"><span class="sidx">2</span><span class="sn">SFT</span><span class="ss">4.18M examples · 8 mixture iterations</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>4,184,087 examples after filtering. Foundation 400k (OLMo2 WildChat 299k, Personas 29k, SciRiff 30k, TableGPT 25k, CoCoNot 11k, OASST1 7k). Math 486k (Llama-Nemotron math 200k, Tülu3 Personas math 126k, NuminaMath with tool calls extracted from solutions 63k, OpenMath GSM8K 50k, Llama-Nemotron chat/safety 47k). Code 378k (Llama-Nemotron code 200k, Glaive function calling 113k, xLAM 60k, APIGen 5k). Multilingual 1.43M (SmolTalk2 1.27M across 8 languages, EuroBlocks 157k, s1k translated to 42 languages 1k). Regional 943k (multilingual Wikipedia QA 884k, Romansh 46k across six written varieties, Swiss-German 6k, African languages 7k, Swiss Charter QA 226). The-Tome financial/web 545k. Over 149 languages in the mixture.</dd></div><div class="lr"><dt>Distilled from</dt><dd>No new teacher runs. Reasoning-bearing data arrives second-hand through Llama-Nemotron's released math and code sets (DeepSeek-R1 traces by proxy) and NuminaMath.</dd></div><div class="lr"><dt>Filtering</dt><dd>Licence filtering keeps only redistributable, commercial-use sources (CC-BY, Apache), excludes NC/SA, robots.txt opt-outs (Reddit, StackExchange) and mis-relicensed mixtures. Ablation on an 8B 10T checkpoint: decontamination is free, but licence filtering costs 5.8% average and halves MMLU-CoT (0.513 → 0.253) — accepted as the price of compliance. Keyword removal of other labs' identity markers. Decontamination by 8-gram match then Ratcliff-Obershelp overlap, which catches translated benchmark items that hashing misses.</dd></div><div class="lr"><dt>Schedule</dt><dd>Global batch 512 / 1,024 with lr 5e-6 / 2e-6, linear decay, max sequence 4,096, AdEMAMix (β₃ 0.99, α 8). TRL + DeepSpeed; chat template adds a developer message for tools. Pipeline released at github.com/swiss-ai/posttraining.</dd></div></dl>
+    </div>
+<div class="stagecard k-pref">
+      <div class="sch"><span class="sidx">3</span><span class="sn">QRPO</span><span class="ss">offline · absolute rewards</span></div>
+      <dl class="ledger"><div class="lr"><dt>Data</dt><dd>Prompts from the OLMo 2 preference mix minus crawl-forbidden and non-permissive subsets (Flan v2, No Robots). Qwen3-32B labels prompts as ideologically controversial (73% agreement with 800 human labels) → 380,537 standard and 72,698 controversial, the latter extended with PolygloToxicityPrompts (WildChat subset) and PRISM values/controversy conversations.</dd></div><div class="lr"><dt>Synthetic</dt><dd>Completions from Llama 3.1 8B, Llama 3.3 70B, Qwen2.5 72B, Qwen3 14B and Qwen3 32B at temperature 1 — one with the default system prompt and one steered toward truthful / helpful / honest (UltraFeedback-style) — plus a Qwen2.5-72B Swiss-AI-Charter persona and 10 samples from the Apertus-SFT model itself. Two are kept per prompt: one scoring above every on-policy sample and one below the 20th percentile of them, since quality within a reasonable range barely mattered and the extremes helped. Controversial prompts use PersonaHub personas instead of the helpfulness prompts.</dd></div><div class="lr"><dt>Rewards / verifiers</dt><dd>Standard topics: Skywork-Reward-V2-Llama-3.1-8B (trained on 26M preference pairs). Controversial topics: Qwen3-32B as judge with the full Swiss AI Charter in the prompt — 11 articles of 3–9 numbered clauses (response quality, knowledge standards, respect, harm prevention, value conflicts, professional boundaries, collective decision-making, autonomy, long-term orientation, human agency, AI identity) — scoring 1–9 with clause citations. The Charter was validated by 163 Swiss residents: 97.3% average agreement, lowest 92.6% for professional-licensing boundaries.</dd></div><div class="lr"><dt>Algorithm</dt><dd>Quantile Reward Policy Optimization: optimizes an absolute reward signal offline, keeping DAA-style stability and cost while avoiding DPO's relative-only signal and its tendency to push probability mass toward out-of-distribution samples. Accepts reward-model scores, human rankings or judge scores. DPO trained on the same pairs for ablation only.</dd></div></dl>
+    </div>
+<div class="stagecard k-pre">
+      <div class="sch"><span class="sidx">4</span><span class="sn">1.5 cont. pretrain</span><span class="ss">+4T / +2T · multimodal</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>Continued pretraining of 1.0 on a multimodal mix: +4T tokens for 8B, +2T for 70B; image input, experimental audio; context 262k.</dd></div></dl>
+    </div>
+<div class="stagecard k-other">
+      <div class="sch"><span class="sidx">5</span><span class="sn">1.5 post-train</span><span class="ss">recipe not yet published</span></div>
+      <dl class="ledger"><div class="lr"><dt>Note</dt><dd>The model card says only “our improved post-training recipe … allows developers to enable a thinking mode.” No stage names, algorithm, or trace sources; the research page lists the 1.5 technical report as coming soon. Whether RL was added is unknown.</dd></div></dl>
+    </div></div>
+  <div class="card diffcard"><p class="ct">Diff vs. OLMo 3</p><ul class="facts"><li>1.0 has no verifiable-reward stage — the only model here without one. 1.5 ships a thinking mode, which usually implies reasoning RL or trace distillation, but nothing published confirms either.</li><li>QRPO with absolute rewards instead of DPO; written-down principles as the judge rubric instead of human comparisons.</li><li>Matches OLMo on openness, but the openness serves a compliance argument rather than a reproducibility one — and the report quantifies what compliance costs.</li><li>Right reference if the question is “how do you build a corpus you're allowed to train on”; wrong one for post-training.</li></ul></div>
+</section>
+<section class="panel" id="p-compare" role="tabpanel" aria-labelledby="t-compare" hidden>
+  <div class="ph"><div><p class="org">All seven on one schema</p><h2>Compare</h2></div></div>
+  <p class="sub">Rows are the axes; OLMo 3's column is the reference and is tinted. Read across a row to see what the field disagrees about; read down a column to see one lab's bet.</p>
+  <div class="scroller"><table class="cmp"><thead><tr><th></th><th>OLMo 3</th><th>Phi-4-reasoning</th><th>Nemotron 3 Super</th><th>Llama-Nemotron</th><th>Kimi K3</th><th>Qwen 3.8</th><th>Apertus 1.0 → 1.5</th></tr></thead><tbody><tr><th>Base / architecture</th><td class="ref">7B and 32B, dense</td><td class="">14B dense (Phi-4 base; chosen over the mid-train checkpoint for its safety post-training)</td><td class="">120B total · 12B active · LatentMoE</td><td class="">Nano 8B · Super 49B · Ultra 253B</td><td class="">2.8T total · 104B active · 896 experts, top-16 (“Stable LatentMoE”)</td><td class="">Qwen3.8-27B: dense, multimodal, 262k native context (1M via YaRN), Apache 2.0</td><td class="">8B and 70B dense · xIELU activation, QK-norm, GQA · AdEMAMix optimizer</td></tr><tr><th>SFT scale</th><td class="ref">Dolci Think SFT · 2.27M</td><td class="">1.4M pairs · 8.3B unique tokens</td><td class="">7M samples · 80B tok</td><td class="">33.0M samples · R1-distilled</td><td class="">cold start · sizes undisclosed</td><td class="">not disclosed</td><td class="">4.18M examples · 8 mixture iterations</td></tr><tr><th>Teachers</th><td class="ref">QwQ-32B + DeepSeek R1 (SFT); Qwen3 32B/0.6B (DPO pairs)</td><td class="">o3-mini (proprietary)</td><td class="">DeepSeek v3.2, Kimi K2, Qwen3-Coder-480B, GPT-OSS-120B, MiniMax M2/M2.5, GLM-4.7, R1</td><td class="">DeepSeek-R1 (on); Qwen2.5-Math-7B, Llama-3.x-70B (off)</td><td class="">prior Kimi experts (SFT); 9 own RL experts (MOPD)</td><td class="">not disclosed</td><td class="">none new; second-hand via Llama-Nemotron sets</td></tr><tr><th>Synthetic pipelines</th><td class="ref">persona IF, GPT-4.1 test cases, rewritten chat refs; Delta-Learning pairs</td><td class="">seed rewriting into verifiable forms; RAI-guided safety</td><td class="">~12 pipelines: CLI, SWE, long-ctx, finance 366k, CUDA 100k, safety, search, terminal 85k, SQL 96.5k, conv. tools 279k, general tools 1.5M</td><td class="">AoPS / code / science / general pipelines → 33M samples; Feedback-Edit for chat</td><td class="">knowledge-graph task synthesis; mock Gmail/Notion/Slack/Canvas; agent-built workspaces</td><td class="">not disclosed</td><td class="">preference completions from 5 open models + charter persona; 1.5 undisclosed</td></tr><tr><th>Preference stage</th><td class="ref">DPO · Delta Learning · 200k</td><td class="">none</td><td class="">RLHF · principle GenRM · 18B tok</td><td class="">online RPO (Super) / GRPO (Ultra) · 70B reward model</td><td class="">tournament GenRM inside RL</td><td class="">not disclosed</td><td class="">QRPO · Skywork-RM + Qwen3-32B Charter judge</td></tr><tr><th>Verifiable-reward RL</th><td class="ref">GRPO (OlmoRL) · 105k prompts · 4 domains, 5 verifiers incl. LM judge</td><td class="">GRPO · ~6.4k math · rule-based length-aware reward</td><td class="">async GRPO · 21 envs / 37 datasets + SWE-RL containers</td><td class="">GRPO · science · Ultra only; RLOO for IF</td><td class="">partial-rollout RL · white-box harnesses, kernels, assistants, visual sandboxes, search</td><td class="">not disclosed (Qwen3 used GSPO)</td><td class="">none in 1.0 · 1.5 unknown</td></tr><tr><th>Reasoning control</th><td class="ref">separate Think / Instruct / RL-Zero paths</td><td class="">think tokens, always on</td><td class="">off / regular / low-effort + budget</td><td class="">system prompt on/off</td><td class="">effort budget τ: low/high/max</td><td class="">reasoning_effort dial</td><td class="">1.5: switchable thinking mode</td></tr><tr><th>Thesis</th><td class="ref">The model flow is the product: every stage, dataset, checkpoint and the RL code are released so the recipe itself can be studied, forked, and benchmarked against.</td><td class="">Curation beats scale: a 14B model approaches DeepSeek-R1 by SFT-ing on “teachable” prompts with o3-mini traces; a 90-step GRPO pass on ~6k math problems adds a further increment.</td><td class="">Throughput at parity: match GPT-OSS-120B and Qwen3.5-122B on benchmarks while serving 2–7× more tokens per GPU — with an industrial synthetic-data operation feeding a four-stage RL pipeline.</td><td class="">Efficient reasoning: derive the architecture from Llama 3 by NAS, distill 33M samples of reasoning from DeepSeek-R1 with an on/off toggle, and spend RL only on the largest model where it can surpass the teacher.</td><td class="">Open frontier intelligence: train nine domain × effort RL experts on white-box agentic environments at million-token context, then merge them back into one model by on-policy distillation.</td><td class="">A release, not a report: the recipe is undisclosed as of Sept 2026. What is public is the lineup and the inference-time controls.</td><td class="">Compliance and multilinguality, fully open. 1.0 puts the contribution upstream of post-training and aligns with an offline absolute-reward method; 1.5 adds a thinking mode whose recipe is still unpublished.</td></tr><tr><th>Openness</th><td class="ref"><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip ok">pretrain data · yes</span><span class="chip ok">post-train data · yes</span><span class="chip ok">code · yes</span><span class="chip ok">checkpoints · yes</span><span class="chip ok">recipe · yes</span></div></td><td class=""><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip no">post-train data · no</span><span class="chip no">code · no</span><span class="chip no">checkpoints · no</span><span class="chip part">recipe · partial</span></div></td><td class=""><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip part">pretrain data · partial</span><span class="chip ok">post-train data · yes</span><span class="chip part">code · partial</span><span class="chip ok">checkpoints · yes</span><span class="chip ok">recipe · yes</span></div></td><td class=""><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip ok">post-train data · yes</span><span class="chip ok">code · yes</span><span class="chip part">checkpoints · partial</span><span class="chip ok">recipe · yes</span></div></td><td class=""><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip no">post-train data · no</span><span class="chip part">code · partial</span><span class="chip no">checkpoints · no</span><span class="chip part">recipe · partial</span></div></td><td class=""><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip no">pretrain data · no</span><span class="chip no">post-train data · no</span><span class="chip part">code · partial</span><span class="chip no">checkpoints · no</span><span class="chip no">recipe · no</span></div></td><td class=""><div class="chips mini"><span class="chip ok">weights · yes</span><span class="chip ok">pretrain data · yes</span><span class="chip ok">post-train data · yes</span><span class="chip ok">code · yes</span><span class="chip ok">checkpoints · yes</span><span class="chip part">recipe · partial</span></div></td></tr></tbody></table></div>
+  <div class="card" style="margin-top:22px"><p class="ct">What the table makes visible</p><ul class="facts">
+    <li><b>Preference tuning has fragmented.</b> Offline DPO with machine-made contrasts (OLMo), offline QRPO on absolute rewards (Apertus), a GenRM inside the RL loop (Nemotron, Kimi), online RL against a reward model (Llama-Nemotron), nothing (Phi-4). There is no consensus stage two.</li>
+    <li><b>GRPO is the consensus name, not the consensus algorithm.</b> OLMo drops KL and std-normalization and adds truncated importance sampling; Nemotron masks the IS ratio and runs one step stale; Phi-4 keeps KL and entropy terms; Kimi pauses rollouts mid-flight; Llama-Nemotron uses RLOO for one stage and RPO for another.</li>
+    <li><b>Difficulty targeting is universal and named differently everywhere.</b> Phi-4's “teachable” seeds, OLMo's 62.5% pass-rate cutoff, Llama-Nemotron's 0.75 cutoff plus Gaussian curriculum, Nemotron's “drop what the SFT model always solves”, Kimi's per-problem budgets. Same object.</li>
+    <li><b>Synthetic data has become an industrial function.</b> Nemotron names about a dozen generation pipelines with counts; Llama-Nemotron ships 33M synthetic samples; OLMo publishes exact prompt tables. Apertus is the outlier that reuses rather than generates — by policy.</li>
+    <li><b>Openness tracks thesis.</b> The two fully-open models are the two whose thesis is about openness. Product models release weights and keep the data.</li>
+  </ul></div>
+</section>
+<section class="panel" id="p-selfplay" role="tabpanel" aria-labelledby="t-selfplay" hidden>
+  <div class="ph"><div><p class="org">The Self-reasoning section of the list</p><h2>Self-play</h2></div></div>
+  <p class="sub">Same loop every time — something proposes a task, something solves it, something verifies. What differs is <b>where the task comes from</b> and <b>who is allowed to be the verifier</b>. Ordered by how much external grounding they keep.</p>
+  <div class="legend"><span><i class="sw lp"></i>proposer</span><span><i class="sw ls"></i>solver</span><span><i class="sw lv"></i>verifier</span><span><i class="sw lgx"></i>external grounding</span><span><i class="sw rewsw"></i>reward</span></div>
+  <div class="spgrid"><div class="card sp"><div class="sph"><h3>STaR <span class="yr">2022</span></h3><a href="https://arxiv.org/abs/2203.14465">paper</a></div>
+      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="STaR self-play loop">
+<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
+<rect class="lg" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">labeled questions</text>
+<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
+<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">dataset (fixed)</text>
+<polyline class="ledge" points="302,31 360,31 360,86"/>
+<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">question + answer key</text>
+<polyline class="ledge" points="360,122 360,174 304,174"/>
+<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">model → rationale</text>
+<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
+<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">answer match</text>
+<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">keep correct rationales → SFT</text>
+<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">—</text>
+<text class="lt2" x="414" y="228" text-anchor="end">STaR</text></svg></div>
+      <ul class="facts"><li>Sample a rationale + answer; keep the ones whose answer matches; fine-tune on them; repeat.</li><li>Rationalization: for failures, show the answer as a hint and keep the rationale that reaches it.</li><li>Not really self-play — the questions and answers are given. The self-generated part is the reasoning trace.</li><li>Failure mode: nothing forces diversity or difficulty; the loop can converge on easy items.</li></ul></div><div class="card sp"><div class="sph"><h3>Absolute Zero <span class="yr">May 2025</span></h3><a href="https://arxiv.org/abs/2505.03335">paper</a></div>
+      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="Absolute Zero self-play loop">
+<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
+<rect class="lg none" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">no external data</text>
+<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
+<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">proposer (same model)</text>
+<polyline class="ledge" points="302,31 360,31 360,86"/>
+<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">Python program task</text>
+<polyline class="ledge" points="360,122 360,174 304,174"/>
+<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">solver (same model)</text>
+<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
+<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">code executor</text>
+<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">correctness</text>
+<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">learnability (mid success rate)</text>
+<text class="lt2" x="414" y="228" text-anchor="end">Absolute Zero</text></svg></div>
+      <ul class="facts"><li>One model plays both roles. Tasks are programs in three modes: deduction (program+input → output), abduction (program+output → input), induction (I/O pairs → program).</li><li>The verifier is a Python executor, so correctness is exact and no data is needed.</li><li>Proposer is rewarded for tasks the solver sometimes solves — not always, not never.</li><li>Grounded by execution, but only in the space of things a program can express.</li></ul></div><div class="card sp"><div class="sph"><h3>R-Zero <span class="yr">Aug 2025</span></h3><a href="https://arxiv.org/abs/2508.05004">paper</a></div>
+      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="R-Zero self-play loop">
+<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
+<rect class="lg none" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">no external data</text>
+<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
+<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">Challenger</text>
+<polyline class="ledge" points="302,31 360,31 360,86"/>
+<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">generated question</text>
+<polyline class="ledge" points="360,122 360,174 304,174"/>
+<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">Solver</text>
+<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
+<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">majority vote (pseudo-label)</text>
+<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">1 if matches majority</text>
+<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">Gaussian peak at 50% + repetition penalty</text>
+<text class="lt2" x="414" y="228" text-anchor="end">R-Zero</text></svg></div>
+      <ul class="facts"><li>Two copies of the base model co-evolve with GRPO. Challenger is rewarded when Solver's accuracy is ≈50% — maximum uncertainty.</li><li>No verifier: the label is the Solver's own majority vote over 10 samples. Keep only questions with 3–7 of 10 agreeing.</li><li>Qwen3-4B-Base: +6.5 math, +7.5 general reasoning after three iterations.</li><li>Collapses: pseudo-label accuracy decays 79% → 63% by iteration 3; 0.6B models collapse after one round.</li></ul></div><div class="card sp"><div class="sph"><h3>SPICE <span class="yr">Oct 2025</span></h3><a href="https://arxiv.org/abs/2510.24684">paper</a></div>
+      <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="SPICE self-play loop">
+<defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
+<rect class="lg" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">corpus documents</text>
+<line class="ledge" x1="132" y1="31" x2="170" y2="31"/>
+<rect class="lp" x="172" y="14" width="130" height="34" rx="5"/><text class="lt" x="237" y="35" text-anchor="middle">Challenger</text>
+<polyline class="ledge" points="302,31 360,31 360,86"/>
+<rect class="lx" x="300" y="88" width="118" height="34" rx="5"/><text class="lt2" x="359" y="109" text-anchor="middle">question w/ extractable answer</text>
+<polyline class="ledge" points="360,122 360,174 304,174"/>
+<rect class="ls" x="172" y="157" width="130" height="34" rx="5"/><text class="lt" x="237" y="178" text-anchor="middle">Reasoner (no doc access)</text>
+<line class="ledge" x1="172" y1="174" x2="132" y2="174"/>
+<rect class="lv" x="14" y="157" width="118" height="34" rx="5"/><text class="lt2" x="73" y="178" text-anchor="middle">doc-extracted gold</text>
+<polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">1 if correct</text>
+<polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">variance-based Gaussian at 50%</text>
+<text class="lt2" x="414" y="228" text-anchor="end">SPICE</text></svg></div>
+      <ul class="facts"><li>Same LLM, two roles, but the Challenger reads a real document and writes a question whose answer is extractable from it. The Reasoner never sees the document — information asymmetry.</li><li>Grounding fixes R-Zero's failure: the label comes from the text, not from the model agreeing with itself.</li><li>Both roles trained jointly with Dr. GRPO, separate advantages. Corpora: Nemotron-CC-Math, NaturalReasoning.</li><li>+8.9 math, +9.8 general reasoning across Qwen3-4B/8B and OctoThinker-3B/8B.</li></ul></div></div>
+  <div class="scroller" style="margin-top:22px"><table class="cmp small"><thead><tr><th></th><th>STaR</th><th>Absolute Zero</th><th>R-Zero</th><th>SPICE</th></tr></thead><tbody>
+    <tr><th>Task source</th><td>labeled dataset</td><td>self-generated programs</td><td>self-generated questions</td><td>questions grounded in corpus documents</td></tr>
+    <tr><th>Verifier</th><td>answer key</td><td>code executor</td><td>majority vote of the solver itself</td><td>answer extracted from the document</td></tr>
+    <tr><th>Difficulty targeting</th><td>none</td><td>learnability (mid success)</td><td>Gaussian peak at 50%</td><td>variance-based, peak at 50%</td></tr>
+    <tr><th>Algorithm</th><td>rejection-sampling SFT</td><td>RL, both roles</td><td>GRPO, both roles</td><td>Dr. GRPO, both roles</td></tr>
+    <tr><th>Failure mode</th><td>no pressure toward hard items</td><td>confined to program-expressible tasks</td><td>pseudo-label decay → collapse in 1–3 iters</td><td>bounded by corpus quality and coverage</td></tr>
+  </tbody></table></div>
+  <div class="card" style="margin-top:22px"><p class="ct">Where the model reports already contain pieces of this</p><ul class="facts">
+    <li>Kimi K3's knowledge-graph task synthesis is a proposer grounded in retrieved web material — SPICE's move, minus the co-evolving reward. Its mock-app workspaces built by web-searching agents are proposers for environments, not just questions.</li>
+    <li>Nemotron's PAIR-style jailbreak attacker is a narrow adversarial proposer; its conversational-tool-use pipeline (drop all-success / all-fail scenarios) is the 50% band applied offline.</li>
+    <li>Llama-Nemotron and OLMo both use majority vote as the label when no gold answer exists — R-Zero's pseudo-labeling, used cautiously and one-shot rather than iterated.</li>
+    <li>The open question SPICE poses to R-Zero — <em>who is allowed to be the verifier</em> — is the same question RLVR poses to RLHF, one level down.</li>
+  </ul></div>
+</section>
+  <p class="foot">Sources are the linked reports; “not disclosed” means absent from them. Pipeline boxes are not to scale — stage volumes are in mixed units and are labeled instead. Counts are quoted as printed in each report; where a report's table and prose disagree (Apertus SFT: 4.18M vs “~3.8M”) the table is used.</p>
+</div>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function show(id){ tabs.forEach(function(t){ var on = t.id === id; t.setAttribute("aria-selected", on ? "true" : "false"); var p = document.getElementById(t.getAttribute("aria-controls")); if (p) p.hidden = !on; }); try { localStorage.setItem("ptd-tab", id); } catch(e) {} }
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.id); window.scrollTo({top:0}); }); });
+  var saved = null; try { saved = localStorage.getItem("ptd-tab"); } catch(e) {}
+  if (saved && document.getElementById(saved)) show(saved);
+})();
+</script>
+
+</body>
+</html>
