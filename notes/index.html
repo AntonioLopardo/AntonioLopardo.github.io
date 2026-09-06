@@ -48,7 +48,7 @@ footer a{color:inherit}
 <div class="section">Pages</div>
 <ol>
   <li class="entry">
-    <h2><a href="/post-training-diff.html">Post-training diff</a></h2>
+    <h2><a href="/post-training-diff.html">LLM report diff</a></h2>
     <p class="desc">Ten 2025–26 model reports read against one skeleton (SFT → preference → verifiable-reward RL): per-model pipeline diagrams, stage-by-stage ledgers of data, distillation, synthetic pipelines, rewards and environments, a cross-model table, and the self-play papers' loops. OLMo 3 is the reference.</p>
     <div class="meta"><span class="kind">page</span><span>2026-09</span><span>OLMo 3 · Phi-4-reasoning · Nemotron 3 Super · Llama-Nemotron · Kimi K3 · Qwen 3.8 · Apertus · DeepSeek V4 · Gemma 4 · GLM-5</span></div>
   </li>
@@ -67,12 +67,8 @@ footer a{color:inherit}
 <div class="section">Notes</div>
 <ol>
   <li class="entry">
-    <h2>Multi-token prediction (MTP)</h2>
-    <div class="note">
-      <p>A normal LM head predicts token <em>t+1</em> from the hidden state at <em>t</em>. An MTP head is a small extra block — in DeepSeek-V3's version a single lightweight transformer layer per extra step — that takes the same hidden state plus the embedding of token <em>t+1</em> and predicts <em>t+2</em>. It has its own cross-entropy loss, added to the main loss with a weight (Nemotron 3 Super uses 0.3). The backbone is shared; only the head is extra.</p>
-      <p>Two reasons it survives into 2026 models: the training signal is denser and slightly forward-looking, and at inference the head is a <em>draft model that lives inside the main model</em> — it proposes <em>t+2</em> cheaply, the main model verifies in one batched pass, and accepted tokens cost nothing. DeepSeek-V3 reports an acceptance rate above 80% for the first MTP head and roughly 1.8× decoding throughput. That is why Nemotron, Kimi K3, DeepSeek V4 and Gemma 4 all ship one.</p>
-      <p>Two consequences show up in the post-training reports. RL moves the backbone and the draft's acceptance rate collapses, so Nemotron ends with an <em>MTP healing</em> stage that retrains only the heads. Kimi K3 goes further and fine-tunes its MTP layer into an EAGLE-3-style draft with a loss that maximizes acceptance rate directly instead of a KL surrogate. The metric that matters for a draft is acceptance rate, not accuracy.</p>
-    </div>
+    <h2><a href="/notes/mtp.html">Multi-token prediction (MTP)</a></h2>
+    <p class="desc">A small extra head predicts the token after next from the same hidden state — denser training signal, and a draft model that lives inside the main model. Two diagrams, the three-line math, where it appears in DeepSeek-V3/V4, Nemotron 3 Super, Kimi K3, Gemma 4 and GLM-5, and why RL breaks it.</p>
     <div class="meta"><span class="kind">note</span><span>2026-09</span>
       <a href="https://sebastianraschka.com/llm-architecture-gallery/mtp/">Raschka · architecture gallery</a>
       <a href="https://arxiv.org/abs/2404.19737">Gloeckle et al. 2024</a><a class="alpha" href="https://www.alphaxiv.org/abs/2404.19737">alphaXiv</a>

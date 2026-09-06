@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Multi-Token Prediction</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
+<!--
+  METHOD NOTE TEMPLATE — copy this file for the next method.
+  Sections, in order: header (eyebrow · h1 · lede) → Fig 1 mechanism → the math in three lines →
+  why it is kept → Fig 2 (the second half of the story, usually inference or training dynamics) →
+  where it appears in the reports (table) → pitfalls → sources. Keep diagrams as inline SVG with
+  currentColor strokes; teal = the thing being explained, amber = the loss / the decision, grey = context.
+-->
+<style>
+  :root{ --paper:#F1F3F6; --surface:#FFFFFF; --surface-2:#E7EBEF; --ink:#141920; --ink-2:#4B5560; --ink-3:#7C8894; --rule:#D3D9DF; --rule-soft:#E3E8EC;
+    --keep:#0A6A62; --keep-line:#0F8078; --keep-soft:#D9EDEB; --draw:#A24E06; --draw-line:#C4650F; --draw-soft:#FAE8D5; --cut:#AEB7C0; --cut-soft:#EDF0F2; --pre:#5B6672; --pre-soft:#E3E7EB;
+    --shadow:0 1px 2px rgba(20,25,32,.05), 0 8px 24px -12px rgba(20,25,32,.18); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --paper:#0F1319; --surface:#171C23; --surface-2:#202730; --ink:#E9EDF1; --ink-2:#A7B2BD; --ink-3:#79848F; --rule:#2A323C; --rule-soft:#222A33;
+    --keep:#3FC0B1; --keep-line:#3FC0B1; --keep-soft:#0E3330; --draw:#F0A03C; --draw-line:#F0A03C; --draw-soft:#3A2711; --cut:#4E5A66; --cut-soft:#1C232B; --pre:#A7B2BD; --pre-soft:#252D37; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6); } }
+  :root[data-theme="dark"]{ --paper:#0F1319; --surface:#171C23; --surface-2:#202730; --ink:#E9EDF1; --ink-2:#A7B2BD; --ink-3:#79848F; --rule:#2A323C; --rule-soft:#222A33;
+    --keep:#3FC0B1; --keep-line:#3FC0B1; --keep-soft:#0E3330; --draw:#F0A03C; --draw-line:#F0A03C; --draw-soft:#3A2711; --cut:#4E5A66; --cut-soft:#1C232B; --pre:#A7B2BD; --pre-soft:#252D37; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6); }
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%} [hidden]{display:none!important}
+  a{color:var(--keep); text-decoration:none; border-bottom:1px solid var(--keep-soft);} a:hover{border-bottom-color:var(--keep);}
+  .page{max-width:900px; margin:0 auto; padding:52px 24px 96px; display:flex; flex-direction:column; gap:44px;}
+  @media (max-width:640px){ .page{padding:32px 16px 64px; gap:32px;} }
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--keep); margin:0 0 12px;}
+  .eyebrow a{border:none; color:inherit;} .eyebrow a:hover{color:var(--ink);}
+  h1{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:clamp(30px,5vw,44px); line-height:1.12; letter-spacing:-.015em; margin:0 0 14px; text-wrap:balance;}
+  .lede{max-width:64ch; margin:0; color:var(--ink-2); font-size:17px;} .lede b{color:var(--ink); font-weight:600;}
+  h2{font-family:"IBM Plex Serif",Georgia,serif; font-weight:600; font-size:22px; letter-spacing:-.01em; margin:0 0 10px; text-wrap:balance;}
+  p{max-width:66ch;} section > p{color:var(--ink-2); margin:0 0 12px;} section > p b{color:var(--ink); font-weight:600;}
+  code{font-family:"IBM Plex Mono",monospace; font-size:.92em; color:var(--ink);}
+  figure{margin:0;} .scroller{overflow-x:auto;} figure svg{display:block; width:100%; height:auto; color:var(--ink-3);}
+  figcaption{margin-top:12px; color:var(--ink-2); font-size:14px; max-width:66ch;}
+  .st{fill:var(--ink); font-family:"IBM Plex Mono",monospace; font-size:11.5px;} .st2{fill:var(--ink-2); font-family:"IBM Plex Mono",monospace; font-size:10.5px;}
+  .sh{fill:var(--ink); font-family:"IBM Plex Sans",sans-serif; font-size:13px; font-weight:600;} .stk{fill:var(--keep); font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:600;} .sta{fill:var(--draw); font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600;}
+  .bx{fill:var(--surface); stroke:var(--ink-3); stroke-width:1;} .bk{fill:var(--keep-soft); stroke:var(--keep-line); stroke-width:1.4;} .ba{fill:var(--draw-soft); stroke:var(--draw-line); stroke-width:1.4;} .bg{fill:var(--pre-soft); stroke:var(--pre); stroke-width:1;} .bc{fill:var(--cut-soft); stroke:var(--cut); stroke-width:1; stroke-dasharray:3 2;}
+  .edge{stroke:currentColor; stroke-width:1.3; fill:none; marker-end:url(#ah);} .edge.k{stroke:var(--keep-line);} .edge.a{stroke:var(--draw-line); stroke-dasharray:4 3;} .bus{stroke:currentColor; stroke-width:1.3; fill:none;}
+  .math{background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:14px 18px; font-family:"IBM Plex Mono",monospace; font-size:13.5px; line-height:1.8; overflow-x:auto; box-shadow:var(--shadow);}
+  .math .c{color:var(--ink-3);} .math b{color:var(--draw); font-weight:600;}
+  table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:720px;} th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--rule-soft); vertical-align:top;}
+  th{font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); border-bottom:1px solid var(--rule);} td{color:var(--ink-2);} td:first-child{color:var(--ink); font-weight:600;}
+  ul.facts{margin:0; padding-left:18px; color:var(--ink-2); display:flex; flex-direction:column; gap:8px; max-width:70ch;} ul.facts b{color:var(--ink); font-weight:600;}
+  .src{display:flex; flex-direction:column; gap:6px; font-size:14px;} .src span{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3);}
+  .foot{margin-top:8px; font-size:13px; color:var(--ink-3);}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="eyebrow"><a href="/notes/">Notes</a> · Method note 01</p>
+    <h1>Multi-token prediction</h1>
+    <p class="lede">A normal language-model head predicts the next token. MTP adds a small extra head that predicts the token <b>after</b> that from the same hidden state. It costs almost nothing in parameters, it makes the training signal denser, and at inference it doubles as a <b>draft model that lives inside the main model</b> — which is why every 2026 frontier open model ships one.</p>
+  </header>
+
+  <section>
+    <h2>Fig 1 · What is added at training time</h2>
+    <figure>
+      <div class="scroller">
+      <svg viewBox="0 0 760 330" role="img" aria-label="Training-time diagram. Tokens x1 to x4 enter the shared transformer trunk. The trunk's hidden state at position t feeds the main head, which predicts x at t plus 1 with the main cross-entropy loss. The same hidden state, together with the embedding of x at t plus 1, feeds a one-layer MTP module and the shared output head, which predicts x at t plus 2 with a cross-entropy loss scaled by lambda. The trunk and the output head are shared; only the small MTP block is new.">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <!-- inputs -->
+        <text class="st2" x="40" y="318">x₁</text><text class="st2" x="100" y="318">x₂</text><text class="st2" x="160" y="318">x₃</text><text class="st" x="220" y="318">x_t</text>
+        <line class="edge" x1="46" y1="304" x2="46" y2="262"/><line class="edge" x1="106" y1="304" x2="106" y2="262"/><line class="edge" x1="166" y1="304" x2="166" y2="262"/><line class="edge" x1="226" y1="304" x2="226" y2="262"/>
+        <!-- trunk -->
+        <rect class="bg" x="20" y="200" width="250" height="60" rx="6"/>
+        <text class="sh" x="145" y="226" text-anchor="middle">shared transformer trunk</text>
+        <text class="st2" x="145" y="246" text-anchor="middle">L layers · unchanged</text>
+        <!-- h_t -->
+        <line class="edge" x1="226" y1="200" x2="226" y2="168"/>
+        <rect class="bx" x="186" y="140" width="80" height="28" rx="4"/><text class="st" x="226" y="158" text-anchor="middle">h_t</text>
+        <!-- main head path -->
+        <line class="edge" x1="226" y1="140" x2="226" y2="96"/>
+        <rect class="bg" x="166" y="66" width="120" height="30" rx="4"/><text class="sh" x="226" y="86" text-anchor="middle">output head</text>
+        <line class="edge" x1="226" y1="66" x2="226" y2="40"/>
+        <text class="st" x="226" y="28" text-anchor="middle">x̂_{t+1}</text>
+        <rect class="ba" x="286" y="18" width="118" height="26" rx="13"/><text class="sta" x="345" y="35" text-anchor="middle">L_main = CE</text>
+        <!-- MTP branch -->
+        <line class="bus" x1="266" y1="154" x2="470" y2="154"/>
+        <line class="edge k" x1="470" y1="154" x2="470" y2="176"/>
+        <text class="st2" x="300" y="148">h_t (normalized)</text>
+        <!-- embedding of next token joins -->
+        <rect class="bx" x="520" y="232" width="150" height="28" rx="4"/><text class="st" x="595" y="250" text-anchor="middle">Emb(x_{t+1})</text>
+        <text class="st2" x="595" y="278" text-anchor="middle">the true next token,</text><text class="st2" x="595" y="292" text-anchor="middle">available at training time</text>
+        <line class="edge k" x1="595" y1="232" x2="595" y2="176"/>
+        <text class="st2" x="595" y="212" text-anchor="middle">normalized</text>
+        <!-- concat + proj -->
+        <rect class="bk" x="430" y="178" width="240" height="0" />
+        <rect class="bk" x="420" y="176" width="260" height="0"/>
+        <rect class="bk" x="420" y="176" width="260" height="30" rx="4"/><text class="stk" x="550" y="196" text-anchor="middle">concat → linear projection</text>
+        <line class="edge k" x1="550" y1="176" x2="550" y2="140"/>
+        <rect class="bk" x="440" y="108" width="220" height="32" rx="4"/><text class="stk" x="550" y="129" text-anchor="middle">MTP block · 1 transformer layer</text>
+        <line class="edge k" x1="550" y1="108" x2="550" y2="96"/>
+        <rect class="bg" x="490" y="66" width="120" height="30" rx="4"/><text class="sh" x="550" y="86" text-anchor="middle">output head</text>
+        <text class="st2" x="622" y="86">← same weights</text>
+        <line class="edge k" x1="550" y1="66" x2="550" y2="40"/>
+        <text class="st" x="550" y="28" text-anchor="middle">x̂_{t+2}</text>
+        <rect class="ba" x="608" y="18" width="130" height="26" rx="13"/><text class="sta" x="673" y="35" text-anchor="middle">λ · L_MTP = λ·CE</text>
+      </svg>
+      </div>
+      <figcaption>DeepSeek-V3's sequential form, the one most 2026 models inherit. The grey parts already exist. The teal parts are the addition: the trunk's hidden state at <code>t</code> is concatenated with the embedding of the true next token, projected, passed through one transformer layer, and decoded by the <em>same</em> output head to predict <code>x_{t+2}</code>. Gloeckle et al.'s original form is simpler and more parallel — <code>n</code> independent heads straight off <code>h_t</code>, no chaining — but the sequential version keeps the causal chain intact, which is what makes it a usable drafter later.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The math in three lines</h2>
+    <div class="math">
+      L &nbsp;= L_main + <b>λ</b> · Σ_k L_MTP^(k) <span class="c">&nbsp;&nbsp;// k = 1 for one extra token; DeepSeek-V3 uses k=1, Gloeckle et al. up to 4</span><br>
+      h_t^(k) = Block_k( W_k · [ RMSNorm(h_t^(k−1)) ; RMSNorm(Emb(x_{t+k})) ] ) <span class="c">&nbsp;&nbsp;// h_t^(0) is the trunk output</span><br>
+      p(x_{t+k+1} | ·) = softmax( W_out · h_t^(k) ) <span class="c">&nbsp;&nbsp;// W_out shared with the main head</span>
+    </div>
+    <p style="margin-top:12px"><b>λ is the only knob.</b> DeepSeek-V3 uses 0.3 for the first 10T tokens and 0.1 after; Nemotron 3 Super uses 0.3 throughout SFT. The MTP block is one layer out of 60–90, so the parameter and FLOP overhead is a few percent.</p>
+  </section>
+
+  <section>
+    <h2>Why it is kept</h2>
+    <ul class="facts">
+      <li><b>Denser supervision.</b> Every position now yields two gradients instead of one, and the second one asks the representation to be usable two steps out — a mild pressure to “plan.” Gloeckle et al. report the effect grows with model size: for 13B, +12% on HumanEval and +17% on MBPP with four heads, and no gain (sometimes loss) at small sizes. DeepSeek-V3 reports consistent improvements across benchmarks from a single MTP module.</li>
+      <li><b>Free speculative decoding.</b> At inference the MTP head is a draft model that shares the trunk: it proposes <code>x_{t+2}</code> for the price of one small block, and the main model verifies the proposal in the next forward pass. DeepSeek-V3: the second token is accepted <b>85–90%</b> of the time across domains, giving about <b>1.8×</b> tokens per second. No separate drafter to train, serve, or keep in sync.</li>
+      <li><b>It is inside the weights.</b> A separate EAGLE-style drafter has to be retrained every time the main model changes; an MTP head is part of the checkpoint and can be re-healed with a short, cheap pass.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Fig 2 · What happens at inference</h2>
+    <figure>
+      <div class="scroller">
+      <svg viewBox="0 0 760 250" role="img" aria-label="Inference timeline. Step one: a main-model forward pass at position t emits the next token a from the output head and a draft b for the token after from the MTP head. Step two: the main model runs one forward pass over both a and b. If its own prediction at the position after a equals b, both tokens are accepted and two tokens were produced for one pass. If not, b is discarded, the main model's token is kept, and generation continues from there.">
+        <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <text class="sh" x="20" y="24">step 1 · one main forward pass</text>
+        <rect class="bg" x="20" y="36" width="170" height="34" rx="5"/><text class="st" x="105" y="57" text-anchor="middle">trunk at position t</text>
+        <line class="edge" x1="190" y1="53" x2="228" y2="53"/>
+        <rect class="bx" x="230" y="36" width="130" height="34" rx="5"/><text class="st" x="295" y="57" text-anchor="middle">output head → a</text>
+        <line class="edge k" x1="105" y1="70" x2="105" y2="98"/>
+        <rect class="bk" x="20" y="100" width="170" height="34" rx="5"/><text class="stk" x="105" y="121" text-anchor="middle">MTP head → draft b</text>
+        <text class="st2" x="200" y="121">for x_{t+2}, guessed before a is even fed back</text>
+
+        <text class="sh" x="20" y="176">step 2 · one main forward pass over [a, b]</text>
+        <rect class="bg" x="20" y="188" width="200" height="34" rx="5"/><text class="st" x="120" y="209" text-anchor="middle">trunk sees a and b together</text>
+        <line class="edge" x1="220" y1="205" x2="258" y2="205"/>
+        <rect class="ba" x="260" y="188" width="200" height="34" rx="17"/><text class="sta" x="360" y="209" text-anchor="middle">main's prediction after a == b ?</text>
+        <line class="edge k" x1="460" y1="196" x2="500" y2="196"/>
+        <rect class="bk" x="502" y="180" width="238" height="30" rx="5"/><text class="stk" x="621" y="199" text-anchor="middle">yes → accept both · 2 tokens / pass</text>
+        <line class="edge a" x1="460" y1="214" x2="500" y2="228"/>
+        <rect class="bc" x="502" y="216" width="238" height="30" rx="5"/><text class="st2" x="621" y="235" text-anchor="middle">no → drop b, keep main's token · 1 / pass</text>
+      </svg>
+      </div>
+      <figcaption>Verification is exact: the accepted sequence is distributed exactly as the main model would have sampled it, because the main model's own prediction is what decides. Throughput scales with the <b>acceptance rate</b>, which is why that — not the draft's standalone accuracy — is the number reports quote. Chaining more MTP steps drafts more tokens per pass but each additional draft is accepted less often.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Where it appears in the reports</h2>
+    <div class="scroller">
+    <table>
+      <thead><tr><th>Model</th><th>Form</th><th>Loss weight</th><th>Inference use</th><th>Post-training note</th></tr></thead>
+      <tbody>
+        <tr><td>Gloeckle et al. 2024 (Meta)</td><td>n independent heads off h_t, no chaining; n = 4 best for code</td><td>equal to main</td><td>self-speculative decoding, up to 3× faster</td><td>gains appear only at scale (≥ 7B); helps bytes and code most</td></tr>
+        <tr><td>DeepSeek-V3</td><td>1 sequential MTP module (1 layer, shared head, shared embedding)</td><td>0.3 → 0.1 after 10T tokens</td><td>2nd-token acceptance 85–90%, ≈1.8× TPS</td><td>kept through post-training; the form everyone copied</td></tr>
+        <tr><td>Nemotron 3 Super</td><td>2 MTP layers with shared parameters</td><td>0.3 aux loss during SFT</td><td>native speculative decoding</td><td>final <b>MTP healing</b> stage: heads retrained on RLVR prompts with the backbone frozen, because RL moved the trunk and acceptance collapsed</td></tr>
+        <tr><td>Kimi K3</td><td>pretrained MTP layer</td><td>—</td><td>fine-tuned into an EAGLE-3-style draft: target frozen, 7-step unroll, features from 1st / 4th / last blocks</td><td>trained on the acceptance-rate loss −log Σ min(p, q) directly instead of a KL surrogate; QAT-matched to serving precision</td></tr>
+        <tr><td>DeepSeek V4</td><td>MTP retained from V3</td><td>—</td><td>speculative decoding; also used inside RL rollouts</td><td>rollout engine relies on it; FP4 QAT applied so sampling matches deployment</td></tr>
+        <tr><td>Gemma 4</td><td>autoregressive MTP drafter fed the main model's activations and KV cache</td><td>—</td><td>speculative decoding on-device</td><td>shipped as a separate drafter checkpoint</td></tr>
+        <tr><td>GLM-5</td><td>MTP in the model</td><td>—</td><td>used in the RL rollout engine (slime) to cut tail latency for small-batch decoding</td><td>an infra reason to keep it: RL rollouts are exactly the small-batch regime where drafting pays most</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="foot">Nemotron, Kimi and DeepSeek V4 stage details are on the <a href="/post-training-diff.html">LLM report diff</a>.</p>
+  </section>
+
+  <section>
+    <h2>Pitfalls</h2>
+    <ul class="facts">
+      <li><b>RL breaks the draft.</b> Any stage that moves the trunk — RLVR especially — lowers acceptance because the head was trained against the old trunk. Budget a healing pass after post-training, or the speedup quietly disappears in the deployed model.</li>
+      <li><b>Acceptance depends on the sampling distribution.</b> A draft tuned for greedy decoding accepts less at temperature 1, and vice versa; Kimi K3's choice to optimize −log Σ min(p, q) at temperature 1 is a response to exactly this.</li>
+      <li><b>Only pays when decoding is memory-bound.</b> Speculative decoding trades extra compute for fewer weight reads. At large serving batch sizes the main model is already compute-bound and the draft adds cost without saving time.</li>
+      <li><b>Small models may lose.</b> Gloeckle et al. found MTP hurt some benchmarks below ~1B; the training-signal argument is a scale story.</li>
+      <li><b>Parallel vs sequential is not cosmetic.</b> Independent heads predict <code>x_{t+2}</code> without knowing <code>x_{t+1}</code>, so their drafts are less coherent; the sequential module conditions on it, which is why the DeepSeek form is the one used for drafting.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="src">
+      <div><a href="https://arxiv.org/abs/2404.19737">Better &amp; Faster Large Language Models via Multi-token Prediction</a> — Gloeckle et al., 2024 <span>· <a href="https://www.alphaxiv.org/abs/2404.19737">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2412.19437">DeepSeek-V3 Technical Report</a>, §2.2 (MTP) and §5.4.3 (acceptance rate) <span>· <a href="https://www.alphaxiv.org/abs/2412.19437">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2503.01840">EAGLE-3</a> — the separate-drafter design Kimi K3 converts its MTP layer into <span>· <a href="https://www.alphaxiv.org/abs/2503.01840">alphaXiv</a></span></div>
+      <div><a href="https://sebastianraschka.com/llm-architecture-gallery/mtp/">Raschka · LLM Architecture Gallery · MTP</a> — parallel vs sequential forms across DeepSeek-V3, Qwen3-Next, Step 3.5 Flash, Nemotron <span>· explainer</span></div>
+      <div><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf">Nemotron 3 Super report</a> §2.1.2, §3.1, §3.2 (MTP healing) · <a href="https://arxiv.org/abs/2607.24653">Kimi K3 report</a> §4.1.4 (draft fine-tuning) · <a href="https://arxiv.org/abs/2606.19348">DeepSeek-V4 report</a> · <a href="https://arxiv.org/abs/2607.02770">Gemma 4 report</a> §2.6</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
