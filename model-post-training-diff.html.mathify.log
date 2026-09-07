@@ -1,0 +1,48 @@
+≤100k
+    → \le 100\text{k}
+β = 0.001
+    → \beta = 0.001
+γ = 0.001
+    → \gamma = 0.001
+≥0.75
+    → \ge 0.75
+β 1e-5
+    → \beta 1\times 10^{-5}
+σ
+    → \sigma
+λ
+    → \lambda
+b₀
+    → b_{0}
+τ·b₀
+    → \tau \cdot b_{0}
+τ
+    → \tau
+clip(log π_teacher / π_student, ±R_max)
+    → \operatorname{clip}(\log \pi _{\text{teacher}} / \pi _{\text{student}}, \pm R_{\text{max}})
+(β₃ 0.99, α 8)
+    → (\beta _{3} 0.99, \alpha 8)
+d=4096
+    → d=4096
+Σ_i w_i · KL(π_θ ‖ π_Ei)
+    → \sum _{i} w_{i} \cdot \mathrm{KL}(\pi _{\theta} \| \pi _{E_i})
+ρ = π_train/π_infer
+    → \rho = \pi _{\text{train}}/\pi _{\text{infer}}
+[1/β, β]
+    → [1/\beta , \beta ]
+(β = 2)
+    → (\beta = 2)
+ε_low 0.2
+    → \varepsilon _{\text{low}} 0.2
+ε_high 0.28
+    → \varepsilon _{\text{high}} 0.28
+[1−ε_l, 1+ε_h]
+    → [1-\varepsilon _{l}, 1+\varepsilon _{h}]
+τ
+    → \tau
+k=5
+    → k=5
+sg[log π_teacher(y_t) / π_train(y_t)]
+    → \operatorname{sg}[\log \pi _{\text{teacher}}(y_{t}) / \pi _{\text{train}}(y_{t})]
+τ
+    → \tau

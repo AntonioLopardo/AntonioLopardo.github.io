@@ -16,6 +16,9 @@
   currentColor strokes; teal = the thing being explained, amber = the loss / the decision, grey = context.
 -->
 <link rel="stylesheet" href="/notes/note.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
 </head>
 <body>
 <div class="page">
@@ -78,11 +81,14 @@
   <section>
     <h2>The math in three lines</h2>
     <div class="math">
-      L &nbsp;= L_main + <b>λ</b> · Σ_k L_MTP^(k) <span class="c">&nbsp;&nbsp;// k = 1 for one extra token; DeepSeek-V3 uses k=1, Gloeckle et al. up to 4</span><br>
-      h_t^(k) = Block_k( W_k · [ RMSNorm(h_t^(k−1)) ; RMSNorm(Emb(x_{t+k})) ] ) <span class="c">&nbsp;&nbsp;// h_t^(0) is the trunk output</span><br>
-      p(x_{t+k+1} | ·) = softmax( W_out · h_t^(k) ) <span class="c">&nbsp;&nbsp;// W_out shared with the main head</span>
+      \[L \;=\; L_{\text{main}} \;+\; \lambda\cdot\sum_{k} L^{(k)}_{\text{MTP}}\]
+      <span class="c">// \(k = 1\) for one extra token; DeepSeek-V3 uses \(k = 1\), Gloeckle et al. up to 4</span>
+      \[h^{(k)}_t \;=\; \operatorname{Block}_k\!\Big(W_k\,\big[\,\operatorname{RMSNorm}\big(h^{(k-1)}_t\big)\,;\ \operatorname{RMSNorm}\big(\operatorname{Emb}(x_{t+k})\big)\,\big]\Big)\]
+      <span class="c">// \(h_{t}^{(0)}\) is the trunk output</span>
+      \[p\big(x_{t+k+1}\mid\cdot\big) \;=\; \operatorname{softmax}\big(W_{\text{out}}\, h^{(k)}_t\big)\]
+      <span class="c">// \(W_{\text{out}}\) is shared with the main head</span>
     </div>
-    <p style="margin-top:12px"><b>λ is the only knob.</b> DeepSeek-V3 uses 0.3 for the first 10T tokens and 0.1 after; Nemotron 3 Super uses 0.3 throughout SFT. The MTP block is one layer out of 60–90, so the parameter and FLOP overhead is a few percent.</p>
+    <p style="margin-top:12px"><b>\(\lambda\) is the only knob.</b> DeepSeek-V3 uses 0.3 for the first 10T tokens and 0.1 after; Nemotron 3 Super uses 0.3 throughout SFT. The MTP block is one layer out of 60–90, so the parameter and FLOP overhead is a few percent.</p>
   </section>
 
   <section>
@@ -128,10 +134,10 @@
     <table>
       <thead><tr><th>Model</th><th>Form</th><th>Loss weight</th><th>Inference use</th><th>Post-training note</th></tr></thead>
       <tbody>
-        <tr><td>Gloeckle et al. 2024 (Meta)</td><td>n independent heads off h_t, no chaining; n = 4 best for code</td><td>equal to main</td><td>self-speculative decoding, up to 3× faster</td><td>gains appear only at scale (≥ 7B); helps bytes and code most</td></tr>
-        <tr><td>DeepSeek-V3</td><td>1 sequential MTP module (1 layer, shared head, shared embedding)</td><td>0.3 → 0.1 after 10T tokens</td><td>2nd-token acceptance 85–90%, ≈1.8× TPS</td><td>kept through post-training; the form everyone copied</td></tr>
+        <tr><td>Gloeckle et al. 2024 (Meta)</td><td>n independent heads off \(h_{t}\), no chaining; \(n = 4\) best for code</td><td>equal to main</td><td>self-speculative decoding, up to 3× faster</td><td>gains appear only at scale \((\ge 7\text{B})\); helps bytes and code most</td></tr>
+        <tr><td>DeepSeek-V3</td><td>1 sequential MTP module (1 layer, shared head, shared embedding)</td><td>0.3 → 0.1 after 10T tokens</td><td>2nd-token acceptance 85–90%, \(\approx 1.8\times\) TPS</td><td>kept through post-training; the form everyone copied</td></tr>
         <tr><td>Nemotron 3 Super</td><td>2 MTP layers with shared parameters</td><td>0.3 aux loss during SFT</td><td>native speculative decoding</td><td>final <b>MTP healing</b> stage: heads retrained on RLVR prompts with the backbone frozen, because RL moved the trunk and acceptance collapsed</td></tr>
-        <tr><td>Kimi K3</td><td>pretrained MTP layer</td><td>—</td><td>fine-tuned into an EAGLE-3-style draft: target frozen, 7-step unroll, features from 1st / 4th / last blocks</td><td>trained on the acceptance-rate loss −log Σ min(p, q) directly instead of a KL surrogate; QAT-matched to serving precision</td></tr>
+        <tr><td>Kimi K3</td><td>pretrained MTP layer</td><td>—</td><td>fine-tuned into an EAGLE-3-style draft: target frozen, 7-step unroll, features from 1st / 4th / last blocks</td><td>trained on the acceptance-rate loss \(-\log \Sigma \min (p, q)\) directly instead of a KL surrogate; QAT-matched to serving precision</td></tr>
         <tr><td>DeepSeek V4</td><td>MTP retained from V3</td><td>—</td><td>speculative decoding; also used inside RL rollouts</td><td>rollout engine relies on it; FP4 QAT applied so sampling matches deployment</td></tr>
         <tr><td>Gemma 4</td><td>autoregressive MTP drafter fed the main model's activations and KV cache</td><td>—</td><td>speculative decoding on-device</td><td>shipped as a separate drafter checkpoint</td></tr>
         <tr><td>GLM-5</td><td>MTP in the model</td><td>—</td><td>used in the RL rollout engine (slime) to cut tail latency for small-batch decoding</td><td>an infra reason to keep it: RL rollouts are exactly the small-batch regime where drafting pays most</td></tr>
@@ -145,7 +151,7 @@
     <h2>Pitfalls</h2>
     <ul class="facts">
       <li><b>RL breaks the draft.</b> Any stage that moves the trunk — RLVR especially — lowers acceptance because the head was trained against the old trunk. Budget a healing pass after post-training, or the speedup quietly disappears in the deployed model.</li>
-      <li><b>Acceptance depends on the sampling distribution.</b> A draft tuned for greedy decoding accepts less at temperature 1, and vice versa; Kimi K3's choice to optimize −log Σ min(p, q) at temperature 1 is a response to exactly this.</li>
+      <li><b>Acceptance depends on the sampling distribution.</b> A draft tuned for greedy decoding accepts less at temperature 1, and vice versa; Kimi K3's choice to optimize \(-\log \Sigma \min (p, q)\) at temperature 1 is a response to exactly this.</li>
       <li><b>Only pays when decoding is memory-bound.</b> Speculative decoding trades extra compute for fewer weight reads. At large serving batch sizes the main model is already compute-bound and the draft adds cost without saving time.</li>
       <li><b>Small models may lose.</b> Gloeckle et al. found MTP hurt some benchmarks below ~1B; the training-signal argument is a scale story.</li>
       <li><b>Parallel vs sequential is not cosmetic.</b> Independent heads predict <code>x_{t+2}</code> without knowing <code>x_{t+1}</code>, so their drafts are less coherent; the sequential module conditions on it, which is why the DeepSeek form is the one used for drafting.</li>

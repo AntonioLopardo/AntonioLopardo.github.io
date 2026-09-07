@@ -25,6 +25,9 @@
   .ledge{stroke:currentColor; stroke-width:1.3; fill:none; marker-end:url(#la);} .lrew{stroke:var(--draw-line); stroke-width:1.3; fill:none; stroke-dasharray:4 3; marker-end:url(#lb);} .rewhead{fill:var(--draw-line);}
   table.small{min-width:720px;}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
 </head>
 <body>
 <div class="page">
@@ -82,7 +85,7 @@
 <polyline class="lrew" points="73,157 73,120 200,120 200,155"/><text class="lr" x="136" y="115" text-anchor="middle">1 if matches majority</text>
 <polyline class="lrew" points="40,157 40,70 200,70 200,50"/><text class="lr" x="120" y="65" text-anchor="middle">peak at 50% + repetition penalty</text>
 <text class="lt2" x="414" y="228" text-anchor="end">R-Zero</text></svg></div>
-      <ul class="facts"><li>Two copies of the base model co-evolve with GRPO. Challenger is rewarded when Solver's accuracy is ≈50% — maximum uncertainty.</li><li>No verifier: the label is the Solver's own majority vote over 10 samples. Keep only questions with 3–7 of 10 agreeing.</li><li>Qwen3-4B-Base: +6.5 math, +7.5 general reasoning after three iterations.</li><li>Collapses: pseudo-label accuracy decays 79% → 63% by iteration 3; 0.6B models collapse after one round.</li></ul></div><div class="card sp"><div class="sph"><h3>SPICE <span class="yr">Oct 2025</span></h3><span class="sl"><a href="https://arxiv.org/abs/2510.24684">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.24684">alphaXiv</a></span></div>
+      <ul class="facts"><li>Two copies of the base model co-evolve with GRPO. Challenger is rewarded when Solver's accuracy is \(\approx 50\%\) — maximum uncertainty.</li><li>No verifier: the label is the Solver's own majority vote over 10 samples. Keep only questions with 3–7 of 10 agreeing.</li><li>Qwen3-4B-Base: +6.5 math, +7.5 general reasoning after three iterations.</li><li>Collapses: pseudo-label accuracy decays 79% → 63% by iteration 3; 0.6B models collapse after one round.</li></ul></div><div class="card sp"><div class="sph"><h3>SPICE <span class="yr">Oct 2025</span></h3><span class="sl"><a href="https://arxiv.org/abs/2510.24684">arXiv</a> · <a href="https://www.alphaxiv.org/abs/2510.24684">alphaXiv</a></span></div>
       <div class="scroller"><svg viewBox="0 0 420 236" role="img" aria-label="SPICE self-play loop">
 <defs><marker id="la" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker><marker id="lb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="rewhead"/></marker></defs>
 <rect class="lg" x="14" y="14" width="118" height="34" rx="5"/><text class="lt2" x="73" y="35" text-anchor="middle">corpus documents</text>
@@ -103,9 +106,12 @@
   <section>
     <h2>The math in three lines</h2>
     <div class="math">
-      solver:&nbsp;&nbsp;&nbsp; maximize E_x~proposer [ r_solver(y, x) ] with GRPO <span class="c">// r = 1 if verified correct, else 0</span><br>
-      proposer: maximize E_x [ f( p̂(x) ) ] − repetition penalty <span class="c">// p̂ = solver's empirical success rate on x; f peaks at p̂ = ½</span><br>
-      label(x) = executor(x) <span class="c">| majority-vote over solver samples | extracted from the source document</span> <span class="c">// the verifier slot — the whole design question</span>
+      \[\text{solver:}\qquad \max\ \mathbb{E}_{x\sim\text{proposer}}\big[\,r_{\text{solver}}(y,x)\,\big]\ \ \text{with GRPO}\]
+      <span class="c">// \(r = 1\) if verified correct, else 0</span>
+      \[\text{proposer:}\qquad \max\ \mathbb{E}_{x}\big[\,f\big(\hat p(x)\big)\,\big]\;-\;\text{repetition penalty}\]
+      <span class="c">// \(\hat{p}\) = the solver's empirical success rate on x; f peaks at \(\hat{p} = \tfrac12\)</span>
+      \[\text{label}(x) \;=\; \text{executor}(x)\ \ \big|\ \ \text{majority vote over solver samples}\ \ \big|\ \ \text{extracted from the source document}\]
+      <span class="c">// the verifier slot — the whole design question</span>
     </div>
     <p style="margin-top:12px"><b>The 50% target is the shared idea.</b> R-Zero rewards the Challenger for questions the Solver gets right about half the time and adds a difficulty band (keep only 3–7 of 10 agreeing); SPICE uses a variance-style reward with the same peak. Absolute Zero calls the same thing <em>learnability</em>. It is the self-play form of the difficulty filters every model report uses — Phi-4's “teachable” seeds, OLMo's 62.5% pass-rate cutoff, Nemotron's “drop what the SFT model always solves.”</p>
   </section>
