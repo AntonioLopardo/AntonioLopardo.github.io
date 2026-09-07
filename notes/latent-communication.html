@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
 <!--
-  Method note 03 — follows the template comment in mtp.html, but split into tabs (.tabs/.panel in note.css;
-  the hash selects the tab, so /notes/latent-communication.html#diffusion deep-links).
+  Method note 03 — follows the template comment in mtp.html, but split into tabs (the shared .tabs/.panel component in note.css, same look and
+  script as model-post-training-diff.html and post-training-algorithms.html; the hash selects the tab, so #diffusion deep-links).
   header → tabs: mechanism (Fig 1 + math) · why it works (kept + Fig 2) · papers (table) · Mostik · diffusion (Fig 3 + table) · pitfalls · sources.
   One shared <svg> at the top of .page holds the arrowhead marker, because a marker inside a hidden panel does not resolve.
   teal = the bridge / the thing being explained, amber = the loss / the claim under test, grey = frozen context.
@@ -31,17 +31,9 @@
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs></svg>
 
-  <nav class="tabs" role="tablist" aria-label="Sections">
-    <button class="tab" role="tab" id="tab-mechanism" data-panel="mechanism" aria-selected="true" aria-controls="mechanism">Mechanism</button>
-    <button class="tab" role="tab" id="tab-lineage" data-panel="lineage" aria-selected="false" aria-controls="lineage" tabindex="-1">Why it works</button>
-    <button class="tab" role="tab" id="tab-papers" data-panel="papers" aria-selected="false" aria-controls="papers" tabindex="-1">Papers</button>
-    <button class="tab" role="tab" id="tab-mostik" data-panel="mostik" aria-selected="false" aria-controls="mostik" tabindex="-1">Mostik</button>
-    <button class="tab" role="tab" id="tab-diffusion" data-panel="diffusion" aria-selected="false" aria-controls="diffusion" tabindex="-1">Diffusion</button>
-    <button class="tab" role="tab" id="tab-pitfalls" data-panel="pitfalls" aria-selected="false" aria-controls="pitfalls" tabindex="-1">Pitfalls</button>
-    <button class="tab" role="tab" id="tab-sources" data-panel="sources" aria-selected="false" aria-controls="sources" tabindex="-1">Sources</button>
-  </nav>
+  <nav class="tabs" role="tablist" aria-label="Sections"><button role="tab" id="t-mechanism" aria-controls="p-mechanism" aria-selected="true">Mechanism</button><button role="tab" id="t-lineage" aria-controls="p-lineage" aria-selected="false">Why it works</button><button role="tab" id="t-papers" aria-controls="p-papers" aria-selected="false">Papers</button><button role="tab" id="t-mostik" aria-controls="p-mostik" aria-selected="false">Mostik</button><button role="tab" id="t-diffusion" aria-controls="p-diffusion" aria-selected="false">Diffusion</button><button role="tab" id="t-pitfalls" aria-controls="p-pitfalls" aria-selected="false">Pitfalls</button><button role="tab" id="t-sources" aria-controls="p-sources" aria-selected="false">Sources</button></nav>
 
-  <div class="panel" id="mechanism" role="tabpanel" aria-labelledby="tab-mechanism">
+  <div class="panel" id="p-mechanism" role="tabpanel" aria-labelledby="t-mechanism">
   <section>
     <h2>Fig 1 · The channel</h2>
     <figure>
@@ -100,7 +92,7 @@
   </section>
   </div>
 
-  <div class="panel" id="lineage" role="tabpanel" aria-labelledby="tab-lineage">
+  <div class="panel" id="p-lineage" role="tabpanel" aria-labelledby="t-lineage" hidden>
   <section>
     <h2>Why it is kept</h2>
     <ul class="facts">
@@ -175,7 +167,7 @@
   </section>
   </div>
 
-  <div class="panel" id="papers" role="tabpanel" aria-labelledby="tab-papers">
+  <div class="panel" id="p-papers" role="tabpanel" aria-labelledby="t-papers" hidden>
   <section>
     <h2>The papers</h2>
     <div class="scroller">
@@ -204,7 +196,7 @@
   </section>
   </div>
 
-  <div class="panel" id="mostik" role="tabpanel" aria-labelledby="tab-mostik">
+  <div class="panel" id="p-mostik" role="tabpanel" aria-labelledby="t-mostik" hidden>
   <section>
     <h2>Mostik against the literature</h2>
     <ul class="facts">
@@ -216,7 +208,7 @@
   </section>
   </div>
 
-  <div class="panel" id="diffusion" role="tabpanel" aria-labelledby="tab-diffusion">
+  <div class="panel" id="p-diffusion" role="tabpanel" aria-labelledby="t-diffusion" hidden>
   <section>
     <h2>Two readings of “AR to diffusion”</h2>
     <p>“Converting” can mean rewriting the AR weights into a diffusion LM, or keeping the AR model frozen and attaching a diffusion decoder that reads its latents. The bridge design maps onto the second cleanly, and that version already exists: it is <b>DFlash</b>, the fastest lossless speculative decoder published, and it is the <a href="/notes/mtp.html">MTP head</a> widened from one token to a block.</p>
@@ -297,7 +289,7 @@
   </section>
   </div>
 
-  <div class="panel" id="pitfalls" role="tabpanel" aria-labelledby="tab-pitfalls">
+  <div class="panel" id="p-pitfalls" role="tabpanel" aria-labelledby="t-pitfalls" hidden>
   <section>
     <h2>Pitfalls</h2>
     <ul class="facts">
@@ -311,7 +303,7 @@
   </section>
   </div>
 
-  <div class="panel" id="sources" role="tabpanel" aria-labelledby="tab-sources">
+  <div class="panel" id="p-sources" role="tabpanel" aria-labelledby="t-sources" hidden>
   <section>
     <h2>Sources</h2>
     <div class="src">
@@ -333,23 +325,18 @@
 </div>
 <script>
 (function(){
-  var tabs=[].slice.call(document.querySelectorAll('.tab'));
-  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
   function show(id, setHash){
-    if(!panels.some(function(p){return p.id===id})) id=panels[0].id;
-    panels.forEach(function(p){p.hidden=(p.id!==id);});
-    tabs.forEach(function(t){var on=t.getAttribute('data-panel')===id; t.setAttribute('aria-selected',on?'true':'false'); t.tabIndex=on?0:-1;});
-    if(setHash && history.replaceState) history.replaceState(null,'','#'+id);
+    tabs.forEach(function(t){ var on = t.id === id; t.setAttribute("aria-selected", on ? "true" : "false"); var p = document.getElementById(t.getAttribute("aria-controls")); if (p) p.hidden = !on; });
+    var slug = id.replace(/^t-/, "");
+    if (setHash) { try { history.replaceState(null, "", "#" + slug); } catch(e) { location.hash = slug; } }
+    try { localStorage.setItem("lc-tab", id); } catch(e) {}
   }
-  tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){show(t.getAttribute('data-panel'),true);});
-    t.addEventListener('keydown',function(e){
-      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d) return;
-      var n=tabs[(i+d+tabs.length)%tabs.length]; n.focus(); show(n.getAttribute('data-panel'),true); e.preventDefault();
-    });
-  });
-  window.addEventListener('hashchange',function(){show(location.hash.slice(1),false);});
-  show(location.hash.slice(1)||panels[0].id,false);
+  function fromHash(){ var h = (location.hash || "").replace(/^#/, ""); return (h && document.getElementById("t-" + h)) ? "t-" + h : null; }
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.id, true); window.scrollTo({top: document.querySelector(".tabs").offsetTop - 8}); }); });
+  window.addEventListener("hashchange", function(){ var id = fromHash(); if (id) show(id, false); });
+  var initial = fromHash(); if (!initial) { try { initial = localStorage.getItem("lc-tab"); } catch(e) {} }
+  if (initial && document.getElementById(initial)) show(initial, false);
 })();
 </script>
 </body>
