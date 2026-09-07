@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Latent Communication</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
+<!--
+  Method note 03 — follows the template comment in mtp.html.
+  header → Fig 1 (the channel) → the math in three lines → why it is kept → Fig 2 (lineage) →
+  the papers (table) → Mostik against the literature → pitfalls → sources.
+  teal = the bridge / the thing being explained, amber = the loss / the claim under test, grey = frozen context.
+-->
+<link rel="stylesheet" href="/notes/note.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="eyebrow"><a href="/notes/">Notes</a> · Method note 03</p>
+    <h1>Latent communication between models</h1>
+    <p class="lede">Two language models normally talk through text: the first decodes its state into tokens, the second re-encodes them. Latent communication skips the round trip. The sender's <b>hidden states or KV cache</b> go straight into the receiver through a <b>small bridge</b>, and both models stay frozen. Fifteen papers since 2024 do a version of this at 0.5B–14B; a startup, <a href="https://mostik.ai/read-more">Mostik</a>, now claims it from a 753B sender into a 4B receiver. What is sent, how it is aligned, what it buys, and what is still open.</p>
+  </header>
+
+  <section>
+    <h2>Fig 1 · The channel</h2>
+    <figure>
+      <div class="scroller">
+      <svg viewBox="0 0 760 340" role="img" aria-label="Two frozen transformers side by side, a sender on the left and a receiver on the right. Along the top, the text channel: the sender's output head decodes tokens m1 to mT, at most about 17 bits per step, which the receiver's embedding table re-encodes. Through the middle, the latent channel: the sender's layer-k hidden states or KV cache pass through a small trained bridge and are injected into the receiver at layer j by addition, by prepending to the KV cache, or by cross-attention. The only trainable part is the bridge; the loss is the receiver's next-token cross-entropy on the answer.">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <!-- text channel, top -->
+        <text class="st2" x="380" y="22" text-anchor="middle">text channel · the sender decodes, the receiver re-encodes; whatever is not in the tokens is gone</text>
+        <line class="edge" x1="125" y1="110" x2="125" y2="74"/>
+        <rect class="bc" x="70" y="40" width="110" height="32" rx="4"/><text class="st2" x="125" y="60" text-anchor="middle">output head</text>
+        <line class="edge" x1="180" y1="56" x2="248" y2="56"/>
+        <rect class="bc" x="250" y="40" width="260" height="32" rx="4"/><text class="st" x="380" y="60" text-anchor="middle">m₁ m₂ … m_T · ≤ 17 bits per step</text>
+        <line class="edge" x1="510" y1="56" x2="578" y2="56"/>
+        <rect class="bc" x="580" y="40" width="110" height="32" rx="4"/><text class="st2" x="635" y="60" text-anchor="middle">embedding table</text>
+        <line class="edge" x1="635" y1="72" x2="635" y2="108"/>
+        <!-- sender -->
+        <rect class="bg" x="30" y="110" width="190" height="140" rx="6"/>
+        <text class="sh" x="125" y="132" text-anchor="middle">sender S · frozen</text>
+        <rect class="bx" x="45" y="146" width="160" height="22" rx="3"/><text class="st2" x="125" y="161" text-anchor="middle">layer L</text>
+        <rect class="bk" x="45" y="180" width="160" height="22" rx="3"/><text class="stk" x="125" y="195" text-anchor="middle">layer k · tapped</text>
+        <rect class="bx" x="45" y="214" width="160" height="22" rx="3"/><text class="st2" x="125" y="229" text-anchor="middle">layer 1</text>
+        <!-- receiver -->
+        <rect class="bg" x="540" y="110" width="190" height="140" rx="6"/>
+        <text class="sh" x="635" y="132" text-anchor="middle">receiver R · frozen</text>
+        <rect class="bx" x="555" y="146" width="160" height="22" rx="3"/><text class="st2" x="635" y="161" text-anchor="middle">layer L′</text>
+        <rect class="bk" x="555" y="180" width="160" height="22" rx="3"/><text class="stk" x="635" y="195" text-anchor="middle">layer j · injected</text>
+        <rect class="bx" x="555" y="214" width="160" height="22" rx="3"/><text class="st2" x="635" y="229" text-anchor="middle">layer 1</text>
+        <!-- latent channel, middle -->
+        <text class="st2" x="380" y="156" text-anchor="middle">h_k or (K_k, V_k) · d numbers per position</text>
+        <line class="edge k" x1="205" y1="191" x2="268" y2="191"/>
+        <rect class="bk" x="270" y="166" width="220" height="50" rx="5"/>
+        <text class="stk" x="380" y="186" text-anchor="middle">bridge f_θ</text>
+        <text class="st2" x="380" y="204" text-anchor="middle">linear · cross-attn · KV fuser</text>
+        <line class="edge k" x1="490" y1="191" x2="553" y2="191"/>
+        <text class="st2" x="380" y="236" text-anchor="middle">add · prepend to the KV cache · cross-attend</text>
+        <rect class="ba" x="280" y="252" width="200" height="26" rx="13"/><text class="sta" x="380" y="269" text-anchor="middle">CE on the answer → ∇θ only</text>
+        <!-- io -->
+        <line class="edge" x1="125" y1="300" x2="125" y2="252"/><text class="st2" x="125" y="320" text-anchor="middle">prompt x</text>
+        <line class="edge" x1="635" y1="250" x2="635" y2="298"/><text class="st" x="635" y="320" text-anchor="middle">answer y</text>
+      </svg>
+      </div>
+      <figcaption>The grey parts are two ordinary frozen models. The dashed top row is what every multi-agent system does today. The teal row is the addition: pick a layer of the sender, pass its states (or its keys and values) through a bridge, and inject them into a layer of the receiver. The three published ways to inject are adding into the residual stream, prepending to the receiver's KV cache, and letting the receiver cross-attend over the sender's states. The bridge is the only thing with gradients; in the training-free variants it is the identity or a closed-form rotation.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The math in three lines</h2>
+    <div class="math">
+      \[\text{text:}\quad m = \operatorname{decode}\!\big(h^{S}\big) \in V^{T},\qquad h^{R} = \operatorname{Enc}_{R}(m)\]
+      <span class="c">// one token per step, at most \(\log_2 |V| \approx 17\) bits; \(h^{S}_{k}\) holds \(d\) reals per position and is discarded</span>
+      \[\text{latent:}\quad \tilde h = f_{\theta}\!\big(h^{S}_{k}\big),\qquad h^{R}_{j} \leftarrow h^{R}_{j} + \tilde h \quad\text{or}\quad \mathrm{KV}^{R}_{j} \leftarrow \big[\,f_{\theta}(\mathrm{KV}^{S}_{k})\,;\,\mathrm{KV}^{R}_{j}\big] \quad\text{or}\quad h^{R}_{j} \leftarrow h^{R}_{j} + \operatorname{Attn}\!\big(h^{R}_{j},\, f_{\theta}(h^{S})\big)\]
+      <span class="c">// add (AC, SDE) · prepend to the cache (C2C, LatentMAS, KVComm, StateBridge) · cross-attend (Mixture of Thoughts, XBridge)</span>
+      \[\min_{\theta}\ \mathbb{E}_{(x,y)}\Big[-\log p_{R}\big(y \mid x,\ f_{\theta}(h^{S}(x))\big)\Big],\qquad \phi_{S},\ \phi_{R}\ \text{frozen}\]
+      <span class="c">// training-free special cases: \(f = \mathrm{Id}\) when S and R are the same model (AC, LatentMAS); \(f = W^{\star} = \arg\min_{W^{\top}W = I}\lVert W H^{S} - H^{R}\rVert_F\) fitted on paired states (StateBridge)</span>
+    </div>
+    <p style="margin-top:12px"><b>\(\theta\) is the only knob, and it is small.</b> Zero parameters when sender and receiver are the same model, about 1% of the combined pair in the Bicameral model, 3.8% of the receiver (264M) in XBridge. Everything else about the two models is untouched, which is the whole point: the bridge is retrained, not the models.</p>
+  </section>
+
+  <section>
+    <h2>Why it is kept</h2>
+    <ul class="facts">
+      <li><b>The text is a summary of the state, and the state carries more.</b> Hanna &amp; Ameisen show Qwen-3 holds a representation of a planned word (“accountant”) several tokens before writing it, and that this is what produces the “an” in front of it; the effect grows from 0.6B to 14B. Gurnee et al. find a small, shifting set of concepts the model is poised to say but does not (the “J-space”), which it can hold silently while the visible output continues. Both are the interpretability results the communication papers, and Mostik's page, lean on.</li>
+      <li><b>It beats the text hand-off in every paper that measures it.</b> Activation communication: +27% over text on coordination and reasoning tasks. Cache-to-Cache: 3–5 points over text. XBridge: better than text on all seven tasks for every model pair. StateBridge: best or tied on 22 of 26 model–task pairs, including against trained projectors.</li>
+      <li><b>No decoding of the message.</b> The receiver never waits for the sender to generate its report token by token: 2× faster in C2C, 11× lower latency in XBridge, under a quarter of the compute in activation communication, up to 24× with Interlat's compression. The sender's prefill is still paid, see the pitfalls.</li>
+      <li><b>The asymmetric case is the useful one.</b> A large model reads, a small model writes. That is LLM-to-SLM from 2024 (frozen large encoder, small fine-tuned decoder, up to 4× faster at 1–2 points cost), C2C's Qwen3-4B → Qwen3-0.6B pair, and the setup Mostik is selling.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Fig 2 · Why a cheap bridge should exist, and what got built on it</h2>
+    <figure>
+      <div class="scroller">
+      <svg viewBox="0 0 760 400" role="img" aria-label="Two columns of five boxes joined by arrows. Left, representation-alignment results: model stitching 2015 and 2021, relative representations 2023, convergent spaces with the Platonic hypothesis 2024 and vec2vec 2025, affine maps between residual streams 2025, and hidden states holding what text drops 2026. Right, the channels each result licenses: trained projectors and fusers, training-free alignment, cross-family bridges, big sender to small receiver, and Mostik's September 2026 claim, marked amber as unverified.">
+        <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <text class="st" x="20" y="24">why a cheap map should exist</text>
+        <text class="st" x="420" y="24">what gets built on it</text>
+        <!-- row 1 -->
+        <rect class="bg" x="20" width="340" y="40" width="320" height="58" rx="5"/>
+        <text class="sh" x="32" y="58">Model stitching</text>
+        <text class="st2" x="32" y="74">Lenc &amp; Vedaldi 2015 · Bansal et al. 2021</text>
+        <text class="st2" x="32" y="88">a linear layer joins two nets mid-way</text>
+        <line class="edge k" x1="360" y1="69" x2="398" y2="69"/>
+        <rect class="bk" x="400" y="40" width="340" height="58" rx="5"/>
+        <text class="stk" x="412" y="58">trained projector or fuser</text>
+        <text class="st2" x="412" y="74">LLM-to-SLM 2024 · C2C 2025 · Interlat 2025</text>
+        <text class="st2" x="412" y="88">Bicameral 2026 · θ is 1–4% of the receiver</text>
+        <!-- row 2 -->
+        <rect class="bg" x="20" width="340" y="110" width="320" height="58" rx="5"/>
+        <text class="sh" x="32" y="128">Relative representations</text>
+        <text class="st2" x="32" y="144">Moschella et al., ICLR 2023</text>
+        <text class="st2" x="32" y="158">angles to anchors agree; rotate to align</text>
+        <line class="edge k" x1="360" y1="139" x2="398" y2="139"/>
+        <rect class="bk" x="400" y="110" width="340" height="58" rx="5"/>
+        <text class="stk" x="412" y="128">training-free alignment</text>
+        <text class="st2" x="412" y="144">AC · LatentMAS · KVComm 2025 (same model)</text>
+        <text class="st2" x="412" y="158">StateBridge 2026: closed-form orthogonal W</text>
+        <!-- row 3 -->
+        <rect class="bg" x="20" width="340" y="180" width="320" height="58" rx="5"/>
+        <text class="sh" x="32" y="198">Convergent spaces</text>
+        <text class="st2" x="32" y="214">Platonic hypothesis, Huh 2024 · vec2vec, Jha 2025</text>
+        <text class="st2" x="32" y="228">spaces converge; unpaired translation works</text>
+        <line class="edge k" x1="360" y1="209" x2="398" y2="209"/>
+        <rect class="bk" x="400" y="180" width="340" height="58" rx="5"/>
+        <text class="stk" x="412" y="198">cross-family bridges</text>
+        <text class="st2" x="412" y="214">Mixture of Thoughts 2025 · Wormhole 2026</text>
+        <text class="st2" x="412" y="228">XBridge 2026 · rare, and always trained</text>
+        <!-- row 4 -->
+        <rect class="bg" x="20" width="340" y="250" width="320" height="58" rx="5"/>
+        <text class="sh" x="32" y="268">Affine maps between residual streams</text>
+        <text class="st2" x="32" y="284">Chen, Merullo, Stolfo &amp; Pavlick 2025</text>
+        <text class="st2" x="32" y="298">SAEs, probes, steering vectors cross sizes</text>
+        <line class="edge k" x1="360" y1="279" x2="398" y2="279"/>
+        <rect class="bk" x="400" y="250" width="340" height="58" rx="5"/>
+        <text class="stk" x="412" y="268">big sender, small receiver</text>
+        <text class="st2" x="412" y="284">LLM-to-SLM 2024 · large reads, small writes</text>
+        <text class="st2" x="412" y="298">C2C 2025: Qwen3-4B → Qwen3-0.6B</text>
+        <!-- row 5 -->
+        <rect class="bg" x="20" width="340" y="320" width="320" height="58" rx="5"/>
+        <text class="sh" x="32" y="338">Hidden states hold what the text drops</text>
+        <text class="st2" x="32" y="354">Hanna &amp; Ameisen 2026 · Gurnee et al. 2026</text>
+        <text class="st2" x="32" y="368">planned words, held concepts, more at scale</text>
+        <line class="edge a" x1="360" y1="349" x2="398" y2="349"/>
+        <rect class="ba" x="400" y="320" width="340" height="58" rx="5"/>
+        <text class="sta" x="412" y="338">Mostik, Sep 2026 · a claim, no paper</text>
+        <text class="st2" x="412" y="354">GLM-5.2 753B → Qwen-3.5 4B · small bridge</text>
+        <text class="st2" x="412" y="368">half the gap · 2.5× cheaper than a mid-size</text>
+      </svg>
+      </div>
+      <figcaption>The left column is the older representation-learning result that makes each channel plausible: two networks trained separately end up with spaces that a linear (often orthogonal) map joins. Stitching is the direct ancestor of the trained bridges; relative representations and Procrustes-style alignment are the ancestor of the training-free ones; the Platonic and vec2vec results are what make cross-family bridges credible; the affine-map paper is the cross-<em>size</em> result. The last row is the interpretability argument for why the channel carries anything worth sending, and the amber box is the claim this note is checking.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>The papers</h2>
+    <div class="scroller">
+    <table>
+      <thead><tr><th>Paper</th><th>What is sent</th><th>Bridge and fusion</th><th>Trained</th><th>Models</th><th>Against text</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://arxiv.org/abs/2310.06272">CIPHER</a> · Liu et al., ICLR 2024</td><td>expected embedding: the output distribution's weighted sum of the embedding table</td><td>none; concatenated as input</td><td>no</td><td>same model, debate setting</td><td>+0.5–5.0 points over natural-language debate on five reasoning tasks</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2402.16844">LLM-to-SLM</a> · Bergner et al., 2024</td><td>the large model's encoding of the whole prompt</td><td>projector; small model conditions on projected states</td><td>projector + small model; large model frozen</td><td>encoder LLM → small encoder-decoder or decoder-only</td><td>vs the LLM itself: up to 4× faster, 1–2 points lower</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2501.14082">Activation communication (AC)</a> · Ramesh &amp; Li, 2025</td><td>hidden state of the last token at a chosen layer</td><td>identity; added into the receiver at the same layer mid-forward</td><td>no</td><td>same model as sender and receiver</td><td>+27% on coordination and reasoning at under ¼ of the compute</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2509.21164">Mixture of Thoughts</a> · Fein-Ashley et al., 2025</td><td>hidden states of the top-K routed experts</td><td>interaction layers project every expert into one shared space; the primary expert cross-attends</td><td>router + interaction layers</td><td>heterogeneous open models, first cross-architecture method without pairwise translators</td><td>vs routing and aggregation baselines, in- and out-of-distribution</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2510.03215">Cache-to-Cache (C2C)</a> · ICLR 2026</td><td>the sender's whole KV cache</td><td>per-layer projection + gated fuser into the receiver's cache</td><td>fuser only; both models frozen</td><td>Qwen2.5-0.5B, Llama3.2-1B, Qwen3-4B → Qwen3-0.6B</td><td>+3–5 points, 2× faster; +8.5–10.5 over the receiver alone</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2510.03346">KVComm</a> · Wang et al., ICLR 2026</td><td>a subset of KV pairs picked by attention importance with a Gaussian layer prior</td><td>none; prepend</td><td>no</td><td>same model</td><td>matches the full-cache upper bound at up to 3× less communication</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2510.20733">Thought Communication</a> · Zheng et al., 2025</td><td>latent “thoughts” recovered from hidden states, with an identifiability result</td><td>learned encoder; gated exposure of shared and private thoughts</td><td>encoder</td><td>—</td><td>improves over text collaboration</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2511.09149">Interlat</a> · Du et al., ACL 2026</td><td>last-layer hidden states</td><td>learned compression / projection; concatenated along the token axis</td><td>compressor; models frozen</td><td>heterogeneous</td><td>beats fine-tuned CoT and single-agent; up to 24× faster with compression</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2511.20639">LatentMAS</a> · Zou, Yang et al., 2025</td><td>autoregressive latent thoughts (last-layer embeddings) plus a shared KV working memory</td><td>none; prefill + decode cache exposed</td><td>no</td><td>Qwen3 4B / 8B / 14B, same backbone</td><td>+2.8–4.6 points over text MAS, 71–84% fewer output tokens, 4× faster</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2602.15382">Vision Wormhole</a> · 2026</td><td>the reasoning trace rendered through a universal visual codec</td><td>codec; the receiver is a VLM that reads it as an image</td><td>codec, label-free distillation</td><td>fully heterogeneous, cross-architecture</td><td>—</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2605.11167">Bicameral model</a> · Flamant, Ghai, Shimizu, 2026</td><td>intermediate activations, both directions, every decoding step</td><td>translation network + learned suppression gate</td><td>≈1% of combined params; bases frozen</td><td>pairs of 0.5–0.6B models, one coupled to a tool</td><td>vs unaugmented: arithmetic 36 → 96%, 1.7× on ZebraLogic</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2606.05711">Beyond Tokens</a> · survey, 2026</td><td colspan="5">Taxonomy of the field along three axes: <b>what</b> (embeddings, hidden states, KV caches), <b>which</b> (sender–receiver and layer alignment), <b>how</b> (concat, prepend, add, cross-attention, cache restoration). Notes that most methods assume a shared backbone, that cross-architecture bridges are rare and always trained, and that size asymmetry is not studied.</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2608.11676">XBridge</a> · Yang et al., Aug 2026</td><td>sender hidden states plus lexical anchors mapped into the receiver's vocabulary</td><td>gated cross-attention: the receiver queries the sender's states</td><td>264M params, 3.8% of the receiver</td><td>Llama, Qwen, Mistral pairs</td><td>beats text on 7/7 tasks per pair, 11× lower latency; beats KV sharing on 6/7 same-family</td></tr>
+        <tr><td><a href="https://arxiv.org/abs/2608.13317">StateBridge</a> · Peng et al., Aug 2026</td><td>final-layer hidden states</td><td>closed-form orthogonal map + norm calibration + vocabulary anchoring; prepended as a continuous prefix</td><td>no</td><td>four models from two families</td><td>best or tied on 22/26 model–task pairs, incl. vs trained projectors</td></tr>
+        <tr><td><a href="https://mostik.ai/read-more">Mostik</a> · web page, Sep 2026</td><td>hidden states (“two megabytes of internal state” per token)</td><td>“a small trained bridge”; fusion not described</td><td>bridge only; both models frozen</td><td>GLM-5.2 753B → Qwen-3.5 4B</td><td>claims ≈10 points over a text hand-off, half the gap to the large model closed, 2.5× cheaper than a mid-size model; no paper</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="foot">Latent chain-of-thought inside one model (Coconut, Hao et al. 2024) is the same trick applied step to step rather than model to model; the survey keeps the two apart, and so does this table.</p>
+  </section>
+
+  <section>
+    <h2>Mostik against the literature</h2>
+    <ul class="facts">
+      <li><b>The design is Cache-to-Cache and XBridge's.</b> Two frozen models, a small trained bridge, hidden states instead of tokens. The “a million numbers thrown away per token” argument is the activation-communication paper's opening motivation. The two interpretability citations are real and say what the page says they say.</li>
+      <li><b>What would be new:</b> the scale of the sender (753B where the literature stops at 14B), the cross-family pair (GLM → Qwen; the survey lists cross-family bridges as rare), and a 4B receiver where C2C uses 0.6B. Size asymmetry at this ratio has not been published by anyone.</li>
+      <li><b>What is unverified:</b> there is no paper, no bridge size, no benchmark names, and no named baseline behind “a mid-sized model”. The ≈10-point gain over a text hand-off sits in the C2C / XBridge band, so it is plausible. “Closes half the gap to the 753B model” is stronger than anything published and is the number to ask for.</li>
+      <li><b>The compute claim needs the prefill counted.</b> The 753B sender still runs over the prompt every time. LLM-to-SLM accounts for this honestly: the saving is in decoding only, so “2.5× cheaper than a mid-sized model” is true only for long generations after short prompts, if at all.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pitfalls</h2>
+    <ul class="facts">
+      <li><b>Parameter-free is not assumption-free.</b> Even the training-free methods choose a layer, rescale norms, and decide what position the injected states occupy. The survey's line: “parameter-free does not mean assumption-free.” Get any of the three wrong and the receiver reads noise.</li>
+      <li><b>Same backbone is the default.</b> Most results are one model talking to a copy of itself. Cross-family needs training, one bridge per ordered pair unless a shared space is used (Mixture of Thoughts), and transfer to unseen pairs is open.</li>
+      <li><b>Post-training on either side breaks the bridge.</b> The bridge was fit against two fixed spaces; RL or SFT on the receiver moves its residual stream and the alignment goes stale, the same way an <a href="/notes/mtp.html">MTP head</a> loses acceptance after RLVR. Budget a re-fit.</li>
+      <li><b>It is a high-privilege channel.</b> Nothing in the receiver checks what arrives; the survey flags modification, replay and malicious senders, and <a href="https://arxiv.org/abs/2605.28214">latent injection attacks</a> on these systems have already been demonstrated.</li>
+      <li><b>The numbers across papers do not compare.</b> Different backbones, prompts, context lengths and hardware; every “vs text” figure above is against that paper's own text baseline. Only the survey's taxonomy transfers, not the deltas.</li>
+      <li><b>Latent communication is not latent reasoning.</b> Coconut-style continuous thoughts flow step to step inside one model; these methods flow agent to agent. Papers and product pages blur the two.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <div class="src">
+      <div><a href="https://mostik.ai/read-more">Mostik · latent communication between AI models</a> — the page under discussion, Sep 2026 <span>· product page, no paper</span></div>
+      <div><a href="https://arxiv.org/abs/2606.05711">Beyond Tokens: A Unified Framework for Latent Communication in LLM-based Multi-Agent Systems</a> — survey, 2026 <span>· <a href="https://www.alphaxiv.org/abs/2606.05711">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2510.03215">Cache-to-Cache: Direct Semantic Communication Between LLMs</a> — ICLR 2026 <span>· <a href="https://www.alphaxiv.org/abs/2510.03215">alphaXiv</a> · <a href="https://github.com/thu-nics/C2C">code</a></span></div>
+      <div><a href="https://arxiv.org/abs/2501.14082">Communicating Activations Between Language Model Agents</a> — Ramesh &amp; Li, 2025 <span>· <a href="https://www.alphaxiv.org/abs/2501.14082">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2402.16844">Think Big, Generate Quick: LLM-to-SLM for Fast Autoregressive Decoding</a> — Bergner et al., 2024 <span>· <a href="https://www.alphaxiv.org/abs/2402.16844">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2608.11676">XBridge</a> · <a href="https://arxiv.org/abs/2608.13317">StateBridge</a> · <a href="https://arxiv.org/abs/2605.11167">The Bicameral Model</a> · <a href="https://arxiv.org/abs/2511.09149">Interlat</a> · <a href="https://arxiv.org/abs/2511.20639">LatentMAS</a> · <a href="https://arxiv.org/abs/2510.20733">Thought Communication</a> · <a href="https://arxiv.org/abs/2509.21164">Mixture of Thoughts</a> · <a href="https://arxiv.org/abs/2510.03346">KVComm</a> · <a href="https://arxiv.org/abs/2602.15382">Vision Wormhole</a> · <a href="https://arxiv.org/abs/2310.06272">CIPHER</a> · <a href="https://arxiv.org/abs/2605.28214">latent attacks on latent MAS</a></div>
+      <div><a href="https://arxiv.org/abs/2506.06609">Transferring Linear Features Across Language Models With Model Stitching</a> — Chen, Merullo, Stolfo, Pavlick, NeurIPS 2025 <span>· <a href="https://www.alphaxiv.org/abs/2506.06609">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2209.15430">Relative representations</a> (Moschella et al. 2023) · <a href="https://arxiv.org/abs/2405.07987">The Platonic Representation Hypothesis</a> (Huh et al. 2024) · <a href="https://arxiv.org/abs/2505.12540">vec2vec</a> (Jha et al. 2025) · <a href="https://arxiv.org/abs/2603.18908">Characterizing Linear Alignment Across Language Models</a> (2026) · <a href="https://arxiv.org/abs/2106.07682">Revisiting Model Stitching</a> (Bansal et al. 2021) · <a href="https://arxiv.org/abs/1411.5908">Lenc &amp; Vedaldi 2015</a></div>
+      <div><a href="https://arxiv.org/abs/2604.12493">Latent Planning Emerges with Scale</a> — Hanna &amp; Ameisen, ICLR 2026 · <a href="https://transformer-circuits.pub/2026/workspace/index.html">Verbalizable Representations Form a Global Workspace in Language Models</a> — Gurnee et al., Jul 2026 · <a href="https://arxiv.org/abs/2412.06769">Coconut</a> — Hao et al. 2024, latent CoT within one model</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
