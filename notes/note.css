@@ -38,3 +38,11 @@
 .math .katex-display{margin:2px 0 4px; text-align:left;}
 .math .katex-display>.katex{text-align:left;}
 .math .c{display:block; margin:0 0 12px;}
+
+/* tabs (opt-in; first used by latent-communication.html): a .tabs bar of role=tab buttons switching .panel blocks by id, hash-addressable */
+.tabs{display:flex; flex-wrap:wrap; gap:2px; border-bottom:1px solid var(--rule); position:sticky; top:0; z-index:2; background:var(--paper); padding-top:6px; margin-top:-12px;}
+.tab{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); background:none; border:0; border-bottom:2px solid transparent; margin-bottom:-1px; padding:9px 12px; cursor:pointer;}
+.tab:hover{color:var(--ink);} .tab[aria-selected="true"]{color:var(--keep); border-bottom-color:var(--keep);}
+.tab:focus-visible{outline:2px solid var(--keep-line); outline-offset:-2px; border-radius:4px;}
+.panel{display:flex; flex-direction:column; gap:44px;} .panel[hidden]{display:none!important}
+@media (max-width:640px){ .panel{gap:32px;} .tab{padding:8px 9px; font-size:11px;} }
