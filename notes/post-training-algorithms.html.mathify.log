@@ -1,0 +1,188 @@
+(λ)
+    → (\lambda )
+(λ=1)
+    → (\lambda =1)
+sg[log π_T(y_t) − log π_θ(y_t)]
+    → \operatorname{sg}[\log \pi _{T}(y_{t}) - \log \pi _{\theta}(y_{t})]
+±R_max
+    → \pm R_{\text{max}}
+Σ_i w_i · KL(π_θ ‖ π_Ei)
+    → \sum _{i} w_{i} \cdot \mathrm{KL}(\pi _{\theta} \| \pi _{E_i})
+w_i
+    → w_{i}
+r_φ
+    → r_{\phi}
+σ(r(y_w) − r(y_l))
+    → \sigma (r(y_{w}) - r(y_{l}))
+σ×ℓ₀
+    → \sigma \times \ell _{0}
+τ·b₀
+    → \tau \cdot b_{0}
+τ
+    → \tau
+L_pos = 25,600
+    → L_{\text{pos}} = 25,600
+L_neg = 3,702
+    → L_{\text{neg}} = 3,702
+b₀
+    → b_{0}
+τ
+    → \tau
+β·log π_θ/π_ref
+    → \beta \cdot \log \pi _{\theta}/\pi _{\text{ref}}
+π* ∝ π_ref·exp(r/β)
+    → \pi ^{*} \propto \pi _{\text{ref}}\cdot \exp (r/\beta )
+β·log Z(x)
+    → \beta \cdot \log Z(x)
+r_w − r_l
+    → r_{w} - r_{l}
+π_θ
+    → \pi _{\theta}
+−β
+    → -\beta
+KL(π ‖ π*) − log Z(x)
+    → \mathrm{KL}(\pi \| \pi ^{*}) - \log Z(x)
+Z(x) = Σ_y π_ref·e^{r/β}
+    → Z(x) = \sum _{y} \pi _{\text{ref}}\cdot e^{r/\beta}
+π_ref·e^{r/β}
+    → \pi _{\text{ref}}\cdot e^{r/\beta}
+r̂ = β·log π_θ/π_ref
+    → \hat{r} = \beta \cdot \log \pi _{\theta}/\pi _{\text{ref}}
+σ(r̂_l − r̂_w)·[∇log π(y_w) − ∇log π(y_l)]
+    → \sigma (\hat{r}_{l} - \hat{r}_{w})\cdot [\nabla \log \pi (y_{w}) - \nabla \log \pi (y_{l})]
+β
+    → \beta
+β → ∞
+    → \beta \to \infty
+π
+    → \pi
+π_ref
+    → \pi _{\text{ref}}
+β → 0
+    → \beta \to 0
+r̂
+    → \hat{r}
+π_ref
+    → \pi _{\text{ref}}
+π_θ
+    → \pi _{\theta}
+1/(2β)
+    → 1/(2\beta )
+τ
+    → \tau
+(λ_U > λ_D)
+    → (\lambda _{U} > \lambda _{D})
+z₀
+    → z_{0}
+γ
+    → \gamma
+π_ref
+    → \pi _{\text{ref}}
+γ
+    → \gamma
+β
+    → \beta
+η
+    → \eta
+β·log π_θ/π_ref
+    → \beta \cdot \log \pi _{\theta}/\pi _{\text{ref}}
+e^{r/β}
+    → e^{r/\beta}
+1/β
+    → 1/\beta
+β(e^{1/β}−1)
+    → \beta (e^{1/\beta}-1)
+e^{r/β}
+    → e^{r/\beta}
+~10^40
+    → \sim 10^{40}
+β = 0.1
+    → \beta = 0.1
+π_ref
+    → \pi _{\text{ref}}
+π_ref
+    → \pi _{\text{ref}}
+π_ref
+    → \pi _{\text{ref}}
+≈ 1
+    → \approx 1
+T = 1
+    → T = 1
+(R_q = 1)
+    → (R_{q} = 1)
+(R_q ≤ 0.2)
+    → (R_{q} \le 0.2)
+β/|y|
+    → \beta /|y|
+β = 0.1
+    → \beta = 0.1
+e^{1/β} ≈ 2.2×10⁴
+    → e^{1/\beta} \approx 2.2\times 10^{4}
+β·log Z ≈ β·log β + 1
+    → \beta \cdot \log Z \approx \beta \cdot \log \beta + 1
+n = 10
+    → n = 10
+∇J = E[(r − b)·∇log π(y|x)]
+    → \nabla J = \mathbb{E}[(r - b)\cdot \nabla \log \pi (y|x)]
+r = r_φ − β·KL
+    → r = r_{\phi} - \beta \cdot \mathrm{KL}
+(R_i − mean_G) / std_G
+    → (R_{i} - \operatorname{mean}_{G}) / \operatorname{std}_{G}
+1/|o_i|
+    → 1/|o_{i}|
+1/|o_i|
+    → 1/|o_{i}|
+1/|o_i|
+    → 1/|o_{i}|
+/std_G
+    → /\operatorname{std}_{G}
+(ε_high 0.28)
+    → (\varepsilon _{\text{high}} 0.28)
+s_i = (π_θ(y_i)/π_old(y_i))^{1/|y_i|}
+    → s_{i} = (\pi _{\theta}(y_{i})/\pi _{\text{old}}(y_{i}))^{1/|y_{i}|}
+e^{±0.4}
+    → e^{\pm 0.4}
+r_t
+    → r_{t}
+λ=1
+    → \lambda =1
+λ
+    → \lambda
+λ
+    → \lambda
+λ
+    → \lambda
+min(π_learner/π_sampler, C)
+    → \min (\pi _{\text{learner}}/\pi _{\text{sampler}}, C)
+C≈2
+    → C\approx 2
+[1/β, β]
+    → [1/\beta , \beta ]
+β = 2
+    → \beta = 2
+β=2
+    → \beta =2
+ε 0.20/0.28
+    → \varepsilon 0.20/0.28
+G=32
+    → G=32
+[1−ε_l, 1+ε_h]
+    → [1-\varepsilon _{l}, 1+\varepsilon _{h}]
+π_old
+    → \pi _{\text{old}}
+τ
+    → \tau
+λ
+    → \lambda
+λ
+    → \lambda
+k=2048
+    → k=2048
+≥0.75
+    → \ge 0.75
+ε_high
+    → \varepsilon _{\text{high}}
+w_e
+    → w_{e}
+F_π
+    → F_{\pi}
