@@ -39,10 +39,15 @@
 .math .katex-display>.katex{text-align:left;}
 .math .c{display:block; margin:0 0 12px;}
 
-/* tabs (opt-in; first used by latent-communication.html): a .tabs bar of role=tab buttons switching .panel blocks by id, hash-addressable */
-.tabs{display:flex; flex-wrap:wrap; gap:2px; border-bottom:1px solid var(--rule); position:sticky; top:0; z-index:2; background:var(--paper); padding-top:6px; margin-top:-12px;}
-.tab{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); background:none; border:0; border-bottom:2px solid transparent; margin-bottom:-1px; padding:9px 12px; cursor:pointer;}
-.tab:hover{color:var(--ink);} .tab[aria-selected="true"]{color:var(--keep); border-bottom-color:var(--keep);}
-.tab:focus-visible{outline:2px solid var(--keep-line); outline-offset:-2px; border-radius:4px;}
+/* tabs (opt-in): the same pill tabs as model-post-training-diff.html and post-training-algorithms.html.
+   Markup: <nav class="tabs" role="tablist"><button role="tab" id="t-SLUG" aria-controls="p-SLUG" aria-selected="…">…</button></nav>
+   and <div class="panel" id="p-SLUG" role="tabpanel" aria-labelledby="t-SLUG" hidden>…</div>; the hash is the bare SLUG.
+   Optional: <span class="tk">A</span> key badge inside a button, class="ref" on the reference tab. */
+.tabs{position:sticky; top:0; z-index:5; background:var(--paper); padding:8px 0 10px; border-bottom:1px solid var(--rule); display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+.tabs button{font-family:"IBM Plex Mono",monospace; font-size:12.5px; font-weight:500; color:var(--ink-2); background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:7px 12px; cursor:pointer; display:inline-flex; align-items:center; gap:7px;}
+.tabs button .tk{font-weight:600; color:var(--keep); border:1px solid var(--keep-line); border-radius:4px; padding:0 5px; font-size:11px;}
+.tabs button:hover{color:var(--ink); border-color:var(--ink-3);} .tabs button:focus-visible{outline:2px solid var(--keep); outline-offset:2px;}
+.tabs button[aria-selected="true"]{background:var(--ink); border-color:var(--ink); color:var(--paper);} .tabs button[aria-selected="true"] .tk{color:var(--paper); border-color:var(--paper);}
+.tabs button.ref[aria-selected="false"]{border-color:var(--keep-line); color:var(--keep);}
 .panel{display:flex; flex-direction:column; gap:44px;} .panel[hidden]{display:none!important}
-@media (max-width:640px){ .panel{gap:32px;} .tab{padding:8px 9px; font-size:11px;} }
+@media (max-width:640px){ .panel{gap:32px;} .tabs button{font-size:12px; padding:6px 10px;} }

@@ -46,11 +46,7 @@
   .ledger dt{font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); padding-top:3px;}
   .ledger dd{margin:0; font-size:14px; color:var(--ink-2); line-height:1.55;} .ledger dd ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:4px;}
   .core{font-family:"IBM Plex Mono",monospace; font-size:12.5px; line-height:2; color:var(--ink-2);} .corep{margin:0; color:var(--ink-2); font-size:14px;}
-  .tabs{position:sticky; top:0; z-index:5; background:var(--paper); padding:8px 0 10px; border-bottom:1px solid var(--rule); display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
-  .tabs button{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:500; color:var(--ink-2); background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:6px 11px 6px 7px; cursor:pointer; display:inline-flex; align-items:center; gap:7px;}
-  .tabs button .tk{font-weight:600; color:var(--keep); border:1px solid var(--keep-line); border-radius:4px; padding:0 5px; font-size:11px;}
-  .tabs button:hover{color:var(--ink); border-color:var(--ink-3);} .tabs button:focus-visible{outline:2px solid var(--keep); outline-offset:2px;}
-  .tabs button[aria-selected="true"]{background:var(--ink); border-color:var(--ink); color:var(--paper);} .tabs button[aria-selected="true"] .tk{color:var(--paper); border-color:var(--paper);}
+  /* .tabs / .tabs button / .tk come from note.css (shared pill tabs) */
   .panel{display:flex; flex-direction:column; gap:34px;} .refh{font-size:20px;}
 </style>
 </head>
