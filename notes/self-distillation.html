@@ -99,41 +99,41 @@
     <h2>Fig 2 · The harness evolves too — version the pair, not the model</h2>
     <figure>
       <div class="scroller">
-      <svg viewBox="0 0 760 360" role="img" aria-label="Two parallel tracks over time. Top track: harness versions H0, H1, H2 — the system prompt, chat template, tool set, verifiers and environments a model is served inside. Bottom track: model versions M0, M1, M2 — successive post-training stages or rolling releases. Diagonal teal arrows show self-distillation: model M1 evaluated under the new harness H2 acts as teacher for training M2 under H2, so behaviour that lived in the old harness is carried into the weights. Horizontal amber arrows show the anchor: a KL back to M1 under H1 limits drift. Two failure labels: harness leak, when a capability existed only in the prompt and is lost when the prompt changes; and teacher drift, when the self-loop amplifies its own artifacts.">
+      <svg viewBox="0 0 760 372" role="img" aria-label="Two parallel tracks over time. Top track: harness versions H0, H1, H2 — the system prompt, chat template, tool set, verifiers and environments a model is served inside. Bottom track: model versions M0, M1, M2 — successive post-training stages or rolling releases. A teal curve shows self-distillation: model M1 evaluated under the new harness H2 acts as teacher for training M2 under H2, so behaviour that lived in the old harness is carried into the weights. A dashed amber arc shows the anchor: a KL back to M1 under H1 limits drift. Two failure labels on the left: harness leak, when a capability existed only in the prompt and is lost when the prompt changes; and teacher drift, when the self-loop amplifies its own artifacts.">
         <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
-        <text class="sh" x="20" y="34">harness  H</text>
-        <text class="st2" x="20" y="52">system prompt · template · tools · verifiers · gyms</text>
-        <text class="sh" x="20" y="232">model  M</text>
-        <text class="st2" x="20" y="250">climbs · consolidations · rolling releases</text>
+        <!-- track labels (details live in the caption) -->
+        <text class="sh" x="14" y="50">harness  H</text>
+        <text class="sh" x="14" y="306">model  M</text>
         <!-- harness boxes -->
-        <rect class="bg" x="170" y="14" width="130" height="52" rx="6"/><text class="sh" x="235" y="36" text-anchor="middle">H₀</text><text class="st2" x="235" y="54" text-anchor="middle">no tools · short prompt</text>
-        <rect class="bg" x="400" y="14" width="130" height="52" rx="6"/><text class="sh" x="465" y="36" text-anchor="middle">H₁</text><text class="st2" x="465" y="54" text-anchor="middle">+ tool schema · thinking</text>
-        <rect class="bg" x="620" y="14" width="130" height="52" rx="6"/><text class="sh" x="685" y="36" text-anchor="middle">H₂</text><text class="st2" x="685" y="54" text-anchor="middle">new template · more tools</text>
-        <line class="bus" x1="300" y1="40" x2="400" y2="40"/><line class="bus" x1="530" y1="40" x2="620" y2="40"/>
+        <rect class="bg" x="170" y="14" width="150" height="64" rx="6"/><text class="sh" x="245" y="40" text-anchor="middle">H₀</text><text class="st2" x="245" y="60" text-anchor="middle">no tools, short prompt</text>
+        <rect class="bg" x="385" y="14" width="150" height="64" rx="6"/><text class="sh" x="460" y="40" text-anchor="middle">H₁</text><text class="st2" x="460" y="60" text-anchor="middle">tools + thinking</text>
+        <rect class="bg" x="600" y="14" width="150" height="64" rx="6"/><text class="sh" x="675" y="40" text-anchor="middle">H₂</text><text class="st2" x="675" y="60" text-anchor="middle">new template · tools</text>
+        <line class="bus" x1="320" y1="46" x2="385" y2="46"/><line class="bus" x1="535" y1="46" x2="600" y2="46"/>
         <!-- model boxes -->
-        <rect class="bk" x="170" y="270" width="130" height="52" rx="6"/><text class="sh" x="235" y="292" text-anchor="middle">M₀</text><text class="st2" x="235" y="310" text-anchor="middle">SFT base</text>
-        <rect class="bk" x="400" y="270" width="130" height="52" rx="6"/><text class="sh" x="465" y="292" text-anchor="middle">M₁</text><text class="st2" x="465" y="310" text-anchor="middle">after climb k</text>
-        <rect class="bk" x="620" y="270" width="130" height="52" rx="6"/><text class="sh" x="685" y="292" text-anchor="middle">M₂</text><text class="st2" x="685" y="310" text-anchor="middle">after climb k+1</text>
+        <rect class="bk" x="170" y="270" width="150" height="64" rx="6"/><text class="sh" x="245" y="296" text-anchor="middle">M₀</text><text class="st2" x="245" y="316" text-anchor="middle">SFT base</text>
+        <rect class="bk" x="385" y="270" width="150" height="64" rx="6"/><text class="sh" x="460" y="296" text-anchor="middle">M₁</text><text class="st2" x="460" y="316" text-anchor="middle">after climb k</text>
+        <rect class="bk" x="600" y="270" width="150" height="64" rx="6"/><text class="sh" x="675" y="296" text-anchor="middle">M₂</text><text class="st2" x="675" y="316" text-anchor="middle">after climb k+1</text>
         <!-- served pairs -->
-        <line class="edge" x1="235" y1="66" x2="235" y2="270"/><text class="st2" x="243" y="170">served as (M₀, H₀)</text>
-        <line class="edge" x1="465" y1="66" x2="465" y2="270"/><text class="st2" x="473" y="170">served as (M₁, H₁)</text>
-        <line class="edge" x1="685" y1="66" x2="685" y2="270"/><text class="st2" x="693" y="170" text-anchor="end"></text>
-        <!-- distill diagonal: teacher = M1 under H2 -->
-        <line class="edge k" x1="530" y1="296" x2="620" y2="296"/>
-        <text class="stk" x="575" y="288" text-anchor="middle">distill</text>
-        <path class="edge k" d="M 465 270 C 465 200, 685 180, 685 120" fill="none"/>
-        <text class="stk" x="600" y="205" text-anchor="middle">teacher = M₁ run inside H₂</text>
-        <text class="st2" x="600" y="221" text-anchor="middle">so what the new harness exposes is learned, not prompted</text>
+        <line class="edge" x1="245" y1="78" x2="245" y2="270"/><text class="st2" x="253" y="178">served as (M₀, H₀)</text>
+        <line class="edge" x1="460" y1="78" x2="460" y2="270"/><text class="st2" x="468" y="178">(M₁, H₁)</text>
+        <line class="edge" x1="675" y1="78" x2="675" y2="270"/><text class="st2" x="683" y="178">(M₂, H₂)</text>
+        <!-- distill: teacher = M1 run inside H2 -->
+        <line class="edge k" x1="535" y1="302" x2="600" y2="302"/>
+        <text class="stk" x="567" y="294" text-anchor="middle">distill</text>
+        <path class="edge k" d="M 528 270 C 528 190, 600 150, 600 66" fill="none"/>
+        <text class="stk" x="452" y="248" text-anchor="end">teacher = M₁ run inside H₂</text>
+        <text class="st2" x="452" y="264" text-anchor="end">harness behaviour → weights</text>
+        <line class="edge k" x1="458" y1="255" x2="522" y2="266"/>
         <!-- anchor -->
-        <path class="edge a" d="M 620 322 C 580 350, 500 350, 470 322" fill="none"/>
-        <text class="sta" x="545" y="352" text-anchor="middle">anchor: KL to (M₁, H₁)</text>
+        <path class="edge a" d="M 600 334 C 570 362, 490 362, 465 334" fill="none"/>
+        <text class="sta" x="532" y="366" text-anchor="middle">anchor: KL to (M₁, H₁)</text>
         <!-- failure labels -->
-        <rect class="bc" x="20" y="90" width="132" height="58" rx="6"/>
-        <text class="sh" x="86" y="110" text-anchor="middle">harness leak</text>
-        <text class="st2" x="86" y="126" text-anchor="middle">capability lived in the</text><text class="st2" x="86" y="140" text-anchor="middle">prompt; prompt changed</text>
-        <rect class="bc" x="20" y="158" width="132" height="58" rx="6"/>
-        <text class="sh" x="86" y="178" text-anchor="middle">teacher drift</text>
-        <text class="st2" x="86" y="194" text-anchor="middle">self-loop amplifies</text><text class="st2" x="86" y="208" text-anchor="middle">its own artifacts</text>
+        <rect class="bc" x="14" y="98" width="130" height="62" rx="6"/>
+        <text class="sh" x="79" y="118" text-anchor="middle">harness leak</text>
+        <text class="st2" x="79" y="136" text-anchor="middle">skill lived in</text><text class="st2" x="79" y="150" text-anchor="middle">the prompt</text>
+        <rect class="bc" x="14" y="172" width="130" height="62" rx="6"/>
+        <text class="sh" x="79" y="192" text-anchor="middle">teacher drift</text>
+        <text class="st2" x="79" y="210" text-anchor="middle">loop amplifies</text><text class="st2" x="79" y="224" text-anchor="middle">its own artifacts</text>
       </svg>
       </div>
       <figcaption>A deployed capability is a property of a <b>pair</b> — weights and the harness they run inside. Post-training in stages changes both: the model moves with each climb, and the harness moves with each new tool, template or verifier. Self-distillation is the natural coupling: run the previous model inside the <i>next</i> harness and distill what it does there into the next model, while anchoring to what it did in the old pair. The two failure modes are the two things the loop can get wrong — forgetting what only the prompt knew, and amplifying what only the loop knows.</figcaption>
