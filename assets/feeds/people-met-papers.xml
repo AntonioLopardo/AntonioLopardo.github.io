@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Mon, 07 Sep 2026 04:08:26 +0000</lastBuildDate>
+<lastBuildDate>Tue, 08 Sep 2026 04:07:27 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -4204,8 +4204,8 @@
 <title>Representation Learning for Spatiotemporal Physical Systems</title>
 <link>https://www.semanticscholar.org/paper/23f953773609d673caf468aeea02da9c3f496592</link>
 <guid isPermaLink="false">23f953773609d673caf468aeea02da9c3f496592</guid>
-<description>By Helen Qu, Rudy Morel, Michael McCabe, Alberto Bietti, F. Lanusse, Shirley Ho, Yann LeCun. arXiv.org. (Met: Yann LeCun) arXiv:2603.13227</description>
-<pw:authors>Helen Qu, Rudy Morel, Michael McCabe, Alberto Bietti, F. Lanusse, Shirley Ho, Yann LeCun</pw:authors>
+<description>By Helen Qu, Rudy Morel, Michael McCabe, Alberto Bietti, François Lanusse, Shirley Ho, Yann LeCun. arXiv.org. (Met: Yann LeCun) arXiv:2603.13227</description>
+<pw:authors>Helen Qu, Rudy Morel, Michael McCabe, Alberto Bietti, François Lanusse, Shirley Ho, Yann LeCun</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6850,8 +6850,8 @@
 <title>Tracing Multilingual Representations in LLMs with Cross-Layer Transcoders</title>
 <link>https://www.semanticscholar.org/paper/84e43009486077350eedcfe7688def19772fa518</link>
 <guid isPermaLink="false">84e43009486077350eedcfe7688def19772fa518</guid>
-<description>By Abir Harrasse, Florent Draye, Zhijing Jin, Bernhard Schölkopf. arXiv.org. (Met: Zhijing Jin) arXiv:2511.10840</description>
-<pw:authors>Abir Harrasse, Florent Draye, Zhijing Jin, Bernhard Schölkopf</pw:authors>
+<description>By Abir Harrasse, Florent Draye, Punya Syon Pandey, Zhijing Jin, Bernhard Scholkopf. arXiv.org. (Met: Zhijing Jin) arXiv:2511.10840</description>
+<pw:authors>Abir Harrasse, Florent Draye, Punya Syon Pandey, Zhijing Jin, Bernhard Scholkopf</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -10137,14 +10137,14 @@
 <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Accidental Vulnerability: Factors in Fine-Tuning that Shift Model Safeguards</title>
+<title>Accidental Vulnerability: Factors in Fine-Tuning That Shift Model Safeguards</title>
 <link>https://www.semanticscholar.org/paper/e16e97d17b98078af041da6a7768424b3975da30</link>
 <guid isPermaLink="false">e16e97d17b98078af041da6a7768424b3975da30</guid>
-<description>By Punya Syon Pandey, Samuel Simko, Kellin Pelrine, Zhijing Jin. . (Met: Zhijing Jin) arXiv:2505.16789</description>
+<description>By Punya Syon Pandey, Samuel Simko, Kellin Pelrine, Zhijing Jin. Proceedings of IASEAI Conference. (Met: Zhijing Jin) arXiv:2505.16789</description>
 <pw:authors>Punya Syon Pandey, Samuel Simko, Kellin Pelrine, Zhijing Jin</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>Proceedings of IASEAI Conference</pw:venue>
 <pw:arxiv>2505.16789</pw:arxiv>
 <pw:date>2025-05-22</pw:date>
 <pw:year>2025</pw:year>
@@ -10160,20 +10160,6 @@
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2505.15045</pw:arxiv>
-<pw:date>2025-05-21</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity</title>
-<link>https://www.semanticscholar.org/paper/12f567cc86bc744a772994b31320c677864a5961</link>
-<guid isPermaLink="false">12f567cc86bc744a772994b31320c677864a5961</guid>
-<description>By M. Doumbouya, Daniel Jurafsky, Christopher D. Manning. arXiv.org. (Met: Dan Jurafsky) arXiv:2506.11035</description>
-<pw:authors>M. Doumbouya, Daniel Jurafsky, Christopher D. Manning</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2506.11035</pw:arxiv>
 <pw:date>2025-05-21</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
@@ -10210,8 +10196,8 @@
 <title>From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning</title>
 <link>https://www.semanticscholar.org/paper/69a4c84867d5cc15be298bf4ad728a6413691cbd</link>
 <guid isPermaLink="false">69a4c84867d5cc15be298bf4ad728a6413691cbd</guid>
-<description>By C. Shani, Daniel Jurafsky, Yann LeCun, Ravid Shwartz-Ziv. arXiv.org. (Met: Yann LeCun) arXiv:2505.17117</description>
-<pw:authors>C. Shani, Daniel Jurafsky, Yann LeCun, Ravid Shwartz-Ziv</pw:authors>
+<description>By Sha-Ni Chen, Liron Soffer, Dan Jurafsky, Yann LeCun, Ravid Shwartz-Ziv. arXiv.org. (Met: Yann LeCun) arXiv:2505.17117</description>
+<pw:authors>Sha-Ni Chen, Liron Soffer, Dan Jurafsky, Yann LeCun, Ravid Shwartz-Ziv</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -19349,20 +19335,6 @@
 <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Exporting Geography Into A Virtual Landscape: A Global Pandemic Locally Discussed</title>
-<link>https://www.semanticscholar.org/paper/285aa290710918c19bf3fd5b6de310e7eacbecb9</link>
-<guid isPermaLink="false">285aa290710918c19bf3fd5b6de310e7eacbecb9</guid>
-<description>By K. V. Koevering, Yi Hong, J. Kleinberg. arXiv.org. (Met: Katherine Van Koevering) arXiv:2210.07187</description>
-<pw:authors>K. V. Koevering, Yi Hong, J. Kleinberg</pw:authors>
-<pw:met>Katherine Van Koevering</pw:met>
-<pw:relationships>Katherine Van Koevering=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2210.07187</pw:arxiv>
-<pw:date>2022-10-13</pw:date>
-<pw:year>2022</pw:year>
-<pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>PriMeSRL-Eval: A Practical Quality Metric for Semantic Role Labeling Systems Evaluation</title>
 <link>https://www.semanticscholar.org/paper/6cb99af50b91fed276b7b6cee4c91cea5d222ae3</link>
 <guid isPermaLink="false">6cb99af50b91fed276b7b6cee4c91cea5d222ae3</guid>
@@ -21265,20 +21237,6 @@
 <pw:date>2018-07-01</pw:date>
 <pw:year>2018</pw:year>
 <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Ecosystem or Echo-System? Exploring Content Sharing across Alternative Media Domains</title>
-<link>https://www.semanticscholar.org/paper/8ad18a6f9bad5b9a68cf03623044c69335edc0a3</link>
-<guid isPermaLink="false">8ad18a6f9bad5b9a68cf03623044c69335edc0a3</guid>
-<description>By Kate Starbird, Ahmer Arif, T. Wilson, K. V. Koevering, Katya Yefimova, Daniel Scarnecchia. International Conference on Web and Social Media. (Met: Katherine Van Koevering)</description>
-<pw:authors>Kate Starbird, Ahmer Arif, T. Wilson, K. V. Koevering, Katya Yefimova, Daniel Scarnecchia</pw:authors>
-<pw:met>Katherine Van Koevering</pw:met>
-<pw:relationships>Katherine Van Koevering=met</pw:relationships>
-<pw:venue>International Conference on Web and Social Media</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2018-06-15</pw:date>
-<pw:year>2018</pw:year>
-<pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Self-Training for Jointly Learning to Ask and Answer Questions</title>
