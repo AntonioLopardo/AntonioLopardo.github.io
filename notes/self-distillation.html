@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Self-Distillation</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
+<link rel="stylesheet" href="/notes/note.css?v=2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="eyebrow"><a href="/notes/">Notes</a> · Method note · self-distillation</p>
+    <h1>Self-distillation, and the harness it quietly depends on</h1>
+    <p class="lede">A model trained to match <b>its own predictions under a richer condition</b> — an older copy of itself, a prompt it will not have at test time, the feedback it just received, the tools it just called. No external teacher, a dense per-token signal, and a built-in anchor against forgetting. In 2026 it moved from a regularizer to a post-training stage. This note is about what it optimizes, why it forgets less than RL until suddenly it forgets more, and why the thing being distilled is usually not the model alone but the <b>model plus its harness</b> — so the two have to be versioned together.</p>
+  </header>
+
+  <section id="loop">
+    <h2>Fig 1 · One set of weights, two conditions</h2>
+    <figure>
+      <div class="scroller">
+      <svg viewBox="0 0 760 340" role="img" aria-label="Self-distillation loop. A prompt x enters the student, which is the current policy on plain context and samples its own response y. The same response is re-scored by the teacher, which is the same weights but under a privileged condition: an older checkpoint, extra context such as feedback or a system prompt, tool outputs, or a verified outcome. The teacher's next-token distribution is the target; the loss is a token-level KL from teacher to student along the student's own sampled tokens. A stop-gradient sits on the teacher side. The privileged condition is the knob that names the method.">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <!-- prompt -->
+        <rect class="bx" x="14" y="150" width="82" height="30" rx="4"/><text class="st" x="55" y="169" text-anchor="middle">prompt x</text>
+        <line class="edge" x1="96" y1="165" x2="128" y2="165"/>
+        <!-- student -->
+        <rect class="bk" x="128" y="118" width="226" height="94" rx="6"/>
+        <text class="sh" x="241" y="146" text-anchor="middle">student  π_θ(· | x)</text>
+        <text class="st2" x="241" y="167" text-anchor="middle">plain condition · deployed model</text>
+        <text class="st2" x="241" y="185" text-anchor="middle">samples its own  y ~ π_θ</text>
+        <text class="st2" x="241" y="201" text-anchor="middle">(on-policy)</text>
+        <!-- rollout -->
+        <line class="edge k" x1="354" y1="165" x2="400" y2="165"/>
+        <rect class="bx" x="400" y="150" width="92" height="30" rx="4"/><text class="st" x="446" y="169" text-anchor="middle">rollout y</text>
+        <!-- teacher -->
+        <line class="edge" x1="446" y1="150" x2="446" y2="96"/>
+        <rect class="bg" x="330" y="26" width="232" height="70" rx="6"/>
+        <text class="sh" x="446" y="50" text-anchor="middle">teacher  π_θ(· | x, c)   stop-grad</text>
+        <text class="st2" x="446" y="68" text-anchor="middle">same weights, privileged condition c</text>
+        <text class="st2" x="446" y="84" text-anchor="middle">re-scores y token by token</text>
+        <!-- privilege knob -->
+        <rect class="bc" x="572" y="16" width="176" height="168" rx="6"/>
+        <text class="sh" x="660" y="38" text-anchor="middle">what c can be</text>
+        <text class="st2" x="582" y="60">θ_old · previous release</text>
+        <text class="st2" x="582" y="76">  → Learning w/o Forgetting</text>
+        <text class="st2" x="582" y="100">prompt / scratchpad</text>
+        <text class="st2" x="582" y="116">  → context distillation</text>
+        <text class="st2" x="582" y="140">feedback · tools ·</text>
+        <text class="st2" x="582" y="156">next user turn</text>
+        <text class="st2" x="582" y="172">  → SDPO family</text>
+        <line class="edge a" x1="572" y1="60" x2="562" y2="60"/>
+        <!-- loss -->
+        <line class="edge a" x1="446" y1="96" x2="446" y2="150"/>
+        <rect class="ba" x="250" y="262" width="392" height="34" rx="17"/>
+        <text class="sta" x="446" y="284" text-anchor="middle">L = Σ_t KL( π_θ(·|x,c,y&lt;t) ‖ π_θ(·|x,y&lt;t) )</text>
+        <line class="edge a" x1="446" y1="180" x2="446" y2="262"/>
+        <line class="edge a" x1="250" y1="279" x2="241" y2="279"/><line class="edge a" x1="241" y1="279" x2="241" y2="212"/>
+        <text class="st2" x="14" y="236">gradient → student only</text>
+        <!-- footer labels -->
+        <text class="st2" x="14" y="326">teal = trained · amber = the loss · grey = frozen context · dashed = the knob that names the method</text>
+      </svg>
+      </div>
+      <figcaption>The whole family is one diagram with one free slot. The student is the model as it will be deployed. The teacher is the same weights given something extra — and the loss asks the deployed model to behave, without the extra, the way it already behaves with it. Sampling the rollout from the student (rather than from a dataset) is what makes it <i>on-policy</i>; that choice, from GKD, is what turned self-distillation from a regularizer into a training stage.</figcaption>
+    </figure>
+  </section>
+
+  <section id="math">
+    <h2>The math in three lines</h2>
+    <div class="math">
+      <span class="c">The objective. Sample from the student, score with the teacher, match per token. \(c\) is the privileged condition; the teacher is stop-gradient.</span>
+      \[ \mathcal{L}(\theta)=\mathbb{E}_{x}\;\mathbb{E}_{y\sim\pi_\theta(\cdot\mid x)}\;\sum_{t}\; D\!\left(\pi_{\bar\theta}(\cdot\mid x,c,y_{&lt;t})\;\middle\|\;\pi_\theta(\cdot\mid x,y_{&lt;t})\right) \]
+      <span class="c">The teacher is what you choose to put in \(c\). Three instantiations cover almost everything published:</span>
+      \[ \pi_{\bar\theta}(\cdot\mid x,c)=\begin{cases}\pi_{\theta_{\text{old}}}(\cdot\mid x) &amp; \text{previous release — the forgetting anchor (LwF)}\\[2pt] \pi_{\theta}(\cdot\mid \text{prompt},x) &amp; \text{context you will not have at test time (context distillation)}\\[2pt] \pi_{\theta}(\cdot\mid x,y,\text{feedback}) &amp; \text{the model reading its own result (SDPO)}\end{cases} \]
+      <span class="c">Why it is gentler than RL, and why that can flip. The per-token target is a full distribution, not a scalar; the gradient is a projection onto a function the model already computes, so each step moves little. But when the teacher is the <b>same moving weights</b>, dense matching can chase its own artifacts — the loop is self-reinforcing. Denser ≠ Better measures exactly this: under continual post-training SDPO drifted <b>more</b> than GRPO in both parameter and response space, and the fix (StableSDPO) is to freeze or periodically restart the teacher.</span>
+      \[ \underbrace{\text{dense signal}}_{\text{fast in-domain}}\;+\;\underbrace{\text{teacher}=\text{student}}_{\text{no fixed point}}\;\Rightarrow\;\text{drift};\qquad \text{fix: } \bar\theta \leftarrow \theta_{k}\ \text{held for a window, or } \theta_{\text{old}}\ \text{throughout.} \]
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why it is kept</h2>
+    <ul class="facts">
+      <li><b>No external teacher.</b> The 2026 frontier open models all distill, and the strong ones distill from themselves or their own larger sibling — there is no bigger model to call. Self-distillation is the version that scales past the biggest thing you have.</li>
+      <li><b>Dense where RL is sparse.</b> A verifier gives one bit per rollout; the teacher gives a distribution per token. Thinking Machines' measurements put on-policy distillation at a fraction of RL's compute for the same reasoning gain, and it is the mechanism they name for <b>continual learning and personalization</b>: re-teach a specialized skill after a general update without losing the update.</li>
+      <li><b>It internalizes context.</b> Context distillation (Snell, Klein, Zhong 2022) showed a model can absorb an instruction, a set of in-context examples, or a scratchpad into its weights by matching its own context-conditioned outputs. That is the same loss with \(c\) = the prompt — and it is why the harness question below is not separate from the method.</li>
+      <li><b>It is the oldest continual-learning trick there is.</b> Learning without Forgetting (2016) is a KL to the previous network on new-task inputs. Every "anchor to the old policy" term since — including the KL-to-reference in RLHF — is a special case.</li>
+      <li><b>Feedback becomes a teacher.</b> SDPO's move: condition the model on the compiler error, the failed test, or the next user turn, and distill that hindsight-informed distribution back into the un-conditioned policy. Rich feedback that RL would have to scalarize is used whole.</li>
+    </ul>
+  </section>
+
+  <section id="harness">
+    <h2>Fig 2 · The harness evolves too — version the pair, not the model</h2>
+    <figure>
+      <div class="scroller">
+      <svg viewBox="0 0 760 360" role="img" aria-label="Two parallel tracks over time. Top track: harness versions H0, H1, H2 — the system prompt, chat template, tool set, verifiers and environments a model is served inside. Bottom track: model versions M0, M1, M2 — successive post-training stages or rolling releases. Diagonal teal arrows show self-distillation: model M1 evaluated under the new harness H2 acts as teacher for training M2 under H2, so behaviour that lived in the old harness is carried into the weights. Horizontal amber arrows show the anchor: a KL back to M1 under H1 limits drift. Two failure labels: harness leak, when a capability existed only in the prompt and is lost when the prompt changes; and teacher drift, when the self-loop amplifies its own artifacts.">
+        <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <text class="sh" x="20" y="34">harness  H</text>
+        <text class="st2" x="20" y="52">system prompt · template · tools · verifiers · gyms</text>
+        <text class="sh" x="20" y="232">model  M</text>
+        <text class="st2" x="20" y="250">climbs · consolidations · rolling releases</text>
+        <!-- harness boxes -->
+        <rect class="bg" x="170" y="14" width="130" height="52" rx="6"/><text class="sh" x="235" y="36" text-anchor="middle">H₀</text><text class="st2" x="235" y="54" text-anchor="middle">no tools · short prompt</text>
+        <rect class="bg" x="400" y="14" width="130" height="52" rx="6"/><text class="sh" x="465" y="36" text-anchor="middle">H₁</text><text class="st2" x="465" y="54" text-anchor="middle">+ tool schema · thinking</text>
+        <rect class="bg" x="620" y="14" width="130" height="52" rx="6"/><text class="sh" x="685" y="36" text-anchor="middle">H₂</text><text class="st2" x="685" y="54" text-anchor="middle">new template · more tools</text>
+        <line class="bus" x1="300" y1="40" x2="400" y2="40"/><line class="bus" x1="530" y1="40" x2="620" y2="40"/>
+        <!-- model boxes -->
+        <rect class="bk" x="170" y="270" width="130" height="52" rx="6"/><text class="sh" x="235" y="292" text-anchor="middle">M₀</text><text class="st2" x="235" y="310" text-anchor="middle">SFT base</text>
+        <rect class="bk" x="400" y="270" width="130" height="52" rx="6"/><text class="sh" x="465" y="292" text-anchor="middle">M₁</text><text class="st2" x="465" y="310" text-anchor="middle">after climb k</text>
+        <rect class="bk" x="620" y="270" width="130" height="52" rx="6"/><text class="sh" x="685" y="292" text-anchor="middle">M₂</text><text class="st2" x="685" y="310" text-anchor="middle">after climb k+1</text>
+        <!-- served pairs -->
+        <line class="edge" x1="235" y1="66" x2="235" y2="270"/><text class="st2" x="243" y="170">served as (M₀, H₀)</text>
+        <line class="edge" x1="465" y1="66" x2="465" y2="270"/><text class="st2" x="473" y="170">served as (M₁, H₁)</text>
+        <line class="edge" x1="685" y1="66" x2="685" y2="270"/><text class="st2" x="693" y="170" text-anchor="end"></text>
+        <!-- distill diagonal: teacher = M1 under H2 -->
+        <line class="edge k" x1="530" y1="296" x2="620" y2="296"/>
+        <text class="stk" x="575" y="288" text-anchor="middle">distill</text>
+        <path class="edge k" d="M 465 270 C 465 200, 685 180, 685 120" fill="none"/>
+        <text class="stk" x="600" y="205" text-anchor="middle">teacher = M₁ run inside H₂</text>
+        <text class="st2" x="600" y="221" text-anchor="middle">so what the new harness exposes is learned, not prompted</text>
+        <!-- anchor -->
+        <path class="edge a" d="M 620 322 C 580 350, 500 350, 470 322" fill="none"/>
+        <text class="sta" x="545" y="352" text-anchor="middle">anchor: KL to (M₁, H₁)</text>
+        <!-- failure labels -->
+        <rect class="bc" x="20" y="90" width="132" height="58" rx="6"/>
+        <text class="sh" x="86" y="110" text-anchor="middle">harness leak</text>
+        <text class="st2" x="86" y="126" text-anchor="middle">capability lived in the</text><text class="st2" x="86" y="140" text-anchor="middle">prompt; prompt changed</text>
+        <rect class="bc" x="20" y="158" width="132" height="58" rx="6"/>
+        <text class="sh" x="86" y="178" text-anchor="middle">teacher drift</text>
+        <text class="st2" x="86" y="194" text-anchor="middle">self-loop amplifies</text><text class="st2" x="86" y="208" text-anchor="middle">its own artifacts</text>
+      </svg>
+      </div>
+      <figcaption>A deployed capability is a property of a <b>pair</b> — weights and the harness they run inside. Post-training in stages changes both: the model moves with each climb, and the harness moves with each new tool, template or verifier. Self-distillation is the natural coupling: run the previous model inside the <i>next</i> harness and distill what it does there into the next model, while anchoring to what it did in the old pair. The two failure modes are the two things the loop can get wrong — forgetting what only the prompt knew, and amplifying what only the loop knows.</figcaption>
+    </figure>
+    <p><b>Why this framing matters for continual post-training.</b> Most forgetting measurements hold the harness fixed and vary the weights. But in an agentic stack the harness is where a surprising amount of behaviour lives — the system prompt that names the tools, the template that marks tool outputs, the verifier that defines "correct". Change it and a model can lose a skill without a single weight moving. Context distillation is the tool for moving that behaviour into the weights before the harness changes; a KL to the old pair is the tool for keeping it there. Treating (model, harness) as the unit of versioning makes both steps explicit, and makes "does the next post-training benefit from the previous one" a well-posed question: the previous <i>pair</i> is the teacher.</p>
+  </section>
+
+  <section id="table">
+    <h2>Where it appears</h2>
+    <div class="scroller">
+    <table>
+      <thead><tr><th>Work</th><th>Teacher \(c\)</th><th>Sampling</th><th>What it showed</th><th>Continual-learning note</th></tr></thead>
+      <tbody>
+        <tr><td>Learning without Forgetting (Li &amp; Hoiem 2016)</td><td>previous network on new-task inputs</td><td>dataset</td><td>new task without old data, old outputs preserved by KL</td><td>the origin; every KL-to-reference since is this</td></tr>
+        <tr><td>Born-Again Networks (Furlanello et al. 2018) · Mobahi et al. 2020</td><td>identical architecture, previous generation</td><td>dataset</td><td>students beat teachers; theory: repeated self-distillation is progressive regularization in RKHS, then underfitting</td><td>too many generations over-smooth — an early "denser is not better"</td></tr>
+        <tr><td>Context distillation (Snell, Klein, Zhong 2022)</td><td>same model + instruction / examples / scratchpad</td><td>student, on-policy</td><td>prompts and CoT internalized into weights</td><td>the harness-into-weights step of Fig 2</td></tr>
+        <tr><td>GKD (Agarwal et al., ICLR 2024)</td><td>a separate teacher</td><td><b>student</b> rollouts</td><td>on-policy sampling fixes exposure bias; choice of divergence matters</td><td>defines the on-policy form all of 2026 uses</td></tr>
+        <tr><td>Thinking Machines · On-Policy Distillation (Oct 2025)</td><td>larger sibling, or the pre-update self</td><td>student</td><td>reasoning at a fraction of RL compute; recovers an assistant skill after a domain update</td><td>names continual learning and personalization as the use case</td></tr>
+        <tr><td>SDPO (Hübotter et al., ETH LAS, 2026)</td><td>same model + rich feedback (compiler, tests)</td><td>student</td><td>beats RLVR baselines on science, tool use, LiveCodeBench v6</td><td>feedback used whole instead of scalarized</td></tr>
+        <tr><td>Aligning LMs from User Interactions (Buening et al. 2026)</td><td>same model + the <i>next user turn</i></td><td>student</td><td>real WildChat conversations improve alignment and IF benchmarks</td><td>the teacher signal arrives after deployment — continual by construction</td></tr>
+        <tr><td>Denser ≠ Better (Wang et al. 2026)</td><td>SDPO vs GRPO under sequential domains</td><td>student</td><td>SDPO forgets <b>more</b> than GRPO; larger drift in parameter and response space; "intermediate-distance interference"</td><td><b>StableSDPO</b>: freeze / restart the teacher. The cautionary result for the whole family</td></tr>
+        <tr><td>Feedback Alignment in Self-Distillation (2026) · Pass-Rate-Weighted SD (2026) · Early-Stopping Rollout for OPD (2026)</td><td>SDPO-style</td><td>student</td><td>when the feedback-conditioned teacher actually agrees with the outcome; weighting by pass rate; shorter rollouts suffice</td><td>the knobs that keep the loop from chasing itself</td></tr>
+        <tr><td>Frontier reports: Kimi K3 (MOPD), DeepSeek V4, GLM-5</td><td>own larger / earlier checkpoints</td><td>student</td><td>on-policy distillation as a named stage, incl. across stages</td><td>see the <a href="/model-post-training-diff.html">report diff</a> for per-model detail</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="pitfalls">
+    <h2>Pitfalls</h2>
+    <ul class="facts">
+      <li><b>The teacher moves.</b> When teacher and student share weights, dense matching has no fixed point and can amplify formatting quirks until the model collapses onto them. Hold the teacher for a window or pin it to the last release; measure response-space drift, not just loss.</li>
+      <li><b>Forgetting is not monotone in distance.</b> Denser ≠ Better found the worst losses on tasks <i>moderately</i> related to the training domain, not on distant ones. A held-out suite that only checks far-away skills will miss it.</li>
+      <li><b>Long, variable reasoning traces distill badly.</b> CoT distillation helped structured tool-use tasks and hurt math and science in the same study. Match the trace length to what the student can imitate, or distill outcomes rather than traces there.</li>
+      <li><b>Harness leak masquerades as forgetting.</b> If a skill existed only under a system prompt or template that has since changed, no amount of weight-space anchoring recovers it. Evaluate the previous model under the <i>new</i> harness before blaming the update.</li>
+      <li><b>On-policy data alone is not enough.</b> The continual-learning result is explicit on this: self-generated rollouts do not substitute for some replay of old inputs. Which old inputs to replay — and whether a distillation target beats a replayed label — is the open question, and the one closest to the classic continual-learning literature.</li>
+      <li><b>Consolidating experts is a different problem from anchoring one.</b> Distilling several specialist checkpoints into one student has no single "previous self"; the teachers disagree. The number of experts, their overlap, and how to weight their distributions is not settled anywhere public.</li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <div class="src">
+      <div><a href="https://arxiv.org/abs/2601.20802">Reinforcement Learning via Self-Distillation (SDPO)</a> — Hübotter, Lübeck, Behric, Baumann, Bagatella, Marta, Hakimi, Shenfeld, Kleine Buening, Guestrin, Krause, 2026 <span>· <a href="https://www.alphaxiv.org/abs/2601.20802">alphaXiv</a> · <a href="https://github.com/lasgroup/SDPO">code</a></span></div>
+      <div><a href="https://arxiv.org/abs/2603.12273">Aligning Language Models from User Interactions</a> — Kleine Buening, Hübotter, Pásztor, Shenfeld, Ramponi, Krause, 2026 <span>· <a href="https://www.alphaxiv.org/abs/2603.12273">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2607.01763">Denser ≠ Better: Limits of On-Policy Self-Distillation for Continual Post-Training</a> — Wang et al., 2026 <span>· <a href="https://www.alphaxiv.org/abs/2607.01763">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2606.11173">The Role of Feedback Alignment in Self-Distillation</a> · <a href="https://arxiv.org/abs/2605.27765">Pass-Rate Weighted Self-Distillation</a> · <a href="https://arxiv.org/abs/2605.27028">Early Stopping Rollout for On-Policy Distillation</a> · <a href="https://arxiv.org/abs/2606.30923">Optimality of On-Policy Distillation for Noisy Expert Feedback</a> — the 2026 wave</div>
+      <div><a href="https://thinkingmachines.ai/blog/on-policy-distillation/">On-Policy Distillation</a> — Thinking Machines Lab, Oct 2025 <span>· blog</span></div>
+      <div><a href="https://arxiv.org/abs/2306.13649">On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes (GKD)</a> — Agarwal et al., ICLR 2024 <span>· <a href="https://www.alphaxiv.org/abs/2306.13649">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/2209.15189">Learning by Distilling Context</a> — Snell, Klein, Zhong, 2022 <span>· <a href="https://www.alphaxiv.org/abs/2209.15189">alphaXiv</a></span></div>
+      <div><a href="https://arxiv.org/abs/1606.09282">Learning without Forgetting</a> — Li &amp; Hoiem, 2016 · <a href="https://arxiv.org/abs/1805.04770">Born-Again Neural Networks</a> — Furlanello et al., 2018 · <a href="https://arxiv.org/abs/2002.05715">Self-Distillation Amplifies Regularization in Hilbert Space</a> — Mobahi, Farajtabar, Bartlett, 2020</div>
+      <div>Related notes here: <a href="/notes/self-play.html">self-play for reasoning</a> · <a href="/notes/post-training-algorithms.html">post-training algorithms</a> · <a href="/model-post-training-diff.html">LLM report diff</a></div>
+    </div>
+    <p class="foot">Everything on this page is from public papers and posts. Nothing here draws on unpublished material.</p>
+  </section>
+
+</div>
+</body>
+</html>
