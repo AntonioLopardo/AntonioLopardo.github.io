@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Tue, 08 Sep 2026 04:07:27 +0000</lastBuildDate>
+<lastBuildDate>Wed, 09 Sep 2026 04:09:32 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -15163,20 +15163,6 @@
 <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Evaluating Large Language Models with Tests of Spanish as a Foreign Language: Pass or Fail?</title>
-<link>https://www.semanticscholar.org/paper/dd57cd3a2a97beddea5229f427f3193a25dc7993</link>
-<guid isPermaLink="false">dd57cd3a2a97beddea5229f427f3193a25dc7993</guid>
-<description>By Marina Mayor-Rocher, N. Melero, Elena Merino Gómez, María Grandury, Javier Conde, Pedro Reviriego. arXiv.org. (Met: María Grandury) arXiv:2409.15334</description>
-<pw:authors>Marina Mayor-Rocher, N. Melero, Elena Merino Gómez, María Grandury, Javier Conde, Pedro Reviriego</pw:authors>
-<pw:met>María Grandury</pw:met>
-<pw:relationships>María Grandury=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2409.15334</pw:arxiv>
-<pw:date>2024-09-08</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Unforgettable Generalization in Language Models</title>
 <link>https://www.semanticscholar.org/paper/f87d203d2c3a5933a6896377cd899b79329f0a36</link>
 <guid isPermaLink="false">f87d203d2c3a5933a6896377cd899b79329f0a36</guid>
@@ -19772,8 +19758,8 @@
 <title>Logical Fallacy Detection</title>
 <link>https://www.semanticscholar.org/paper/faaa21f4c2062d4099e4d24997a189f1c1400304</link>
 <guid isPermaLink="false">faaa21f4c2062d4099e4d24997a189f1c1400304</guid>
-<description>By Zhijing Jin, Abhinav Lalwani, Tejas Vaidhya, Xiaoyu Shen, Yiwen Ding, Zhiheng Lyu, Mrinmaya Sachan, Rada Mihalcea, B. Schölkopf. Conference on Empirical Methods in Natural Language Processing. (Met: Mrinmaya Sachan) arXiv:2202.13758</description>
-<pw:authors>Zhijing Jin, Abhinav Lalwani, Tejas Vaidhya, Xiaoyu Shen, Yiwen Ding, Zhiheng Lyu, Mrinmaya Sachan, Rada Mihalcea, B. Schölkopf</pw:authors>
+<description>By Zhijing Jin, Abhinav Lalwani, Tejas Vaidhya, Xiaoyu Shen, Yiwen Ding, Zhiheng Lyu, Mrinmaya Sachan, Rada Mihalcea, Bernhard Schölkopf. Conference on Empirical Methods in Natural Language Processing. (Met: Mrinmaya Sachan) arXiv:2202.13758</description>
+<pw:authors>Zhijing Jin, Abhinav Lalwani, Tejas Vaidhya, Xiaoyu Shen, Yiwen Ding, Zhiheng Lyu, Mrinmaya Sachan, Rada Mihalcea, Bernhard Schölkopf</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
