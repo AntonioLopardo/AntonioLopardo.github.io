@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Wed, 09 Sep 2026 04:09:32 +0000</lastBuildDate>
+<lastBuildDate>Thu, 10 Sep 2026 04:08:25 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -2029,20 +2029,6 @@
 <pw:date>2026-06-30</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>When Summaries Distort Decisions: Information Fidelity in LLM-Compressed Financial Analysis</title>
-<link>https://www.semanticscholar.org/paper/f83ab3538202125781e41ebb86c5ef41ed07a08e</link>
-<guid isPermaLink="false">f83ab3538202125781e41ebb86c5ef41ed07a08e</guid>
-<description>By Hoyoung Lee, Suhwan Park, Seunghan Lee, Jun Seo, Jaehoon Lee, Sungdong Yoo, Minjae Kim, CheolWon Na, Zhang-Yang Wang, Zach Golkhou et al.. arXiv.org. (Met: Minjae Kim) arXiv:2606.29251</description>
-<pw:authors>Hoyoung Lee, Suhwan Park, Seunghan Lee, Jun Seo, Jaehoon Lee, Sungdong Yoo, Minjae Kim, CheolWon Na, Zhang-Yang Wang, Zach Golkhou et al.</pw:authors>
-<pw:met>Minjae Kim</pw:met>
-<pw:relationships>Minjae Kim=met</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2606.29251</pw:arxiv>
-<pw:date>2026-06-28</pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks</title>
@@ -11677,20 +11663,6 @@
 <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>HumT DumT: Measuring and controlling human-like language in LLMs</title>
-<link>https://www.semanticscholar.org/paper/2748030289c3145f7bafe90991d1b2ea35920f4b</link>
-<guid isPermaLink="false">2748030289c3145f7bafe90991d1b2ea35920f4b</guid>
-<description>By Myra Cheng, Sunny Yu, Dan Jurafsky. Annual Meeting of the Association for Computational Linguistics. (Met: Dan Jurafsky) arXiv:2502.13259</description>
-<pw:authors>Myra Cheng, Sunny Yu, Dan Jurafsky</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2502.13259</pw:arxiv>
-<pw:date>2025-02-18</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering</title>
 <link>https://www.semanticscholar.org/paper/3c6516b970f908f2d67f23489a3c5b4c2f63b1c6</link>
 <guid isPermaLink="false">3c6516b970f908f2d67f23489a3c5b4c2f63b1c6</guid>
@@ -15149,20 +15121,6 @@
 <pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>People who share encounters with racism are silenced online by humans and machines, but a guideline-reframing intervention holds promise</title>
-<link>https://www.semanticscholar.org/paper/4bd1ad16692055a8ed0973f290bb84df6fb9f060</link>
-<guid isPermaLink="false">4bd1ad16692055a8ed0973f290bb84df6fb9f060</guid>
-<description>By Cinoo Lee, Kristina Gligoric, Pratyusha Kalluri, Maggie Harrington, Esin Durmus, Kiara Sanchez, Nay San, Danny Tse, Xuan Zhao, MarYam G Hamedani et al.. Proceedings of the National Academy of Sciences of the United States of America. (Met: Dan Jurafsky)</description>
-<pw:authors>Cinoo Lee, Kristina Gligoric, Pratyusha Kalluri, Maggie Harrington, Esin Durmus, Kiara Sanchez, Nay San, Danny Tse, Xuan Zhao, MarYam G Hamedani et al.</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>Proceedings of the National Academy of Sciences of the United States of America</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-09-09</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Unforgettable Generalization in Language Models</title>
 <link>https://www.semanticscholar.org/paper/f87d203d2c3a5933a6896377cd899b79329f0a36</link>
 <guid isPermaLink="false">f87d203d2c3a5933a6896377cd899b79329f0a36</guid>
@@ -15298,20 +15256,6 @@
 <pw:relationships>Mervat Abassy=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2408.04284</pw:arxiv>
-<pw:date>2024-08-08</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Molyé: A Corpus-based Approach to Language Contact in Colonial France</title>
-<link>https://www.semanticscholar.org/paper/bb07adcc14ce6870c2389621740f2724619981fd</link>
-<guid isPermaLink="false">bb07adcc14ce6870c2389621740f2724619981fd</guid>
-<description>By Rasul Dent, Juliette Janes, Thibault Cl'erice, Pedro Ortiz Suarez, Benoît Sagot. NLP4DH. (Met: Pedro Ortiz Suarez) arXiv:2408.04554</description>
-<pw:authors>Rasul Dent, Juliette Janes, Thibault Cl'erice, Pedro Ortiz Suarez, Benoît Sagot</pw:authors>
-<pw:met>Pedro Ortiz Suarez</pw:met>
-<pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
-<pw:venue>NLP4DH</pw:venue>
-<pw:arxiv>2408.04554</pw:arxiv>
 <pw:date>2024-08-08</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
@@ -18106,8 +18050,8 @@
 <title>Psychologically-Inspired Causal Prompts</title>
 <link>https://www.semanticscholar.org/paper/0ce70a87d7f7f5b24c697c88ab8e8d938b15b474</link>
 <guid isPermaLink="false">0ce70a87d7f7f5b24c697c88ab8e8d938b15b474</guid>
-<description>By Zhiheng Lyu, Zhijing Jin, Justus Mattern, Rada Mihalcea, Mrinmaya Sachan, Bernhard Schoelkopf. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2305.01764</description>
-<pw:authors>Zhiheng Lyu, Zhijing Jin, Justus Mattern, Rada Mihalcea, Mrinmaya Sachan, Bernhard Schoelkopf</pw:authors>
+<description>By Zhiheng Lyu, Zhijing Jin, Justus Mattern, Rada Mihalcea, Mrinmaya Sachan, Bernhard Schölkopf. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2305.01764</description>
+<pw:authors>Zhiheng Lyu, Zhijing Jin, Justus Mattern, Rada Mihalcea, Mrinmaya Sachan, Bernhard Schölkopf</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
