@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 10 Sep 2026 04:08:25 +0000</lastBuildDate>
+<lastBuildDate>Fri, 11 Sep 2026 04:08:01 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1416,8 +1416,8 @@
 </item>
 <item>
 <title>TokEval: A Tokenizer Evaluation Suite</title>
-<link>https://www.semanticscholar.org/paper/ba0a8743d2dc10a09f5425953deaa0d3677afadc</link>
-<guid isPermaLink="false">ba0a8743d2dc10a09f5425953deaa0d3677afadc</guid>
+<link>https://www.semanticscholar.org/paper/5effeb7f02b3c93eaa44230e675b53834db144d5</link>
+<guid isPermaLink="false">5effeb7f02b3c93eaa44230e675b53834db144d5</guid>
 <description>By Clara Meister. . (Met: Clara Isabel Meister) arXiv:2608.18062</description>
 <pw:authors>Clara Meister</pw:authors>
 <pw:met>Clara Isabel Meister</pw:met>
@@ -2986,8 +2986,8 @@
 <title>Open-World Evaluations for Measuring Frontier AI Capabilities</title>
 <link>https://www.semanticscholar.org/paper/07424b1fc6d1ad28090e84bc7c95444fce806f45</link>
 <guid isPermaLink="false">07424b1fc6d1ad28090e84bc7c95444fce806f45</guid>
-<description>By Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. Allaire, Rishi Bommasani, H. Coppock, Magda Dubois, Gillian K. Hadfield, Andrew B. Hall et al.. arXiv.org. (Met: Sara Hooker) arXiv:2605.20520</description>
-<pw:authors>Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. Allaire, Rishi Bommasani, H. Coppock, Magda Dubois, Gillian K. Hadfield, Andrew B. Hall et al.</pw:authors>
+<description>By Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. J. Allaire, Rishi Bommasani, H. Coppock, Magda Dubois, Gillian K. Hadfield, Andrew B. Hall et al.. arXiv.org. (Met: Sara Hooker) arXiv:2605.20520</description>
+<pw:authors>Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. J. Allaire, Rishi Bommasani, H. Coppock, Magda Dubois, Gillian K. Hadfield, Andrew B. Hall et al.</pw:authors>
 <pw:met>Sara Hooker</pw:met>
 <pw:relationships>Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6178,8 +6178,8 @@
 <title>Biomed-Enriched: Data-Efficient Biomedical Pretraining via Paragraph-Level Annotation</title>
 <link>https://www.semanticscholar.org/paper/bddf23a04c87f0ca4b16786bdd9af733cfe69e30</link>
 <guid isPermaLink="false">bddf23a04c87f0ca4b16786bdd9af733cfe69e30</guid>
-<description>By Rian Touchent, Nathan Godey, Éric de la Clergerie. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
-<pw:authors>Rian Touchent, Nathan Godey, Éric de la Clergerie</pw:authors>
+<description>By Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
+<pw:authors>Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:relationships>Nathan Godey=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -13077,20 +13077,6 @@
 <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Building Data Infrastructure for Low-Resource Languages</title>
-<link>https://www.semanticscholar.org/paper/97e783730dbedd888e2e0d4557516b18b344e078</link>
-<guid isPermaLink="false">97e783730dbedd888e2e0d4557516b18b344e078</guid>
-<description>By Sarah Luger, Rafael Mosquera, Pedro Ortiz Suarez. Proceedings of the Eighth Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2025). (Met: Pedro Ortiz Suarez)</description>
-<pw:authors>Sarah Luger, Rafael Mosquera, Pedro Ortiz Suarez</pw:authors>
-<pw:met>Pedro Ortiz Suarez</pw:met>
-<pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
-<pw:venue>Proceedings of the Eighth Workshop on Technologies for Machine Translation of Low-Resource Languages (LoResMT 2025)</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Nexus: Adaptive Upcycling to Efficiently Pretrain Mixture of Experts</title>
 <link>https://www.semanticscholar.org/paper/beaa4ca97299fae72d2d4efd289d033663e62bb5</link>
 <guid isPermaLink="false">beaa4ca97299fae72d2d4efd289d033663e62bb5</guid>
@@ -19688,8 +19674,8 @@
 <title>The ZuCo benchmark on cross-subject reading task classification with EEG and eye-tracking data</title>
 <link>https://www.semanticscholar.org/paper/f2d2a1ae83b921e05953b093a27fae7152b849de</link>
 <guid isPermaLink="false">f2d2a1ae83b921e05953b093a27fae7152b849de</guid>
-<description>By Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, Nicolas Langer. bioRxiv. (Met: Samuel Kiegeland)</description>
-<pw:authors>Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, L. Jäger, Nicolas Langer</pw:authors>
+<description>By Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, Lena A. Jäger, Nicolas Langer. bioRxiv. (Met: Samuel Kiegeland)</description>
+<pw:authors>Nora Hollenstein, Marius Tröndle, M. Płomecka, Samuel Kiegeland, Yilmazcan Özyurt, Lena A. Jäger, Nicolas Langer</pw:authors>
 <pw:met>Samuel Kiegeland</pw:met>
 <pw:relationships>Samuel Kiegeland=met</pw:relationships>
 <pw:venue>bioRxiv</pw:venue>
