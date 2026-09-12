@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 11 Sep 2026 04:08:01 +0000</lastBuildDate>
+<lastBuildDate>Sat, 12 Sep 2026 04:18:56 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -256,58 +256,6 @@
 <pw:year></pw:year>
 </item>
 <item>
-<title>Cross-Lingual Multi-Hop Knowledge Editing – Benchmarks, Analysis and a Simple Contrastive Learning based Approach</title>
-<link>https://www.semanticscholar.org/paper/3a626e2adf0e9c39d8e3deb90a9d6c0090c40d9f</link>
-<guid isPermaLink="false">3a626e2adf0e9c39d8e3deb90a9d6c0090c40d9f</guid>
-<description>By Aditi Khandelwal, Harman Singh, Hengrui Gu, Tianlong Chen, Kaixiong Zhou, Microsoft, Omar Khattab, Keshav Santhanam, Xiang Lisa, David Li et al.. . (Met: Antoine Bosselut)</description>
-<pw:authors>Aditi Khandelwal, Harman Singh, Hengrui Gu, Tianlong Chen, Kaixiong Zhou, Microsoft, Omar Khattab, Keshav Santhanam, Xiang Lisa, David Li et al.</pw:authors>
-<pw:met>Antoine Bosselut</pw:met>
-<pw:relationships>Antoine Bosselut=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
-<title>Graph Memory-based Editing for Large Language Models</title>
-<link>https://www.semanticscholar.org/paper/932d9e103b51da6a349802d180d51fd68b345d2d</link>
-<guid isPermaLink="false">932d9e103b51da6a349802d180d51fd68b345d2d</guid>
-<description>By Tom Brown, Benjamin Mann, N. Ryder, Jared D Subbiah, Prafulla Kaplan, A. Dhariwal, P. Neelakantan, Girish Shyam, Amanda Sastry, Sandhini Askell et al.. . (Met: Antoine Bosselut, Tim Rocktäschel)</description>
-<pw:authors>Tom Brown, Benjamin Mann, N. Ryder, Jared D Subbiah, Prafulla Kaplan, A. Dhariwal, P. Neelakantan, Girish Shyam, Amanda Sastry, Sandhini Askell et al.</pw:authors>
-<pw:met>Antoine Bosselut, Tim Rocktäschel</pw:met>
-<pw:relationships>Antoine Bosselut=following|Tim Rocktäschel=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
-<title>Introductory Tutorial: Commonsense Reasoning for Natural Language Processing</title>
-<link>https://www.semanticscholar.org/paper/c24a3ba1f161df77bdf9374d787851d6ce7e366b</link>
-<guid isPermaLink="false">c24a3ba1f161df77bdf9374d787851d6ce7e366b</guid>
-<description>By Maarten Sap, Vered Shwartz, Antoine Bosselut, Yejin Choi, Dan Roth. . (Met: Antoine Bosselut)</description>
-<pw:authors>Maarten Sap, Vered Shwartz, Antoine Bosselut, Yejin Choi, Dan Roth</pw:authors>
-<pw:met>Antoine Bosselut</pw:met>
-<pw:relationships>Antoine Bosselut=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
-<title>Upper-bound Translation Performance of Llama-2 Under Idealized Setup</title>
-<link>https://www.semanticscholar.org/paper/d60db02a945775dc5470146775221ef487ceb8b6</link>
-<guid isPermaLink="false">d60db02a945775dc5470146775221ef487ceb8b6</guid>
-<description>By Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.. . (Met: Antoine Bosselut, Dan Jurafsky)</description>
-<pw:authors>Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.</pw:authors>
-<pw:met>Antoine Bosselut, Dan Jurafsky</pw:met>
-<pw:relationships>Antoine Bosselut=following|Dan Jurafsky=following</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
 <title>Escaping Random Teacher Initialization Enhances Signal Propagation and Representation</title>
 <link>https://www.semanticscholar.org/paper/ae4cef877b1082719f258e30c0c1b054629c8e2e</link>
 <guid isPermaLink="false">ae4cef877b1082719f258e30c0c1b054629c8e2e</guid>
@@ -469,6 +417,19 @@
 <guid isPermaLink="false">97598337347f4730647fba53cbb4fdb9fbd44371</guid>
 <description>By Ruoxi Cheng, Haoxuan Ma, Shuirong Cao, Jiaqi Li, Aihua Pei, Zhiqiang Wang, Pengliang Ji, Haoyu Wang, Jiaqi Huo, Yuntao Bai et al.. . (Met: Dan Jurafsky)</description>
 <pw:authors>Ruoxi Cheng, Haoxuan Ma, Shuirong Cao, Jiaqi Li, Aihua Pei, Zhiqiang Wang, Pengliang Ji, Haoyu Wang, Jiaqi Huo, Yuntao Bai et al.</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Upper-bound Translation Performance of Llama-2 Under Idealized Setup</title>
+<link>https://www.semanticscholar.org/paper/d60db02a945775dc5470146775221ef487ceb8b6</link>
+<guid isPermaLink="false">d60db02a945775dc5470146775221ef487ceb8b6</guid>
+<description>By Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.. . (Met: Dan Jurafsky)</description>
+<pw:authors>Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.</pw:authors>
 <pw:met>Dan Jurafsky</pw:met>
 <pw:relationships>Dan Jurafsky=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -1080,6 +1041,19 @@
 <guid isPermaLink="false">7e0e12c8a2a9d70d7af8fabdbee6fda6e569a859</guid>
 <description>By S. Berlin, Jimmy Ba, J. Kiros, Geoffrey E. Hinton, S. Baker, Ilona Silins, Yufan Guo, Imran Ali, U. Högberg, Stenius Anna et al.. . (Met: Tim Rocktäschel)</description>
 <pw:authors>S. Berlin, Jimmy Ba, J. Kiros, Geoffrey E. Hinton, S. Baker, Ilona Silins, Yufan Guo, Imran Ali, U. Högberg, Stenius Anna et al.</pw:authors>
+<pw:met>Tim Rocktäschel</pw:met>
+<pw:relationships>Tim Rocktäschel=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Graph Memory-based Editing for Large Language Models</title>
+<link>https://www.semanticscholar.org/paper/932d9e103b51da6a349802d180d51fd68b345d2d</link>
+<guid isPermaLink="false">932d9e103b51da6a349802d180d51fd68b345d2d</guid>
+<description>By Tom Brown, Benjamin Mann, N. Ryder, Jared D Subbiah, Prafulla Kaplan, A. Dhariwal, P. Neelakantan, Girish Shyam, Amanda Sastry, Sandhini Askell et al.. . (Met: Tim Rocktäschel)</description>
+<pw:authors>Tom Brown, Benjamin Mann, N. Ryder, Jared D Subbiah, Prafulla Kaplan, A. Dhariwal, P. Neelakantan, Girish Shyam, Amanda Sastry, Sandhini Askell et al.</pw:authors>
 <pw:met>Tim Rocktäschel</pw:met>
 <pw:relationships>Tim Rocktäschel=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -8684,10 +8658,10 @@
 <title>From KMMLU-Redux to Pro: A Professional Korean Benchmark Suite for LLM Evaluation</title>
 <link>https://www.semanticscholar.org/paper/b1175c2344c7acf7d0048650204506384a2e5184</link>
 <guid isPermaLink="false">b1175c2344c7acf7d0048650204506384a2e5184</guid>
-<description>By Seokhee Hong, SunKyoung Kim, Guijin Son, Soyeon Kim, Yeonjung Hong, Jinsik Lee, Qiancheng Zhang, Qihao Wang, Qin-Feng Zhu, Qiushi Chen et al.. Conference on Empirical Methods in Natural Language Processing. (Met: Antoine Bosselut, Leshem Choshen, Marzieh Fadaee) arXiv:2507.08924</description>
+<description>By Seokhee Hong, SunKyoung Kim, Guijin Son, Soyeon Kim, Yeonjung Hong, Jinsik Lee, Qiancheng Zhang, Qihao Wang, Qin-Feng Zhu, Qiushi Chen et al.. Conference on Empirical Methods in Natural Language Processing. (Met: Leshem Choshen, Marzieh Fadaee) arXiv:2507.08924</description>
 <pw:authors>Seokhee Hong, SunKyoung Kim, Guijin Son, Soyeon Kim, Yeonjung Hong, Jinsik Lee, Qiancheng Zhang, Qihao Wang, Qin-Feng Zhu, Qiushi Chen et al.</pw:authors>
-<pw:met>Antoine Bosselut, Leshem Choshen, Marzieh Fadaee</pw:met>
-<pw:relationships>Antoine Bosselut=following|Leshem Choshen=met|Marzieh Fadaee=following</pw:relationships>
+<pw:met>Leshem Choshen, Marzieh Fadaee</pw:met>
+<pw:relationships>Leshem Choshen=met|Marzieh Fadaee=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2507.08924</pw:arxiv>
 <pw:date>2025-07-11</pw:date>
@@ -9365,20 +9339,6 @@
 <pw:date>2025-06-12</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>The 2025 PNPL Competition: Speech Detection and Phoneme Classification in the LibriBrain Dataset</title>
-<link>https://www.semanticscholar.org/paper/662dfb1a22885ed2dd57fac213eee967e2acfa30</link>
-<guid isPermaLink="false">662dfb1a22885ed2dd57fac213eee967e2acfa30</guid>
-<description>By Gilad Landau, Miran Ozdogan, Gereon Elvers, Francesco Mantegna, Pratik Somaiya, D. Jayalath, Luisa Kurth, Teyun Kwon, Brendan Shillingford, Gregory Farquhar et al.. arXiv.org. (Met: Caglar Gulcehre) arXiv:2506.10165</description>
-<pw:authors>Gilad Landau, Miran Ozdogan, Gereon Elvers, Francesco Mantegna, Pratik Somaiya, D. Jayalath, Luisa Kurth, Teyun Kwon, Brendan Shillingford, Gregory Farquhar et al.</pw:authors>
-<pw:met>Caglar Gulcehre</pw:met>
-<pw:relationships>Caglar Gulcehre=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2506.10165</pw:arxiv>
-<pw:date>2025-06-11</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning</title>
@@ -10221,20 +10181,6 @@
 <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>In-Context Learning Boosts Speech Recognition via Human-like Adaptation to Speakers and Language Varieties</title>
-<link>https://www.semanticscholar.org/paper/6171e7696345e9b08560233eeaefba2280369730</link>
-<guid isPermaLink="false">6171e7696345e9b08560233eeaefba2280369730</guid>
-<description>By N. Roll, Calbert Graham, Yuka Tatsumi, K. T. Nguyen, Meghan Sumner, Daniel Jurafsky. Conference on Empirical Methods in Natural Language Processing. (Met: Dan Jurafsky) arXiv:2505.14887</description>
-<pw:authors>N. Roll, Calbert Graham, Yuka Tatsumi, K. T. Nguyen, Meghan Sumner, Daniel Jurafsky</pw:authors>
-<pw:met>Dan Jurafsky</pw:met>
-<pw:relationships>Dan Jurafsky=following</pw:relationships>
-<pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
-<pw:arxiv>2505.14887</pw:arxiv>
-<pw:date>2025-05-20</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Positional Fragility in LLMs: How Offset Effects Reshape Our Understanding of Memorization Risks</title>
 <link>https://www.semanticscholar.org/paper/c940f607de702c198df06e60eba1f6f54a6cc0b1</link>
 <guid isPermaLink="false">c940f607de702c198df06e60eba1f6f54a6cc0b1</guid>
@@ -10877,20 +10823,6 @@
 <pw:date>2025-04-06</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Context-Aware Toxicity Detection in Multiplayer Games: Integrating Domain-Adaptive Pretraining and Match Metadata</title>
-<link>https://www.semanticscholar.org/paper/5d7c0898e2db186f65ada4c44d27a886437d7db8</link>
-<guid isPermaLink="false">5d7c0898e2db186f65ada4c44d27a886437d7db8</guid>
-<description>By Adrien Schurger-Foy, R. Kocielnik, Caglar Gulcehre, R. Alvarez. arXiv.org. (Met: Caglar Gulcehre) arXiv:2504.01534</description>
-<pw:authors>Adrien Schurger-Foy, R. Kocielnik, Caglar Gulcehre, R. Alvarez</pw:authors>
-<pw:met>Caglar Gulcehre</pw:met>
-<pw:relationships>Caglar Gulcehre=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2504.01534</pw:arxiv>
-<pw:date>2025-04-02</pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 02 Apr 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>An Illusion of Progress? Assessing the Current State of Web Agents</title>
@@ -15077,34 +15009,6 @@
 <pw:date>2024-09-12</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>The Role of Deep Learning Regularizations on Actors in Offline RL</title>
-<link>https://www.semanticscholar.org/paper/cd3e162970393d1d53a602735e1ae0296f16dd1e</link>
-<guid isPermaLink="false">cd3e162970393d1d53a602735e1ae0296f16dd1e</guid>
-<description>By Denis Tarasov, Anja Surina, Caglar Gulcehre. arXiv.org. (Met: Caglar Gulcehre) arXiv:2409.07606</description>
-<pw:authors>Denis Tarasov, Anja Surina, Caglar Gulcehre</pw:authors>
-<pw:met>Caglar Gulcehre</pw:met>
-<pw:relationships>Caglar Gulcehre=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2409.07606</pw:arxiv>
-<pw:date>2024-09-11</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Agent Workflow Memory</title>
-<link>https://www.semanticscholar.org/paper/c68cc84ec7808d7bbd5686a6bd1393752a9d8e8d</link>
-<guid isPermaLink="false">c68cc84ec7808d7bbd5686a6bd1393752a9d8e8d</guid>
-<description>By Z. Wang, Jiayuan Mao, Daniel Fried, Graham Neubig. International Conference on Machine Learning. (Met: Graham Neubig) arXiv:2409.07429</description>
-<pw:authors>Z. Wang, Jiayuan Mao, Daniel Fried, Graham Neubig</pw:authors>
-<pw:met>Graham Neubig</pw:met>
-<pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue>International Conference on Machine Learning</pw:venue>
-<pw:arxiv>2409.07429</pw:arxiv>
-<pw:date>2024-09-11</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 11 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Unforgettable Generalization in Language Models</title>
