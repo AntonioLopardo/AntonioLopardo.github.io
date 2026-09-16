@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Tue, 15 Sep 2026 04:11:26 +0000</lastBuildDate>
+<lastBuildDate>Wed, 16 Sep 2026 04:08:21 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -298,8 +298,8 @@
 <title>Upper-bound Translation Performance of Llama-2 Under Idealized Setup</title>
 <link>https://www.semanticscholar.org/paper/d60db02a945775dc5470146775221ef487ceb8b6</link>
 <guid isPermaLink="false">d60db02a945775dc5470146775221ef487ceb8b6</guid>
-<description>By Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.. . (Met: Antoine Bosselut, Dan Jurafsky)</description>
-<pw:authors>Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, Ehsan Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.</pw:authors>
+<description>By Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, E. Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.. . (Met: Antoine Bosselut, Dan Jurafsky)</description>
+<pw:authors>Steven Bird, Ewan Klein, E. Loper, Nat-300, Rishi Bommasani, Drew A. Hudson, E. Adeli, Russ B. Altman, Simran Arora, Sydney von Arx et al.</pw:authors>
 <pw:met>Antoine Bosselut, Dan Jurafsky</pw:met>
 <pw:relationships>Antoine Bosselut=following|Dan Jurafsky=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -545,8 +545,8 @@
 <title>The Pupil Becomes the Master: Eye-Tracking Feedback for Tuning LLMs</title>
 <link>https://www.semanticscholar.org/paper/38d1681bc70963455aeff1dc384010c064f2d74f</link>
 <guid isPermaLink="false">38d1681bc70963455aeff1dc384010c064f2d74f</guid>
-<description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox. . (Met: Ethan Gotlieb Wilcox, Samuel Kiegeland)</description>
-<pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J¨ager, E. Wilcox</pw:authors>
+<description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J. ̈ager, E. Wilcox. . (Met: Ethan Gotlieb Wilcox, Samuel Kiegeland)</description>
+<pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. J. ̈ager, E. Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox, Samuel Kiegeland</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following|Samuel Kiegeland=met</pw:relationships>
 <pw:venue></pw:venue>
@@ -705,6 +705,19 @@
 <pw:authors>Elron Bandel, Asaf Yehudai, Alexandre Lacoste, Avijit Ghosh, Graham Neubig, Margaret Mitchell, Michal Shmueli-Scheuer, Leshem Choshen, I. Research, Servicenow Research et al.</pw:authors>
 <pw:met>Graham Neubig, Leshem Choshen</pw:met>
 <pw:relationships>Graham Neubig=following|Leshem Choshen=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>An Incomplete Loop: Instruction Inference, Instruction Following, and In-context Learning in Language Models</title>
+<link>https://www.semanticscholar.org/paper/a966858e1c3f3168e26db39bd9f7e71b19d3c9c9</link>
+<guid isPermaLink="false">a966858e1c3f3168e26db39bd9f7e71b19d3c9c9</guid>
+<description>By Emmy Liu, Graham Neubig, Jacob Andreas. . (Met: Graham Neubig)</description>
+<pw:authors>Emmy Liu, Graham Neubig, Jacob Andreas</pw:authors>
+<pw:met>Graham Neubig</pw:met>
+<pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -1242,6 +1255,20 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>LLMs as Oracles: Reliance on LLMs for Subjective Personal Questions</title>
+<link>https://www.semanticscholar.org/paper/24714bda07c039e067da9137f15c9df13ae45eb0</link>
+<guid isPermaLink="false">24714bda07c039e067da9137f15c9df13ae45eb0</guid>
+<description>By Myra Cheng, Lujain Ibrahim, Grace Liu, Michelle S. Lam, Vishakh Padmakumar, Nick Madibekov, Di-Yi Yang, Dan Jurafsky. . (Met: Dan Jurafsky) arXiv:2609.14849</description>
+<pw:authors>Myra Cheng, Lujain Ibrahim, Grace Liu, Michelle S. Lam, Vishakh Padmakumar, Nick Madibekov, Di-Yi Yang, Dan Jurafsky</pw:authors>
+<pw:met>Dan Jurafsky</pw:met>
+<pw:relationships>Dan Jurafsky=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.14849</pw:arxiv>
+<pw:date>2026-09-13</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>BuzzASR: A Swarm of 100+ Monolingual Speech Recognition Models</title>
@@ -2353,8 +2380,8 @@
 <title>AdaJEPA: An Adaptive Latent World Model</title>
 <link>https://www.semanticscholar.org/paper/6a2f658d6ea2d3a1f2d03b11d0cce65e9881bd96</link>
 <guid isPermaLink="false">6a2f658d6ea2d3a1f2d03b11d0cce65e9881bd96</guid>
-<description>By Ying Wang, Oumayma Bounou, Yann LeCun, Mengye Ren. arXiv.org. (Met: Yann LeCun) arXiv:2606.32026</description>
-<pw:authors>Ying Wang, Oumayma Bounou, Yann LeCun, Mengye Ren</pw:authors>
+<description>By Ying Wang, Oumayma Bounou, Yann LeCun, Meng-Ye Ren. arXiv.org. (Met: Yann LeCun) arXiv:2606.32026</description>
+<pw:authors>Ying Wang, Oumayma Bounou, Yann LeCun, Meng-Ye Ren</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -4915,8 +4942,8 @@
 <title>Temporal Straightening for Latent Planning</title>
 <link>https://www.semanticscholar.org/paper/8c9ae85bb64e6e872094065cb9c062f051c2ad1a</link>
 <guid isPermaLink="false">8c9ae85bb64e6e872094065cb9c062f051c2ad1a</guid>
-<description>By Ying Wang, Oumayma Bounou, Gaoyue Zhou, Randall Balestriero, Tim G. J. Rudner, Yann LeCun, Mengye Ren. arXiv.org. (Met: Yann LeCun) arXiv:2603.12231</description>
-<pw:authors>Ying Wang, Oumayma Bounou, Gaoyue Zhou, Randall Balestriero, Tim G. J. Rudner, Yann LeCun, Mengye Ren</pw:authors>
+<description>By Ying Wang, Oumayma Bounou, Gaoyue Zhou, Randall Balestriero, Tim G. J. Rudner, Yann LeCun, Meng-Ye Ren. arXiv.org. (Met: Yann LeCun) arXiv:2603.12231</description>
+<pw:authors>Ying Wang, Oumayma Bounou, Gaoyue Zhou, Randall Balestriero, Tim G. J. Rudner, Yann LeCun, Meng-Ye Ren</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -8387,8 +8414,8 @@
 <title>Cultural Alien Sampler: Open-ended art generation balancing originality and coherence</title>
 <link>https://www.semanticscholar.org/paper/0d5697c9ea40983c439b844fd8a25801dbcde92c</link>
 <guid isPermaLink="false">0d5697c9ea40983c439b844fd8a25801dbcde92c</guid>
-<description>By A. Artiles, Hiromu Yakura, Levin Brinkmann, Mar Canet Sola, Hassan Abu Alhaija, Ignacio Serna, Nasim Rahaman, B. Schölkopf, Iyad Rahwan. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2510.20849</description>
-<pw:authors>A. Artiles, Hiromu Yakura, Levin Brinkmann, Mar Canet Sola, Hassan Abu Alhaija, Ignacio Serna, Nasim Rahaman, B. Schölkopf, Iyad Rahwan</pw:authors>
+<description>By A. Artiles, Hiromu Yakura, L. Brinkmann, Mar Canet Sola, Hassan Abu Alhaija, Ignacio Serna, Nasim Rahaman, B. Schölkopf, I. Rahwan. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2510.20849</description>
+<pw:authors>A. Artiles, Hiromu Yakura, L. Brinkmann, Mar Canet Sola, Hassan Abu Alhaija, Ignacio Serna, Nasim Rahaman, B. Schölkopf, I. Rahwan</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -12139,8 +12166,8 @@
 <title>Can you Finetune your Binoculars? Embedding Text Watermarks into the Weights of Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/5ca4ea932c08a63e49e967202504708ee18fc870</link>
 <guid isPermaLink="false">5ca4ea932c08a63e49e967202504708ee18fc870</guid>
-<description>By Fay Elhassan, Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping. arXiv.org. (Met: Antonio Orvieto) arXiv:2504.06446</description>
-<pw:authors>Fay Elhassan, Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping</pw:authors>
+<description>By F. Elhassan, Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping. arXiv.org. (Met: Antonio Orvieto) arXiv:2504.06446</description>
+<pw:authors>F. Elhassan, Niccolò Ajroldi, Antonio Orvieto, Jonas Geiping</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -12223,8 +12250,8 @@
 <title>Constructing Datasets From Public Police Body Camera Footage</title>
 <link>https://www.semanticscholar.org/paper/8223d2fd31598d27b8c1a9cc0c7fff648c513958</link>
 <guid isPermaLink="false">8223d2fd31598d27b8c1a9cc0c7fff648c513958</guid>
-<description>By Jamie Rosas-Smith, Martijn Bartelds, Ruizhe Huang, Leibny Paola García-Perera, Karen Livescu, Dan Jurafsky, Anjalie Field. IEEE International Conference on Acoustics, Speech, and Signal Processing. (Met: Dan Jurafsky)</description>
-<pw:authors>Jamie Rosas-Smith, Martijn Bartelds, Ruizhe Huang, Leibny Paola García-Perera, Karen Livescu, Dan Jurafsky, Anjalie Field</pw:authors>
+<description>By Jamie Rosas-Smith, Martijn Bartelds, Ruizhe Huang, Leibny Paola García-Perera, K. Livescu, Dan Jurafsky, Anjalie Field. IEEE International Conference on Acoustics, Speech, and Signal Processing. (Met: Dan Jurafsky)</description>
+<pw:authors>Jamie Rosas-Smith, Martijn Bartelds, Ruizhe Huang, Leibny Paola García-Perera, K. Livescu, Dan Jurafsky, Anjalie Field</pw:authors>
 <pw:met>Dan Jurafsky</pw:met>
 <pw:relationships>Dan Jurafsky=following</pw:relationships>
 <pw:venue>IEEE International Conference on Acoustics, Speech, and Signal Processing</pw:venue>
@@ -13483,8 +13510,8 @@
 <title>CTC-DRO: Robust Optimization for Reducing Language Disparities in Speech Recognition</title>
 <link>https://www.semanticscholar.org/paper/6e395c6f6fbb579c1070e8badf5eb446e9544d39</link>
 <guid isPermaLink="false">6e395c6f6fbb579c1070e8badf5eb446e9544d39</guid>
-<description>By Martijn Bartelds, Ananjan Nandi, M. Doumbouya, Dan Jurafsky, Tatsunori Hashimoto, Karen Livescu. arXiv.org. (Met: Dan Jurafsky) arXiv:2502.01777</description>
-<pw:authors>Martijn Bartelds, Ananjan Nandi, M. Doumbouya, Dan Jurafsky, Tatsunori Hashimoto, Karen Livescu</pw:authors>
+<description>By Martijn Bartelds, Ananjan Nandi, M. Doumbouya, Dan Jurafsky, Tatsunori Hashimoto, K. Livescu. arXiv.org. (Met: Dan Jurafsky) arXiv:2502.01777</description>
+<pw:authors>Martijn Bartelds, Ananjan Nandi, M. Doumbouya, Dan Jurafsky, Tatsunori Hashimoto, K. Livescu</pw:authors>
 <pw:met>Dan Jurafsky</pw:met>
 <pw:relationships>Dan Jurafsky=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -15415,8 +15442,8 @@
 <title>Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability in Visual Art</title>
 <link>https://www.semanticscholar.org/paper/d4131bd591f8973b7299cb1dab4c20fa7fe4d593</link>
 <guid isPermaLink="false">d4131bd591f8973b7299cb1dab4c20fa7fe4d593</guid>
-<description>By Alejandro Hernandez, Levin Brinkmann, Ignacio Serna, Nasim Rahaman, Hassan Abu Alhaija, Hiromu Yakura, Mar Canet Sola, B. Schölkopf, Iyad Rahwan. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2411.11494</description>
-<pw:authors>Alejandro Hernandez, Levin Brinkmann, Ignacio Serna, Nasim Rahaman, Hassan Abu Alhaija, Hiromu Yakura, Mar Canet Sola, B. Schölkopf, Iyad Rahwan</pw:authors>
+<description>By Alejandro Hernandez, L. Brinkmann, Ignacio Serna, Nasim Rahaman, Hassan Abu Alhaija, Hiromu Yakura, Mar Canet Sola, B. Schölkopf, I. Rahwan. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2411.11494</description>
+<pw:authors>Alejandro Hernandez, L. Brinkmann, Ignacio Serna, Nasim Rahaman, Hassan Abu Alhaija, Hiromu Yakura, Mar Canet Sola, B. Schölkopf, I. Rahwan</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -15653,8 +15680,8 @@
 <title>Imagining and building wise machines: The centrality of AI metacognition</title>
 <link>https://www.semanticscholar.org/paper/411a038625b8cfb2dc2ed774bfd6e14b66c05014</link>
 <guid isPermaLink="false">411a038625b8cfb2dc2ed774bfd6e14b66c05014</guid>
-<description>By Samuel G. B. Johnson, Amir-Hossein Karimi, Y. Bengio, Nick Chater, Tobias Gerstenberg, Kate Larson, Sydney Levine, Melanie Mitchell, Iyad Rahwan, B. Schölkopf et al.. Trends in Cognitive Sciences. (Met: Bernhard Schölkopf) arXiv:2411.02478</description>
-<pw:authors>Samuel G. B. Johnson, Amir-Hossein Karimi, Y. Bengio, Nick Chater, Tobias Gerstenberg, Kate Larson, Sydney Levine, Melanie Mitchell, Iyad Rahwan, B. Schölkopf et al.</pw:authors>
+<description>By Samuel G. B. Johnson, Amir-Hossein Karimi, Y. Bengio, Nick Chater, Tobias Gerstenberg, Kate Larson, Sydney Levine, Melanie Mitchell, I. Rahwan, B. Schölkopf et al.. Trends in Cognitive Sciences. (Met: Bernhard Schölkopf) arXiv:2411.02478</description>
+<pw:authors>Samuel G. B. Johnson, Amir-Hossein Karimi, Y. Bengio, Nick Chater, Tobias Gerstenberg, Kate Larson, Sydney Levine, Melanie Mitchell, I. Rahwan, B. Schölkopf et al.</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>Trends in Cognitive Sciences</pw:venue>
@@ -16740,20 +16767,6 @@
 <pw:date>2024-09-16</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Thesis proposal: Are We Losing Textual Diversity to Natural Language Processing?</title>
-<link>https://www.semanticscholar.org/paper/4248d093d1fa262a935feca6432b7ed44c14b948</link>
-<guid isPermaLink="false">4248d093d1fa262a935feca6432b7ed44c14b948</guid>
-<description>By Patrick Fernandes, António Farinhas, Ricardo Rei, Jason Wei, Clara Meister, Ryan Cotterell. Conference of the European Chapter of the Association for Computational Linguistics. (Met: Clara Isabel Meister) arXiv:2409.09568</description>
-<pw:authors>Patrick Fernandes, António Farinhas, Ricardo Rei, Jason Wei, Clara Meister, Ryan Cotterell</pw:authors>
-<pw:met>Clara Isabel Meister</pw:met>
-<pw:relationships>Clara Isabel Meister=following</pw:relationships>
-<pw:venue>Conference of the European Chapter of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv>2409.09568</pw:arxiv>
-<pw:date>2024-09-15</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>RETRO-LI: Small-Scale Retrieval Augmented Generation Supporting Noisy Similarity Searches and Domain Shift Generalization</title>
@@ -18593,8 +18606,8 @@
 <title>CMU’s IWSLT 2024 Offline Speech Translation System: A Cascaded Approach For Long-Form Robustness</title>
 <link>https://www.semanticscholar.org/paper/2b283577c8702e105e30edbfeb47732e6f655a88</link>
 <guid isPermaLink="false">2b283577c8702e105e30edbfeb47732e6f655a88</guid>
-<description>By Brian Yan, Patrick Fernandes, Jinchuan Tian, Siqi Ouyang, William Chen, Karen Livescu, Lei Li, Graham Neubig, Shinji Watanabe. International Workshop on Spoken Language Translation. (Met: Graham Neubig)</description>
-<pw:authors>Brian Yan, Patrick Fernandes, Jinchuan Tian, Siqi Ouyang, William Chen, Karen Livescu, Lei Li, Graham Neubig, Shinji Watanabe</pw:authors>
+<description>By Brian Yan, Patrick Fernandes, Jinchuan Tian, Siqi Ouyang, William Chen, K. Livescu, Lei Li, Graham Neubig, Shinji Watanabe. International Workshop on Spoken Language Translation. (Met: Graham Neubig)</description>
+<pw:authors>Brian Yan, Patrick Fernandes, Jinchuan Tian, Siqi Ouyang, William Chen, K. Livescu, Lei Li, Graham Neubig, Shinji Watanabe</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>International Workshop on Spoken Language Translation</pw:venue>
