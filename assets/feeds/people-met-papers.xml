@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 17 Sep 2026 04:07:25 +0000</lastBuildDate>
+<lastBuildDate>Fri, 18 Sep 2026 04:07:48 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1255,6 +1255,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>Objective vs. Search: Decomposing What Makes a Good Tokeniser</title>
+<link>https://www.semanticscholar.org/paper/ee715890cc408b18286b2aebfae2fbfbc95fa8cb</link>
+<guid isPermaLink="false">ee715890cc408b18286b2aebfae2fbfbc95fa8cb</guid>
+<description>By Ahmetcan Yavuz, Clara Meister, Tiago Pimentel. . (Met: Clara Isabel Meister, Tiago Pimentel) arXiv:2609.19145</description>
+<pw:authors>Ahmetcan Yavuz, Clara Meister, Tiago Pimentel</pw:authors>
+<pw:met>Clara Isabel Meister, Tiago Pimentel</pw:met>
+<pw:relationships>Clara Isabel Meister=following|Tiago Pimentel=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.19145</pw:arxiv>
+<pw:date>2026-09-16</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>DualSQL: Text-to-SQL with Multi-Agent Reinforcement Learning</title>
+<link>https://www.semanticscholar.org/paper/bed7c49ce3142680fca754e38648464be14c9be8</link>
+<guid isPermaLink="false">bed7c49ce3142680fca754e38648464be14c9be8</guid>
+<description>By Shi-Jie Chen, Yu Gan, Yeounoh Chung, Jia-Ni Zhang, Quan-Nan Li, S. Bodapati, Cody J. Greer, Yu Su, Fatma Ozcan. . (Met: Yu Su) arXiv:2609.18135</description>
+<pw:authors>Shi-Jie Chen, Yu Gan, Yeounoh Chung, Jia-Ni Zhang, Quan-Nan Li, S. Bodapati, Cody J. Greer, Yu Su, Fatma Ozcan</pw:authors>
+<pw:met>Yu Su</pw:met>
+<pw:relationships>Yu Su=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.18135</pw:arxiv>
+<pw:date>2026-09-16</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>LLMs as Oracles: Reliance on LLMs for Subjective Personal Questions</title>
@@ -2660,8 +2688,8 @@
 <title>Sensorimotor World Models: Perception for Action via Inverse Dynamics</title>
 <link>https://www.semanticscholar.org/paper/6b4e3d1f978c4b3ac722f5464b0a6a52e83b3916</link>
 <guid isPermaLink="false">6b4e3d1f978c4b3ac722f5464b0a6a52e83b3916</guid>
-<description>By P. Ivashkov, Randall Balestriero, B. Scholkopf. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2606.20104</description>
-<pw:authors>P. Ivashkov, Randall Balestriero, B. Scholkopf</pw:authors>
+<description>By P. Ivashkov, Randall Balestriero, B. Schölkopf. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2606.20104</description>
+<pw:authors>P. Ivashkov, Randall Balestriero, B. Schölkopf</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -3192,8 +3220,8 @@
 <title>Benchmarking and Enhancing Text-to-Image Models for Generating Visual Representations in Early Arithmetic Education</title>
 <link>https://www.semanticscholar.org/paper/2788bbeb12e8be9147729d4bdf61921a660ce754</link>
 <guid isPermaLink="false">2788bbeb12e8be9147729d4bdf61921a660ce754</guid>
-<description>By Junling Wang, Boqi Chen, Heejin Do, Mubashara Akhtar, A. Wang, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2605.31212</description>
-<pw:authors>Junling Wang, Boqi Chen, Heejin Do, Mubashara Akhtar, A. Wang, Mrinmaya Sachan</pw:authors>
+<description>By Junling Wang, Bo-Qi Chen, Heejin Do, Mubashara Akhtar, A. Wang, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2605.31212</description>
+<pw:authors>Junling Wang, Bo-Qi Chen, Heejin Do, Mubashara Akhtar, A. Wang, Mrinmaya Sachan</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5348,8 +5376,8 @@
 <title>Beyond Explainable AI (XAI): An Overdue Paradigm Shift and Post-XAI Research Directions</title>
 <link>https://www.semanticscholar.org/paper/1ea5f68a763e9f403debb31b3a19a52c0f43a923</link>
 <guid isPermaLink="false">1ea5f68a763e9f403debb31b3a19a52c0f43a923</guid>
-<description>By S. Afroogh, Seyd Ishtiaque Ahmed, Petra Ahrweiler, David Alvarez-Melis, Mansur Arief, E. Barakova, Falco J. Bargagli-Stoffi, Erdem Biyik, Hanjie Chen, Xiang'Anthony'Chen et al.. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2602.24176</description>
-<pw:authors>S. Afroogh, Seyd Ishtiaque Ahmed, Petra Ahrweiler, David Alvarez-Melis, Mansur Arief, E. Barakova, Falco J. Bargagli-Stoffi, Erdem Biyik, Hanjie Chen, Xiang'Anthony'Chen et al.</pw:authors>
+<description>By S. Afroogh, Seyd Ishtiaque Ahmed, Petra Ahrweiler, David Alvarez-Melis, Mansur Arief, E. Barakova, F. J. Bargagli-Stoffi, Erdem Biyik, Hanjie Chen, Xiang'Anthony'Chen et al.. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2602.24176</description>
+<pw:authors>S. Afroogh, Seyd Ishtiaque Ahmed, Petra Ahrweiler, David Alvarez-Melis, Mansur Arief, E. Barakova, F. J. Bargagli-Stoffi, Erdem Biyik, Hanjie Chen, Xiang'Anthony'Chen et al.</pw:authors>
 <pw:met>Swabha Swayamdipta</pw:met>
 <pw:relationships>Swabha Swayamdipta=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6790,8 +6818,8 @@
 <title>Online Learning and Unlearning: Efficient Algorithms with Near-Optimal Regret Guarantees</title>
 <link>https://www.semanticscholar.org/paper/416729c36724bf08ca3b3f71c67155b5c08805c0</link>
 <guid isPermaLink="false">416729c36724bf08ca3b3f71c67155b5c08805c0</guid>
-<description>By Ya-Xi Hu, B. Scholkopf, Amartya Sanyal. Trans. Mach. Learn. Res.. (Met: Bernhard Schölkopf)</description>
-<pw:authors>Ya-Xi Hu, B. Scholkopf, Amartya Sanyal</pw:authors>
+<description>By Ya-Xi Hu, B. Schölkopf, Amartya Sanyal. Trans. Mach. Learn. Res.. (Met: Bernhard Schölkopf)</description>
+<pw:authors>Ya-Xi Hu, B. Schölkopf, Amartya Sanyal</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>Trans. Mach. Learn. Res.</pw:venue>
@@ -16352,8 +16380,8 @@
 <title>Local and Global Decoding in Text Generation</title>
 <link>https://www.semanticscholar.org/paper/40fb258232e5cd8e4c68b10064de45e448c2725a</link>
 <guid isPermaLink="false">40fb258232e5cd8e4c68b10064de45e448c2725a</guid>
-<description>By Daniel Gareev, Thomas Hofmann, Ezhilmathi Krishnasamy, Tiago Pimentel. Conference on Empirical Methods in Natural Language Processing. (Met: Tiago Pimentel) arXiv:2410.10810</description>
-<pw:authors>Daniel Gareev, Thomas Hofmann, Ezhilmathi Krishnasamy, Tiago Pimentel</pw:authors>
+<description>By Daniel Gareev, Thomas Hofmann, E. Krishnasamy, Tiago Pimentel. Conference on Empirical Methods in Natural Language Processing. (Met: Tiago Pimentel) arXiv:2410.10810</description>
+<pw:authors>Daniel Gareev, Thomas Hofmann, E. Krishnasamy, Tiago Pimentel</pw:authors>
 <pw:met>Tiago Pimentel</pw:met>
 <pw:relationships>Tiago Pimentel=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -16725,20 +16753,6 @@
 <pw:date>2024-09-19</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Diversify and Conquer: Diversity-Centric Data Selection with Iterative Refinement</title>
-<link>https://www.semanticscholar.org/paper/ab83eae00db6a19de1ebdb23f7ceed29b5832675</link>
-<guid isPermaLink="false">ab83eae00db6a19de1ebdb23f7ceed29b5832675</guid>
-<description>By Simon Yu, Liangyu Chen, Sara Ahmadian, Marzieh Fadaee. arXiv.org. (Met: Marzieh Fadaee) arXiv:2409.11378</description>
-<pw:authors>Simon Yu, Liangyu Chen, Sara Ahmadian, Marzieh Fadaee</pw:authors>
-<pw:met>Marzieh Fadaee</pw:met>
-<pw:relationships>Marzieh Fadaee=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2409.11378</pw:arxiv>
-<pw:date>2024-09-17</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>RETRO-LI: Small-Scale Retrieval Augmented Generation Supporting Noisy Similarity Searches and Domain Shift Generalization</title>
@@ -20286,8 +20300,8 @@
 <title>Learning Locomotion Skills from MPC in Sensor Space</title>
 <link>https://www.semanticscholar.org/paper/f0b36c342e202828a6b03f81a8b7e967d56d1d19</link>
 <guid isPermaLink="false">f0b36c342e202828a6b03f81a8b7e967d56d1d19</guid>
-<description>By Majid Khadiv, Avadesh Meduri, Huaijiang Zhu, L. Righetti, B. Scholkopf. Conference on Learning for Dynamics &amp; Control. (Met: Bernhard Schölkopf)</description>
-<pw:authors>Majid Khadiv, Avadesh Meduri, Huaijiang Zhu, L. Righetti, B. Scholkopf</pw:authors>
+<description>By Majid Khadiv, Avadesh Meduri, Huaijiang Zhu, L. Righetti, B. Schölkopf. Conference on Learning for Dynamics &amp; Control. (Met: Bernhard Schölkopf)</description>
+<pw:authors>Majid Khadiv, Avadesh Meduri, Huaijiang Zhu, L. Righetti, B. Schölkopf</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>Conference on Learning for Dynamics &amp; Control</pw:venue>
