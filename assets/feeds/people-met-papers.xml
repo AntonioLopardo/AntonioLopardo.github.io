@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 18 Sep 2026 04:07:48 +0000</lastBuildDate>
+<lastBuildDate>Sat, 19 Sep 2026 04:10:42 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1271,11 +1271,25 @@
 <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Why Pretraining Fails to Share Cross-Lingual Knowledge</title>
+<link>https://www.semanticscholar.org/paper/24005c82ef5b7300f052aedf096057a294518bf2</link>
+<guid isPermaLink="false">24005c82ef5b7300f052aedf096057a294518bf2</guid>
+<description>By Adam Gaber, Uriel Dolev, Elisabeth Fittschen, Bobby Cheng, Yuval Marton, Leshem Choshen. . (Met: Leshem Choshen) arXiv:2609.19291</description>
+<pw:authors>Adam Gaber, Uriel Dolev, Elisabeth Fittschen, Bobby Cheng, Yuval Marton, Leshem Choshen</pw:authors>
+<pw:met>Leshem Choshen</pw:met>
+<pw:relationships>Leshem Choshen=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.19291</pw:arxiv>
+<pw:date>2026-09-16</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>DualSQL: Text-to-SQL with Multi-Agent Reinforcement Learning</title>
 <link>https://www.semanticscholar.org/paper/bed7c49ce3142680fca754e38648464be14c9be8</link>
 <guid isPermaLink="false">bed7c49ce3142680fca754e38648464be14c9be8</guid>
-<description>By Shi-Jie Chen, Yu Gan, Yeounoh Chung, Jia-Ni Zhang, Quan-Nan Li, S. Bodapati, Cody J. Greer, Yu Su, Fatma Ozcan. . (Met: Yu Su) arXiv:2609.18135</description>
-<pw:authors>Shi-Jie Chen, Yu Gan, Yeounoh Chung, Jia-Ni Zhang, Quan-Nan Li, S. Bodapati, Cody J. Greer, Yu Su, Fatma Ozcan</pw:authors>
+<description>By Shi-Jie Chen, Yu Gan, Yeounoh Chung, Jia-Ning Zhang, Quan-Nan Li, S. Bodapati, Cody J. Greer, Yu Su, Fatma Ozcan. . (Met: Yu Su) arXiv:2609.18135</description>
+<pw:authors>Shi-Jie Chen, Yu Gan, Yeounoh Chung, Jia-Ning Zhang, Quan-Nan Li, S. Bodapati, Cody J. Greer, Yu Su, Fatma Ozcan</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -4088,8 +4102,8 @@
 <title>SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/a5e883cf30c85a3d9f5279ae67ce12f2977b5790</link>
 <guid isPermaLink="false">a5e883cf30c85a3d9f5279ae67ce12f2977b5790</guid>
-<description>By Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai. arXiv.org. (Met: Josue Torres-Fonseca) arXiv:2604.19638</description>
-<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai</pw:authors>
+<description>By Josue Torres-Fonseca, Naihao Deng, Yin-Pei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai. arXiv.org. (Met: Josue Torres-Fonseca) arXiv:2604.19638</description>
+<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yin-Pei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai</pw:authors>
 <pw:met>Josue Torres-Fonseca</pw:met>
 <pw:relationships>Josue Torres-Fonseca=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -4312,11 +4326,11 @@
 <title>Evolving Many Worlds: Towards Open-Ended Discovery in Petri Dish NCA via Population-Based Training</title>
 <link>https://www.semanticscholar.org/paper/e19df286ba7f25d01ca17baafe413157f3e67586</link>
 <guid isPermaLink="false">e19df286ba7f25d01ca17baafe413157f3e67586</guid>
-<description>By Uljad Berdica, J. Foerster, Frank Hutter, Arber Zela. arXiv.org. (Met: Jakob Foerster) arXiv:2604.11248</description>
+<description>By Uljad Berdica, J. Foerster, Frank Hutter, Arber Zela. IEEE Symposium on Artificial Life. (Met: Jakob Foerster) arXiv:2604.11248</description>
 <pw:authors>Uljad Berdica, J. Foerster, Frank Hutter, Arber Zela</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>IEEE Symposium on Artificial Life</pw:venue>
 <pw:arxiv>2604.11248</pw:arxiv>
 <pw:date>2026-04-13</pw:date>
 <pw:year>2026</pw:year>
@@ -4634,8 +4648,8 @@
 <title>Computational Arbitrage in AI Model Markets</title>
 <link>https://www.semanticscholar.org/paper/fe6013e69102e29fa33f734157b5fb30f7f602ee</link>
 <guid isPermaLink="false">fe6013e69102e29fa33f734157b5fb30f7f602ee</guid>
-<description>By Ricardo Olmedo, Bernhard Scholkopf, Moritz Hardt. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2603.22404</description>
-<pw:authors>Ricardo Olmedo, Bernhard Scholkopf, Moritz Hardt</pw:authors>
+<description>By R. Olmedo, Bernhard Scholkopf, Moritz Hardt. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2603.22404</description>
+<pw:authors>R. Olmedo, Bernhard Scholkopf, Moritz Hardt</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -7014,8 +7028,8 @@
 <title>SafetyALFRED: Evaluating Safety-Conscious Planning of Vision Language Models</title>
 <link>https://www.semanticscholar.org/paper/9f4aec061f28ce9cd05a37296269f63b5a79867b</link>
 <guid isPermaLink="false">9f4aec061f28ce9cd05a37296269f63b5a79867b</guid>
-<description>By Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai. Annual Meeting of the Association for Computational Linguistics. (Met: Josue Torres-Fonseca)</description>
-<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yinpei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai</pw:authors>
+<description>By Josue Torres-Fonseca, Naihao Deng, Yin-Pei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai. Annual Meeting of the Association for Computational Linguistics. (Met: Josue Torres-Fonseca)</description>
+<pw:authors>Josue Torres-Fonseca, Naihao Deng, Yin-Pei Dai, Shane Storks, Yichi Zhang, Rada Mihalcea, C. Kennington, Joyce Chai</pw:authors>
 <pw:met>Josue Torres-Fonseca</pw:met>
 <pw:relationships>Josue Torres-Fonseca=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -21504,8 +21518,8 @@
 <title>From FreEM to D’AlemBERT: a Large Corpus and a Language Model for Early Modern French</title>
 <link>https://www.semanticscholar.org/paper/d04673a204845396eb20f9fa6f48361332b8d757</link>
 <guid isPermaLink="false">d04673a204845396eb20f9fa6f48361332b8d757</guid>
-<description>By Simon Gabay, Pedro Ortiz Suarez, Alexandre Bartz, Alix Chagu'e, Rachel Bawden, Philippe Gambette, Benoît Sagot. International Conference on Language Resources and Evaluation. (Met: Pedro Ortiz Suarez) arXiv:2202.09452</description>
-<pw:authors>Simon Gabay, Pedro Ortiz Suarez, Alexandre Bartz, Alix Chagu'e, Rachel Bawden, Philippe Gambette, Benoît Sagot</pw:authors>
+<description>By Simon Gabay, Pedro Ortiz Suarez, Alexandre Bartz, Alix Chagué, Rachel Bawden, Philippe Gambette, Benoît Sagot. International Conference on Language Resources and Evaluation. (Met: Pedro Ortiz Suarez) arXiv:2202.09452</description>
+<pw:authors>Simon Gabay, Pedro Ortiz Suarez, Alexandre Bartz, Alix Chagué, Rachel Bawden, Philippe Gambette, Benoît Sagot</pw:authors>
 <pw:met>Pedro Ortiz Suarez</pw:met>
 <pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
 <pw:venue>International Conference on Language Resources and Evaluation</pw:venue>
