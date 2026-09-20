@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sat, 19 Sep 2026 04:10:42 +0000</lastBuildDate>
+<lastBuildDate>Sun, 20 Sep 2026 04:08:09 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1036,6 +1036,19 @@
 <pw:year></pw:year>
 </item>
 <item>
+<title>Proceedings of the Workshop on Challenges in the Management of Large Corpora (CMLC-9) 2021</title>
+<link>https://www.semanticscholar.org/paper/51b1176d8791372d1291931ad603ad728b7f3ec8</link>
+<guid isPermaLink="false">51b1176d8791372d1291931ad603ad728b7f3ec8</guid>
+<description>By Julien Abadji, Pedro Ortiz Suarez, Laurent Romary, Benoît Sagot, Markus G. ̈artner, Felicitas Kleinkopf, Melanie Andresen, Sibylle Hermann, Nils Diewald, Eliza Margaretha et al.. . (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Julien Abadji, Pedro Ortiz Suarez, Laurent Romary, Benoît Sagot, Markus G. ̈artner, Felicitas Kleinkopf, Melanie Andresen, Sibylle Hermann, Nils Diewald, Eliza Margaretha et al.</pw:authors>
+<pw:met>Pedro Ortiz Suarez</pw:met>
+<pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
 <title>ElChat: Adapting Chat Language Models Using Only Target Unlabeled Language Data</title>
 <link>https://www.semanticscholar.org/paper/7c522588dae5cb340d8350efa422542515260735</link>
 <guid isPermaLink="false">7c522588dae5cb340d8350efa422542515260735</guid>
@@ -1208,8 +1221,8 @@
 <title>Can Theoretical Physics Research Beneﬁt from Language Agents?</title>
 <link>https://www.semanticscholar.org/paper/de756473e272a27015a5df55556b101e7fc0599e</link>
 <guid isPermaLink="false">de756473e272a27015a5df55556b101e7fc0599e</guid>
-<description>By Sirui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf. . (Met: Zhijing Jin)</description>
-<pw:authors>Sirui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf</pw:authors>
+<description>By Si-Rui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf. . (Met: Zhijing Jin)</description>
+<pw:authors>Si-Rui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -7672,8 +7685,8 @@
 <title>ELR-1000: A Community-Generated Dataset for Endangered Indic Indigenous Languages</title>
 <link>https://www.semanticscholar.org/paper/c2a99c3544d8ba58a826de0dd26e11b2107883db</link>
 <guid isPermaLink="false">c2a99c3544d8ba58a826de0dd26e11b2107883db</guid>
-<description>By Neha Joshi, Pamir Gogoi, Aasim Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, D. Sudharsan, Kalika Bali, Vivek Seshadri. IJCNLP-AACL. (Met: Aditya Yadavalli) arXiv:2512.01077</description>
-<pw:authors>Neha Joshi, Pamir Gogoi, Aasim Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, D. Sudharsan, Kalika Bali, Vivek Seshadri</pw:authors>
+<description>By Neha Joshi, Pamir Gogoi, Aasim Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, Deepthi Sudharsan, Kalika Bali, Vivek Seshadri. IJCNLP-AACL. (Met: Aditya Yadavalli) arXiv:2512.01077</description>
+<pw:authors>Neha Joshi, Pamir Gogoi, Aasim Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, Deepthi Sudharsan, Kalika Bali, Vivek Seshadri</pw:authors>
 <pw:met>Aditya Yadavalli</pw:met>
 <pw:relationships>Aditya Yadavalli=met</pw:relationships>
 <pw:venue>IJCNLP-AACL</pw:venue>
@@ -10822,8 +10835,8 @@
 <title>Can Theoretical Physics Research Benefit from Language Agents?</title>
 <link>https://www.semanticscholar.org/paper/a2165582a92af095f6c7802ec0ed97b3c02e50d8</link>
 <guid isPermaLink="false">a2165582a92af095f6c7802ec0ed97b3c02e50d8</guid>
-<description>By Sirui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin) arXiv:2506.06214</description>
-<pw:authors>Sirui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf</pw:authors>
+<description>By Si-Rui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin) arXiv:2506.06214</description>
+<pw:authors>Si-Rui Lu, Zhijing Jin, Terry Jingchen Zhang, Pavel Kos, J. I. Cirac, B. Schölkopf</pw:authors>
 <pw:met>Bernhard Schölkopf, Zhijing Jin</pw:met>
 <pw:relationships>Bernhard Schölkopf=following|Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
