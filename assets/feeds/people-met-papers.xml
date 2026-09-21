@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 20 Sep 2026 04:08:09 +0000</lastBuildDate>
+<lastBuildDate>Mon, 21 Sep 2026 04:09:35 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1182,8 +1182,8 @@
 <title>The Diashow Paradox: Stronger 3D-Aware Representations Emerge from Image Sets, Not Videos Anonymous ICCV submission</title>
 <link>https://www.semanticscholar.org/paper/be2bd2ca84460ab58c5563789b8cd482e977ee76</link>
 <guid isPermaLink="false">be2bd2ca84460ab58c5563789b8cd482e977ee76</guid>
-<description>By Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bo-251, Pascal Vincent, Michael Rabbat, Yann LeCun, Adrien Bardes, David Fan, Quentin Gar-257 et al.. . (Met: Yann LeCun)</description>
-<pw:authors>Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bo-251, Pascal Vincent, Michael Rabbat, Yann LeCun, Adrien Bardes, David Fan, Quentin Gar-257 et al.</pw:authors>
+<description>By Mahmoud Assran, Quentin Duval, Is-han Misra, Piotr Bo-251, Pascal Vincent, Michael Rabbat, Yann LeCun, Adrien Bardes, David Fan, Quentin Gar-257 et al.. . (Met: Yann LeCun)</description>
+<pw:authors>Mahmoud Assran, Quentin Duval, Is-han Misra, Piotr Bo-251, Pascal Vincent, Michael Rabbat, Yann LeCun, Adrien Bardes, David Fan, Quentin Gar-257 et al.</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -11003,8 +11003,8 @@
 <title>High Accuracy, Less Talk (HALT): Reliable LLMs through Capability-Aligned Finetuning</title>
 <link>https://www.semanticscholar.org/paper/c3e718c9ee3cc961d601f4b5b14bd0d1cada68bb</link>
 <guid isPermaLink="false">c3e718c9ee3cc961d601f4b5b14bd0d1cada68bb</guid>
-<description>By Tim Franzmeyer, A. Sravankumar, Lijuan Liu, Yuning Mao, Rui Hou, Sinong Wang, J. Foerster, Luke Zettlemoyer, Madian Khabsa. arXiv.org. (Met: Jakob Foerster) arXiv:2506.04051</description>
-<pw:authors>Tim Franzmeyer, A. Sravankumar, Lijuan Liu, Yuning Mao, Rui Hou, Sinong Wang, J. Foerster, Luke Zettlemoyer, Madian Khabsa</pw:authors>
+<description>By Tim Franzmeyer, Archie Sravankumar, Lijuan Liu, Yuning Mao, Rui Hou, Sinong Wang, J. Foerster, Luke Zettlemoyer, Madian Khabsa. arXiv.org. (Met: Jakob Foerster) arXiv:2506.04051</description>
+<pw:authors>Tim Franzmeyer, Archie Sravankumar, Lijuan Liu, Yuning Mao, Rui Hou, Sinong Wang, J. Foerster, Luke Zettlemoyer, Madian Khabsa</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
