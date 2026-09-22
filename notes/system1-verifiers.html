@@ -475,7 +475,7 @@ svg .ghost{fill:var(--rule);}
 </section>
 </div>
 <div class="panel" id="p-prop" role="tabpanel" aria-labelledby="t-prop" hidden>
-<p class="lede" style="font-size:15px">The proposal starts from a mechanism: GRPO gets no gradient from a group whose rollouts all agree, and that happens on the prompts the policy cannot do yet. A one-pass judge can rank inside those groups and choose prompts before rolling out, if it is refit as the policy moves. PRIME is the named baseline.</p>
+<p class="lede" style="font-size:15px">One idea: a cheap predictor of the pass rate a prompt will get under the current policy, used before rolling it out. GRPO gets no gradient from groups whose rollouts all agree; the predictor keeps the batch at the frontier, and if it is calibrated it can also replace the group as the baseline. Refit as the policy moves.</p>
 <!-- Q1 BLIND -->
 <section>
 <p class="eyebrow">Proposal 1 · The mechanism</p>
@@ -525,140 +525,127 @@ svg .ghost{fill:var(--rule);}
 <p class="cite">GRPO: Shao et al. 2024 (2402.03300) · dynamic sampling: DAPO, Yu et al. 2025 (2503.14476) · curve: p⁸ + (1−p)⁸</p>
 </figure>
 </section>
-<!-- Q2 FIXES -->
+<!-- Q2 PREDICTOR -->
 <section>
-<p class="eyebrow">Proposal 2 · What a fast judge does about it</p>
-<h2>Rank inside the silent groups, and choose prompts before rolling out</h2>
+<p class="eyebrow">Proposal 2 · The idea</p>
+<h2>Predict a prompt's pass rate before rolling it out</h2>
 <figure>
-<svg viewBox="0 0 960 330" role="img" aria-label="Left: inside an all-wrong group, a step verifier scores each rollout by how many steps held before the first failure, giving a non-zero advantage where the checker gave none. Right: before generation, the verifier predicts each prompt's pass rate under the current policy, and the batch is drawn from prompts predicted near 50 percent.">
+<svg viewBox="0 0 960 330" role="img" aria-label="A one-pass predictor reads a prompt and returns the probability that the current policy solves it. Prompts predicted near 0.5 are rolled out; those predicted near 0 or 1 are skipped. The predictor is a prompt-level value function, trained on checker labels from past rollouts and refit as the policy moves.">
 <defs><marker id="q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
-<text x="40" y="36" class="k">A · PARTIAL CREDIT INSIDE AN ALL-WRONG GROUP</text>
-<g><rect x="40" y="52" width="300" height="24" rx="4" class="box"/><rect x="40" y="86" width="300" height="24" rx="4" class="box"/><rect x="40" y="120" width="300" height="24" rx="4" class="box"/></g>
-<text x="50" y="69" class="lab">✓ ✓ ✓ ✗ · · · wrong answer</text><text x="350" y="69" class="num">checker 0 · verifier 0.61</text>
-<text x="50" y="103" class="lab">✓ ✗ · · · · · wrong answer</text><text x="350" y="103" class="num">checker 0 · verifier 0.22</text>
-<text x="50" y="137" class="lab">✗ · · · · · · wrong answer</text><text x="350" y="137" class="num">checker 0 · verifier 0.05</text>
-<text x="40" y="176">advantage was 0, 0, 0 · now +0.32, −0.07, −0.24</text>
-<text x="40" y="198" class="lab">a judgement per step of every rollout, the rejected ones included: ~1,100 reads per step</text>
-<text x="40" y="216" class="lab">only a one-pass judge makes that affordable</text>
-<line x1="480" y1="40" x2="480" y2="230" class="grid"/>
-<text x="520" y="36" class="k">B · PROMPT SELECTION BEFORE ROLLOUT</text>
+<rect x="40" y="90" width="170" height="70" rx="6" class="box"/><text x="125" y="120" text-anchor="middle" class="big">prompt</text><text x="125" y="145" text-anchor="middle" class="lab">from a pool of 100k</text>
+<line x1="210" y1="125" x2="290" y2="125" class="ln" marker-end="url(#q2)"/>
+<rect x="290" y="70" width="240" height="110" rx="6" class="box-acc"/>
+<text x="410" y="100" text-anchor="middle" class="big">V(prompt)</text>
+<text x="410" y="124" text-anchor="middle" class="num">p̂ = P(correct | prompt, π_t)</text>
+<text x="410" y="148" text-anchor="middle" class="lab">0.4B encoder head · one pass · ms</text>
+<text x="410" y="166" text-anchor="middle" class="lab">a prompt-level value function</text>
+<line x1="530" y1="125" x2="610" y2="125" class="ln" marker-end="url(#q2)"/>
 <g class="num">
-<rect x="520" y="52" width="180" height="24" rx="12" class="box"/><text x="610" y="69" text-anchor="middle">prompt 1 · p̂ = 0.97</text>
-<rect x="520" y="84" width="180" height="24" rx="12" class="box-acc"/><text x="610" y="101" text-anchor="middle">prompt 2 · p̂ = 0.48</text>
-<rect x="520" y="116" width="180" height="24" rx="12" class="box"/><text x="610" y="133" text-anchor="middle">prompt 3 · p̂ = 0.03</text>
-<rect x="520" y="148" width="180" height="24" rx="12" class="box-acc"/><text x="610" y="165" text-anchor="middle">prompt 4 · p̂ = 0.61</text>
+<rect x="610" y="60" width="150" height="26" rx="13" class="box"/><text x="685" y="78" text-anchor="middle">p̂ = 0.96 · skip</text>
+<rect x="610" y="96" width="150" height="26" rx="13" class="box-acc"/><text x="685" y="114" text-anchor="middle">p̂ = 0.52 · roll out</text>
+<rect x="610" y="132" width="150" height="26" rx="13" class="box-acc"/><text x="685" y="150" text-anchor="middle">p̂ = 0.38 · roll out</text>
+<rect x="610" y="168" width="150" height="26" rx="13" class="box"/><text x="685" y="186" text-anchor="middle">p̂ = 0.04 · skip</text>
 </g>
-<text x="720" y="69" class="lab">skip: would be all right</text>
-<text x="720" y="101" class="lab" style="fill:var(--acc)">roll out</text>
-<text x="720" y="133" class="lab">skip: would be all wrong</text>
-<text x="720" y="165" class="lab" style="fill:var(--acc)">roll out</text>
-<text x="520" y="198" class="lab">one read per candidate prompt, 35 ms, before any generation</text>
-<text x="520" y="216" class="lab">DAPO pays for the rollouts first; this decides first</text>
-<text x="480" y="270" text-anchor="middle">both are relative to the current policy: which prompts sit at 50 %, which wrong traces got furthest</text>
-<text x="480" y="294" text-anchor="middle" class="lab" style="fill:var(--acc)">so the judge has to be refit as the policy moves, or it describes the policy you started with</text>
+<text x="775" y="78" class="lab">would be all right</text>
+<text x="775" y="114" class="lab" style="fill:var(--acc)">group will have variance</text>
+<text x="775" y="150" class="lab" style="fill:var(--acc)">group will have variance</text>
+<text x="775" y="186" class="lab">would be all wrong</text>
+<!-- training -->
+<path d="M410 180 V 240" class="ln acc-s dash" marker-end="url(#q2)"/>
+<rect x="250" y="240" width="320" height="50" rx="6" class="box"/>
+<text x="410" y="260" text-anchor="middle">trained on checker labels of past rollouts</text>
+<text x="410" y="280" text-anchor="middle" class="lab">log-loss on (prompt, fraction of the group that was correct) · refit every k steps</text>
+<text x="40" y="318" class="lab">GRPO's signal on a prompt scales with p(1−p); sampling from a band around 0.5 maximises it per rollout paid for</text>
 </svg>
-<figcaption>Two uses of the same one-pass verifier, both aimed at the groups GRPO wastes. The first turns the outcome bit into gradient on the hardest prompts; the second keeps the batch at the frontier without paying for rollouts that will cancel. Neither is possible with a judge that costs a generation per call.</figcaption>
-<p class="cite">Partial credit in failed groups is the classical PRM argument (Lightman 2023, PRIME 2025); difficulty-aware prompt sampling: DAPO 2025, and curriculum RL for LLMs, e.g. Chen et al. 2025 (2505.14970, self-evolving curriculum)</p>
+<figcaption>GRPO removed the critic and pays for it in rollouts that cancel. This is a critic at the prompt level only, used as a sampling device: it says, before generation, which prompts sit at the policy's frontier. It learns from the same checker labels as everything else and is refit so the frontier moves with the policy.</figcaption>
+<p class="cite">GRPO: Shao et al. 2024 (2402.03300) · signal ∝ p(1−p): variance of a Bernoulli group</p>
 </figure>
 </section>
-<!-- Q2 SCHEDULE -->
+<!-- Q3 BASELINES -->
 <section>
-<p class="eyebrow">Proposal 3 · Schedule</p>
-<h2>Refit: k policy steps, then minutes of verifier training</h2>
+<p class="eyebrow">Proposal 3 · Against what exists</p>
+<h2>Difficulty is already used; it is estimated after paying</h2>
 <figure>
-<svg viewBox="0 0 960 330" role="img" aria-label="Timeline of alternation: the policy takes k GRPO steps rewarded by the current verifier, producing 128 samples per step; the checker labels them; every k steps the verifier is retrained with log-loss on those fresh samples plus a replay of older ones, and the refreshed verifier rewards the next k steps.">
-<defs><marker id="q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
-<text x="40" y="36" class="k">POLICY · GRPO, 128 SAMPLES PER STEP</text>
-<g><rect x="40" y="48" width="340" height="40" rx="4" class="box"/><rect x="420" y="48" width="340" height="40" rx="4" class="box"/><rect x="800" y="48" width="120" height="40" rx="4" class="box" style="stroke-dasharray:4 3"/></g>
-<text x="210" y="73" text-anchor="middle">steps 1 … k</text><text x="590" y="73" text-anchor="middle">steps k+1 … 2k</text><text x="860" y="73" text-anchor="middle" class="lab">…</text>
-<!-- samples down -->
-<g class="ln dash"><line x1="210" y1="88" x2="210" y2="140" marker-end="url(#q2)"/><line x1="590" y1="88" x2="590" y2="140" marker-end="url(#q2)"/></g>
-<text x="225" y="120" class="lab">k × 128 samples, checker-labelled</text>
-<text x="605" y="120" class="lab">fresh samples again</text>
-<!-- D refresh -->
-<text x="40" y="160" class="k">VERIFIER · LOG-LOSS ON FRESH + REPLAY</text>
-<rect x="150" y="170" width="120" height="44" rx="22" class="box-acc"/><text x="210" y="190" text-anchor="middle">refresh D₁</text><text x="210" y="206" text-anchor="middle" class="lab">minutes</text>
-<rect x="530" y="170" width="120" height="44" rx="22" class="box-acc"/><text x="590" y="190" text-anchor="middle">refresh D₂</text><text x="590" y="206" text-anchor="middle" class="lab">minutes</text>
-<!-- replay -->
-<path d="M270 192 H 470 V 192" class="ln acc-s" marker-end="url(#q2)"/><text x="370" y="184" text-anchor="middle" class="lab">replay: old samples stay in D's set</text>
-<!-- rewards up -->
-<path d="M330 170 V 100 H 420" class="ln acc-s" marker-end="url(#q2)"/><text x="420" y="130" class="lab" style="fill:var(--acc)">D₁ rewards the next k steps</text>
-<path d="M710 170 V 100 H 800" class="ln acc-s" marker-end="url(#q2)"/>
-<rect x="40" y="170" width="70" height="44" rx="22" class="box"/><text x="75" y="197" text-anchor="middle" class="num">D₀</text>
-<line x1="110" y1="192" x2="150" y2="192" class="ln" marker-end="url(#q2)"/>
-<!-- health line -->
-<text x="40" y="258" class="k">HEALTH · TRACKED AT EVERY REFRESH</text>
-<text x="40" y="284">D's ECE on a held-out labelled set · gap between mean D-score and true accuracy · pass@k of the policy</text>
-<text x="40" y="308" class="lab">k ≈ 25–50 steps; D₀ = today's static verifier, so arm B2 is the k = ∞ baseline of this design</text>
+<svg viewBox="0 0 960 330" role="img" aria-label="Four ways to choose prompts, compared on when difficulty is known and what it costs. Uniform sampling: no difficulty estimate, a third of groups wasted. Post-hoc filtering like DAPO: difficulty known after generating, uniform groups discarded and the batch refilled. Historical pass rates: difficulty from earlier epochs, free but stale and only for prompts already rolled out. A learned predictor: difficulty before generating, for any prompt in the pool, refit in minutes.">
+<g class="grid"><line x1="40" y1="64" x2="920" y2="64"/><line x1="40" y1="124" x2="920" y2="124"/><line x1="40" y1="184" x2="920" y2="184"/><line x1="40" y1="244" x2="920" y2="244"/></g>
+<text x="40" y="50" class="k">METHOD</text><text x="330" y="50" class="k">DIFFICULTY KNOWN</text><text x="560" y="50" class="k">COVERS</text><text x="740" y="50" class="k">COST OF KNOWING</text>
+<text x="40" y="98">uniform sampling</text><text x="330" y="98" class="lab">never</text><text x="560" y="98" class="lab">everything</text><text x="740" y="98" class="lab">none; wasted groups</text>
+<text x="40" y="158">post-hoc filter · DAPO</text><text x="330" y="158" class="lab">after generating</text><text x="560" y="158" class="lab">this batch</text><text x="740" y="158" class="lab" style="fill:var(--warm)">the rollouts it discards</text>
+<text x="40" y="218">historical pass rate · AdaRFT, SEC</text><text x="330" y="218" class="lab">from earlier epochs</text><text x="560" y="218" class="lab">prompts already rolled out</text><text x="740" y="218" class="lab">free, but stale</text>
+<text x="40" y="278" style="fill:var(--acc)">learned predictor · proposed</text><text x="330" y="278" class="lab" style="fill:var(--acc)">before generating</text><text x="560" y="278" class="lab" style="fill:var(--acc)">any prompt, seen or not</text><text x="740" y="278" class="lab" style="fill:var(--acc)">ms per prompt; minutes to refit</text>
+<text x="40" y="316" class="lab">the predictor generalises the historical pass rate to unseen prompts and to the current policy; those are the two things to measure</text>
 </svg>
-<figcaption>Same loop as today with one addition: the verifier is a second learner. The signal is the checker's label on each trace, attached to every step pair, cross-entropy; the one-hop notion comes from constructed edits (skip, merge, wrong number, pad) with exact labels. Between refits the verifier is fixed; each refit is a proper-scoring-rule fit, so the output is a calibrated probability under the policy that produced the samples.</figcaption>
-<p class="cite">Two-timescale updates: Heusel et al. 2017 (TTUR, 1706.08500) · on-policy PRM refresh inside RL: PRIME (2502.01456) · verifier retrained per round: Kirchner et al. 2024</p>
+<figcaption>The frontier idea is established; what differs is when the estimate is available and for which prompts. A one-pass predictor scores a pool the policy has never touched and is cheap enough to refit as the policy changes. An LLM judge in the same seat would cost more than the rollouts it saves.</figcaption>
+<p class="cite">DAPO: Yu et al. 2025 (2503.14476) · AdaRFT: Shi et al. 2025 (2504.05520) · Self-Evolving Curriculum: Chen et al. 2025 (2505.14970)</p>
+</figure>
+</section>
+<!-- Q4 BASELINE USE -->
+<section>
+<p class="eyebrow">Proposal 4 · Second use</p>
+<h2>If V is calibrated, the group can shrink</h2>
+<figure>
+<svg viewBox="0 0 960 250" role="img" aria-label="Left: GRPO needs eight rollouts per prompt because the group mean is its baseline. Right: with a calibrated prompt-level predictor, advantage equals reward minus V of the prompt, so one or two rollouts per prompt suffice; ReMax does this with a greedy rollout as baseline, a predictor is cheaper than a rollout.">
+<defs><marker id="q4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="36" class="k">GRPO · BASELINE = GROUP MEAN</text>
+<g class="num">
+<rect x="40" y="52" width="30" height="24" rx="4" class="box"/><text x="55" y="69" text-anchor="middle">1</text>
+<rect x="78" y="52" width="30" height="24" rx="4" class="box"/><text x="93" y="69" text-anchor="middle">0</text>
+<rect x="116" y="52" width="30" height="24" rx="4" class="box"/><text x="131" y="69" text-anchor="middle">1</text>
+<rect x="154" y="52" width="30" height="24" rx="4" class="box"/><text x="169" y="69" text-anchor="middle">0</text>
+<rect x="192" y="52" width="30" height="24" rx="4" class="box"/><text x="207" y="69" text-anchor="middle">0</text>
+<rect x="230" y="52" width="30" height="24" rx="4" class="box"/><text x="245" y="69" text-anchor="middle">1</text>
+<rect x="268" y="52" width="30" height="24" rx="4" class="box"/><text x="283" y="69" text-anchor="middle">0</text>
+<rect x="306" y="52" width="30" height="24" rx="4" class="box"/><text x="321" y="69" text-anchor="middle">0</text>
+</g>
+<text x="40" y="100" class="num">A_i = r_i − mean(r)  ·  8 rollouts per prompt</text>
+<line x1="480" y1="30" x2="480" y2="150" class="grid"/>
+<text x="520" y="36" class="k">WITH V(PROMPT) · BASELINE = PREDICTION</text>
+<g class="num">
+<rect x="520" y="52" width="30" height="24" rx="4" class="box-acc"/><text x="535" y="69" text-anchor="middle">1</text>
+<rect x="558" y="52" width="30" height="24" rx="4" class="box-acc"/><text x="573" y="69" text-anchor="middle">0</text>
+</g>
+<text x="520" y="100" class="num">A_i = r_i − V(prompt)  ·  1–2 rollouts per prompt</text>
+<text x="520" y="122" class="lab">works only if V is calibrated: a biased V is a biased baseline</text>
+<text x="40" y="180">same rollout budget → 4–8× more prompts per step, each at the frontier</text>
+<text x="40" y="204" class="lab">ReMax uses a greedy rollout as the baseline; a predictor costs less than a rollout · RLOO keeps the group</text>
+<text x="40" y="236" class="lab">a follow-up, not the first experiment: it depends on the calibration curve from Proposal 5</text>
+</svg>
+<figcaption>The group exists to estimate a baseline. A calibrated prompt-level predictor is that baseline, so the rollout budget can go to more prompts instead of more samples of the same one. This is where calibration stops being a nicety: a miscalibrated V biases every advantage.</figcaption>
+<p class="cite">ReMax: Li et al. 2023 (2310.10505) · RLOO: Ahmadian et al. 2024 (2402.14740) · REINFORCE with learned baselines: Williams 1992</p>
 </figure>
 </section>
 <!-- Q5 PLAN -->
 <section>
-<p class="eyebrow">Proposal 4 · First experiment</p>
-<h2>A task where the checker is silent a third of the time</h2>
+<p class="eyebrow">Proposal 5 · First experiment</p>
+<h2>Three measurements, four samplers</h2>
 <figure>
-<svg viewBox="0 0 960 300" role="img" aria-label="Experiment layout: a 1.5B policy on MATH-level problems where its base pass rate is about 30 percent, so a third of groups are all-wrong. Verifier on GPU 0, policy on GPU 1. Arms: checker only; plus partial credit inside uniform groups; plus verifier-selected prompts; plus refit every 50 steps. Hypothesis: samples to a fixed accuracy fall by at least 30 percent, and the gain is concentrated in groups the checker scored uniform.">
+<svg viewBox="0 0 960 330" role="img" aria-label="Experiment: a 1.5B policy on MATH-level prompts with base pass rate around 30 percent, a 100k prompt pool. Four samplers: uniform, post-hoc filter, historical pass rate, learned predictor with refit. Measured: fraction of zero-gradient groups per step, samples to reach a fixed accuracy, and the predictor's calibration against realised pass rates over training with and without refit.">
 <defs><marker id="q5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
-<rect x="40" y="50" width="400" height="120" rx="6" class="box-acc"/>
-<text x="240" y="78" text-anchor="middle" class="big">GPU 0 · verifier</text>
-<text x="240" y="104" text-anchor="middle" class="lab">0.4B encoder head; step reads and prompt-difficulty reads</text>
-<text x="240" y="124" text-anchor="middle" class="lab">labels: checker on traces, constructed edits on steps</text>
-<text x="240" y="150" text-anchor="middle" class="num">refit every 50 steps · minutes</text>
-<rect x="520" y="50" width="400" height="120" rx="6" class="box"/>
+<rect x="40" y="50" width="400" height="100" rx="6" class="box-acc"/>
+<text x="240" y="78" text-anchor="middle" class="big">GPU 0 · predictor</text>
+<text x="240" y="104" text-anchor="middle" class="lab">0.4B head · scores the 100k pool each epoch · refit every 50 steps</text>
+<text x="240" y="130" text-anchor="middle" class="num">labels: group pass rate from the checker</text>
+<rect x="520" y="50" width="400" height="100" rx="6" class="box"/>
 <text x="720" y="78" text-anchor="middle" class="big">GPU 1 · policy</text>
-<text x="720" y="104" text-anchor="middle" class="lab">Qwen2.5-1.5B, GRPO group 8, colocated sampler</text>
-<text x="720" y="124" text-anchor="middle" class="lab">MATH-level prompts, base pass@1 ≈ 30 %</text>
-<text x="720" y="150" text-anchor="middle" class="num">500 steps · log zero-gradient groups per step</text>
-<line x1="440" y1="95" x2="520" y2="95" class="ln" marker-end="url(#q5)"/><text x="480" y="88" text-anchor="middle" class="lab">reward, prompts</text>
-<line x1="520" y1="130" x2="440" y2="130" class="ln" marker-end="url(#q5)"/><text x="480" y="148" text-anchor="middle" class="lab">rollouts</text>
-<text x="40" y="210" class="k">ARMS, CUMULATIVE</text>
-<text x="40" y="236"><tspan class="num">0 </tspan> checker only</text>
-<text x="40" y="256"><tspan class="num">+1</tspan> partial credit inside uniform groups</text>
-<text x="40" y="276"><tspan class="num">+2</tspan> prompts chosen by predicted pass rate</text>
-<text x="40" y="296"><tspan class="num">+3</tspan> verifier refit every 50 steps</text>
-<text x="520" y="210" class="k">HYPOTHESIS</text>
-<text x="520" y="236">samples to reach the checker-only arm's final accuracy</text>
-<text x="520" y="256">fall by at least 30 %, and the gain comes from the</text>
-<text x="520" y="276">groups the checker scored uniform; if it does not,</text>
-<text x="520" y="296">the mechanism is wrong and we say so</text>
+<text x="720" y="104" text-anchor="middle" class="lab">Qwen2.5-1.5B · GRPO group 8 · MATH-level, base ≈ 30 %</text>
+<text x="720" y="130" text-anchor="middle" class="num">500 steps · same seed across samplers</text>
+<line x1="440" y1="90" x2="520" y2="90" class="ln" marker-end="url(#q5)"/><text x="480" y="83" text-anchor="middle" class="lab">prompts</text>
+<line x1="520" y1="120" x2="440" y2="120" class="ln" marker-end="url(#q5)"/><text x="480" y="138" text-anchor="middle" class="lab">pass rates</text>
+<text x="40" y="190" class="k">SAMPLERS</text>
+<text x="40" y="216"><tspan class="num">U </tspan> uniform</text>
+<text x="40" y="238"><tspan class="num">D </tspan> post-hoc filter, DAPO</text>
+<text x="40" y="260"><tspan class="num">H </tspan> historical pass rate</text>
+<text x="40" y="282"><tspan class="num">P </tspan> predictor, band around 0.5, refit</text>
+<text x="40" y="304"><tspan class="num">P₀</tspan> predictor, never refit</text>
+<text x="480" y="190" class="k">MEASURED</text>
+<text x="480" y="216">zero-gradient groups per step, each sampler</text>
+<text x="480" y="238">samples to reach U's final accuracy</text>
+<text x="480" y="260">predictor calibration vs realised pass rate, P vs P₀</text>
+<text x="480" y="294" class="k">HYPOTHESIS</text>
+<text x="480" y="316">P reaches U's accuracy in ≤ 60 % of the samples; P₀ decays toward U within 200 steps</text>
 </svg>
-<figcaption>Everything but the refit and the prompt reads ran this week on GSM8K. The named baseline for +1 is PRIME's implicit PRM on the same policy, same labels, same cadence: a policy-sized carrier against a 0.4B one. djev and Jev stay as held-out judges no arm is trained against.</figcaption>
-<p class="cite">PRIME: Cui et al. 2025 (2502.01456) · DAPO: Yu et al. 2025 (2503.14476) · our GSM8K arms: vault note 03</p>
-</figure>
-</section>
-<!-- 8. LATENT -->
-<section>
-<p class="eyebrow">Proposal 5 · Latent reasoners</p>
-<h2>Extension: when there is no text to judge</h2>
-<figure>
-<svg viewBox="0 0 960 260" role="img" aria-label="A latent reasoner passes hidden states between steps instead of text; a small head reads the hidden state and returns a probability of correctness, so the verifier works where a text judge has nothing to read.">
-  <defs><marker id="a8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
-  <text x="40" y="40" class="k">LATENT CHAIN OF THOUGHT · COCONUT, HUGINN, OURO</text>
-  <g>
-    <rect x="40" y="70" width="120" height="50" rx="6" class="box"/><text x="100" y="100" text-anchor="middle">prompt</text>
-    <rect x="220" y="70" width="120" height="50" rx="6" class="box"/><text x="280" y="93" text-anchor="middle" class="num">h₁</text><text x="280" y="110" text-anchor="middle" class="lab">no tokens</text>
-    <rect x="400" y="70" width="120" height="50" rx="6" class="box"/><text x="460" y="93" text-anchor="middle" class="num">h₂</text><text x="460" y="110" text-anchor="middle" class="lab">no tokens</text>
-    <rect x="580" y="70" width="120" height="50" rx="6" class="box"/><text x="640" y="93" text-anchor="middle" class="num">h₃</text><text x="640" y="110" text-anchor="middle" class="lab">no tokens</text>
-    <rect x="760" y="70" width="140" height="50" rx="6" class="box"/><text x="830" y="100" text-anchor="middle">answer</text>
-  </g>
-  <line x1="160" y1="95" x2="220" y2="95" class="ln" marker-end="url(#a8)"/>
-  <line x1="340" y1="95" x2="400" y2="95" class="ln" marker-end="url(#a8)"/>
-  <line x1="520" y1="95" x2="580" y2="95" class="ln" marker-end="url(#a8)"/>
-  <line x1="700" y1="95" x2="760" y2="95" class="ln" marker-end="url(#a8)"/>
-  <!-- text judge has nothing -->
-  <text x="460" y="150" text-anchor="middle" class="lab" style="fill:var(--warm)">a text judge reads nothing here</text>
-  <!-- latent head -->
-  <line x1="460" y1="120" x2="460" y2="185" class="ln acc-s dash" marker-end="url(#a8)"/>
-  <rect x="360" y="185" width="200" height="44" rx="22" class="box-acc"/>
-  <text x="460" y="205" text-anchor="middle">2M-parameter head on hᵗ</text>
-  <text x="460" y="222" text-anchor="middle" class="num">p(correct) = 0.81</text>
-  <text x="600" y="212" class="lab">matches a 55M text verifier in 15 of 16 settings</text>
-</svg>
-<figcaption>Latent reasoners think in hidden states, so a text judge has nothing to read. A System 1 head on the hidden state is the only verifier shape that fits. This variant shares the trunk with the policy, so the head must be trained with the trunk frozen and the policy must see it only through the reward, or the policy learns to hide from it.</figcaption>
-<p class="cite">Coconut: Hao 2024 (2412.06769) · Huginn: Geiping 2025 (2502.05171) · Ouro (2510.25741) · HSRM: 2608.30841 · latent thoughts encode reward: LTO (2509.26314) · probes: Zhang 2025 (2504.05419)</p>
+<figcaption>Everything but the predictor exists from this week's runs. The hypothesis has two halves on purpose: the first says the predictor helps, the second says the refit is what keeps it helping. If P₀ holds up as well as P, the refit is unnecessary and the paper is smaller; if P does no better than H, a lookup table was enough.</figcaption>
+<p class="cite">Our GSM8K arms: vault note 03 · DAPO 2503.14476 · AdaRFT 2504.05520</p>
 </figure>
 </section>
 </div>
