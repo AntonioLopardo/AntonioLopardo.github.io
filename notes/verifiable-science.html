@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Verifiable science data and environments</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
+<link rel="stylesheet" href="/notes/note.css?v=2">
+<style>
+  /* page-specific, on top of note.css */
+  .page{gap:36px;}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;font-family:"IBM Plex Mono",monospace;color:var(--ink-2);margin:0 0 10px;}
+  .legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;background:var(--c);}
+  figure.tl{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;box-shadow:var(--shadow);}
+  figure.tl svg{color:var(--ink);}
+  .fam-note{color:var(--ink-2);margin:0 0 4px;max-width:66ch;}
+  h2.fam{border-left:3px solid var(--c);padding-left:10px;}
+  .paper{display:grid;grid-template-columns:200px 1fr;gap:8px 24px;padding:16px 0;border-top:1px solid var(--rule-soft);}
+  .paper:last-of-type{border-bottom:1px solid var(--rule-soft);}
+  .meta{font-size:13px;color:var(--ink-2);display:flex;flex-direction:column;gap:4px;}
+  .meta .org{color:var(--ink);font-weight:600;}
+  .meta code{font-size:12px;}
+  .meta a{border:none;}
+  .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:4px;background:var(--keep-soft);color:var(--keep);}
+  .chip.warn{background:var(--draw-soft);color:var(--draw);}
+  .body h3{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:19px;margin:0 0 6px;line-height:1.25;text-wrap:balance;}
+  .body h3 small{font-family:"IBM Plex Sans",sans-serif;font-weight:400;font-size:14px;color:var(--ink-2);margin-left:6px;}
+  .body ul{margin:0;padding-left:18px;max-width:68ch;color:var(--ink-2);}
+  .body li{margin:2px 0;}
+  .body li.use{color:var(--keep);list-style:none;margin-left:-18px;margin-top:6px;}
+  .body li.use::before{content:"→ ";}
+  .sec{display:flex;flex-direction:column;gap:0;}
+  @media (max-width:640px){.paper{grid-template-columns:1fr;}.meta{flex-direction:row;flex-wrap:wrap;gap:4px 12px;}.chips{width:100%;}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<p class="eyebrow"><a href="/notes/">Notes</a> · Reading list · verifiable science data</p>
+<h1>Verifiable science data and environments</h1>
+<p class="lede">Ten papers on <b>scalable, verifiable science data and environments</b> for the Apertus 2 STEM climb. Nine are from the last twelve months; only MegaScience (July 2025) is older. Grouped by where the verifiable signal comes from.</p>
+</header>
+
+<figure class="tl">
+<div class="legend"><span style="--c:var(--keep)">Literature-mined QA</span><span style="--c:var(--draw)">Simulators and procedural</span><span style="--c:#3D5A9C">Executable environments</span><span style="--c:#6B4B8A">Tooling</span></div>
+<svg viewBox="0 0 900 150" role="img" aria-label="Timeline of the ten papers from July 2025 to September 2026, showing nine of ten within the last twelve months">
+  <line x1="40" y1="100" x2="880" y2="100" stroke="currentColor" stroke-width="1" opacity=".5"/>
+  <!-- axis: Jul 2025 = x 60, Sep 2026 = x 860; 14 months, 57.14 px/month -->
+  <g font-family="IBM Plex Mono, monospace" font-size="12" fill="currentColor" opacity=".7" text-anchor="middle">
+    <text x="60" y="122">Jul 25</text>
+    <text x="231" y="122">Oct 25</text>
+    <text x="403" y="122">Jan 26</text>
+    <text x="574" y="122">Apr 26</text>
+    <text x="746" y="122">Jul 26</text>
+    <text x="860" y="122">Sep 26</text>
+  </g>
+  <line x1="174" y1="60" x2="174" y2="108" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+  <text x="180" y="58" font-family="IBM Plex Mono, monospace" font-size="12" fill="currentColor" opacity=".7">last 12 months →</text>
+  <!-- dots -->
+  <g font-family="IBM Plex Mono, monospace" font-size="12" fill="currentColor" text-anchor="middle">
+    <circle cx="60" cy="100" r="6" fill="var(--keep)"/><text x="60" y="88">MegaScience</text>
+    <circle cx="403" cy="100" r="6" fill="var(--keep)"/><text x="403" y="88">WildSci</text>
+    <circle cx="460" cy="100" r="6" fill="#3D5A9C"/><text x="460" y="74">AWM</text>
+    <circle cx="517" cy="100" r="6" fill="var(--draw)"/><text x="517" y="88">Reasoning Core</text>
+    <circle cx="574" cy="100" r="6" fill="var(--keep)"/><text x="574" y="60">BioAlchemy</text>
+    <circle cx="582" cy="100" r="6" fill="var(--draw)"/><text x="600" y="74">Sim2Reason</text>
+    <circle cx="590" cy="100" r="6" fill="#3D5A9C"/><text x="618" y="88">D3-Gym</text>
+    <circle cx="746" cy="100" r="6" fill="#3D5A9C"/><text x="746" y="88">SciDisco</text>
+    <circle cx="803" cy="100" r="6" fill="#3D5A9C"/><text x="803" y="74">FrontierChallenge</text>
+    <circle cx="860" cy="100" r="6" fill="#6B4B8A"/><text x="850" y="88">Data Designer</text>
+  </g>
+</svg>
+<figcaption>Submission month on arXiv. April 2026 alone brought BioAlchemy, Sim2Reason and D3-Gym.</figcaption>
+</figure>
+
+<div class="sec">
+<h2 class="fam" style="--c:var(--keep)">Literature-mined QA</h2>
+<p class="fam-note">Papers and textbooks become multiple-choice or short-answer questions. Cheap, broad, verifiable by string match; quality rests on the filtering.</p>
+
+<div class="paper">
+  <div class="meta"><span class="org">UC Santa Barbara</span><span>January 2026</span><a href="https://arxiv.org/abs/2601.05567">arxiv <code>2601.05567</code></a><div class="chips"><span class="chip">data released</span></div></div>
+  <div class="body"><h3>WildSci<small>Scientific reasoning from in-the-wild literature</small></h3>
+  <ul>
+    <li>56K MCQ from Nature Communications papers, 9 disciplines, 26 subdomains; LLM generation, refinement with expanded options, model voting as filter</li>
+    <li>GRPO on Qwen 1.5B and 3B with verifiable MCQ reward; +7.3 avg on GPQA-Aug, SuperGPQA, MMLU-Pro at 1.5B</li>
+    <li class="use">Template for mining Swiss and EU open-access corpora into RL prompts</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">U Chicago, Argonne</span><span>April 2026</span><a href="https://arxiv.org/abs/2604.03506">arxiv <code>2604.03506</code></a><div class="chips"><span class="chip">model on the Hub</span></div></div>
+  <div class="body"><h3>BioAlchemy<small>Biological literature into RL training data</small></h3>
+  <ul>
+    <li>345K verifiable biology QA pairs mined from research text, aligned to current topic distributions</li>
+    <li>BioAlchemist-8B: +9.1% over its base on biology benchmarks</li>
+    <li class="use">Same recipe as WildSci at domain depth; shows a single field can carry a climb</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">SJTU, GAIR</span><span>July 2025</span><a href="https://arxiv.org/abs/2507.16812">arxiv <code>2507.16812</code></a><div class="chips"><span class="chip warn">CC BY-NC-SA</span></div></div>
+  <div class="body"><h3>MegaScience<small>Post-training datasets for science reasoning</small></h3>
+  <ul>
+    <li>1.25M instances; 651K from 12.8K university textbooks across 7 disciplines, plus ablated public sets</li>
+    <li>SFT on Llama 3.1, Qwen2.5, Qwen3 beats the official instruct models on 15 benchmarks</li>
+    <li class="use">Licence blocks it for Apertus training; useful as the eval and ablation reference</li>
+  </ul></div>
+</div>
+
+</div>
+<div class="sec">
+<h2 class="fam" style="--c:var(--draw)">Simulators and procedural generators</h2>
+<p class="fam-note">Answers are computed, not annotated. Unlimited supply and controllable difficulty; the question is transfer to real problems.</p>
+
+<div class="paper">
+  <div class="meta"><span class="org">CMU, Lambda</span><span>April 2026</span><a href="https://arxiv.org/abs/2604.11805">arxiv <code>2604.11805</code></a><div class="chips"><span class="chip">code</span><span class="chip">models 3B to 30B</span></div></div>
+  <div class="body"><h3>Sim2Reason<small>Physics Olympiad via RL on physics simulators</small></h3>
+  <ul>
+    <li>Random MuJoCo scenes through a DSL; numeric, reverse and symbolic questions with answers from running the simulation</li>
+    <li>Trained only on simulated data: IPhO mechanics +5.4 at 32B, +7.5 at 3B; up to +17.9 on JEEBench</li>
+    <li class="use">The clearest sim-to-real result; the pattern to copy for chemistry and circuits</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Inria, Univ. Lille</span><span>March 2026</span><a href="https://arxiv.org/abs/2603.02208">arxiv <code>2603.02208</code></a><div class="chips"><span class="chip">MIT</span><span class="chip">5B + 2B tokens</span></div></div>
+  <div class="body"><h3>Reasoning Core<small>Procedural data for symbolic pre- and post-training</small></h3>
+  <ul>
+    <li>Generators for PDDL planning, first-order logic, CFG parsing, causal reasoning over Bayesian nets, symbolic equations; external solvers verify, difficulty is continuous</li>
+    <li>Small-model pretraining mixes improve PlatinumBench without hurting LM loss</li>
+    <li>Follow-up (2608.05148): semantic validity alone does not guarantee training utility</li>
+    <li class="use">European Reasoning Gym; licence-clean filler for the climb prompt pool</li>
+  </ul></div>
+</div>
+
+</div>
+<div class="sec">
+<h2 class="fam" style="--c:#3D5A9C">Executable environments</h2>
+<p class="fam-note">Agentic science: the model writes and runs code against real data, a hidden verifier grades. Closer to the tools/SWE climb than to a reasoning climb; the transferable idea is verifier synthesis.</p>
+
+<div class="paper">
+  <div class="meta"><span class="org">Ohio State, Wisconsin, Cisco</span><span>April 2026</span><a href="https://arxiv.org/abs/2604.27977">arxiv <code>2604.27977</code></a><div class="chips"><span class="chip">envs, workflow, trajectories, models</span></div></div>
+  <div class="body"><h3>D3-Gym<small>Verifiable environments for data-driven discovery</small></h3>
+  <ul>
+    <li>565 tasks from 239 real scientific repositories: bioinformatics, computational chemistry, GIS, psychology</li>
+    <li>Evaluation scripts synthesised plan-then-code, 87.5% agreement with human pass/fail</li>
+    <li>Rejection-sampled trajectories lift Qwen3-32B by +7.8 on ScienceAgentBench</li>
+    <li class="use">The anchor of the environment family; the verifier-synthesis step is reusable on its own</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Shanghai AI Lab</span><span>July 2026</span><a href="https://arxiv.org/abs/2607.28990">arxiv <code>2607.28990</code></a><div class="chips"><span class="chip warn">release not stated</span></div></div>
+  <div class="body"><h3>SciDisco / SciThèque<small>Scaling discovery environments for turn-level agentic RL</small></h3>
+  <ul>
+    <li>1,686 environments plus 504 stress variants over licence-tracked public data (UCI, OpenML, FRED, UniProt, CDC, USGS); tabular 61%, time series 17%, spatial 12%</li>
+    <li>Each environment carries a hypothesis, the data, a hidden evidence DAG and a verifier; DiscoPO gives turn-level credit</li>
+    <li>SciDisco-14B from Qwen3-14B: DiscoveryBench 35.2 vs Claude Sonnet 4 at 23.2</li>
+    <li class="use">D3-Gym at 3× scale with licence tracking built in; nothing to download yet</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Snowflake, UNC</span><span>February 2026, ICML 2026</span><a href="https://arxiv.org/abs/2602.10090">arxiv <code>2602.10090</code></a><div class="chips"><span class="chip">code and environments</span></div></div>
+  <div class="body"><h3>Agent World Model<small>Synthetic environments for agentic RL</small></h3>
+  <ul>
+    <li>LLM pipeline synthesises executable tool-use environments: scenario, tasks, database schema, interface, verification code</li>
+    <li>1,000 environments, 35K tools, 10K tasks; GRPO on 526 of them takes Qwen3-8B from 53.8 to 65.9 on BFCLv3, gains on τ²-bench and MCP-Universe</li>
+    <li class="use">Not science-specific; the environment-synthesis recipe the science gyms could borrow to scale past hand-built repos</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Apodex</span><span>August 2026</span><a href="https://arxiv.org/abs/2608.24979">arxiv <code>2608.24979</code></a><div class="chips"><span class="chip warn">eval only</span><span class="chip">97 of 300 released</span></div></div>
+  <div class="body"><h3>FrontierChallenge<small>Evaluating scientific workflow completion</small></h3>
+  <ul>
+    <li>300 end-to-end lab workflows: quantum chemistry, molecular dynamics, materials, analytical chemistry, life science, electrochemistry; fixed inputs, required deliverables</li>
+    <li>Best configurations pass 20 of 97; 75.5% of failing Claude Code runs still claimed completion</li>
+    <li class="use">The held-out target for the environment family, and a warning about self-reported success</li>
+  </ul></div>
+</div>
+
+</div>
+<div class="sec">
+<h2 class="fam" style="--c:#6B4B8A">Tooling</h2>
+<p class="fam-note">Generation infrastructure rather than a dataset.</p>
+
+<div class="paper">
+  <div class="meta"><span class="org">NVIDIA</span><span>15 September 2026</span><a href="https://arxiv.org/abs/2609.17699">arxiv <code>2609.17699</code></a><div class="chips"><span class="chip">open source</span></div></div>
+  <div class="body"><h3>NeMo Data Designer<small>Extensible framework for synthetic data generation</small></h3>
+  <ul>
+    <li>Declarative config: each field is a column with a generation strategy; samplers control diversity before any model call; LLM steps, validators and judges as stages</li>
+    <li>Behind recent Nemotron datasets; worked example is 96.5K validated text-to-SQL rows from 300K candidates, BIRD 26.8 to 41.8</li>
+    <li class="use">The pipeline Nemotron-SFT-Science-v2 style sets come from; rebuild the science recipe on Apertus-clean sources</li>
+  </ul></div>
+</div>
+
+</div>
+<p class="fam-note" style="margin-top:8px">Caveat for any GPQA claim above: HLE-Physics moved from 47 to 79 after expert regrading (arxiv 2609.13009), closed-ended physics evals are noisy.</p>
+</div>
+</body>
+</html>
