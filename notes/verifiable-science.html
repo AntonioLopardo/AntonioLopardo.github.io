@@ -31,6 +31,7 @@
   .body h3 small{font-family:"IBM Plex Sans",sans-serif;font-weight:400;font-size:14px;color:var(--ink-2);margin-left:6px;}
   .body ul{margin:0;padding-left:18px;max-width:68ch;color:var(--ink-2);}
   .body li{margin:2px 0;}
+  .body li b{color:var(--ink);font-weight:600;}
   .body li.use{color:var(--keep);list-style:none;margin-left:-18px;margin-top:6px;}
   .body li.use::before{content:"→ ";}
   .sec{display:flex;flex-direction:column;gap:0;}
@@ -44,6 +45,61 @@
 <h1>Verifiable science data and environments</h1>
 <p class="lede">Ten papers on <b>scalable, verifiable science data and environments</b> for the Apertus 2 STEM climb. Nine are from the last twelve months; only MegaScience (July 2025) is older. Grouped by where the verifiable signal comes from.</p>
 </header>
+
+<nav class="tabs" role="tablist" aria-label="Sections"><button role="tab" id="t-four" aria-controls="p-four" aria-selected="true">The four</button><button role="tab" id="t-all" aria-controls="p-all" aria-selected="false">All ten</button></nav>
+
+<div class="panel" id="p-four" role="tabpanel" aria-labelledby="t-four">
+<div class="sec">
+<p class="fam-note">The four for the slide: one executable environment, one simulator, one mined corpus, and the held-out target. Each in plain words first, then the numbers.</p>
+
+<div class="paper">
+  <div class="meta"><span class="org">Ohio State, Wisconsin, Cisco</span><span>April 2026</span><a href="https://arxiv.org/abs/2604.27977">arxiv <code>2604.27977</code></a><div class="chips"><span class="chip">envs, workflow, trajectories, models</span></div></div>
+  <div class="body"><h3>D3-Gym<small>Executable science environment</small></h3>
+  <ul>
+    <li><b>In plain words:</b> take a real scientific repo with its data, turn a step of its analysis into a task, and synthesise a script that checks the model's output. The model writes and runs code; the script grades.</li>
+    <li>565 tasks from 239 real repositories: bioinformatics, computational chemistry, GIS, psychology</li>
+    <li>Verifier scripts synthesised plan-then-code, 87.5% agreement with human pass/fail verdicts</li>
+    <li>Rejection-sampled trajectories lift Qwen3-32B by +7.8 on ScienceAgentBench</li>
+    <li class="use">The coding-heavy core: the verifier-synthesis step is reusable on Apertus-clean repos</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">CMU, Lambda</span><span>April 2026</span><a href="https://arxiv.org/abs/2604.11805">arxiv <code>2604.11805</code></a><div class="chips"><span class="chip">code</span><span class="chip">models 3B to 30B</span></div></div>
+  <div class="body"><h3>Sim2Reason<small>Simulator-generated physics</small></h3>
+  <ul>
+    <li><b>In plain words:</b> sample random physics scenes (masses, inclines, springs, initial velocities) as text, build each one in the MuJoCo engine, run it, and read the answer off the trajectory. Nobody annotates anything; the model only ever sees the text problem.</li>
+    <li>Three question types per scene: numeric (predict a quantity), reverse (recover a parameter from the outcome), symbolic (give the expression)</li>
+    <li>Trained on simulated data only: IPhO mechanics +5.4 at 32B, +7.5 at 3B; up to +17.9 on JEEBench</li>
+    <li class="use">The clearest sim-to-real transfer result; the pattern to copy for chemistry and circuits</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">UC Santa Barbara</span><span>January 2026</span><a href="https://arxiv.org/abs/2601.05567">arxiv <code>2601.05567</code></a><div class="chips"><span class="chip">data released</span></div></div>
+  <div class="body"><h3>WildSci<small>Literature-mined QA</small></h3>
+  <ul>
+    <li><b>In plain words:</b> feed peer-reviewed papers to an LLM, get multiple-choice questions out, filter them by refinement and model voting. Cheap and broad, no code involved.</li>
+    <li>56K MCQ from Nature Communications papers, 9 disciplines, 26 subdomains</li>
+    <li>GRPO with MCQ reward on Qwen 1.5B and 3B: +7.3 average on GPQA-Aug, SuperGPQA, MMLU-Pro</li>
+    <li class="use">Template for mining Swiss and EU open-access corpora; the non-coding counterweight in the mix</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Apodex</span><span>August 2026</span><a href="https://arxiv.org/abs/2608.24979">arxiv <code>2608.24979</code></a><div class="chips"><span class="chip warn">eval only</span><span class="chip">97 of 300 released</span></div></div>
+  <div class="body"><h3>FrontierChallenge<small>Held-out target</small></h3>
+  <ul>
+    <li><b>In plain words:</b> a real lab workflow with fixed inputs and a bundle of required deliverables; the model has to complete the whole thing end to end.</li>
+    <li>300 workflows, 97 public: quantum chemistry, molecular dynamics, materials, analytical chemistry, life science, electrochemistry</li>
+    <li>Best configurations pass 20 of 97; 75.5% of failing Claude Code runs still claimed completion</li>
+    <li class="use">What the coding-heavy climb is for, and a warning about self-reported success</li>
+  </ul></div>
+</div>
+</div>
+</div>
+
+<div class="panel" id="p-all" role="tabpanel" aria-labelledby="t-all" hidden>
 
 <figure class="tl">
 <div class="legend"><span style="--c:var(--keep)">Literature-mined QA</span><span style="--c:var(--draw)">Simulators and procedural</span><span style="--c:#3D5A9C">Executable environments</span><span style="--c:#6B4B8A">Tooling</span></div>
@@ -202,5 +258,22 @@
 </div>
 <p class="fam-note" style="margin-top:8px">Caveat for any GPQA claim above: HLE-Physics moved from 47 to 79 after expert regrading (arxiv 2609.13009), closed-ended physics evals are noisy.</p>
 </div>
+</div>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function show(id, setHash){
+    tabs.forEach(function(t){ var on = t.id === id; t.setAttribute("aria-selected", on ? "true" : "false"); var p = document.getElementById(t.getAttribute("aria-controls")); if (p) p.hidden = !on; });
+    var slug = id.replace(/^t-/, "");
+    if (setHash) { try { history.replaceState(null, "", "#" + slug); } catch(e) { location.hash = slug; } }
+    try { localStorage.setItem("vs-tab", id); } catch(e) {}
+  }
+  function fromHash(){ var h = (location.hash || "").replace(/^#/, ""); return (h && document.getElementById("t-" + h)) ? "t-" + h : null; }
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.id, true); window.scrollTo({top: document.querySelector(".tabs").offsetTop - 8}); }); });
+  window.addEventListener("hashchange", function(){ var id = fromHash(); if (id) show(id, false); });
+  var initial = fromHash(); if (!initial) { try { initial = localStorage.getItem("vs-tab"); } catch(e) {} }
+  if (initial && document.getElementById(initial)) show(initial, false);
+})();
+</script>
 </body>
 </html>
