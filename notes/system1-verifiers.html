@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>System 1 Verifiers</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap">
+<!--
+  Method note 04 — System 1 verifiers as GRPO reward. Three tabs on the shared .tabs/.panel component (note.css); hash = bare slug.
+  Built 2026-09-22 from the artifact twin (claude.ai/artifact/LgHyhACAvvva6zVBWJ73tR); the vault twin is project-bulletins/System 1 Verifiers.md + logs/system1-verifiers.
+  Figures are inline SVG on the page's own tokens mapped onto note.css: teal (--keep) = the verifier / the thing proposed, amber (--draw) = cost or failure, grey = context.
+  Each SVG carries its own arrow marker (unique id), referenced only from inside the same panel, so hidden-panel resolution is not an issue here.
+-->
+<link rel="stylesheet" href="/notes/note.css?v=2">
+<style>
+:root{ --bg:var(--paper); --mute:var(--ink-2); --line:var(--rule); --soft:var(--surface-2);
+  --acc:var(--keep); --acc-soft:var(--keep-soft); --warm:var(--draw); --warm-soft:var(--draw-soft);
+  --display:"IBM Plex Serif",Georgia,serif; --body:"IBM Plex Sans",-apple-system,sans-serif; --mono:"IBM Plex Mono",monospace; }
+section h2{font-size:clamp(21px,2.6vw,26px);}
+figure{border-top:1px solid var(--rule); padding-top:14px;}
+figure svg{color:var(--ink); font-family:var(--body); max-width:100%;}
+figcaption{color:var(--ink); font-size:15px; max-width:70ch;}
+.cite{font-family:var(--mono); font-size:12px; color:var(--ink-3); margin-top:6px; max-width:90ch;}
+svg text{font-size:13px; fill:currentColor;}
+svg .num{font-family:var(--mono); font-size:12.5px;}
+svg .big{font-family:var(--display); font-weight:600; font-size:19px;}
+svg .lab{font-size:12px; fill:var(--ink-2);}
+svg .k{font-family:var(--mono); font-size:11px; fill:var(--ink-3); letter-spacing:.06em;}
+svg .box{fill:var(--surface); stroke:var(--ink-3); stroke-width:1.2;}
+svg .box-acc{fill:var(--keep-soft); stroke:var(--keep-line); stroke-width:1.6;}
+svg .box-warm{fill:var(--draw-soft); stroke:var(--draw-line); stroke-width:1.6;}
+svg .acc{fill:var(--keep);} svg .acc-s{stroke:var(--keep-line);} svg .warm{fill:var(--draw);} svg .warm-s{stroke:var(--draw-line);}
+svg .ln{stroke:currentColor; stroke-width:1.4; fill:none;}
+svg .grid{stroke:var(--rule); stroke-width:1;}
+svg .dash{stroke-dasharray:5 4;}
+svg .ghost{fill:var(--rule);}
+.cfg{margin-top:18px; overflow-x:auto;}
+.cfg table{min-width:760px; font-size:14px;}
+.cfg td.n{font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap;}
+.eyebrow{margin:0 0 6px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+    <p class="eyebrow"><a href="/notes/">Notes</a> · Method note 04</p>
+    <h1>System 1 verifiers for reasoning RL</h1>
+    <p class="lede">A one-pass judge that returns a probability instead of text, used as the reward inside GRPO. <b>Prior work</b>: one figure per paper, from Cobbe's verifier to PRIME. <b>What we did</b>: DiffusionGemma run as a Jev-style verifier on one A100, compared with live Jev, then seven reward arms on GSM8K. <b>Proposal</b>: GRPO gets no gradient from a group whose rollouts all agree; a cheap judge can rank inside those groups and pick prompts before rolling out, if it is refit as the policy moves.</p>
+  </header>
+
+
+<nav class="tabs" role="tablist" aria-label="Sections">
+  <button role="tab" id="t-prior" aria-controls="p-prior" aria-selected="true">Prior work</button>
+  <button role="tab" id="t-ours" aria-controls="p-ours" aria-selected="false">What we did</button>
+  <button role="tab" id="t-prop" aria-controls="p-prop" aria-selected="false">Proposal</button>
+</nav>
+<div class="panel" id="p-prior" role="tabpanel" aria-labelledby="t-prior">
+<p class="lede" style="font-size:15px">Seven things the field established, one figure each: verifiers rank samples, step labels beat answer labels, generating buys accuracy at a latency cost, step rewards can be had for free, proxies get gamed, and a small verifier as reward makes traces legible.</p>
+<!-- 1. THE LOOP -->
+<section>
+<p class="eyebrow">Prior work 1 · The loop</p>
+<h2>The verifier is the bottleneck box</h2>
+<figure>
+<svg viewBox="0 0 960 300" role="img" aria-label="RL for reasoning: the policy samples solutions, a verifier scores them, GRPO updates the policy; the verifier box is where cost and signal quality are decided.">
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
+  </defs>
+  <!-- policy -->
+  <rect x="40" y="110" width="200" height="80" rx="6" class="box"/>
+  <text x="140" y="143" text-anchor="middle" class="big">policy</text>
+  <text x="140" y="170" text-anchor="middle" class="lab">samples 8 solutions per prompt</text>
+  <!-- samples -->
+  <line x1="240" y1="150" x2="370" y2="150" class="ln" marker-end="url(#a1)"/>
+  <text x="305" y="140" text-anchor="middle" class="lab">solutions</text>
+  <!-- verifier -->
+  <rect x="370" y="80" width="220" height="140" rx="6" class="box-acc"/>
+  <text x="480" y="120" text-anchor="middle" class="big">verifier</text>
+  <text x="480" y="148" text-anchor="middle" class="lab">reads a solution,</text>
+  <text x="480" y="166" text-anchor="middle" class="lab">returns a reward</text>
+  <text x="480" y="200" text-anchor="middle" class="k">COST · DENSITY · CALIBRATION</text>
+  <!-- reward -->
+  <line x1="590" y1="150" x2="720" y2="150" class="ln" marker-end="url(#a1)"/>
+  <text x="655" y="140" text-anchor="middle" class="lab">rewards</text>
+  <!-- grpo -->
+  <rect x="720" y="110" width="200" height="80" rx="6" class="box"/>
+  <text x="820" y="143" text-anchor="middle" class="big">GRPO</text>
+  <text x="820" y="170" text-anchor="middle" class="lab">group-relative advantage</text>
+  <!-- update loop -->
+  <path d="M820 190 V250 H140 V190" class="ln" marker-end="url(#a1)"/>
+  <text x="480" y="242" text-anchor="middle" class="lab">updates the policy · every step · 1,100 verifier calls per step in our runs</text>
+  <!-- annotations -->
+  <text x="480" y="40" text-anchor="middle">what goes in this box decides what the policy learns</text>
+  <line x1="480" y1="48" x2="480" y2="74" class="ln" marker-end="url(#a1)"/>
+</svg>
+<figcaption>Every design choice in this deck is a choice about the green box: how much it costs per call, how many numbers it returns per solution, and whether those numbers mean what they say.</figcaption>
+<p class="cite">GRPO: Shao et al. 2024 (DeepSeekMath, 2402.03300) · RLVR: Lambert et al. 2024 (Tülu 3, 2411.15124)</p>
+</figure>
+</section>
+<!-- P2 COBBE -->
+<section>
+<p class="eyebrow">Prior work 2 · 2021</p>
+<h2>Sample many, let a verifier pick</h2>
+<figure>
+<svg viewBox="0 0 960 260" role="img" aria-label="Cobbe et al. 2021: a 6B generator writes 100 candidate solutions, a 6B verifier scores each with one number, the top-scored one is the answer; this matches a fine-tuned model thirty times larger.">
+<defs><marker id="p2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect x="40" y="95" width="150" height="60" rx="6" class="box"/><text x="115" y="121" text-anchor="middle" class="big">6B</text><text x="115" y="142" text-anchor="middle" class="lab">generator</text>
+<g class="ln"><line x1="190" y1="125" x2="300" y2="60" marker-end="url(#p2)"/><line x1="190" y1="125" x2="300" y2="100" marker-end="url(#p2)"/><line x1="190" y1="125" x2="300" y2="150" marker-end="url(#p2)"/><line x1="190" y1="125" x2="300" y2="200" marker-end="url(#p2)"/></g>
+<g><rect x="305" y="46" width="180" height="28" rx="4" class="box"/><rect x="305" y="86" width="180" height="28" rx="4" class="box"/><rect x="305" y="136" width="180" height="28" rx="4" class="box"/><rect x="305" y="186" width="180" height="28" rx="4" class="box"/></g>
+<text x="395" y="65" text-anchor="middle" class="lab">solution 1</text><text x="395" y="105" text-anchor="middle" class="lab">solution 2</text><text x="395" y="155" text-anchor="middle" class="lab">…</text><text x="395" y="205" text-anchor="middle" class="lab">solution 100</text>
+<line x1="485" y1="125" x2="560" y2="125" class="ln" marker-end="url(#p2)"/>
+<rect x="560" y="80" width="170" height="90" rx="6" class="box-acc"/><text x="645" y="112" text-anchor="middle" class="big">verifier</text><text x="645" y="134" text-anchor="middle" class="lab">6B, scalar head</text><text x="645" y="152" text-anchor="middle" class="lab">trained on correct / incorrect</text>
+<line x1="730" y1="125" x2="800" y2="125" class="ln" marker-end="url(#p2)"/>
+<text x="810" y="118" class="num">0.91 ← pick</text><text x="810" y="140" class="lab">rank, keep the best</text>
+<text x="480" y="245" text-anchor="middle">6B + verifier over 100 samples ≈ a 175B model fine-tuned on the same data</text>
+</svg>
+<figcaption>The first verifier for reasoning was a classifier with one output, used at test time to rank samples. Verification scaled better with data than fine-tuning did. Not yet a training signal.</figcaption>
+<p class="cite">Cobbe et al. 2021, Training Verifiers to Solve Math Word Problems (2110.14168), introduces GSM8K</p>
+</figure>
+</section>
+<!-- P3 LIGHTMAN -->
+<section>
+<p class="eyebrow">Prior work 3 · 2023</p>
+<h2>Label the steps, not the answer</h2>
+<figure>
+<svg viewBox="0 0 960 280" role="img" aria-label="Lightman et al. 2023: outcome supervision labels only the final answer, process supervision labels every step with 800,000 human annotations; on a MATH test subset the process-supervised reward model reaches 78 percent solve rate versus 72 for outcome supervision.">
+<defs><marker id="p3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="40" class="k">OUTCOME SUPERVISION · ORM</text>
+<g><rect x="40" y="52" width="120" height="34" rx="4" class="box"/><rect x="170" y="52" width="120" height="34" rx="4" class="box"/><rect x="300" y="52" width="120" height="34" rx="4" class="box"/><rect x="430" y="52" width="120" height="34" rx="4" class="box"/></g>
+<text x="100" y="74" text-anchor="middle" class="lab">step 1</text><text x="230" y="74" text-anchor="middle" class="lab">step 2</text><text x="360" y="74" text-anchor="middle" class="lab">step 3</text><text x="490" y="74" text-anchor="middle" class="lab">answer</text>
+<rect x="560" y="52" width="34" height="34" rx="17" class="box-warm"/><text x="577" y="75" text-anchor="middle" class="num">✗</text>
+<text x="610" y="74" class="lab">one label per solution</text>
+<text x="40" y="130" class="k">PROCESS SUPERVISION · PRM</text>
+<g><rect x="40" y="142" width="120" height="34" rx="4" class="box"/><rect x="170" y="142" width="120" height="34" rx="4" class="box"/><rect x="300" y="142" width="120" height="34" rx="4" class="box"/><rect x="430" y="142" width="120" height="34" rx="4" class="box"/></g>
+<text x="100" y="164" text-anchor="middle" class="lab">step 1</text><text x="230" y="164" text-anchor="middle" class="lab">step 2</text><text x="360" y="164" text-anchor="middle" class="lab">step 3</text><text x="490" y="164" text-anchor="middle" class="lab">answer</text>
+<g class="num"><rect x="83" y="184" width="34" height="26" rx="13" class="box-acc"/><text x="100" y="202" text-anchor="middle">✓</text><rect x="213" y="184" width="34" height="26" rx="13" class="box-acc"/><text x="230" y="202" text-anchor="middle">✓</text><rect x="343" y="184" width="34" height="26" rx="13" class="box-warm"/><text x="360" y="202" text-anchor="middle">✗</text></g>
+<text x="610" y="164" class="lab">800,000 human step labels · PRM800K</text>
+<!-- bars -->
+<text x="700" y="232" class="lab">MATH subset, best-of-N</text>
+<rect x="700" y="242" width="145" height="12" class="ghost"/><text x="852" y="253" class="num">72.4 ORM</text>
+<rect x="700" y="258" width="156" height="12" class="acc"/><text x="863" y="269" class="num">78.2 PRM</text>
+<text x="40" y="256">the step where it went wrong is the label the model can learn from</text>
+</svg>
+<figcaption>Process supervision beat outcome supervision by six points, and the cost was the point: 800,000 human step labels. Every PRM paper since is an attempt to get the step signal without paying for it.</figcaption>
+<p class="cite">Lightman et al. 2023, Let's Verify Step by Step (2305.20050) · Math-Shepherd: Wang et al. 2024 (2312.08935), automatic step labels by rollout</p>
+</figure>
+</section>
+<!-- P4 GENRM -->
+<section>
+<p class="eyebrow">Prior work 4 · 2024</p>
+<h2>Let the verifier think in tokens</h2>
+<figure>
+<svg viewBox="0 0 960 250" role="img" aria-label="GenRM: the verifier is a language model that writes a rationale and then answers Yes or No as a next token; the probability of Yes is the score, majority-voted over several rationales. On GSM8K best-of-N goes from 73 to 93.4 percent versus a discriminative verifier.">
+<defs><marker id="p4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect x="40" y="70" width="180" height="60" rx="6" class="box"/><text x="130" y="97" text-anchor="middle">problem + solution</text><text x="130" y="116" text-anchor="middle" class="lab">“Is the answer correct?”</text>
+<line x1="220" y1="100" x2="290" y2="100" class="ln" marker-end="url(#p4)"/>
+<rect x="290" y="40" width="330" height="120" rx="6" class="box-warm"/>
+<text x="455" y="66" text-anchor="middle" class="big">LLM verifier</text>
+<text x="455" y="92" text-anchor="middle" class="lab">“Let's check step 2: 12 × 3 = 36, but the</text>
+<text x="455" y="108" text-anchor="middle" class="lab">solution wrote 38, so the final answer …”</text>
+<text x="455" y="140" text-anchor="middle" class="num">→ next token: Yes / No</text>
+<line x1="620" y1="100" x2="690" y2="100" class="ln" marker-end="url(#p4)"/>
+<text x="700" y="94" class="num">p(Yes) = 0.07</text><text x="700" y="114" class="lab">vote over K rationales</text>
+<text x="40" y="200" class="lab">GSM8K, best-of-N with the verifier</text>
+<rect x="290" y="190" width="292" height="12" class="ghost"/><text x="590" y="201" class="num">73.0 discriminative</text>
+<rect x="290" y="206" width="374" height="12" class="warm"/><text x="672" y="217" class="num">93.4 GenRM with CoT</text>
+<text x="40" y="242" class="lab">cost: a full generation per judgement, seconds each; the score is a token probability, not a calibrated one</text>
+</svg>
+<figcaption>Making the verifier generate buys accuracy and a rationale and pays for it in latency. The whole 2025 line of reasoning reward models (RM-R1, J1, DeepSeek-GRM) is this idea with RL on the verifier's own chain of thought.</figcaption>
+<p class="cite">Zhang et al. 2024, Generative Verifiers (2408.15240) · RM-R1 (2505.02387) · J1 (2505.10320) · DeepSeek-GRM (2504.02495)</p>
+</figure>
+</section>
+<!-- P5 IMPLICIT PRM + PRIME -->
+<section>
+<p class="eyebrow">Prior work 5 · 2024–25</p>
+<h2>Step rewards for free, then inside the RL loop</h2>
+<figure>
+<svg viewBox="0 0 960 250" role="img" aria-label="Implicit PRM: train an outcome reward model as a log-likelihood ratio between a policy and a reference model, and per-step rewards fall out as partial sums, with 38 times less data than Math-Shepherd. PRIME puts this online inside RL and reports a 15 percent average gain over SFT with 2.5 times better sample efficiency.">
+<defs><marker id="p5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="40" class="k">IMPLICIT PRM · YUAN 2024</text>
+<rect x="40" y="56" width="260" height="70" rx="6" class="box"/>
+<text x="170" y="84" text-anchor="middle">train an ORM as</text>
+<text x="170" y="108" text-anchor="middle" class="num">r(y) = β · log π(y) / π_ref(y)</text>
+<line x1="300" y1="91" x2="370" y2="91" class="ln" marker-end="url(#p5)"/>
+<rect x="370" y="56" width="280" height="70" rx="6" class="box-acc"/>
+<text x="510" y="84" text-anchor="middle">step rewards fall out as partial sums</text>
+<text x="510" y="108" text-anchor="middle" class="num">r(step k) = Σ log-ratios over its tokens</text>
+<text x="670" y="84" class="num">1/38 of the data</text><text x="670" y="104" class="lab">of Math-Shepherd, better PRM</text>
+<text x="40" y="166" class="k">PRIME · CUI 2025 · THE SAME PRM UPDATED ONLINE, INSIDE GRPO-STYLE RL</text>
+<rect x="40" y="180" width="150" height="46" rx="6" class="box"/><text x="115" y="208" text-anchor="middle">policy</text>
+<line x1="190" y1="203" x2="270" y2="203" class="ln" marker-end="url(#p5)"/>
+<rect x="270" y="180" width="200" height="46" rx="6" class="box-acc"/><text x="370" y="200" text-anchor="middle">implicit PRM</text><text x="370" y="218" text-anchor="middle" class="lab">retrained on the rollouts</text>
+<line x1="470" y1="203" x2="550" y2="203" class="ln" marker-end="url(#p5)"/>
+<text x="560" y="197" class="num">+15.1 % avg over SFT</text><text x="560" y="217" class="lab">≈ 2.5× sample efficiency, 7B, math + code</text>
+</svg>
+<figcaption>The step signal without step labels, and the first dense verifier that is retrained on-policy during RL. Two things it does not give: a calibrated probability, and a verifier that is cheaper than the policy.</figcaption>
+<p class="cite">Yuan et al. 2024, Free Process Rewards without Process Labels (2412.01981) · Cui et al. 2025, PRIME (2502.01456)</p>
+</figure>
+</section>
+<!-- P6 OVEROPTIMISATION -->
+<section>
+<p class="eyebrow">Prior work 6 · 2022–23</p>
+<h2>Optimise a proxy long enough and the true score falls</h2>
+<figure>
+<svg viewBox="0 0 960 300" role="img" aria-label="Schematic of reward model overoptimisation: as the policy moves away from its start, the proxy reward keeps rising while the gold reward peaks and then declines; larger reward models and ensembles push the peak later.">
+<defs><marker id="p6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<g class="grid"><line x1="80" y1="40" x2="80" y2="240"/><line x1="80" y1="240" x2="900" y2="240"/></g>
+<text x="490" y="272" text-anchor="middle" class="lab">distance from the initial policy, √KL</text>
+<text x="40" y="140" transform="rotate(-90 40 140)" text-anchor="middle" class="lab">reward</text>
+<path d="M80 230 C 250 150, 500 90, 880 50" class="ln warm-s" style="stroke-width:2.4"/>
+<text x="700" y="68" class="lab" style="fill:var(--warm)">proxy reward, what the policy sees</text>
+<path d="M80 230 C 220 150, 380 110, 470 118 C 560 126, 700 175, 880 215" class="ln" style="stroke-width:2.4"/>
+<text x="560" y="205" class="lab">gold reward, what you wanted</text>
+<line x1="470" y1="118" x2="470" y2="240" class="ln dash"/><text x="470" y="256" text-anchor="middle" class="num">peak</text>
+<path d="M80 230 C 240 140, 440 95, 620 98 C 740 100, 820 140, 880 165" class="ln acc-s dash" style="stroke-width:2"/>
+<text x="620" y="88" class="lab" style="fill:var(--acc)">bigger RM, or an ensemble: peak moves right</text>
+<text x="90" y="52" class="lab">Gao 2022: the peak's position scales smoothly with RM size and data; Coste 2023: ensembles + a KL penalty nearly remove the drop</text>
+</svg>
+<figcaption>Any learned verifier is a proxy, and a policy trained against it will find where the proxy and the truth part ways. Our arms did this within 50 steps. The fixes on record: bigger or more verifiers, conservative aggregation, and retraining the verifier on the policy's own samples.</figcaption>
+<p class="cite">Gao, Schulman, Hilton 2022 (2210.10760) · Coste et al. 2023 (2310.02743) · Adv-RM: Bukharin et al. 2025 (2504.06141) · Rafailov et al. 2024 for DPO (2406.02900)</p>
+</figure>
+</section>
+<!-- P7 PVG -->
+<section>
+<p class="eyebrow">Prior work 7 · 2024</p>
+<h2>Train for a small verifier, get legibility for humans</h2>
+<figure>
+<svg viewBox="0 0 960 300" role="img" aria-label="Prover-Verifier Games: a small verifier predicts correctness; a helpful prover is rewarded for correct solutions the verifier accepts; a sneaky prover for wrong solutions that fool it. Over rounds, time-limited humans get better at checking the helpful prover and worse at catching the sneaky one.">
+<defs><marker id="p7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect x="380" y="40" width="200" height="64" rx="6" class="box-acc"/><text x="480" y="66" text-anchor="middle" class="big">small verifier</text><text x="480" y="90" text-anchor="middle" class="lab">predicts p(correct), ~1000× smaller</text>
+<rect x="60" y="180" width="220" height="64" rx="6" class="box"/><text x="170" y="206" text-anchor="middle" class="big">helpful prover</text><text x="170" y="230" text-anchor="middle" class="lab">reward: correct and accepted</text>
+<rect x="680" y="180" width="220" height="64" rx="6" class="box-warm"/><text x="790" y="206" text-anchor="middle" class="big">sneaky prover</text><text x="790" y="230" text-anchor="middle" class="lab">reward: wrong and accepted</text>
+<line x1="230" y1="180" x2="400" y2="104" class="ln" marker-end="url(#p7)"/><text x="290" y="132" class="lab">solutions</text>
+<line x1="730" y1="180" x2="560" y2="104" class="ln" marker-end="url(#p7)"/><text x="600" y="132" class="lab">attacks</text>
+<line x1="480" y1="104" x2="480" y2="150" class="ln" marker-end="url(#p7)"/><text x="480" y="168" text-anchor="middle" class="lab">verifier retrained each round on both</text>
+<text x="480" y="282" text-anchor="middle">humans under time pressure: accuracy up on helpful-prover solutions, down on sneaky ones, gap widens over rounds</text>
+</svg>
+<figcaption>The closest ancestor of what we ran and of the proposal: a cheap verifier as the reward, a prover shaped toward what it can check, and a sneaky prover keeping the verifier honest. Their verifier was a small LLM; ours is a one-pass model.</figcaption>
+<p class="cite">Kirchner et al. 2024, Prover-Verifier Games improve legibility of LLM outputs (2407.13692) · decoupled follow-up (2602.23248) · Generative Adversarial Reasoner: Liu et al. 2025 (2512.16917)</p>
+</figure>
+</section>
+<!-- 2. LINEAGE -->
+<section>
+<p class="eyebrow">Prior work 8 · Lineage</p>
+<h2>Where that leaves the verifier menu</h2>
+<figure>
+<svg viewBox="0 0 960 400" role="img" aria-label="Map of verifier families by latency per judgement on a log scale and by what they return: scalar heads at milliseconds, System 1 models at tens to hundreds of milliseconds returning typed calibrated probabilities, generative judges at seconds to minutes returning text.">
+  <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <!-- axis -->
+  <line x1="140" y1="330" x2="920" y2="330" class="ln" marker-end="url(#a2)"/>
+  <text x="530" y="380" text-anchor="middle" class="lab">latency per judgement, log scale</text>
+  <!-- ticks: 1ms=160, 10ms=290, 100ms=420, 1s=550, 10s=680, 100s=810 -->
+  <g class="num">
+    <line x1="160" y1="326" x2="160" y2="334" class="ln"/><text x="160" y="352" text-anchor="middle">1 ms</text>
+    <line x1="290" y1="326" x2="290" y2="334" class="ln"/><text x="290" y="352" text-anchor="middle">10 ms</text>
+    <line x1="420" y1="326" x2="420" y2="334" class="ln"/><text x="420" y="352" text-anchor="middle">100 ms</text>
+    <line x1="550" y1="326" x2="550" y2="334" class="ln"/><text x="550" y="352" text-anchor="middle">1 s</text>
+    <line x1="680" y1="326" x2="680" y2="334" class="ln"/><text x="680" y="352" text-anchor="middle">10 s</text>
+    <line x1="810" y1="326" x2="810" y2="334" class="ln"/><text x="810" y="352" text-anchor="middle">100 s</text>
+  </g>
+  <!-- rows -->
+  <g class="grid"><line x1="140" y1="90" x2="920" y2="90"/><line x1="140" y1="180" x2="920" y2="180"/><line x1="140" y1="270" x2="920" y2="270"/></g>
+  <text x="20" y="84" class="k">RETURNS</text>
+  <text x="20" y="130">one scalar</text>
+  <text x="20" y="220">typed probabilities</text>
+  <text x="20" y="310">text + a verdict</text>
+  <!-- scalar heads: 5ms-20ms -->
+  <rect x="240" y="112" width="90" height="36" rx="18" class="box"/>
+  <text x="285" y="135" text-anchor="middle" class="num">5–20 ms</text>
+  <text x="345" y="122">ORM / PRM classifier heads</text>
+  <text x="345" y="140" class="lab">Cobbe 2021 · Lightman 2023 · Yuan 2024 (implicit PRM)</text>
+  <!-- system 1: djev 34ms, Jev 70-500ms -->
+  <rect x="345" y="202" width="150" height="36" rx="18" class="box-acc"/>
+  <text x="420" y="225" text-anchor="middle" class="num">34–500 ms</text>
+  <text x="510" y="212">System 1 models</text>
+  <text x="510" y="230" class="lab">Jev (TypeSafe 2026, RLCD) · DiffusionGemma readout (djev)</text>
+  <!-- generative: 3s-329s -->
+  <rect x="612" y="292" width="255" height="36" rx="18" class="box-warm"/>
+  <text x="740" y="315" text-anchor="middle" class="num">3 s – 329 s</text>
+  <text x="612" y="285" class="lab">generative judges: GenRM 2024 · RM-R1 · J1 · DeepSeek-GRM 2025</text>
+  <!-- the gap -->
+  <line x1="420" y1="245" x2="420" y2="292" class="ln dash"/>
+  <line x1="420" y1="292" x2="612" y2="292" class="ln dash" marker-end="url(#a2)"/>
+  <text x="440" y="278" class="lab">×100 cheaper, still a probability, no rationale</text>
+</svg>
+<figcaption>Scalar heads are fast but return one number with no calibration story; generative judges reason and explain but cost seconds per call. System 1 models sit in the gap: a typed distribution per question, trained for calibration, at the price of a classifier.</figcaption>
+<p class="cite">Cobbe 2021 (2110.14168) · Lightman 2023 (2305.20050) · Yuan 2024 (2412.01981) · Zhang 2024 GenRM (2408.15240) · RM-R1 (2505.02387) · J1 (2505.10320) · DeepSeek-GRM (2504.02495) · Jev latency from typesafe.ai; 34 ms measured on one A100</p>
+</figure>
+</section>
+</div>
+<div class="panel" id="p-ours" role="tabpanel" aria-labelledby="t-ours" hidden>
+<p class="lede" style="font-size:15px">21–22 Sep 2026, one A100: a readout-only System 1 verifier reproduced and compared with Jev, then seven GRPO reward arms on GSM8K with a one-hop step verifier.</p>
+<!-- 3. DENSITY -->
+<section>
+<p class="eyebrow">Our runs 1 · Density</p>
+<h2>Cheap calls make per-step reward affordable</h2>
+<figure>
+<svg viewBox="0 0 960 300" role="img" aria-label="A five-step solution scored two ways: outcome reward gives one number at the end; process reward gives one number per step, here a one-hop question per step.">
+  <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <!-- solution steps -->
+  <text x="40" y="40" class="k">ONE SOLUTION, FIVE STEPS</text>
+  <g>
+    <rect x="40" y="60" width="150" height="44" rx="4" class="box"/><text x="115" y="87" text-anchor="middle">step 1</text>
+    <rect x="215" y="60" width="150" height="44" rx="4" class="box"/><text x="290" y="87" text-anchor="middle">step 2</text>
+    <rect x="390" y="60" width="150" height="44" rx="4" class="box"/><text x="465" y="87" text-anchor="middle">step 3</text>
+    <rect x="565" y="60" width="150" height="44" rx="4" class="box"/><text x="640" y="87" text-anchor="middle">step 4</text>
+    <rect x="740" y="60" width="150" height="44" rx="4" class="box"/><text x="815" y="87" text-anchor="middle">#### 42</text>
+  </g>
+  <!-- outcome reward -->
+  <text x="40" y="150" class="k">OUTCOME</text>
+  <line x1="815" y1="104" x2="815" y2="140" class="ln" marker-end="url(#a3)"/>
+  <rect x="770" y="140" width="90" height="30" rx="15" class="box-warm"/>
+  <text x="815" y="160" text-anchor="middle" class="num">1 or 0</text>
+  <text x="130" y="160" class="lab">one call · one number · nothing about the path</text>
+  <!-- process reward -->
+  <text x="40" y="225" class="k">PROCESS</text>
+  <g class="num">
+    <line x1="215" y1="104" x2="215" y2="212" class="ln dash"/>
+    <rect x="180" y="212" width="70" height="28" rx="14" class="box-acc"/><text x="215" y="231" text-anchor="middle">.94</text>
+    <line x1="390" y1="104" x2="390" y2="212" class="ln dash"/>
+    <rect x="355" y="212" width="70" height="28" rx="14" class="box-acc"/><text x="390" y="231" text-anchor="middle">.88</text>
+    <line x1="565" y1="104" x2="565" y2="212" class="ln dash"/>
+    <rect x="530" y="212" width="70" height="28" rx="14" class="box-acc"/><text x="565" y="231" text-anchor="middle">.31</text>
+    <line x1="740" y1="104" x2="740" y2="212" class="ln dash"/>
+    <rect x="705" y="212" width="70" height="28" rx="14" class="box-acc"/><text x="740" y="231" text-anchor="middle">.97</text>
+  </g>
+  <text x="130" y="270" class="lab">one call per hop: “does this step follow from the previous one by a single inference?” · 1,100 calls per GRPO step</text>
+</svg>
+<figcaption>Process reward models exist since 2023, but labelling steps was the cost. A verifier that answers a local yes/no in 35 ms turns every hop into a reward at no labelling cost, and it needs no reference solution.</figcaption>
+<p class="cite">PRM: Lightman 2023 · implicit PRM: Yuan 2024 · PRIME: Cui 2025 (2502.01456) · the one-hop question is our arm B</p>
+</figure>
+</section>
+<!-- 5. CALIBRATION -->
+<section>
+<p class="eyebrow">Our runs 2 · Calibration</p>
+<h2>Same accuracy, different tails</h2>
+<figure>
+<svg viewBox="0 0 960 330" role="img" aria-label="Paired bars comparing djev, a readout-only verifier, with Jev, trained for calibration: same accuracy on 337 questions, but djev saturates 28 percent of reads at 0 or 1 versus 0 for Jev; djev's wrong answers carry median probability 0.90 versus 0.63; Jev detects skipped hops at AUC 0.93 versus 0.84.">
+  <!-- header -->
+  <rect x="560" y="28" width="14" height="12" class="ghost"/><text x="580" y="39" class="lab">djev · readout only</text>
+  <rect x="740" y="28" width="14" height="12" class="acc"/><text x="760" y="39" class="lab">Jev · RL for calibration</text>
+  <!-- row template: label x=40, bars from x=330, width max 560 -->
+  <g>
+    <text x="40" y="82">accuracy, 337 public questions</text>
+    <rect x="330" y="66" width="500" height="12" class="ghost"/><text x="838" y="77" class="num">89.3</text>
+    <rect x="330" y="82" width="509" height="12" class="acc"/><text x="847" y="93" class="num">90.8</text>
+  </g>
+  <g>
+    <text x="40" y="146">reads saturated at exactly 0 or 1</text>
+    <rect x="330" y="130" width="158" height="12" class="ghost"/><text x="496" y="141" class="num">28 %</text>
+    <rect x="330" y="146" width="2" height="12" class="acc"/><text x="340" y="157" class="num">0 %</text>
+  </g>
+  <g>
+    <text x="40" y="210">median p on a wrong answer</text>
+    <rect x="330" y="194" width="504" height="12" class="ghost"/><text x="842" y="205" class="num">0.90</text>
+    <rect x="330" y="210" width="353" height="12" class="acc"/><text x="691" y="221" class="num">0.63</text>
+  </g>
+  <g>
+    <text x="40" y="274">skipped-hop detection, AUC</text>
+    <rect x="330" y="258" width="470" height="12" class="ghost"/><text x="808" y="269" class="num">0.84</text>
+    <rect x="330" y="274" width="521" height="12" class="acc"/><text x="859" y="285" class="num">0.93</text>
+  </g>
+  <text x="40" y="318" class="lab">bars are on a 0–1 scale; accuracy row in percent</text>
+</svg>
+<figcaption>Two verifiers that tie on accuracy behave differently when they are wrong. The readout-only model is 90 % sure of its mistakes; the calibration-trained one hedges. As a reward that difference is the whole game, since the policy learns from the tails.</figcaption>
+<p class="cite">Measured 21 Sep 2026: Jev's 337 public example questions live vs DiffusionGemma-as-Jev on one A100; 375-item step probe for the AUC. RLCD: typesafe.ai; calibration rewards in RL: Damani 2025 (2507.16806)</p>
+</figure>
+</section>
+<!-- 4. WHERE THE TIME GOES -->
+<section>
+<p class="eyebrow">Our runs 3 · Cost</p>
+<h2>Seconds per GRPO step, Qwen2.5-1.5B on one A100</h2>
+<figure>
+<svg viewBox="0 0 960 400" role="img" aria-label="Horizontal stacked bars of seconds per training step. Measured: checker only 10.6 s; djev verifier 27 s of which 18 s judging; live Jev 24 s of which 14 s judging. Derived from the measured 5,000 tokens per second of the 1.5B: a same-size generative judge writing 200-token rationales would spend 44 s judging, a 7B judge about 220 s.">
+  <!-- scale: 250 s over 670 px -> 2.68 px/s, origin x=250 -->
+  <g class="grid"><line x1="250" y1="40" x2="250" y2="330"/><line x1="384" y1="40" x2="384" y2="330"/><line x1="518" y1="40" x2="518" y2="330"/><line x1="652" y1="40" x2="652" y2="330"/><line x1="786" y1="40" x2="786" y2="330"/><line x1="920" y1="40" x2="920" y2="330"/></g>
+  <g class="num"><text x="250" y="352" text-anchor="middle">0</text><text x="384" y="352" text-anchor="middle">50 s</text><text x="518" y="352" text-anchor="middle">100 s</text><text x="652" y="352" text-anchor="middle">150 s</text><text x="786" y="352" text-anchor="middle">200 s</text><text x="920" y="352" text-anchor="middle">250 s</text></g>
+  <text x="40" y="52" class="k">MEASURED</text>
+  <!-- A -->
+  <text x="40" y="82">checker only</text>
+  <rect x="250" y="66" width="28" height="24" class="ghost"/>
+  <text x="286" y="83" class="num">10.6 s</text>
+  <!-- B djev: gen 3.4, train 5.8, judge 17.9 -->
+  <text x="40" y="128">djev, one-hop reads</text>
+  <rect x="250" y="112" width="9" height="24" class="ghost"/><rect x="259" y="112" width="16" height="24" class="ghost" style="opacity:.55"/>
+  <rect x="275" y="112" width="48" height="24" class="acc"/>
+  <text x="331" y="129" class="num">27 s · judge 18 s · 62 reads/s</text>
+  <!-- J jev: gen 4.0 train 6.6 judge 13.7 -->
+  <text x="40" y="174">Jev API, one-hop reads</text>
+  <rect x="250" y="158" width="11" height="24" class="ghost"/><rect x="261" y="158" width="18" height="24" class="ghost" style="opacity:.55"/>
+  <rect x="279" y="158" width="37" height="24" class="acc"/>
+  <text x="324" y="175" class="num">24 s · judge 14 s · 100 reads/s</text>
+  <text x="40" y="222" class="k">DERIVED FROM THE MEASURED 5,000 TOK/S</text>
+  <!-- 1.5B judge: 220k tokens / 5000 = 44 s -->
+  <text x="40" y="252">1.5B judge, 200-token rationale</text>
+  <rect x="250" y="236" width="25" height="24" class="ghost"/>
+  <rect x="275" y="236" width="118" height="24" class="warm"/>
+  <text x="401" y="253" class="num">54 s · judge 44 s · derived, not run</text>
+  <!-- 7B judge: 5x params -> ~1000 tok/s -> 220 s -->
+  <text x="40" y="298">7B judge, 200-token rationale</text>
+  <rect x="250" y="282" width="25" height="24" class="ghost"/>
+  <rect x="275" y="282" width="590" height="24" class="warm"/>
+  <text x="560" y="299" text-anchor="middle" class="num" style="fill:#fff">≈ 230 s · judge 220 s · derived, not run</text>
+  <!-- legend -->
+  <rect x="250" y="376" width="14" height="12" class="ghost"/><text x="270" y="387" class="lab">generate</text>
+  <rect x="340" y="376" width="14" height="12" class="ghost" style="opacity:.55"/><text x="360" y="387" class="lab">train</text>
+  <rect x="410" y="376" width="14" height="12" class="acc"/><text x="430" y="387" class="lab">verifier, measured</text>
+  <rect x="570" y="376" width="14" height="12" class="warm"/><text x="590" y="387" class="lab">verifier, derived</text>
+</svg>
+<figcaption>Measured 21–22 Sep 2026 from the per-arm logs: 128 completions and about 1,100 one-hop reads per step. The 1.5B itself generated 4,300 to 5,500 tokens per second under the colocated sampler. A judge the same size writing a 200-token rationale per read would need 220,000 judge tokens per step, 44 s on its own GPU; a 7B judge scales by its five times more active parameters to about 220 s. Dense process reward with a reasoning judge is the arm nobody runs because of this row.</figcaption>
+<p class="cite">Source: figures/03-eval-log.csv, columns gen_s / train_s / judge_s at step 100, tokens per solution × 128 per step. The 7B figure assumes throughput inversely proportional to active parameters; batched serving on a dedicated GPU would move it by a factor of two either way, not ten.</p>
+</figure>
+</section>
+<!-- 6. RESULTS -->
+<section>
+<p class="eyebrow">Our runs 4 · One day of runs</p>
+<h2>The aggregate decides what “a step” becomes</h2>
+<figure>
+<svg viewBox="0 0 960 460" role="img" aria-label="Scatter of seven reward arms after 100 GRPO steps: x is steps per solution, y is greedy accuracy on 500 GSM8K problems. Min-over-steps rewards cluster at fewer steps and lower accuracy; mean with a step floor and the Jev-judged arm sit near the checker-only arm; pay-per-step drifts to 11.5 steps.">
+  <defs><marker id="a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <!-- axes: x 3..12 steps -> 120..900 (86.7px/step); y 64..78 -> 380..40 (24.3px/pt) -->
+  <g class="grid">
+    <line x1="120" y1="40" x2="120" y2="380"/>
+    <line x1="120" y1="380" x2="900" y2="380"/>
+    <line x1="120" y1="234" x2="900" y2="234" class="dash"/>
+  </g>
+  <text x="112" y="238" text-anchor="end" class="num">70.0</text>
+  <text x="900" y="228" text-anchor="end" class="lab">base model</text>
+  <g class="num">
+    <text x="112" y="44" text-anchor="end">78</text>
+    <text x="112" y="141" text-anchor="end">74</text>
+    <text x="112" y="335" text-anchor="end">66</text>
+    <text x="207" y="404" text-anchor="middle">4</text>
+    <text x="380" y="404" text-anchor="middle">6</text>
+    <text x="553" y="404" text-anchor="middle">8</text>
+    <text x="727" y="404" text-anchor="middle">10</text>
+    <text x="900" y="404" text-anchor="middle">12</text>
+  </g>
+  <text x="510" y="440" text-anchor="middle" class="lab">steps per solution after 100 GRPO steps</text>
+  <text x="40" y="210" transform="rotate(-90 40 210)" text-anchor="middle" class="lab">greedy pass@1, 500 GSM8K test problems</text>
+  <!-- cluster: min-based -->
+  <ellipse cx="190" cy="285" rx="58" ry="78" class="box-warm" style="fill-opacity:.35"/>
+  <text x="250" y="372" text-anchor="start" class="lab" style="fill:var(--warm)">min over steps: merges</text>
+  <!-- points: A (5.32,76.0)->(321,88); J (5.83,74.6)->(365,122); B2 (6.71,73.2)->(442,156); B4 (11.48,72.6)->(855,171); B (3.76,70.8)->(186,214); F (3.87,70.8)->(195,214); C (3.68,65.6)->(179,341); base (5.33,70)->(322,234) -->
+  <circle cx="322" cy="234" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="321" cy="88" r="8" fill="currentColor"/><text x="336" y="84">A · checker only</text><text x="336" y="100" class="num">76.0</text>
+  <circle cx="365" cy="122" r="8" class="acc"/><text x="380" y="118">J · mean + floor, judged by Jev</text><text x="380" y="134" class="num">74.6</text>
+  <circle cx="442" cy="156" r="8" class="acc"/><text x="457" y="152">B2 · mean + floor, judged by djev</text><text x="457" y="168" class="num">73.2</text>
+  <circle cx="855" cy="171" r="8" class="acc"/><text x="840" y="167" text-anchor="end">B4 · pay per atomic step: pads</text><text x="840" y="183" text-anchor="end" class="num">72.6 · 11.5 steps</text>
+  <circle cx="186" cy="214" r="8" class="warm"/><circle cx="195" cy="214" r="8" class="warm"/><text x="212" y="210">B, F · gated / additive</text><text x="212" y="226" class="num">70.8</text>
+  <circle cx="179" cy="341" r="8" class="warm"/><text x="196" y="337">C · verifier only</text><text x="196" y="353" class="num">65.6</text>
+</svg>
+<figcaption>Seven rewards, same verifier questions, same 12,800 samples. Every reward built on the minimum over steps merged hops and lost 5 to 10 points; the mean with a step floor held; swapping the judge to Jev with the identical reward added 1.4 points and the best held-out skip signal. The policy finds the edge of the verifier's definition within 50 steps.</figcaption>
+<p class="cite">Qwen2.5-1.5B-Instruct, full fine-tune, GRPO group 8, 100 steps per arm, evals on a fixed 500-problem test set. Hacking lineage: Gao 2022 (2210.10760) · Coste 2023 (2310.02743)</p>
+
+<div class="cfg" style="overflow-x:auto">
+<table>
+<thead><tr><th>Arm</th><th>Reward per completion</th><th>Judge</th><th>pass@1</th><th>steps</th><th>What happened</th></tr></thead>
+<tbody>
+<tr><td><b>base</b></td><td>none, the starting checkpoint</td><td>·</td><td class="n">70.0</td><td class="n">5.3</td><td>Qwen2.5-1.5B-Instruct, one-shot numbered prompt</td></tr>
+<tr><td><b>A</b></td><td>checker</td><td>·</td><td class="n">76.0</td><td class="n">5.3</td><td>standard RLVR; step acceptance unchanged</td></tr>
+<tr><td><b>B</b></td><td>checker × min<sub>k</sub> p(follows<sub>k</sub>) × mean<sub>k</sub> (1 − p(redundant<sub>k</sub>))</td><td>djev</td><td class="n">70.8</td><td class="n">3.8</td><td>merges steps; fewer steps, fewer chances of a low value</td></tr>
+<tr><td><b>C</b></td><td>min<sub>k</sub> p(follows<sub>k</sub>) × mean<sub>k</sub> (1 − p(redundant<sub>k</sub>)), no checker</td><td>djev</td><td class="n">65.6</td><td class="n">3.7</td><td>same merging, loses accuracy and pass@8</td></tr>
+<tr><td><b>F</b></td><td>0.5 · checker + 0.5 · B's process term</td><td>djev</td><td class="n">70.8</td><td class="n">3.9</td><td>additive instead of gated; lands where B did</td></tr>
+<tr><td><b>B2</b></td><td>checker × mean<sub>k</sub> p(follows<sub>k</sub>) × mean<sub>k</sub> (1 − p(redundant<sub>k</sub>)) × min(1, n<sub>steps</sub>/5)</td><td>djev</td><td class="n">73.2</td><td class="n">6.7</td><td>no merging; inside 3 points of A</td></tr>
+<tr><td><b>J</b></td><td>B2's reward, unchanged</td><td><b>live Jev</b></td><td class="n">74.6</td><td class="n">5.8</td><td>judge swap only: +1.4 over B2, best held-out skip signal</td></tr>
+<tr><td><b>B4</b></td><td>checker × min(1, Σ<sub>k</sub> p(follows<sub>k</sub>)(1 − p(redundant<sub>k</sub>))(1 − p(compound<sub>k</sub>)) / 6)</td><td>djev</td><td class="n">72.6</td><td class="n">11.5</td><td>pays per accepted atomic step; pads once redundancy stops firing</td></tr>
+</tbody></table>
+<p class="cite">Shared by every arm: Qwen2.5-1.5B-Instruct full fine-tune bf16, GRPO group 8, 16 prompts per step, 128 completions per step, lr 1e-6, KL β 0, 100 steps, same seed and data order, 512 max tokens. checker = exact match on the final #### number. Per step k the judge reads {problem, previous step, current step} and answers one noul question per read, alone: follows = "does the current step follow from the previous step and the problem by a single direct inference, with no skipped reasoning?"; redundant = "is this step redundant, restating or adding nothing?"; compound = "does this step perform more than one calculation or inference?". Evals: greedy on a fixed 500-problem GSM8K test subset.</p>
+</div>
+</figure>
+</section>
+</div>
+<div class="panel" id="p-prop" role="tabpanel" aria-labelledby="t-prop" hidden>
+<p class="lede" style="font-size:15px">The proposal starts from a mechanism: GRPO gets no gradient from a group whose rollouts all agree, and that happens on the prompts the policy cannot do yet. A one-pass judge can rank inside those groups and choose prompts before rolling out, if it is refit as the policy moves. PRIME is the named baseline.</p>
+<!-- Q1 BLIND -->
+<section>
+<p class="eyebrow">Proposal 1 · The mechanism</p>
+<h2>GRPO learns nothing from a uniform group</h2>
+<figure>
+<svg viewBox="0 0 960 360" role="img" aria-label="Left: a group of eight rollouts for one prompt; when all eight are wrong or all eight are right, every advantage is zero and the prompt contributes no gradient, though the rollouts were paid for. Right: the share of uniform groups as a function of the policy's pass rate on the prompt, with all-wrong dominating at low pass rates and all-right at high ones; only prompts near 50 percent produce signal.">
+<defs><marker id="q1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="36" class="k">ONE PROMPT · GROUP OF 8 · ADVANTAGE = REWARD − GROUP MEAN</text>
+<g class="num">
+<rect x="40" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="58" y="71" text-anchor="middle">0</text>
+<rect x="84" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="102" y="71" text-anchor="middle">0</text>
+<rect x="128" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="146" y="71" text-anchor="middle">0</text>
+<rect x="172" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="190" y="71" text-anchor="middle">0</text>
+<rect x="216" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="234" y="71" text-anchor="middle">0</text>
+<rect x="260" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="278" y="71" text-anchor="middle">0</text>
+<rect x="304" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="322" y="71" text-anchor="middle">0</text>
+<rect x="348" y="52" width="36" height="28" rx="4" class="box-warm"/><text x="366" y="71" text-anchor="middle">0</text>
+</g>
+<text x="40" y="104" class="lab">all wrong · mean 0 · every advantage 0 · gradient 0 · 8 rollouts paid for</text>
+<g class="num">
+<rect x="40" y="128" width="36" height="28" rx="4" class="box-acc"/><text x="58" y="147" text-anchor="middle">1</text>
+<rect x="84" y="128" width="36" height="28" rx="4" class="box-acc"/><text x="102" y="147" text-anchor="middle">1</text>
+<rect x="128" y="128" width="36" height="28" rx="4" class="box-warm"/><text x="146" y="147" text-anchor="middle">0</text>
+<rect x="172" y="128" width="36" height="28" rx="4" class="box-acc"/><text x="190" y="147" text-anchor="middle">1</text>
+<rect x="216" y="128" width="36" height="28" rx="4" class="box-warm"/><text x="234" y="147" text-anchor="middle">0</text>
+<rect x="260" y="128" width="36" height="28" rx="4" class="box-warm"/><text x="278" y="147" text-anchor="middle">0</text>
+<rect x="304" y="128" width="36" height="28" rx="4" class="box-acc"/><text x="322" y="147" text-anchor="middle">1</text>
+<rect x="348" y="128" width="36" height="28" rx="4" class="box-warm"/><text x="366" y="147" text-anchor="middle">0</text>
+</g>
+<text x="40" y="180" class="lab">mixed · mean 0.5 · advantages ±0.5 · this is the only kind of group that trains</text>
+<!-- right: curve of P(uniform) vs pass rate p, group 8: p^8 + (1-p)^8 -->
+<!-- axes: x 0..1 -> 520..900 ; y 0..1 -> 300..60 -->
+<g class="grid"><line x1="520" y1="60" x2="520" y2="300"/><line x1="520" y1="300" x2="900" y2="300"/></g>
+<g class="num"><text x="520" y="322" text-anchor="middle">0</text><text x="710" y="322" text-anchor="middle">0.5</text><text x="900" y="322" text-anchor="middle">1</text><text x="510" y="64" text-anchor="end">1</text><text x="510" y="304" text-anchor="end">0</text></g>
+<text x="710" y="348" text-anchor="middle" class="lab">policy's pass rate on the prompt</text>
+<text x="470" y="180" transform="rotate(-90 470 180)" text-anchor="middle" class="lab">share of groups with zero gradient</text>
+<path d="M520 60 L558 108 L596 180 L634 236 L672 276 L710 298 L748 276 L786 236 L824 180 L862 108 L900 60" class="ln warm-s" style="stroke-width:2.4"/>
+<text x="560" y="96" class="lab" style="fill:var(--warm)">all wrong</text>
+<text x="820" y="96" text-anchor="end" class="lab" style="fill:var(--warm)">all right</text>
+<line x1="710" y1="298" x2="710" y2="240" class="ln acc-s dash"/><text x="710" y="232" text-anchor="middle" class="lab" style="fill:var(--acc)">frontier: signal lives here</text>
+<text x="40" y="240">where the checker is silent:</text>
+<text x="40" y="264" class="lab">hard prompts, from the start (all wrong)</text>
+<text x="40" y="284" class="lab">easy prompts, once learned (all right)</text>
+<text x="40" y="318" class="lab">DAPO filters uniform groups out after paying for them and oversamples to refill the batch</text>
+</svg>
+<figcaption>The outcome reward gives one bit per rollout, and GRPO's group baseline cancels it whenever the bits agree. The prompts where that happens are exactly the ones the policy cannot do yet and the ones it has just learned. Our GSM8K runs sat at 70% pass rate, where almost no group is uniform: the right test for the wrong reason.</figcaption>
+<p class="cite">GRPO: Shao et al. 2024 (2402.03300) · dynamic sampling: DAPO, Yu et al. 2025 (2503.14476) · curve: p⁸ + (1−p)⁸</p>
+</figure>
+</section>
+<!-- Q2 FIXES -->
+<section>
+<p class="eyebrow">Proposal 2 · What a fast judge does about it</p>
+<h2>Rank inside the silent groups, and choose prompts before rolling out</h2>
+<figure>
+<svg viewBox="0 0 960 330" role="img" aria-label="Left: inside an all-wrong group, a step verifier scores each rollout by how many steps held before the first failure, giving a non-zero advantage where the checker gave none. Right: before generation, the verifier predicts each prompt's pass rate under the current policy, and the batch is drawn from prompts predicted near 50 percent.">
+<defs><marker id="q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="36" class="k">A · PARTIAL CREDIT INSIDE AN ALL-WRONG GROUP</text>
+<g><rect x="40" y="52" width="300" height="24" rx="4" class="box"/><rect x="40" y="86" width="300" height="24" rx="4" class="box"/><rect x="40" y="120" width="300" height="24" rx="4" class="box"/></g>
+<text x="50" y="69" class="lab">✓ ✓ ✓ ✗ · · · wrong answer</text><text x="350" y="69" class="num">checker 0 · verifier 0.61</text>
+<text x="50" y="103" class="lab">✓ ✗ · · · · · wrong answer</text><text x="350" y="103" class="num">checker 0 · verifier 0.22</text>
+<text x="50" y="137" class="lab">✗ · · · · · · wrong answer</text><text x="350" y="137" class="num">checker 0 · verifier 0.05</text>
+<text x="40" y="176">advantage was 0, 0, 0 · now +0.32, −0.07, −0.24</text>
+<text x="40" y="198" class="lab">a judgement per step of every rollout, the rejected ones included: ~1,100 reads per step</text>
+<text x="40" y="216" class="lab">only a one-pass judge makes that affordable</text>
+<line x1="480" y1="40" x2="480" y2="230" class="grid"/>
+<text x="520" y="36" class="k">B · PROMPT SELECTION BEFORE ROLLOUT</text>
+<g class="num">
+<rect x="520" y="52" width="180" height="24" rx="12" class="box"/><text x="610" y="69" text-anchor="middle">prompt 1 · p̂ = 0.97</text>
+<rect x="520" y="84" width="180" height="24" rx="12" class="box-acc"/><text x="610" y="101" text-anchor="middle">prompt 2 · p̂ = 0.48</text>
+<rect x="520" y="116" width="180" height="24" rx="12" class="box"/><text x="610" y="133" text-anchor="middle">prompt 3 · p̂ = 0.03</text>
+<rect x="520" y="148" width="180" height="24" rx="12" class="box-acc"/><text x="610" y="165" text-anchor="middle">prompt 4 · p̂ = 0.61</text>
+</g>
+<text x="720" y="69" class="lab">skip: would be all right</text>
+<text x="720" y="101" class="lab" style="fill:var(--acc)">roll out</text>
+<text x="720" y="133" class="lab">skip: would be all wrong</text>
+<text x="720" y="165" class="lab" style="fill:var(--acc)">roll out</text>
+<text x="520" y="198" class="lab">one read per candidate prompt, 35 ms, before any generation</text>
+<text x="520" y="216" class="lab">DAPO pays for the rollouts first; this decides first</text>
+<text x="480" y="270" text-anchor="middle">both are relative to the current policy: which prompts sit at 50 %, which wrong traces got furthest</text>
+<text x="480" y="294" text-anchor="middle" class="lab" style="fill:var(--acc)">so the judge has to be refit as the policy moves, or it describes the policy you started with</text>
+</svg>
+<figcaption>Two uses of the same one-pass verifier, both aimed at the groups GRPO wastes. The first turns the outcome bit into gradient on the hardest prompts; the second keeps the batch at the frontier without paying for rollouts that will cancel. Neither is possible with a judge that costs a generation per call.</figcaption>
+<p class="cite">Partial credit in failed groups is the classical PRM argument (Lightman 2023, PRIME 2025); difficulty-aware prompt sampling: DAPO 2025, and curriculum RL for LLMs, e.g. Chen et al. 2025 (2505.14970, self-evolving curriculum)</p>
+</figure>
+</section>
+<!-- Q2 SCHEDULE -->
+<section>
+<p class="eyebrow">Proposal 3 · Schedule</p>
+<h2>Refit: k policy steps, then minutes of verifier training</h2>
+<figure>
+<svg viewBox="0 0 960 330" role="img" aria-label="Timeline of alternation: the policy takes k GRPO steps rewarded by the current verifier, producing 128 samples per step; the checker labels them; every k steps the verifier is retrained with log-loss on those fresh samples plus a replay of older ones, and the refreshed verifier rewards the next k steps.">
+<defs><marker id="q2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="36" class="k">POLICY · GRPO, 128 SAMPLES PER STEP</text>
+<g><rect x="40" y="48" width="340" height="40" rx="4" class="box"/><rect x="420" y="48" width="340" height="40" rx="4" class="box"/><rect x="800" y="48" width="120" height="40" rx="4" class="box" style="stroke-dasharray:4 3"/></g>
+<text x="210" y="73" text-anchor="middle">steps 1 … k</text><text x="590" y="73" text-anchor="middle">steps k+1 … 2k</text><text x="860" y="73" text-anchor="middle" class="lab">…</text>
+<!-- samples down -->
+<g class="ln dash"><line x1="210" y1="88" x2="210" y2="140" marker-end="url(#q2)"/><line x1="590" y1="88" x2="590" y2="140" marker-end="url(#q2)"/></g>
+<text x="225" y="120" class="lab">k × 128 samples, checker-labelled</text>
+<text x="605" y="120" class="lab">fresh samples again</text>
+<!-- D refresh -->
+<text x="40" y="160" class="k">VERIFIER · LOG-LOSS ON FRESH + REPLAY</text>
+<rect x="150" y="170" width="120" height="44" rx="22" class="box-acc"/><text x="210" y="190" text-anchor="middle">refresh D₁</text><text x="210" y="206" text-anchor="middle" class="lab">minutes</text>
+<rect x="530" y="170" width="120" height="44" rx="22" class="box-acc"/><text x="590" y="190" text-anchor="middle">refresh D₂</text><text x="590" y="206" text-anchor="middle" class="lab">minutes</text>
+<!-- replay -->
+<path d="M270 192 H 470 V 192" class="ln acc-s" marker-end="url(#q2)"/><text x="370" y="184" text-anchor="middle" class="lab">replay: old samples stay in D's set</text>
+<!-- rewards up -->
+<path d="M330 170 V 100 H 420" class="ln acc-s" marker-end="url(#q2)"/><text x="420" y="130" class="lab" style="fill:var(--acc)">D₁ rewards the next k steps</text>
+<path d="M710 170 V 100 H 800" class="ln acc-s" marker-end="url(#q2)"/>
+<rect x="40" y="170" width="70" height="44" rx="22" class="box"/><text x="75" y="197" text-anchor="middle" class="num">D₀</text>
+<line x1="110" y1="192" x2="150" y2="192" class="ln" marker-end="url(#q2)"/>
+<!-- health line -->
+<text x="40" y="258" class="k">HEALTH · TRACKED AT EVERY REFRESH</text>
+<text x="40" y="284">D's ECE on a held-out labelled set · gap between mean D-score and true accuracy · pass@k of the policy</text>
+<text x="40" y="308" class="lab">k ≈ 25–50 steps; D₀ = today's static verifier, so arm B2 is the k = ∞ baseline of this design</text>
+</svg>
+<figcaption>Same loop as today with one addition: the verifier is a second learner. The signal is the checker's label on each trace, attached to every step pair, cross-entropy; the one-hop notion comes from constructed edits (skip, merge, wrong number, pad) with exact labels. Between refits the verifier is fixed; each refit is a proper-scoring-rule fit, so the output is a calibrated probability under the policy that produced the samples.</figcaption>
+<p class="cite">Two-timescale updates: Heusel et al. 2017 (TTUR, 1706.08500) · on-policy PRM refresh inside RL: PRIME (2502.01456) · verifier retrained per round: Kirchner et al. 2024</p>
+</figure>
+</section>
+<!-- Q4 FAILURES -->
+<section>
+<p class="eyebrow">Proposal 5 · Failure modes</p>
+<h2>What goes wrong, and the knob for each</h2>
+<figure>
+<svg viewBox="0 0 960 330" role="img" aria-label="Table drawn as rows: GAN failure, its name in RL for reasoning, the knob. D exploited is reward hacking, knob on-policy refresh and replay. Mode collapse is pass@k loss, knob entropy or KL and diverse negatives. D wins outright is all-zero GRPO groups, knob label smoothing and slower D. Oscillation is policy cycling, knob replay of old samples. D miscalibrated off the current policy is verifier ECE drift, knob track ECE per refresh.">
+<g class="grid"><line x1="40" y1="64" x2="920" y2="64"/><line x1="40" y1="114" x2="920" y2="114"/><line x1="40" y1="164" x2="920" y2="164"/><line x1="40" y1="214" x2="920" y2="214"/><line x1="40" y1="264" x2="920" y2="264"/></g>
+<text x="40" y="50" class="k">PATHOLOGY</text><text x="330" y="50" class="k">IN RL FOR REASONING</text><text x="640" y="50" class="k">KNOB</text>
+<g>
+<text x="40" y="94">D exploited by G</text><text x="330" y="94">reward hacking, Goodhart</text><text x="640" y="94" class="lab">refresh D on-policy; replay; V3</text>
+<text x="40" y="144">mode collapse</text><text x="330" y="144">pass@k falls, diversity lost</text><text x="640" y="144" class="lab">entropy / KL term; diverse negatives in D's set</text>
+<text x="40" y="194">D wins, G gets no gradient</text><text x="330" y="194">all-zero GRPO groups</text><text x="640" y="194" class="lab">group normalisation; label smoothing; slower D</text>
+<text x="40" y="244">oscillation</text><text x="330" y="244">policy cycles between hacks</text><text x="640" y="244" class="lab">keep old samples in D's training set</text>
+<text x="40" y="294">D drifts off the current G</text><text x="330" y="294">verifier ECE drifts with training</text><text x="640" y="294" class="lab" style="fill:var(--acc)">track ECE per refresh: the health metric</text>
+</g>
+<text x="40" y="322" class="lab">observed already with a frozen D: rows 1 and 2 (arms B, C, F merged steps and lost pass@8 within 50 steps)</text>
+</svg>
+<figcaption>Nothing here is new; the point is that the fixes are known and cheap once the verifier is cheap. The one number to watch is its calibration error on a held-out labelled set at every refit: when it rises, the verifier has fallen behind the policy.</figcaption>
+<p class="cite">Gao 2022 · Coste 2023 · Salimans et al. 2016, Improved Techniques for Training GANs (1606.03498) · Heusel 2017 (TTUR)</p>
+</figure>
+</section>
+<!-- Q5 PLAN -->
+<section>
+<p class="eyebrow">Proposal 4 · First experiment</p>
+<h2>A task where the checker is silent a third of the time</h2>
+<figure>
+<svg viewBox="0 0 960 300" role="img" aria-label="Experiment layout: a 1.5B policy on MATH-level problems where its base pass rate is about 30 percent, so a third of groups are all-wrong. Verifier on GPU 0, policy on GPU 1. Arms: checker only; plus partial credit inside uniform groups; plus verifier-selected prompts; plus refit every 50 steps. Hypothesis: samples to a fixed accuracy fall by at least 30 percent, and the gain is concentrated in groups the checker scored uniform.">
+<defs><marker id="q5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect x="40" y="50" width="400" height="120" rx="6" class="box-acc"/>
+<text x="240" y="78" text-anchor="middle" class="big">GPU 0 · verifier</text>
+<text x="240" y="104" text-anchor="middle" class="lab">0.4B encoder head; step reads and prompt-difficulty reads</text>
+<text x="240" y="124" text-anchor="middle" class="lab">labels: checker on traces, constructed edits on steps</text>
+<text x="240" y="150" text-anchor="middle" class="num">refit every 50 steps · minutes</text>
+<rect x="520" y="50" width="400" height="120" rx="6" class="box"/>
+<text x="720" y="78" text-anchor="middle" class="big">GPU 1 · policy</text>
+<text x="720" y="104" text-anchor="middle" class="lab">Qwen2.5-1.5B, GRPO group 8, colocated sampler</text>
+<text x="720" y="124" text-anchor="middle" class="lab">MATH-level prompts, base pass@1 ≈ 30 %</text>
+<text x="720" y="150" text-anchor="middle" class="num">500 steps · log zero-gradient groups per step</text>
+<line x1="440" y1="95" x2="520" y2="95" class="ln" marker-end="url(#q5)"/><text x="480" y="88" text-anchor="middle" class="lab">reward, prompts</text>
+<line x1="520" y1="130" x2="440" y2="130" class="ln" marker-end="url(#q5)"/><text x="480" y="148" text-anchor="middle" class="lab">rollouts</text>
+<text x="40" y="210" class="k">ARMS, CUMULATIVE</text>
+<text x="40" y="236"><tspan class="num">0 </tspan> checker only</text>
+<text x="40" y="256"><tspan class="num">+1</tspan> partial credit inside uniform groups</text>
+<text x="40" y="276"><tspan class="num">+2</tspan> prompts chosen by predicted pass rate</text>
+<text x="40" y="296"><tspan class="num">+3</tspan> verifier refit every 50 steps</text>
+<text x="520" y="210" class="k">HYPOTHESIS</text>
+<text x="520" y="236">samples to reach the checker-only arm's final accuracy</text>
+<text x="520" y="256">fall by at least 30 %, and the gain comes from the</text>
+<text x="520" y="276">groups the checker scored uniform; if it does not,</text>
+<text x="520" y="296">the mechanism is wrong and we say so</text>
+</svg>
+<figcaption>Everything but the refit and the prompt reads ran this week on GSM8K. The named baseline for +1 is PRIME's implicit PRM on the same policy, same labels, same cadence: a policy-sized carrier against a 0.4B one. djev and Jev stay as held-out judges no arm is trained against.</figcaption>
+<p class="cite">PRIME: Cui et al. 2025 (2502.01456) · DAPO: Yu et al. 2025 (2503.14476) · our GSM8K arms: vault note 03</p>
+</figure>
+</section>
+<!-- 8. LATENT -->
+<section>
+<p class="eyebrow">Proposal 6 · Latent reasoners</p>
+<h2>Extension: when there is no text to judge</h2>
+<figure>
+<svg viewBox="0 0 960 260" role="img" aria-label="A latent reasoner passes hidden states between steps instead of text; a small head reads the hidden state and returns a probability of correctness, so the verifier works where a text judge has nothing to read.">
+  <defs><marker id="a8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+  <text x="40" y="40" class="k">LATENT CHAIN OF THOUGHT · COCONUT, HUGINN, OURO</text>
+  <g>
+    <rect x="40" y="70" width="120" height="50" rx="6" class="box"/><text x="100" y="100" text-anchor="middle">prompt</text>
+    <rect x="220" y="70" width="120" height="50" rx="6" class="box"/><text x="280" y="93" text-anchor="middle" class="num">h₁</text><text x="280" y="110" text-anchor="middle" class="lab">no tokens</text>
+    <rect x="400" y="70" width="120" height="50" rx="6" class="box"/><text x="460" y="93" text-anchor="middle" class="num">h₂</text><text x="460" y="110" text-anchor="middle" class="lab">no tokens</text>
+    <rect x="580" y="70" width="120" height="50" rx="6" class="box"/><text x="640" y="93" text-anchor="middle" class="num">h₃</text><text x="640" y="110" text-anchor="middle" class="lab">no tokens</text>
+    <rect x="760" y="70" width="140" height="50" rx="6" class="box"/><text x="830" y="100" text-anchor="middle">answer</text>
+  </g>
+  <line x1="160" y1="95" x2="220" y2="95" class="ln" marker-end="url(#a8)"/>
+  <line x1="340" y1="95" x2="400" y2="95" class="ln" marker-end="url(#a8)"/>
+  <line x1="520" y1="95" x2="580" y2="95" class="ln" marker-end="url(#a8)"/>
+  <line x1="700" y1="95" x2="760" y2="95" class="ln" marker-end="url(#a8)"/>
+  <!-- text judge has nothing -->
+  <text x="460" y="150" text-anchor="middle" class="lab" style="fill:var(--warm)">a text judge reads nothing here</text>
+  <!-- latent head -->
+  <line x1="460" y1="120" x2="460" y2="185" class="ln acc-s dash" marker-end="url(#a8)"/>
+  <rect x="360" y="185" width="200" height="44" rx="22" class="box-acc"/>
+  <text x="460" y="205" text-anchor="middle">2M-parameter head on hᵗ</text>
+  <text x="460" y="222" text-anchor="middle" class="num">p(correct) = 0.81</text>
+  <text x="600" y="212" class="lab">matches a 55M text verifier in 15 of 16 settings</text>
+</svg>
+<figcaption>Latent reasoners think in hidden states, so a text judge has nothing to read. A System 1 head on the hidden state is the only verifier shape that fits. This variant shares the trunk with the policy, so the head must be trained with the trunk frozen and the policy must see it only through the reward, or the policy learns to hide from it.</figcaption>
+<p class="cite">Coconut: Hao 2024 (2412.06769) · Huginn: Geiping 2025 (2502.05171) · Ouro (2510.25741) · HSRM: 2608.30841 · latent thoughts encode reward: LTO (2509.26314) · probes: Zhang 2025 (2504.05419)</p>
+</figure>
+</section>
+</div>
+
+<p class="foot">Numbers from 21–22 Sep 2026 runs on one A100 unless a paper is cited. Vault: System 1 Verifiers bulletin, notes 01–03.</p>
+
+</div>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tabs button[role=tab]');
+  function show(k,push){
+    var ok=false; tabs.forEach(function(t){ if(t.id==='t-'+k) ok=true; }); if(!ok) k='prior';
+    tabs.forEach(function(t){ var on=t.id==='t-'+k; t.setAttribute('aria-selected',on?'true':'false'); var p=document.getElementById(t.getAttribute('aria-controls')); if(p) p.hidden=!on; });
+    try{localStorage.setItem('s1v-tab',k);}catch(e){}
+    if(push){try{history.replaceState(null,'','#'+k);}catch(e){}}
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){ show(t.id.slice(2),true); }); });
+  var k=(location.hash||'').replace('#','');
+  if(!k){ try{k=localStorage.getItem('s1v-tab')||'prior';}catch(e){k='prior';} }
+  show(k,false);
+  window.addEventListener('hashchange',function(){ show((location.hash||'').replace('#',''),false); });
+})();
+</script>
+</body>
+</html>
