@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Mon, 21 Sep 2026 04:09:35 +0000</lastBuildDate>
+<lastBuildDate>Tue, 22 Sep 2026 04:07:46 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1268,6 +1268,34 @@
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year></pw:year>
+</item>
+<item>
+<title>CogGym: Towards Large-Scale Comparative Evaluation of Human and Machine Cognition</title>
+<link>https://www.semanticscholar.org/paper/df4d485ff0a02546e60c8b746fef924a7a6af375</link>
+<guid isPermaLink="false">df4d485ff0a02546e60c8b746fef924a7a6af375</guid>
+<description>By Lance Ying, Jinzhou Wu, Yingshan Susan Wang, Shivam Aarya, Luca M. Schulze Buschoff, Harry Chen, Katherine M. Collins, Andrea Gregor de Varda, Shu-Hao Fu, Sean Dae Houlihan et al.. . (Met: Samuel Kiegeland) arXiv:2609.21259</description>
+<pw:authors>Lance Ying, Jinzhou Wu, Yingshan Susan Wang, Shivam Aarya, Luca M. Schulze Buschoff, Harry Chen, Katherine M. Collins, Andrea Gregor de Varda, Shu-Hao Fu, Sean Dae Houlihan et al.</pw:authors>
+<pw:met>Samuel Kiegeland</pw:met>
+<pw:relationships>Samuel Kiegeland=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.21259</pw:arxiv>
+<pw:date>2026-09-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities</title>
+<link>https://www.semanticscholar.org/paper/dbdebed6153d3a370a8ab90a06244f2a309e9931</link>
+<guid isPermaLink="false">dbdebed6153d3a370a8ab90a06244f2a309e9931</guid>
+<description>By Jagadeesh Balam, Travis M. Bartley, Edresson Casanova, S. Chauhan, Chen Chen, Zhehuai Chen, Zi-Jia Chen, Francesco Ciannella, Slyne Deng, Mikyas T. Desta et al.. . (Met: Yu Su) arXiv:2609.21967</description>
+<pw:authors>Jagadeesh Balam, Travis M. Bartley, Edresson Casanova, S. Chauhan, Chen Chen, Zhehuai Chen, Zi-Jia Chen, Francesco Ciannella, Slyne Deng, Mikyas T. Desta et al.</pw:authors>
+<pw:met>Yu Su</pw:met>
+<pw:relationships>Yu Su=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2609.21967</pw:arxiv>
+<pw:date>2026-09-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Objective vs. Search: Decomposing What Makes a Good Tokeniser</title>
@@ -3555,8 +3583,8 @@
 <title>Open-World Evaluations for Measuring Frontier AI Capabilities</title>
 <link>https://www.semanticscholar.org/paper/07424b1fc6d1ad28090e84bc7c95444fce806f45</link>
 <guid isPermaLink="false">07424b1fc6d1ad28090e84bc7c95444fce806f45</guid>
-<description>By Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. J. Allaire, Rishi Bommasani, H. Coppock, M. Dubois, Gillian K. Hadfield, Andrew B. Hall et al.. arXiv.org. (Met: Sara Hooker) arXiv:2605.20520</description>
-<pw:authors>Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. J. Allaire, Rishi Bommasani, H. Coppock, M. Dubois, Gillian K. Hadfield, Andrew B. Hall et al.</pw:authors>
+<description>By Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. Allaire, Rishi Bommasani, H. Coppock, M. Dubois, Gillian K. Hadfield, Andrew B. Hall et al.. arXiv.org. (Met: Sara Hooker) arXiv:2605.20520</description>
+<pw:authors>Sayash Kapoor, Peter Kirgis, Andrew Schwartz, Stephan Rabanser, J. Allaire, Rishi Bommasani, H. Coppock, M. Dubois, Gillian K. Hadfield, Andrew B. Hall et al.</pw:authors>
 <pw:met>Sara Hooker</pw:met>
 <pw:relationships>Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5767,8 +5795,8 @@
 <title>Aligning Language Models from User Interactions</title>
 <link>https://www.semanticscholar.org/paper/87b89b4d9d20a5fde688833a7174568a723d58f9</link>
 <guid isPermaLink="false">87b89b4d9d20a5fde688833a7174568a723d58f9</guid>
-<description>By T. Buening, Jonas Hübotter, Barna Pásztor, Idan Shenfeld, G. Ramponi, Andreas Krause. arXiv.org. (Met: Barna Pásztor, Giorgia Ramponi) arXiv:2603.12273</description>
-<pw:authors>T. Buening, Jonas Hübotter, Barna Pásztor, Idan Shenfeld, G. Ramponi, Andreas Krause</pw:authors>
+<description>By Thomas Kleine Buening, Jonas Hübotter, Barna Pásztor, Idan Shenfeld, G. Ramponi, Andreas Krause. arXiv.org. (Met: Barna Pásztor, Giorgia Ramponi) arXiv:2603.12273</description>
+<pw:authors>Thomas Kleine Buening, Jonas Hübotter, Barna Pásztor, Idan Shenfeld, G. Ramponi, Andreas Krause</pw:authors>
 <pw:met>Barna Pásztor, Giorgia Ramponi</pw:met>
 <pw:relationships>Barna Pásztor=following|Giorgia Ramponi=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5837,8 +5865,8 @@
 <title>MAVRL: Learning Reward Functions from Multiple Feedback Types with Amortized Variational Inference</title>
 <link>https://www.semanticscholar.org/paper/4551d455739a32faa9870f89ea7fe2137abc257c</link>
 <guid isPermaLink="false">4551d455739a32faa9870f89ea7fe2137abc257c</guid>
-<description>By Raphael Baur, Yannick Metz, Maria Gkoulta, M. El-Assady, G. Ramponi, T. Buening. arXiv.org. (Met: Giorgia Ramponi) arXiv:2602.15206</description>
-<pw:authors>Raphael Baur, Yannick Metz, Maria Gkoulta, M. El-Assady, G. Ramponi, T. Buening</pw:authors>
+<description>By Raphael Baur, Yannick Metz, Maria Gkoulta, M. El-Assady, G. Ramponi, Thomas Kleine Buening. arXiv.org. (Met: Giorgia Ramponi) arXiv:2602.15206</description>
+<pw:authors>Raphael Baur, Yannick Metz, Maria Gkoulta, M. El-Assady, G. Ramponi, Thomas Kleine Buening</pw:authors>
 <pw:met>Giorgia Ramponi</pw:met>
 <pw:relationships>Giorgia Ramponi=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6033,8 +6061,8 @@
 <title>Decode-gLM: Tools to Interpret, Audit, and Steer Genomic Language Models</title>
 <link>https://www.semanticscholar.org/paper/0334b7e5e0d67d5dce0471dbd84bde41b501573c</link>
 <guid isPermaLink="false">0334b7e5e0d67d5dce0471dbd84bde41b501573c</guid>
-<description>By Aaron Maiwald, Piotr Jedryszek, Florent Draye, B. Schölkopf, Garrett M. Morris, Oliver M. Crook. bioRxiv. (Met: Bernhard Schölkopf)</description>
-<pw:authors>Aaron Maiwald, Piotr Jedryszek, Florent Draye, B. Schölkopf, Garrett M. Morris, Oliver M. Crook</pw:authors>
+<description>By Aaron Maiwald, Piotr Jedryszek, Florent Draye, B. Schölkopf, Garrett M. Morris, O. Crook. bioRxiv. (Met: Bernhard Schölkopf)</description>
+<pw:authors>Aaron Maiwald, Piotr Jedryszek, Florent Draye, B. Schölkopf, Garrett M. Morris, O. Crook</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>bioRxiv</pw:venue>
@@ -10471,8 +10499,8 @@
 <title>Language Models can perform Single-Utterance Self-Correction of Perturbed Reasoning</title>
 <link>https://www.semanticscholar.org/paper/fc6914342726413430a5d2cf5b35f8a619ef27bc</link>
 <guid isPermaLink="false">fc6914342726413430a5d2cf5b35f8a619ef27bc</guid>
-<description>By S. Silver, Jimin Sun, Ivan Zhang, Sara Hooker, Eddie Kim. arXiv.org. (Met: Sara Hooker) arXiv:2506.15894</description>
-<pw:authors>S. Silver, Jimin Sun, Ivan Zhang, Sara Hooker, Eddie Kim</pw:authors>
+<description>By S. Silver, Ji-Min Sun, Ivan Zhang, Sara Hooker, Eddie Kim. arXiv.org. (Met: Sara Hooker) arXiv:2506.15894</description>
+<pw:authors>S. Silver, Ji-Min Sun, Ivan Zhang, Sara Hooker, Eddie Kim</pw:authors>
 <pw:met>Sara Hooker</pw:met>
 <pw:relationships>Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -12375,8 +12403,8 @@
 <title>Scalable ride-sourcing vehicle rebalancing with service accessibility guarantee: A constrained mean-field reinforcement learning approach</title>
 <link>https://www.semanticscholar.org/paper/775fd20ce5102241559550761b485e1b92e921e9</link>
 <guid isPermaLink="false">775fd20ce5102241559550761b485e1b92e921e9</guid>
-<description>By Matej Jusup, Kenan Zhang, Zhiyuan Hu, Barna Pásztor, Andreas Krause, F. Corman. Transportation Research Part C: Emerging Technologies. (Met: Barna Pásztor) arXiv:2503.24183</description>
-<pw:authors>Matej Jusup, Kenan Zhang, Zhiyuan Hu, Barna Pásztor, Andreas Krause, F. Corman</pw:authors>
+<description>By Matej Jusup, Ke-Nan Zhang, Zhiyuan Hu, Barna Pásztor, Andreas Krause, F. Corman. Transportation Research Part C: Emerging Technologies. (Met: Barna Pásztor) arXiv:2503.24183</description>
+<pw:authors>Matej Jusup, Ke-Nan Zhang, Zhiyuan Hu, Barna Pásztor, Andreas Krause, F. Corman</pw:authors>
 <pw:met>Barna Pásztor</pw:met>
 <pw:relationships>Barna Pásztor=following</pw:relationships>
 <pw:venue>Transportation Research Part C: Emerging Technologies</pw:venue>
@@ -15147,8 +15175,8 @@
 <title>Political-LLM: Large Language Models in Political Science</title>
 <link>https://www.semanticscholar.org/paper/aa7b433150591d9eae496a168cea670216775e23</link>
 <guid isPermaLink="false">aa7b433150591d9eae496a168cea670216775e23</guid>
-<description>By Lincan Li, Jiaqi Li, Catherine Chen, Fred Gui, Hong-Jian Yang, Chenxiao Yu, Zheng-Guang Wang, J. Cai, Junlong Zhou, Bolin Shen et al.. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2412.06864</description>
-<pw:authors>Lincan Li, Jiaqi Li, Catherine Chen, Fred Gui, Hong-Jian Yang, Chenxiao Yu, Zheng-Guang Wang, J. Cai, Junlong Zhou, Bolin Shen et al.</pw:authors>
+<description>By Lincan Li, Jiaqi Li, C. Chen, Fred Gui, Hong-Jian Yang, Chenxiao Yu, Zheng-Guang Wang, J. Cai, Junlong Zhou, Bolin Shen et al.. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2412.06864</description>
+<pw:authors>Lincan Li, Jiaqi Li, C. Chen, Fred Gui, Hong-Jian Yang, Chenxiao Yu, Zheng-Guang Wang, J. Cai, Junlong Zhou, Bolin Shen et al.</pw:authors>
 <pw:met>Swabha Swayamdipta</pw:met>
 <pw:relationships>Swabha Swayamdipta=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -16113,8 +16141,8 @@
 <title>Sparkle: Mastering Basic Spatial Capabilities in Vision Language Models Elicits Generalization to Spatial Reasoning</title>
 <link>https://www.semanticscholar.org/paper/353c781fe72253f05896430335bf80f3c02fcc21</link>
 <guid isPermaLink="false">353c781fe72253f05896430335bf80f3c02fcc21</guid>
-<description>By Yihong Tang, Ao Qu, Zhaokai Wang, Dingyi Zhuang, Zhaofeng Wu, Wei Ma, Shenhao Wang, Yunhan Zheng, Zhan Zhao, Jinhua Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Zhaofeng Wu) arXiv:2410.16162</description>
-<pw:authors>Yihong Tang, Ao Qu, Zhaokai Wang, Dingyi Zhuang, Zhaofeng Wu, Wei Ma, Shenhao Wang, Yunhan Zheng, Zhan Zhao, Jinhua Zhao</pw:authors>
+<description>By Yihong Tang, Ao Qu, Zhaokai Wang, Dingyi Zhuang, Zhaofeng Wu, Wei Ma, Shenhao Wang, Yunhan Zheng, Zhan Zhao, Jin-Hua Zhao. Conference on Empirical Methods in Natural Language Processing. (Met: Zhaofeng Wu) arXiv:2410.16162</description>
+<pw:authors>Yihong Tang, Ao Qu, Zhaokai Wang, Dingyi Zhuang, Zhaofeng Wu, Wei Ma, Shenhao Wang, Yunhan Zheng, Zhan Zhao, Jin-Hua Zhao</pw:authors>
 <pw:met>Zhaofeng Wu</pw:met>
 <pw:relationships>Zhaofeng Wu=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
