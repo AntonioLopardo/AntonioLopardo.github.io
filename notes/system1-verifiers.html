@@ -595,27 +595,6 @@ svg .ghost{fill:var(--rule);}
 <p class="cite">Two-timescale updates: Heusel et al. 2017 (TTUR, 1706.08500) · on-policy PRM refresh inside RL: PRIME (2502.01456) · verifier retrained per round: Kirchner et al. 2024</p>
 </figure>
 </section>
-<!-- Q4 FAILURES -->
-<section>
-<p class="eyebrow">Proposal 5 · Failure modes</p>
-<h2>What goes wrong, and the knob for each</h2>
-<figure>
-<svg viewBox="0 0 960 330" role="img" aria-label="Table drawn as rows: GAN failure, its name in RL for reasoning, the knob. D exploited is reward hacking, knob on-policy refresh and replay. Mode collapse is pass@k loss, knob entropy or KL and diverse negatives. D wins outright is all-zero GRPO groups, knob label smoothing and slower D. Oscillation is policy cycling, knob replay of old samples. D miscalibrated off the current policy is verifier ECE drift, knob track ECE per refresh.">
-<g class="grid"><line x1="40" y1="64" x2="920" y2="64"/><line x1="40" y1="114" x2="920" y2="114"/><line x1="40" y1="164" x2="920" y2="164"/><line x1="40" y1="214" x2="920" y2="214"/><line x1="40" y1="264" x2="920" y2="264"/></g>
-<text x="40" y="50" class="k">PATHOLOGY</text><text x="330" y="50" class="k">IN RL FOR REASONING</text><text x="640" y="50" class="k">KNOB</text>
-<g>
-<text x="40" y="94">D exploited by G</text><text x="330" y="94">reward hacking, Goodhart</text><text x="640" y="94" class="lab">refresh D on-policy; replay; V3</text>
-<text x="40" y="144">mode collapse</text><text x="330" y="144">pass@k falls, diversity lost</text><text x="640" y="144" class="lab">entropy / KL term; diverse negatives in D's set</text>
-<text x="40" y="194">D wins, G gets no gradient</text><text x="330" y="194">all-zero GRPO groups</text><text x="640" y="194" class="lab">group normalisation; label smoothing; slower D</text>
-<text x="40" y="244">oscillation</text><text x="330" y="244">policy cycles between hacks</text><text x="640" y="244" class="lab">keep old samples in D's training set</text>
-<text x="40" y="294">D drifts off the current G</text><text x="330" y="294">verifier ECE drifts with training</text><text x="640" y="294" class="lab" style="fill:var(--acc)">track ECE per refresh: the health metric</text>
-</g>
-<text x="40" y="322" class="lab">observed already with a frozen D: rows 1 and 2 (arms B, C, F merged steps and lost pass@8 within 50 steps)</text>
-</svg>
-<figcaption>Nothing here is new; the point is that the fixes are known and cheap once the verifier is cheap. The one number to watch is its calibration error on a held-out labelled set at every refit: when it rises, the verifier has fallen behind the policy.</figcaption>
-<p class="cite">Gao 2022 · Coste 2023 · Salimans et al. 2016, Improved Techniques for Training GANs (1606.03498) · Heusel 2017 (TTUR)</p>
-</figure>
-</section>
 <!-- Q5 PLAN -->
 <section>
 <p class="eyebrow">Proposal 4 · First experiment</p>
@@ -652,7 +631,7 @@ svg .ghost{fill:var(--rule);}
 </section>
 <!-- 8. LATENT -->
 <section>
-<p class="eyebrow">Proposal 6 · Latent reasoners</p>
+<p class="eyebrow">Proposal 5 · Latent reasoners</p>
 <h2>Extension: when there is no text to judge</h2>
 <figure>
 <svg viewBox="0 0 960 260" role="img" aria-label="A latent reasoner passes hidden states between steps instead of text; a small head reads the hidden state and returns a probability of correctness, so the verifier works where a text judge has nothing to read.">
