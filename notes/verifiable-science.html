@@ -35,6 +35,7 @@
   .body li.use{color:var(--keep);list-style:none;margin-left:-18px;margin-top:6px;}
   .body li.use::before{content:"→ ";}
   .sec{display:flex;flex-direction:column;gap:0;}
+  table.cmp{min-width:1000px;margin:8px 0 20px;} table.cmp td{font-size:13px;} table.cmp a{border:none;}
   @media (max-width:640px){.paper{grid-template-columns:1fr;}.meta{flex-direction:row;flex-wrap:wrap;gap:4px 12px;}.chips{width:100%;}}
 </style>
 </head>
@@ -46,7 +47,7 @@
 <p class="lede">Ten papers on <b>scalable, verifiable science data and environments</b> for the Apertus 2 STEM climb. Nine are from the last twelve months; only MegaScience (July 2025) is older. Grouped by where the verifiable signal comes from.</p>
 </header>
 
-<nav class="tabs" role="tablist" aria-label="Sections"><button role="tab" id="t-four" aria-controls="p-four" aria-selected="true">The four</button><button role="tab" id="t-all" aria-controls="p-all" aria-selected="false">All ten</button></nav>
+<nav class="tabs" role="tablist" aria-label="Sections"><button role="tab" id="t-four" aria-controls="p-four" aria-selected="true">The four</button><button role="tab" id="t-all" aria-controls="p-all" aria-selected="false">All ten</button><button role="tab" id="t-experts" aria-controls="p-experts" aria-selected="false">Experts in reports</button></nav>
 
 <div class="panel" id="p-four" role="tabpanel" aria-labelledby="t-four">
 <div class="sec">
@@ -257,6 +258,68 @@
 
 </div>
 <p class="fam-note" style="margin-top:8px">Caveat for any GPQA claim above: HLE-Physics moved from 47 to 79 after expert regrading (arxiv 2609.13009), closed-ended physics evals are noisy.</p>
+</div>
+
+<div class="panel" id="p-experts" role="tabpanel" aria-labelledby="t-experts" hidden>
+<div class="sec">
+<p class="fam-note">How the frontier reports scope the reasoning, STEM or math expert. Only MAI-Thinking-1 publishes the recipe; the rest give a scope line and the evals. Read for the Apertus 2 STEM climb (no issue yet), where the plan is copied from MAI.</p>
+
+<div class="scroller">
+<table class="cmp">
+<thead><tr><th>Report</th><th>Expert</th><th>Scope</th><th>Data and reward</th><th>Tools</th><th>Evals</th></tr></thead>
+<tbody>
+<tr><td><a href="https://microsoft.ai/pdf/mai-thinking-1.pdf">MAI-Thinking-1</a> §3.2</td><td>STEM climb, 1 of 3 specialists</td><td>single-turn problem solving: math, physics, chemistry, biology, CS, engineering, plus competitive code</td><td>STEM Mix, 5M (q, a) pairs mined from textbooks, PDFs, forums, contests, vendors; 550K hard; SymPy or judge, test cases for code</td><td>no</td><td>AIME, HMMT, GPQA-D, LCB v6</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2606.15007">Nemotron 3 Ultra</a> §3.3.2</td><td>STEM / general-reasoning teacher, 1 of 11</td><td>math, code, natural sciences, humanities, sociology</td><td>SFT 40B tokens (science 59%, math 24%, code 10%, general 7%), traces from DeepSeek-V4-Pro judged by gpt-oss-120b; then RL on non-STEM prompts, 128 per batch</td><td>"for these domains"</td><td>HLE, GPQA, MMLU-Pro, LCB v6, IMOAnswerBench, Apex Shortlist</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2604.12374">Nemotron 3 Super</a></td><td>none, one joint RLVR policy</td><td>21 environments: math with and without Python, formal proofs, competition code, STEM, IF, safety, long context, agentic</td><td>prompts the SFT model always solves are dropped; joint training, single-environment runs regress</td><td>Python tool for math</td><td>AIME, GPQA-D, LCB, plus agentic</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.19220">Nemotron-Cascade 2</a></td><td>math teacher = the SFT checkpoint</td><td>competition math and proofs</td><td>SFT: 2.6M math samples, 1.8M with tool calls, 816K proofs; MOPD from math, RLHF and multi-domain teachers</td><td>yes in SFT</td><td>AIME 25/26, HMMT, IMOAnswerBench, IMO-ProofBench</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2607.24653">Kimi K3</a> §4.1.2</td><td>none: a "general" expert</td><td>general experience, vision, reasoning, faithfulness, search, knowledge work</td><td>verifiable problems in agentic environments plus an agentic generative reward model; 3 domains × 3 effort levels</td><td>yes</td><td>knowledge and reasoning suites, HLE</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2606.19348">DeepSeek-V4</a> §5.1</td><td>a mathematics expert, 1 of 10+</td><td>not described</td><td>SFT then GRPO on "domain-specific prompts and reward signals"; rule-based verifiers, generative RM for the rest; 3 effort modes per expert</td><td>Lean 4 agentic for formal math</td><td>HMMT, IMOAnswerBench, Apex, HLE, GPQA-D, Putnam</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2505.09388">Qwen3</a> §4</td><td>none: Reasoning RL stage of one model</td><td>math and code</td><td>3,995 query-verifier pairs, unseen in cold start, learnable, hard; GRPO 170 steps</td><td>no</td><td>AIME'24 70.1 to 85.1 (235B)</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2505.16400">AceReason-Nemotron 1.1</a></td><td>none: math-only then code-only RL</td><td>math, code</td><td>prompt diversity beats responses per prompt; SFT gap 6.6 to 1.6 AIME after RL</td><td>no</td><td>AIME 24/25, LCB v5/v6</td></tr>
+<tr><td>GLM-5</td><td>none: Reasoning RL stage, then agentic, general, cross-stage OPD</td><td>not described</td><td>not described</td><td></td><td></td></tr>
+<tr><td>Apertus 1.5</td><td>none: one RLVR stage</td><td>math and code</td><td>349,300 prompts, async verl, then DPO and SDPO</td><td>no</td><td></td></tr>
+<tr><td>Apertus 2 plan</td><td>"STEM math and general reasoning", 1 of 7 climbs</td><td>undefined; AIME-level target, grade-school math as prerequisite; Lean and code under #1027</td><td>TBD</td><td>open question</td><td>Artificial Analysis Index</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Microsoft AI</span><span>2026</span><a href="https://microsoft.ai/pdf/mai-thinking-1.pdf">report PDF</a><div class="chips"><span class="chip">full recipe</span></div></div>
+  <div class="body"><h3>MAI-Thinking-1<small>the one published STEM-expert recipe</small></h3>
+  <ul>
+    <li>Three specialists: STEM and competitive code, agentic coding and tool use, helpfulness and safety. Same RL recipe, different prompts and rewards. Consolidated by SFT on their traces, then a final RL stage.</li>
+    <li>STEM climb is "the longest of our three domain-specific RL training runs", single-turn, no tools. Every instance is (q, a) verified by SymPy or a judge, or (q, tests) for code.</li>
+    <li>Pipeline is the work: OCR and hierarchical parsing of PDFs, Q-A pairing across chapters and answer keys, taxonomy, PII and answer-leakage filters, MCQ and proofs rewritten to open-ended (MCQ can be guessed, proofs need a judge), 3× consensus, difficulty bins from pass rates of four solver tiers, blind grading to drop faulty ground truths.</li>
+    <li>Competitive code is a separate 160K-problem pipeline with tests, 17 languages. Dedup and decontamination in three stages against all reported benchmarks.</li>
+    <li class="use">This is what "STEM expert" means in the Apertus plan. Scope it as this, minus code, and the deliverable is the verified prompt set with difficulty bins.</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">NVIDIA</span><span>June 2026</span><a href="https://arxiv.org/abs/2606.15007">arxiv <code>2606.15007</code></a><div class="chips"><span class="chip">recipe + numbers</span></div></div>
+  <div class="body"><h3>Nemotron 3 Ultra<small>the broadest definition</small></h3>
+  <ul>
+    <li>"General reasoning capabilities on a wide range of subjects including math, code, natural sciences, humanities, sociology, and tool use for these domains." Competitive coding is a separate teacher on top of it.</li>
+    <li>SFT seeds: Nemotron-Science-v1, a chemistry set, Multi-subject-RLVR, an internal set; easiest removed; 4 traces each (16 for hard) from DeepSeek-V4-Pro, judged by gpt-oss-120b. Held-out 3,000 prompts at pass rate 0.25 to 0.80.</li>
+    <li>After SFT, math, code and science were saturated, so RL ran on humanities and sociology prompts and "generalizes well, leading to significant improvements on all domains".</li>
+    <li>Teacher vs student: HLE 25.6 to 32.1, GPQA 85.0 to 88.5, IMOAnswerBench 84.5 to 92.5, Apex Shortlist 68.9 to 85.4. After MOPD the merged model kept only 17% of the HLE gain.</li>
+    <li class="use">Two lessons: humanities prompts count as reasoning data, and the knowledge part of the gain does not survive the merge.</li>
+  </ul></div>
+</div>
+
+<div class="paper">
+  <div class="meta"><span class="org">Moonshot, DeepSeek, NVIDIA</span><span>2026</span><div class="chips"><span class="chip warn">scope line only</span></div></div>
+  <div class="body"><h3>The rest<small>what the other reports actually say</small></h3>
+  <ul>
+    <li><b>Kimi K3:</b> no STEM expert. Three experts, general, general agents, coding agents, each at three effort levels; STEM appears only as verifiable visual reasoning inside agentic environments.</li>
+    <li><b>DeepSeek-V4:</b> "for each target domain, such as mathematics, coding, agent, and instruction following, a separate expert model is trained": SFT then GRPO, nothing on data or rewards; the math expert is named once more as the OPD teacher for math prompts. Formal math is a separate Lean 4 agentic setting.</li>
+    <li><b>Nemotron 3 Super:</b> no experts at all, one policy over 21 environments; the finding is that joint training is stable and single-environment training regresses elsewhere.</li>
+    <li><b>Nemotron-Cascade 2:</b> the "math teacher" in its MOPD is the SFT checkpoint itself, trained on 2.6M competition-math samples and 816K proofs; no math RL stage.</li>
+    <li><b>Qwen3, AceReason:</b> single models with a math-and-code RL stage; Qwen3's 3,995-pair prompt set is the smallest published climb.</li>
+    <li class="use">Consensus: math and the sciences, single-turn, verifiable, no tools; code and proofs are their own thing everywhere.</li>
+  </ul></div>
+</div>
+</div>
 </div>
 </div>
 <script>
