@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 24 Sep 2026 04:18:29 +0000</lastBuildDate>
+<lastBuildDate>Fri, 25 Sep 2026 04:17:38 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -16796,20 +16796,6 @@
 <pubDate>Wed, 25 Sep 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Synatra: Turning Indirect Knowledge into Direct Demonstrations for Digital Agents at Scale</title>
-<link>https://www.semanticscholar.org/paper/3b10d18fbca2b59e7beb3038c658926d2e384879</link>
-<guid isPermaLink="false">3b10d18fbca2b59e7beb3038c658926d2e384879</guid>
-<description>By Tianyue Ou, Frank F. Xu, Aman Madaan, Jiarui Liu, Robert Lo, Abishek Sridhar, Sudipta Sengupta, Dan Roth, Graham Neubig, Shu-Yan Zhou. Neural Information Processing Systems. (Met: Graham Neubig) arXiv:2409.15637</description>
-<pw:authors>Tianyue Ou, Frank F. Xu, Aman Madaan, Jiarui Liu, Robert Lo, Abishek Sridhar, Sudipta Sengupta, Dan Roth, Graham Neubig, Shu-Yan Zhou</pw:authors>
-<pw:met>Graham Neubig</pw:met>
-<pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
-<pw:arxiv>2409.15637</pw:arxiv>
-<pw:date>2024-09-24</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>GPT-4 as a Homework Tutor can Improve Student Engagement and Learning Outcomes</title>
 <link>https://www.semanticscholar.org/paper/c659e7ae5bf4a848a60cf4fa95bad24bea23c6e0</link>
 <guid isPermaLink="false">c659e7ae5bf4a848a60cf4fa95bad24bea23c6e0</guid>
@@ -16819,20 +16805,6 @@
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2409.15981</pw:arxiv>
-<pw:date>2024-09-24</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Fine-Tuning is Fine, if Calibrated</title>
-<link>https://www.semanticscholar.org/paper/32dc52c748b938786f9c194134fd9d8a69a063a8</link>
-<guid isPermaLink="false">32dc52c748b938786f9c194134fd9d8a69a063a8</guid>
-<description>By Zheda Mai, Arpita Chowdhury, Ping Zhang, Cheng-Hao Tu, Hong-You Chen, Vardaan Pahuja, Tanya Y. Berger-Wolf, Song Gao, Charles V. Stewart, Yu Su et al.. Neural Information Processing Systems. (Met: Yu Su) arXiv:2409.16223</description>
-<pw:authors>Zheda Mai, Arpita Chowdhury, Ping Zhang, Cheng-Hao Tu, Hong-You Chen, Vardaan Pahuja, Tanya Y. Berger-Wolf, Song Gao, Charles V. Stewart, Yu Su et al.</pw:authors>
-<pw:met>Yu Su</pw:met>
-<pw:relationships>Yu Su=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
-<pw:arxiv>2409.16223</pw:arxiv>
 <pw:date>2024-09-24</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
