@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 27 Sep 2026 04:19:52 +0000</lastBuildDate>
+<lastBuildDate>Mon, 28 Sep 2026 04:20:18 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1143,8 +1143,8 @@
 <title>Recent Developments in Computational Typology and Multilingual Natural Language Processing</title>
 <link>https://www.semanticscholar.org/paper/be56360d3a1a72dc44fd98980051b23d826b3a0b</link>
 <guid isPermaLink="false">be56360d3a1a72dc44fd98980051b23d826b3a0b</guid>
-<description>By Ekaterina Vylomova, Ryan Cotterell, Xinjian Li, Daan van Esch, Federico Bianchi, Johannes Bjerva, Vinit Ravishankar, Artur Kulmizev, Saliha Murado Ğ. Lu, Tiago Pimentel et al.. . (Met: Tiago Pimentel)</description>
-<pw:authors>Ekaterina Vylomova, Ryan Cotterell, Xinjian Li, Daan van Esch, Federico Bianchi, Johannes Bjerva, Vinit Ravishankar, Artur Kulmizev, Saliha Murado Ğ. Lu, Tiago Pimentel et al.</pw:authors>
+<description>By Ekaterina Vylomova, Ryan Cotterell, Xin-Jian Li, Daan van Esch, Federico Bianchi, Johannes Bjerva, Vinit Ravishankar, Artur Kulmizev, Saliha Murado Ğ. Lu, Tiago Pimentel et al.. . (Met: Tiago Pimentel)</description>
+<pw:authors>Ekaterina Vylomova, Ryan Cotterell, Xin-Jian Li, Daan van Esch, Federico Bianchi, Johannes Bjerva, Vinit Ravishankar, Artur Kulmizev, Saliha Murado Ğ. Lu, Tiago Pimentel et al.</pw:authors>
 <pw:met>Tiago Pimentel</pw:met>
 <pw:relationships>Tiago Pimentel=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -2196,8 +2196,8 @@
 <title>Building a Production Shopping Agent at Scale</title>
 <link>https://www.semanticscholar.org/paper/86500153c82b5c5259f186404d75a327de3000a5</link>
 <guid isPermaLink="false">86500153c82b5c5259f186404d75a327de3000a5</guid>
-<description>By Chen Luo, Jason Choi, Zi-Wei Dong, Rahul Dua, Cong Xu, Xue-Jing Lei, Yuchen Yan, Xin Zhang, Josef Valvoda, Gaurang Sinkar et al.. Annual International ACM SIGIR Conference on Research and Development in Information Retrieval. (Met: Josef Valvoda)</description>
-<pw:authors>Chen Luo, Jason Choi, Zi-Wei Dong, Rahul Dua, Cong Xu, Xue-Jing Lei, Yuchen Yan, Xin Zhang, Josef Valvoda, Gaurang Sinkar et al.</pw:authors>
+<description>By Chen Luo, Jason Choi, Zi-Wei Dong, Rahul Dua, Cong Xu, Xue-Jing Lei, Yu-Chen Yan, Xin Zhang, Josef Valvoda, Gaurang Sinkar et al.. Annual International ACM SIGIR Conference on Research and Development in Information Retrieval. (Met: Josef Valvoda)</description>
+<pw:authors>Chen Luo, Jason Choi, Zi-Wei Dong, Rahul Dua, Cong Xu, Xue-Jing Lei, Yu-Chen Yan, Xin Zhang, Josef Valvoda, Gaurang Sinkar et al.</pw:authors>
 <pw:met>Josef Valvoda</pw:met>
 <pw:relationships>Josef Valvoda=following</pw:relationships>
 <pw:venue>Annual International ACM SIGIR Conference on Research and Development in Information Retrieval</pw:venue>
@@ -3372,8 +3372,8 @@
 <title>PEFT-Arena: Understanding Parameter-Efficient Finetuning from a Stability-Plasticity Perspective</title>
 <link>https://www.semanticscholar.org/paper/cfcb251eee99a46fd75546b6c85cc3788a3b3216</link>
 <guid isPermaLink="false">cfcb251eee99a46fd75546b6c85cc3788a3b3216</guid>
-<description>By Yang-Yi Huang, Ruotian Peng, Zeju Qiu, Jiale Kang, Yandong Wen, B. Schölkopf, Weiyang Liu. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2605.28819</description>
-<pw:authors>Yang-Yi Huang, Ruotian Peng, Zeju Qiu, Jiale Kang, Yandong Wen, B. Schölkopf, Weiyang Liu</pw:authors>
+<description>By Yang-Yi Huang, Ruotian Peng, Zeju Qiu, Jia-Le Kang, Yandong Wen, B. Schölkopf, Weiyang Liu. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2605.28819</description>
+<pw:authors>Yang-Yi Huang, Ruotian Peng, Zeju Qiu, Jia-Le Kang, Yandong Wen, B. Schölkopf, Weiyang Liu</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -3820,8 +3820,8 @@
 <title>Soohak: A Mathematician-Curated Benchmark for Evaluating Research-level Math Capabilities of LLMs</title>
 <link>https://www.semanticscholar.org/paper/1a7caaadadc1c92f6da77c76d89dddcd93091e9a</link>
 <guid isPermaLink="false">1a7caaadadc1c92f6da77c76d89dddcd93091e9a</guid>
-<description>By Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Longxia Jiang, Jinhyuk Yun, JungYup Lee, Kyungmin Lee et al.. arXiv.org. (Met: Graham Neubig) arXiv:2605.09063</description>
-<pw:authors>Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Longxia Jiang, Jinhyuk Yun, JungYup Lee, Kyungmin Lee et al.</pw:authors>
+<description>By Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Longxia Jiang, Jinhyuk Yun, Jungyup Lee, Kyungmin Lee et al.. arXiv.org. (Met: Graham Neubig) arXiv:2605.09063</description>
+<pw:authors>Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Longxia Jiang, Jinhyuk Yun, Jungyup Lee, Kyungmin Lee et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -4576,8 +4576,8 @@
 <title>Misconception Acquisition Dynamics in Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/de0c80568931a1a8d39dc693483e26a2ee8656bd</link>
 <guid isPermaLink="false">de0c80568931a1a8d39dc693483e26a2ee8656bd</guid>
-<description>By Naiming Liu, Xinghe Chen, Richard G. Baraniuk, Mrinmaya Sachan, Shashank Sonkar. International Conference on Artificial Intelligence in Education. (Met: Mrinmaya Sachan) arXiv:2604.00818</description>
-<pw:authors>Naiming Liu, Xinghe Chen, Richard G. Baraniuk, Mrinmaya Sachan, Shashank Sonkar</pw:authors>
+<description>By Nai-Ming Liu, Xinghe Chen, Richard G. Baraniuk, Mrinmaya Sachan, Shashank Sonkar. International Conference on Artificial Intelligence in Education. (Met: Mrinmaya Sachan) arXiv:2604.00818</description>
+<pw:authors>Nai-Ming Liu, Xinghe Chen, Richard G. Baraniuk, Mrinmaya Sachan, Shashank Sonkar</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>International Conference on Artificial Intelligence in Education</pw:venue>
@@ -9490,8 +9490,8 @@
 <title>Lean Meets Theoretical Computer Science: Scalable Synthesis of Theorem Proving Challenges in Formal-Informal Pairs</title>
 <link>https://www.semanticscholar.org/paper/f52cad72f79da3edfb320032cbd5da07fec93ad6</link>
 <guid isPermaLink="false">f52cad72f79da3edfb320032cbd5da07fec93ad6</guid>
-<description>By Terry Jingchen Zhang, Wen-Yuan Jiang, Rongchuan Liu, Yisong Wang, Jun-Ran Yang, Ning Wang, Nicole Ni, Yinya Huang, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2508.15878</description>
-<pw:authors>Terry Jingchen Zhang, Wen-Yuan Jiang, Rongchuan Liu, Yisong Wang, Jun-Ran Yang, Ning Wang, Nicole Ni, Yinya Huang, Mrinmaya Sachan</pw:authors>
+<description>By Terry Jingchen Zhang, Wen-Yuan Jiang, Rongchuan Liu, Yi-Song Wang, Jun-Ran Yang, Ning Wang, Nicole Ni, Yinya Huang, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2508.15878</description>
+<pw:authors>Terry Jingchen Zhang, Wen-Yuan Jiang, Rongchuan Liu, Yi-Song Wang, Jun-Ran Yang, Ning Wang, Nicole Ni, Yinya Huang, Mrinmaya Sachan</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -12332,8 +12332,8 @@
 <title>Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems</title>
 <link>https://www.semanticscholar.org/paper/305a7422a34a89fb79a84a9cdbecbae5021d6d83</link>
 <guid isPermaLink="false">305a7422a34a89fb79a84a9cdbecbae5021d6d83</guid>
-<description>By Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jinlin Wang, Tanjin He, Sirui Hong, Hongzhang Liu, Shaokun Zhang, Kaitao Song, Kunlun Zhu et al.. arXiv.org. (Met: Yu Su) arXiv:2504.01990</description>
-<pw:authors>Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jinlin Wang, Tanjin He, Sirui Hong, Hongzhang Liu, Shaokun Zhang, Kaitao Song, Kunlun Zhu et al.</pw:authors>
+<description>By Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Sirui Hong, Hongzhang Liu, Shaokun Zhang, Kaitao Song, Kunlun Zhu et al.. arXiv.org. (Met: Yu Su) arXiv:2504.01990</description>
+<pw:authors>Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Sirui Hong, Hongzhang Liu, Shaokun Zhang, Kaitao Song, Kunlun Zhu et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -13886,8 +13886,8 @@
 <title>Verbalized Machine Learning: Revisiting Machine Learning with Language Models</title>
 <link>https://www.semanticscholar.org/paper/1d25d6245b30a5437ec98f923e104f81923e8115</link>
 <guid isPermaLink="false">1d25d6245b30a5437ec98f923e104f81923e8115</guid>
-<description>By Tim Z. Xiao, Robert Bamler, B. Schölkopf, Weiyang Liu. Trans. Mach. Learn. Res.. (Met: Bernhard Schölkopf)</description>
-<pw:authors>Tim Z. Xiao, Robert Bamler, B. Schölkopf, Weiyang Liu</pw:authors>
+<description>By Tim Z. Xiao, Robert Bamler, B. Schölkopf, Wei-Yang Liu. Trans. Mach. Learn. Res.. (Met: Bernhard Schölkopf)</description>
+<pw:authors>Tim Z. Xiao, Robert Bamler, B. Schölkopf, Wei-Yang Liu</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>Trans. Mach. Learn. Res.</pw:venue>
@@ -16154,8 +16154,8 @@
 <title>LLM-based Cognitive Models of Students with Misconceptions</title>
 <link>https://www.semanticscholar.org/paper/436936b3f0478d1cec91175ac53f696909a32bc0</link>
 <guid isPermaLink="false">436936b3f0478d1cec91175ac53f696909a32bc0</guid>
-<description>By Shashank Sonkar, Xinghe Chen, Naiming Liu, Richard G. Baraniuk, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2410.12294</description>
-<pw:authors>Shashank Sonkar, Xinghe Chen, Naiming Liu, Richard G. Baraniuk, Mrinmaya Sachan</pw:authors>
+<description>By Shashank Sonkar, Xinghe Chen, Nai-Ming Liu, Richard G. Baraniuk, Mrinmaya Sachan. arXiv.org. (Met: Mrinmaya Sachan) arXiv:2410.12294</description>
+<pw:authors>Shashank Sonkar, Xinghe Chen, Nai-Ming Liu, Richard G. Baraniuk, Mrinmaya Sachan</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -16364,8 +16364,8 @@
 <title>ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery</title>
 <link>https://www.semanticscholar.org/paper/45b7c7448768b51b6dbd9b76495c9cd9d110bd91</link>
 <guid isPermaLink="false">45b7c7448768b51b6dbd9b76495c9cd9d110bd91</guid>
-<description>By Ziru Chen, Shijie Chen, Yu-Ting Ning, Qianheng Zhang, Boshi Wang, Botao Yu, Yifei Li, Zeyi Liao, Chen Wei, Zitong Lu et al.. arXiv.org. (Met: Yu Su) arXiv:2410.05080</description>
-<pw:authors>Ziru Chen, Shijie Chen, Yu-Ting Ning, Qianheng Zhang, Boshi Wang, Botao Yu, Yifei Li, Zeyi Liao, Chen Wei, Zitong Lu et al.</pw:authors>
+<description>By Ziru Chen, Shijie Chen, Yu-Ting Ning, Qianheng Zhang, Boshi Wang, Botao Yu, Yifei Li, Zeyi Liao, Chen Wei, Zi-Tong Lu et al.. arXiv.org. (Met: Yu Su) arXiv:2410.05080</description>
+<pw:authors>Ziru Chen, Shijie Chen, Yu-Ting Ning, Qianheng Zhang, Boshi Wang, Botao Yu, Yifei Li, Zeyi Liao, Chen Wei, Zi-Tong Lu et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -18380,8 +18380,8 @@
 <title>OpenDevin: An Open Platform for AI Software Developers as Generalist Agents</title>
 <link>https://www.semanticscholar.org/paper/be27ef5a9068d9e2be1ab97b7c3de7168c472972</link>
 <guid isPermaLink="false">be27ef5a9068d9e2be1ab97b7c3de7168c472972</guid>
-<description>By Xingyao Wang, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bo-Wen Li, Jaskirat Singh et al.. arXiv.org. (Met: Graham Neubig)</description>
-<pw:authors>Xingyao Wang, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bo-Wen Li, Jaskirat Singh et al.</pw:authors>
+<description>By Xing-Yao Wang, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bo-Wen Li, Jaskirat Singh et al.. arXiv.org. (Met: Graham Neubig)</description>
+<pw:authors>Xing-Yao Wang, Boxuan Li, Yufan Song, Frank F. Xu, Xiangru Tang, Mingchen Zhuge, Jiayi Pan, Yueqi Song, Bo-Wen Li, Jaskirat Singh et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -18394,8 +18394,8 @@
 <title>RAGGED: Towards Informed Design of Retrieval Augmented Generation Systems</title>
 <link>https://www.semanticscholar.org/paper/e1446fc9b11e73e9f1d867df9012fdc3d3df60d0</link>
 <guid isPermaLink="false">e1446fc9b11e73e9f1d867df9012fdc3d3df60d0</guid>
-<description>By Jennifer Hsia, Afreen Shaikh, Zhiruo Wang, Graham Neubig. arXiv.org. (Met: Graham Neubig)</description>
-<pw:authors>Jennifer Hsia, Afreen Shaikh, Zhiruo Wang, Graham Neubig</pw:authors>
+<description>By Jennifer Hsia, Afreen Shaikh, Zhi-Ruo Wang, Graham Neubig. arXiv.org. (Met: Graham Neubig)</description>
+<pw:authors>Jennifer Hsia, Afreen Shaikh, Zhi-Ruo Wang, Graham Neubig</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -20102,8 +20102,8 @@
 <title>Neural Causal Structure Discovery from Interventions</title>
 <link>https://www.semanticscholar.org/paper/f15462bb66433c95ddf87bc1fe82573c2dcfe097</link>
 <guid isPermaLink="false">f15462bb66433c95ddf87bc1fe82573c2dcfe097</guid>
-<description>By Nan Rosemary Ke, Olexa Bilaniuk, Anirudh Goyal, Stefan Bauer, H. Larochelle, B. Schölkopf, M. Mozer, Christopher Pal, Y. Bengio. Trans. Mach. Learn. Res.. (Met: Bernhard Schölkopf)</description>
-<pw:authors>Nan Rosemary Ke, Olexa Bilaniuk, Anirudh Goyal, Stefan Bauer, H. Larochelle, B. Schölkopf, M. Mozer, Christopher Pal, Y. Bengio</pw:authors>
+<description>By Nan Rosemary Ke, Olexa Bilaniuk, Anirudh Goyal, Stefan Bauer, H. Larochelle, B. Schölkopf, M. Mozer, C. Pal, Y. Bengio. Trans. Mach. Learn. Res.. (Met: Bernhard Schölkopf)</description>
+<pw:authors>Nan Rosemary Ke, Olexa Bilaniuk, Anirudh Goyal, Stefan Bauer, H. Larochelle, B. Schölkopf, M. Mozer, C. Pal, Y. Bengio</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>Trans. Mach. Learn. Res.</pw:venue>
@@ -21964,8 +21964,8 @@
 <title>Acoustics Based Intent Recognition Using Discovered Phonetic Units for Low Resource Languages</title>
 <link>https://www.semanticscholar.org/paper/ca56b40dddbca3c8c5bdcf0bc6b8d3c5e6389606</link>
 <guid isPermaLink="false">ca56b40dddbca3c8c5bdcf0bc6b8d3c5e6389606</guid>
-<description>By Akshat Gupta, Xinjian Li, Sai Krishna Rallabandi, A. Black. IEEE International Conference on Acoustics, Speech, and Signal Processing. (Met: Akshat Gupta) arXiv:2011.03646</description>
-<pw:authors>Akshat Gupta, Xinjian Li, Sai Krishna Rallabandi, A. Black</pw:authors>
+<description>By Akshat Gupta, Xin-Jian Li, Sai Krishna Rallabandi, A. Black. IEEE International Conference on Acoustics, Speech, and Signal Processing. (Met: Akshat Gupta) arXiv:2011.03646</description>
+<pw:authors>Akshat Gupta, Xin-Jian Li, Sai Krishna Rallabandi, A. Black</pw:authors>
 <pw:met>Akshat Gupta</pw:met>
 <pw:relationships>Akshat Gupta=met</pw:relationships>
 <pw:venue>IEEE International Conference on Acoustics, Speech, and Signal Processing</pw:venue>
@@ -23714,8 +23714,8 @@
 <title>A new evidence model and its application for discriminating enemy operation intention</title>
 <link>https://www.semanticscholar.org/paper/9d743cfce4907321a10ffe6ac4352d0854060f32</link>
 <guid isPermaLink="false">9d743cfce4907321a10ffe6ac4352d0854060f32</guid>
-<description>By Yunyao Li, Liu Wei-dong. Chinese Control and Decision Conference. (Met: Yunyao Li)</description>
-<pw:authors>Yunyao Li, Liu Wei-dong</pw:authors>
+<description>By Yunyao Li, Wei-Dong Liu. Chinese Control and Decision Conference. (Met: Yunyao Li)</description>
+<pw:authors>Yunyao Li, Wei-Dong Liu</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>Chinese Control and Decision Conference</pw:venue>
