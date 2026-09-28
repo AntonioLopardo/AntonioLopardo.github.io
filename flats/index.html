@@ -36,6 +36,7 @@ header .over{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing
 .chg select,.chg input[type=date],select.chg{border-color:var(--accent);color:var(--accent)}
 .seg.chg{border-color:var(--accent)} .seg.chg button.on{background:var(--accent);border-color:var(--accent)}
 label.chg{color:var(--accent)}
+.relax{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
 .count a{color:var(--accent);cursor:pointer;text-decoration:underline}
 .count{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}
 .count b{color:var(--ink)}
@@ -385,12 +386,19 @@ function card(o){
 document.addEventListener('error',e=>{const im=e.target;if(im.tagName!=='IMG'||!im.closest('.ph'))return;
   const o=DATA.find(x=>x.id===im.closest('.card').dataset.id);const k=+im.dataset.i+1;
   if(o&&o.images&&k<o.images.length){im.dataset.i=k;im.src=o.images[k]}else{im.remove()}},true);
+function countWith(id,v){const old=getF(id);setF(id,v);const n=filtered().length;setF(id,old);return n}
+const RELAX=[['fRate','0','Show unrated'],['fRate','all','Any rating'],['fAge','0','Any posting date'],['fArea',false,'Whole map, not just the visible area'],['fApp','all','Applied or not'],['fLong',false,'Include sublets']];
+function relaxHtml(){const b=RELAX.filter(([id,v])=>getF(id)!==v).map(([id,v,t])=>[id,v,t,countWith(id,v)]).filter(x=>x[3]>0);
+  return b.length?'<div class="relax">'+b.map(([id,v,t,n])=>`<button class="btn ghost sm" data-relax='${JSON.stringify([id,v])}'>${t} (${n})</button>`).join('')+'</div>':''}
 function render(){
   const L2=filtered();
   const nA=DATA.filter(o=>applied(o.id)).length, sA=L2.filter(o=>applied(o.id)).length;
-  $('#count').innerHTML=`<b>${L2.length}</b> of ${DATA.length} · applied ${sA}/${nA}`+(sA<nA?` · <a id="showAp">show all applied</a>`:'');
+  const fr0=segv('fRate'), nU=(fr0!=='all'&&fr0!=='0')?countWith('fRate','0'):0;
+  $('#count').innerHTML=`<b>${L2.length}</b> of ${DATA.length} · applied ${sA}/${nA}`+(sA<nA?` · <a id="showAp">show all applied</a>`:'')+(nU?` · <a id="showUn">${nU} unrated hidden</a>`:'');
+  if($('#showUn'))$('#showUn').onclick=()=>{setF('fRate','0');onF()};
   if($('#showAp'))$('#showAp').onclick=showApplied;
-  $('#list').innerHTML=L2.length?L2.map(card).join(''):'<div class="empty">Nothing matches these filters.</div>';
+  $('#list').innerHTML=L2.length?L2.map(card).join(''):'<div class="empty">Nothing matches these filters.'+relaxHtml()+'</div>';
+  document.querySelectorAll('[data-relax]').forEach(b=>b.onclick=()=>{const [id,v]=JSON.parse(b.dataset.relax);setF(id,v);onF()});
   layer.clearLayers();
   L2.forEach(o=>{if(!o.lat)return;
     const m=L.marker([o.lat,o.lon],{icon:L.divIcon({className:'',iconSize:null,html:`<span class="pin ${o.source==='Flatfox'?'':o.source==='Homegate'?'hg':'um'} r${rate(o.id)} ${approx(o)?'approx':''} ${applied(o.id)?'ap':''}" data-id="${esc(o.id)}">${applied(o.id)?'✓ ':''}${rate(o.id)>1?rate(o.id)+'· ':''}${o.rent_total?Math.round(o.rent_total):'?'}</span>`})});
