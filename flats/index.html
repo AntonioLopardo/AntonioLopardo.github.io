@@ -28,6 +28,15 @@ header .over{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing
 .seg button{font:inherit;font-size:11.5px;background:none;border:0;border-right:1px solid var(--rule);color:var(--faint);padding:4px 9px;cursor:pointer}
 .seg button:last-child{border-right:0}
 .seg button.on{background:var(--ink);color:var(--paper)}
+.filters{flex-direction:column;align-items:stretch;gap:8px}
+.frow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.flab{color:var(--faint);margin-right:-8px}
+.btn.sm{padding:3px 8px;font-size:11px}
+.tools{margin-left:auto;display:flex;gap:6px}
+.chg select,.chg input[type=date],select.chg{border-color:var(--accent);color:var(--accent)}
+.seg.chg{border-color:var(--accent)} .seg.chg button.on{background:var(--accent);border-color:var(--accent)}
+label.chg{color:var(--accent)}
+.count a{color:var(--accent);cursor:pointer;text-decoration:underline}
 .count{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}
 .count b{color:var(--ink)}
 main{display:grid;grid-template-columns:minmax(380px,46%) 1fr;min-height:0}
@@ -163,18 +172,23 @@ dialog:has(.nophoto){width:min(640px,94vw)}
 <header>
   <div><div class="over">Antonio Lopardo &middot; Field notes</div><h1>Flats in Basel</h1></div>
   <div class="filters">
+   <div class="frow">
     <label>Max CHF <input type="range" id="fPrice" min="700" max="1500" step="50" value="1500"><span class="val" id="vPrice">1500</span></label>
     <label>Rooms <select id="fRooms"><option value="2">2+</option><option value="2.5">2.5+</option><option value="3">3+</option><option value="0">any</option></select></label>
     <label>Furnished <select id="fFurn"><option value="any">any</option><option value="yes">yes</option><option value="no">no</option></select></label>
     <label>Free by <input type="date" id="fDate"></label>
-    <div class="seg" id="fSrc"><button data-v="all" class="on">All</button><button data-v="Flatfox">Flatfox</button><button data-v="Unimarkt">Unimarkt</button></div>
-    <label><input type="checkbox" id="fLong" checked> hide sublets</label>
     <label>Posted <select id="fAge"><option value="0">any time</option><option value="3">last 3 days</option><option value="7">last week</option><option value="14" selected>last 2 weeks</option><option value="30">last month</option></select></label>
-    <label>Show <select id="fMark"><option value="no1">hide 1s</option><option value="applied">applied</option><option value="notapplied">not applied yet</option><option value="all">all</option><option value="ge3">3+</option><option value="ge4" selected>4+</option><option value="5">5 only</option><option value="0">unrated</option><option value="1">1s only</option></select></label>
-    <button class="btn ghost" id="exp" style="padding:3px 8px;font-size:11px">Export marks</button>
-    <label class="btn ghost" style="padding:3px 8px;font-size:11px;cursor:pointer">Import<input type="file" id="imp" accept=".json" hidden></label>
+    <div class="seg" id="fSrc" data-v="all"><button data-v="all">All</button><button data-v="Flatfox">Flatfox</button><button data-v="Unimarkt">Unimarkt</button></div>
+    <label><input type="checkbox" id="fLong" checked> hide sublets</label>
+   </div>
+   <div class="frow">
+    <span class="flab">Rating</span><div class="seg" id="fRate" data-v="ge4"><button data-v="all">All</button><button data-v="no1">Hide 1s</button><button data-v="ge3">3+</button><button data-v="ge4">4+</button><button data-v="5">5</button><button data-v="0">Unrated</button><button data-v="1">1s</button></div>
+    <span class="flab">Applied</span><div class="seg" id="fApp" data-v="all"><button data-v="all">All</button><button data-v="yes">✓ Applied</button><button data-v="no">Not yet</button></div>
     <label><input type="checkbox" id="fArea" checked> map area only</label>
     <label>Sort <select id="fSort"><option value="combo">rating › furnished › newest › closest</option><option value="price">price</option><option value="rating">rating</option><option value="new">newest</option><option value="size">size</option><option value="bike">bike time to Uni</option><option value="pt">public transport to Uni</option><option value="dist">straight line to Uni</option><option value="ppm">CHF/m²</option></select></label>
+    <button class="btn ghost sm" id="fReset" title="Back to the default filters">Reset</button>
+    <span class="tools"><button class="btn ghost sm" id="exp">Export marks</button><label class="btn ghost sm" style="cursor:pointer">Import<input type="file" id="imp" accept=".json" hidden></label></span>
+   </div>
   </div>
   <div class="count" id="count"></div>
 </header>
@@ -309,15 +323,27 @@ function nbz(){const z=map.getZoom(),c=map.getContainer().classList;c.toggle('nb
 L.marker(UNI,{icon:L.divIcon({className:'',iconSize:[30,30],iconAnchor:[15,15],html:'<div class="uni">UNI</div>'}),zIndexOffset:2000}).addTo(map);
 const layer=L.layerGroup().addTo(map); const markers={};
 let src='all'; let LANG='en'; try{LANG=localStorage.getItem('flatlang')||'en'}catch(e){}
-document.querySelectorAll('#fSrc button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fSrc button').forEach(x=>x.classList.remove('on'));b.classList.add('on');src=b.dataset.v;render()});
-['fPrice','fRooms','fFurn','fDate','fLong','fMark','fSort','fArea','fAge'].forEach(id=>$('#'+id).addEventListener('input',render));
+const DEF={fPrice:'1500',fRooms:'2',fFurn:'any',fDate:'',fAge:'14',fSort:'combo',fLong:true,fArea:true,fSrc:'all',fRate:'ge4',fApp:'all'};
+const SEGS=['fSrc','fRate','fApp'], CHK=['fLong','fArea'];
+const segv=id=>$('#'+id).dataset.v;
+function setF(id,v){const e=$('#'+id);if(SEGS.includes(id)){e.dataset.v=v;e.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.v===v))}else if(CHK.includes(id))e.checked=!!v;else e.value=v}
+function getF(id){return SEGS.includes(id)?segv(id):CHK.includes(id)?$('#'+id).checked:$('#'+id).value}
+function markChg(){for(const id in DEF){const e=$('#'+id),c=getF(id)!==DEF[id];(SEGS.includes(id)?e:e.closest('label')||e).classList.toggle('chg',c)}}
+function saveF(){const o={};for(const id in DEF)o[id]=getF(id);try{localStorage.setItem('flatfilters',JSON.stringify(o))}catch(e){}}
+function onF(){src=segv('fSrc');markChg();saveF();render()}
+try{const o=JSON.parse(localStorage.getItem('flatfilters')||'{}');for(const id in DEF)if(id in o)setF(id,o[id])}catch(e){}
+for(const id in DEF)if(!SEGS.includes(id))$('#'+id).addEventListener('input',onF);
+SEGS.forEach(id=>{setF(id,segv(id));$('#'+id).querySelectorAll('button').forEach(b=>b.onclick=()=>{setF(id,b.dataset.v);onF()})});
+src=segv('fSrc');markChg();
+$('#fReset').onclick=()=>{for(const id in DEF)setF(id,DEF[id]);onF()};
+function showApplied(){setF('fApp','yes');setF('fRate','all');setF('fAge','0');setF('fArea',false);setF('fPrice','1500');setF('fRooms','0');setF('fFurn','any');setF('fDate','');setF('fLong',false);setF('fSrc','all');onF()}
 function fmtDate(d){if(!d)return'not stated';if(d==='now')return'now';const x=new Date(d);return isNaN(x)?d:x.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}
 function isSublet(o){return o.temporary||(o.duration&&!/open|unbefrist|unlimited/i.test(o.duration))}
 function filtered(){
-  const mp=+$('#fPrice').value, mr=+$('#fRooms').value, fu=$('#fFurn').value, fd=$('#fDate').value, lg=$('#fLong').checked, fm=$('#fMark').value, fa=+$('#fAge').value;
+  const mp=+$('#fPrice').value, mr=+$('#fRooms').value, fu=$('#fFurn').value, fd=$('#fDate').value, lg=$('#fLong').checked, fr=segv('fRate'), fp=segv('fApp'), fa=+$('#fAge').value;
   $('#vPrice').textContent=mp;
   let L2=DATA.filter(o=>(o.rent_total==null||o.rent_total<=mp)&&(!mr||o.rooms==null||o.rooms>=mr)
-    &&(fu==='any'||o.furnished===fu)&&(src==='all'||o.source===src)&&(!lg||!isSublet(o))&&(fm==='applied'?!!applied(o.id):fm==='notapplied'?(!applied(o.id)&&rate(o.id)!==1):fm==='all'||(fm==='no1'&&rate(o.id)!==1)||(fm==='ge3'&&rate(o.id)>=3)||(fm==='ge4'&&rate(o.id)>=4)||(fm==='5'&&rate(o.id)===5)||(fm==='0'&&!rate(o.id))||(fm==='1'&&rate(o.id)===1))
+    &&(fu==='any'||o.furnished===fu)&&(src==='all'||o.source===src)&&(!lg||!isSublet(o))&&(fp==='all'||(fp==='yes')===!!applied(o.id))&&(fr==='all'||(fr==='no1'&&rate(o.id)!==1)||(fr==='ge3'&&rate(o.id)>=3)||(fr==='ge4'&&rate(o.id)>=4)||(fr==='5'&&rate(o.id)===5)||(fr==='0'&&!rate(o.id))||(fr==='1'&&rate(o.id)===1))
     &&(!fd||!o.available_from||o.available_from==='now'||o.available_from<=fd)
     &&(!fa||(ageDays(o)!=null&&ageDays(o)<=fa))
     &&(!$('#fArea').checked||!o.lat||map.getBounds().contains([o.lat,o.lon])));
@@ -360,7 +386,9 @@ document.addEventListener('error',e=>{const im=e.target;if(im.tagName!=='IMG'||!
   if(o&&o.images&&k<o.images.length){im.dataset.i=k;im.src=o.images[k]}else{im.remove()}},true);
 function render(){
   const L2=filtered();
-  $('#count').innerHTML=`<b>${L2.length}</b> of ${DATA.length}`;
+  const nA=DATA.filter(o=>applied(o.id)).length, sA=L2.filter(o=>applied(o.id)).length;
+  $('#count').innerHTML=`<b>${L2.length}</b> of ${DATA.length} · applied ${sA}/${nA}`+(sA<nA?` · <a id="showAp">show all applied</a>`:'');
+  if($('#showAp'))$('#showAp').onclick=showApplied;
   $('#list').innerHTML=L2.length?L2.map(card).join(''):'<div class="empty">Nothing matches these filters.</div>';
   layer.clearLayers();
   L2.forEach(o=>{if(!o.lat)return;
