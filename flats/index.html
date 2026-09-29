@@ -148,6 +148,8 @@ dialog:has(.nophoto){width:min(640px,94vw)}
 .grid2 dt{color:var(--faint);font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
 .grid2 dd{margin:0}
 .desc{font-size:13px;line-height:1.55;white-space:pre-wrap;color:var(--ink)}
+.stat{font:12px "IBM Plex Mono",monospace;background:var(--hl);border-left:3px solid var(--ink);padding:5px 8px;margin:6px 0;color:var(--ink)}
+.stat b{font-weight:600}
 .flag{border:1px solid var(--accent);color:var(--accent);padding:6px 9px;font-size:12px;margin:8px 0}
 .acts{display:flex;gap:10px;margin:12px 0}
 .btn{font:600 12.5px "IBM Plex Sans",sans-serif;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:7px 12px;text-decoration:none;cursor:pointer}
@@ -293,6 +295,8 @@ function saveMarks(){try{localStorage.setItem('flatmarks',JSON.stringify(MARKS))
 for(const k in MARKS){if(MARKS[k]==='dump')MARKS[k]=1;else if(MARKS[k]==='star'||MARKS[k]===true)MARKS[k]=4;else MARKS[k]=+MARKS[k]||undefined;if(!MARKS[k])delete MARKS[k]}
 saveMarks();
 const rate=id=>MARKS[id]||0;
+const STATUS={};
+const statHtml=o=>STATUS[o.id]?`<div class="stat"><b>${esc(STATUS[o.id].label||'Update')} ${esc(fmtDate(STATUS[o.id].date).replace(/ \d{4}$/,''))}:</b> ${esc(STATUS[o.id].note)}</div>`:'';
 let APPLIED=Object.assign({},{
  "um-grosse-25-whg-mit-balkon-per-0111-mq6cojyvg4": "2026-09-28",
  "um-light-25-room-apartment-with-balcony-in-basel-obua45ba8e": "2026-09-28",
@@ -301,7 +305,8 @@ let APPLIED=Object.assign({},{
  "um-wohnung-direkt-am-rhein-x4ge45q2er": "2026-09-28",
  "um-renovierte-25-zimmer-altbauwohnung-im-gundeli-nahe-sbb-r9am27gp2h": "2026-09-28",
  "um-helle-2-zi-wohnung-in-kleinbasel-mrod4qex2j": "2026-09-28",
- "ff-86395781": "2026-09-28"
+ "ff-86395781": "2026-09-28",
+ "um-2-zimmer-wohnung-im-klybeck-sjlja8tw0j": "2026-09-29"
 });
 try{Object.assign(APPLIED,JSON.parse(localStorage.getItem('flatapplied')||'{}'))}catch(e){}
 for(const k in APPLIED)if(!APPLIED[k])delete APPLIED[k];
@@ -377,7 +382,7 @@ function card(o){
    <div class="ph">${img?`<img loading="lazy" src="${esc(img)}" alt="" data-i="0">`:'<div class="none">no photos</div>'}
     <span class="src ${o.source==='Flatfox'?'ff':o.source==='Homegate'?'hg':'um'}">${o.source}</span>${applied(o.id)?`<span class="appl">✓ APPLIED ${esc(fmtDate(applied(o.id)).replace(/ \d{4}$/,''))}</span>`:''}${o.images&&o.images.length>1?`<span class="nimg">${o.images.length} photos</span>`:''}</div>
    <div class="body">${priceHTML(o)}
-    <div class="facts">${o.rooms?o.rooms+' rooms':'? rooms'} &middot; ${o.size_m2?o.size_m2+' m²':'? m²'} &middot; ${esc(fmtDate(o.available_from))}${rate(o.id)?` <span class="rb r${rate(o.id)}">${rate(o.id)}/5</span>`:''}</div>
+    ${statHtml(o)}<div class="facts">${o.rooms?o.rooms+' rooms':'? rooms'} &middot; ${o.size_m2?o.size_m2+' m²':'? m²'} &middot; ${esc(fmtDate(o.available_from))}${rate(o.id)?` <span class="rb r${rate(o.id)}">${rate(o.id)}/5</span>`:''}</div>
     <div class="age ${ageDays(o)!=null&&ageDays(o)<=3?'fresh':ageDays(o)>60?'stale':''}" title="Date of the latest (re)publish. Relisting resets it; Flatfox Priority shows the true age.">posted ${ageTxt(ageDays(o))} ago</div>
     <div class="cm">${commute(o)}</div>
     <div class="addr">${esc(o.address||'')}</div>
@@ -422,7 +427,7 @@ function open(id){
     <h2 id="dt">${esc(LANG==='en'&&o.title_en?o.title_en:o.title)}</h2>
     <div class="big">${o.rent_total!=null?'CHF '+o.rent_total.toLocaleString('de-CH'):'price on request'}</div>
     <div style="font-size:12px;color:var(--faint)">${o.rent_net&&o.nk!=null?'incl. utilities '+o.nk+' (net '+o.rent_net+')':o.rent_net?'net '+o.rent_net:''}${o.nk_unknown?'utilities not stated':''}</div>
-    ${o.red_flags?`<div class="flag">⚠ ${esc(o.red_flags)}</div>`:''}
+    ${statHtml(o)}${o.red_flags?`<div class="flag">⚠ ${esc(o.red_flags)}</div>`:''}
     <div class="acts"><a class="btn" href="${esc(o.url)}" target="_blank" rel="noopener">Open on ${esc(o.source)} ↗</a>${(o.also||[]).map(a=>`<a class="btn ghost" href="${esc(a.url)}" target="_blank" rel="noopener">Also on ${esc(a.source)} ↗</a>`).join('')}
       </div>${o.lat?`<div class="routes">Route on map: <button data-m="bike">bike</button><button data-m="foot">walk</button><button data-m="pt">transit</button></div>`:''}<div class="acts" style="margin-top:0"><button class="btn ghost" id="apb" style="padding:6px 10px">${applied(o.id)?'✓ Applied':'Mark applied'}</button><span class="rating" id="rating">${[1,2,3,4,5].map(n=>`<button data-r="${n}" class="${rate(o.id)===n?'on':''}" title="Rate ${n} (key ${n})">${n}</button>`).join('')}</span></div>
     <dl class="grid2">${row('Posted',o.posted?esc(fmtDate(o.posted))+' ('+ageTxt(ageDays(o))+' ago). Latest (re)publish; a relisted ad may be much older, see Listing Demand on '+esc(o.source)+'.':null)}${row('Rooms',o.rooms)}${row('Size',o.size_m2?o.size_m2+' m²':null)}${row('Available',esc(fmtDate(o.available_from)))}
