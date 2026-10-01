@@ -328,7 +328,9 @@ async function ghGet(){
   if(tok()){const r=await fetch(`https://api.github.com/repos/${GH.repo}/contents/${GH.path}?ref=${GH.branch}&t=${Date.now()}`,{headers:ghH(),cache:'no-store'});
     if(r.status===404)return{sha:null,st:null};if(!r.ok)throw new Error(r.status===401?'token rejected':'GitHub '+r.status);
     const j=await r.json();return{sha:j.sha,st:JSON.parse(b64dec(j.content))}}
-  const r=await fetch('state.json?t='+Date.now(),{cache:'no-store'});return{sha:null,st:r.ok?await r.json():null}}
+  // no token: read the committed file directly (saves do not redeploy Pages, .json is outside the deploy paths); fall back to the Pages copy
+  let r=null;try{r=await fetch(`https://raw.githubusercontent.com/${GH.repo}/${GH.branch}/${GH.path}?t=${Date.now()}`,{cache:'no-store'})}catch(e){}
+  if(!r||!r.ok)r=await fetch('state.json?t='+Date.now(),{cache:'no-store'});return{sha:null,st:r.ok?await r.json():null}}
 function overlay(m,a){for(const k in PEND.marks){if(PEND.marks[k])m[k]=PEND.marks[k];else delete m[k]}for(const k in PEND.applied){if(PEND.applied[k])a[k]=PEND.applied[k];else delete a[k]}}
 function applyState(st){if(!st)return;
   if(st.marks){for(const k in MARKS)delete MARKS[k];Object.assign(MARKS,st.marks)}
