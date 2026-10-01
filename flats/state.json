@@ -109,6 +109,27 @@
   "ff-86402198": "2026-09-30",
   "ff-86403468": "2026-10-01"
  },
- "status": {},
- "updated": "2026-10-01T08:25:49.424Z"
+ "status": {
+  "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
+   "date": "2026-09-30",
+   "label": "Replied",
+   "note": "Warns smoke is an issue (from the butcher and its workers). Viewings possible Tue 6 Oct. Sent 10 photos by email."
+  },
+  "ff-86314181": {
+   "date": "2026-09-30",
+   "label": "Replied",
+   "note": "Viewing slots are posted on Flatfox: book one there."
+  },
+  "ff-86403468": {
+   "date": "2026-09-30",
+   "label": "Sent",
+   "note": "Enquiry received on Flatfox; tenant prefers calls 18:00 to 21:00 (078 691 77 99)."
+  },
+  "ff-86402198": {
+   "date": "2026-09-30",
+   "label": "Sent",
+   "note": "Enquiry received on Flatfox, no reply yet."
+  }
+ },
+ "updated": "2026-10-01T10:00:00Z"
 }
