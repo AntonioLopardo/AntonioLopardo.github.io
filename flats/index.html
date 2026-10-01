@@ -31,6 +31,7 @@ header .over{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing
 .filters{flex-direction:column;align-items:stretch;gap:8px}
 .frow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
 .flab{color:var(--faint);margin-right:-8px}
+.btn.warn{border-color:var(--accent);color:var(--accent)}
 .btn.sm{padding:3px 8px;font-size:11px}
 .tools{margin-left:auto;display:flex;gap:6px}
 .chg select,.chg input[type=date],select.chg{border-color:var(--accent);color:var(--accent)}
@@ -190,7 +191,7 @@ dialog:has(.nophoto){width:min(640px,94vw)}
     <label><input type="checkbox" id="fArea" checked> map area only</label>
     <label>Sort <select id="fSort"><option value="combo">rating › furnished › newest › closest</option><option value="price">price</option><option value="rating">rating</option><option value="new">newest</option><option value="size">size</option><option value="bike">bike time to Uni</option><option value="pt">public transport to Uni</option><option value="dist">straight line to Uni</option><option value="ppm">CHF/m²</option></select></label>
     <button class="btn ghost sm" id="fReset" title="Back to the default filters">Reset</button>
-    <span class="tools"><button class="btn ghost sm" id="exp">Export marks</button><label class="btn ghost sm" style="cursor:pointer">Import<input type="file" id="imp" accept=".json" hidden></label></span>
+    <span class="tools"><button class="btn ghost sm" id="syncb">Sync: off</button><button class="btn ghost sm" id="exp">Export marks</button><label class="btn ghost sm" style="cursor:pointer">Import<input type="file" id="imp" accept=".json" hidden></label></span>
    </div>
   </div>
   <div class="count" id="count"></div>
@@ -313,6 +314,50 @@ try{Object.assign(APPLIED,JSON.parse(localStorage.getItem('flatapplied')||'{}'))
 for(const k in APPLIED)if(!APPLIED[k])delete APPLIED[k];
 const saveApplied=()=>{try{localStorage.setItem('flatapplied',JSON.stringify(APPLIED))}catch(e){}};
 const applied=id=>APPLIED[id]||null;
+// ---- sync: ratings / applied / reply notes live in flats/state.json in the site repo ----
+const GH={repo:'AntonioLopardo/AntonioLopardo.github.io',path:'flats/state.json',branch:'main'};
+const lsGet=(k,d)=>{try{return localStorage.getItem(k)??d}catch(e){return d}}, lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const tok=()=>lsGet('flatgh','');
+let PEND={marks:{},applied:{}};try{const p=JSON.parse(lsGet('flatpending','{}'));PEND.marks=p.marks||{};PEND.applied=p.applied||{}}catch(e){}
+if(!lsGet('flatsync_v1','')){try{const lm=JSON.parse(lsGet('flatmarks','{}')),la=JSON.parse(lsGet('flatapplied','{}'));for(const k in lm)if(+lm[k]&&+lm[k]!==+SEED[k])PEND.marks[k]=+lm[k];for(const k in la)if(la[k])PEND.applied[k]=la[k]}catch(e){}lsSet('flatsync_v1','1')}  // first run on this device: carry over only edits made in this browser
+const savePend=()=>lsSet('flatpending',JSON.stringify(PEND));savePend();
+const nPend=()=>Object.keys(PEND.marks).length+Object.keys(PEND.applied).length;
+const b64dec=s=>decodeURIComponent(escape(atob(s.replace(/\s/g,'')))), b64enc=s=>btoa(unescape(encodeURIComponent(s)));
+const ghH=()=>({Authorization:'Bearer '+tok(),Accept:'application/vnd.github+json'});
+async function ghGet(){
+  if(tok()){const r=await fetch(`https://api.github.com/repos/${GH.repo}/contents/${GH.path}?ref=${GH.branch}&t=${Date.now()}`,{headers:ghH(),cache:'no-store'});
+    if(r.status===404)return{sha:null,st:null};if(!r.ok)throw new Error(r.status===401?'token rejected':'GitHub '+r.status);
+    const j=await r.json();return{sha:j.sha,st:JSON.parse(b64dec(j.content))}}
+  const r=await fetch('state.json?t='+Date.now(),{cache:'no-store'});return{sha:null,st:r.ok?await r.json():null}}
+function overlay(m,a){for(const k in PEND.marks){if(PEND.marks[k])m[k]=PEND.marks[k];else delete m[k]}for(const k in PEND.applied){if(PEND.applied[k])a[k]=PEND.applied[k];else delete a[k]}}
+function applyState(st){if(!st)return;
+  if(st.marks){for(const k in MARKS)delete MARKS[k];Object.assign(MARKS,st.marks)}
+  if(st.applied){for(const k in APPLIED)delete APPLIED[k];Object.assign(APPLIED,st.applied)}
+  if(st.status){for(const k in STATUS)delete STATUS[k];Object.assign(STATUS,st.status)}
+  overlay(MARKS,APPLIED);saveMarks();saveApplied()}
+let syncState='off',syncErr='',syncT=null,syncing=false;
+function setSync(s,e){syncState=s;syncErr=e||'';const b=document.getElementById('syncb');if(!b)return;
+  b.textContent={off:'Sync: off',ok:'Sync: on ✓',saving:'Saving…',pending:'Unsaved…',err:'⚠ Sync error'}[s]||s;
+  b.title=s==='off'?'Changes stay in this browser. Click to add a GitHub token and save them to the site.':s==='err'?syncErr+' (click to change token)':'Saved to flats/state.json on GitHub. Click to change or remove the token.';
+  b.classList.toggle('warn',s==='err')}
+function queueSync(){savePend();if(!tok()){setSync('off');return}setSync('pending');clearTimeout(syncT);syncT=setTimeout(pushState,3000)}
+async function pushState(n=0){if(!tok()||!nPend()){if(tok())setSync('ok');return}if(syncing){syncT=setTimeout(pushState,1500);return}
+  syncing=true;setSync('saving');const sent=JSON.parse(JSON.stringify(PEND));
+  try{const{sha,st}=await ghGet();const s=st||{marks:{},applied:{},status:{}};const m=Object.assign({},s.marks),a=Object.assign({},s.applied);overlay(m,a);
+    const out=Object.assign({},s,{marks:m,applied:a,updated:new Date().toISOString()});
+    const r=await fetch(`https://api.github.com/repos/${GH.repo}/contents/${GH.path}`,{method:'PUT',headers:ghH(),
+      body:JSON.stringify(Object.assign({message:'Flats: update marks',content:b64enc(JSON.stringify(out,null,1)),branch:GH.branch},sha?{sha}:{}))});
+    if((r.status===409||r.status===422)&&n<3){syncing=false;return pushState(n+1)}
+    if(!r.ok)throw new Error(r.status===401||r.status===403?'token rejected or missing write access':'GitHub '+r.status);
+    for(const k in sent.marks)if(PEND.marks[k]===sent.marks[k])delete PEND.marks[k];
+    for(const k in sent.applied)if(PEND.applied[k]===sent.applied[k])delete PEND.applied[k];
+    savePend();setSync(nPend()?'pending':'ok');if(nPend())queueSync()}
+  catch(e){setSync('err',e.message)}finally{syncing=false}}
+async function loadRemote(){try{const{st}=await ghGet();applyState(st);render();setSync(tok()?(nPend()?'pending':'ok'):'off');if(tok()&&nPend())pushState()}
+  catch(e){setSync('err',e.message)}}
+function tokenDialog(){const cur=tok();const t=prompt((cur?'Sync is on. ':'')+'Paste a GitHub fine-grained token for AntonioLopardo.github.io (Contents: read and write). It is stored only in this browser.\nLeave empty and press OK to turn sync off.',cur?'(unchanged)':'');
+  if(t===null||t==='(unchanged)')return;lsSet('flatgh',t.trim());loadRemote()}
+
 const dark=matchMedia('(prefers-color-scheme:dark)').matches;
 const map=L.map('map',{maxZoom:19}).setView(UNI,12);
 const E='https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
@@ -443,11 +488,11 @@ function open(id){
   d.querySelectorAll('.thumbs img').forEach(t=>t.onclick=()=>setI(+t.dataset.k));
   const p=d.querySelector('.prev'),n=d.querySelector('.next'); if(p){p.onclick=()=>setI(i-1);n.onclick=()=>setI(i+1)}
   d.onkeydown=e=>{if(/^[1-5]$/.test(e.key)){setR(+e.key);return}if(imgs.length>1&&e.key==='ArrowRight')setI(i+1);if(imgs.length>1&&e.key==='ArrowLeft')setI(i-1)};
-  const setR=n=>{if(rate(o.id)===n)delete MARKS[o.id];else MARKS[o.id]=n;saveMarks();
+  const setR=n=>{if(rate(o.id)===n)delete MARKS[o.id];else MARKS[o.id]=n;saveMarks();PEND.marks[o.id]=MARKS[o.id]||0;queueSync();
     d.querySelectorAll('#rating button').forEach(b=>b.classList.toggle('on',+b.dataset.r===rate(o.id)));render()};
   d.querySelectorAll('#rating button').forEach(b=>b.onclick=()=>setR(+b.dataset.r));
   d.querySelector('#apb').onclick=e=>{if(applied(o.id))delete APPLIED[o.id];else APPLIED[o.id]=new Date().toISOString().slice(0,10);
-    saveApplied();e.target.textContent=applied(o.id)?'✓ Applied':'Mark applied';render()};
+    saveApplied();PEND.applied[o.id]=APPLIED[o.id]||null;queueSync();e.target.textContent=applied(o.id)?'✓ Applied':'Mark applied';render()};
   d.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{LANG=b.dataset.l;try{localStorage.setItem('flatlang',LANG)}catch(e){}
     d.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x===b));
     $('#dd').textContent=LANG==='en'&&o.description_en?o.description_en:(o.description||'');
@@ -459,7 +504,7 @@ const zc=()=>document.getElementById('map').classList.toggle('far',map.getZoom()
 map.on('zoomend',zc); map.on('moveend',()=>{if($('#fArea').checked)render()}); try{map.fitBounds(L.latLngBounds(DATA.filter(o=>o.lat).map(o=>[o.lat,o.lon])).pad(0.05))}catch(e){}
 $('#exp').onclick=()=>{const b=new Blob([JSON.stringify({marks:MARKS,applied:APPLIED},null,1)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='marks.json';a.click()};
-$('#imp').onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(x=>{const j=JSON.parse(x);if(j.marks||j.applied){Object.assign(MARKS,j.marks||{});Object.assign(APPLIED,j.applied||{});saveApplied()}else Object.assign(MARKS,j);saveMarks();render()})};
+$('#imp').onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(x=>{const j=JSON.parse(x);if(j.marks||j.applied){Object.assign(MARKS,j.marks||{});Object.assign(APPLIED,j.applied||{});Object.assign(PEND.applied,j.applied||{});Object.assign(PEND.marks,j.marks||{});saveApplied()}else{Object.assign(MARKS,j);Object.assign(PEND.marks,j)}saveMarks();queueSync();render()})};
 const RL=L.layerGroup().addTo(map); let rbox=null;
 function clearRoute(){RL.clearLayers();if(rbox){map.removeControl(rbox);rbox=null}}
 function info(html){if(rbox)map.removeControl(rbox);rbox=L.control({position:'topright'});
@@ -498,5 +543,5 @@ async function route(o,m){
     L.circleMarker(from,{radius:7,color:RC,fillColor:RC,fillOpacity:1}).addTo(RL);
   }catch(e){info('Could not load the route ('+esc(e.message||e)+').')}
 }
-render(); zc();
+render(); zc(); $('#syncb').onclick=tokenDialog; setSync(tok()?'pending':'off'); loadRemote();
 </script></body></html>
