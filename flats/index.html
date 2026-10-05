@@ -69,6 +69,28 @@ main{display:grid;grid-template-columns:minmax(380px,46%) 1fr;min-height:0}
 .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .chip{font-size:10.5px;border:1px solid var(--rule);padding:1px 6px;color:var(--faint)}
 .chip.hi{border-color:var(--ff);color:var(--ff)} .chip.lo{border-color:var(--warn);color:var(--warn)}
+#vtabs{display:none;border:1px solid var(--ink)} #vtabs.show{display:flex}
+#vtabs button{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;background:none;border:0;border-right:1px solid var(--ink);color:var(--ink);padding:6px 12px;cursor:pointer}
+#vtabs button:last-child{border-right:0} #vtabs button.on{background:var(--ink);color:var(--paper)}
+#list.apv{display:block;padding:14px 16px}
+.aph{font:12px "IBM Plex Mono",monospace;color:var(--faint);margin:0 0 12px}
+.apg{font:600 11px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:20px 0 8px;border-bottom:1px solid var(--rule);padding-bottom:4px}
+.apr{border:1px solid var(--rule);background:var(--card);margin-bottom:8px}
+.apr.hot{border-color:var(--ink)}
+.apr summary{list-style:none;cursor:pointer;padding:10px 12px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:baseline}
+.apr summary::-webkit-details-marker{display:none}
+.apr .ad{font-weight:600} .apr .fx{font:12px "IBM Plex Mono",monospace;color:var(--faint);grid-column:2}
+.apr .nx{grid-column:2/-1;font-size:13px} .apr .dt{font:11px "IBM Plex Mono",monospace;color:var(--faint);white-space:nowrap}
+.chipst{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--ink);white-space:nowrap}
+.chipst.act{background:var(--accent);border-color:var(--accent);color:#fff} .chipst.view{background:var(--ff);border-color:var(--ff);color:#fff}
+.chipst.wait{color:var(--faint);border-color:var(--rule)} .chipst.dead{color:var(--faint);border-color:var(--rule);text-decoration:line-through}
+.aptl{border-top:1px solid var(--rule);padding:10px 12px 12px;display:grid;gap:8px}
+.apev{display:grid;grid-template-columns:92px 1fr;gap:10px;font-size:13px}
+.apev .w{font:11px "IBM Plex Mono",monospace;color:var(--faint)}
+.apev .b{white-space:pre-wrap;overflow-wrap:anywhere;border-left:3px solid var(--rule);padding-left:9px}
+.apev.out .b{border-left-color:var(--um)} .apev.in .b{border-left-color:var(--ff)} .apev.note .b{border-left-color:var(--warn);font-style:italic} .apev.sys .b{color:var(--faint)}
+.apev .who{font:600 11px "IBM Plex Mono",monospace;display:block;margin-bottom:2px} .apev .en{display:block;margin-top:5px;color:var(--faint)}
+.apact{display:flex;gap:8px;margin-top:4px}
 .empty{grid-column:1/-1;color:var(--faint);padding:40px;text-align:center}
 .pin{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;background:var(--paper);border:2px solid var(--ff);color:var(--ff);
   padding:2px 5px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);display:inline-block}
@@ -175,6 +197,7 @@ dialog:has(.nophoto){width:min(640px,94vw)}
 </style></head><body>
 <header>
   <div><div class="over">Antonio Lopardo &middot; Field notes</div><h1>Flats in Basel</h1></div>
+  <div id="vtabs"><button data-v="browse" class="on">Browse</button><button data-v="applied">Applied</button></div>
   <div class="filters">
    <div class="frow">
     <label>Max CHF <input type="range" id="fPrice" min="700" max="1500" step="50" value="1500"><span class="val" id="vPrice">1500</span></label>
@@ -358,7 +381,7 @@ async function pushState(n=0){if(!tok()||!nPend()){if(tok())setSync('ok');return
 async function loadRemote(){try{const{st}=await ghGet();applyState(st);render();setSync(tok()?(nPend()?'pending':'ok'):'off');if(tok()&&nPend())pushState()}
   catch(e){setSync('err',e.message)}}
 function tokenDialog(){const cur=tok();const t=prompt((cur?'Sync is on. ':'')+'Paste a GitHub fine-grained token for AntonioLopardo.github.io (Contents: read and write). It is stored only in this browser.\nLeave empty and press OK to turn sync off.',cur?'(unchanged)':'');
-  if(t===null||t==='(unchanged)')return;lsSet('flatgh',t.trim());loadRemote()}
+  if(t===null||t==='(unchanged)')return;lsSet('flatgh',t.trim());loadRemote();syncTabs();loadComms()}
 
 const dark=matchMedia('(prefers-color-scheme:dark)').matches;
 const map=L.map('map',{maxZoom:19}).setView(UNI,12);
@@ -444,7 +467,39 @@ function countWith(id,v){const old=getF(id);setF(id,v);const n=filtered().length
 const RELAX=[['fRate','0','Show unrated'],['fRate','all','Any rating'],['fAge','0','Any posting date'],['fArea',false,'Whole map, not just the visible area'],['fApp','all','Applied or not'],['fLong',false,'Include short sublets']];
 function relaxHtml(){const b=RELAX.filter(([id,v])=>getF(id)!==v).map(([id,v,t])=>[id,v,t,countWith(id,v)]).filter(x=>x[3]>0);
   return b.length?'<div class="relax">'+b.map(([id,v,t,n])=>`<button class="btn ghost sm" data-relax='${JSON.stringify([id,v])}'>${t} (${n})</button>`).join('')+'</div>':''}
+// ---- Applied view: only with a GitHub token; history comes from a PRIVATE repo, so nothing sensitive is in this page ----
+const PRIV={repo:'AntonioLopardo/flats-private',path:'comms.json'};
+let VIEW='browse', COMMS=null, COMMS_ERR='';
+async function loadComms(){COMMS=null;COMMS_ERR='';if(!tok())return;
+  try{const r=await fetch(`https://api.github.com/repos/${PRIV.repo}/contents/${PRIV.path}?t=${Date.now()}`,{headers:{Authorization:'Bearer '+tok(),Accept:'application/vnd.github.raw+json'},cache:'no-store'});
+    if(!r.ok)throw new Error(r.status===404||r.status===403?'this token cannot read '+PRIV.repo+' (add that repository to the token, Contents: read)':'GitHub '+r.status);
+    COMMS=await r.json()}catch(e){COMMS_ERR=e.message}
+  if(VIEW==='applied')render()}
+function setView(v){VIEW=v;document.querySelectorAll('#vtabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  document.querySelector('.filters').style.display=v==='applied'?'none':'';$('#list').classList.toggle('apv',v==='applied');render()}
+function syncTabs(){const on=!!tok();$('#vtabs').classList.toggle('show',on);if(!on&&VIEW==='applied')setView('browse')}
+const APORD={act:0,view:1,wait:2,dead:3}, APGRP={act:'Needs action',view:'Viewings',wait:'Waiting',dead:'Closed'};
+const evT=t=>{const d=new Date(t);return isNaN(d)?esc(t):d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+(/T00:00/.test(t)?'':' '+t.slice(11,16))};
+function renderApplied(){
+  const A=DATA.filter(o=>applied(o.id)).map(o=>{const c=(COMMS&&COMMS.flats&&COMMS.flats[o.id])||{};const s=STATUS[o.id];
+    return{o,status:c.status||(s?s.label:'Applied'),kind:c.kind||'wait',rank:c.rank,next:c.next||(s?s.note:''),events:c.events||[]}});
+  A.sort((a,b)=>APORD[a.kind]-APORD[b.kind]||(a.rank||9)-(b.rank||9)||String(applied(b.o.id)).localeCompare(String(applied(a.o.id))));
+  $('#count').innerHTML=`<b>${A.length}</b> applied · ${A.filter(x=>x.kind==='act').length} need action`;
+  let h=`<p class="aph">${COMMS?'History updated '+esc(evT(COMMS.updated))+'. Private: loaded with your token from '+PRIV.repo+'.':COMMS_ERR?'⚠ No history: '+esc(COMMS_ERR)+'.':'Loading history…'}</p>`,g=null;
+  for(const x of A){const o=x.o;if(x.kind!==g){g=x.kind;h+=`<div class="apg">${APGRP[g]} (${A.filter(y=>y.kind===g).length})</div>`}
+    h+=`<details class="apr" data-id="${esc(o.id)}"><summary><span class="chipst ${x.kind}">${esc(x.status)}</span><span class="ad">${esc(o.address||o.title||'')}</span><span class="dt">applied ${esc(fmtDate(applied(o.id)).replace(/ \d{4}$/,''))}</span>
+      <span class="fx">${o.rent_total!=null?'CHF '+Math.round(o.rent_total):'?'} · ${o.rooms||'?'} rooms${o.size_m2?' · '+o.size_m2+' m²':''} · ${esc(fmtDate(o.available_from))}${o.bike_min!=null?' · bike '+o.bike_min+"'":''} · ${esc(o.source)} · ${x.events.length} message${x.events.length===1?'':'s'}</span>
+      ${x.next?`<span class="nx">→ ${esc(x.next)}</span>`:''}</summary>
+      <div class="aptl">${x.events.map(e=>`<div class="apev ${esc(e.dir)}"><span class="w">${evT(e.t)}</span><div class="b"><span class="who">${e.dir==='out'?'You →':e.dir==='in'?esc(e.who)+' →':e.dir==='note'?'Note':esc(e.who)}${e.via?' · '+esc(e.via):''}</span>${esc(e.text)}${e.en?`<span class="en">EN: ${esc(e.en)}</span>`:''}</div></div>`).join('')||'<div class="apev sys"><span class="w"></span><div class="b">No messages recorded.</div></div>'}
+        <div class="apact"><button class="btn ghost sm" data-open="${esc(o.id)}">Open card</button><a class="btn ghost sm" href="${esc(o.url)}" target="_blank" rel="noopener">Listing ↗</a></div></div></details>`}
+  $('#list').innerHTML=h||'<div class="empty">No applications yet.</div>';
+  document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>open(b.dataset.open));
+  layer.clearLayers();
+  A.forEach(x=>{const o=x.o;if(!o.lat)return;const m=L.marker([o.lat,o.lon],{icon:L.divIcon({className:'',iconSize:null,html:`<span class="pin ap ${o.source==='Flatfox'?'':o.source==='Homegate'?'hg':'um'}" data-id="${esc(o.id)}">${x.kind==='act'?'! ':x.kind==='view'?'◷ ':'✓ '}${o.rent_total?Math.round(o.rent_total):'?'}</span>`})});
+    m.on('click',()=>{const el=document.querySelector(`.apr[data-id="${CSS.escape(o.id)}"]`);if(el){el.open=true;el.scrollIntoView({block:'center'});el.classList.add('hot');setTimeout(()=>el.classList.remove('hot'),1500)}});m.addTo(layer);markers[o.id]=m});
+}
 function render(){
+  if(VIEW==='applied'){renderApplied();return}
   const L2=filtered();
   const nA=DATA.filter(o=>applied(o.id)).length, sA=L2.filter(o=>applied(o.id)).length;
   const fr0=segv('fRate'), nU=(fr0!=='all'&&fr0!=='0')?countWith('fRate','0'):0;
@@ -546,5 +601,5 @@ async function route(o,m){
     L.circleMarker(from,{radius:7,color:RC,fillColor:RC,fillOpacity:1}).addTo(RL);
   }catch(e){info('Could not load the route ('+esc(e.message||e)+').')}
 }
-render(); zc(); $('#syncb').onclick=tokenDialog; setSync(tok()?'pending':'off'); loadRemote();
+render(); zc(); $('#syncb').onclick=tokenDialog; setSync(tok()?'pending':'off'); loadRemote(); document.querySelectorAll('#vtabs button').forEach(b=>b.onclick=()=>setView(b.dataset.v)); syncTabs(); loadComms();
 </script></body></html>
