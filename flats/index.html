@@ -396,7 +396,7 @@ function tokenDialog(){const cur=tok();const t=prompt((cur?'Sync is on. ':'')+'P
 // ---- update status and trigger (token only) ----
 // The flat watch writes flats/status.json after every run. "Update now" sends a repository_dispatch
 // event with the GitHub token; a workflow in the site repo then starts the watch.
-const UPD_TRIGGER=false; // set true once .github/workflows/flats-refresh.yml and its secret exist in the site repo
+const UPD_TRIGGER=true; // set true once .github/workflows/flats-refresh.yml and its secret exist in the site repo
 let UPD=null,updT=null,updBusy=false;
 const updReq=()=>+lsGet('flatupdreq','0')||0;
 const updWhen=t=>{const d=new Date(t);if(isNaN(d))return'?';const same=d.toDateString()===new Date().toDateString();
