@@ -138,7 +138,8 @@
   "ff-84453322": "2026-10-05",
   "ff-86385080": "2026-10-05",
   "ff-86009771": "2026-10-05",
-  "ff-86403773": "2026-10-05"
+  "ff-86403773": "2026-10-05",
+  "ff-86421355": "2026-10-05"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -220,6 +221,11 @@
    "date": "2026-10-05",
    "label": "Replied",
    "note": "Agency asks for an applicant form before the viewing."
+  },
+  "ff-86421355": {
+   "date": "2026-10-05",
+   "label": "Sent",
+   "note": "Agency referred me to a contact for viewings; emailed."
   }
  },
  "updated": "2026-10-05T15:30:00Z"
