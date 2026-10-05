@@ -1,0 +1,30 @@
+name: Flats refresh
+
+on:
+  repository_dispatch:
+    types: [flats-refresh]
+
+permissions: {}
+
+concurrency:
+  group: flats-refresh
+  cancel-in-progress: false
+
+jobs:
+  fire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start the flat watch
+        env:
+          FLAT_WATCH_TOKEN: ${{ secrets.FLAT_WATCH_TOKEN }}
+        run: |
+          if [ -z "$FLAT_WATCH_TOKEN" ]; then echo "Secret FLAT_WATCH_TOKEN is not set."; exit 1; fi
+          code=$(curl -sS -o /dev/null -w '%{http_code}' -X POST \
+            https://api.anthropic.com/v1/claude_code/routines/trig_01M5FZJk61PndJwTtddBKsHk/fire \
+            -H "Authorization: Bearer $FLAT_WATCH_TOKEN" \
+            -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "Content-Type: application/json" \
+            -d '{"text": "Manual refresh requested from the site."}')
+          echo "HTTP $code"
+          test "$code" -ge 200 && test "$code" -lt 300
