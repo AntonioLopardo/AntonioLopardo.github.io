@@ -221,8 +221,8 @@
   },
   "um-wohnung-zu-vermiten-t4r9rmmd3j": {
    "date": "2026-10-05",
-   "label": "Sent",
-   "note": "Applicant form returned, waiting for a viewing date."
+   "label": "Viewing",
+   "note": "Viewing fixed."
   },
   "ff-86421355": {
    "date": "2026-10-05",
@@ -231,8 +231,8 @@
   },
   "ff-86421650": {
    "date": "2026-10-05",
-   "label": "Sent",
-   "note": "Enquiry sent, waiting for a reply."
+   "label": "Replied",
+   "note": "Viewing offered, slot to confirm."
   }
  },
  "updated": "2026-10-05T15:19:20.797Z"
