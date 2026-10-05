@@ -148,8 +148,8 @@
   },
   "ff-86314181": {
    "date": "2026-10-05",
-   "label": "Replied",
-   "note": "Viewing dates fully booked, asking for another."
+   "label": "Viewed",
+   "note": "Viewing dates fully booked, treated as gone."
   },
   "ff-86403468": {
    "date": "2026-10-05",
@@ -199,17 +199,17 @@
   "ff-86403773": {
    "date": "2026-10-05",
    "label": "Viewing",
-   "note": "Open viewings offered."
+   "note": "Open viewing planned."
   },
   "ff-86385080": {
    "date": "2026-10-05",
-   "label": "Replied",
-   "note": "Viewing dates fully booked, asking for another."
+   "label": "Viewed",
+   "note": "Viewing dates fully booked, treated as gone."
   },
   "ff-86395781": {
    "date": "2026-10-05",
-   "label": "Replied",
-   "note": "One viewing slot left to book."
+   "label": "Viewing",
+   "note": "Viewing booked."
   }
  },
  "updated": "2026-10-05T15:30:00Z"
