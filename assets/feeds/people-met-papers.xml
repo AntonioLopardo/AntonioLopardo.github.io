@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 04 Oct 2026 04:21:43 +0000</lastBuildDate>
+<lastBuildDate>Mon, 05 Oct 2026 04:19:00 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -207,8 +207,8 @@
 <title>Exploring Personalization Shifts in Representation Space of LLMs</title>
 <link>https://www.semanticscholar.org/paper/7c73c55d091c24b0fc10ff8ae1f1f563c27a48c6</link>
 <guid isPermaLink="false">7c73c55d091c24b0fc10ff8ae1f1f563c27a48c6</guid>
-<description>By Andy Arditi, Oscar Obeso, Aaquib Syed, Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, Adam T. Kalai, Man, Yu-Peng Chang et al.. . (Met: Alisa Liu)</description>
-<pw:authors>Andy Arditi, Oscar Obeso, Aaquib Syed, Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, Adam T. Kalai, Man, Yu-Peng Chang et al.</pw:authors>
+<description>By Andy Arditi, Oscar Obeso, Aaquib Syed, Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, A. Kalai, Man, Yu-Peng Chang et al.. . (Met: Alisa Liu)</description>
+<pw:authors>Andy Arditi, Oscar Obeso, Aaquib Syed, Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, A. Kalai, Man, Yu-Peng Chang et al.</pw:authors>
 <pw:met>Alisa Liu</pw:met>
 <pw:relationships>Alisa Liu=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -7963,8 +7963,8 @@
 <title>ELR-1000: A Community-Generated Dataset for Endangered Indic Indigenous Languages</title>
 <link>https://www.semanticscholar.org/paper/c2a99c3544d8ba58a826de0dd26e11b2107883db</link>
 <guid isPermaLink="false">c2a99c3544d8ba58a826de0dd26e11b2107883db</guid>
-<description>By Neha Joshi, Pamir Gogoi, A. Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, Deepthi Sudharsan, Kalika Bali, Vivek Seshadri. IJCNLP-AACL. (Met: Aditya Yadavalli) arXiv:2512.01077</description>
-<pw:authors>Neha Joshi, Pamir Gogoi, A. Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, Deepthi Sudharsan, Kalika Bali, Vivek Seshadri</pw:authors>
+<description>By Neha Joshi, Pamir Gogoi, Aasim Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, Deepthi Sudharsan, Kalika Bali, Vivek Seshadri. IJCNLP-AACL. (Met: Aditya Yadavalli) arXiv:2512.01077</description>
+<pw:authors>Neha Joshi, Pamir Gogoi, Aasim Mirza, Aayush Jansari, Aditya Yadavalli, Ayushi Pandey, Arun K. Shukla, Deepthi Sudharsan, Kalika Bali, Vivek Seshadri</pw:authors>
 <pw:met>Aditya Yadavalli</pw:met>
 <pw:relationships>Aditya Yadavalli=met</pw:relationships>
 <pw:venue>IJCNLP-AACL</pw:venue>
@@ -13353,8 +13353,8 @@
 <title>From RAG to Memory: Non-Parametric Continual Learning for Large Language Models</title>
 <link>https://www.semanticscholar.org/paper/b79b3a401119bc610b6e2db738aeee531b40aaf0</link>
 <guid isPermaLink="false">b79b3a401119bc610b6e2db738aeee531b40aaf0</guid>
-<description>By Bernal Jiménez Gutiérrez, Yiheng Shu, Weijian Qi, Sizhe Zhou, Yu Su. International Conference on Machine Learning. (Met: Yu Su) arXiv:2502.14802</description>
-<pw:authors>Bernal Jiménez Gutiérrez, Yiheng Shu, Weijian Qi, Sizhe Zhou, Yu Su</pw:authors>
+<description>By Bernal Jiménez Gutiérrez, Yiheng Shu, Weijian Qi, Si-Zhe Zhou, Yu Su. International Conference on Machine Learning. (Met: Yu Su) arXiv:2502.14802</description>
+<pw:authors>Bernal Jiménez Gutiérrez, Yiheng Shu, Weijian Qi, Si-Zhe Zhou, Yu Su</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>International Conference on Machine Learning</pw:venue>
@@ -16654,20 +16654,6 @@
 <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation</title>
-<link>https://www.semanticscholar.org/paper/82068d5f0126575e6b41dc4aa0653dd85939c91d</link>
-<guid isPermaLink="false">82068d5f0126575e6b41dc4aa0653dd85939c91d</guid>
-<description>By Jonathan Cook, Tim Rocktäschel, J. Foerster, Dennis Aumiller, Alex Wang. arXiv.org. (Met: Jakob Foerster, Tim Rocktäschel) arXiv:2410.03608</description>
-<pw:authors>Jonathan Cook, Tim Rocktäschel, J. Foerster, Dennis Aumiller, Alex Wang</pw:authors>
-<pw:met>Jakob Foerster, Tim Rocktäschel</pw:met>
-<pw:relationships>Jakob Foerster=following|Tim Rocktäschel=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2410.03608</pw:arxiv>
-<pw:date>2024-10-04</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Towards the Pedagogical Steering of Large Language Models for Tutoring: A Case Study with Modeling Productive Failure</title>
 <link>https://www.semanticscholar.org/paper/d7b63f8ff1de3339084998003d728ad25275e0fe</link>
 <guid isPermaLink="false">d7b63f8ff1de3339084998003d728ad25275e0fe</guid>
@@ -19905,8 +19891,8 @@
 <title>The BigScience ROOTS Corpus: A 1.6TB Composite Multilingual Dataset</title>
 <link>https://www.semanticscholar.org/paper/16c64f74ce0e6a59b0709c0d8e66596a5bc08ed6</link>
 <guid isPermaLink="false">16c64f74ce0e6a59b0709c0d8e66596a5bc08ed6</guid>
-<description>By David Ifeoluwa Adelani, Christopher Akiki, Khalid Almubarak, Zaid Alyafeai, Loubna Ben Allal, Stella Biderman, Shamik Bose, Jenny Chim, Pierre Colombo, Javier De La Rosa et al.. Neural Information Processing Systems. (Met: Pedro Ortiz Suarez) arXiv:2303.03915</description>
-<pw:authors>David Ifeoluwa Adelani, Christopher Akiki, Khalid Almubarak, Zaid Alyafeai, Loubna Ben Allal, Stella Biderman, Shamik Bose, Jenny Chim, Pierre Colombo, Javier De La Rosa et al.</pw:authors>
+<description>By David Ifeoluwa Adelani, Christopher Akiki, Khalid Almubarak, Zaid Alyafeai, Loubna Ben Allal, Stella Biderman, Shamik Bose, Jenny Chim, Pierre Colombo, Javier de la Rosa et al.. Neural Information Processing Systems. (Met: Pedro Ortiz Suarez) arXiv:2303.03915</description>
+<pw:authors>David Ifeoluwa Adelani, Christopher Akiki, Khalid Almubarak, Zaid Alyafeai, Loubna Ben Allal, Stella Biderman, Shamik Bose, Jenny Chim, Pierre Colombo, Javier de la Rosa et al.</pw:authors>
 <pw:met>Pedro Ortiz Suarez</pw:met>
 <pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
 <pw:venue>Neural Information Processing Systems</pw:venue>
