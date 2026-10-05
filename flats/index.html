@@ -77,13 +77,20 @@ main{display:grid;grid-template-columns:minmax(380px,46%) 1fr;min-height:0}
 .apg{font:600 11px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:20px 0 8px;border-bottom:1px solid var(--rule);padding-bottom:4px}
 .apr{border:1px solid var(--rule);background:var(--card);margin-bottom:8px}
 .apr.hot{border-color:var(--ink)}
-.apr summary{list-style:none;cursor:pointer;padding:10px 12px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:baseline}
+.apr{border-left:5px solid var(--stc,var(--rule))}
+.apr summary{list-style:none;cursor:pointer;padding:10px 12px;display:grid;grid-template-columns:112px auto 1fr auto;gap:4px 12px;align-items:baseline}
+.apr .th{grid-row:1/4;align-self:start;width:112px;height:84px;background:var(--hl);overflow:hidden;display:grid;place-items:center;font:10px "IBM Plex Mono",monospace;color:var(--faint)}
+.apr .th img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:700px){.apr summary{grid-template-columns:72px auto 1fr}.apr .th{width:72px;height:56px}.apr .dt{display:none}}
 .apr summary::-webkit-details-marker{display:none}
-.apr .ad{font-weight:600} .apr .fx{font:12px "IBM Plex Mono",monospace;color:var(--faint);grid-column:2}
+.apr .ad{font-weight:600} .apr .fx{font:12px "IBM Plex Mono",monospace;color:var(--faint);grid-column:2/-1}
 .apr .nx{grid-column:2/-1;font-size:13px} .apr .dt{font:11px "IBM Plex Mono",monospace;color:var(--faint);white-space:nowrap}
 .chipst{font:600 10px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--ink);white-space:nowrap}
-.chipst.act{background:var(--accent);border-color:var(--accent);color:#fff} .chipst.view{background:var(--ff);border-color:var(--ff);color:#fff}
-.chipst.wait{color:var(--faint);border-color:var(--rule)} .chipst.dead{color:var(--faint);border-color:var(--rule);text-decoration:line-through}
+.chipst{background:var(--stc,transparent);border-color:var(--stc,var(--rule));color:#fff}
+.st-reply{--stc:#c0281a} .st-missed{--stc:#d9730d} .st-offered{--stc:#b8860b} .st-book{--stc:#8a3f86}
+.st-booked{--stc:#2f7d4f} .st-planned{--stc:#3a9a8a} .st-waiting{--stc:#3b6fb5} .st-noreply{--stc:#8a8a8a} .st-closed{--stc:#b5aea0}
+.st-closed .ad{text-decoration:line-through;color:var(--faint)} .st-closed .chipst{color:#3a352c}
+.aplegend{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
 .aptl{border-top:1px solid var(--rule);padding:10px 12px 12px;display:grid;gap:8px}
 .apev{display:grid;grid-template-columns:92px 1fr;gap:10px;font-size:13px}
 .apev .w{font:11px "IBM Plex Mono",monospace;color:var(--faint)}
@@ -478,16 +485,20 @@ async function loadComms(){COMMS=null;COMMS_ERR='';if(!tok())return;
 function setView(v){VIEW=v;document.querySelectorAll('#vtabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
   document.querySelector('.filters').style.display=v==='applied'?'none':'';$('#list').classList.toggle('apv',v==='applied');render()}
 function syncTabs(){const on=!!tok();$('#vtabs').classList.toggle('show',on);if(!on&&VIEW==='applied')setView('browse')}
-const APORD={act:0,view:1,wait:2,dead:3}, APGRP={act:'Needs action',view:'Viewings',wait:'Waiting',dead:'Closed'};
+const APORD={act:0,view:1,wait:2,dead:3}, APGRP={act:'Needs action from you',view:'Viewings fixed',wait:'Waiting for them',dead:'Closed'};
+const STCLS={'Reply needed':'reply','Viewing missed':'missed','Viewing offered':'offered','Book a slot':'book','Viewing booked':'booked','Viewing planned':'planned','Waiting':'waiting','No reply':'noreply'};
+const stCls=x=>'st-'+(STCLS[x.status]||(x.kind==='dead'?'closed':x.kind==='act'?'reply':x.kind==='view'?'booked':'waiting'));
+// without the private history, fall back to the public note label so action items still sort first
+const PUBK={Replied:['Reply needed','act',1],Missed:['Viewing missed','act',2],Viewing:['Viewing booked','view',1],Viewed:['Rejected by you','dead',1],Sent:['Waiting','wait',1]};
 const evT=t=>{const d=new Date(t);return isNaN(d)?esc(t):d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+(/T00:00/.test(t)?'':' '+t.slice(11,16))};
 function renderApplied(){
-  const A=DATA.filter(o=>applied(o.id)).map(o=>{const c=(COMMS&&COMMS.flats&&COMMS.flats[o.id])||{};const s=STATUS[o.id];
-    return{o,status:c.status||(s?s.label:'Applied'),kind:c.kind||'wait',rank:c.rank,next:c.next||(s?s.note:''),events:c.events||[]}});
+  const A=DATA.filter(o=>applied(o.id)).map(o=>{const c=(COMMS&&COMMS.flats&&COMMS.flats[o.id])||{};const s=STATUS[o.id];const f=(s&&PUBK[s.label])||['Waiting','wait',5];
+    return{o,status:c.status||f[0],kind:c.kind||f[1],rank:c.rank||f[2],next:c.next||(s?s.note:''),events:c.events||[]}});
   A.sort((a,b)=>APORD[a.kind]-APORD[b.kind]||(a.rank||9)-(b.rank||9)||String(applied(b.o.id)).localeCompare(String(applied(a.o.id))));
   $('#count').innerHTML=`<b>${A.length}</b> applied · ${A.filter(x=>x.kind==='act').length} need action`;
   let h=`<p class="aph">${COMMS?'History updated '+esc(evT(COMMS.updated))+'. Private: loaded with your token from '+PRIV.repo+'.':COMMS_ERR?'⚠ No history: '+esc(COMMS_ERR)+'.':'Loading history…'}</p>`,g=null;
   for(const x of A){const o=x.o;if(x.kind!==g){g=x.kind;h+=`<div class="apg">${APGRP[g]} (${A.filter(y=>y.kind===g).length})</div>`}
-    h+=`<details class="apr" data-id="${esc(o.id)}"><summary><span class="chipst ${x.kind}">${esc(x.status)}</span><span class="ad">${esc(o.address||o.title||'')}</span><span class="dt">applied ${esc(fmtDate(applied(o.id)).replace(/ \d{4}$/,''))}</span>
+    h+=`<details class="apr ${stCls(x)}" data-id="${esc(o.id)}"><summary><span class="th">${o.images&&o.images[0]?`<img loading="lazy" src="${esc(o.images[0])}" alt="">`:'no photo'}</span><span class="chipst">${esc(x.status)}</span><span class="ad">${esc(o.address||o.title||'')}</span><span class="dt">applied ${esc(fmtDate(applied(o.id)).replace(/ \d{4}$/,''))}</span>
       <span class="fx">${o.rent_total!=null?'CHF '+Math.round(o.rent_total):'?'} · ${o.rooms||'?'} rooms${o.size_m2?' · '+o.size_m2+' m²':''} · ${esc(fmtDate(o.available_from))}${o.bike_min!=null?' · bike '+o.bike_min+"'":''} · ${esc(o.source)} · ${x.events.length} message${x.events.length===1?'':'s'}</span>
       ${x.next?`<span class="nx">→ ${esc(x.next)}</span>`:''}</summary>
       <div class="aptl">${x.events.map(e=>`<div class="apev ${esc(e.dir)}"><span class="w">${evT(e.t)}</span><div class="b"><span class="who">${e.dir==='out'?'You →':e.dir==='in'?esc(e.who)+' →':e.dir==='note'?'Note':esc(e.who)}${e.via?' · '+esc(e.via):''}</span>${esc(e.text)}${e.en?`<span class="en">EN: ${esc(e.en)}</span>`:''}</div></div>`).join('')||'<div class="apev sys"><span class="w"></span><div class="b">No messages recorded.</div></div>'}
