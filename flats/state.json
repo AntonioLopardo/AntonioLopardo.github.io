@@ -147,9 +147,9 @@
    "note": "Viewing offered. Warned about smoke from the shop below."
   },
   "ff-86314181": {
-   "date": "2026-09-30",
+   "date": "2026-10-05",
    "label": "Replied",
-   "note": "Viewing slots to book on Flatfox."
+   "note": "Viewing dates fully booked, asking for another."
   },
   "ff-86403468": {
    "date": "2026-10-05",
@@ -204,7 +204,12 @@
   "ff-86385080": {
    "date": "2026-10-05",
    "label": "Replied",
-   "note": "Viewing slot to book on Flatfox."
+   "note": "Viewing dates fully booked, asking for another."
+  },
+  "ff-86395781": {
+   "date": "2026-10-05",
+   "label": "Replied",
+   "note": "One viewing slot left to book."
   }
  },
  "updated": "2026-10-05T15:30:00Z"
