@@ -38,6 +38,7 @@ header .over{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing
 .seg.chg{border-color:var(--accent)} .seg.chg button.on{background:var(--accent);border-color:var(--accent)}
 label.chg{color:var(--accent)}
 .relax{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.aph a{color:var(--accent);cursor:pointer;text-decoration:underline}
 .count a{color:var(--accent);cursor:pointer;text-decoration:underline}
 .count{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--faint)}
 .count b{color:var(--ink)}
@@ -474,19 +475,25 @@ function countWith(id,v){const old=getF(id);setF(id,v);const n=filtered().length
 const RELAX=[['fRate','0','Show unrated'],['fRate','all','Any rating'],['fAge','0','Any posting date'],['fArea',false,'Whole map, not just the visible area'],['fApp','all','Applied or not'],['fLong',false,'Include short sublets']];
 function relaxHtml(){const b=RELAX.filter(([id,v])=>getF(id)!==v).map(([id,v,t])=>[id,v,t,countWith(id,v)]).filter(x=>x[3]>0);
   return b.length?'<div class="relax">'+b.map(([id,v,t,n])=>`<button class="btn ghost sm" data-relax='${JSON.stringify([id,v])}'>${t} (${n})</button>`).join('')+'</div>':''}
-// ---- Applied view: only with a GitHub token; history comes from a PRIVATE repo, so nothing sensitive is in this page ----
-const PRIV={repo:'AntonioLopardo/flats-private',path:'comms.json'};
+// ---- Applied view: only with a GitHub token; the history is published encrypted (flats/comms.enc.json) and decrypted here ----
 let VIEW='browse', COMMS=null, COMMS_ERR='';
 // Listings are baked into this page as a fallback, but the current set is read from flats/data.json in the repo,
 // so new flats show up without waiting for the site build (pushing a .json does not trigger it).
 async function loadData(){try{const r=await fetch(`https://raw.githubusercontent.com/${GH.repo}/${GH.branch}/flats/data.json?t=${Date.now()}`,{cache:'no-store'});if(!r.ok)return;
     const j=await r.json();if(!j||!Array.isArray(j.flats)||j.flats.length<50)return;
     DATA.length=0;DATA.push(...j.flats);prepData();render()}catch(e){}}
-async function loadComms(){COMMS=null;COMMS_ERR='';if(!tok())return;
-  try{const r=await fetch(`https://api.github.com/repos/${PRIV.repo}/contents/${PRIV.path}?t=${Date.now()}`,{headers:{Authorization:'Bearer '+tok(),Accept:'application/vnd.github.raw+json'},cache:'no-store'});
-    if(!r.ok)throw new Error(r.status===404||r.status===403?'this token cannot read '+PRIV.repo+' (add that repository to the token, Contents: read)':'GitHub '+r.status);
-    COMMS=await r.json()}catch(e){COMMS_ERR=e.message}
+const b64d=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function decryptComms(blob,pw){const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64d(blob.salt),iterations:blob.iter,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+  return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:b64d(blob.iv)},key,b64d(blob.ct))))}
+async function loadComms(){COMMS=null;COMMS_ERR='';if(!tok())return;const pw=lsGet('flatkey','');
+  if(!pw){COMMS_ERR='locked';if(VIEW==='applied')render();return}
+  try{const r=await fetch(`https://raw.githubusercontent.com/${GH.repo}/${GH.branch}/flats/comms.enc.json?t=${Date.now()}`,{cache:'no-store'});
+    if(!r.ok)throw new Error('history file not found');
+    COMMS=await decryptComms(await r.json(),pw)}catch(e){COMMS_ERR=e.name==='OperationError'?'wrong passphrase':e.message}
   if(VIEW==='applied')render()}
+function unlockComms(){const p=prompt('Passphrase for the message history. It is stored only in this browser.\nLeave empty and press OK to lock it again.','');
+  if(p===null)return;lsSet('flatkey',p.trim());loadComms()}
 function setView(v){VIEW=v;document.querySelectorAll('#vtabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
   document.querySelector('.filters').style.display=v==='applied'?'none':'';$('#list').classList.toggle('apv',v==='applied');render()}
 function syncTabs(){const on=!!tok();$('#vtabs').classList.toggle('show',on);if(!on&&VIEW==='applied')setView('browse')}
@@ -501,7 +508,7 @@ function renderApplied(){
     return{o,status:c.status||f[0],kind:c.kind||f[1],rank:c.rank||f[2],next:c.next||(s?s.note:''),events:c.events||[]}});
   A.sort((a,b)=>APORD[a.kind]-APORD[b.kind]||(a.rank||9)-(b.rank||9)||String(applied(b.o.id)).localeCompare(String(applied(a.o.id))));
   $('#count').innerHTML=`<b>${A.length}</b> applied · ${A.filter(x=>x.kind==='act').length} need action`;
-  let h=`<p class="aph">${COMMS?'History updated '+esc(evT(COMMS.updated))+'. Private: loaded with your token from '+PRIV.repo+'.':COMMS_ERR?'⚠ No history: '+esc(COMMS_ERR)+'.':'Loading history…'}</p>`,g=null;
+  let h=`<p class="aph">${COMMS?'History updated '+esc(evT(COMMS.updated))+'. Stored encrypted, decrypted in this browser. <a id="unl">lock</a>':COMMS_ERR==='locked'?'🔒 Message history is locked. <button class="btn ghost sm" id="unl">Unlock with passphrase</button>':COMMS_ERR?'⚠ No history: '+esc(COMMS_ERR)+'. <button class="btn ghost sm" id="unl">Enter passphrase</button>':'Loading history…'}</p>`,g=null;
   for(const x of A){const o=x.o;if(x.kind!==g){g=x.kind;h+=`<div class="apg">${APGRP[g]} (${A.filter(y=>y.kind===g).length})</div>`}
     h+=`<details class="apr ${stCls(x)}" data-id="${esc(o.id)}"><summary><span class="th">${o.images&&o.images[0]?`<img loading="lazy" src="${esc(o.images[0])}" alt="">`:'no photo'}</span><span class="chipst">${esc(x.status)}</span><span class="ad">${esc(o.address||o.title||'')}</span><span class="dt">applied ${esc(fmtDate(applied(o.id)).replace(/ \d{4}$/,''))}</span>
       <span class="fx">${o.rent_total!=null?'CHF '+Math.round(o.rent_total):'?'} · ${o.rooms||'?'} rooms${o.size_m2?' · '+o.size_m2+' m²':''} · ${esc(fmtDate(o.available_from))}${o.bike_min!=null?' · bike '+o.bike_min+"'":''} · ${esc(o.source)} · ${x.events.length} message${x.events.length===1?'':'s'}</span>
@@ -510,6 +517,7 @@ function renderApplied(){
         <div class="apact"><button class="btn ghost sm" data-open="${esc(o.id)}">Open card</button><a class="btn ghost sm" href="${esc(o.url)}" target="_blank" rel="noopener">Listing ↗</a></div></div></details>`}
   $('#list').innerHTML=h||'<div class="empty">No applications yet.</div>';
   document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>open(b.dataset.open));
+  if($('#unl'))$('#unl').onclick=unlockComms;
   layer.clearLayers();
   A.forEach(x=>{const o=x.o;if(!o.lat)return;const m=L.marker([o.lat,o.lon],{icon:L.divIcon({className:'',iconSize:null,html:`<span class="pin ap ${o.source==='Flatfox'?'':o.source==='Homegate'?'hg':'um'}" data-id="${esc(o.id)}">${x.kind==='act'?'! ':x.kind==='view'?'◷ ':'✓ '}${o.rent_total?Math.round(o.rent_total):'?'}</span>`})});
     m.on('click',()=>{const el=document.querySelector(`.apr[data-id="${CSS.escape(o.id)}"]`);if(el){el.open=true;el.scrollIntoView({block:'center'});el.classList.add('hot');setTimeout(()=>el.classList.remove('hot'),1500)}});m.addTo(layer);markers[o.id]=m});
