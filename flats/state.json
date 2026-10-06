@@ -111,7 +111,8 @@
   "ff-86421355": 4,
   "ff-86421650": 5,
   "ff-86263487": 4,
-  "ff-86425437": 5
+  "ff-86425437": 5,
+  "um-2-zimmer-wohnung-docp4loevi": 4
  },
  "applied": {
   "um-grosse-25-whg-mit-balkon-per-0111-mq6cojyvg4": "2026-09-28",
@@ -150,7 +151,8 @@
   "ff-86422113": "2026-10-05",
   "um-nachmiete-gesucht-76em8oykt0": "2026-10-06",
   "ff-86425437": "2026-10-06",
-  "ff-86263487": "2026-10-06"
+  "ff-86263487": "2026-10-06",
+  "um-2-zimmer-wohnung-docp4loevi": "2026-10-06"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -284,5 +286,5 @@
    "note": "Viewing booked."
   }
  },
- "updated": "2026-10-06T16:28:02.936Z"
+ "updated": "2026-10-06T16:31:19.243Z"
 }
