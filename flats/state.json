@@ -146,7 +146,8 @@
   "ff-86337892": "2026-10-05",
   "ff-86422112": "2026-10-05",
   "ff-86422113": "2026-10-05",
-  "um-nachmiete-gesucht-76em8oykt0": "2026-10-06"
+  "um-nachmiete-gesucht-76em8oykt0": "2026-10-06",
+  "ff-86425437": "2026-10-06"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -273,6 +274,11 @@
    "date": "2026-10-06",
    "label": "Replied",
    "note": "No more viewing slots, closed."
+  },
+  "ff-86425437": {
+   "date": "2026-10-06",
+   "label": "Viewing",
+   "note": "Viewing booked."
   }
  },
  "updated": "2026-10-05T17:18:00.987Z"
