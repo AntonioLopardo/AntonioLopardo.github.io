@@ -153,13 +153,14 @@
   "ff-86425437": "2026-10-06",
   "ff-86263487": "2026-10-06",
   "um-2-zimmer-wohnung-docp4loevi": "2026-10-06",
-  "ff-86425941": "2026-10-06"
+  "ff-86425941": "2026-10-06",
+  "ff-86425942": "2026-10-06"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
    "date": "2026-10-06",
-   "label": "Viewed",
-   "note": "Solid but pricey."
+   "label": "Replied",
+   "note": "Viewed. Asked about an earlier start date."
   },
   "ff-86314181": {
    "date": "2026-10-05",
@@ -284,9 +285,24 @@
   "ff-86425437": {
    "date": "2026-10-06",
    "label": "Viewing",
-   "note": "Viewing booked."
+   "note": "Application in, viewing booked."
   },
   "ff-86425941": {
+   "date": "2026-10-06",
+   "label": "Sent",
+   "note": "Enquiry sent, waiting for a reply."
+  },
+  "um-2-zimmer-wohnung-docp4loevi": {
+   "date": "2026-10-06",
+   "label": "Replied",
+   "note": "Viewing offered, to confirm."
+  },
+  "ff-86425942": {
+   "date": "2026-10-06",
+   "label": "Sent",
+   "note": "Enquiry sent. Looks too cheap to be real."
+  },
+  "ff-86263487": {
    "date": "2026-10-06",
    "label": "Sent",
    "note": "Enquiry sent, waiting for a reply."
