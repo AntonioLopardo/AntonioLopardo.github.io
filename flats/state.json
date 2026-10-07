@@ -343,6 +343,11 @@
   },
   "ff-1645636": {
    "date": "2026-10-07",
+   "label": "Viewing",
+   "note": "Viewing booked."
+  },
+  "ff-86421557": {
+   "date": "2026-10-07",
    "label": "Sent",
    "note": "Enquiry sent, waiting for a reply."
   }
