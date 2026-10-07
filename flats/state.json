@@ -157,7 +157,8 @@
   "um-2-zimmer-wohnung-docp4loevi": "2026-10-06",
   "ff-86425941": "2026-10-06",
   "ff-86425942": "2026-10-06",
-  "um-3-zimmer-wohnung-zur-untermiete-nahe-basel-zoo-jruzegvo7y": "2026-10-07"
+  "um-3-zimmer-wohnung-zur-untermiete-nahe-basel-zoo-jruzegvo7y": "2026-10-07",
+  "um-moblwohnung-bs-breite-eo1449fsiz": "2026-10-07"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -311,6 +312,11 @@
    "note": "Enquiry sent, waiting for a reply."
   },
   "um-3-zimmer-wohnung-zur-untermiete-nahe-basel-zoo-jruzegvo7y": {
+   "date": "2026-10-07",
+   "label": "Sent",
+   "note": "Enquiry sent, waiting for a reply."
+  },
+  "um-moblwohnung-bs-breite-eo1449fsiz": {
    "date": "2026-10-07",
    "label": "Sent",
    "note": "Enquiry sent, waiting for a reply."
