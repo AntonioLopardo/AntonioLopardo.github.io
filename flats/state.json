@@ -178,7 +178,8 @@
   "ff-1645636": "2026-10-07",
   "ff-86421557": "2026-10-07",
   "um-helle-loft-wohnung-unterm-dach-im-gotthelf-quartier-0damj37l3b": "2026-10-07",
-  "ff-86426910": "2026-10-07"
+  "ff-86426910": "2026-10-07",
+  "ff-86427862": "2026-10-07"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -214,7 +215,7 @@
   "ff-86402625": {
    "date": "2026-10-07",
    "label": "Viewing",
-   "note": "Earlier viewing offered, time to confirm."
+   "note": "Viewing fixed."
   },
   "ff-86401732": {
    "date": "2026-10-02",
@@ -307,9 +308,9 @@
    "note": "No more viewing slots, closed."
   },
   "ff-86425437": {
-   "date": "2026-10-06",
-   "label": "Viewing",
-   "note": "Application in, viewing booked."
+   "date": "2026-10-07",
+   "label": "Replied",
+   "note": "Application rejected, closed."
   },
   "ff-86425941": {
    "date": "2026-10-06",
@@ -358,15 +359,20 @@
   },
   "ff-86421557": {
    "date": "2026-10-07",
-   "label": "Sent",
-   "note": "Enquiry sent, waiting for a reply."
+   "label": "Viewing",
+   "note": "Open viewing dates offered."
   },
   "um-helle-loft-wohnung-unterm-dach-im-gotthelf-quartier-0damj37l3b": {
    "date": "2026-10-07",
-   "label": "Sent",
-   "note": "Enquiry sent, waiting for a reply."
+   "label": "Replied",
+   "note": "Asked for a CV."
   },
   "ff-86426910": {
+   "date": "2026-10-07",
+   "label": "Viewing",
+   "note": "Viewing booked."
+  },
+  "ff-86427862": {
    "date": "2026-10-07",
    "label": "Sent",
    "note": "Enquiry sent, waiting for a reply."
