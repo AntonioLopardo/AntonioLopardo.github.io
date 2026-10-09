@@ -272,8 +272,8 @@
   },
   "ff-86421355": {
    "date": "2026-10-09",
-   "label": "Sent",
-   "note": "Viewed, application submitted."
+   "label": "Applied",
+   "note": "Application received by the agency."
   },
   "ff-86421650": {
    "date": "2026-10-06",
@@ -281,9 +281,9 @@
    "note": "Cheap but old and small."
   },
   "ff-86337892": {
-   "date": "2026-10-05",
-   "label": "Viewing",
-   "note": "Viewing booked."
+   "date": "2026-10-09",
+   "label": "Applied",
+   "note": "Application sent after viewing."
   },
   "ff-86422112": {
    "date": "2026-10-05",
@@ -401,5 +401,5 @@
    "note": "Viewing date offered does not work, asking for another."
   }
  },
- "updated": "2026-10-09T11:33:36Z"
+ "updated": "2026-10-09T11:42:12Z"
 }
