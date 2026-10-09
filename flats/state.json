@@ -362,8 +362,8 @@
   },
   "ff-1645636": {
    "date": "2026-10-09",
-   "label": "Viewed",
-   "note": "Viewed."
+   "label": "Closed",
+   "note": "Viewed, not applying."
   },
   "ff-86421557": {
    "date": "2026-10-07",
@@ -401,5 +401,5 @@
    "note": "Viewing date offered does not work, asking for another."
   }
  },
- "updated": "2026-10-08T13:04:57.016Z"
+ "updated": "2026-10-09T11:33:36Z"
 }
