@@ -187,7 +187,8 @@
   "ff-86430592": "2026-10-08",
   "ff-85172691": "2026-10-08",
   "um-2-zimmer-wohnung-im-kleinbasel-646e2bhbic": "2026-10-08",
-  "ff-86432525": "2026-10-08"
+  "ff-86432525": "2026-10-08",
+  "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": "2026-10-09"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -399,7 +400,12 @@
    "date": "2026-10-08",
    "label": "Replied",
    "note": "Viewing date offered does not work, asking for another."
+  },
+  "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": {
+   "date": "2026-10-09",
+   "label": "Sent",
+   "note": "Enquiry sent to the agency."
   }
  },
- "updated": "2026-10-09T11:42:12Z"
+ "updated": "2026-10-09T12:10:16Z"
 }
