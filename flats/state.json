@@ -192,9 +192,9 @@
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
-   "date": "2026-10-07",
-   "label": "Viewed",
-   "note": "Waiting for next steps."
+   "date": "2026-10-10",
+   "label": "Reply needed",
+   "note": "More details requested."
   },
   "ff-86314181": {
    "date": "2026-10-05",
@@ -282,9 +282,9 @@
    "note": "Cheap but old and small."
   },
   "ff-86337892": {
-   "date": "2026-10-09",
-   "label": "Applied",
-   "note": "Application sent after viewing."
+   "date": "2026-10-10",
+   "label": "Reply needed",
+   "note": "Agency asks for an online application."
   },
   "ff-86422112": {
    "date": "2026-10-05",
@@ -352,9 +352,9 @@
    "note": "Viewing offered, date to agree."
   },
   "um-zu-vermieten-2-zimmer-wohnung-vohc2xi951": {
-   "date": "2026-10-07",
-   "label": "Sent",
-   "note": "Enquiry sent, waiting for a reply."
+   "date": "2026-10-10",
+   "label": "Reply needed",
+   "note": "Viewing offered, time to agree."
   },
   "um-helle-2-zimmer-altbauwohnung-nahe-burgfelderplatzkannenfeldpark-s5ix8c3h66": {
    "date": "2026-10-07",
@@ -402,10 +402,10 @@
    "note": "Viewing date offered does not work, asking for another."
   },
   "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": {
-   "date": "2026-10-09",
-   "label": "Sent",
-   "note": "Enquiry sent to the agency."
+   "date": "2026-10-10",
+   "label": "Reply needed",
+   "note": "Viewing offered, date to rearrange."
   }
  },
- "updated": "2026-10-09T12:10:16Z"
+ "updated": "2026-10-10T10:21:19Z"
 }
