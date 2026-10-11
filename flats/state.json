@@ -302,14 +302,14 @@
    "note": "Viewed, application sent to the management."
   },
   "ff-84453322": {
-   "date": "2026-10-06",
-   "label": "Replied",
-   "note": "Agency asks for a phone call to arrange a viewing."
+   "date": "2026-10-11",
+   "label": "Closed",
+   "note": "Not pursuing."
   },
   "ff-86009771": {
-   "date": "2026-10-06",
-   "label": "Replied",
-   "note": "Agency asks for a phone call to arrange a viewing."
+   "date": "2026-10-11",
+   "label": "Closed",
+   "note": "Not pursuing."
   },
   "um-35-zimmerwohnung-nahe-unispital-4f2vw0z5w9": {
    "date": "2026-10-06",
@@ -407,5 +407,5 @@
    "note": "Asked for a new viewing date."
   }
  },
- "updated": "2026-10-11T20:42:08Z"
+ "updated": "2026-10-11T20:43:19Z"
 }
