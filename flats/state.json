@@ -192,9 +192,9 @@
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
-   "date": "2026-10-10",
-   "label": "Reply needed",
-   "note": "More details requested."
+   "date": "2026-10-11",
+   "label": "Waiting",
+   "note": "Details forwarded to the landlord."
   },
   "ff-86314181": {
    "date": "2026-10-05",
@@ -257,14 +257,14 @@
    "note": "Viewing dates fully booked, treated as gone."
   },
   "ff-86395781": {
-   "date": "2026-10-05",
-   "label": "Viewing",
-   "note": "Viewing booked."
+   "date": "2026-10-11",
+   "label": "Viewing booked",
+   "note": "Viewing rebooked."
   },
   "um-gemutliche-2-zimmer-wohnung-im-gundeli-zz9x0uvupg": {
-   "date": "2026-10-05",
-   "label": "Viewing",
-   "note": "Viewing planned."
+   "date": "2026-10-11",
+   "label": "Applied",
+   "note": "Viewed, application received by the agency."
   },
   "um-wohnung-zu-vermiten-t4r9rmmd3j": {
    "date": "2026-10-06",
@@ -327,14 +327,14 @@
    "note": "Enquiry sent, waiting for a reply."
   },
   "um-2-zimmer-wohnung-docp4loevi": {
-   "date": "2026-10-07",
-   "label": "Viewing",
-   "note": "Viewing fixed."
+   "date": "2026-10-11",
+   "label": "Waiting",
+   "note": "Asked for a new viewing date."
   },
   "ff-86425942": {
-   "date": "2026-10-08",
-   "label": "Replied",
-   "note": "Likely scam, dropped."
+   "date": "2026-10-11",
+   "label": "Closed",
+   "note": "Suspected scam."
   },
   "ff-86263487": {
    "date": "2026-10-06",
@@ -372,9 +372,9 @@
    "note": "Open viewing dates offered."
   },
   "um-helle-loft-wohnung-unterm-dach-im-gotthelf-quartier-0damj37l3b": {
-   "date": "2026-10-07",
-   "label": "Viewing",
-   "note": "Viewing fixed."
+   "date": "2026-10-11",
+   "label": "Viewed",
+   "note": "Viewed."
   },
   "ff-86426910": {
    "date": "2026-10-07",
@@ -392,9 +392,9 @@
    "note": "Enquiry sent, waiting for a reply."
   },
   "um-2-zimmer-wohnung-im-kleinbasel-646e2bhbic": {
-   "date": "2026-10-09",
-   "label": "Viewing",
-   "note": "Viewing fixed."
+   "date": "2026-10-11",
+   "label": "Applied",
+   "note": "Application sent to the agency."
   },
   "ff-86432525": {
    "date": "2026-10-08",
@@ -402,10 +402,10 @@
    "note": "Viewing date offered does not work, asking for another."
   },
   "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": {
-   "date": "2026-10-10",
-   "label": "Reply needed",
-   "note": "Viewing offered, date to rearrange."
+   "date": "2026-10-11",
+   "label": "Waiting",
+   "note": "Asked for a new viewing date."
   }
  },
- "updated": "2026-10-11T20:37:37Z"
+ "updated": "2026-10-11T20:42:08Z"
 }
