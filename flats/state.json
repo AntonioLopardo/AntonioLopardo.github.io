@@ -189,7 +189,8 @@
   "um-2-zimmer-wohnung-im-kleinbasel-646e2bhbic": "2026-10-08",
   "ff-86432525": "2026-10-08",
   "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": "2026-10-09",
-  "ff-86159389": "2026-10-12"
+  "ff-86159389": "2026-10-12",
+  "um-2-zi-whg-zur-untermiete-ffi3k0ho3l": "2026-10-12"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -219,8 +220,8 @@
   },
   "ff-86410772": {
    "date": "2026-10-12",
-   "label": "Reply needed",
-   "note": "Viewing reminder, date to rearrange."
+   "label": "Waiting",
+   "note": "Asked for a new viewing date."
   },
   "ff-86402625": {
    "date": "2026-10-07",
@@ -416,7 +417,12 @@
    "date": "2026-10-12",
    "label": "Closed",
    "note": "Listing removed the same day."
+  },
+  "um-2-zi-whg-zur-untermiete-ffi3k0ho3l": {
+   "date": "2026-10-12",
+   "label": "Sent",
+   "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-12T15:34:16Z"
+ "updated": "2026-10-12T15:40:58Z"
 }
