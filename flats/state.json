@@ -188,7 +188,8 @@
   "ff-85172691": "2026-10-08",
   "um-2-zimmer-wohnung-im-kleinbasel-646e2bhbic": "2026-10-08",
   "ff-86432525": "2026-10-08",
-  "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": "2026-10-09"
+  "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": "2026-10-09",
+  "ff-86159389": "2026-10-12"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -217,9 +218,9 @@
    "note": "Viewing missed, not pursuing."
   },
   "ff-86410772": {
-   "date": "2026-10-01",
-   "label": "Viewing",
-   "note": "Viewing booked."
+   "date": "2026-10-12",
+   "label": "Reply needed",
+   "note": "Viewing reminder, date to rearrange."
   },
   "ff-86402625": {
    "date": "2026-10-07",
@@ -257,9 +258,9 @@
    "note": "Viewing dates fully booked, treated as gone."
   },
   "ff-86395781": {
-   "date": "2026-10-11",
+   "date": "2026-10-12",
    "label": "Viewing booked",
-   "note": "Viewing rebooked."
+   "note": "Viewing booked, application route known."
   },
   "um-gemutliche-2-zimmer-wohnung-im-gundeli-zz9x0uvupg": {
    "date": "2026-10-11",
@@ -327,9 +328,9 @@
    "note": "Enquiry sent, waiting for a reply."
   },
   "um-2-zimmer-wohnung-docp4loevi": {
-   "date": "2026-10-11",
+   "date": "2026-10-12",
    "label": "Waiting",
-   "note": "Asked for a new viewing date."
+   "note": "Other candidates first."
   },
   "ff-86425942": {
    "date": "2026-10-11",
@@ -405,7 +406,12 @@
    "date": "2026-10-11",
    "label": "Waiting",
    "note": "Asked for a new viewing date."
+  },
+  "ff-86159389": {
+   "date": "2026-10-12",
+   "label": "Replied",
+   "note": "Agency asked screening questions."
   }
  },
- "updated": "2026-10-11T20:43:19Z"
+ "updated": "2026-10-12T15:30:53Z"
 }
