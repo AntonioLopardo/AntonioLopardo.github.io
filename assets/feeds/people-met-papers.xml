@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 11 Oct 2026 04:18:48 +0000</lastBuildDate>
+<lastBuildDate>Mon, 12 Oct 2026 04:21:10 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -116,8 +116,8 @@
 <title>States Hidden in Hidden States: LLMs Emerge Discrete State Representations Implicitly Anonymous ACL submission</title>
 <link>https://www.semanticscholar.org/paper/71ab9e4886e2eb7db8d61fcd6a69a0d11a42b365</link>
 <guid isPermaLink="false">71ab9e4886e2eb7db8d61fcd6a69a0d11a42b365</guid>
-<description>By Jan Carr, Joshua Leike, Vedant Achiam, Evan Misra, Alec Morikawa, M. Radford, Miles Knight, Mira Brundage, Katie Murati, Peter F. Mayer et al.. . (Met: Alessandro Stolfo, Josef Valvoda, Tiago Pimentel)</description>
-<pw:authors>Jan Carr, Joshua Leike, Vedant Achiam, Evan Misra, Alec Morikawa, M. Radford, Miles Knight, Mira Brundage, Katie Murati, Peter F. Mayer et al.</pw:authors>
+<description>By Jan Carr, Joshua Leike, Vedant Achiam, Evan Misra, Alec Morikawa, M. Radford, Miles Knight, Mira Brundage, K. Murati, Peter F. Mayer et al.. . (Met: Alessandro Stolfo, Josef Valvoda, Tiago Pimentel)</description>
+<pw:authors>Jan Carr, Joshua Leike, Vedant Achiam, Evan Misra, Alec Morikawa, M. Radford, Miles Knight, Mira Brundage, K. Murati, Peter F. Mayer et al.</pw:authors>
 <pw:met>Alessandro Stolfo, Josef Valvoda, Tiago Pimentel</pw:met>
 <pw:relationships>Alessandro Stolfo=met|Josef Valvoda=following|Tiago Pimentel=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -16917,20 +16917,6 @@
 <pw:date>2024-10-14</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>On the Convergence of Single-Timescale Actor-Critic</title>
-<link>https://www.semanticscholar.org/paper/688c2dbddbf31d19fa5924e12bd283e52bba6f9d</link>
-<guid isPermaLink="false">688c2dbddbf31d19fa5924e12bd283e52bba6f9d</guid>
-<description>By Navdeep Kumar, Priyank Agrawal, G. Ramponi, K. Levy, Shie Mannor. Neural Information Processing Systems. (Met: Giorgia Ramponi) arXiv:2410.08868</description>
-<pw:authors>Navdeep Kumar, Priyank Agrawal, G. Ramponi, K. Levy, Shie Mannor</pw:authors>
-<pw:met>Giorgia Ramponi</pw:met>
-<pw:relationships>Giorgia Ramponi=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
-<pw:arxiv>2410.08868</pw:arxiv>
-<pw:date>2024-10-11</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 11 Oct 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Data Processing for the OpenGPT-X Model Family</title>
