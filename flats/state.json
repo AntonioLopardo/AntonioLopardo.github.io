@@ -191,7 +191,8 @@
   "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": "2026-10-09",
   "ff-86159389": "2026-10-12",
   "um-2-zi-whg-zur-untermiete-ffi3k0ho3l": "2026-10-12",
-  "ff-86446252": "2026-10-12"
+  "ff-86446252": "2026-10-12",
+  "um-grosszugige-25-zimmer-wohnung-mit-balkon-in-basel-65-m-or-chf-1250-inkl-nk-cn4lpphdyk": "2026-10-12"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -220,9 +221,9 @@
    "note": "Viewing missed, not pursuing."
   },
   "ff-86410772": {
-   "date": "2026-10-12",
+   "date": "2026-10-13",
    "label": "Waiting",
-   "note": "Asked for a new viewing date."
+   "note": "Viewing cancelled, new date pending."
   },
   "ff-86402625": {
    "date": "2026-10-07",
@@ -425,10 +426,15 @@
    "note": "Enquiry sent."
   },
   "ff-86446252": {
+   "date": "2026-10-13",
+   "label": "Reply needed",
+   "note": "Viewing dates offered, registration needed."
+  },
+  "um-grosszugige-25-zimmer-wohnung-mit-balkon-in-basel-65-m-or-chf-1250-inkl-nk-cn4lpphdyk": {
    "date": "2026-10-12",
    "label": "Sent",
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-12T15:42:45Z"
+ "updated": "2026-10-13T06:34:02Z"
 }
