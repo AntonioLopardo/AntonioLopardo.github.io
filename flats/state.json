@@ -194,7 +194,9 @@
   "um-2-zi-whg-zur-untermiete-ffi3k0ho3l": "2026-10-12",
   "ff-86446252": "2026-10-12",
   "um-grosszugige-25-zimmer-wohnung-mit-balkon-in-basel-65-m-or-chf-1250-inkl-nk-cn4lpphdyk": "2026-10-12",
-  "um-wohnug-oxtkqctkuo": "2026-10-13"
+  "um-wohnug-oxtkqctkuo": "2026-10-13",
+  "ff-86447839": "2026-10-13",
+  "ff-86333157": "2026-10-13"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -446,7 +448,17 @@
    "date": "2026-10-13",
    "label": "Sent",
    "note": "Enquiry sent to the agency."
+  },
+  "ff-86447839": {
+   "date": "2026-10-13",
+   "label": "Sent",
+   "note": "Enquiry sent."
+  },
+  "ff-86333157": {
+   "date": "2026-10-13",
+   "label": "Sent",
+   "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-13T17:01:57.664Z"
+ "updated": "2026-10-13T17:05:04Z"
 }
