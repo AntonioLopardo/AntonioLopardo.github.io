@@ -266,9 +266,9 @@
    "note": "Viewing booked, application route known."
   },
   "um-gemutliche-2-zimmer-wohnung-im-gundeli-zz9x0uvupg": {
-   "date": "2026-10-11",
-   "label": "Applied",
-   "note": "Viewed, application received by the agency."
+   "date": "2026-10-13",
+   "label": "Closed",
+   "note": "Application declined."
   },
   "um-wohnung-zu-vermiten-t4r9rmmd3j": {
    "date": "2026-10-06",
@@ -411,9 +411,9 @@
    "note": "Asked for a new viewing date."
   },
   "ff-86159389": {
-   "date": "2026-10-12",
-   "label": "Replied",
-   "note": "Agency asked screening questions."
+   "date": "2026-10-13",
+   "label": "Closed",
+   "note": "Another applicant chosen."
   },
   "um-basel-hegenheimer-quartier-2-ziwohnung-zu-vermieten-ab-1november-26-hkyzpc6xhw": {
    "date": "2026-10-12",
@@ -436,5 +436,5 @@
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-13T06:34:02Z"
+ "updated": "2026-10-13T16:38:23Z"
 }
