@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Mon, 12 Oct 2026 04:21:10 +0000</lastBuildDate>
+<lastBuildDate>Tue, 13 Oct 2026 04:18:38 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1309,6 +1309,48 @@
 <pw:year></pw:year>
 </item>
 <item>
+<title>Overcoming Data Imbalances with Expert Selection Biases</title>
+<link>https://www.semanticscholar.org/paper/ef526910a17879a967adb808b8b9df5b2f3d2604</link>
+<guid isPermaLink="false">ef526910a17879a967adb808b8b9df5b2f3d2604</guid>
+<description>By A. Tarun, Clara Meister, Antoine Bosselut. . (Met: Antoine Bosselut, Clara Isabel Meister) arXiv:2610.13370</description>
+<pw:authors>A. Tarun, Clara Meister, Antoine Bosselut</pw:authors>
+<pw:met>Antoine Bosselut, Clara Isabel Meister</pw:met>
+<pw:relationships>Antoine Bosselut=following|Clara Isabel Meister=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2610.13370</pw:arxiv>
+<pw:date>2026-10-09</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Not Just an Evaluation: A Case Study of Discourse Particle Sensitivity in Language Models</title>
+<link>https://www.semanticscholar.org/paper/164db23aaf579f2b98a6d5c7a36cd2caea666389</link>
+<guid isPermaLink="false">164db23aaf579f2b98a6d5c7a36cd2caea666389</guid>
+<description>By William Sheffield, Jia-Hui Chen, Amy Zhang, Alex Warstadt, Junyi Jessy Li, Kanishka Misra. . (Met: Junyi Jessy Li) arXiv:2610.13794</description>
+<pw:authors>William Sheffield, Jia-Hui Chen, Amy Zhang, Alex Warstadt, Junyi Jessy Li, Kanishka Misra</pw:authors>
+<pw:met>Junyi Jessy Li</pw:met>
+<pw:relationships>Junyi Jessy Li=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2610.13794</pw:arxiv>
+<pw:date>2026-10-09</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Agentic Large Language Models</title>
+<link>https://www.semanticscholar.org/paper/991e5cb791974647a648ea21b0b5fa56b8a40d68</link>
+<guid isPermaLink="false">991e5cb791974647a648ea21b0b5fa56b8a40d68</guid>
+<description>By Max Van Duijn, Michiel van der Meer, A. Plaat, Niki van Stein. . (Met: Michiel van der Meer) arXiv:2610.13455</description>
+<pw:authors>Max Van Duijn, Michiel van der Meer, A. Plaat, Niki van Stein</pw:authors>
+<pw:met>Michiel van der Meer</pw:met>
+<pw:relationships>Michiel van der Meer=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2610.13455</pw:arxiv>
+<pw:date>2026-10-09</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Language-Specific Effects of Tokenizer Choice in Multilingual Language Models</title>
 <link>https://www.semanticscholar.org/paper/4929f866efd5ed1ec540ec0f654fdb0f0aa1ae2b</link>
 <guid isPermaLink="false">4929f866efd5ed1ec540ec0f654fdb0f0aa1ae2b</guid>
@@ -1337,7 +1379,7 @@
 <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Estimating great expectations under autoregressive language models with potentials</title>
+<title>Estimating Great Expectations Under Autoregressive Language Models with Potentials</title>
 <link>https://www.semanticscholar.org/paper/00be5ef55c867402fe343bf0d0000cc0d0625727</link>
 <guid isPermaLink="false">00be5ef55c867402fe343bf0d0000cc0d0625727</guid>
 <description>By F. Re, Shubhangi Ghosh, Tim Vieira, Ryan Cotterell. . (Met: Tim Vieira) arXiv:2610.11399</description>
@@ -4490,8 +4532,8 @@
 <title>Mechanism Design Is Not Enough: Prosocial Agents for Cooperative AI</title>
 <link>https://www.semanticscholar.org/paper/fc79538796ed0fccf0de9cee1f850fdfcf29ab92</link>
 <guid isPermaLink="false">fc79538796ed0fccf0de9cee1f850fdfcf29ab92</guid>
-<description>By Xuanqi Huang, Charlie Tharas, Samuele G. Marro, Van Q. Truong, B. Schölkopf, Emanuele La Malfa, Zhi-Jing Jin. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin) arXiv:2605.08426</description>
-<pw:authors>Xuanqi Huang, Charlie Tharas, Samuele G. Marro, Van Q. Truong, B. Schölkopf, Emanuele La Malfa, Zhi-Jing Jin</pw:authors>
+<description>By Xuan-Qi Huang, Charlie Tharas, Samuele G. Marro, Van Q. Truong, B. Schölkopf, Emanuele La Malfa, Zhi-Jing Jin. arXiv.org. (Met: Bernhard Schölkopf, Zhijing Jin) arXiv:2605.08426</description>
+<pw:authors>Xuan-Qi Huang, Charlie Tharas, Samuele G. Marro, Van Q. Truong, B. Schölkopf, Emanuele La Malfa, Zhi-Jing Jin</pw:authors>
 <pw:met>Bernhard Schölkopf, Zhijing Jin</pw:met>
 <pw:relationships>Bernhard Schölkopf=following|Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -5092,8 +5134,8 @@
 <title>Evaluating Cooperation in LLM Social Groups through Elected Leadership</title>
 <link>https://www.semanticscholar.org/paper/a46db136a296433076c6997377c2b02aa4a3ad71</link>
 <guid isPermaLink="false">a46db136a296433076c6997377c2b02aa4a3ad71</guid>
-<description>By Ryan Faulkner, Anushka Deshpande, David Guzman Piedrahita, Joel Z. Leibo, Zhi-Jing Jin. arXiv.org. (Met: Zhijing Jin) arXiv:2604.11721</description>
-<pw:authors>Ryan Faulkner, Anushka Deshpande, David Guzman Piedrahita, Joel Z. Leibo, Zhi-Jing Jin</pw:authors>
+<description>By Ryan Faulkner, Anushka Deshpande, David Guzman Piedrahita, J. Leibo, Zhi-Jing Jin. arXiv.org. (Met: Zhijing Jin) arXiv:2604.11721</description>
+<pw:authors>Ryan Faulkner, Anushka Deshpande, David Guzman Piedrahita, J. Leibo, Zhi-Jing Jin</pw:authors>
 <pw:met>Zhijing Jin</pw:met>
 <pw:relationships>Zhijing Jin=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -7192,11 +7234,11 @@
 <title>Latent Causal Diffusions for Single-Cell Perturbation Modeling</title>
 <link>https://www.semanticscholar.org/paper/cda188c5218ccdfc44dafb312d4f638037355120</link>
 <guid isPermaLink="false">cda188c5218ccdfc44dafb312d4f638037355120</guid>
-<description>By Lars Lorch, Jia-Qi Zhang, Charlotte Bunne, Andreas Krause, B. Schölkopf, Caroline Uhler. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2601.15341</description>
+<description>By Lars Lorch, Jia-Qi Zhang, Charlotte Bunne, Andreas Krause, B. Schölkopf, Caroline Uhler. Proceedings of the National Academy of Sciences of the United States of America. (Met: Bernhard Schölkopf) arXiv:2601.15341</description>
 <pw:authors>Lars Lorch, Jia-Qi Zhang, Charlotte Bunne, Andreas Krause, B. Schölkopf, Caroline Uhler</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
+<pw:venue>Proceedings of the National Academy of Sciences of the United States of America</pw:venue>
 <pw:arxiv>2601.15341</pw:arxiv>
 <pw:date>2026-01-20</pw:date>
 <pw:year>2026</pw:year>
@@ -7374,8 +7416,8 @@
 <title>Unified Text-Image Generation with Weakness-Targeted Post-Training</title>
 <link>https://www.semanticscholar.org/paper/e1b69f7d219345251922f2b28f46e0f986d0bcac</link>
 <guid isPermaLink="false">e1b69f7d219345251922f2b28f46e0f986d0bcac</guid>
-<description>By Jiahui Chen, Philippe Hansen-Estruch, Xiao-Chuang Han, Yushi Hu, Emily Dinan, Amita Kamath, Michal Drozdzal, Reyhane Askari-Hemmat, Luke S. Zettlemoyer, Marjan Ghazvininejad. arXiv.org. (Met: Xiaochuang Han) arXiv:2601.04339</description>
-<pw:authors>Jiahui Chen, Philippe Hansen-Estruch, Xiao-Chuang Han, Yushi Hu, Emily Dinan, Amita Kamath, Michal Drozdzal, Reyhane Askari-Hemmat, Luke S. Zettlemoyer, Marjan Ghazvininejad</pw:authors>
+<description>By Jia-Hui Chen, Philippe Hansen-Estruch, Xiao-Chuang Han, Yushi Hu, Emily Dinan, Amita Kamath, Michal Drozdzal, Reyhane Askari-Hemmat, Luke S. Zettlemoyer, Marjan Ghazvininejad. arXiv.org. (Met: Xiaochuang Han) arXiv:2601.04339</description>
+<pw:authors>Jia-Hui Chen, Philippe Hansen-Estruch, Xiao-Chuang Han, Yushi Hu, Emily Dinan, Amita Kamath, Michal Drozdzal, Reyhane Askari-Hemmat, Luke S. Zettlemoyer, Marjan Ghazvininejad</pw:authors>
 <pw:met>Xiaochuang Han</pw:met>
 <pw:relationships>Xiaochuang Han=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -7500,8 +7542,8 @@
 <title>GitChameleon 2.0: Evaluating AI Code Generation Against Python Library Version Incompatibilities</title>
 <link>https://www.semanticscholar.org/paper/40dccfac40613f0de8f308abae36ae9ea344e962</link>
 <guid isPermaLink="false">40dccfac40613f0de8f308abae36ae9ea344e962</guid>
-<description>By Diganta Misra, Nizar Islah, Victor May, Brice Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Antonio Orvieto)</description>
-<pw:authors>Diganta Misra, Nizar Islah, Victor May, Brice Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.</pw:authors>
+<description>By Diganta Misra, Nizar Islah, Victor May, B. Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.. Annual Meeting of the Association for Computational Linguistics. (Met: Antonio Orvieto)</description>
+<pw:authors>Diganta Misra, Nizar Islah, Victor May, B. Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -10454,8 +10496,8 @@
 <title>GitChameleon: Evaluating AI Code Generation Against Python Library Version Incompatibilities</title>
 <link>https://www.semanticscholar.org/paper/d49b5e7c6bd09120575d52f7cd50e85afc3100d5</link>
 <guid isPermaLink="false">d49b5e7c6bd09120575d52f7cd50e85afc3100d5</guid>
-<description>By Diganta Misra, Nizar Islah, Victor May, Brice Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.. . (Met: Antonio Orvieto) arXiv:2507.12367</description>
-<pw:authors>Diganta Misra, Nizar Islah, Victor May, Brice Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.</pw:authors>
+<description>By Diganta Misra, Nizar Islah, Victor May, B. Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.. . (Met: Antonio Orvieto) arXiv:2507.12367</description>
+<pw:authors>Diganta Misra, Nizar Islah, Victor May, B. Rauby, Zihan Wang, Justine Gehring, Antonio Orvieto, Muawiz Chaudhary, Eilif B. Muller, Irina Rish et al.</pw:authors>
 <pw:met>Antonio Orvieto</pw:met>
 <pw:relationships>Antonio Orvieto=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -12106,8 +12148,8 @@
 <title>Meaning Is Not A Metric: Using LLMs to make cultural context legible at scale</title>
 <link>https://www.semanticscholar.org/paper/6327f2bf5812c0f477975d9122008263a1457b3b</link>
 <guid isPermaLink="false">6327f2bf5812c0f477975d9122008263a1457b3b</guid>
-<description>By Cody Kommers, Drew Hemment, Maria Antoniak, Joel Z. Leibo, Hoyt Long, Emily Robinson, Adam Sobey. arXiv.org. (Met: Maria Antoniak) arXiv:2505.23785</description>
-<pw:authors>Cody Kommers, Drew Hemment, Maria Antoniak, Joel Z. Leibo, Hoyt Long, Emily Robinson, Adam Sobey</pw:authors>
+<description>By Cody Kommers, Drew Hemment, Maria Antoniak, J. Leibo, Hoyt Long, Emily Robinson, Adam Sobey. arXiv.org. (Met: Maria Antoniak) arXiv:2505.23785</description>
+<pw:authors>Cody Kommers, Drew Hemment, Maria Antoniak, J. Leibo, Hoyt Long, Emily Robinson, Adam Sobey</pw:authors>
 <pw:met>Maria Antoniak</pw:met>
 <pw:relationships>Maria Antoniak=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
