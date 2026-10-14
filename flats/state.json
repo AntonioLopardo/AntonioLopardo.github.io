@@ -515,8 +515,8 @@
   },
   "ff-86324817": {
    "date": "2026-10-14",
-   "label": "Viewing offered",
-   "note": "Viewing times offered."
+   "label": "Viewing booked",
+   "note": "Viewing agreed."
   },
   "ff-86446433": {
    "date": "2026-10-14",
@@ -535,8 +535,8 @@
   },
   "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": {
    "date": "2026-10-14",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "label": "Viewing offered",
+   "note": "Viewing times offered."
   },
   "ff-86452592": {
    "date": "2026-10-14",
@@ -559,5 +559,5 @@
    "note": "Listing taken offline."
   }
  },
- "updated": "2026-10-14T14:18:02.539Z"
+ "updated": "2026-10-14T14:25:02Z"
 }
