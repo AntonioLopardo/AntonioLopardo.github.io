@@ -464,7 +464,12 @@
    "date": "2026-10-14",
    "label": "Reply needed",
    "note": "Contact the tenant for a viewing."
+  },
+  "ff-86267028": {
+   "date": "2026-10-14",
+   "label": "Closed",
+   "note": "Listing taken offline."
   }
  },
- "updated": "2026-10-14T07:36:03Z"
+ "updated": "2026-10-14T08:16:37Z"
 }
