@@ -536,7 +536,22 @@
    "date": "2026-10-14",
    "label": "Sent",
    "note": "Enquiry sent."
+  },
+  "ff-86438644": {
+   "date": "2026-10-14",
+   "label": "Closed",
+   "note": "Listing taken offline."
+  },
+  "ff-86413207": {
+   "date": "2026-10-14",
+   "label": "Closed",
+   "note": "Listing taken offline."
+  },
+  "um-3-zimmer-wohnung-cf96ac1hm4": {
+   "date": "2026-10-14",
+   "label": "Closed",
+   "note": "Listing taken offline."
   }
  },
- "updated": "2026-10-14T13:46:25Z"
+ "updated": "2026-10-14T14:04:17Z"
 }
