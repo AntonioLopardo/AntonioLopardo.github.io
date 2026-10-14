@@ -210,7 +210,8 @@
   "ff-1744942": "2026-10-14",
   "ff-86447195": "2026-10-14",
   "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": "2026-10-14",
-  "ff-86452592": "2026-10-14"
+  "ff-86452592": "2026-10-14",
+  "ff-86411183": "2026-10-14"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -540,8 +541,8 @@
   },
   "ff-86452592": {
    "date": "2026-10-14",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "label": "Viewing booked",
+   "note": "Viewing booked."
   },
   "ff-86438644": {
    "date": "2026-10-14",
@@ -557,7 +558,12 @@
    "date": "2026-10-14",
    "label": "Closed",
    "note": "Listing taken offline."
+  },
+  "ff-86411183": {
+   "date": "2026-10-14",
+   "label": "Reply needed",
+   "note": "Call the agency for a viewing."
   }
  },
- "updated": "2026-10-14T14:31:05.018Z"
+ "updated": "2026-10-14T14:33:04Z"
 }
