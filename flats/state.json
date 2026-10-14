@@ -196,7 +196,8 @@
   "um-grosszugige-25-zimmer-wohnung-mit-balkon-in-basel-65-m-or-chf-1250-inkl-nk-cn4lpphdyk": "2026-10-12",
   "um-wohnug-oxtkqctkuo": "2026-10-13",
   "ff-86447839": "2026-10-13",
-  "ff-86333157": "2026-10-13"
+  "ff-86333157": "2026-10-13",
+  "ff-86400122": "2026-10-14"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -450,15 +451,20 @@
    "note": "Enquiry sent to the agency."
   },
   "ff-86447839": {
-   "date": "2026-10-13",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "date": "2026-10-14",
+   "label": "Reply needed",
+   "note": "Contact the tenant for a viewing."
   },
   "ff-86333157": {
    "date": "2026-10-13",
    "label": "Sent",
    "note": "Enquiry sent."
+  },
+  "ff-86400122": {
+   "date": "2026-10-14",
+   "label": "Reply needed",
+   "note": "Contact the tenant for a viewing."
   }
  },
- "updated": "2026-10-13T17:05:04Z"
+ "updated": "2026-10-14T07:36:03Z"
 }
