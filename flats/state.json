@@ -363,8 +363,8 @@
   },
   "um-zu-vermieten-2-zimmer-wohnung-vohc2xi951": {
    "date": "2026-10-14",
-   "label": "Waiting",
-   "note": "Viewing time proposed."
+   "label": "Viewing booked",
+   "note": "Viewing agreed."
   },
   "um-helle-2-zimmer-altbauwohnung-nahe-burgfelderplatzkannenfeldpark-s5ix8c3h66": {
    "date": "2026-10-07",
@@ -502,5 +502,5 @@
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T08:25:03Z"
+ "updated": "2026-10-14T09:26:40Z"
 }
