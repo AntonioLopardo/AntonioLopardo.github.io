@@ -199,7 +199,11 @@
   "ff-86333157": "2026-10-13",
   "ff-86400122": "2026-10-14",
   "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": "2026-10-14",
-  "ff-86324817": "2026-10-14"
+  "ff-86324817": "2026-10-14",
+  "ff-86446433": "2026-10-14",
+  "ff-1744942": "2026-10-14",
+  "ff-86447195": "2026-10-14",
+  "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": "2026-10-14"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -454,8 +458,8 @@
   },
   "ff-86447839": {
    "date": "2026-10-14",
-   "label": "Waiting",
-   "note": "Tenant contacted for a viewing."
+   "label": "Viewing offered",
+   "note": "Viewing arrangement in progress."
   },
   "ff-86333157": {
    "date": "2026-10-13",
@@ -479,8 +483,8 @@
   },
   "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": {
    "date": "2026-10-14",
-   "label": "Sent",
-   "note": "Registered for the viewing."
+   "label": "Viewing offered",
+   "note": "Viewing arrangement in progress."
   },
   "ff-86404299": {
    "date": "2026-10-14",
@@ -504,9 +508,29 @@
   },
   "ff-86324817": {
    "date": "2026-10-14",
+   "label": "Reply needed",
+   "note": "Viewing arrangement in progress."
+  },
+  "ff-86446433": {
+   "date": "2026-10-14",
+   "label": "Reply needed",
+   "note": "Viewing arrangement in progress."
+  },
+  "ff-1744942": {
+   "date": "2026-10-14",
+   "label": "Sent",
+   "note": "Enquiry sent."
+  },
+  "ff-86447195": {
+   "date": "2026-10-14",
+   "label": "Sent",
+   "note": "Enquiry sent."
+  },
+  "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": {
+   "date": "2026-10-14",
    "label": "Sent",
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T09:55:44Z"
+ "updated": "2026-10-14T10:01:56Z"
 }
