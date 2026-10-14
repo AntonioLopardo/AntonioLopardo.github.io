@@ -29,3 +29,6 @@ flats/**
 
 # private page shell, generated in the research vault
 atlas/**
+
+# EMNLP 2026 poster QR redirect
+emnlp26/**
