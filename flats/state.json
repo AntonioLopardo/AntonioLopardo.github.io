@@ -198,7 +198,8 @@
   "ff-86447839": "2026-10-13",
   "ff-86333157": "2026-10-13",
   "ff-86400122": "2026-10-14",
-  "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": "2026-10-14"
+  "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": "2026-10-14",
+  "ff-86324817": "2026-10-14"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -500,7 +501,12 @@
    "date": "2026-10-14",
    "label": "Waiting",
    "note": "Enquiry sent."
+  },
+  "ff-86324817": {
+   "date": "2026-10-14",
+   "label": "Sent",
+   "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T09:26:40Z"
+ "updated": "2026-10-14T09:55:44Z"
 }
