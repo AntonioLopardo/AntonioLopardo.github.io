@@ -232,9 +232,9 @@
    "note": "Viewing cancelled, new date pending."
   },
   "ff-86402625": {
-   "date": "2026-10-07",
-   "label": "Viewing",
-   "note": "Viewing fixed."
+   "date": "2026-10-14",
+   "label": "Viewed",
+   "note": "Viewed, landlord contact received."
   },
   "ff-86401732": {
    "date": "2026-10-02",
@@ -307,9 +307,9 @@
    "note": "Enquiry sent, waiting for a reply."
   },
   "um-nachmiete-gesucht-76em8oykt0": {
-   "date": "2026-10-08",
-   "label": "Sent",
-   "note": "Viewed, application sent to the management."
+   "date": "2026-10-14",
+   "label": "Applied",
+   "note": "Application sent, no answer yet."
   },
   "ff-84453322": {
    "date": "2026-10-11",
@@ -362,9 +362,9 @@
    "note": "Viewing offered, date to agree."
   },
   "um-zu-vermieten-2-zimmer-wohnung-vohc2xi951": {
-   "date": "2026-10-10",
-   "label": "Reply needed",
-   "note": "Viewing offered, time to agree."
+   "date": "2026-10-14",
+   "label": "Waiting",
+   "note": "Viewing time proposed."
   },
   "um-helle-2-zimmer-altbauwohnung-nahe-burgfelderplatzkannenfeldpark-s5ix8c3h66": {
    "date": "2026-10-07",
@@ -427,14 +427,14 @@
    "note": "Listing removed the same day."
   },
   "um-2-zi-whg-zur-untermiete-ffi3k0ho3l": {
-   "date": "2026-10-12",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "date": "2026-10-14",
+   "label": "Replied",
+   "note": "Questions answered."
   },
   "ff-86446252": {
-   "date": "2026-10-13",
+   "date": "2026-10-14",
    "label": "Viewing booked",
-   "note": "Registered for a viewing."
+   "note": "Viewing confirmed by the agency."
   },
   "um-grosszugige-25-zimmer-wohnung-mit-balkon-in-basel-65-m-or-chf-1250-inkl-nk-cn4lpphdyk": {
    "date": "2026-10-12",
@@ -453,8 +453,8 @@
   },
   "ff-86447839": {
    "date": "2026-10-14",
-   "label": "Reply needed",
-   "note": "Contact the tenant for a viewing."
+   "label": "Waiting",
+   "note": "Tenant contacted for a viewing."
   },
   "ff-86333157": {
    "date": "2026-10-13",
@@ -480,7 +480,27 @@
    "date": "2026-10-14",
    "label": "Sent",
    "note": "Registered for the viewing."
+  },
+  "ff-86404299": {
+   "date": "2026-10-14",
+   "label": "Closed",
+   "note": "No reply."
+  },
+  "um-2-zimmerwohung-pjqkntg60y": {
+   "date": "2026-10-14",
+   "label": "Waiting",
+   "note": "Enquiry sent."
+  },
+  "um-untermieterin-gesucht-elrzzlgj6q": {
+   "date": "2026-10-14",
+   "label": "Waiting",
+   "note": "Enquiry sent."
+  },
+  "ff-86311156": {
+   "date": "2026-10-14",
+   "label": "Waiting",
+   "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T08:24:07Z"
+ "updated": "2026-10-14T08:25:03Z"
 }
