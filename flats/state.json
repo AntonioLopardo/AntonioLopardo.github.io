@@ -458,8 +458,8 @@
   },
   "ff-86447839": {
    "date": "2026-10-14",
-   "label": "Viewing offered",
-   "note": "Viewing arrangement in progress."
+   "label": "Viewing booked",
+   "note": "Viewing agreed."
   },
   "ff-86333157": {
    "date": "2026-10-13",
@@ -483,8 +483,8 @@
   },
   "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": {
    "date": "2026-10-14",
-   "label": "Viewing offered",
-   "note": "Viewing arrangement in progress."
+   "label": "Viewing booked",
+   "note": "Viewing agreed."
   },
   "ff-86404299": {
    "date": "2026-10-14",
@@ -508,13 +508,13 @@
   },
   "ff-86324817": {
    "date": "2026-10-14",
-   "label": "Reply needed",
-   "note": "Viewing arrangement in progress."
+   "label": "Waiting",
+   "note": "Tenant contacted for a viewing."
   },
   "ff-86446433": {
    "date": "2026-10-14",
-   "label": "Reply needed",
-   "note": "Viewing arrangement in progress."
+   "label": "Waiting",
+   "note": "Tenant contacted for a viewing."
   },
   "ff-1744942": {
    "date": "2026-10-14",
@@ -532,5 +532,5 @@
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T10:01:56Z"
+ "updated": "2026-10-14T10:14:26Z"
 }
