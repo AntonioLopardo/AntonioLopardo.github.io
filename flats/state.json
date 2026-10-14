@@ -232,9 +232,9 @@
    "note": "Viewing missed, not pursuing."
   },
   "ff-86410772": {
-   "date": "2026-10-13",
-   "label": "Waiting",
-   "note": "Viewing cancelled, new date pending."
+   "date": "2026-10-14",
+   "label": "Closed",
+   "note": "Let to someone else."
   },
   "ff-86402625": {
    "date": "2026-10-14",
@@ -433,8 +433,8 @@
   },
   "um-2-zi-whg-zur-untermiete-ffi3k0ho3l": {
    "date": "2026-10-14",
-   "label": "Replied",
-   "note": "Questions answered."
+   "label": "Closed",
+   "note": "Registration not possible."
   },
   "ff-86446252": {
    "date": "2026-10-14",
@@ -508,8 +508,8 @@
   },
   "ff-86324817": {
    "date": "2026-10-14",
-   "label": "Waiting",
-   "note": "Tenant contacted for a viewing."
+   "label": "Viewing offered",
+   "note": "Viewing times offered."
   },
   "ff-86446433": {
    "date": "2026-10-14",
@@ -518,13 +518,13 @@
   },
   "ff-1744942": {
    "date": "2026-10-14",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "label": "Reply needed",
+   "note": "Call the tenant for a viewing."
   },
   "ff-86447195": {
    "date": "2026-10-14",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "label": "Waiting",
+   "note": "On the viewing interest list."
   },
   "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": {
    "date": "2026-10-14",
@@ -532,5 +532,5 @@
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T10:14:26Z"
+ "updated": "2026-10-14T13:14:00Z"
 }
