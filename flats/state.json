@@ -203,7 +203,8 @@
   "ff-86446433": "2026-10-14",
   "ff-1744942": "2026-10-14",
   "ff-86447195": "2026-10-14",
-  "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": "2026-10-14"
+  "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": "2026-10-14",
+  "ff-86452592": "2026-10-14"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -530,7 +531,12 @@
    "date": "2026-10-14",
    "label": "Sent",
    "note": "Enquiry sent."
+  },
+  "ff-86452592": {
+   "date": "2026-10-14",
+   "label": "Sent",
+   "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T13:42:22Z"
+ "updated": "2026-10-14T13:46:25Z"
 }
