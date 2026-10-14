@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Private</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fbfbfa;color:#121417;font:15px/1.45 system-ui,sans-serif}
+main{max-width:380px;padding:24px}
+h1{font-size:20px;margin:0 0 8px}
+p{color:#5f6570;margin:0 0 10px}
+input{width:100%;box-sizing:border-box;font:inherit;padding:8px;border:1px solid #121417;background:#fff;margin:0 0 10px;border-radius:6px}
+button{font:inherit;padding:7px 16px;border:1px solid #121417;background:#121417;color:#fbfbfa;cursor:pointer;border-radius:6px}
+#msg{color:#c0392b}
+@media (prefers-color-scheme:dark){body{background:#0f1012;color:#eceef0}p{color:#a0a6ae}input{background:#16181b;color:#eceef0;border-color:#eceef0}button{background:#eceef0;color:#0f1012;border-color:#eceef0}#msg{color:#ff8a7a}}
+</style></head>
+<body>
+<main>
+ <h1>Private page</h1>
+ <p id="msg"></p>
+ <div id="form" hidden>
+  <p>This page opens with a GitHub token that can read its data. The token is kept in this browser only.</p>
+  <input id="tok" type="password" autocomplete="off" placeholder="GitHub token">
+  <button id="go">Open</button>
+ </div>
+</main>
+<script>
+// Nothing about the page is in this file. With a token it fetches the real page from a private
+// repository and replaces itself with it; without one it shows the form above.
+(function () {
+  // The address fragment is handed over too, since replacing the document can drop it.
+  var GATE = { repo: "AntonioLopardo/site-private", dir: "desk", branch: "main", token: "", hash: location.hash };
+  var el = function (id) { return document.getElementById(id); };
+  function ask(text) { el("msg").textContent = text || ""; el("form").hidden = false; }
+  function load() {
+    try { GATE.token = localStorage.getItem("flatgh") || ""; } catch (e) { GATE.token = ""; }
+    if (!GATE.token) return ask("");
+    el("msg").textContent = "Opening…";
+    fetch("https://api.github.com/repos/" + GATE.repo + "/contents/" + GATE.dir + "/app.html?ref=" + GATE.branch + "&t=" + Date.now(),
+      { headers: { Authorization: "Bearer " + GATE.token, Accept: "application/vnd.github.raw" }, cache: "no-store" })
+      .then(function (r) {
+        if (r.ok) return r.text();
+        throw new Error(r.status === 401 ? "That token was rejected."
+          : r.status === 403 || r.status === 404 ? "This token cannot read the page data. Give it access to the private repository, then reload."
+          : "GitHub answered " + r.status + ".");
+      })
+      .then(function (html) {
+        // The app is written without the publish skeleton, so give it a doctype and a charset.
+        if (!/^\s*<!doctype/i.test(html)) html = '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex, nofollow">' + html;
+        window.__GATE = GATE; document.open(); document.write(html); document.close();
+      })
+      .catch(function (e) { ask(e.message); });
+  }
+  el("go").onclick = function () {
+    var t = el("tok").value.trim();
+    if (t) { try { localStorage.setItem("flatgh", t); } catch (e) {} }
+    load();
+  };
+  load();
+})();
+</script>
+</body></html>
