@@ -32,3 +32,6 @@ atlas/**
 
 # EMNLP 2026 poster QR redirect
 emnlp26/**
+
+# private page shell, generated in the research vault
+desk/**
