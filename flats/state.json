@@ -238,8 +238,8 @@
   },
   "ff-86402625": {
    "date": "2026-10-14",
-   "label": "Viewed",
-   "note": "Viewed, landlord contact received."
+   "label": "Closed",
+   "note": "Viewed, not applying."
   },
   "ff-86401732": {
    "date": "2026-10-02",
@@ -532,5 +532,5 @@
    "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-14T13:14:00Z"
+ "updated": "2026-10-14T13:42:22Z"
 }
