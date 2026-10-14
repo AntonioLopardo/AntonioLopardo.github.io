@@ -197,7 +197,8 @@
   "um-wohnug-oxtkqctkuo": "2026-10-13",
   "ff-86447839": "2026-10-13",
   "ff-86333157": "2026-10-13",
-  "ff-86400122": "2026-10-14"
+  "ff-86400122": "2026-10-14",
+  "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": "2026-10-14"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -462,8 +463,8 @@
   },
   "ff-86400122": {
    "date": "2026-10-14",
-   "label": "Reply needed",
-   "note": "Contact the tenant for a viewing."
+   "label": "Viewing booked",
+   "note": "Viewing booked with the tenant."
   },
   "ff-86267028": {
    "date": "2026-10-14",
@@ -474,7 +475,12 @@
    "date": "2026-10-14",
    "label": "Closed",
    "note": "Same flat as the Colmarerstrasse 49 agency listing."
+  },
+  "um-schone-2-zimmer-wohnung-ca-48m2-in-ruhigem-innenhof-mit-grosszugiger-lauben-terrasse-tmjfhtulq7": {
+   "date": "2026-10-14",
+   "label": "Sent",
+   "note": "Registered for the viewing."
   }
  },
- "updated": "2026-10-14T08:17:04Z"
+ "updated": "2026-10-14T08:24:07Z"
 }
