@@ -485,8 +485,8 @@
   },
   "ff-86400122": {
    "date": "2026-10-15",
-   "label": "Applied",
-   "note": "Documents sent to the tenant for a takeover."
+   "label": "Reply needed",
+   "note": "Apply via the online form."
   },
   "ff-86267028": {
    "date": "2026-10-14",
@@ -575,8 +575,8 @@
   },
   "ff-86455283": {
    "date": "2026-10-15",
-   "label": "Reply needed",
-   "note": "Book a viewing slot."
+   "label": "Viewing booked",
+   "note": "Viewing booked."
   },
   "ff-86456822": {
    "date": "2026-10-15",
@@ -589,5 +589,5 @@
    "note": "Not pursuing."
   }
  },
- "updated": "2026-10-15T17:26:10Z"
+ "updated": "2026-10-15T17:29:20Z"
 }
