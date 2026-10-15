@@ -280,9 +280,9 @@
    "note": "Viewing dates fully booked, treated as gone."
   },
   "ff-86395781": {
-   "date": "2026-10-12",
-   "label": "Viewing booked",
-   "note": "Viewing booked, application route known."
+   "date": "2026-10-15",
+   "label": "Viewed",
+   "note": "Viewed, applying."
   },
   "um-gemutliche-2-zimmer-wohnung-im-gundeli-zz9x0uvupg": {
    "date": "2026-10-13",
@@ -295,9 +295,9 @@
    "note": "Viewed, not applied."
   },
   "ff-86421355": {
-   "date": "2026-10-09",
-   "label": "Applied",
-   "note": "Application received by the agency."
+   "date": "2026-10-15",
+   "label": "Closed",
+   "note": "Application declined."
   },
   "ff-86421650": {
    "date": "2026-10-06",
@@ -375,9 +375,9 @@
    "note": "Viewing offered, date to agree."
   },
   "um-zu-vermieten-2-zimmer-wohnung-vohc2xi951": {
-   "date": "2026-10-14",
-   "label": "Viewing booked",
-   "note": "Viewing agreed."
+   "date": "2026-10-15",
+   "label": "Viewed",
+   "note": "Viewed."
   },
   "um-helle-2-zimmer-altbauwohnung-nahe-burgfelderplatzkannenfeldpark-s5ix8c3h66": {
    "date": "2026-10-07",
@@ -425,9 +425,9 @@
    "note": "Viewing date offered does not work, asking for another."
   },
   "um-15-zimmer-wohnung-per-sofort-verfugbar-0p3uupg3yc": {
-   "date": "2026-10-11",
-   "label": "Waiting",
-   "note": "Asked for a new viewing date."
+   "date": "2026-10-15",
+   "label": "Reply needed",
+   "note": "Viewing date to agree."
   },
   "ff-86159389": {
    "date": "2026-10-13",
@@ -475,9 +475,9 @@
    "note": "Enquiry sent."
   },
   "ff-86400122": {
-   "date": "2026-10-14",
-   "label": "Viewing booked",
-   "note": "Viewing booked with the tenant."
+   "date": "2026-10-15",
+   "label": "Viewed",
+   "note": "Viewed."
   },
   "ff-86267028": {
    "date": "2026-10-14",
@@ -515,9 +515,9 @@
    "note": "Enquiry sent."
   },
   "ff-86324817": {
-   "date": "2026-10-14",
-   "label": "Viewing booked",
-   "note": "Viewing agreed."
+   "date": "2026-10-15",
+   "label": "Viewed",
+   "note": "Viewed."
   },
   "ff-86446433": {
    "date": "2026-10-15",
@@ -535,9 +535,9 @@
    "note": "On the viewing interest list."
   },
   "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": {
-   "date": "2026-10-14",
-   "label": "Viewing booked",
-   "note": "Viewing agreed."
+   "date": "2026-10-15",
+   "label": "Viewed",
+   "note": "Viewed, applying."
   },
   "ff-86452592": {
    "date": "2026-10-14",
@@ -565,5 +565,5 @@
    "note": "Call the agency for a viewing."
   }
  },
- "updated": "2026-10-15T07:57:53Z"
+ "updated": "2026-10-15T16:03:30Z"
 }
