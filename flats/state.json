@@ -310,9 +310,9 @@
    "note": "Viewed, not applying."
   },
   "ff-86422112": {
-   "date": "2026-10-05",
-   "label": "Sent",
-   "note": "Enquiry sent, waiting for a reply."
+   "date": "2026-10-15",
+   "label": "Viewing booked",
+   "note": "Viewing booked."
   },
   "ff-86422113": {
    "date": "2026-10-05",
@@ -520,9 +520,9 @@
    "note": "Viewing agreed."
   },
   "ff-86446433": {
-   "date": "2026-10-14",
+   "date": "2026-10-15",
    "label": "Waiting",
-   "note": "Tenant contacted for a viewing."
+   "note": "Tenant will reply about a viewing."
   },
   "ff-1744942": {
    "date": "2026-10-14",
@@ -565,5 +565,5 @@
    "note": "Call the agency for a viewing."
   }
  },
- "updated": "2026-10-14T14:33:04Z"
+ "updated": "2026-10-15T07:57:53Z"
 }
