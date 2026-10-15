@@ -281,8 +281,8 @@
   },
   "ff-86395781": {
    "date": "2026-10-15",
-   "label": "Viewed",
-   "note": "Viewed, applying."
+   "label": "Applied",
+   "note": "Application received by the agency."
   },
   "um-gemutliche-2-zimmer-wohnung-im-gundeli-zz9x0uvupg": {
    "date": "2026-10-13",
@@ -565,5 +565,5 @@
    "note": "Call the agency for a viewing."
   }
  },
- "updated": "2026-10-15T16:03:30Z"
+ "updated": "2026-10-15T16:22:11Z"
 }
