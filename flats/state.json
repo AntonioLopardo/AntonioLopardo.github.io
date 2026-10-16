@@ -588,9 +588,9 @@
    "note": "Viewing booked."
   },
   "ff-86456822": {
-   "date": "2026-10-15",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "date": "2026-10-16",
+   "label": "Viewed",
+   "note": "Viewed."
   },
   "um-nachmieter-gesucht-uqnqwk3tur": {
    "date": "2026-10-15",
@@ -604,9 +604,9 @@
   },
   "ff-86454784": {
    "date": "2026-10-16",
-   "label": "Sent",
-   "note": "Enquiry sent."
+   "label": "Viewing booked",
+   "note": "Viewing booked."
   }
  },
- "updated": "2026-10-16T13:24:29.446Z"
+ "updated": "2026-10-16T15:26:43Z"
 }
