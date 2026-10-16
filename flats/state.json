@@ -220,7 +220,8 @@
   "ff-86452592": "2026-10-14",
   "ff-86411183": "2026-10-14",
   "ff-86455283": "2026-10-15",
-  "ff-86456822": "2026-10-15"
+  "ff-86456822": "2026-10-15",
+  "ff-86457370": "2026-10-15"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -484,9 +485,9 @@
    "note": "Enquiry sent."
   },
   "ff-86400122": {
-   "date": "2026-10-15",
-   "label": "Reply needed",
-   "note": "Apply via the online form."
+   "date": "2026-10-16",
+   "label": "Applied",
+   "note": "Application received by the agency."
   },
   "ff-86267028": {
    "date": "2026-10-14",
@@ -544,9 +545,9 @@
    "note": "On the viewing interest list."
   },
   "um-2-zi-wohnung-in-der-breite-per-112-oder-nach-vereinbarung-0rfep4fky9": {
-   "date": "2026-10-15",
+   "date": "2026-10-16",
    "label": "Applied",
-   "note": "Application form sent."
+   "note": "Application received by the agency."
   },
   "ff-86452592": {
    "date": "2026-10-14",
@@ -587,7 +588,12 @@
    "date": "2026-10-15",
    "label": "Closed",
    "note": "Not pursuing."
+  },
+  "ff-86457370": {
+   "date": "2026-10-16",
+   "label": "Viewing offered",
+   "note": "Viewing time offered."
   }
  },
- "updated": "2026-10-15T20:24:42Z"
+ "updated": "2026-10-16T11:15:18Z"
 }
