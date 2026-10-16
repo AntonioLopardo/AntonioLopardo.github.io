@@ -225,7 +225,8 @@
   "ff-86455283": "2026-10-15",
   "ff-86456822": "2026-10-15",
   "ff-86457370": "2026-10-15",
-  "um-charmante-2-zimmer-wohnung-in-4056-basel-revintmtjc": "2026-10-16"
+  "um-charmante-2-zimmer-wohnung-in-4056-basel-revintmtjc": "2026-10-16",
+  "ff-86454784": "2026-10-16"
  },
  "status": {
   "um-nachmieterin-fur-2-zimmer-wohnung-gesucht-fb0dxqvz2z": {
@@ -597,7 +598,12 @@
    "date": "2026-10-16",
    "label": "Viewing booked",
    "note": "Viewing agreed."
+  },
+  "ff-86454784": {
+   "date": "2026-10-16",
+   "label": "Sent",
+   "note": "Enquiry sent."
   }
  },
- "updated": "2026-10-16T13:18:29.741Z"
+ "updated": "2026-10-16T13:22:45Z"
 }
