@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 18 Oct 2026 04:07:36 +0000</lastBuildDate>
+<lastBuildDate>Mon, 19 Oct 2026 04:14:10 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -653,6 +653,19 @@
 <pw:authors>G. Ramponi, Pavel Kolev, O. Pietquin, Niao He, Mathieu Laurière, M. Geist</pw:authors>
 <pw:met>Giorgia Ramponi</pw:met>
 <pw:relationships>Giorgia Ramponi=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Electronic Preprint for Journal of Information Processing Vol.20 No.2 Joint Phrase Alignment and Extraction for Statistical Machine Translation</title>
+<link>https://www.semanticscholar.org/paper/41675d91ad815f64b0df382c0944247811a62cc9</link>
+<guid isPermaLink="false">41675d91ad815f64b0df382c0944247811a62cc9</guid>
+<description>By Graham Neubig, Taro Watanabe, E. Sumita, Shinsuke Mori, Tatsuya Kawahara. . (Met: Graham Neubig)</description>
+<pw:authors>Graham Neubig, Taro Watanabe, E. Sumita, Shinsuke Mori, Tatsuya Kawahara</pw:authors>
+<pw:met>Graham Neubig</pw:met>
+<pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -16944,20 +16957,6 @@
 <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>NaturalBench: Evaluating Vision-Language Models on Natural Adversarial Samples</title>
-<link>https://www.semanticscholar.org/paper/cc5f0c6e92ec9d37fba3f52defa3efe04fdb08d0</link>
-<guid isPermaLink="false">cc5f0c6e92ec9d37fba3f52defa3efe04fdb08d0</guid>
-<description>By Baiqi Li, Zhiqiu Lin, Wen-Hsiao Peng, Jean de Dieu Nyandwi, Daniel Jiang, Zixian Ma, Simran Khanuja, Ranjay Krishna, Graham Neubig, D. Ramanan. Neural Information Processing Systems. (Met: Graham Neubig) arXiv:2410.14669</description>
-<pw:authors>Baiqi Li, Zhiqiu Lin, Wen-Hsiao Peng, Jean de Dieu Nyandwi, Daniel Jiang, Zixian Ma, Simran Khanuja, Ranjay Krishna, Graham Neubig, D. Ramanan</pw:authors>
-<pw:met>Graham Neubig</pw:met>
-<pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
-<pw:arxiv>2410.14669</pw:arxiv>
-<pw:date>2024-10-18</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Efficiently Computing Susceptibility to Context in Language Models</title>
 <link>https://www.semanticscholar.org/paper/8580e3ef90b8057ba7e582280e4d04deeb5a71bb</link>
 <guid isPermaLink="false">8580e3ef90b8057ba7e582280e4d04deeb5a71bb</guid>
@@ -22799,8 +22798,8 @@
 <title>Estimation of Short-Term Online Taxi Travel Time Based on Neural Network</title>
 <link>https://www.semanticscholar.org/paper/e5872f4d3d067e0f89e7d394784532135ada85ce</link>
 <guid isPermaLink="false">e5872f4d3d067e0f89e7d394784532135ada85ce</guid>
-<description>By L. Fu, Jian-Bo Li, Zhiqiang Lv, Yunyao Li, Qing Lin. Wireless Algorithms, Systems, and Applications. (Met: Yunyao Li)</description>
-<pw:authors>L. Fu, Jian-Bo Li, Zhiqiang Lv, Yunyao Li, Qing Lin</pw:authors>
+<description>By L. Fu, Jian-Bo Li, Zhi-Qiang Lv, Yunyao Li, Qing Lin. Wireless Algorithms, Systems, and Applications. (Met: Yunyao Li)</description>
+<pw:authors>L. Fu, Jian-Bo Li, Zhi-Qiang Lv, Yunyao Li, Qing Lin</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>Wireless Algorithms, Systems, and Applications</pw:venue>
