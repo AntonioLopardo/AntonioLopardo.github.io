@@ -49,7 +49,7 @@ ninja.data = [{
         
           title: 'What is Homomorphic Encryption? — OpenMined <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "This post is part of our Privacy-Preserving Data Science, Explained series.",
+        description: "Homomorphic encryption lets you compute on data while it stays encrypted. A plain-language introduction to how it works and how it protects data and models.",
         section: "Posts",
         handler: () => {
           
@@ -60,7 +60,7 @@ ninja.data = [{
         
           title: 'What is Secure Multi-Party Computation? — OpenMined <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "This post is part of our Privacy-Preserving Data Science, Explained series.",
+        description: "Secure multi-party computation splits data into shares so several parties can compute on it together while none of them sees it. An introduction with examples.",
         section: "Posts",
         handler: () => {
           
@@ -71,7 +71,7 @@ ninja.data = [{
         
           title: 'What is Federated Learning? — OpenMined <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "This post is part of our Privacy-Preserving Data Science, Explained series.",
+        description: "What federated learning is, when to use it, and how it trains a model without pooling data. Code examples use an early PySyft version, now deprecated.",
         section: "Posts",
         handler: () => {
           
