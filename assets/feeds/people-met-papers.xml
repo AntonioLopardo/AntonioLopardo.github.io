@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sat, 31 Oct 2026 04:05:24 +0000</lastBuildDate>
+<lastBuildDate>Sun, 01 Nov 2026 04:04:14 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -5077,8 +5077,8 @@
 <title>OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks</title>
 <link>https://www.semanticscholar.org/paper/91522113ac6b81e4b6acdab8a8e612557d53449c</link>
 <guid isPermaLink="false">91522113ac6b81e4b6acdab8a8e612557d53449c</guid>
-<description>By Meng-Qi Yuan, Zilong Zhou, Xin-Zhuang Xiong, Wei-Ming Wu, Jia-Yan Sun, Jiamin Song, Kai-Qian Cui, Bowen Wang, Hao-Yuan Wu, Yitong Li et al.. arXiv.org. (Met: Yu Su) arXiv:2606.29537</description>
-<pw:authors>Meng-Qi Yuan, Zilong Zhou, Xin-Zhuang Xiong, Wei-Ming Wu, Jia-Yan Sun, Jiamin Song, Kai-Qian Cui, Bowen Wang, Hao-Yuan Wu, Yitong Li et al.</pw:authors>
+<description>By Meng-Qi Yuan, Zilong Zhou, Xin-Zhuang Xiong, Wei-Ming Wu, Jia-Yan Sun, Jiamin Song, Kai-Qian Cui, Bowen Wang, Hao-Yuan Wu, Yi-Tong Li et al.. arXiv.org. (Met: Yu Su) arXiv:2606.29537</description>
+<pw:authors>Meng-Qi Yuan, Zilong Zhou, Xin-Zhuang Xiong, Wei-Ming Wu, Jia-Yan Sun, Jiamin Song, Kai-Qian Cui, Bowen Wang, Hao-Yuan Wu, Yi-Tong Li et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -6379,8 +6379,8 @@
 <title>Soohak: A Mathematician-Curated Benchmark for Evaluating Research-level Math Capabilities of LLMs</title>
 <link>https://www.semanticscholar.org/paper/1a7caaadadc1c92f6da77c76d89dddcd93091e9a</link>
 <guid isPermaLink="false">1a7caaadadc1c92f6da77c76d89dddcd93091e9a</guid>
-<description>By Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Longxia Jiang, Jinhyuk Yun, Jungyup Lee, Kyungmin Lee et al.. arXiv.org. (Met: Graham Neubig) arXiv:2605.09063</description>
-<pw:authors>Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Longxia Jiang, Jinhyuk Yun, Jungyup Lee, Kyungmin Lee et al.</pw:authors>
+<description>By Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Long-Xia Jiang, Jinhyuk Yun, Jungyup Lee, Kyungmin Lee et al.. arXiv.org. (Met: Graham Neubig) arXiv:2605.09063</description>
+<pw:authors>Guijin Son, Seungone Kim, Catherine Arnett, Hyunwoo Ko, Hyein Lee, Hyeonah Kang, Long-Xia Jiang, Jinhyuk Yun, Jungyup Lee, Kyungmin Lee et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -15381,8 +15381,8 @@
 <title>Towards Understanding Graphical Perception in Large Multimodal Models</title>
 <link>https://www.semanticscholar.org/paper/dc23a07b148d74d85dfd953d79248878744723d4</link>
 <guid isPermaLink="false">dc23a07b148d74d85dfd953d79248878744723d4</guid>
-<description>By Kai Zhang, Jian-Wei Yang, J. Inala, C. Singh, Jian-Feng Gao, Yu Su, Chenglong Wang. arXiv.org. (Met: Yu Su) arXiv:2503.10857</description>
-<pw:authors>Kai Zhang, Jian-Wei Yang, J. Inala, C. Singh, Jian-Feng Gao, Yu Su, Chenglong Wang</pw:authors>
+<description>By Kai Zhang, Jian-Wei Yang, J. Inala, C. Singh, Jian-Feng Gao, Yu Su, Cheng-Long Wang. arXiv.org. (Met: Yu Su) arXiv:2503.10857</description>
+<pw:authors>Kai Zhang, Jian-Wei Yang, J. Inala, C. Singh, Jian-Feng Gao, Yu Su, Cheng-Long Wang</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -18514,20 +18514,6 @@
 <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>NIMBA: Towards Robust and Principled Processing of Point Clouds With SSMs</title>
-<link>https://www.semanticscholar.org/paper/5bf89a79cb1d24f4a4c8a8d8136871072fa8242a</link>
-<guid isPermaLink="false">5bf89a79cb1d24f4a4c8a8d8136871072fa8242a</guid>
-<description>By Nursena Köprücü, Destiny Okpekpe, Antonio Orvieto. arXiv.org. (Met: Antonio Orvieto) arXiv:2411.00151</description>
-<pw:authors>Nursena Köprücü, Destiny Okpekpe, Antonio Orvieto</pw:authors>
-<pw:met>Antonio Orvieto</pw:met>
-<pw:relationships>Antonio Orvieto=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2411.00151</pw:arxiv>
-<pw:date>2024-10-31</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>LingGen: Scalable Multi-Attribute Linguistic Control via Power-Law Masking</title>
 <link>https://www.semanticscholar.org/paper/1caa5d5b4b66e22b9d88eb4c1adededfa410c549</link>
 <guid isPermaLink="false">1caa5d5b4b66e22b9d88eb4c1adededfa410c549</guid>
@@ -21079,8 +21065,8 @@
 <title>StorySparkQA: Expert-Annotated QA Pairs with Real-World Knowledge for Children’s Story-Based Learning</title>
 <link>https://www.semanticscholar.org/paper/384dd8509978e62cb9ada1279733de01fafeec47</link>
 <guid isPermaLink="false">384dd8509978e62cb9ada1279733de01fafeec47</guid>
-<description>By Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuan-Zhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Da-Kuo Wang, Yuling Sun. Conference on Empirical Methods in Natural Language Processing. (Met: Yunyao Li) arXiv:2311.09756</description>
-<pw:authors>Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuan-Zhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Da-Kuo Wang, Yuling Sun</pw:authors>
+<description>By Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuan-Zhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Da-Kuo Wang, Yu-Ling Sun. Conference on Empirical Methods in Natural Language Processing. (Met: Yunyao Li) arXiv:2311.09756</description>
+<pw:authors>Jiaju Chen, Yuxuan Lu, Shao Zhang, Bingsheng Yao, Yuan-Zhe Dong, Ying Xu, Yunyao Li, Qianwen Wang, Da-Kuo Wang, Yu-Ling Sun</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
