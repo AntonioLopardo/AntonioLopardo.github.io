@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Bob Dylan Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: head with faces across the decades, then the wall (a sideways-scrolling row of year columns:
+   covers on top, photos of key moments below, era band along the floor), then the chronology:
+   music | year spine | life, line-ups & world, grouped by era with portraits of the people. */
+/* Single dark look on purpose: warm record-sleeve black so covers and photos carry the colour. */
+:root{
+  --bg:#0d0c0b; --panel:#161412; --ink:#f3efe7; --sub:#b3aca1; --dim:#7b746a; --line:#2b2723; --shade:rgba(0,0,0,.6);
+  --life:#f08cba; --stage:#86b4ff; --world:#9c968c; --award:#e8c45c; --screen:#bc9ff4; --fav:#ff6b81;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --fs-xs:11px; --fs-s:13px; --fs-m:15px; --fs-l:19px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:var(--fs-m);line-height:1.5}
+a{color:inherit}
+button{font:inherit;color:inherit}
+img{display:block}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* head */
+header .wrap{padding-block:36px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:end}
+.title{display:grid;gap:8px;min-width:0}
+.eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
+h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(44px,8vw,88px);line-height:.92;letter-spacing:-.035em}
+.facts{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--sub);font-size:var(--fs-s)}
+.facts b{color:var(--ink);font-weight:600}
+.faces{display:flex;gap:8px}
+.faces figure{margin:0;display:grid;gap:4px}
+.faces img{width:112px;height:140px;object-fit:cover;object-position:50% 25%;border-radius:4px;filter:grayscale(.35);box-shadow:0 4px 14px var(--shade)}
+.faces figcaption{font-family:var(--mono);font-size:10.5px;color:var(--sub);text-align:center}
+
+/* wall */
+.wall-frame{background:var(--panel);border-block:1px solid var(--line);overflow:hidden}
+.wall-bar{display:flex;align-items:center;gap:8px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.era-chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.era-chips::-webkit-scrollbar{display:none}
+.era-chip{border:0;border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600;white-space:nowrap;cursor:pointer;background:var(--c);color:var(--t)}
+.era-chip:hover{filter:brightness(1.08)}
+.nav{border:1px solid var(--line);background:var(--panel);width:32px;height:32px;border-radius:50%;cursor:pointer;flex:none;display:grid;place-items:center}
+.nav:hover{background:var(--bg)}
+.nav svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2}
+.wall-wrap{position:relative}
+.wall-wrap::before,.wall-wrap::after{content:"";position:absolute;top:0;bottom:0;width:28px;z-index:2;pointer-events:none}
+.wall-wrap::before{left:0;background:linear-gradient(90deg,var(--panel),transparent)}
+.wall-wrap::after{right:0;background:linear-gradient(-90deg,var(--panel),transparent)}
+.wall{display:flex;overflow-x:auto;overscroll-behavior-x:contain;padding-left:max(16px,env(safe-area-inset-left,0px))}
+.wcol{flex:none;display:grid;grid-template-rows:40px 196px 196px 30px;padding:0 10px}
+.wcol .wy{align-self:end;justify-self:start;border:0;background:none;padding:0 0 6px;font-family:var(--display);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums;cursor:pointer;letter-spacing:-.01em}
+.wcol .wy:hover{text-decoration:underline}
+.wcol.gap .wy{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--dim);cursor:default;text-decoration:none;writing-mode:vertical-rl;transform:rotate(180deg);padding:0;align-self:center;justify-self:center}
+.wcol.gap{grid-template-rows:40px 392px 30px;padding:0 4px}
+.wmusic{display:flex;align-items:flex-end;gap:10px}
+.wmusic a{display:block;text-decoration:none;transition:transform .15s}
+.wmusic a:hover{transform:translateY(-4px)}
+.wmusic img{object-fit:cover;border-radius:2px;box-shadow:0 6px 16px var(--shade)}
+.wmusic .e img{width:180px;height:180px}
+.wmusic .g img{width:136px;height:136px}
+.wmusic .d img{width:88px;height:88px;opacity:.7}
+.wmusic .s img{width:100px;height:100px;border-radius:50%}
+.wlife{display:flex;gap:10px;align-items:flex-start;padding-top:14px}
+.wcard{width:164px;text-decoration:none;display:grid;gap:6px}
+.wcard img{width:164px;height:112px;object-fit:cover;border-radius:6px}
+.wcard span{font-size:12px;line-height:1.25;color:var(--sub);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.wcard:hover span{color:var(--ink)}
+.wcard i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:4px;transform:translateY(-1px)}
+.wband{background:var(--era);margin:0 -10px;position:relative}
+.wcol.gap .wband{margin:0 -4px}
+.wband span{position:absolute;left:9px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--t);z-index:1}
+.wall-legend{display:flex;flex-wrap:wrap;gap:4px 16px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:26px 6px}
+.controls .lbl{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--panel);padding:5px 12px;border-radius:999px;font-size:var(--fs-s);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chip i{width:8px;height:8px;border-radius:50%}
+.chip[aria-pressed="false"]{opacity:.45}
+.chip.ess[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);opacity:1}
+.chip.ess[aria-pressed="false"]{opacity:1}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--sub);font-size:var(--fs-s);align-items:center}
+
+/* chronology */
+.cols-head{display:grid;grid-template-columns:minmax(0,1.2fr) 76px minmax(0,1fr);gap:0 20px;padding-top:10px;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.cols-head span:last-child{grid-column:3}
+.era{padding-top:28px}
+.era-head{border-radius:12px;padding:20px 22px;background:color-mix(in srgb,var(--era) 18%,var(--panel));border:1px solid color-mix(in srgb,var(--era) 45%,var(--line));display:grid;gap:8px;scroll-margin-top:16px}
+.era-head{position:relative}
+.era-tog{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:8px;border:1px solid color-mix(in srgb,var(--era) 50%,var(--line));background:var(--panel);border-radius:999px;padding:5px 12px 5px 14px;font-size:12px;font-weight:600;cursor:pointer}
+.era-tog:hover{background:color-mix(in srgb,var(--era) 25%,var(--panel))}
+.era-tog svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.4;transition:transform .2s}
+.era.closed .era-tog svg{transform:rotate(180deg)}
+.era.closed .yr{display:none}
+.era.closed .era-head p,.era.closed .era-head .who{display:none}
+.era.closed .era-head{padding-block:16px;cursor:pointer}
+.era-sum{display:none;text-transform:none;letter-spacing:0}
+.era.closed .era-sum{display:inline}
+.era-head h2{padding-right:120px}
+.era-head .yrs{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.era-head h2{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,38px);letter-spacing:-.025em;line-height:1;text-wrap:balance}
+.era-head p{margin:0;max-width:72ch}
+.who{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:6px}
+.who figure{margin:0;display:flex;align-items:center;gap:8px}
+.who img,.who .ph{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:50% 25%;flex:none;background:var(--line)}
+.who .ph{display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:14px;color:var(--sub)}
+.who figcaption{display:grid;line-height:1.2;font-size:13px;font-weight:600}
+.who figcaption small{font-weight:400;color:var(--sub);font-size:11.5px}
+.yr{display:grid;grid-template-columns:minmax(0,1.2fr) 76px minmax(0,1fr);gap:0 20px;scroll-margin-top:12px}
+.yr .spine{position:relative;display:flex;justify-content:center}
+.yr .spine::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--line)}
+.yr .spine b{position:sticky;top:10px;align-self:start;margin-top:16px;background:var(--bg);padding:2px 4px;font-family:var(--display);font-weight:800;font-size:var(--fs-l);font-variant-numeric:tabular-nums;z-index:1}
+.col{display:grid;gap:12px;align-content:start;padding-block:16px;min-width:0}
+
+.album{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;scroll-margin-top:16px}
+.album:target,.single:target,.ev:target{box-shadow:0 0 0 2px var(--era)}
+.album .art img,.album .art .cover{width:300px;height:300px;object-fit:cover;border-radius:3px;box-shadow:0 8px 20px var(--shade)}
+.album .meta{display:grid;gap:4px;align-content:start;min-width:0}
+.album .type{font-family:var(--mono);font-size:var(--fs-xs);color:var(--sub)}
+.album h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(19px,2.4vw,23px);letter-spacing:-.015em;line-height:1.12;text-wrap:balance}
+.album p{margin:2px 0 0;color:var(--sub);font-size:var(--fs-s)}
+.album .tracks{grid-column:1/-1}
+.tier{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;justify-self:start;color:var(--dim)}
+.tier.e{color:var(--ink);font-weight:500}
+.tier.e::before{content:"●  ";color:var(--era)}
+.album.d{grid-template-columns:160px minmax(0,1fr);padding:14px;background:transparent}
+.album.d .art img,.album.d .art .cover{width:160px;height:160px}
+.album.d h3{font-size:var(--fs-m)}
+.cover{display:flex;flex-direction:column;justify-content:space-between;padding:8%}
+.cover .ct{font-family:var(--display);font-weight:800;line-height:1;font-size:14px}
+
+.single{border:1px dashed var(--line);border-radius:10px;padding:14px;display:grid;grid-template-columns:160px minmax(0,1fr);gap:4px 18px;scroll-margin-top:16px}
+.single img{width:160px;height:160px;border-radius:50%;object-fit:cover;grid-row:span 3;box-shadow:0 4px 12px var(--shade)}
+.single .type{font-family:var(--mono);font-size:var(--fs-xs);color:var(--sub)}
+.single h3{margin:0;font-family:var(--display);font-weight:700;font-size:var(--fs-l)}
+.single p{margin:0;color:var(--sub);font-size:var(--fs-s)}
+.single .tracks{grid-column:1/-1}
+
+.tracks{display:grid;gap:2px;margin-top:4px;border-top:1px solid var(--line);padding-top:8px}
+/* favourites */
+.favwrap{padding-bottom:18px}
+.favs{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.favs>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px 14px;padding:12px 16px;flex-wrap:wrap}
+.favs>summary::-webkit-details-marker{display:none}
+.favs .h{font-family:var(--display);font-weight:700;font-size:19px;display:flex;align-items:center;gap:8px}
+.favs .h svg{width:18px;height:18px;fill:var(--fav)}
+.favs .cnt{color:var(--sub);font-size:var(--fs-s)}
+.favs .thumbs{display:flex;gap:4px;margin-left:auto;min-width:0;overflow:hidden}
+.favs .thumbs img{width:36px;height:36px;object-fit:cover;border-radius:2px;flex:none}
+.favs .chev{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;transition:transform .2s}
+.favs .chev svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.4}
+.favs[open] .chev{transform:rotate(180deg)}
+.favbody{padding:0 16px 16px;display:grid;gap:16px;border-top:1px solid var(--line)}
+.favnote{font-size:12px;color:var(--dim);padding-top:10px}
+.favh{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.favgrid{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px}
+.favalb{flex:none;width:140px;display:grid;gap:5px;text-decoration:none}
+.favalb img,.favalb .cover{width:140px;height:140px;object-fit:cover;border-radius:3px;box-shadow:0 6px 16px var(--shade)}
+.favalb b{font-size:13px;line-height:1.2}
+.favalb span{font-size:11.5px;color:var(--sub)}
+.favalb:hover b{text-decoration:underline}
+.favsongs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:0 28px}
+.favsongs li{display:grid;grid-template-columns:auto 40px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.favsongs li img,.favsongs li .noimg{width:40px;height:40px;object-fit:cover;border-radius:2px;background:var(--line)}
+.favsongs .go{text-decoration:none;font-weight:600;font-size:14px;display:block;line-height:1.25}
+.favsongs .go:hover{text-decoration:underline}
+.favsongs .ctx{display:block;font-size:12px;color:var(--sub)}
+.favsongs .sp{font-family:var(--mono);font-size:11px;color:var(--dim);text-decoration:none;white-space:nowrap}
+.favsongs .sp:hover{color:var(--ink)}
+.favempty{color:var(--sub);font-size:var(--fs-s);padding-top:12px}
+.fav{border:0;background:none;padding:3px;cursor:pointer;color:var(--dim);display:inline-grid;place-items:center;border-radius:50%}
+.fav svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2}
+.fav:hover{color:var(--ink)}
+.fav[aria-pressed="true"]{color:var(--fav)}
+.fav[aria-pressed="true"] svg{fill:currentColor}
+.fav.lab{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 11px 3px 8px;font-size:12px;color:var(--sub)}
+.fav.lab svg{width:14px;height:14px}
+.fav.lab[aria-pressed="true"]{border-color:var(--fav);color:var(--fav)}
+.tierrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%{box-shadow:0 0 0 3px var(--fav)}100%{box-shadow:0 0 0 3px transparent}}
+.tr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 8px;align-items:baseline;padding:3px 0;font-size:var(--fs-s)}
+.tr a{text-decoration:none;font-weight:600}
+.tr a:hover{text-decoration:underline}
+.tr .note{grid-column:2/-1;color:var(--sub);line-height:1.4}
+.tracks .th,.full summary{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.full{grid-column:1/-1;border-top:1px solid var(--line);padding-top:10px}
+.full summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;color:var(--ink);padding:4px 0}
+.full summary::-webkit-details-marker{display:none}
+.full summary::before{content:"+";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);font-size:14px;letter-spacing:0;color:var(--ink)}
+.full[open] summary::before{content:"−"}
+.full summary span{color:var(--dim);text-transform:none;letter-spacing:0}
+.full summary:hover::before{background:var(--line)}
+.full ol{list-style:none;margin:8px 0 0;padding:0;display:grid}
+.full li{display:grid;grid-template-columns:24px 24px minmax(0,1fr) auto 44px;gap:8px;align-items:baseline;padding:4px 0;font-size:var(--fs-s);border-bottom:1px solid color-mix(in srgb,var(--line) 55%,transparent)}
+.full li a{text-decoration:none;color:var(--sub)}
+.full li a:hover{text-decoration:underline;color:var(--ink)}
+.full li.key a{color:var(--ink);font-weight:600}
+.full .no,.full .dur{font-family:var(--mono);font-size:11px;color:var(--dim);font-variant-numeric:tabular-nums}
+.full .no{text-align:right}
+.full .dur{text-align:right}
+.full li.med{display:block;border:0;padding:12px 0 2px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--era)}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.04em;padding:1px 7px;border-radius:3px;white-space:nowrap}
+.tag.k{color:var(--sub);border:1px solid var(--line)}
+.tag.m{background:var(--ink);color:var(--bg)}
+
+.ev{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;font-size:var(--fs-s);scroll-margin-top:16px}
+.ev.pic{gap:8px;margin-bottom:6px}
+.ev.pic img{width:100%;max-width:100%;height:clamp(200px,24vw,330px);object-fit:cover;object-position:50% 30%;border-radius:8px;box-shadow:0 8px 22px var(--shade)}
+.ev.world.pic{grid-template-columns:200px minmax(0,1fr);gap:6px 16px;align-items:start;margin-bottom:0}
+.ev.world.pic img{width:200px;height:134px;aspect-ratio:auto;grid-row:span 2;filter:grayscale(1);opacity:.8;box-shadow:none}
+.ev .kind{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.ev .when{font-family:var(--mono);font-size:11px;color:var(--dim);margin-left:8px;letter-spacing:0;text-transform:none}
+.ev.world .txt{color:var(--sub);font-style:italic}
+.ev .tracks{grid-column:1/-1}
+
+footer{color:var(--dim);font-size:var(--fs-xs);padding-block:40px 60px}
+footer p{margin:0 0 4px;max-width:90ch}
+.credits{margin-top:14px}
+.credits summary{cursor:pointer;color:var(--sub)}
+.credits ul{columns:3 220px;column-gap:24px;padding-left:16px;margin:8px 0 0}
+.credits li{break-inside:avoid;margin-bottom:2px}
+.credits a{color:var(--sub)}
+
+@media (max-width:1100px){ .album{grid-template-columns:220px minmax(0,1fr)} .album .art img,.album .art .cover{width:220px;height:220px} .ev.world.pic{grid-template-columns:140px minmax(0,1fr)} .ev.world.pic img{width:140px;height:94px} }
+@media (max-width:900px){ header .wrap{grid-template-columns:1fr} .faces{overflow-x:auto} .faces img{width:88px;height:110px} }
+@media (max-width:760px){
+  .cols-head{display:none}
+  .yr{grid-template-columns:1fr;gap:0}
+  .yr .spine{justify-content:flex-start;order:-1}
+  .yr .spine::before{display:none}
+  .yr .spine b{position:static;margin-top:18px;padding:0;font-size:24px}
+  .col{padding-block:8px}
+  .col:empty{display:none}
+  .album{grid-template-columns:1fr}
+  .album .art img,.album .art .cover{width:100%;height:auto;aspect-ratio:1;max-width:480px}
+  .album.d{grid-template-columns:120px minmax(0,1fr)}
+  .album.d .art img,.album.d .art .cover{width:120px;height:120px}
+  .single{grid-template-columns:110px minmax(0,1fr)} .single img{width:110px;height:110px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.wmusic a{transition:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap" id="head"></div></header>
+<section class="wrap favwrap" aria-label="My favourites"><details class="favs" id="favs"><summary id="favsum"></summary><div class="favbody" id="favbody"></div></details></section>
+<main>
+  <section class="wall-frame" aria-label="Career wall">
+    <div class="wall-bar"><div class="era-chips" id="erachips"></div>
+      <button class="nav" id="prev" aria-label="Scroll back in time"><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5"/></svg></button>
+      <button class="nav" id="next" aria-label="Scroll forward in time"><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"/></svg></button></div>
+    <div class="wall-wrap"><div class="wall" id="wall"></div></div>
+    <div class="wall-legend">Bigger covers are the essentials. Round ones are singles. Click a cover, photo or year to jump to it below.</div>
+  </section>
+  <div class="wrap">
+  <div class="controls" id="controls"></div>
+  <div class="legend" id="legend"></div>
+  <div class="cols-head"><span>Albums & songs</span><span></span><span>Life, line-ups & the world</span></div>
+  <div id="chrono"></div>
+  </div>
+</main>
+<footer class="wrap" id="foot"></footer>
+
+<script>
+/* ================= ARTIST DATA (one block per artist; the template below is shared) ================= */
+const ARTIST = {
+  slug:"bob-dylan",
+  name:"Bob Dylan",
+  search:"Bob Dylan",
+  facts:["Born Robert Allen Zimmerman, Duluth, Minnesota, <b>1941</b>","<b>39</b> studio albums","Recording <b>1961–today</b>","Nobel Prize in Literature <b>2016</b>"],
+  faces:["1963","1975","1978","1984","2012"],
+  wallFrom:1959,
+  eras:[
+    {id:"prelude",name:"Hibbing to Minneapolis",from:1941,to:1960,color:"#a48a66",
+     sound:"Before the records. A small-town kid hooked on Little Richard and Hank Williams, then on folk and Woody Guthrie.",
+     people:[["Little Richard","teen idol"],["Woody Guthrie","the hero"]]},
+    {id:"folk",name:"Folk Prophet",from:1961,to:1964,color:"#d9b23f",
+     sound:"One man, acoustic guitar, harmonica rack. Guthrie-style talking blues turn into protest anthems, then into something more personal.",
+     people:[["Joan Baez","duets, partner"],["Suze Rotolo","girlfriend, album cover"],["Pete Seeger","folk elder"],["John Hammond","signed him"],["Tom Wilson","producer"]]},
+    {id:"electric",name:"Going Electric",from:1965,to:1966,color:"#ee6a3a",
+     sound:"Full rock band, organ and electric guitar, long surreal lyrics. He later called it “that thin, that wild mercury sound.” Folk purists boo.",
+     people:[["Mike Bloomfield","guitar"],["Al Kooper","organ"],["The Hawks","road band"],["Bob Johnston","producer"]]},
+    {id:"woodstock",name:"Woodstock Retreat",from:1967,to:1969,color:"#8fb46a",
+     sound:"After a motorcycle crash he disappears. Homemade basement tapes, then sparse biblical parables, then a smooth country croon.",
+     people:[["The Band","Basement Tapes"],["Johnny Cash","duets"]]},
+    {id:"drift",name:"Drift Years",from:1970,to:1973,color:"#b49c82",
+     sound:"Covers, family life, a film soundtrack. Low ambition on record, though a couple of classics slip out.",
+     people:[["George Harrison","friend, Bangladesh"],["Sam Peckinpah","film director"],["Leon Russell","producer"]]},
+    {id:"confession",name:"Confession & Revue",from:1974,to:1978,color:"#5d9be0",
+     sound:"Back on the road with The Band, then the great breakup album, then a travelling carnival with violin, Baez and white face paint.",
+     people:[["The Band","Tour '74"],["Joan Baez","Rolling Thunder"],["Roger McGuinn","Rolling Thunder"],["Mick Ronson","guitar"],["Scarlet Rivera","violin"],["Emmylou Harris","harmonies"],["Allen Ginsberg","poet on tour"],["Jacques Levy","co-writer"]]},
+    {id:"gospel",name:"Gospel Years",from:1979,to:1981,color:"#d0544f",
+     sound:"Born-again Christian. Muscle Shoals soul-gospel with a choir of backing singers. For a while he plays only the new religious songs live.",
+     people:[["Jerry Wexler","producer"],["Mark Knopfler","guitar"],["Clydie King","singer"]]},
+    {id:"eighties",name:"Lost in the '80s",from:1982,to:1988,color:"#b07cd8",
+     sound:"Glossy 80s production that rarely fits him. Great songs left in the vault, a supergroup holiday, and the start of the Never Ending Tour.",
+     people:[["Mark Knopfler","producer"],["Sly and Robbie","rhythm section"],["Tom Petty","tour band"],["Grateful Dead","tour"],["Traveling Wilburys","supergroup"]]},
+    {id:"roots",name:"Back to the Roots",from:1989,to:1996,color:"#4fa3a0",
+     sound:"Daniel Lanois gives him a swampy, nocturnal New Orleans sound. Then two solo acoustic albums of old folk and blues songs reset his voice.",
+     people:[["Daniel Lanois","producer"],["George Harrison","Wilburys"],["Tony Garnier","bass, 1989 on"]]},
+    {id:"late",name:"Late Masterpieces",from:1997,to:2012,color:"#d6913f",
+     sound:"A weathered growl over pre-war blues, rockabilly and swing. From 2001 he produces himself as “Jack Frost” with his road band.",
+     people:[["Daniel Lanois","producer, 1997"],["Larry Campbell","guitar"],["Charlie Sexton","guitar"],["David Hidalgo","accordion, 2009"]]},
+    {id:"songbook",name:"Sinatra Songbook",from:2013,to:2017,color:"#7f97bd",
+     sound:"Five discs of standards associated with Frank Sinatra, cut live with his touring band and pedal steel. Croon, not growl.",
+     people:[["Frank Sinatra","the source"],["Donnie Herron","pedal steel"]]},
+    {id:"rowdy",name:"Rough and Rowdy",from:2018,to:2026,color:"#c94848",
+     sound:"Hushed band, half-spoken vocals, very long songs packed with references. A Nobel laureate in his late seventies making one of his best records.",
+     people:[["Blake Mills","guitar, 2020"],["Fiona Apple","piano, 2020"],["Willie Nelson","tour partner"],["Timothée Chalamet","plays him, 2024"]]}
+  ],
+  /* k: album | single | life | lineup | live | world | screen | award
+     album kind: Studio | Live | Archival | Supergroup; tier: e essential, g worth it, d completists
+     song tag: k = you have probably heard it (via = where from), m = should know; imp:2 = minor
+     images: keyed by album title, event short, "p:<person>", "face:<year>" */
+  events:[
+    {d:"1941-05",k:"life",t:"Born Robert Allen Zimmerman in Duluth, Minnesota. At six the family moves to Hibbing, an iron-mining town near the Canadian border.",short:"Born in Duluth"},
+    {d:"1959-06",k:"life",t:"Plays piano in high-school rock bands, pounding out Little Richard. His yearbook ambition: “to join Little Richard.”",imp:2,short:"High-school rock bands"},
+    {d:"1959-09",k:"life",t:"Enrolls at the University of Minnesota, finds the Dinkytown folk scene, trades rock for folk and starts calling himself Bob Dylan.",short:"Becomes “Bob Dylan”"},
+    {d:"1960",k:"life",t:"Reads Woody Guthrie's autobiography Bound for Glory and becomes obsessed with the voice, the clothes, the talking blues.",imp:2,short:"Discovers Woody Guthrie"},
+    {d:"1960",k:"world",t:"Folk revival in full swing: the Kingston Trio, Joan Baez's debut album, coffeehouses in every college town.",short:"Folk revival"},
+
+    {d:"1961-01",k:"life",t:"Arrives in New York in winter. Visits the dying Woody Guthrie in hospital and plays the Greenwich Village clubs, Café Wha? and Gerde's Folk City.",short:"Arrives in New York"},
+    {d:"1961-05",k:"world",t:"Freedom Rides challenge segregation in the South. Civil rights becomes the subject of the new folk songs.",imp:2,short:"Freedom Rides"},
+    {d:"1961-09",k:"life",t:"A rave New York Times review by Robert Shelton. John Hammond signs him to Columbia Records weeks later.",short:"Signed to Columbia"},
+    {d:"1962-03",k:"album",kind:"Studio",title:"Bob Dylan",tier:"d",c:["#7a5a3a","#2b2420"],
+     sound:"Mostly traditional folk and blues covers, sung in a young man's put-on old-man rasp. Only two originals. Sold about 5,000 copies in its first year.",
+     songs:[{s:"Song to Woody",tag:"m",n:"One of the two originals, a letter to his hero."},{s:"House of the Risin' Sun",tag:"k",via:"via The Animals",n:"He took the arrangement from Dave Van Ronk. The Animals' 1964 hit followed it."}]},
+    {d:"1962-04",k:"life",t:"Writes “Blowin' in the Wind,” by his account in about ten minutes.",imp:2,short:"Writes “Blowin' in the Wind”"},
+    {d:"1962-06",k:"life",t:"Girlfriend Suze Rotolo leaves for Italy for months. The heartbreak runs through “Don't Think Twice” and “Boots of Spanish Leather.”",short:"Suze leaves for Italy"},
+    {d:"1962-08",k:"life",t:"Legally changes his name to Bob Dylan.",short:"Legal name change"},
+    {d:"1962-10",k:"world",t:"Cuban Missile Crisis. “A Hard Rain's a-Gonna Fall” was written weeks before but becomes tied to it.",short:"Cuban Missile Crisis"},
+    {d:"1963-05",k:"album",kind:"Studio",title:"The Freewheelin' Bob Dylan",tier:"e",c:["#8f948f","#3e3226"],
+     sound:"The breakthrough. Protest anthems, a tender breakup song, a nuclear-age nightmare, dry comic talking blues. The cover shows him and Suze Rotolo on snowy Jones Street.",
+     songs:[{s:"Blowin' in the Wind",tag:"k",via:"via Peter, Paul and Mary",n:"Their version hit #2 in 1963 and made him famous as a writer first."},
+            {s:"A Hard Rain's a-Gonna Fall",tag:"m",n:"Seven minutes of apocalyptic images. Patti Smith sang it at his Nobel ceremony."},
+            {s:"Don't Think Twice, It's All Right",tag:"m",n:"The kiss-off as a shrug."},
+            {s:"Masters of War",tag:"m",n:"The angriest song he ever wrote."},
+            {s:"Girl from the North Country",tag:"m",n:"Redone with Johnny Cash in 1969."}]},
+    {d:"1963-07",k:"lineup",t:"Newport Folk Festival. Joan Baez, already a star, brings him on stage. They become the king and queen of folk, and a couple, until 1965.",short:"Newport with Joan Baez"},
+    {d:"1963-08",k:"world",t:"March on Washington. Dylan sings “Only a Pawn in Their Game” and, with Baez, “When the Ship Comes In,” hours before “I Have a Dream.”",short:"March on Washington"},
+    {d:"1963-11",k:"world",t:"President Kennedy assassinated in Dallas. Dylan returns to it 57 years later in “Murder Most Foul.”",short:"JFK assassinated"},
+    {d:"1964-01",k:"album",kind:"Studio",title:"The Times They Are a-Changin'",tier:"g",c:["#d6d6d6","#262626"],
+     sound:"His bleakest, most topical record. Civil rights, poverty, murder, in stark black and white.",
+     songs:[{s:"The Times They Are a-Changin'",tag:"k",via:"via Watchmen's opening titles",n:"The generational anthem."},
+            {s:"The Lonesome Death of Hattie Carroll",tag:"m",n:"A true story: a Black barmaid killed by a rich young man who got six months. Every chorus turns."},
+            {s:"Boots of Spanish Leather",tag:"",n:"Letters between two lovers across an ocean."}]},
+    {d:"1964-02",k:"world",t:"The Beatles play The Ed Sullivan Show. Dylan hears where music is going.",short:"Beatles in America"},
+    {d:"1964-08",k:"album",kind:"Studio",title:"Another Side of Bob Dylan",tier:"g",c:["#3a3a3a","#9a9a9a"],
+     sound:"Cut in a single night. He drops politics for love songs, jokes and self-doubt. Folk fans start to worry.",
+     songs:[{s:"It Ain't Me Babe",tag:"k",via:"via Johnny Cash & June Carter",n:""},
+            {s:"My Back Pages",tag:"m",n:"“Ah, but I was so much older then, I'm younger than that now.” His exit from protest songs."},
+            {s:"Chimes of Freedom",tag:"m",n:""}]},
+    {d:"1964-08",k:"lineup",t:"Meets the Beatles at the Delmonico Hotel in New York. They start writing more personal lyrics. He starts thinking about a band.",short:"Meets the Beatles"},
+
+    {d:"1965-03",k:"album",kind:"Studio",title:"Bringing It All Back Home",tier:"e",c:["#c9a56a","#2c3e50"],
+     sound:"Side one electric, side two acoustic. Surreal, funny, beat-poetry lyrics. The bridge from folk to rock.",
+     songs:[{s:"Subterranean Homesick Blues",tag:"k",via:"via the cue-card video",n:"Dylan flipping word cards in an alley, the opening of the film Dont Look Back."},
+            {s:"Mr. Tambourine Man",tag:"k",via:"via The Byrds",n:"The Byrds' electric version went to #1 that June and launched folk rock."},
+            {s:"It's All Over Now, Baby Blue",tag:"m",n:"A farewell, possibly to the folk scene."},
+            {s:"It's Alright, Ma (I'm Only Bleeding)",tag:"m",n:"“Even the president of the United States sometimes must have to stand naked.”"},
+            {s:"Maggie's Farm",tag:"",n:"Opened the Newport electric set."}]},
+    {d:"1965-03",k:"world",t:"US combat troops land in Vietnam. The war becomes the backdrop to everything for a decade.",imp:2,short:"Vietnam escalates"},
+    {d:"1965-05",k:"screen",t:"His UK tour is filmed by D. A. Pennebaker for Dont Look Back (1967). The last tour as a solo acoustic act.",short:"Dont Look Back filmed"},
+    {d:"1965-06",k:"world",t:"The Byrds' “Mr. Tambourine Man” hits #1. Folk rock is born, from his song.",short:"Byrds #1, folk rock"},
+    {d:"1965-07-20",k:"single",title:"Like a Rolling Stone",
+     t:"Six minutes long when singles were three. Radio stations cut it in half. It still reaches #2.",
+     songs:[{s:"Like a Rolling Stone",tag:"k",via:"via everywhere",n:"Al Kooper sneaked onto the organ uninvited. Rolling Stone named it the greatest song of all time in 2004."}]},
+    {d:"1965-07-25",k:"live",t:"Newport Folk Festival. Plays loud and electric with members of the Paul Butterfield Blues Band. Booing, three songs, then back alone with an acoustic guitar. The moment the 2024 film A Complete Unknown is built around.",short:"Newport goes electric"},
+    {d:"1965-08",k:"album",kind:"Studio",title:"Highway 61 Revisited",tier:"e",c:["#e07a2e","#284a78"],
+     sound:"Full rock band: Al Kooper's organ, Mike Bloomfield's blues guitar. Long, sneering, hallucinatory songs about America. Often called his best album.",
+     songs:[{s:"Like a Rolling Stone",tag:"k",via:"via everywhere",n:"Opens the album."},
+            {s:"Ballad of a Thin Man",tag:"m",n:"“Something is happening here, but you don't know what it is, do you, Mr. Jones?”"},
+            {s:"Highway 61 Revisited",tag:"m",n:"Abraham and Isaac on the blues highway, with a siren whistle."},
+            {s:"Just Like Tom Thumb's Blues",tag:"",n:""},
+            {s:"Desolation Row",tag:"m",n:"Eleven acoustic minutes. Einstein, Cinderella and the Titanic in one parade."}]},
+    {d:"1965-09",k:"lineup",t:"Hires the Hawks as his road band: Robbie Robertson, Levon Helm, Rick Danko, Richard Manuel, Garth Hudson. Levon quits within months, tired of being booed every night.",short:"Hires the Hawks"},
+    {d:"1965-11",k:"life",t:"Secretly marries Sara Lownds. They have four children together, among them Jakob Dylan of the Wallflowers, and he adopts her daughter Maria.",short:"Marries Sara Lownds"},
+    {d:"1966-05-17",k:"live",t:"Manchester Free Trade Hall. A fan shouts “Judas!” Dylan answers “I don't believe you, you're a liar,” and tells the band to play it loud. Released in 1998 as Live 1966.",short:"“Judas!” in Manchester"},
+    {d:"1966-05",k:"world",t:"Pet Sounds and Revolver come out. Pop albums become art statements, partly in Dylan's wake.",imp:2,short:"Pet Sounds, Revolver"},
+    {d:"1966-06",k:"album",kind:"Studio",title:"Blonde on Blonde",tier:"e",c:["#8a6b4f","#2f251d"],
+     sound:"Nashville session pros plus Al Kooper and Robbie Robertson, recorded through the night. Organ, harmonica, sleepy late-night grooves. One of rock's first double albums.",
+     songs:[{s:"Rainy Day Women #12 & 35",tag:"k",via:"via “everybody must get stoned”",n:"A brass-band joke that became a hit."},
+            {s:"Just Like a Woman",tag:"k",via:"via countless covers",n:""},
+            {s:"I Want You",tag:"m",n:"Pure pop, three minutes."},
+            {s:"Visions of Johanna",tag:"m",n:"Many fans' answer to “his best song.” Pure atmosphere."},
+            {s:"Sad Eyed Lady of the Lowlands",tag:"m",n:"Takes all of side four, eleven minutes, for Sara."}]},
+    {d:"1966-07",k:"life",t:"Motorcycle crash near Woodstock, New York. Tour cancelled. He vanishes from public life for 18 months and stays home with his young family.",short:"Motorcycle crash"},
+
+    {d:"1967-06",k:"lineup",t:"The Basement Tapes. Daily sessions with the Hawks in the basement of Big Pink, a pink house in West Saugerties. Over 100 recordings of old folk songs and new ones. Bootlegged widely, officially out in 1975.",short:"Basement Tapes at Big Pink",
+     songs:[{s:"I Shall Be Released",tag:"m",n:"The Band's version closes their first album."},
+            {s:"This Wheel's on Fire",tag:"k",via:"via the Absolutely Fabulous theme",n:""},
+            {s:"The Mighty Quinn (Quinn the Eskimo)",tag:"k",via:"via Manfred Mann",n:"A UK #1 in 1968."}]},
+    {d:"1967-06",k:"world",t:"Summer of Love and Sgt. Pepper. Psychedelia everywhere. Dylan answers with the plainest record he could make.",short:"Summer of Love"},
+    {d:"1967-10",k:"life",t:"Woody Guthrie dies. In January 1968 Dylan makes his first appearance since the crash at the Guthrie memorial concert at Carnegie Hall.",imp:2,short:"Woody Guthrie dies"},
+    {d:"1967-12",k:"album",kind:"Studio",title:"John Wesley Harding",tier:"e",c:["#cfc6b0","#5f5a50"],
+     sound:"Acoustic guitar, bass, drums, a little pedal steel. Short biblical parables and outlaw tales, released while everyone else went psychedelic.",
+     songs:[{s:"All Along the Watchtower",tag:"k",via:"via Jimi Hendrix",n:"Hendrix's 1968 version is so good that Dylan has played it Hendrix's way ever since."},
+            {s:"I'll Be Your Baby Tonight",tag:"m",n:"A hint of the country turn to come."},
+            {s:"I Dreamed I Saw St. Augustine",tag:"",n:""}]},
+    {d:"1968-04",k:"world",t:"Martin Luther King Jr. and Robert Kennedy assassinated. Riots, Paris in May, the Chicago convention.",imp:2,short:"MLK, RFK killed"},
+    {d:"1968-07",k:"lineup",t:"The Hawks, now The Band, release Music from Big Pink. Dylan painted the cover and co-wrote three songs.",short:"The Band's debut"},
+    {d:"1969-04",k:"album",kind:"Studio",title:"Nashville Skyline",tier:"g",c:["#6fa8dc","#efe7d2"],
+     sound:"Full country, and a smooth new croon he credited to quitting smoking. Short, warm and happy. Fans who wanted a prophet are baffled.",
+     songs:[{s:"Lay Lady Lay",tag:"k",via:"via the radio",n:"His last US top-10 single."},
+            {s:"Girl from the North Country",tag:"m",n:"The duet with Johnny Cash."},
+            {s:"I Threw It All Away",tag:"",n:""}]},
+    {d:"1969-06",k:"screen",t:"Appears on The Johnny Cash Show.",short:"Johnny Cash Show"},
+    {d:"1969-07",k:"world",t:"Moon landing. Woodstock festival. The decade ends.",imp:2,short:"Moon landing, Woodstock"},
+    {d:"1969-08",k:"live",t:"Skips the Woodstock festival despite living nearby. Two weeks later headlines the Isle of Wight Festival in England.",short:"Isle of Wight"},
+
+    {d:"1970-06",k:"album",kind:"Studio",title:"Self Portrait",tier:"d",c:["#b7472a","#d9c08c"],
+     sound:"A double album of covers, oddities and rough live tracks, possibly made to shed the “spokesman” label. Greil Marcus's Rolling Stone review opened “What is this shit?”",
+     songs:[{s:"Copper Kettle",tag:"",n:"Sounds better on the 2013 reissue, Another Self Portrait."}]},
+    {d:"1970-06",k:"award",t:"Honorary doctorate from Princeton. Writes “Day of the Locusts” about it.",imp:2,short:"Princeton doctorate"},
+    {d:"1970-10",k:"album",kind:"Studio",title:"New Morning",tier:"g",c:["#b9a37f","#4c3b2a"],
+     sound:"A quick reassurance after Self Portrait. Piano-led, domestic, cheerful.",
+     songs:[{s:"If Not for You",tag:"k",via:"via George Harrison",n:"Harrison covered it on All Things Must Pass the same year."},
+            {s:"The Man in Me",tag:"k",via:"via The Big Lebowski",n:"Plays over the opening of the film."}]},
+    {d:"1971-08",k:"live",t:"Concert for Bangladesh at Madison Square Garden, George Harrison's benefit. Dylan's surprise set is the highlight.",short:"Concert for Bangladesh"},
+    {d:"1973-01",k:"world",t:"Watergate hearings, end of the US draft, oil crisis.",imp:2,short:"Watergate, oil crisis"},
+    {d:"1973-07",k:"album",kind:"Studio",title:"Pat Garrett & Billy the Kid",tier:"g",c:["#c8a165","#5a3a1e"],
+     sound:"Soundtrack for Sam Peckinpah's western, in which he also acts, as a character called Alias. Mostly instrumentals, and one standard.",
+     songs:[{s:"Knockin' on Heaven's Door",tag:"k",via:"via Guns N' Roses",n:"A dying deputy's two verses. Covered by everyone."}]},
+    {d:"1973-11",k:"album",kind:"Studio",title:"Dylan",tier:"d",c:["#6b6b8a","#2d2d3a"],
+     sound:"Outtakes released by Columbia without his input after he left for Asylum Records. Widely seen as a spite release.",songs:[]},
+
+    {d:"1974-01",k:"album",kind:"Studio",title:"Planet Waves",tier:"g",c:["#f2efe6","#1a1a1a"],
+     sound:"Recorded in three days with The Band. Loose, warm and domestic. His first #1 album in the US.",
+     songs:[{s:"Forever Young",tag:"k",via:"via lullabies and graduations",n:"Written for his kids. Two versions on the album."},
+            {s:"Going, Going, Gone",tag:"",n:""}]},
+    {d:"1974-01",k:"live",t:"Tour '74 with The Band, his first tour in eight years. Huge demand, mostly loud and fast. Live album Before the Flood.",short:"Tour '74 with The Band"},
+    {d:"1974-08",k:"world",t:"Nixon resigns. Dylan records a breakup album in New York that September.",short:"Nixon resigns"},
+    {d:"1975-01",k:"album",kind:"Studio",title:"Blood on the Tracks",tier:"e",c:["#c75b2b","#3a1f14"],
+     sound:"Mostly acoustic and devastating, recorded as his marriage fell apart. He denies it is autobiographical; his son Jakob said it is his parents talking. Half was re-recorded in Minneapolis at the last minute.",
+     songs:[{s:"Tangled Up in Blue",tag:"m",n:"A love story told out of order across years and cities. He keeps rewriting it on stage."},
+            {s:"Simple Twist of Fate",tag:"m",n:""},
+            {s:"Idiot Wind",tag:"m",n:"Pure venom, then a final twist that turns it on himself."},
+            {s:"You're a Big Girl Now",tag:"",n:""},
+            {s:"Shelter from the Storm",tag:"m",n:""}]},
+    {d:"1975-06",k:"album",kind:"Studio",title:"The Basement Tapes",tier:"g",c:["#6b7d3a","#25251b"],
+     sound:"The 1967 Big Pink recordings with The Band, officially released eight years late (with some Band-only tracks added). Ramshackle, funny, haunted.",
+     songs:[{s:"You Ain't Goin' Nowhere",tag:"k",via:"via The Byrds",n:""},
+            {s:"Goin' to Acapulco",tag:"m",n:""},
+            {s:"Tears of Rage",tag:"",n:""}]},
+    {d:"1975-10",k:"live",t:"Rolling Thunder Revue. A travelling circus playing small halls: Baez, Roger McGuinn, Mick Ronson, Ramblin' Jack Elliott, Allen Ginsberg, Scarlet Rivera. Dylan in white face paint. Scorsese's 2019 film of it mixes fact and fiction on purpose.",short:"Rolling Thunder Revue"},
+    {d:"1975-12",k:"live",t:"Night of the Hurricane benefit at Madison Square Garden for the jailed boxer Rubin Carter.",imp:2,short:"Night of the Hurricane"},
+    {d:"1976-01",k:"album",kind:"Studio",title:"Desire",tier:"e",c:["#6a4a2f","#c9a77c"],
+     sound:"Gypsy violin from Scarlet Rivera, Emmylou Harris harmonies, long story songs co-written with theatre director Jacques Levy. Five weeks at #1.",
+     songs:[{s:"Hurricane",tag:"k",via:"via the radio",n:"The case of boxer Rubin “Hurricane” Carter, wrongly convicted of triple murder. Freed in 1985."},
+            {s:"One More Cup of Coffee (Valley Below)",tag:"m",n:"Eerie, minor-key, Emmylou's harmony."},
+            {s:"Isis",tag:"m",n:"A mythic quest-for-love story."},
+            {s:"Sara",tag:"m",n:"A direct, naked plea to his wife."}]},
+    {d:"1976-05",k:"live",t:"Hard Rain, a TV special filmed in pouring rain in Fort Collins, Colorado. The second Rolling Thunder leg, angrier than the first.",imp:2,short:"Hard Rain TV special"},
+    {d:"1976-11",k:"live",t:"The Last Waltz, The Band's farewell concert, filmed by Scorsese. Dylan closes the show.",short:"The Last Waltz"},
+    {d:"1977-06",k:"life",t:"Divorce from Sara finalized after a bitter custody fight.",short:"Divorce"},
+    {d:"1977-08",k:"world",t:"Elvis dies. Punk breaks in London and New York. Dylan is suddenly the old guard.",imp:2,short:"Elvis dies, punk"},
+    {d:"1978-01",k:"screen",t:"Renaldo and Clara, his four-hour film from the Rolling Thunder tour, flops.",imp:2,short:"Renaldo and Clara"},
+    {d:"1978-06",k:"album",kind:"Studio",title:"Street-Legal",tier:"g",c:["#3c4a5a","#c9b48a"],
+     sound:"Big band with horns and gospel backing singers. Dense and apocalyptic, with a murky original mix (fixed in 1999).",
+     songs:[{s:"Changing of the Guards",tag:"m",n:""},
+            {s:"Señor (Tales of Yankee Power)",tag:"m",n:""}]},
+    {d:"1978-11",k:"life",t:"Someone throws a small silver cross on stage in San Diego; he picks it up. Weeks later he becomes a born-again Christian and attends Bible classes.",short:"Born-again Christian"},
+
+    {d:"1979-08",k:"album",kind:"Studio",title:"Slow Train Coming",tier:"g",c:["#7a5c3a","#d9b77a"],
+     sound:"Muscle Shoals soul production by Jerry Wexler, Mark Knopfler on guitar. Fierce, preachy and very well played.",
+     songs:[{s:"Gotta Serve Somebody",tag:"m",n:"Won a Grammy. John Lennon wrote a parody, “Serve Yourself.”"},
+            {s:"Slow Train",tag:"m",n:""},
+            {s:"I Believe in You",tag:"",n:""}]},
+    {d:"1979-11",k:"live",t:"Gospel tour. He plays only new religious songs and preaches between them. Bootleg Series Vol. 13 (2017) shows how ferocious the band was.",short:"Gospel-only tour"},
+    {d:"1980-06",k:"album",kind:"Studio",title:"Saved",tier:"d",c:["#c0392b","#f5d7a1"],sound:"Second gospel album. Choir, organ, testimony.",
+     songs:[{s:"Pressing On",tag:"",n:""}]},
+    {d:"1981-08",k:"album",kind:"Studio",title:"Shot of Love",tier:"d",c:["#e84a8a","#f2c14e"],
+     sound:"The gospel period winds down. Uneven, with one of his greatest songs at the end.",
+     songs:[{s:"Every Grain of Sand",tag:"m",n:"A hymn about doubt and grace. Many put it in his top ten."}]},
+    {d:"1981-08",k:"world",t:"MTV launches. Music becomes a video medium, and he never quite gets the hang of it.",imp:2,short:"MTV launches"},
+
+    {d:"1983-10",k:"album",kind:"Studio",title:"Infidels",tier:"g",c:["#2f2f2f","#c2b280"],
+     sound:"Produced by Mark Knopfler, with Sly Dunbar and Robbie Shakespeare on rhythm and Mick Taylor on guitar. Clean 80s sound. He left the best song off.",
+     songs:[{s:"Jokerman",tag:"m",n:""},
+            {s:"I and I",tag:"",n:""},
+            {s:"Blind Willie McTell",tag:"m",n:"Cut from the album. Released in 1991 and now considered a masterpiece."}]},
+    {d:"1984-06",k:"live",t:"European stadium tour with Santana, with Mick Taylor in his band. Joan Baez joins for some shows and leaves early.",short:"European tour with Santana"},
+    {d:"1985-06",k:"album",kind:"Studio",title:"Empire Burlesque",tier:"d",c:["#3a4a6a","#d4a373"],
+     sound:"Mixed by dance producer Arthur Baker. Gated drums and synths. Ends with a beautiful solo acoustic song.",
+     songs:[{s:"Dark Eyes",tag:"m",n:"Just voice, guitar and harmonica."}]},
+    {d:"1985-07",k:"live",t:"Live Aid. A shambolic acoustic set with Keith Richards and Ron Wood. His remark about American farmers inspires Farm Aid.",short:"Live Aid"},
+    {d:"1985-11",k:"album",kind:"Archival",title:"Biograph",tier:"d",c:["#1c1c1c","#cfcfcf"],
+     sound:"Five-LP retrospective with unreleased songs. It helps invent the career box set.",
+     songs:[{s:"Caribbean Wind",tag:"",n:"A famous lost song from 1980."}]},
+    {d:"1986-02",k:"lineup",t:"Tours with Tom Petty and the Heartbreakers through 1987.",short:"Tours with Tom Petty"},
+    {d:"1986-07",k:"album",kind:"Studio",title:"Knocked Out Loaded",tier:"d",c:["#c94f3d","#f2c879"],
+     sound:"Scrappy and padded with covers, except for one eleven-minute epic.",
+     songs:[{s:"Brownsville Girl",tag:"m",n:"Co-written with playwright Sam Shepard. A movie remembered in a car."}]},
+    {d:"1987-07",k:"lineup",t:"Short stadium tour with the Grateful Dead.",short:"Tour with the Grateful Dead"},
+    {d:"1987-10",k:"live",t:"Near burnout. At an outdoor show in Locarno, Switzerland, he loses his voice and, by his account in Chronicles, finds a new way to sing his old songs. He decides to keep touring.",short:"Locarno turning point"},
+    {d:"1988-01",k:"award",t:"Inducted into the Rock and Roll Hall of Fame. Bruce Springsteen: “Bob freed your mind the way Elvis freed your body.”",short:"Rock Hall of Fame"},
+    {d:"1988-05",k:"album",kind:"Studio",title:"Down in the Groove",tier:"d",c:["#1f3b5a","#8fa8c0"],sound:"Covers and leftovers. His lowest seller.",
+     songs:[{s:"Silvio",tag:"",n:"Co-written with Grateful Dead lyricist Robert Hunter."}]},
+    {d:"1988-06",k:"live",t:"The Never Ending Tour begins in Concord, California. Around 100 shows a year for the next three decades.",short:"Never Ending Tour starts"},
+    {d:"1988-10",k:"album",kind:"Supergroup",title:"Traveling Wilburys Vol. 1",tier:"g",c:["#b08d57","#2f2a24"],
+     sound:"George Harrison, Jeff Lynne, Roy Orbison, Tom Petty and Dylan as fake half-brothers, recorded for fun in a few weeks.",
+     songs:[{s:"Handle with Care",tag:"k",via:"via classic-rock radio",n:""},
+            {s:"Tweeter and the Monkey Man",tag:"m",n:"Dylan's playful take on Springsteen song titles."},
+            {s:"End of the Line",tag:"",n:""}]},
+
+    {d:"1989-09",k:"album",kind:"Studio",title:"Oh Mercy",tier:"e",c:["#e0c34a","#6f5326"],
+     sound:"Produced by Daniel Lanois in New Orleans. Swampy, nocturnal, atmospheric. His first strong album in years.",
+     songs:[{s:"Most of the Time",tag:"m",n:""},
+            {s:"Man in the Long Black Coat",tag:"m",n:"Crickets, fog, a woman who leaves. Pure Lanois mood."},
+            {s:"Everything Is Broken",tag:"",n:""},
+            {s:"Ring Them Bells",tag:"",n:""}]},
+    {d:"1989-11",k:"world",t:"Berlin Wall falls.",imp:2,short:"Berlin Wall falls"},
+    {d:"1990-09",k:"album",kind:"Studio",title:"Under the Red Sky",tier:"d",c:["#b23a2a","#3a2a20"],
+     sound:"Nursery-rhyme songs with star guests: George Harrison, Slash, Elton John, Stevie Ray Vaughan.",
+     songs:[{s:"Born in Time",tag:"",n:""}]},
+    {d:"1991-02",k:"award",t:"Grammy Lifetime Achievement Award during the Gulf War. He plays a fast, garbled “Masters of War.”",short:"Lifetime Grammy"},
+    {d:"1991-03",k:"album",kind:"Archival",title:"The Bootleg Series Volumes 1–3",tier:"g",c:["#4a3b2c","#d9c7a4"],
+     sound:"Thirty years of outtakes, the first of a long archival series. Proof that what he left off often beat what he put out.",
+     songs:[{s:"Blind Willie McTell",tag:"m",n:""}]},
+    {d:"1992-10",k:"live",t:"30th Anniversary Concert at Madison Square Garden. Neil Young, Eric Clapton, George Harrison, Stevie Wonder and others sing his songs.",imp:2,short:"30th Anniversary Concert"},
+    {d:"1992-11",k:"album",kind:"Studio",title:"Good as I Been to You",tier:"d",c:["#6b4e3a","#d8c3a5"],sound:"Solo acoustic: old folk and blues songs, nothing new. He is going back to the source.",
+     songs:[{s:"Arthur McBride",tag:"",n:""}]},
+    {d:"1993-10",k:"album",kind:"Studio",title:"World Gone Wrong",tier:"g",c:["#2f3a2f","#a68a5b"],sound:"More solo acoustic traditional songs, darker, with his own odd liner notes. The voice is turning into the late growl.",
+     songs:[{s:"Delia",tag:"",n:""},{s:"Blood in My Eyes",tag:"",n:""}]},
+    {d:"1994-11",k:"live",t:"MTV Unplugged taping; the album comes out in 1995. A well-received set at Woodstock '94 the summer before.",short:"MTV Unplugged"},
+
+    {d:"1997-05",k:"life",t:"Hospitalized with a heart infection (pericarditis from histoplasmosis). “I really thought I'd be seeing Elvis soon.”",short:"Heart infection"},
+    {d:"1997-09",k:"live",t:"Plays for Pope John Paul II in Bologna.",imp:2,short:"Plays for the Pope"},
+    {d:"1997-09",k:"album",kind:"Studio",title:"Time Out of Mind",tier:"e",c:["#3a3530","#8a7a60"],
+     sound:"Lanois again. Murky, echoing, haunted blues about age, love and death. His big late comeback, and Album of the Year at the Grammys.",
+     songs:[{s:"Love Sick",tag:"m",n:""},
+            {s:"Make You Feel My Love",tag:"k",via:"via Adele",n:"Billy Joel and Garth Brooks covered it first. Adele's 2008 version made it a modern standard."},
+            {s:"Not Dark Yet",tag:"m",n:"“It's not dark yet, but it's getting there.”"},
+            {s:"Cold Irons Bound",tag:"",n:""},
+            {s:"Highlands",tag:"m",n:"Sixteen minutes, mostly a funny conversation with a waitress."}]},
+    {d:"1998-02",k:"award",t:"Grammy Album of the Year. A shirtless stage-crasher with “Soy Bomb” on his chest dances next to him on live TV.",imp:2,short:"Album of the Year"},
+    {d:"1998-10",k:"album",kind:"Live",title:"Live 1966 (The “Royal Albert Hall” Concert)",tier:"e",c:["#141414","#e8e8e8"],
+     sound:"The Manchester “Judas!” show, finally official. Acoustic first half, savage electric second half with the Hawks. Mislabelled by bootleggers for 30 years.",
+     songs:[{s:"Like a Rolling Stone",tag:"",n:"Hear the “Judas!” exchange right before it."}]},
+    {d:"2000-05",k:"single",title:"Things Have Changed",t:"Written for the film Wonder Boys. Wins the Oscar and the Golden Globe for Best Original Song.",
+     songs:[{s:"Things Have Changed",tag:"m",n:"“People are crazy and times are strange.”"}]},
+    {d:"2001-09-11",k:"album",kind:"Studio",title:"“Love and Theft”",tier:"e",c:["#b8b0a0","#2b2b2b"],
+     sound:"Self-produced as “Jack Frost” with his road band. Old-time pop, jump blues, rockabilly, Western swing, packed with borrowed lines. Released on 9/11.",
+     songs:[{s:"Mississippi",tag:"m",n:"Left off Time Out of Mind, recorded first by Sheryl Crow."},
+            {s:"High Water (For Charley Patton)",tag:"m",n:"A banjo-driven flood song."},
+            {s:"Summer Days",tag:"",n:""},
+            {s:"Sugar Baby",tag:"",n:""}]},
+    {d:"2001-09",k:"world",t:"September 11 attacks, the day the album comes out.",short:"9/11"},
+    {d:"2004-10",k:"life",t:"Chronicles: Volume One, a memoir that skips most of the famous parts and lingers on 1961 New York, 1970 and 1987. A bestseller.",short:"Chronicles memoir"},
+    {d:"2005-09",k:"screen",t:"No Direction Home, Martin Scorsese's documentary about 1961 to 1966.",short:"No Direction Home"},
+    {d:"2006-05",k:"life",t:"Theme Time Radio Hour: he becomes a satellite-radio DJ for 100 episodes, playing old records by theme.",short:"Becomes a radio DJ"},
+    {d:"2006-08",k:"album",kind:"Studio",title:"Modern Times",tier:"g",c:["#1e3a5f","#7fa1c3"],
+     sound:"Same road-band sound, smoother. At 65 he is the oldest living artist to that date to top the US album chart, his first #1 since Desire.",
+     songs:[{s:"Thunder on the Mountain",tag:"m",n:"Name-checks Alicia Keys."},
+            {s:"Workingman's Blues #2",tag:"m",n:""},
+            {s:"Nettie Moore",tag:"m",n:""},
+            {s:"Ain't Talkin'",tag:"",n:""}]},
+    {d:"2007-11",k:"screen",t:"I'm Not There, Todd Haynes's film in which six actors play versions of him. Cate Blanchett is nominated for an Oscar.",imp:2,short:"I'm Not There"},
+    {d:"2008-04",k:"award",t:"Pulitzer Prize special citation for his “profound impact on popular music and American culture.”",imp:2,short:"Pulitzer citation"},
+    {d:"2009-04",k:"album",kind:"Studio",title:"Together Through Life",tier:"d",c:["#3a3a3a","#c8c0b0"],
+     sound:"Accordion (David Hidalgo of Los Lobos) and Tex-Mex border blues, co-written with Robert Hunter. #1 in the US and UK.",
+     songs:[{s:"Beyond Here Lies Nothin'",tag:"",n:""}]},
+    {d:"2009-10",k:"album",kind:"Studio",title:"Christmas in the Heart",tier:"d",c:["#2c5f3a","#c0392b"],
+     sound:"Christmas standards, sung completely straight in the growl. Royalties go to hunger charities.",
+     songs:[{s:"Must Be Santa",tag:"",n:"A polka, with a deranged party video."}]},
+    {d:"2012-05",k:"award",t:"Presidential Medal of Freedom.",short:"Medal of Freedom"},
+    {d:"2012-09",k:"album",kind:"Studio",title:"Tempest",tier:"g",c:["#7a1f1f","#d8c3a5"],
+     sound:"Darker and violent: murder ballads, a 14-minute Titanic song, an elegy for John Lennon.",
+     songs:[{s:"Duquesne Whistle",tag:"m",n:""},
+            {s:"Pay in Blood",tag:"m",n:""},
+            {s:"Tempest",tag:"",n:"45 verses on the Titanic, with Leonardo DiCaprio in it."},
+            {s:"Roll On John",tag:"",n:""}]},
+
+    {d:"2015-02",k:"album",kind:"Studio",title:"Shadows in the Night",tier:"g",c:["#111111","#e8e8e8"],
+     sound:"Ten songs Sinatra sang, cut live around one microphone. Tender and surprisingly well sung.",
+     songs:[{s:"The Night We Called It a Day",tag:"m",n:""},{s:"Full Moon and Empty Arms",tag:"",n:""}]},
+    {d:"2016-05",k:"album",kind:"Studio",title:"Fallen Angels",tier:"d",c:["#222222","#b8a070"],sound:"More of the same Songbook approach.",
+     songs:[{s:"Young at Heart",tag:"",n:""}]},
+    {d:"2016-10",k:"award",t:"Nobel Prize in Literature, “for having created new poetic expressions within the great American song tradition.” Silent for two weeks, skips the ceremony. Patti Smith sings “A Hard Rain's a-Gonna Fall” in his place and stumbles on the words.",short:"Nobel Prize"},
+    {d:"2017-03",k:"album",kind:"Studio",title:"Triplicate",tier:"d",c:["#2c2c2c","#bfa26a"],sound:"Three discs, thirty more standards. The end of the Songbook phase.",
+     songs:[{s:"Stormy Weather",tag:"",n:""}]},
+    {d:"2017-06",k:"award",t:"Delivers his Nobel lecture as a recording: on Buddy Holly, Moby-Dick, All Quiet on the Western Front and the Odyssey.",imp:2,short:"Nobel lecture"},
+
+    {d:"2019-06",k:"screen",t:"Rolling Thunder Revue: A Bob Dylan Story by Martin Scorsese, with invented characters mixed into real footage.",short:"Scorsese's Rolling Thunder film"},
+    {d:"2020-03",k:"single",title:"Murder Most Foul",t:"Dropped without warning in the first weeks of lockdown. Seventeen minutes on the JFK assassination and a whole catalogue of American songs. His first song ever to top a Billboard chart.",
+     songs:[{s:"Murder Most Foul",tag:"m",n:"Piano, violin, soft drums, and his voice reciting."}]},
+    {d:"2020-03",k:"world",t:"COVID-19 pandemic. Touring stops worldwide.",short:"Pandemic"},
+    {d:"2020-06-19",k:"album",kind:"Studio",title:"Rough and Rowdy Ways",tier:"e",c:["#8a1c1c","#181818"],
+     sound:"Hushed band, half-spoken vocals, long songs dense with references from Indiana Jones to Anne Frank. Made at 79. His best-reviewed album in decades.",
+     songs:[{s:"I Contain Multitudes",tag:"m",n:"The title is a Walt Whitman line."},
+            {s:"False Prophet",tag:"m",n:"A bluesy boast built on an old Billy “The Kid” Emerson riff."},
+            {s:"My Own Version of You",tag:"",n:""},
+            {s:"Key West (Philosopher Pirate)",tag:"m",n:"Nine dreamy minutes, accordion and radio."},
+            {s:"Murder Most Foul",tag:"m",n:"Takes up the whole second disc."}]},
+    {d:"2020-12",k:"life",t:"Sells his entire songwriting catalogue to Universal Music Publishing, reportedly for over $300 million. Sells his recordings to Sony in 2022.",short:"Sells his catalogue"},
+    {d:"2021-07",k:"screen",t:"Shadow Kingdom, a streamed black-and-white film of early songs reworked in a smoky club set.",imp:2,short:"Shadow Kingdom"},
+    {d:"2021-11",k:"live",t:"Rough and Rowdy Ways tour begins. Phones locked in pouches, the setlist mostly the new album.",short:"Rough and Rowdy tour"},
+    {d:"2022-11",k:"life",t:"The Philosophy of Modern Song, a book of 66 short essays on other people's songs.",short:"Philosophy of Modern Song"},
+    {d:"2023-01",k:"album",kind:"Archival",title:"Fragments: Time Out of Mind Sessions",tier:"g",c:["#4a4238","#a8987a"],
+     sound:"Bootleg Series Vol. 17. Includes a remix of Time Out of Mind without Lanois's fog, so you can compare.",songs:[]},
+    {d:"2024-06",k:"live",t:"Outlaw Music Festival tour with Willie Nelson, and again in 2025.",short:"Tour with Willie Nelson"},
+    {d:"2024-12",k:"screen",t:"A Complete Unknown, James Mangold's film of 1961 to Newport 1965. Timothée Chalamet plays Dylan and sings the songs himself. Eight Oscar nominations.",short:"A Complete Unknown"}
+  ],
+  images:{"hero": "img/hero.jpg", "Bob Dylan": "img/bob-dylan.jpg", "The Freewheelin' Bob Dylan": "img/the-freewheelin-bob-dylan.jpg", "Another Side of Bob Dylan": "img/another-side-of-bob-dylan.jpg", "Bringing It All Back Home": "img/bringing-it-all-back-home.jpg", "Like a Rolling Stone": "img/like-a-rolling-stone.jpg", "Highway 61 Revisited": "img/highway-61-revisited.jpg", "Blonde on Blonde": "img/blonde-on-blonde.jpg", "John Wesley Harding": "img/john-wesley-harding.jpg", "Nashville Skyline": "img/nashville-skyline.jpg", "Self Portrait": "img/self-portrait.jpg", "Pat Garrett & Billy the Kid": "img/pat-garrett-billy-the-kid.jpg", "Planet Waves": "img/planet-waves.jpg", "Blood on the Tracks": "img/blood-on-the-tracks.jpg", "Desire": "img/desire.jpg", "Traveling Wilburys Vol. 1": "img/traveling-wilburys-vol-1.jpg", "Together Through Life": "img/together-through-life.jpg", "Born in Duluth": "img/born-in-duluth.jpg", "High-school rock bands": "img/high-school-rock-bands.jpg", "Becomes “Bob Dylan”": "img/becomes-bob-dylan.jpg", "Folk revival": "img/folk-revival.jpg", "Freedom Rides": "img/freedom-rides.jpg", "Cuban Missile Crisis": "img/cuban-missile-crisis.jpg", "JFK assassinated": "img/jfk-assassinated.jpg", "Beatles in America": "img/beatles-in-america.jpg", "Meets the Beatles": "img/meets-the-beatles.jpg", "Vietnam escalates": "img/vietnam-escalates.jpg", "Dont Look Back filmed": "img/dont-look-back-filmed.jpg", "Byrds #1, folk rock": "img/byrds-1-folk-rock.jpg", "Hires the Hawks": "img/hires-the-hawks.jpg", "Pet Sounds, Revolver": "img/pet-sounds-revolver.jpg", "Motorcycle crash": "img/motorcycle-crash.jpg", "Basement Tapes at Big Pink": "img/basement-tapes-at-big-pink.jpg", "Summer of Love": "img/summer-of-love.jpg", "Woody Guthrie dies": "img/woody-guthrie-dies.jpg", "MLK, RFK killed": "img/mlk-rfk-killed.jpg", "Moon landing, Woodstock": "img/moon-landing-woodstock.jpg", "Princeton doctorate": "img/princeton-doctorate.jpg", "Watergate, oil crisis": "img/watergate-oil-crisis.jpg", "Nixon resigns": "img/nixon-resigns.jpg", "Elvis dies, punk": "img/elvis-dies-punk.jpg", "MTV launches": "img/mtv-launches.jpg", "Tours with Tom Petty": "img/tours-with-tom-petty.jpg", "Rock Hall of Fame": "img/rock-hall-of-fame.jpg", "Never Ending Tour starts": "img/never-ending-tour-starts.jpg", "Berlin Wall falls": "img/berlin-wall-falls.jpg", "30th Anniversary Concert": "img/30th-anniversary-concert.jpg", "Plays for the Pope": "img/plays-for-the-pope.jpg", "9/11": "img/9-11.jpg", "Pulitzer citation": "img/pulitzer-citation.jpg", "Nobel Prize": "img/nobel-prize.jpg", "Scorsese's Rolling Thunder film": "img/scorsese-s-rolling-thunder-film.jpg", "Pandemic": "img/pandemic.jpg", "p:Little Richard": "img/p-little-richard.jpg", "p:Woody Guthrie": "img/p-woody-guthrie.jpg", "p:Joan Baez": "img/p-joan-baez.jpg", "p:Suze Rotolo": "img/p-suze-rotolo.jpg", "p:Pete Seeger": "img/p-pete-seeger.jpg", "p:John Hammond": "img/p-john-hammond.jpg", "p:Al Kooper": "img/p-al-kooper.jpg", "p:The Hawks": "img/p-the-hawks.jpg", "p:Bob Johnston": "img/p-bob-johnston.jpg", "p:The Band": "img/p-the-band.jpg", "p:Johnny Cash": "img/p-johnny-cash.jpg", "p:George Harrison": "img/p-george-harrison.jpg", "p:Sam Peckinpah": "img/p-sam-peckinpah.jpg", "p:Leon Russell": "img/p-leon-russell.jpg", "p:Roger McGuinn": "img/p-roger-mcguinn.jpg", "p:Mick Ronson": "img/p-mick-ronson.jpg", "p:Scarlet Rivera": "img/p-scarlet-rivera.jpg", "p:Emmylou Harris": "img/p-emmylou-harris.jpg", "p:Allen Ginsberg": "img/p-allen-ginsberg.jpg", "p:Jacques Levy": "img/p-jacques-levy.jpg", "p:Mark Knopfler": "img/p-mark-knopfler.jpg", "p:Sly and Robbie": "img/p-sly-and-robbie.jpg", "p:Tom Petty": "img/p-tom-petty.jpg", "p:Grateful Dead": "img/p-grateful-dead.jpg", "p:Daniel Lanois": "img/p-daniel-lanois.jpg", "p:Larry Campbell": "img/p-larry-campbell.jpg", "p:Charlie Sexton": "img/p-charlie-sexton.jpg", "p:David Hidalgo": "img/p-david-hidalgo.jpg", "p:Frank Sinatra": "img/p-frank-sinatra.jpg", "p:Blake Mills": "img/p-blake-mills.jpg", "p:Fiona Apple": "img/p-fiona-apple.jpg", "p:Willie Nelson": "img/p-willie-nelson.jpg", "p:Timothée Chalamet": "img/p-timoth-e-chalamet.jpg", "New Morning": "img/new-morning.jpg", "Dylan": "img/dylan.jpg", "The Basement Tapes": "img/the-basement-tapes.jpg", "Street-Legal": "img/street-legal.jpg", "Slow Train Coming": "img/slow-train-coming.jpg", "Saved": "img/saved.jpg", "Shot of Love": "img/shot-of-love.jpg", "Infidels": "img/infidels.jpg", "Empire Burlesque": "img/empire-burlesque.jpg", "Biograph": "img/biograph.jpg", "Knocked Out Loaded": "img/knocked-out-loaded.jpg", "Down in the Groove": "img/down-in-the-groove.jpg", "Oh Mercy": "img/oh-mercy.jpg", "Under the Red Sky": "img/under-the-red-sky.jpg", "The Bootleg Series Volumes 1–3": "img/the-bootleg-series-volumes-1-3.jpg", "Good as I Been to You": "img/good-as-i-been-to-you.jpg", "World Gone Wrong": "img/world-gone-wrong.jpg", "Live 1966 (The “Royal Albert Hall” Concert)": "img/live-1966-the-royal-albert-hall-concert.jpg", "Things Have Changed": "img/things-have-changed.jpg", "“Love and Theft”": "img/love-and-theft.jpg", "Modern Times": "img/modern-times.jpg", "Christmas in the Heart": "img/christmas-in-the-heart.jpg", "Tempest": "img/tempest.jpg", "Fallen Angels": "img/fallen-angels.jpg", "Murder Most Foul": "img/murder-most-foul.jpg", "Rough and Rowdy Ways": "img/rough-and-rowdy-ways.jpg", "Fragments: Time Out of Mind Sessions": "img/fragments-time-out-of-mind-sessions.jpg", "Discovers Woody Guthrie": "img/discovers-woody-guthrie.jpg", "Arrives in New York": "img/arrives-in-new-york.jpg", "Writes “Blowin' in the Wind”": "img/writes-blowin-in-the-wind.jpg", "Suze leaves for Italy": "img/suze-leaves-for-italy.jpg", "The Band's debut": "img/the-band-s-debut.jpg", "Johnny Cash Show": "img/johnny-cash-show.jpg", "Isle of Wight": "img/isle-of-wight.jpg", "Concert for Bangladesh": "img/concert-for-bangladesh.jpg", "Tour '74 with The Band": "img/tour-74-with-the-band.jpg", "Night of the Hurricane": "img/night-of-the-hurricane.jpg", "The Last Waltz": "img/the-last-waltz.jpg", "Renaldo and Clara": "img/renaldo-and-clara.jpg", "Gospel-only tour": "img/gospel-only-tour.jpg", "Live Aid": "img/live-aid.jpg", "Tour with the Grateful Dead": "img/tour-with-the-grateful-dead.jpg", "Locarno turning point": "img/locarno-turning-point.jpg", "MTV Unplugged": "img/mtv-unplugged.jpg", "Album of the Year": "img/album-of-the-year.jpg", "Chronicles memoir": "img/chronicles-memoir.jpg", "No Direction Home": "img/no-direction-home.jpg", "I'm Not There": "img/i-m-not-there.jpg", "Shadow Kingdom": "img/shadow-kingdom.jpg", "Rough and Rowdy tour": "img/rough-and-rowdy-tour.jpg", "Philosophy of Modern Song": "img/philosophy-of-modern-song.jpg", "Tour with Willie Nelson": "img/tour-with-willie-nelson.jpg", "A Complete Unknown": "img/a-complete-unknown.jpg", "p:Tom Wilson": "img/p-tom-wilson.jpg", "p:Mike Bloomfield": "img/p-mike-bloomfield.jpg", "p:Jerry Wexler": "img/p-jerry-wexler.jpg", "p:Clydie King": "img/p-clydie-king.jpg", "p:Traveling Wilburys": "img/p-traveling-wilburys.jpg", "The Times They Are a-Changin'": "img/the-times-they-are-a-changin.jpg", "Time Out of Mind": "img/time-out-of-mind.jpg", "Shadows in the Night": "img/shadows-in-the-night.jpg", "Triplicate": "img/triplicate.jpg", "Signed to Columbia": "img/signed-to-columbia.jpg", "Newport with Joan Baez": "img/newport-with-joan-baez.jpg", "March on Washington": "img/march-on-washington.jpg", "Newport goes electric": "img/newport-goes-electric.jpg", "“Judas!” in Manchester": "img/judas-in-manchester.jpg", "Rolling Thunder Revue": "img/rolling-thunder-revue.jpg", "Medal of Freedom": "img/medal-of-freedom.jpg", "European tour with Santana": "img/european-tour-with-santana.jpg", "Hard Rain TV special": "img/hard-rain-tv-special.jpg", "face:1978": "img/face-1978.jpg", "face:1984": "img/face-1984.jpg", "face:2012": "img/face-2012.jpg", "face:1963": "img/face-1963.jpg", "face:1975": "img/face-1975.jpg"},
+  /* full original tracklists from MusicBrainz: album title -> [[disc label, [[song, seconds], ...]], ...] */
+  tracklists:{"The Freewheelin' Bob Dylan":[["LP 1",[["Blowin’ in the Wind",169],["Girl From the North Country",203],["Masters of War",274],["Down the Highway",207],["Bob Dylan’s Blues",143],["A Hard Rain’s A-Gonna Fall",415],["Don’t Think Twice, It’s All Right",220],["Bob Dylan’s Dream",303],["Oxford Town",110],["Talkin’ World War III Blues",388],["Corrina, Corrina",164],["Honey, Just Allow Me One More Chance",121],["I Shall Be Free",289]]]],"Another Side of Bob Dylan":[["LP 1",[["All I Really Want to Do",244],["Black Crow Blues",194],["Spanish Harlem Incident",144],["Chimes of Freedom",430],["I Shall Be Free No. 10",288],["To Ramona",232],["Motorpsycho Nitemare",274],["My Back Pages",263],["I Don’t Believe You (She Acts Like We Never Have Met)",262],["Ballad in Plain D",497],["It Ain’t Me Babe",213]]]],"Bringing It All Back Home":[["LP 1",[["Subterranean Homesick Blues",145],["She Belongs to Me",170],["Maggie's Farm",238],["Love Minus Zero/No Limit",174],["Outlaw Blues",187],["On the Road Again",158],["Bob Dylan's 115th Dream",393],["Mr. Tambourine Man",334],["Gates of Eden",343],["It's Alright, Ma (I'm Only Bleeding)",452],["It's All Over Now, Baby Blue",254]]]],"Highway 61 Revisited":[["LP 1",[["Like a Rolling Stone",373],["Tombstone Blues",358],["It Takes a Lot to Laugh, It Takes a Train to Cry",249],["From a Buick 6",199],["Ballad of a Thin Man",359],["Queen Jane Approximately",331],["Highway 61 Revisited",210],["Just Like Tom Thumb’s Blues",332],["Desolation Row",680]]]],"Blonde on Blonde":[["LP 1",[["Rainy Day Women #12 & 35",275],["Pledging My Time",235],["Visions of Johanna",450],["One of Us Must Know (Sooner or Later)",297],["I Want You",190],["Stuck Inside of Mobile with the Memphis Blues Again",427],["Leopard-Skin Pill-Box Hat",230],["Just Like a Woman",292]]],["LP 2",[["Most Likely You Go Your Way and I’ll Go Mine",210],["Temporary Like Achilles",307],["Absolutely Sweet Marie",297],["4th Time Around",277],["Obviously 5 Believers",217],["Sad Eyed Lady of the Lowlands",680]]]],"John Wesley Harding":[["LP 1",[["John Wesley Harding",178],["As I Went Out One Morning",169],["I Dreamed I Saw St. Augustine",233],["All Along the Watchtower",152],["The Ballad of Frankie Lee and Judas Priest",336],["Drifter’s Escape",172],["Dear Landlord",196],["I Am a Lonesome Hobo",200],["I Pity the Poor Immigrant",253],["The Wicked Messenger",123],["Down Along the Cove",144],["I’ll Be Your Baby Tonight",156]]]],"Nashville Skyline":[["LP 1",[["Girl From the North Country",224],["Nashville Skyline Rag",194],["To Be Alone With You",130],["I Threw It All Away",146],["Peggy Day",123],["Lay Lady Lay",201],["One More Night",145],["Tell Me That It Isn’t True",163],["Country Pie",98],["Tonight I’ll Be Staying Here With You",204]]]],"Self Portrait":[["LP 1",[["All the Tired Horses",191],["Alberta #1",175],["I Forgot More Than You’ll Ever Know",142],["Days of 49",342],["Early Mornin’ Rain",211],["In Search of Little Sadie",146],["Let It Be Me",178],["Little Sadie",118],["Woogie Boogie",126],["Belle Isle",148],["Living the Blues",161],["Like a Rolling Stone (live)",314]]],["LP 2",[["Copper Kettle",212],["Gotta Travel On",184],["Blue Moon",146],["The Boxer",165],["The Mighty Quinn (Quinn the Eskimo) (live)",174],["Take Me as I Am (or Let Me Go)",179],["Take a Message to Mary",164],["It Hurts Me Too",196],["Minstrel Boy (live)",209],["She Belongs to Me (live)",162],["Wigwam",188],["Alberta #2",200]]]],"Bob Dylan":[["LP 1",[["You’re No Good",100],["Talkin’ New York",199],["In My Time of Dyin’",159],["Man of Constant Sorrow",188],["Fixin’ to Die",141],["Pretty Peggy-O",203],["Highway 51",173],["Gospel Plow",106],["Baby, Let Me Follow You Down",155],["House of the Risin’ Sun",318],["Freight Train Blues",139],["Song to Woody",162],["See That My Grave Is Kept Clean",163]]]],"New Morning":[["LP 1",[["If Not for You",164],["Day of the Locusts",244],["Time Passes Slowly",160],["Went to See the Gypsy",175],["Winterlude",146],["If Dogs Run Free",222],["New Morning",241],["Sign on the Window",225],["One More Weekend",196],["The Man in Me",192],["Three Angels",131],["Father of Night",91]]]],"Pat Garrett & Billy the Kid":[["LP 1",[["Main Title Theme (Billy)",366],["Cantina Theme (Workin’ for the Law)",177],["Billy 1",235],["Bunkhouse Theme",136],["River Theme",88],["Turkey Chase",214],["Knockin’ on Heaven’s Door",153],["Final Theme",323],["Billy 4",303],["Billy 7",128]]]],"Dylan":[["LP 1",[["Lily of the West",224],["Can’t Help Falling in Love",257],["Sarah Jane",163],["The Ballad of Ira Hayes",308],["Mr. Bojangles",331],["Mary Ann",160],["Big Yellow Taxi",132],["A Fool Such as I",161],["Spanish Is the Loving Tongue",253]]]],"Planet Waves":[["LP 1",[["On a Night Like This",179],["Going, Going, Gone",208],["Tough Mama",257],["Hazel",170],["Something There Is About You",284],["Forever Young",297],["Forever Young",169],["Dirge",337],["You Angel You",174],["Never Say Goodbye",174],["Wedding Song",281]]]],"Blood on the Tracks":[["LP 1",[["Tangled Up in Blue",343],["Simple Twist of Fate",259],["You’re a Big Girl Now",276],["Idiot Wind",470],["You’re Gonna Make Me Lonesome When You Go",176],["Meet Me in the Morning",262],["Lily, Rosemary and the Jack of Hearts",534],["If You See Her, Say Hello",289],["Shelter From the Storm",302],["Buckets of Rain",203]]]],"The Basement Tapes":[["LP 1",[["Odds and Ends",107],["Orange Juice Blues (Blues for Breakfast)",220],["Million Dollar Bash",153],["Yazoo Street Scandal",210],["Goin’ to Acapulco",329],["Katie’s Been Gone",166],["Lo and Behold!",168],["Bessie Smith",259],["Clothes Line Saga",177],["Apple Suckling Tree",169],["Please, Mrs. Henry",154],["Tears of Rage",252]]],["LP 2",[["Too Much of Nothing",184],["Yea! Heavy and a Bottle of Bread",136],["Ain’t No More Cane",238],["Crash on the Levee (Down in the Flood)",125],["Ruben Remus",196],["Tiny Montgomery",167],["You Ain’t Goin’ Nowhere",163],["Don’t Ya Tell Henry",194],["Nothing Was Delivered",264],["Open the Door, Homer",170],["Long Distance Operator",220],["This Wheel’s on Fire",230]]]],"Desire":[["LP 1",[["Hurricane",513],["Isis",418],["Mozambique",180],["One More Cup of Coffee",223],["Oh, Sister",245],["Joey",665],["Romance in Durango",350],["Black Diamond Bay",450],["Sara",329]]]],"Street-Legal":[["LP 1",[["Changing of the Guards",395],["New Pony",271],["No Time to Think",503],["Baby Stop Crying",321],["Is Your Love in Vain?",274],["Señor (Tales of Yankee Power)",344],["True Love Tends to Forget",258],["We Better Talk This Over",248],["Where Are You Tonight? (Journey Through Dark Heat)",376]]]],"Slow Train Coming":[["LP 1",[["Gotta Serve Somebody",325],["Precious Angel",390],["I Believe in You",305],["Slow Train",359],["Gonna Change My Way of Thinking",328],["Do Right to Me Baby (Do Unto Others)",233],["When You Gonna Wake Up",328],["Man Gave Names to All the Animals",266],["When He Returns",270]]]],"Saved":[["LP 1",[["A Satisfied Mind",118],["Saved",243],["Covenant Woman",365],["What Can I Do for You?",355],["Solid Rock",238],["Pressing On",314],["In the Garden",360],["Saving Grace",305],["Are You Ready",281]]]],"Shot of Love":[["Disc 1",[["Shot of Love",258],["Heart of Mine",269],["Property of Jesus",273],["Lenny Bruce",272],["Watered-Down Love",250],["The Groom's Still Waiting at the Altar",242],["Dead Man, Dead Man",238],["In the Summertime",214],["Trouble",272],["Every Grain of Sand",372]]]],"Infidels":[["LP 1",[["Jokerman",379],["Sweetheart Like You",276],["Neighborhood Bully",278],["License to Kill",215],["Man of Peace",392],["Union Sundown",326],["I and I",313],["Don’t Fall Apart on Me Tonight",356]]]],"Empire Burlesque":[["LP 1",[["Tight Connection to My Heart (Has Anybody Seen My Love)",322],["Seeing the Real You at Last",261],["I’ll Remember You",254],["Clean Cut Kid",257],["Never Gonna Be the Same Again",191],["Trust Yourself",208],["Emotionally Yours",270],["When the Night Comes Falling From the Sky",450],["Something’s Burning, Baby",294],["Dark Eyes",309]]]],"Biograph":[["Disc 1",[["Lay Lady Lay",197],["Baby, Let Me Follow You Down",153],["If Not for You",161],["I’ll Be Your Baby Tonight",159],["I’ll Keep It With Mine",224],["The Times They Are A-Changin’",193],["Blowin’ in the Wind",166],["Masters of War",271],["Lonesome Death of Hattie Carroll",345],["Percy’s Song",461],["Mixed-Up Confusion (single version)",141],["Tombstone Blues",356],["Groom’s Still Waiting at the Altar",244],["Most Likely You Go Your Way and I’ll Go Mine",207],["Like a Rolling Stone",369],["Lay Down Your Weary Tune",275],["Subterranean Homesick Blues",138],["I Don’t Believe You (She Acts Like We Never Have Met)",319]]],["Disc 2",[["Visions of Johanna (live)",451],["Every Grain of Sand",372],["Quinn the Eskimo (The Mighty Quinn)",137],["Mr. Tambourine Man",328],["Dear Landlord",195],["It Ain’t Me, Babe",212],["You Angel You",172],["Million Dollar Bash",152],["To Ramona",232],["You’re a Big Girl Now",262],["Abandoned Love",268],["Tangled Up in Blue",342],["It’s All Over Now, Baby Blue (live)",341],["Can You Please Crawl Out Your Window? (single version)",212],["Positively 4th Street (single version)",233],["Isis (live)",318],["Jet Pilot",50]]],["Disc 3",[["Caribbean Wind",352],["Up to Me",377],["Baby, I’m in the Mood for You",175],["I Wanna Be Your Lover",206],["I Want You",185],["Heart of Mine (live)",222],["On a Night Like This",175],["Just Like a Woman",295],["Romance in Durango (live)",278],["Señor (Tales of Yankee Power)",343],["Gotta Serve Somebody",325],["I Believe in You",311],["Time Passes Slowly",156],["I Shall Be Released",183],["Knockin’ on Heaven’s Door",150],["All Along the Watchtower",183],["Solid Rock",235],["Forever Young",122]]]],"Knocked Out Loaded":[["LP 1",[["You Wanna Ramble",197],["They Killed Him",244],["Driftin’ Too Far From Shore",222],["Precious Memories",195],["Maybe Someday",200],["Brownsville Girl",663],["Got My Mind Made Up",175],["Under Your Spell",237]]]],"Down in the Groove":[["LP 1",[["Let's Stick Together",189],["When Did You Leave Heaven?",135],["Sally Sue Brown",149],["Death Is Not the End",310],["Had a Dream About You, Baby",174],["Ugliest Girl in the World",212],["Silvio",186],["Ninety Miles an Hour (Down a Dead End Street)",176],["Shenandoah",219],["Rank Strangers to Me",177]]]],"Traveling Wilburys Vol. 1":[["CD 1",[["Handle With Care",199],["Dirty World",209],["Rattled",179],["Last Night",231],["Not Alone Any More",205],["Congratulations",210],["Heading for the Light",216],["Margarita",196],["Tweeter and the Monkey Man",328],["End of the Line",206]]]],"Oh Mercy":[["CD 1",[["Political World",227],["Where Teardrops Fall",153],["Everything Is Broken",195],["Ring Them Bells",180],["Man in the Long Black Coat",274],["Most of the Time",303],["What Good Am I?",285],["Disease of Conceit",224],["What Was It You Wanted",303],["Shooting Star",195]]]],"Under the Red Sky":[["CD 1",[["Wiggle Wiggle",130],["Under the Red Sky",249],["Unbelievable",247],["Born in Time",219],["T.V. Talkin’ Song",183],["10,000 Men",262],["2 X 2",216],["God Knows",183],["Handy Dandy",243],["Cat’s in the Well",201]]]],"Good as I Been to You":[["CD 1",[["Frankie & Albert",230],["Jim Jones",235],["Blackjack Davey",350],["Canadee-i-o",263],["Sittin’ on Top of the World",271],["Little Maggie",175],["Hard Times",274],["Step It Up and Go",178],["Tomorrow Night",223],["Arthur McBride",382],["You’re Gonna Quit Me",168],["Diamond Joe",197],["Froggie Went a Courtin’",384]]]],"World Gone Wrong":[["CD 1",[["World Gone Wrong",238],["Love Henry",264],["Ragged & Dirty",249],["Blood in My Eyes",305],["Broke Down Engine",203],["Delia",342],["Stack a Lee",231],["Two Soldiers",345],["Jack-A-Roe",296],["Lone Pilgrim",163]]]],"Time Out of Mind":[["CD 1",[["Love Sick",322],["Dirt Road Blues",216],["Standing in the Doorway",463],["Million Miles",353],["Tryin’ to Get to Heaven",322],["’til I Fell in Love With You",318],["Not Dark Yet",389],["Cold Irons Bound",436],["Make You Feel My Love",213],["Can’t Wait",347],["Highlands",992]]]],"Live 1966 (The “Royal Albert Hall” Concert)":[["CD 1",[["She Belongs to Me",208],["Fourth Time Around",277],["Visions of Johanna",489],["It’s All Over Now, Baby Blue",346],["Desolation Row",692],["Just Like a Woman",352],["Mr. Tambourine Man",533]]],["CD 2",[["Tell Me, Momma",310],["I Don’t Believe You (She Acts Like We Never Have Met)",367],["Baby, Let Me Follow You Down",226],["Just Like Tom Thumb’s Blues",410],["Leopard-Skin Pill-Box Hat",290],["One Too Many Mornings",262],["Ballad of a Thin Man",475],["Like a Rolling Stone",482]]]],"“Love and Theft”":[["CD 1",[["Tweedle Dee & Tweedle Dum",286],["Mississippi",321],["Summer Days",293],["Bye and Bye",196],["Lonesome Day Blues",365],["Floater (Too Much to Ask)",300],["High Water (for Charley Patton)",245],["Moonlight",203],["Honest With Me",349],["Po’ Boy",186],["Cry a While",305],["Sugar Baby",401]]]],"Modern Times":[["CD 1",[["Thunder on the Mountain",355],["Spirit on the Water",463],["Rollin’ and Tumblin’",362],["When the Deal Goes Down",304],["Someday Baby",296],["Workingman’s Blues #2",367],["Beyond the Horizon",336],["Nettie Moore",413],["The Levee’s Gonna Break",343],["Ain’t Talkin’",528]]]],"Together Through Life":[["CD 1",[["Beyond Here Lies Nothin'",230],["Life Is Hard",219],["My Wife's Home Town",255],["If You Ever Go to Houston",349],["Forgetful Heart",222],["Jolene",231],["This Dream of You",354],["Shake Shake Mama",217],["I Feel a Change Comin' On",325],["It's All Good",328]]]],"Christmas in the Heart":[["CD 1",[["Here Comes Santa Claus",155],["Do You Hear What I Hear?",182],["Winter Wonderland",112],["Hark the Herald Angels Sing",150],["I’ll Be Home for Christmas",174],["Little Drummer Boy",172],["The Christmas Blues",174],["O’ Come All Ye Faithful (Adeste Fideles)",168],["Have Yourself a Merry Little Christmas",246],["Must Be Santa",168],["Silver Bells",155],["The First Noel",150],["Christmas Island",147],["The Christmas Song",236],["O’ Little Town of Bethlehem",137]]]],"Tempest":[["Disc 1",[["Duquesne Whistle",344],["Soon After Midnight",208],["Narrow Way",448],["Long and Wasted Years",227],["Pay in Blood",310],["Scarlet Town",437],["Early Roman Kings",314],["Tin Angel",545],["Tempest",835],["Roll On John",446]]]],"Shadows in the Night":[["CD 1",[["I’m a Fool to Want You",291],["The Night We Called It a Day",205],["Stay With Me",176],["Autumn Leaves",182],["Why Try to Change Me Now",218],["Some Enchanted Evening",208],["Full Moon and Empty Arms",206],["Where Are You?",217],["What I’ll Do",201],["That Lucky Old Sun",219]]]],"Fallen Angels":[["CD 1",[["Young at Heart",179],["Maybe You'll Be There",176],["Polka Dots and Moonbeams",215],["All the Way",241],["Skylark",176],["Nevertheless",207],["All or Nothing at All",184],["On a Little Street in Singapore",136],["It Had to Be You",242],["Melancholy Mood",173],["That Old Black Magic",182],["Come Rain or Come Shine",159]]]],"Triplicate":[["CD 1 · ’til the Sun Goes Down",[["I Guess I’ll Have to Change My Plans",147],["September of My Years",206],["I Could Have Told You",220],["Once Upon a Time",218],["Stormy Weather",186],["This Nearly Was Mine",169],["That Old Feeling",219],["It Gets Lonely Early",190],["My One and Only Love",204],["Trade Winds",161]]],["CD 2 · Devil Dolls",[["Braggin’",165],["As Time Goes By",202],["Imagination",155],["How Deep Is the Ocean",203],["P.S. I Love You",258],["The Best Is Yet to Come",177],["But Beautiful",202],["Here’s That Rainy Day",207],["Where Is the One",195],["There’s a Flaw in My Flue",167]]],["CD 3 · Comin’ Home Late",[["Day In, Day Out",182],["I Couldn’t Sleep a Wink Last Night",196],["Sentimental Journey",192],["Somewhere Along the Way",199],["When the World Was Young",227],["These Foolish Things",251],["You Go to My Head",187],["Stardust",155],["It’s Funny to Everyone but Me",159],["Why Was I Born",170]]]],"Rough and Rowdy Ways":[["CD 1",[["I Contain Multitudes",277],["False Prophet",360],["My Own Version of You",401],["I’ve Made Up My Mind to Give Myself to You",392],["Black Rider",253],["Goodbye Jimmy Reed",254],["Mother of Muses",269],["Crossing the Rubicon",443],["Key West (Philosopher Pirate)",574]]],["CD 2",[["Murder Most Foul",1015]]]],"Fragments: Time Out of Mind Sessions":[["Disc 1",[["Love Sick",322],["Dirt Road Blues",214],["Standing in the Doorway",462],["Million Miles",351],["Tryin’ to Get to Heaven",323],["’til I Fell in Love With You",315],["Not Dark Yet",388],["Cold Irons Bound",434],["Make You Feel My Love",211],["Can’t Wait",346],["Highlands",992]]],["Disc 2",[["The Water Is Wide",342],["Red River Shore (version 1)",410],["Dirt Road Blues (version 1)",329],["Love Sick (version 1)",313],["Tryin’ to Get to Heaven (version 2)",307],["Make You Feel My Love (take 1)",250],["Can’t Wait (version 1)",292],["Mississippi (version 2)",313],["Standing in the Doorway (version 2)",427],["Not Dark Yet (version 1)",430],["Cold Irons Bound",368],["Highlands",846]]]],"The Times They Are a-Changin'":[["LP 1",[["The Times They Are A-Changin’",195],["Ballad of Hollis Brown",305],["With God on Our Side",428],["One Too Many Mornings",160],["North Country Blues",274],["Only a Pawn in Their Game",213],["Boots of Spanish Leather",280],["When the Ship Comes In",198],["The Lonesome Death of Hattie Carroll",347],["Restless Farewell",334]]]],"The Bootleg Series Volumes 1–3":[["CD 1",[["Hard Times in New York Town (live)",139],["He Was a Friend of Mine",243],["Man on the Street",116],["No More Auction Block (live)",184],["House Carpenter",249],["Talking Bear Mountain Picnic Massacre Blues",225],["Let Me Die in My Footsteps",213],["Rambling, Gambling Willie",253],["Talkin’ Hava Negeilah Blues",52],["Quit Your Low Down Ways",160],["Worried Blues",159],["Kingsport Town",209],["Walkin’ Down the Line",172],["Walls of Red Wing",305],["Paths of Victory",197],["Talkin’ John Birch Paranoid Blues (live)",265],["Who Killed Davey Moore? (live)",189],["Only a Hobo",210],["Moonshiner",307],["When the Ship Comes In",175],["The Times They Are A-Changin’",181],["Last Thoughts on Woody Guthrie (live)",428]]],["CD 2",[["Seven Curses",229],["Eternal Circle",158],["Suze (The Cough Song)",119],["Mama, You Been on My Mind",177],["Farewell, Angelina",327],["Subterranean Homesick Blues",176],["If You Gotta Go, Go Now",176],["Sitting on a Barbed Wire Fence",234],["Like a Rolling Stone",96],["It Takes a Lot to Laugh, It Takes a Train to Cry",203],["I’ll Keep It With Mine",220],["She’s Your Lover Now",370],["I Shall Be Released",236],["Santa Fe",130],["If Not for You",214],["Wallflower",169],["Nobody ’Cept You",161],["Tangled Up in Blue",411],["Call Letter Blues",267],["Idiot Wind",533]]],["CD 3",[["If You See Her, Say Hello",226],["Golden Loom",267],["Catfish",168],["Seven Days",240],["Ye Shall Be Changed",249],["Every Grain of Sand",218],["You Changed My Life",314],["Need a Woman",344],["Angelina",418],["Someone’s Got a Hold of My Heart",273],["Tell Me",265],["Lord Protect My Child",237],["Foot of Pride",358],["Blind Willie McTell",352],["When the Night Comes Falling From the Sky",337],["Series of Dreams",353]]]]},
+  /* image sources: [label, source page url] */
+  credits:[["Bob Dylan", "https://en.wikipedia.org/wiki/Bob_Dylan_(album)"], ["The Freewheelin' Bob Dylan", "https://en.wikipedia.org/wiki/The_Freewheelin%27_Bob_Dylan"], ["Another Side of Bob Dylan", "https://en.wikipedia.org/wiki/Another_Side_of_Bob_Dylan"], ["Bringing It All Back Home", "https://en.wikipedia.org/wiki/Bringing_It_All_Back_Home"], ["Like a Rolling Stone", "https://en.wikipedia.org/wiki/Like_a_Rolling_Stone"], ["Highway 61 Revisited", "https://en.wikipedia.org/wiki/Highway_61_Revisited"], ["Blonde on Blonde", "https://en.wikipedia.org/wiki/Blonde_on_Blonde"], ["John Wesley Harding", "https://en.wikipedia.org/wiki/John_Wesley_Harding_(album)"], ["Nashville Skyline", "https://en.wikipedia.org/wiki/Nashville_Skyline"], ["Self Portrait", "https://en.wikipedia.org/wiki/Self_Portrait_(Bob_Dylan_album)"], ["Pat Garrett & Billy the Kid", "https://en.wikipedia.org/wiki/Pat_Garrett_%26_Billy_the_Kid_(album)"], ["Planet Waves", "https://en.wikipedia.org/wiki/Planet_Waves"], ["Blood on the Tracks", "https://en.wikipedia.org/wiki/Blood_on_the_Tracks"], ["Desire", "https://en.wikipedia.org/wiki/Desire_(Bob_Dylan_album)"], ["Traveling Wilburys Vol. 1", "https://en.wikipedia.org/wiki/Traveling_Wilburys_Vol._1"], ["Together Through Life", "https://en.wikipedia.org/wiki/Together_Through_Life"], ["Born in Duluth", "https://en.wikipedia.org/wiki/Duluth,_Minnesota"], ["High-school rock bands", "https://en.wikipedia.org/wiki/Hibbing_High_School"], ["Becomes “Bob Dylan”", "https://en.wikipedia.org/wiki/Dinkytown"], ["Folk revival", "https://en.wikipedia.org/wiki/The_Kingston_Trio"], ["Freedom Rides", "https://en.wikipedia.org/wiki/Freedom_Riders"], ["Cuban Missile Crisis", "https://en.wikipedia.org/wiki/Cuban_Missile_Crisis"], ["JFK assassinated", "https://en.wikipedia.org/wiki/Assassination_of_John_F._Kennedy"], ["Beatles in America", "https://en.wikipedia.org/wiki/The_Beatles_in_the_United_States"], ["Meets the Beatles", "https://en.wikipedia.org/wiki/The_Beatles"], ["Vietnam escalates", "https://en.wikipedia.org/wiki/Vietnam_War"], ["Dont Look Back filmed", "https://en.wikipedia.org/wiki/Dont_Look_Back"], ["Byrds #1, folk rock", "https://en.wikipedia.org/wiki/The_Byrds"], ["Hires the Hawks", "https://en.wikipedia.org/wiki/The_Band"], ["Pet Sounds, Revolver", "https://en.wikipedia.org/wiki/Pet_Sounds"], ["Motorcycle crash", "https://en.wikipedia.org/wiki/Triumph_Tiger_100"], ["Basement Tapes at Big Pink", "https://en.wikipedia.org/wiki/Big_Pink"], ["Summer of Love", "https://en.wikipedia.org/wiki/Summer_of_Love"], ["Woody Guthrie dies", "https://en.wikipedia.org/wiki/Woody_Guthrie"], ["MLK, RFK killed", "https://en.wikipedia.org/wiki/Assassination_of_Martin_Luther_King_Jr."], ["Moon landing, Woodstock", "https://en.wikipedia.org/wiki/Apollo_11"], ["Princeton doctorate", "https://en.wikipedia.org/wiki/Princeton_University"], ["Watergate, oil crisis", "https://en.wikipedia.org/wiki/Watergate_scandal"], ["Nixon resigns", "https://en.wikipedia.org/wiki/Resignation_of_Richard_Nixon"], ["Elvis dies, punk", "https://en.wikipedia.org/wiki/Elvis_Presley"], ["MTV launches", "https://en.wikipedia.org/wiki/MTV"], ["Tours with Tom Petty", "https://en.wikipedia.org/wiki/Tom_Petty_and_the_Heartbreakers"], ["Rock Hall of Fame", "https://en.wikipedia.org/wiki/Bruce_Springsteen"], ["Never Ending Tour starts", "https://en.wikipedia.org/wiki/Never_Ending_Tour"], ["Berlin Wall falls", "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall"], ["30th Anniversary Concert", "https://en.wikipedia.org/wiki/The_30th_Anniversary_Concert_Celebration"], ["Plays for the Pope", "https://en.wikipedia.org/wiki/Pope_John_Paul_II"], ["9/11", "https://en.wikipedia.org/wiki/September_11_attacks"], ["Pulitzer citation", "https://en.wikipedia.org/wiki/Pulitzer_Prize"], ["Nobel Prize", "https://en.wikipedia.org/wiki/2016_Nobel_Prize_in_Literature"], ["Scorsese's Rolling Thunder film", "https://en.wikipedia.org/wiki/Rolling_Thunder_Revue:_A_Bob_Dylan_Story_by_Martin_Scorsese"], ["Pandemic", "https://en.wikipedia.org/wiki/COVID-19_pandemic"], ["Little Richard (portrait)", "https://en.wikipedia.org/wiki/Little_Richard"], ["Woody Guthrie (portrait)", "https://en.wikipedia.org/wiki/Woody_Guthrie"], ["Joan Baez (portrait)", "https://en.wikipedia.org/wiki/Joan_Baez"], ["Suze Rotolo (portrait)", "https://en.wikipedia.org/wiki/Suze_Rotolo"], ["Pete Seeger (portrait)", "https://en.wikipedia.org/wiki/Pete_Seeger"], ["John Hammond (portrait)", "https://en.wikipedia.org/wiki/John_Hammond_(record_producer)"], ["Al Kooper (portrait)", "https://en.wikipedia.org/wiki/Al_Kooper"], ["The Hawks (portrait)", "https://en.wikipedia.org/wiki/The_Band"], ["Bob Johnston (portrait)", "https://en.wikipedia.org/wiki/Bob_Johnston"], ["The Band (portrait)", "https://en.wikipedia.org/wiki/The_Band"], ["Johnny Cash (portrait)", "https://en.wikipedia.org/wiki/Johnny_Cash"], ["George Harrison (portrait)", "https://en.wikipedia.org/wiki/George_Harrison"], ["Sam Peckinpah (portrait)", "https://en.wikipedia.org/wiki/Sam_Peckinpah"], ["Leon Russell (portrait)", "https://en.wikipedia.org/wiki/Leon_Russell"], ["Roger McGuinn (portrait)", "https://en.wikipedia.org/wiki/Roger_McGuinn"], ["Mick Ronson (portrait)", "https://en.wikipedia.org/wiki/Mick_Ronson"], ["Scarlet Rivera (portrait)", "https://en.wikipedia.org/wiki/Scarlet_Rivera"], ["Emmylou Harris (portrait)", "https://en.wikipedia.org/wiki/Emmylou_Harris"], ["Allen Ginsberg (portrait)", "https://en.wikipedia.org/wiki/Allen_Ginsberg"], ["Jacques Levy (portrait)", "https://en.wikipedia.org/wiki/Jacques_Levy"], ["Mark Knopfler (portrait)", "https://en.wikipedia.org/wiki/Mark_Knopfler"], ["Sly and Robbie (portrait)", "https://en.wikipedia.org/wiki/Sly_and_Robbie"], ["Tom Petty (portrait)", "https://en.wikipedia.org/wiki/Tom_Petty"], ["Grateful Dead (portrait)", "https://en.wikipedia.org/wiki/Grateful_Dead"], ["Daniel Lanois (portrait)", "https://en.wikipedia.org/wiki/Daniel_Lanois"], ["Larry Campbell (portrait)", "https://en.wikipedia.org/wiki/Larry_Campbell_(musician)"], ["Charlie Sexton (portrait)", "https://en.wikipedia.org/wiki/Charlie_Sexton"], ["David Hidalgo (portrait)", "https://en.wikipedia.org/wiki/David_Hidalgo"], ["Frank Sinatra (portrait)", "https://en.wikipedia.org/wiki/Frank_Sinatra"], ["Blake Mills (portrait)", "https://en.wikipedia.org/wiki/Blake_Mills"], ["Fiona Apple (portrait)", "https://en.wikipedia.org/wiki/Fiona_Apple"], ["Willie Nelson (portrait)", "https://en.wikipedia.org/wiki/Willie_Nelson"], ["Timothée Chalamet (portrait)", "https://en.wikipedia.org/wiki/Timoth%C3%A9e_Chalamet"], ["New Morning", "https://en.wikipedia.org/wiki/New_Morning"], ["Dylan", "https://en.wikipedia.org/wiki/Dylan_(1973_album)"], ["The Basement Tapes", "https://en.wikipedia.org/wiki/The_Basement_Tapes"], ["Street-Legal", "https://en.wikipedia.org/wiki/Street-Legal_(album)"], ["Slow Train Coming", "https://en.wikipedia.org/wiki/Slow_Train_Coming"], ["Saved", "https://en.wikipedia.org/wiki/Saved_(Bob_Dylan_album)"], ["Shot of Love", "https://en.wikipedia.org/wiki/Shot_of_Love"], ["Infidels", "https://en.wikipedia.org/wiki/Infidels_(album)"], ["Empire Burlesque", "https://en.wikipedia.org/wiki/Empire_Burlesque"], ["Biograph", "https://en.wikipedia.org/wiki/Biograph_(album)"], ["Knocked Out Loaded", "https://en.wikipedia.org/wiki/Knocked_Out_Loaded"], ["Down in the Groove", "https://en.wikipedia.org/wiki/Down_in_the_Groove"], ["Oh Mercy", "https://en.wikipedia.org/wiki/Oh_Mercy"], ["Under the Red Sky", "https://en.wikipedia.org/wiki/Under_the_Red_Sky"], ["The Bootleg Series Volumes 1–3", "https://en.wikipedia.org/wiki/The_Bootleg_Series_Volumes_1%E2%80%933_(Rare_%26_Unreleased)_1961%E2%80%931991"], ["Good as I Been to You", "https://en.wikipedia.org/wiki/Good_as_I_Been_to_You"], ["World Gone Wrong", "https://en.wikipedia.org/wiki/World_Gone_Wrong"], ["Live 1966 (The “Royal Albert Hall” Concert)", "https://en.wikipedia.org/wiki/The_Bootleg_Series_Vol._4:_Bob_Dylan_Live_1966,_The_%22Royal_Albert_Hall%22_Concert"], ["Things Have Changed", "https://en.wikipedia.org/wiki/Things_Have_Changed"], ["“Love and Theft”", "https://en.wikipedia.org/wiki/Love_and_Theft_(Bob_Dylan_album)"], ["Modern Times", "https://en.wikipedia.org/wiki/Modern_Times_(Bob_Dylan_album)"], ["Christmas in the Heart", "https://en.wikipedia.org/wiki/Christmas_in_the_Heart"], ["Tempest", "https://en.wikipedia.org/wiki/Tempest_(Bob_Dylan_album)"], ["Fallen Angels", "https://en.wikipedia.org/wiki/Fallen_Angels_(Bob_Dylan_album)"], ["Murder Most Foul", "https://en.wikipedia.org/wiki/Murder_Most_Foul_(song)"], ["Rough and Rowdy Ways", "https://en.wikipedia.org/wiki/Rough_and_Rowdy_Ways"], ["Fragments: Time Out of Mind Sessions", "https://en.wikipedia.org/wiki/The_Bootleg_Series_Vol._17:_Fragments_%E2%80%93_Time_Out_of_Mind_Sessions_(1996%E2%80%931997)"], ["Discovers Woody Guthrie", "https://en.wikipedia.org/wiki/Bound_for_Glory_(book)"], ["Arrives in New York", "https://en.wikipedia.org/wiki/Greenwich_Village"], ["Writes “Blowin' in the Wind”", "https://en.wikipedia.org/wiki/Blowin%27_in_the_Wind"], ["Suze leaves for Italy", "https://en.wikipedia.org/wiki/Suze_Rotolo"], ["The Band's debut", "https://en.wikipedia.org/wiki/Music_from_Big_Pink"], ["Johnny Cash Show", "https://en.wikipedia.org/wiki/Johnny_Cash"], ["Isle of Wight", "https://en.wikipedia.org/wiki/Isle_of_Wight_Festival_1969"], ["Concert for Bangladesh", "https://en.wikipedia.org/wiki/The_Concert_for_Bangladesh"], ["Tour '74 with The Band", "https://en.wikipedia.org/wiki/Before_the_Flood_(album)"], ["Night of the Hurricane", "https://en.wikipedia.org/wiki/Rubin_Carter"], ["The Last Waltz", "https://en.wikipedia.org/wiki/The_Last_Waltz"], ["Renaldo and Clara", "https://en.wikipedia.org/wiki/Renaldo_and_Clara"], ["Gospel-only tour", "https://en.wikipedia.org/wiki/The_Bootleg_Series_Vol._13:_Trouble_No_More_1979%E2%80%931981"], ["Live Aid", "https://en.wikipedia.org/wiki/Live_Aid"], ["Tour with the Grateful Dead", "https://en.wikipedia.org/wiki/Dylan_%26_the_Dead"], ["Locarno turning point", "https://en.wikipedia.org/wiki/Locarno"], ["MTV Unplugged", "https://en.wikipedia.org/wiki/MTV_Unplugged_(Bob_Dylan_album)"], ["Album of the Year", "https://en.wikipedia.org/wiki/40th_Annual_Grammy_Awards"], ["Chronicles memoir", "https://en.wikipedia.org/wiki/Chronicles:_Volume_One"], ["No Direction Home", "https://en.wikipedia.org/wiki/No_Direction_Home"], ["I'm Not There", "https://en.wikipedia.org/wiki/I%27m_Not_There"], ["Shadow Kingdom", "https://en.wikipedia.org/wiki/Shadow_Kingdom_(film)"], ["Rough and Rowdy tour", "https://en.wikipedia.org/wiki/Rough_and_Rowdy_Ways_World_Wide_Tour"], ["Philosophy of Modern Song", "https://en.wikipedia.org/wiki/The_Philosophy_of_Modern_Song"], ["Tour with Willie Nelson", "https://en.wikipedia.org/wiki/Willie_Nelson"], ["A Complete Unknown", "https://en.wikipedia.org/wiki/A_Complete_Unknown"], ["Tom Wilson (portrait)", "https://en.wikipedia.org/wiki/Tom_Wilson_(record_producer)"], ["Mike Bloomfield (portrait)", "https://en.wikipedia.org/wiki/Mike_Bloomfield"], ["Jerry Wexler (portrait)", "https://en.wikipedia.org/wiki/Jerry_Wexler"], ["Clydie King (portrait)", "https://en.wikipedia.org/wiki/Clydie_King"], ["Traveling Wilburys (portrait)", "https://en.wikipedia.org/wiki/Traveling_Wilburys"], ["The Times They Are a-Changin'", "https://en.wikipedia.org/wiki/The_Times_They_Are_a-Changin%27_(Bob_Dylan_album)"], ["Time Out of Mind", "https://en.wikipedia.org/wiki/Time_Out_of_Mind_(Bob_Dylan_album)"], ["Shadows in the Night", "https://en.wikipedia.org/wiki/Shadows_in_the_Night"], ["Triplicate", "https://en.wikipedia.org/wiki/Triplicate_(Bob_Dylan_album)"], ["Signed to Columbia", "https://commons.wikimedia.org/wiki/File:Bob_Dylan_1963_promo_photo_by_Don_Hunstein.jpg"], ["Newport with Joan Baez", "https://commons.wikimedia.org/wiki/File:Joan_Baez_and_Bob_Dylan.jpg"], ["March on Washington", "https://commons.wikimedia.org/wiki/File:Joan_Baez_Bob_Dylan.jpg"], ["Newport goes electric", "https://commons.wikimedia.org/wiki/File:Bob_Dylan%27s_Fender_Stratocaster_(1964)_in_3_tone_sunburst,_played_when_Dylan_Goes_Electric_at_Newport_Folk_Festival_on_July_25,_1965._Lost_ca.1965,_rediscovered_in_2012_-_Play_It_Loud._MET_(2019-05-13_19.46.56_by_Eden,_Janine_and_Jim).jpg"], ["“Judas!” in Manchester", "https://commons.wikimedia.org/wiki/File:Bob_Dylan._Olympia,_1966_-_btv1b10602781d_(13_of_34).jpg"], ["Rolling Thunder Revue", "https://commons.wikimedia.org/wiki/File:Allen_Ginsberg_and_Bob_Dylan_by_Elsa_Dorfman.jpg"], ["Medal of Freedom", "https://commons.wikimedia.org/wiki/File:President_Barack_Obama_presents_American_musician_Bob_Dylan_with_a_Medal_of_Freedom_(cropped).jpg"], ["European tour with Santana", "https://commons.wikimedia.org/wiki/File:Bob_Dylan,_Mick_Taylor_and_Santana.jpg"], ["Hard Rain TV special", "https://commons.wikimedia.org/wiki/File:Bob_Dylan_Hard_Rain_1976.jpg"], ["Bob Dylan, 1978", "https://commons.wikimedia.org/wiki/File:Bob_Dylan_1978_(cropped).jpg"], ["Bob Dylan, 1984", "https://commons.wikimedia.org/wiki/File:Bob_Dylan_1984_Barcelona.jpg"], ["Bob Dylan, 2012", "https://commons.wikimedia.org/wiki/File:President_Barack_Obama_presents_American_musician_Bob_Dylan_with_a_Medal_of_Freedom_(cropped).jpg"], ["Bob Dylan, 1963", "https://commons.wikimedia.org/wiki/File:Bob_Dylan_1963_promo_photo_by_Don_Hunstein.jpg"], ["Bob Dylan, 1975", "https://commons.wikimedia.org/wiki/File:Allen_Ginsberg_and_Bob_Dylan_by_Elsa_Dorfman.jpg"]],
+  footer:"Dates to the month. Tiers and “should know” picks are a listening guide, not a ranking. Photos and cover art from Wikipedia and Wikimedia Commons; covers belong to their labels."
+};
+
+/* ================= TEMPLATE (shared by every artist page) ================= */
+(function(){
+const A = ARTIST;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmt = d => { const p = d.split("-"); return p[1] ? MON[+p[1]-1] + (p[2] ? " " + (+p[2]) : "") : ""; };
+const yearOf = d => +d.slice(0,4);
+const spot = s => "https://open.spotify.com/search/" + encodeURIComponent(A.search + " " + s);
+const thisYear = new Date().getFullYear();
+const until = y => y >= thisYear ? "now" : y;
+const IMG = k => A.images[k] || null;
+const ink = hex => { const n = parseInt(hex.slice(1),16), r=n>>16, g=n>>8&255, b=n&255; return (0.299*r+0.587*g+0.114*b) > 150 ? "#141414" : "#f7f7f7"; };
+
+const LANE = {album:"music",single:"music",lineup:"stage",live:"stage",life:"life",award:"life",screen:"life",world:"world"};
+const KIND = {life:["Life","--life"],lineup:["Line-up","--stage"],live:["Stage","--stage"],world:["World","--world"],screen:["Screen","--screen"],award:["Honour","--award"]};
+const TIER = {e:"Essential",g:"Worth it",d:"Completists"};
+
+const events = A.events.map((e,i)=>({...e,_i:i})).sort((a,b)=> a.d.localeCompare(b.d) || a._i-b._i);
+let studioN = 0;
+events.forEach((e,i) => { e.id = "e" + i; e.lane = LANE[e.k]; if (e.k==="album" && e.kind==="Studio") e.no = ++studioN; e.short = e.short || e.title || e.t; e.img = IMG(e.title || e.short) || IMG(e.short); });
+const eraOf = y => A.eras.find(e => y >= e.from && y <= e.to) || A.eras[A.eras.length-1];
+const byYear = {}; events.forEach(e => (byYear[yearOf(e.d)] = byYear[yearOf(e.d)] || []).push(e));
+
+/* ---------- head ---------- */
+$("#head").innerHTML = `<div class="title"><div class="eyebrow">Artist study</div><h1>${esc(A.name)}</h1><div class="facts">${A.facts.map(f=>`<span>${f}</span>`).join("")}</div></div>
+  <div class="faces">${(A.faces||[]).filter(y=>IMG("face:"+y)).map(y=>`<figure><img src="${IMG("face:"+y)}" alt="${esc(A.name)} in ${y}"><figcaption>${y}</figcaption></figure>`).join("")}</div>`;
+
+/* ---------- wall ---------- */
+const lastYear = Math.max(...events.map(e=>yearOf(e.d)));
+const cols = []; let gapStart = null;
+const wallPics = y => (byYear[y]||[]).filter(e => (e.lane==="life"||e.lane==="stage") && e.img && e.imp!==2).slice(0,2);
+const wallMusic = y => (byYear[y]||[]).filter(e => e.lane==="music");
+for (let y = A.wallFrom; y <= lastYear; y++){
+  const m = wallMusic(y), p = wallPics(y);
+  if (!m.length && !p.length){ if (gapStart===null) gapStart = y; continue; }
+  if (gapStart!==null){ cols.push({gap:[gapStart, y-1]}); gapStart = null; }
+  cols.push({y, m, p});
+}
+let lastEra = null;
+$("#wall").innerHTML = cols.map(c => {
+  const yr = c.gap ? c.gap[0] : c.y, er = eraOf(yr);
+  const label = er !== lastEra ? `<span>${esc(er.name)}</span>` : ""; lastEra = er;
+  const st = `--era:${er.color};--t:${ink(er.color)}`;
+  if (c.gap) return `<div class="wcol gap" style="${st}" data-era="${er.id}"><span class="wy">${c.gap[0]}${c.gap[1]>c.gap[0]?"–"+String(c.gap[1]).slice(2):""}</span><div></div><div class="wband">${label}</div></div>`;
+  const music = c.m.map(e => {
+    const cls = e.k==="single" ? "s" : e.tier;
+    const src = e.img;
+    return `<a class="${cls}" href="#${e.id}" title="${esc(e.title)}, ${fmt(e.d)} ${yearOf(e.d)}">${src?`<img src="${src}" alt="${esc(e.title)}" loading="lazy">`:coverDiv(e, cls==="e"?116:cls==="g"?88:58)}</a>`;
+  }).join("");
+  const pics = c.p.map(e => `<a class="wcard" href="#${e.id}"><img src="${e.img}" alt="" loading="lazy"><span><i style="background:var(${KIND[e.k][1]})"></i>${esc(e.short)}</span></a>`).join("");
+  return `<div class="wcol" style="${st}" data-era="${er.id}" id="w${c.y}"><button class="wy" data-y="${c.y}">${c.y}</button><div class="wmusic">${music}</div><div class="wlife">${pics}</div><div class="wband">${label}</div></div>`;
+}).join("") + `<div style="flex:none;width:24px"></div>`;
+const wall = $("#wall");
+/* keep each era label inside its own stretch of band */
+function fitEraLabels(){
+  wall.querySelectorAll(".wband span").forEach(sp => {
+    const col = sp.closest(".wcol"), id = col.dataset.era; let w = 0, c = col;
+    while (c && c.dataset && c.dataset.era === id){ w += c.offsetWidth; c = c.nextElementSibling; }
+    Object.assign(sp.style, {maxWidth: Math.max(20, w - 16) + "px", overflow: "hidden", textOverflow: "ellipsis"});
+  });
+}
+fitEraLabels();
+wall.addEventListener("click", ev => { const b = ev.target.closest(".wy[data-y]"); if (b) jumpYear(+b.dataset.y); });
+$("#prev").onclick = () => wall.scrollBy({left: -wall.clientWidth*.8, behavior:"smooth"});
+$("#next").onclick = () => wall.scrollBy({left: wall.clientWidth*.8, behavior:"smooth"});
+$("#erachips").innerHTML = A.eras.filter(er => wall.querySelector(`[data-era="${er.id}"]`)).map(er => `<button class="era-chip" data-era="${er.id}" style="--c:${er.color};--t:${ink(er.color)}">${esc(er.name)}</button>`).join("");
+$("#erachips").addEventListener("click", ev => { const b = ev.target.closest(".era-chip"); if (!b) return; const col = wall.querySelector(`.wcol[data-era="${b.dataset.era}"]`); if (col) wall.scrollTo({left: col.offsetLeft - wall.offsetLeft - 14, behavior:"smooth"}); });
+function jumpYear(yr){ const el = document.getElementById("y" + yr); if (!el) return; const sec = el.closest(".era.closed"); if (sec) sec.querySelector(".era-tog").click(); el.scrollIntoView({block:"start"}); }
+
+/* ---------- chronology ---------- */
+function coverDiv(e, size){
+  const [a,b] = e.c || ["#555","#222"];
+  return `<div class="cover" style="width:${size}px;height:${size}px;background:linear-gradient(135deg, ${a}, ${b});color:${ink(a)}"><span class="ct">${esc(e.title)}</span></div>`;
+}
+const tagHTML = s => s.tag==="k" ? `<span class="tag k">Heard it${s.via?" · "+esc(s.via.replace(/^via /,"")):""}</span>` : s.tag==="m" ? `<span class="tag m">Should know</span>` : "";
+const nrm = s => s.toLowerCase().normalize("NFKD").replace(/\(.*?\)/g,"").replace(/[^a-z0-9]/g,"");
+const mmss = s => s == null ? "" : Math.floor(s/60) + ":" + String(s%60).padStart(2,"0");
+/* favourites: every heart has a stable key; TARGET maps it to its place in the timeline */
+const HEART = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.4-4.6-9.5-9.1C1 8.2 3.1 4.6 6.7 4.6c2.3 0 4 1.3 5.3 3 1.3-1.7 3-3 5.3-3 3.6 0 5.7 3.6 4.2 6.8-2.1 4.5-9.5 9.1-9.5 9.1z"/></svg>`;
+const TARGET = {}, META = {};
+const ctxOf = e => e.title || e.short;
+const songKey = (t, e) => "s:" + nrm(t) + "|" + nrm(ctxOf(e));
+const albumKey = e => "a:" + nrm(e.title);
+function fav(key, meta, id, open, label){
+  if (!TARGET[key] && id) TARGET[key] = {id, open};
+  if (!META[key]) META[key] = meta;
+  return `<button class="fav${label?" lab":""}" data-key="${esc(key)}" aria-pressed="false" aria-label="Favourite: ${esc(meta.title)}" title="Add to my favourites">${HEART}${label?`<span>${label}</span>`:""}</button>`;
+}
+const songFav = (t, e, open) => fav(songKey(t, e), {kind:"song", title:t, ctx:ctxOf(e), year:yearOf(e.d), img:e.img||""}, e.id, open);
+function fullList(e){
+  const tl = (A.tracklists||{})[e.title]; if (!tl) return "";
+  const keyed = {}; (e.songs||[]).forEach(s => keyed[nrm(s.s)] = s);
+  const all = tl.flatMap(m => m[1]); const total = all.reduce((a,t)=>a+(t[1]||0),0);
+  const multi = tl.length > 1; let n = 0;
+  const body = tl.map(([lbl, ts]) => `${multi?`<li class="med">${esc(lbl)}</li>`:""}${ts.map(([t,sec]) => { n++; const k = keyed[nrm(t)];
+    return `<li class="${k&&k.tag?"key":""}"><span class="no">${multi?ts.indexOf(ts.find(x=>x[0]===t))+1:n}</span>${songFav(t, e, true)}<a href="${spot(t)}" target="_blank" rel="noopener">${esc(t)}</a>${k&&k.tag?`<span class="tag ${k.tag}">${k.tag==="k"?"Heard it":"Should know"}</span>`:"<span></span>"}<span class="dur">${mmss(sec)}</span></li>`; }).join("")}`).join("");
+  return `<details class="full"><summary>Full tracklist<span>${all.length} songs${total?" · "+Math.round(total/60)+" min":""}</span></summary><ol>${body}</ol></details>`;
+}
+const tracks = (songs, e) => songs && songs.length ? `<div class="tracks"><span class="th">Key songs</span>${songs.map(s=>`<div class="tr" data-tag="${s.tag||""}">${songFav(s.s, e, false)}<a href="${spot(s.s)}" target="_blank" rel="noopener">${esc(s.s)}</a>${tagHTML(s)}${s.n?`<span class="note">${esc(s.n)}</span>`:""}</div>`).join("")}</div>` : "";
+
+function musicItem(e){
+  if (e.k==="single") return `<article class="single" id="${e.id}" data-lane="music">${e.img?`<img src="${e.img}" alt="${esc(e.title)} single" loading="lazy">`:""}<span class="type">Single · ${fmt(e.d)} ${yearOf(e.d)}</span><h3>${esc(e.title)}</h3><p>${esc(e.t)}</p>${tracks(e.songs, e)}</article>`;
+  const label = e.kind==="Studio" ? `Studio album ${e.no} of ${studioN}` : e.kind==="Supergroup" ? "Supergroup album" : e.kind==="Live" ? "Live album" : "Archival release";
+  const art = e.img ? `<img src="${e.img}" alt="Cover of ${esc(e.title)}" loading="lazy">` : coverDiv(e, e.tier==="d"?64:132);
+  return `<article class="album ${e.tier}" id="${e.id}" data-lane="music" data-tier="${e.tier}"><div class="art">${art}</div>
+    <div class="meta"><span class="type">${label} · ${fmt(e.d)} ${yearOf(e.d)}</span><h3>${esc(e.title)}</h3><span class="tierrow"><span class="tier ${e.tier}">${TIER[e.tier]}</span>${fav(albumKey(e), {kind:"album", title:e.title, year:yearOf(e.d), img:e.img||""}, e.id, false, "Favourite")}</span>${e.tier!=="d"?`<p>${esc(e.sound)}</p>`:""}</div>
+    ${e.tier==="d"?`<p style="grid-column:1/-1;margin:0">${esc(e.sound)}</p>`:""}${tracks(e.songs, e)}${fullList(e)}</article>`;
+}
+function sideItem(e){
+  const [lbl,col] = KIND[e.k];
+  return `<div class="ev ${e.k}${e.img?" pic":""}" id="${e.id}" data-lane="${e.lane}" data-imp="${e.imp||1}" style="--c:var(${col})">${e.img?`<img src="${e.img}" alt="" loading="lazy">`:""}<span class="kind">${lbl}<span class="when">${fmt(e.d)}</span></span><span class="txt">${esc(e.t)}</span>${tracks(e.songs, e)}</div>`;
+}
+const person = ([n, r]) => { const src = IMG("p:"+n); return `<figure>${src?`<img src="${src}" alt="" loading="lazy">`:`<span class="ph">${esc(n.split(" ").map(w=>w[0]).slice(0,2).join(""))}</span>`}<figcaption>${esc(n)}<small>${esc(r)}</small></figcaption></figure>`; };
+let html = "";
+A.eras.forEach(er => {
+  const evs = events.filter(e => eraOf(yearOf(e.d)) === er); if (!evs.length) return;
+  const nAlb = evs.filter(e => e.k==="album").length, nMom = evs.length - evs.filter(e => e.lane==="music").length;
+  const sum = [nAlb ? `${nAlb} album${nAlb>1?"s":""}` : "", nMom ? `${nMom} moment${nMom>1?"s":""}` : ""].filter(Boolean).join(" · ");
+  html += `<section class="era" data-era="${er.id}" style="--era:${er.color}"><div class="era-head" id="era-${er.id}"><button class="era-tog" data-era="${er.id}" aria-expanded="true" aria-controls="era-${er.id}"><span class="lbl">Collapse</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2 8 4-4 4 4"/></svg></button><span class="yrs">${er.from}–${until(er.to)}<span class="era-sum"> · ${sum}</span></span><h2>${esc(er.name)}</h2><p>${esc(er.sound)}</p>${er.people?`<div class="who">${er.people.map(person).join("")}</div>`:""}</div>`;
+  [...new Set(evs.map(e=>yearOf(e.d)))].forEach(y => {
+    const ys = evs.filter(e=>yearOf(e.d)===y);
+    html += `<div class="yr" id="y${y}"><div class="col music">${ys.filter(e=>e.lane==="music").map(musicItem).join("")}</div><div class="spine"><b>${y}</b></div><div class="col side">${ys.filter(e=>e.lane!=="music").map(sideItem).join("")}</div></div>`;
+  });
+  html += `</section>`;
+});
+$("#chrono").innerHTML = html;
+
+/* ---------- controls ---------- */
+const show = {music:true, stage:true, life:true, world:true}; let ess = false;
+const CH = [["music","Music","--ink"],["stage","Line-ups & stage","--stage"],["life","Life","--life"],["world","World","--world"]];
+$("#controls").innerHTML = `<span class="lbl">Show</span>` + CH.map(([k,l,c])=>`<button class="chip" data-l="${k}" aria-pressed="true"><i style="background:var(${c})"></i>${l}</button>`).join("") + `<button class="chip ess" id="ess" aria-pressed="false">Essentials only</button><span class="lbl" style="margin-left:12px">Eras</span><button class="chip ess" id="eraAll" aria-pressed="false">Collapse all</button>`;
+$("#legend").innerHTML = `<span><span class="tag k">Heard it</span> you have probably heard it, and where</span><span><span class="tag m">Should know</span> essential, maybe new to you</span><span>Song titles open a Spotify search.</span>`;
+function apply(){
+  document.querySelectorAll("#chrono [data-lane]").forEach(el => {
+    let on = show[el.dataset.lane];
+    if (ess && (el.dataset.tier==="d" || el.dataset.imp==="2")) on = false;
+    el.hidden = !on;
+  });
+  document.querySelectorAll("#chrono .tr").forEach(r => r.hidden = ess && !r.dataset.tag);
+  document.querySelectorAll("#chrono .yr").forEach(r => r.hidden = !r.querySelector("[data-lane]:not([hidden])"));
+}
+/* collapsible eras (remembered per browser) */
+const EKEY = "artist-study:" + A.slug + ":closed-eras";
+let closedEras = new Set(); try { closedEras = new Set(JSON.parse(localStorage.getItem(EKEY) || "[]")); } catch(e) {}
+function setEra(id, closed, save = true){
+  const sec = document.querySelector(`.era[data-era="${id}"]`); if (!sec) return;
+  sec.classList.toggle("closed", closed);
+  const b = sec.querySelector(".era-tog"); b.setAttribute("aria-expanded", !closed); b.querySelector(".lbl").textContent = closed ? "Expand" : "Collapse";
+  closed ? closedEras.add(id) : closedEras.delete(id);
+  if (save){ try { localStorage.setItem(EKEY, JSON.stringify([...closedEras])); } catch(e) {} }
+  const all = document.querySelectorAll(".era").length, allClosed = closedEras.size >= all;
+  const ab = $("#eraAll"); if (ab){ ab.textContent = allClosed ? "Expand all" : "Collapse all"; ab.setAttribute("aria-pressed", allClosed); }
+}
+const openFor = el => { const sec = el && el.closest(".era.closed"); if (sec) setEra(sec.dataset.era, false); };
+document.querySelectorAll(".era").forEach(s => setEra(s.dataset.era, closedEras.has(s.dataset.era), false));
+document.addEventListener("click", ev => {
+  const t = ev.target.closest(".era-tog");
+  const head = !t && ev.target.closest(".era.closed .era-head");
+  if (t || head){ const id = (t || head).closest(".era").dataset.era; setEra(id, !closedEras.has(id)); return; }
+  const a = ev.target.closest('a[href^="#"]');
+  if (a && a.getAttribute("href").length > 1) openFor(document.getElementById(a.getAttribute("href").slice(1)));
+});
+$("#controls").addEventListener("click", ev => {
+  if (ev.target.closest("#eraAll")){ const close = closedEras.size < document.querySelectorAll(".era").length; document.querySelectorAll(".era").forEach(s => setEra(s.dataset.era, close)); return; }
+  const c = ev.target.closest(".chip"); if (!c) return;
+  if (c.id==="ess"){ ess = !ess; c.setAttribute("aria-pressed", ess); }
+  else { const k = c.dataset.l; show[k] = !show[k]; c.setAttribute("aria-pressed", show[k]); }
+  apply();
+});
+$("#foot").innerHTML = `<p>${esc(A.footer)}</p>` + ((A.credits||[]).length ? `<details class="credits"><summary>Image sources (${A.credits.length})</summary><p>Each image links to its page on Wikipedia or Wikimedia Commons, which gives its author and licence. Album and single covers are the labels' artwork, shown for reference.</p><ul>${A.credits.map(([l,u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a></li>`).join("")}</ul></details>` : "");
+
+/* ---------- favourites: saved per person in the page's db, browser storage as fallback ---------- */
+const LKEY = "artist-study:" + A.slug + ":favs";
+let favs = new Map();            // key -> {key, kind, title, ctx, year}
+let mode = "local", note = "";
+let favRef = null, writing = false, dirty = false;
+try { (JSON.parse(localStorage.getItem(LKEY) || "[]")).forEach(x => favs.set(x.key, x)); } catch(e) {}
+const saveLocal = () => { try { localStorage.setItem(LKEY, JSON.stringify([...favs.values()])); } catch(e) {} };
+const favList = () => [...favs.values()];
+
+function renderFavs(){
+  document.querySelectorAll(".fav[data-key]").forEach(b => b.setAttribute("aria-pressed", favs.has(b.dataset.key)));
+  const items = favList().map(x => ({...x, ...(META[x.key]||{}), key:x.key})).sort((a,b) => (a.year||0)-(b.year||0) || (a.kind==="album"?-1:1));
+  const albums = items.filter(x => x.kind==="album"), songs = items.filter(x => x.kind==="song");
+  const thumbs = [...new Set(items.map(x => x.img).filter(Boolean))].slice(0, 12);
+  $("#favsum").innerHTML = `<span class="h">${HEART}My favourites</span><span class="cnt">${items.length ? [albums.length?`${albums.length} album${albums.length>1?"s":""}`:"", songs.length?`${songs.length} song${songs.length>1?"s":""}`:""].filter(Boolean).join(" · ") : "none yet"}</span><span class="thumbs">${thumbs.map(s=>`<img src="${s}" alt="">`).join("")}</span><span class="chev"><svg viewBox="0 0 12 12"><path d="m2 4 4 4 4-4"/></svg></span>`;
+  const go = x => TARGET[x.key] ? `href="#${TARGET[x.key].id}" data-go="${esc(x.key)}"` : "";
+  $("#favbody").innerHTML = `<div class="favnote">${esc(note || (mode==="account" ? "Saved to your account. They follow you to any device." : "Saved in this browser only."))}</div>` +
+    (!items.length ? `<div class="favempty">Tap the ♡ next to any song, or “Favourite” on an album, to collect it here. Each one links back to its place in the timeline.</div>` : "") +
+    (albums.length ? `<div><div class="favh">Albums</div><div class="favgrid">${albums.map(x => `<a class="favalb" ${go(x)}>${x.img?`<img src="${x.img}" alt="">`:`<span class="cover"></span>`}<b>${esc(x.title)}</b><span>${x.year||""}</span></a>`).join("")}</div></div>` : "") +
+    (songs.length ? `<div><div class="favh">Songs</div><ul class="favsongs">${songs.map(x => `<li>${fav(x.key, x, TARGET[x.key]?.id, TARGET[x.key]?.open)}${x.img?`<img src="${x.img}" alt="">`:`<span class="noimg"></span>`}<span><a class="go" ${go(x)}>${esc(x.title)}</a><span class="ctx">${esc(x.ctx||"")}${x.year?" · "+x.year:""}</span></span><a class="sp" href="${spot(x.title)}" target="_blank" rel="noopener">Spotify ↗</a></li>`).join("")}</ul></div>` : "");
+  document.querySelectorAll("#favbody .fav[data-key]").forEach(b => b.setAttribute("aria-pressed", "true"));
+}
+async function flush(){
+  saveLocal();
+  if (mode !== "account" || !favRef) return;
+  if (writing){ dirty = true; return; }
+  writing = true;
+  do {
+    dirty = false;
+    try { await favRef.set({items: favList()}); }
+    catch(err){
+      if (err && err.code === "unavailable"){ await new Promise(r => setTimeout(r, 600 + Math.random()*600)); try { await favRef.set({items: favList()}); } catch(e2){ note = "Couldn't save to your account just now. Kept in this browser."; } }
+      else { mode = "local"; note = "Saving to your account isn't available here. Kept in this browser."; renderFavs(); }
+    }
+  } while (dirty && mode === "account");
+  writing = false;
+}
+function toggleFav(key){
+  if (favs.has(key)) favs.delete(key);
+  else { const m = META[key] || {}; favs.set(key, {key, kind:m.kind, title:m.title, ctx:m.ctx||"", year:m.year||null}); }
+  renderFavs(); flush();
+}
+function reveal(key){
+  const t = TARGET[key]; if (!t) return;
+  const el = document.getElementById(t.id); if (!el) return;
+  if (el.hidden || el.closest("[hidden]")){ Object.keys(show).forEach(k => show[k] = true); ess = false;
+    document.querySelectorAll("#controls .chip").forEach(c => c.setAttribute("aria-pressed", c.id==="ess" ? "false" : "true")); apply(); }
+  openFor(el);
+  if (t.open){ const d = el.querySelector("details.full"); if (d) d.open = true; }
+  let row = el;
+  if (t.open){ row = [...el.querySelectorAll(".fav[data-key]")].find(b => b.dataset.key === key)?.closest("li") || el; }
+  row.scrollIntoView({block: "center"});
+  row.classList.remove("flash"); void row.offsetWidth; row.classList.add("flash");
+}
+document.addEventListener("click", ev => {
+  const b = ev.target.closest(".fav[data-key]");
+  if (b){ ev.preventDefault(); toggleFav(b.dataset.key); return; }
+  const g = ev.target.closest("[data-go]");
+  if (g){ ev.preventDefault(); reveal(g.dataset.go); }
+});
+const favsEl = $("#favs");
+try { if (localStorage.getItem(LKEY + ":open") === "1") favsEl.open = true; } catch(e) {}
+favsEl.addEventListener("toggle", () => { try { localStorage.setItem(LKEY + ":open", favsEl.open ? "1" : "0"); } catch(e) {} });
+renderFavs();
+
+(async () => {
+  const use = window.claude && window.claude.use;
+  if (!use) return;
+  const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+  const uid = user ? await user.id() : null;
+  if (!db || !uid) return;
+  favRef = db.doc("data/users/" + uid + "/favs");
+  mode = "account"; note = "Loading your saved favourites…"; renderFavs();
+  let first = true;
+  const timer = setTimeout(() => { if (first){ note = "Can't reach your saved favourites yet. Showing the ones kept in this browser."; renderFavs(); } }, 10000);
+  favRef.onSnapshot(snap => {
+    if (!snap.metadata.fromCache){ clearTimeout(timer); }
+    if (writing || dirty) return;
+    const wasFirst = first; first = false;
+    if (snap.exists){
+      const items = (snap.data().items || []).filter(x => x && x.key);
+      const local = favList();
+      favs = new Map(items.map(x => [x.key, x]));
+      // first sync on this device: keep anything hearted here before the account copy loaded
+      if (wasFirst && local.some(x => !favs.has(x.key))){ local.forEach(x => favs.set(x.key, x)); note = ""; renderFavs(); flush(); return; }
+    } else if (wasFirst && favs.size){ note = ""; renderFavs(); flush(); return; }
+    note = ""; saveLocal(); renderFavs();
+  }, err => { clearTimeout(timer); mode = "local"; note = "Saving to your account isn't available here. Kept in this browser."; renderFavs(); });
+})();
+})();
+</script>
+
+</body>
+</html>
