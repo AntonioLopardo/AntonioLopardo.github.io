@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 12 Nov 2026 04:05:35 +0000</lastBuildDate>
+<lastBuildDate>Fri, 13 Nov 2026 04:05:32 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -2221,8 +2221,8 @@
 <title>Proceedings of the Workshop on Challenges in the Management of Large Corpora (CMLC-9) 2021</title>
 <link>https://www.semanticscholar.org/paper/51b1176d8791372d1291931ad603ad728b7f3ec8</link>
 <guid isPermaLink="false">51b1176d8791372d1291931ad603ad728b7f3ec8</guid>
-<description>By Julien Abadji, Pedro Ortiz Suarez, Laurent Romary, Benoît Sagot, Markus G. ̈artner, Felicitas Kleinkopf, Melanie Andresen, Sibylle Hermann, Nils Diewald, Eliza Margaretha et al.. . (Met: Pedro Ortiz Suarez)</description>
-<pw:authors>Julien Abadji, Pedro Ortiz Suarez, Laurent Romary, Benoît Sagot, Markus G. ̈artner, Felicitas Kleinkopf, Melanie Andresen, Sibylle Hermann, Nils Diewald, Eliza Margaretha et al.</pw:authors>
+<description>By Julien Abadji, Pedro Ortiz Suarez, Laurent Romary, Benoît Sagot, Markus Gärtner, Felicitas Kleinkopf, Melanie Andresen, Sibylle Hermann, Nils Diewald, Eliza Margaretha et al.. . (Met: Pedro Ortiz Suarez)</description>
+<pw:authors>Julien Abadji, Pedro Ortiz Suarez, Laurent Romary, Benoît Sagot, Markus Gärtner, Felicitas Kleinkopf, Melanie Andresen, Sibylle Hermann, Nils Diewald, Eliza Margaretha et al.</pw:authors>
 <pw:met>Pedro Ortiz Suarez</pw:met>
 <pw:relationships>Pedro Ortiz Suarez=met</pw:relationships>
 <pw:venue></pw:venue>
@@ -2735,8 +2735,8 @@
 <title>Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains</title>
 <link>https://www.semanticscholar.org/paper/0b20024564d659164a07391490933655cbf23b8a</link>
 <guid isPermaLink="false">0b20024564d659164a07391490933655cbf23b8a</guid>
-<description>By S. Motwani, Tejas Krishnan, Alistair Letcher, Charles London, Suhaas M. Bhat, Hui Jiao, P. Torr, Riashat Islam, Christopher Summerfield, J. Foerster et al.. . (Met: Jakob Foerster) arXiv:2611.06244</description>
-<pw:authors>S. Motwani, Tejas Krishnan, Alistair Letcher, Charles London, Suhaas M. Bhat, Hui Jiao, P. Torr, Riashat Islam, Christopher Summerfield, J. Foerster et al.</pw:authors>
+<description>By S. Motwani, T. Krishnan, Alistair Letcher, Charles London, Suhaas M. Bhat, Hui Jiao, P. Torr, Riashat Islam, Christopher Summerfield, J. Foerster et al.. . (Met: Jakob Foerster) arXiv:2611.06244</description>
+<pw:authors>S. Motwani, T. Krishnan, Alistair Letcher, Charles London, Suhaas M. Bhat, Hui Jiao, P. Torr, Riashat Islam, Christopher Summerfield, J. Foerster et al.</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -2889,8 +2889,8 @@
 <title>Rethinking Pre-pretraining</title>
 <link>https://www.semanticscholar.org/paper/32df02f443fd505b15a971594b2272b00427ce0a</link>
 <guid isPermaLink="false">32df02f443fd505b15a971594b2272b00427ce0a</guid>
-<description>By Alexander Stern, Tim Rocktäschel, Acyr F. Locatelli, L. Ruis. . (Met: Tim Rocktäschel) arXiv:2610.40051</description>
-<pw:authors>Alexander Stern, Tim Rocktäschel, Acyr F. Locatelli, L. Ruis</pw:authors>
+<description>By A. Stern, Tim Rocktäschel, Acyr F. Locatelli, L. Ruis. . (Met: Tim Rocktäschel) arXiv:2610.40051</description>
+<pw:authors>A. Stern, Tim Rocktäschel, Acyr F. Locatelli, L. Ruis</pw:authors>
 <pw:met>Tim Rocktäschel</pw:met>
 <pw:relationships>Tim Rocktäschel=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -4443,11 +4443,11 @@
 <title>World Models: Enabling the Next AI Revolution</title>
 <link>https://www.semanticscholar.org/paper/4a3b78b69f23a6998eb8424def1b537942dcc5ce</link>
 <guid isPermaLink="false">4a3b78b69f23a6998eb8424def1b537942dcc5ce</guid>
-<description>By Yann LeCun. . (Met: Yann LeCun)</description>
+<description>By Yann LeCun. Proceedings of the ACM AI Leadership Summit 2026. (Met: Yann LeCun)</description>
 <pw:authors>Yann LeCun</pw:authors>
 <pw:met>Yann LeCun</pw:met>
 <pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>Proceedings of the ACM AI Leadership Summit 2026</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date>2026-08-31</pw:date>
 <pw:year>2026</pw:year>
@@ -8545,8 +8545,8 @@
 <title>Recurrent Structural Policy Gradient for Partially Observable Mean Field Games</title>
 <link>https://www.semanticscholar.org/paper/022a6c574ef111fb7de42c5e37a0339d34f24e51</link>
 <guid isPermaLink="false">022a6c574ef111fb7de42c5e37a0339d34f24e51</guid>
-<description>By C. Wibault, Johannes Forkel, S. Towers, Tiphaine Wibault, J. Duque, George Whittle, Andreas Schaab, Yucheng Yang, Chi-Yuan Wang, Michael A. Osborne et al.. arXiv.org. (Met: Jakob Foerster) arXiv:2602.20141</description>
-<pw:authors>C. Wibault, Johannes Forkel, S. Towers, Tiphaine Wibault, J. Duque, George Whittle, Andreas Schaab, Yucheng Yang, Chi-Yuan Wang, Michael A. Osborne et al.</pw:authors>
+<description>By C. Wibault, Johannes Forkel, S. Towers, Tiphaine Wibault, Juan Agustin Duque, George Whittle, Andreas Schaab, Yucheng Yang, Chi-Yuan Wang, Michael A. Osborne et al.. arXiv.org. (Met: Jakob Foerster) arXiv:2602.20141</description>
+<pw:authors>C. Wibault, Johannes Forkel, S. Towers, Tiphaine Wibault, Juan Agustin Duque, George Whittle, Andreas Schaab, Yucheng Yang, Chi-Yuan Wang, Michael A. Osborne et al.</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -11051,8 +11051,8 @@
 <title>Evolution Strategies at the Hyperscale</title>
 <link>https://www.semanticscholar.org/paper/ab6c07e1a8def3aab498fe97ef23248f53d6923d</link>
 <guid isPermaLink="false">ab6c07e1a8def3aab498fe97ef23248f53d6923d</guid>
-<description>By B. Sarkar, Mattie Fellows, J. Duque, Alistair Letcher, Antonio León Villares, Anya Sims, Dylan Cope, Jarek Liesen, Lukas Seier, Theo Wolf et al.. arXiv.org. (Met: Jakob Foerster) arXiv:2511.16652</description>
-<pw:authors>B. Sarkar, Mattie Fellows, J. Duque, Alistair Letcher, Antonio León Villares, Anya Sims, Dylan Cope, Jarek Liesen, Lukas Seier, Theo Wolf et al.</pw:authors>
+<description>By B. Sarkar, Mattie Fellows, Juan Agustin Duque, Alistair Letcher, Antonio León Villares, Anya Sims, Dylan Cope, Jarek Liesen, Lukas Seier, Theo Wolf et al.. arXiv.org. (Met: Jakob Foerster) arXiv:2511.16652</description>
+<pw:authors>B. Sarkar, Mattie Fellows, Juan Agustin Duque, Alistair Letcher, Antonio León Villares, Anya Sims, Dylan Cope, Jarek Liesen, Lukas Seier, Theo Wolf et al.</pw:authors>
 <pw:met>Jakob Foerster</pw:met>
 <pw:relationships>Jakob Foerster=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
