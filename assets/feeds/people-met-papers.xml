@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 13 Nov 2026 04:05:32 +0000</lastBuildDate>
+<lastBuildDate>Sat, 14 Nov 2026 04:12:42 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -11289,10 +11289,10 @@
 <title>Measuring what Matters: Construct Validity in Large Language Model Benchmarks</title>
 <link>https://www.semanticscholar.org/paper/2d23402001da59509b1bc8ee629491e33f5cbbbf</link>
 <guid isPermaLink="false">2d23402001da59509b1bc8ee629491e33f5cbbbf</guid>
-<description>By Andrew M. Bean, R. Kearns, Angelika Romanou, Franziska Sofia Hafner, Harry Mayne, Jan Batzner, Negar Foroutan, Chris Schmitz, Karolina Korgul, Hunar Batra et al.. Neural Information Processing Systems. (Met: Antoine Bosselut, Jakob Foerster) arXiv:2511.04703</description>
+<description>By Andrew M. Bean, R. Kearns, Angelika Romanou, Franziska Sofia Hafner, Harry Mayne, Jan Batzner, Negar Foroutan, Chris Schmitz, Karolina Korgul, Hunar Batra et al.. Neural Information Processing Systems. (Met: Antoine Bosselut, Jakob Foerster, María Grandury) arXiv:2511.04703</description>
 <pw:authors>Andrew M. Bean, R. Kearns, Angelika Romanou, Franziska Sofia Hafner, Harry Mayne, Jan Batzner, Negar Foroutan, Chris Schmitz, Karolina Korgul, Hunar Batra et al.</pw:authors>
-<pw:met>Antoine Bosselut, Jakob Foerster</pw:met>
-<pw:relationships>Antoine Bosselut=following|Jakob Foerster=following</pw:relationships>
+<pw:met>Antoine Bosselut, Jakob Foerster, María Grandury</pw:met>
+<pw:relationships>Antoine Bosselut=following|Jakob Foerster=following|María Grandury=following</pw:relationships>
 <pw:venue>Neural Information Processing Systems</pw:venue>
 <pw:arxiv>2511.04703</pw:arxiv>
 <pw:date>2025-11-03</pw:date>
@@ -11877,10 +11877,10 @@
 <title>BabyBabelLM: A Multilingual Benchmark of Developmentally Plausible Training Data</title>
 <link>https://www.semanticscholar.org/paper/d283674bdb5d68d486a1019da19a2de6859f3481</link>
 <guid isPermaLink="false">d283674bdb5d68d486a1019da19a2de6859f3481</guid>
-<description>By Jaap Jumelet, Abdellah Fourtassi, Akari Haga, Bastian Bunzeck, Bhargav Shandilya, Diana Galván-Sosa, Faiz Ghifari Haznitrama, Francesca Padovani, Francois Meyer, Hai Hu et al.. Conference of the European Chapter of the Association for Computational Linguistics. (Met: Leshem Choshen) arXiv:2510.10159</description>
+<description>By Jaap Jumelet, Abdellah Fourtassi, Akari Haga, Bastian Bunzeck, Bhargav Shandilya, Diana Galván-Sosa, Faiz Ghifari Haznitrama, Francesca Padovani, Francois Meyer, Hai Hu et al.. Conference of the European Chapter of the Association for Computational Linguistics. (Met: Leshem Choshen, María Grandury) arXiv:2510.10159</description>
 <pw:authors>Jaap Jumelet, Abdellah Fourtassi, Akari Haga, Bastian Bunzeck, Bhargav Shandilya, Diana Galván-Sosa, Faiz Ghifari Haznitrama, Francesca Padovani, Francois Meyer, Hai Hu et al.</pw:authors>
-<pw:met>Leshem Choshen</pw:met>
-<pw:relationships>Leshem Choshen=met</pw:relationships>
+<pw:met>Leshem Choshen, María Grandury</pw:met>
+<pw:relationships>Leshem Choshen=met|María Grandury=following</pw:relationships>
 <pw:venue>Conference of the European Chapter of the Association for Computational Linguistics</pw:venue>
 <pw:arxiv>2510.10159</pw:arxiv>
 <pw:date>2025-10-11</pw:date>
@@ -13395,6 +13395,20 @@
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2507.00432</pw:arxiv>
+<pw:date>2025-07-01</pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>La Leaderboard: A Large Language Model Leaderboard for Spanish Varieties and Languages of Spain and Latin America</title>
+<link>https://www.semanticscholar.org/paper/6c8729f8ec74b4e5847ceb8c9bb7e89eb2ed25f0</link>
+<guid isPermaLink="false">6c8729f8ec74b4e5847ceb8c9bb7e89eb2ed25f0</guid>
+<description>By María Grandury, Javier Aula-Blasco, Júlia Falcão, Clémentine Fourrier, Miguel Saiz, Gonzalo Martínez, Gonzalo Santamaría, Rodrigo Agerri, Nuria Aldama, Luis Chiruzzo et al.. Annual Meeting of the Association for Computational Linguistics. (Met: María Grandury) arXiv:2507.00999</description>
+<pw:authors>María Grandury, Javier Aula-Blasco, Júlia Falcão, Clémentine Fourrier, Miguel Saiz, Gonzalo Martínez, Gonzalo Santamaría, Rodrigo Agerri, Nuria Aldama, Luis Chiruzzo et al.</pw:authors>
+<pw:met>María Grandury</pw:met>
+<pw:relationships>María Grandury=following</pw:relationships>
+<pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
+<pw:arxiv>2507.00999</pw:arxiv>
 <pw:date>2025-07-01</pw:date>
 <pw:year>2025</pw:year>
 <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
@@ -15419,10 +15433,10 @@
 <title>Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation</title>
 <link>https://www.semanticscholar.org/paper/9459e4f6d573b3dc78bce8aa02870b0cabca1a07</link>
 <guid isPermaLink="false">9459e4f6d573b3dc78bce8aa02870b0cabca1a07</guid>
-<description>By Israfel Salazar, M. F. Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.. arXiv.org. (Met: Marzieh Fadaee, Sara Hooker) arXiv:2504.07072</description>
+<description>By Israfel Salazar, M. F. Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.. arXiv.org. (Met: Marzieh Fadaee, María Grandury, Sara Hooker) arXiv:2504.07072</description>
 <pw:authors>Israfel Salazar, M. F. Burda, Shayekh Bin Islam, Arshia Soltani Moakhar, Shivalika Singh, Fabian Farestam, Angelika Romanou, Danylo Boiko, Dipika Khullar, Mike Zhang et al.</pw:authors>
-<pw:met>Marzieh Fadaee, Sara Hooker</pw:met>
-<pw:relationships>Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
+<pw:met>Marzieh Fadaee, María Grandury, Sara Hooker</pw:met>
+<pw:relationships>Marzieh Fadaee=following|María Grandury=following|Sara Hooker=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2504.07072</pw:arxiv>
 <pw:date>2025-04-09</pw:date>
@@ -17306,6 +17320,20 @@
 <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>For Better or for Worse, Transformers Seek Patterns for Memorization</title>
+<link>https://www.semanticscholar.org/paper/acec68d98305737a85b4f00676422cc15dea1a51</link>
+<guid isPermaLink="false">acec68d98305737a85b4f00676422cc15dea1a51</guid>
+<description>By Madhur Panwar, Gail Weiss, Navin Goyal, Antoine Bosselut. Neural Information Processing Systems. (Met: Antoine Bosselut)</description>
+<pw:authors>Madhur Panwar, Gail Weiss, Navin Goyal, Antoine Bosselut</pw:authors>
+<pw:met>Antoine Bosselut</pw:met>
+<pw:relationships>Antoine Bosselut=following</pw:relationships>
+<pw:venue>Neural Information Processing Systems</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year>2025</pw:year>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>DRIVINGVQA: Analyzing Visual Chain-of-Thought Reasoning of Vision Language Models in Real-World Scenarios with Driving Theory Tests</title>
 <link>https://www.semanticscholar.org/paper/263fc04fa2a8fbd67518742cd4b618f34183e87d</link>
 <guid isPermaLink="false">263fc04fa2a8fbd67518742cd4b618f34183e87d</guid>
@@ -17328,20 +17356,6 @@
 <pw:met>Antoine Bosselut, Leshem Choshen, Marzieh Fadaee, Sara Hooker</pw:met>
 <pw:relationships>Antoine Bosselut=following|Leshem Choshen=met|Marzieh Fadaee=following|Sara Hooker=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2025</pw:year>
-<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>For Better or for Worse, Transformers Seek Patterns for Memorization</title>
-<link>https://www.semanticscholar.org/paper/acec68d98305737a85b4f00676422cc15dea1a51</link>
-<guid isPermaLink="false">acec68d98305737a85b4f00676422cc15dea1a51</guid>
-<description>By Madhur Panwar, Gail Weiss, Navin Goyal, Antoine Bosselut. Neural Information Processing Systems. (Met: Antoine Bosselut)</description>
-<pw:authors>Madhur Panwar, Gail Weiss, Navin Goyal, Antoine Bosselut</pw:authors>
-<pw:met>Antoine Bosselut</pw:met>
-<pw:relationships>Antoine Bosselut=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
 <pw:year>2025</pw:year>
