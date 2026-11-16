@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 15 Nov 2026 04:06:12 +0000</lastBuildDate>
+<lastBuildDate>Mon, 16 Nov 2026 04:05:33 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -843,8 +843,8 @@
 <title>The Pupil Becomes the Master: Eye-Tracking Feedback for Tuning LLMs</title>
 <link>https://www.semanticscholar.org/paper/38d1681bc70963455aeff1dc384010c064f2d74f</link>
 <guid isPermaLink="false">38d1681bc70963455aeff1dc384010c064f2d74f</guid>
-<description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. Jäger, E. Wilcox. . (Met: Ethan Gotlieb Wilcox, Samuel Kiegeland)</description>
-<pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, Lena A. Jäger, E. Wilcox</pw:authors>
+<description>By Samuel Kiegeland, D. R. Reich, Ryan Cotterell, L. Jäger, E. Wilcox. . (Met: Ethan Gotlieb Wilcox, Samuel Kiegeland)</description>
+<pw:authors>Samuel Kiegeland, D. R. Reich, Ryan Cotterell, L. Jäger, E. Wilcox</pw:authors>
 <pw:met>Ethan Gotlieb Wilcox, Samuel Kiegeland</pw:met>
 <pw:relationships>Ethan Gotlieb Wilcox=following|Samuel Kiegeland=met</pw:relationships>
 <pw:venue></pw:venue>
@@ -18951,20 +18951,6 @@
 <pw:relationships>Hanchi Sun=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2411.12591</pw:arxiv>
-<pw:date>2024-11-15</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>FAST INCREMENTAL LEARNING FOR AUTONOMOUS GROUND NAVIGATION</title>
-<link>https://www.semanticscholar.org/paper/4c4d882c3e54612946d289fd159da8de98fb3200</link>
-<guid isPermaLink="false">4c4d882c3e54612946d289fd159da8de98fb3200</guid>
-<description>By Artem Provodin, Liila Torabi, Urs Muller, B. Flepp, Michael Sergio, Jure Zbontar, Yann LeCun, L. Jackel. SAE technical paper series. (Met: Yann LeCun)</description>
-<pw:authors>Artem Provodin, Liila Torabi, Urs Muller, B. Flepp, Michael Sergio, Jure Zbontar, Yann LeCun, L. Jackel</pw:authors>
-<pw:met>Yann LeCun</pw:met>
-<pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue>SAE technical paper series</pw:venue>
-<pw:arxiv></pw:arxiv>
 <pw:date>2024-11-15</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
