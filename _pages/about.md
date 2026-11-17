@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Machine Learning Engineer @ Veezoo
+subtitle: PhD student @ University of Basel
 
 profile:
   align: right
@@ -24,9 +24,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm a machine learning engineer at [Veezoo](https://veezoo.com/) working on LLM-based natural language to SQL translation.
+I'm a PhD student at the [University of Basel](https://www.unibas.ch/), advised by Ilija Bogunovic and Aurélien Lucchi, working on reasoning in LLMs, RL and fine-tuning.
+Before that I was a machine learning engineer at [Veezoo](https://veezoo.com/), working on LLM-based natural language to SQL translation.
 I studied at ETH Zürich for my master's and have a BSc from Politecnico di Milano.
 
-I've woked on LLM fine-tuning, human-in-the-loop evaluation systems, and efficient vector search methods. During my studies I also explored medical question-answering with RAG, program synthesis for mathematical reasoning, and knowledge graph embeddings.
+I've worked on LLM fine-tuning, human-in-the-loop evaluation systems, and efficient vector search methods. During my studies I also explored medical question-answering with RAG, program synthesis for mathematical reasoning, and knowledge graph embeddings.
 
-Outside of work, my current research interests are in representation learning and I've been working with [Catherine Arnett](https://catherinearnett.github.io/) (EleutherAI) and [Akshat Gupta](https://akshat57.github.io/) (UC Berkeley) on related projects that will be published soon<sup>TM</sup>. I spend the rest of my time (inconsistently) training for triathlons, and complaining about not having time for anything else.🙃
+With [Catherine Arnett](https://catherinearnett.github.io/) (EleutherAI) and [Akshat Gupta](https://akshat57.github.io/) (UC Berkeley) I've worked on representation learning, with papers on [weight tying](https://arxiv.org/abs/2603.26663) (ACL Findings 2026) and [tokenizers](https://arxiv.org/abs/2610.21679) (EMNLP Findings 2026). I spend the rest of my time (inconsistently) training for triathlons, and complaining about not having time for anything else.🙃
