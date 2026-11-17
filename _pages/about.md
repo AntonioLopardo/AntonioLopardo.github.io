@@ -25,6 +25,7 @@ latest_posts:
 ---
 
 I'm a PhD student at the [University of Basel](https://www.unibas.ch/), advised by Ilija Bogunovic and Aurélien Lucchi, working on reasoning in LLMs, RL and fine-tuning.
+I'm also contributing to [Apertus](https://www.apertus-ai.org/), the Swiss AI Initiative's open LLM, as part of the post-training team, with a focus on STEM and distillation.
 Before that I was a machine learning engineer at [Veezoo](https://veezoo.com/), working on LLM-based natural language to SQL translation.
 I studied at ETH Zürich for my master's and have a BSc from Politecnico di Milano.
 
