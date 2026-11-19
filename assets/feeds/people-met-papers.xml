@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Wed, 18 Nov 2026 04:07:50 +0000</lastBuildDate>
+<lastBuildDate>Thu, 19 Nov 2026 04:04:30 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -2688,6 +2688,20 @@
 <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>World models: Enabling the next AI revolution</title>
+<link>https://www.semanticscholar.org/paper/f8f6811acc4b66b06348910f8a1d54e68e312d7c</link>
+<guid isPermaLink="false">f8f6811acc4b66b06348910f8a1d54e68e312d7c</guid>
+<description>By Yann LeCun, Pascale Fung. The AI Magazine. (Met: Yann LeCun)</description>
+<pw:authors>Yann LeCun, Pascale Fung</pw:authors>
+<pw:met>Yann LeCun</pw:met>
+<pw:relationships>Yann LeCun=following</pw:relationships>
+<pw:venue>The AI Magazine</pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date>2026-11-13</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>When Should Semantic Priors Enter Partially-Identified Causal Discovery?</title>
 <link>https://www.semanticscholar.org/paper/9b1d4bcd55a9b7d6209869dd463daf106418b1f0</link>
 <guid isPermaLink="false">9b1d4bcd55a9b7d6209869dd463daf106418b1f0</guid>
@@ -3285,6 +3299,20 @@
 <pw:relationships>Catherine Arnett=met</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
 <pw:arxiv>2610.21679</pw:arxiv>
+<pw:date>2026-10-15</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Rethinking Offline On-Policy Distillation: From Scalar Advantages to Distributional Supervision</title>
+<link>https://www.semanticscholar.org/paper/f2015958e3c3f63464463f5df1f0ba5914c3221f</link>
+<guid isPermaLink="false">f2015958e3c3f63464463f5df1f0ba5914c3221f</guid>
+<description>By Qi Sun, Si-Yue Zhang, Tingyu Song, Yi-Lun Zhao, Chen Zhao. . (Met: Chen Zhao) arXiv:2611.18648</description>
+<pw:authors>Qi Sun, Si-Yue Zhang, Tingyu Song, Yi-Lun Zhao, Chen Zhao</pw:authors>
+<pw:met>Chen Zhao</pw:met>
+<pw:relationships>Chen Zhao=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.18648</pw:arxiv>
 <pw:date>2026-10-15</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
@@ -13443,8 +13471,8 @@
 <title>Normalized Set-Level Ideal DCG: A More Reliable Early-Stage Retrieval Metric</title>
 <link>https://www.semanticscholar.org/paper/e1cdf98bc56365c0503cff40fcf02681bf41f01e</link>
 <guid isPermaLink="false">e1cdf98bc56365c0503cff40fcf02681bf41f01e</guid>
-<description>By Xiao Fu, Navdeep Singh Bedi, F. Crestani, Aldo Lipani. International Conference on the Theory of Information Retrieval. (Met: Aldo Lipani)</description>
-<pw:authors>Xiao Fu, Navdeep Singh Bedi, F. Crestani, Aldo Lipani</pw:authors>
+<description>By Xiao Fu, N. S. Bedi, F. Crestani, Aldo Lipani. International Conference on the Theory of Information Retrieval. (Met: Aldo Lipani)</description>
+<pw:authors>Xiao Fu, N. S. Bedi, F. Crestani, Aldo Lipani</pw:authors>
 <pw:met>Aldo Lipani</pw:met>
 <pw:relationships>Aldo Lipani=following</pw:relationships>
 <pw:venue>International Conference on the Theory of Information Retrieval</pw:venue>
@@ -17391,8 +17419,8 @@
 <title>Artificial Intelligence for Modelling Infectious Disease Epidemics</title>
 <link>https://www.semanticscholar.org/paper/c6e0a0477089a6a1e8afa1de4566c6e2e9ae7b7a</link>
 <guid isPermaLink="false">c6e0a0477089a6a1e8afa1de4566c6e2e9ae7b7a</guid>
-<description>By M. Kraemer, J. Tsui, Serina Chang, S. Lytras, M. P. Khurana, S. Vanderslott, S. Bajaj, N. Scheidwasser, J. Curran-Sebastian, Elizaveta Semenova et al.. Nature. (Met: Bernhard Schölkopf)</description>
-<pw:authors>M. Kraemer, J. Tsui, Serina Chang, S. Lytras, M. P. Khurana, S. Vanderslott, S. Bajaj, N. Scheidwasser, J. Curran-Sebastian, Elizaveta Semenova et al.</pw:authors>
+<description>By M. Kraemer, J. Tsui, Serina Chang, S. Lytras, M. P. Khurana, S. Vanderslott, S. Bajaj, Neil Scheidwasser, J. Curran-Sebastian, Elizaveta Semenova et al.. Nature. (Met: Bernhard Schölkopf)</description>
+<pw:authors>M. Kraemer, J. Tsui, Serina Chang, S. Lytras, M. P. Khurana, S. Vanderslott, S. Bajaj, Neil Scheidwasser, J. Curran-Sebastian, Elizaveta Semenova et al.</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
 <pw:relationships>Bernhard Schölkopf=following</pw:relationships>
 <pw:venue>Nature</pw:venue>
@@ -17685,8 +17713,8 @@
 <title>UCLWI at the NTCIR-18 AEOLLM Task: A Low-Cost Comparison ofRAGs</title>
 <link>https://www.semanticscholar.org/paper/2b430ed21a7c9131163d3b9d9cf9246499a4938f</link>
 <guid isPermaLink="false">2b430ed21a7c9131163d3b9d9cf9246499a4938f</guid>
-<description>By Xiao Fu, Navdeep Singh Bedi, Noriko Kando, F. Crestani, Aldo Lipani. NTCIR Conference on Evaluation of Information Access Technologies. (Met: Aldo Lipani)</description>
-<pw:authors>Xiao Fu, Navdeep Singh Bedi, Noriko Kando, F. Crestani, Aldo Lipani</pw:authors>
+<description>By Xiao Fu, N. S. Bedi, Noriko Kando, F. Crestani, Aldo Lipani. NTCIR Conference on Evaluation of Information Access Technologies. (Met: Aldo Lipani)</description>
+<pw:authors>Xiao Fu, N. S. Bedi, Noriko Kando, F. Crestani, Aldo Lipani</pw:authors>
 <pw:met>Aldo Lipani</pw:met>
 <pw:relationships>Aldo Lipani=following</pw:relationships>
 <pw:venue>NTCIR Conference on Evaluation of Information Access Technologies</pw:venue>
@@ -19374,20 +19402,6 @@
 <pw:date>2024-11-19</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability in Visual Art</title>
-<link>https://www.semanticscholar.org/paper/d4131bd591f8973b7299cb1dab4c20fa7fe4d593</link>
-<guid isPermaLink="false">d4131bd591f8973b7299cb1dab4c20fa7fe4d593</guid>
-<description>By Alejandro Hernandez, L. Brinkmann, Ignacio Serna, Nasim Rahaman, Hassan Abu Alhaija, Hiromu Yakura, Mar Canet Sola, B. Schölkopf, I. Rahwan. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2411.11494</description>
-<pw:authors>Alejandro Hernandez, L. Brinkmann, Ignacio Serna, Nasim Rahaman, Hassan Abu Alhaija, Hiromu Yakura, Mar Canet Sola, B. Schölkopf, I. Rahwan</pw:authors>
-<pw:met>Bernhard Schölkopf</pw:met>
-<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2411.11494</pw:arxiv>
-<pw:date>2024-11-18</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Thinking Before Looking: Improving Multimodal LLM Reasoning via Mitigating Visual Hallucination</title>
