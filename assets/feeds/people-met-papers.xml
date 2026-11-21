@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Fri, 20 Nov 2026 04:14:52 +0000</lastBuildDate>
+<lastBuildDate>Sat, 21 Nov 2026 04:05:10 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -924,6 +924,19 @@
 <pw:authors>Eleanor Chodroff, E. Vylomova, R. Cotterell, Xin-Yi Wang, Niels van der Heijden, Muhao Chen, Ben Zhou, Yi Zhu, Toms Bergmanis, Xutan Peng et al.</pw:authors>
 <pw:met>Graham Neubig, Tiago Pimentel</pw:met>
 <pw:relationships>Graham Neubig=following|Tiago Pimentel=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>Edinburgh Research Explorer Findings of the Fourth Workshop on Neural Generation and Translation</title>
+<link>https://www.semanticscholar.org/paper/0c744c55d85654a4181f92e93dd63ec1066a52d6</link>
+<guid isPermaLink="false">0c744c55d85654a4181f92e93dd63ec1066a52d6</guid>
+<description>By K. Heafield, Hiroaki Hayashi, Yusuke, Ioannis Konstas, Andrew Finch, Graham Neubig, Xian Li, Alexandra Birch, Carnegie, Mellon University et al.. . (Met: Graham Neubig)</description>
+<pw:authors>K. Heafield, Hiroaki Hayashi, Yusuke, Ioannis Konstas, Andrew Finch, Graham Neubig, Xian Li, Alexandra Birch, Carnegie, Mellon University et al.</pw:authors>
+<pw:met>Graham Neubig</pw:met>
+<pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -2658,6 +2671,20 @@
 <pw:date>2027-02-01</pw:date>
 <pw:year>2027</pw:year>
 <pubDate>Mon, 01 Feb 2027 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>A Model of Diverse Sampling from Language Models</title>
+<link>https://www.semanticscholar.org/paper/8224b361814efcef9ec92f5238185470c428d0a6</link>
+<guid isPermaLink="false">8224b361814efcef9ec92f5238185470c428d0a6</guid>
+<description>By Manuel de Prada Corral, Yahya Emara, Timothy J. O'Donnell, Ryan Cotterell, Tim Vieira. . (Met: Tim Vieira) arXiv:2611.25003</description>
+<pw:authors>Manuel de Prada Corral, Yahya Emara, Timothy J. O'Donnell, Ryan Cotterell, Tim Vieira</pw:authors>
+<pw:met>Tim Vieira</pw:met>
+<pw:relationships>Tim Vieira=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.25003</pw:arxiv>
+<pw:date>2026-11-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>When Does Label-Free Deconfounding of Document Embeddings Work?</title>
@@ -19374,20 +19401,6 @@
 <pw:date>2024-11-21</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>BALROG: Benchmarking Agentic LLM and VLM Reasoning On Games</title>
-<link>https://www.semanticscholar.org/paper/faf5f373bd9944028664ea3e7da2d6a1fe3bf335</link>
-<guid isPermaLink="false">faf5f373bd9944028664ea3e7da2d6a1fe3bf335</guid>
-<description>By Davide Paglieri, Bartlomiej Cupial, Samuel Coward, Ulyana Piterbarg, Maciej Wołczyk, Akbir Khan, E. Pignatelli, Lukasz Kucinski, Lerrel Pinto, R. Fergus et al.. International Conference on Learning Representations. (Met: Jakob Foerster, Tim Rocktäschel) arXiv:2411.13543</description>
-<pw:authors>Davide Paglieri, Bartlomiej Cupial, Samuel Coward, Ulyana Piterbarg, Maciej Wołczyk, Akbir Khan, E. Pignatelli, Lukasz Kucinski, Lerrel Pinto, R. Fergus et al.</pw:authors>
-<pw:met>Jakob Foerster, Tim Rocktäschel</pw:met>
-<pw:relationships>Jakob Foerster=following|Tim Rocktäschel=following</pw:relationships>
-<pw:venue>International Conference on Learning Representations</pw:venue>
-<pw:arxiv>2411.13543</pw:arxiv>
-<pw:date>2024-11-20</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Thinking Before Looking: Improving Multimodal LLM Reasoning via Mitigating Visual Hallucination</title>
