@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sat, 21 Nov 2026 04:05:10 +0000</lastBuildDate>
+<lastBuildDate>Sun, 22 Nov 2026 04:07:47 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -11216,8 +11216,8 @@
 <title>ClusterFusion: Hybrid Clustering with Embedding Guidance and LLM Adaptation</title>
 <link>https://www.semanticscholar.org/paper/5b42a09b2d81d6aace0c274a71ba68a9c12026f4</link>
 <guid isPermaLink="false">5b42a09b2d81d6aace0c274a71ba68a9c12026f4</guid>
-<description>By Yiming Xu, Yuan Yuan, Vijay Viswanathan, Graham Neubig. arXiv.org. (Met: Graham Neubig) arXiv:2512.04350</description>
-<pw:authors>Yiming Xu, Yuan Yuan, Vijay Viswanathan, Graham Neubig</pw:authors>
+<description>By Yi-Ming Xu, Yuan Yuan, Vijay Viswanathan, Graham Neubig. arXiv.org. (Met: Graham Neubig) arXiv:2512.04350</description>
+<pw:authors>Yi-Ming Xu, Yuan Yuan, Vijay Viswanathan, Graham Neubig</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -19070,8 +19070,8 @@
 <title>Political-LLM: Large Language Models in Political Science</title>
 <link>https://www.semanticscholar.org/paper/aa7b433150591d9eae496a168cea670216775e23</link>
 <guid isPermaLink="false">aa7b433150591d9eae496a168cea670216775e23</guid>
-<description>By Lin-Can Li, Jia-Qi Li, C. Chen, Fred Gui, Hong-Jian Yang, Chen-Xiao Yu, Zheng-Guang Wang, Jian-Long Cai, Junlong Zhou, Bo-Lin Shen et al.. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2412.06864</description>
-<pw:authors>Lin-Can Li, Jia-Qi Li, C. Chen, Fred Gui, Hong-Jian Yang, Chen-Xiao Yu, Zheng-Guang Wang, Jian-Long Cai, Junlong Zhou, Bo-Lin Shen et al.</pw:authors>
+<description>By Lin-Can Li, Jia-Qi Li, C. Chen, Fred Gui, Hong-Jian Yang, Chen-Xiao Yu, Zheng-Guang Wang, Jian-Long Cai, J. Zhou, Bo-Lin Shen et al.. arXiv.org. (Met: Swabha Swayamdipta) arXiv:2412.06864</description>
+<pw:authors>Lin-Can Li, Jia-Qi Li, C. Chen, Fred Gui, Hong-Jian Yang, Chen-Xiao Yu, Zheng-Guang Wang, Jian-Long Cai, J. Zhou, Bo-Lin Shen et al.</pw:authors>
 <pw:met>Swabha Swayamdipta</pw:met>
 <pw:relationships>Swabha Swayamdipta=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -19361,20 +19361,6 @@
 <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Generative Intervention Models for Causal Perturbation Modeling</title>
-<link>https://www.semanticscholar.org/paper/33103e1a2f059f53ad97ee79c019ec8ab8bb4966</link>
-<guid isPermaLink="false">33103e1a2f059f53ad97ee79c019ec8ab8bb4966</guid>
-<description>By Nora Schneider, Lars Lorch, Niki Kilbertus, B. Schölkopf, Andreas Krause. International Conference on Machine Learning. (Met: Bernhard Schölkopf) arXiv:2411.14003</description>
-<pw:authors>Nora Schneider, Lars Lorch, Niki Kilbertus, B. Schölkopf, Andreas Krause</pw:authors>
-<pw:met>Bernhard Schölkopf</pw:met>
-<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
-<pw:venue>International Conference on Machine Learning</pw:venue>
-<pw:arxiv>2411.14003</pw:arxiv>
-<pw:date>2024-11-21</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Why do language models perform worse for morphologically complex languages?</title>
 <link>https://www.semanticscholar.org/paper/d434a9c21c02b2140659eec5a97dbaeca7ba1c93</link>
 <guid isPermaLink="false">d434a9c21c02b2140659eec5a97dbaeca7ba1c93</guid>
@@ -19384,20 +19370,6 @@
 <pw:relationships>Catherine Arnett=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
 <pw:arxiv>2411.14198</pw:arxiv>
-<pw:date>2024-11-21</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs</title>
-<link>https://www.semanticscholar.org/paper/b40df4b273f255b3cb5639e220c8ab7b1bdb313e</link>
-<guid isPermaLink="false">b40df4b273f255b3cb5639e220c8ab7b1bdb313e</guid>
-<description>By Akari Asai, Jacqueline He, Rulin Shao, Wei-Jia Shi, Amanpreet Singh, J. Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'Arcy et al.. arXiv.org. (Met: Graham Neubig) arXiv:2411.14199</description>
-<pw:authors>Akari Asai, Jacqueline He, Rulin Shao, Wei-Jia Shi, Amanpreet Singh, J. Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'Arcy et al.</pw:authors>
-<pw:met>Graham Neubig</pw:met>
-<pw:relationships>Graham Neubig=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2411.14199</pw:arxiv>
 <pw:date>2024-11-21</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
