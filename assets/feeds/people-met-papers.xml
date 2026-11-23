@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Sun, 22 Nov 2026 04:07:47 +0000</lastBuildDate>
+<lastBuildDate>Mon, 23 Nov 2026 04:05:13 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -19317,48 +19317,6 @@
 <pw:date>2024-11-24</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>A Reproducibility and Generalizability Study of Large Language Models for Query Generation</title>
-<link>https://www.semanticscholar.org/paper/29a0cded2ab9df508416e3c7b7f9941f18c75ce4</link>
-<guid isPermaLink="false">29a0cded2ab9df508416e3c7b7f9941f18c75ce4</guid>
-<description>By Moritz Staudinger, Wojciech Kusa, Florina Piroi, Aldo Lipani, A. Hanbury. SIGIR-AP. (Met: Aldo Lipani) arXiv:2411.14914</description>
-<pw:authors>Moritz Staudinger, Wojciech Kusa, Florina Piroi, Aldo Lipani, A. Hanbury</pw:authors>
-<pw:met>Aldo Lipani</pw:met>
-<pw:relationships>Aldo Lipani=following</pw:relationships>
-<pw:venue>SIGIR-AP</pw:venue>
-<pw:arxiv>2411.14914</pw:arxiv>
-<pw:date>2024-11-22</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>TÜLU 3: Pushing Frontiers in Open Language Model Post-Training</title>
-<link>https://www.semanticscholar.org/paper/6a7c29829227bfd65ae0ffec294a874bb9ea0871</link>
-<guid isPermaLink="false">6a7c29829227bfd65ae0ffec294a874bb9ea0871</guid>
-<description>By Nathan Lambert, Jacob Daniel Morrison, Valentina Pyatkin, Shengyi Huang, Hamish Ivison, Faeze Brahman, Lester James Validad Miranda, Alisa Liu, Nouha Dziri, Xinxi Lyu et al.. arXiv.org. (Met: Alisa Liu) arXiv:2411.15124</description>
-<pw:authors>Nathan Lambert, Jacob Daniel Morrison, Valentina Pyatkin, Shengyi Huang, Hamish Ivison, Faeze Brahman, Lester James Validad Miranda, Alisa Liu, Nouha Dziri, Xinxi Lyu et al.</pw:authors>
-<pw:met>Alisa Liu</pw:met>
-<pw:relationships>Alisa Liu=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2411.15124</pw:arxiv>
-<pw:date>2024-11-22</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>On Feasible Rewards in Multi-Agent Inverse Reinforcement Learning</title>
-<link>https://www.semanticscholar.org/paper/efe5e616c4e9eac6b93df1db09647eb973097ae7</link>
-<guid isPermaLink="false">efe5e616c4e9eac6b93df1db09647eb973097ae7</guid>
-<description>By Till Freihaut, Giorgia Ramponi. Neural Information Processing Systems. (Met: Giorgia Ramponi) arXiv:2411.15046</description>
-<pw:authors>Till Freihaut, Giorgia Ramponi</pw:authors>
-<pw:met>Giorgia Ramponi</pw:met>
-<pw:relationships>Giorgia Ramponi=following</pw:relationships>
-<pw:venue>Neural Information Processing Systems</pw:venue>
-<pw:arxiv>2411.15046</pw:arxiv>
-<pw:date>2024-11-22</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Why do language models perform worse for morphologically complex languages?</title>
