@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Mon, 23 Nov 2026 04:05:13 +0000</lastBuildDate>
+<lastBuildDate>Tue, 24 Nov 2026 04:05:30 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1076,8 +1076,8 @@
 <title>The 2nd Learning from Limited Labeled Data (LLD) Workshop: Representation Learning for Weak Supervision and Beyond</title>
 <link>https://www.semanticscholar.org/paper/4aa43aa23f4a39dfca4518d29efe5427d36ab7ab</link>
 <guid isPermaLink="false">4aa43aa23f4a39dfca4518d29efe5427d36ab7ab</guid>
-<description>By Isabelle Augenstein, S. Bach, Matthew B. Blaschko, Eugene Belilovsky, Edouard Oyallon, Anthony Platanios, A. Ratner. . (Met: Isabelle Augenstein)</description>
-<pw:authors>Isabelle Augenstein, S. Bach, Matthew B. Blaschko, Eugene Belilovsky, Edouard Oyallon, Anthony Platanios, A. Ratner</pw:authors>
+<description>By Isabelle Augenstein, Stephen H. Bach, Matthew B. Blaschko, Eugene Belilovsky, Edouard Oyallon, Anthony Platanios, A. Ratner. . (Met: Isabelle Augenstein)</description>
+<pw:authors>Isabelle Augenstein, Stephen H. Bach, Matthew B. Blaschko, Eugene Belilovsky, Edouard Oyallon, Anthony Platanios, A. Ratner</pw:authors>
 <pw:met>Isabelle Augenstein</pw:met>
 <pw:relationships>Isabelle Augenstein=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -2673,6 +2673,34 @@
 <pubDate>Mon, 01 Feb 2027 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Dynamic Token Merging for Efficient Vision-Language Models</title>
+<link>https://www.semanticscholar.org/paper/3f395d7f8a3974d839003fc9fc5c57c77352a347</link>
+<guid isPermaLink="false">3f395d7f8a3974d839003fc9fc5c57c77352a347</guid>
+<description>By Chris Gu, Marco Andono Sie, Nathan Zhou, Christopher Potts, Julie Kallini. . (Met: Julie Kallini) arXiv:2611.27064</description>
+<pw:authors>Chris Gu, Marco Andono Sie, Nathan Zhou, Christopher Potts, Julie Kallini</pw:authors>
+<pw:met>Julie Kallini</pw:met>
+<pw:relationships>Julie Kallini=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.27064</pw:arxiv>
+<pw:date>2026-11-20</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Parasite Features: Causal Abstraction Through Spurious Pathways</title>
+<link>https://www.semanticscholar.org/paper/be9ba3c10a38a739059b5cbc447301b81ae03605</link>
+<guid isPermaLink="false">be9ba3c10a38a739059b5cbc447301b81ae03605</guid>
+<description>By De Sutter, Qing Yao, Sasha Boguraev, Julian Minder, Antonio Di Maio, Thomas Hofmann, Kyle Mahowald, Tiago Pimentel. . (Met: Tiago Pimentel) arXiv:2611.26711</description>
+<pw:authors>De Sutter, Qing Yao, Sasha Boguraev, Julian Minder, Antonio Di Maio, Thomas Hofmann, Kyle Mahowald, Tiago Pimentel</pw:authors>
+<pw:met>Tiago Pimentel</pw:met>
+<pw:relationships>Tiago Pimentel=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.26711</pw:arxiv>
+<pw:date>2026-11-19</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>A Model of Diverse Sampling from Language Models</title>
 <link>https://www.semanticscholar.org/paper/8224b361814efcef9ec92f5238185470c428d0a6</link>
 <guid isPermaLink="false">8224b361814efcef9ec92f5238185470c428d0a6</guid>
@@ -2914,8 +2942,8 @@
 <title>Consolidating Reasoning with Test-Time Training</title>
 <link>https://www.semanticscholar.org/paper/7cee769da204998f0dfaf28fc88c27f6d5bac90e</link>
 <guid isPermaLink="false">7cee769da204998f0dfaf28fc88c27f6d5bac90e</guid>
-<description>By Hao-Tian Wu, Ze-Ming Chen, Hao Zhao, Antoine Bosselut. . (Met: Antoine Bosselut) arXiv:2611.02104</description>
-<pw:authors>Hao-Tian Wu, Ze-Ming Chen, Hao Zhao, Antoine Bosselut</pw:authors>
+<description>By Hao-Tian Wu, Zeming Chen, Hao Zhao, Antoine Bosselut. . (Met: Antoine Bosselut) arXiv:2611.02104</description>
+<pw:authors>Hao-Tian Wu, Zeming Chen, Hao Zhao, Antoine Bosselut</pw:authors>
 <pw:met>Antoine Bosselut</pw:met>
 <pw:relationships>Antoine Bosselut=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -3122,10 +3150,10 @@
 </item>
 <item>
 <title>CulturalRiddles: A Multicultural Benchmark of Riddles</title>
-<link>https://www.semanticscholar.org/paper/1d273c5a8658e1347215aac72a8d2ce1de29e4ed</link>
-<guid isPermaLink="false">1d273c5a8658e1347215aac72a8d2ce1de29e4ed</guid>
-<description>By My Chiffon Nguyen, Tian-Yi Hu, Vinod Anbalagan, Henry Gagnier, Pouya Sadeghi, Farah Abdou, Tidor-Vlad Pricope, Diego F. M. Oliveira, Jocelyn D'Arcy, Madeline Smith et al.. . (Met: Hanna Yukhymenko, Marzieh Fadaee) arXiv:2610.29968</description>
-<pw:authors>My Chiffon Nguyen, Tian-Yi Hu, Vinod Anbalagan, Henry Gagnier, Pouya Sadeghi, Farah Abdou, Tidor-Vlad Pricope, Diego F. M. Oliveira, Jocelyn D'Arcy, Madeline Smith et al.</pw:authors>
+<link>https://www.semanticscholar.org/paper/b9cf9ad49e35e74df777c59808a42eb16443ff5e</link>
+<guid isPermaLink="false">b9cf9ad49e35e74df777c59808a42eb16443ff5e</guid>
+<description>By My Chiffon Nguyen, Tian-Yi Hu, Vinod Anbalagan, Henry Gagnier, Pouya Sadeghi, Farah Abdou, Aston C. Garratt, Diego F. M. Oliveira, Tidor-Vlad Pricope, Isaac Saxton-Knight et al.. . (Met: Hanna Yukhymenko, Marzieh Fadaee) arXiv:2610.29968</description>
+<pw:authors>My Chiffon Nguyen, Tian-Yi Hu, Vinod Anbalagan, Henry Gagnier, Pouya Sadeghi, Farah Abdou, Aston C. Garratt, Diego F. M. Oliveira, Tidor-Vlad Pricope, Isaac Saxton-Knight et al.</pw:authors>
 <pw:met>Hanna Yukhymenko, Marzieh Fadaee</pw:met>
 <pw:relationships>Hanna Yukhymenko=met|Marzieh Fadaee=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -5322,8 +5350,8 @@
 <title>DynaVieW: Schema-Guided World Modeling for Understanding Hierarchical Visual Dynamics</title>
 <link>https://www.semanticscholar.org/paper/0af209b766830f576fee468e48a84634feff04cd</link>
 <guid isPermaLink="false">0af209b766830f576fee468e48a84634feff04cd</guid>
-<description>By Silin Gao, Hao Zhao, Ze-Ming Chen, Sepideh Mamooler, A. Bhattacharya, Qi-Yu Wu, H. Wakaki, Yuki Mitsufuji, Li Mi, Syrielle Montariol et al.. arXiv.org. (Met: Antoine Bosselut) arXiv:2607.04112</description>
-<pw:authors>Silin Gao, Hao Zhao, Ze-Ming Chen, Sepideh Mamooler, A. Bhattacharya, Qi-Yu Wu, H. Wakaki, Yuki Mitsufuji, Li Mi, Syrielle Montariol et al.</pw:authors>
+<description>By Silin Gao, Hao Zhao, Zeming Chen, Sepideh Mamooler, A. Bhattacharya, Qi-Yu Wu, H. Wakaki, Yuki Mitsufuji, Li Mi, Syrielle Montariol et al.. arXiv.org. (Met: Antoine Bosselut) arXiv:2607.04112</description>
+<pw:authors>Silin Gao, Hao Zhao, Zeming Chen, Sepideh Mamooler, A. Bhattacharya, Qi-Yu Wu, H. Wakaki, Yuki Mitsufuji, Li Mi, Syrielle Montariol et al.</pw:authors>
 <pw:met>Antoine Bosselut</pw:met>
 <pw:relationships>Antoine Bosselut=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -13372,8 +13400,8 @@
 <title>Advancing Science- and Evidence-based AI Policy</title>
 <link>https://www.semanticscholar.org/paper/a4e71497bd270d9810324119407104e6aaecd355</link>
 <guid isPermaLink="false">a4e71497bd270d9810324119407104e6aaecd355</guid>
-<description>By Rishi Bommasani, Sanjeev Arora, J. Chayes, Yejin Choi, Mariano-Florentino Cuellar, Fei-Fei Li, Daniel E. Ho, Dan Jurafsky, S. Koyejo, H. Lakkaraju et al.. Science. (Met: Dan Jurafsky) arXiv:2508.02748</description>
-<pw:authors>Rishi Bommasani, Sanjeev Arora, J. Chayes, Yejin Choi, Mariano-Florentino Cuellar, Fei-Fei Li, Daniel E. Ho, Dan Jurafsky, S. Koyejo, H. Lakkaraju et al.</pw:authors>
+<description>By Rishi Bommasani, Sanjeev Arora, J. Chayes, Yejin Choi, Mariano-Florentino Cuellar, Fei-Fei Li, Daniel E. Ho, Dan Jurafsky, S. Koyejo, Himabindu Lakkaraju et al.. Science. (Met: Dan Jurafsky) arXiv:2508.02748</description>
+<pw:authors>Rishi Bommasani, Sanjeev Arora, J. Chayes, Yejin Choi, Mariano-Florentino Cuellar, Fei-Fei Li, Daniel E. Ho, Dan Jurafsky, S. Koyejo, Himabindu Lakkaraju et al.</pw:authors>
 <pw:met>Dan Jurafsky</pw:met>
 <pw:relationships>Dan Jurafsky=following</pw:relationships>
 <pw:venue>Science</pw:venue>
@@ -14912,8 +14940,8 @@
 <title>The State of Multilingual LLM Safety Research: From Measuring the Language Gap to Mitigating It</title>
 <link>https://www.semanticscholar.org/paper/85002e39a08881cb7f6cbaf8c59c8ad174243fc2</link>
 <guid isPermaLink="false">85002e39a08881cb7f6cbaf8c59c8ad174243fc2</guid>
-<description>By Zheng-Xin Yong, B. Ermi̇ş, Marzieh Fadaee, S. Bach, Julia Kreutzer. Conference on Empirical Methods in Natural Language Processing. (Met: Marzieh Fadaee) arXiv:2505.24119</description>
-<pw:authors>Zheng-Xin Yong, B. Ermi̇ş, Marzieh Fadaee, S. Bach, Julia Kreutzer</pw:authors>
+<description>By Zheng-Xin Yong, B. Ermi̇ş, Marzieh Fadaee, Stephen H. Bach, Julia Kreutzer. Conference on Empirical Methods in Natural Language Processing. (Met: Marzieh Fadaee) arXiv:2505.24119</description>
+<pw:authors>Zheng-Xin Yong, B. Ermi̇ş, Marzieh Fadaee, Stephen H. Bach, Julia Kreutzer</pw:authors>
 <pw:met>Marzieh Fadaee</pw:met>
 <pw:relationships>Marzieh Fadaee=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -16116,8 +16144,8 @@
 <title>Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems</title>
 <link>https://www.semanticscholar.org/paper/305a7422a34a89fb79a84a9cdbecbae5021d6d83</link>
 <guid isPermaLink="false">305a7422a34a89fb79a84a9cdbecbae5021d6d83</guid>
-<description>By Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Si-Rui Hong, Hongzhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.. arXiv.org. (Met: Yu Su) arXiv:2504.01990</description>
-<pw:authors>Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Si-Rui Hong, Hongzhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.</pw:authors>
+<description>By Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Si-Rui Hong, Hong-Zhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.. arXiv.org. (Met: Yu Su) arXiv:2504.01990</description>
+<pw:authors>Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Si-Rui Hong, Hong-Zhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -17290,8 +17318,8 @@
 </item>
 <item>
 <title>Causality can systematically address the monsters under the bench(marks)</title>
-<link>https://www.semanticscholar.org/paper/16275fa4d392bb502d1f532a67ce8cda05e3f7ec</link>
-<guid isPermaLink="false">16275fa4d392bb502d1f532a67ce8cda05e3f7ec</guid>
+<link>https://www.semanticscholar.org/paper/040b150b01ebdd5f98674221913c244e87f3a20b</link>
+<guid isPermaLink="false">040b150b01ebdd5f98674221913c244e87f3a20b</guid>
 <description>By Felix Leeb, Zhijing Jin, B. Schölkopf. arXiv.org. (Met: Bernhard Schölkopf) arXiv:2502.05085</description>
 <pw:authors>Felix Leeb, Zhijing Jin, B. Schölkopf</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
@@ -25734,8 +25762,8 @@
 <title>Learning Electronic Health Records through Hyperbolic Embedding of Medical Ontologies</title>
 <link>https://www.semanticscholar.org/paper/37db7b51dc988a8a90aece71238c9d6245af16b3</link>
 <guid isPermaLink="false">37db7b51dc988a8a90aece71238c9d6245af16b3</guid>
-<description>By Qiuhao Lu, Nisansa de Silva, S. Kafle, Jiazhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li. ACM International Conference on Bioinformatics, Computational Biology and Biomedicine. (Met: Yunyao Li)</description>
-<pw:authors>Qiuhao Lu, Nisansa de Silva, S. Kafle, Jiazhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li</pw:authors>
+<description>By Qiuhao Lu, Nisansa de Silva, Sabin Kafle, Jiazhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li. ACM International Conference on Bioinformatics, Computational Biology and Biomedicine. (Met: Yunyao Li)</description>
+<pw:authors>Qiuhao Lu, Nisansa de Silva, Sabin Kafle, Jiazhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>ACM International Conference on Bioinformatics, Computational Biology and Biomedicine</pw:venue>
