@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Tue, 24 Nov 2026 04:05:30 +0000</lastBuildDate>
+<lastBuildDate>Wed, 25 Nov 2026 04:05:16 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -2673,6 +2673,62 @@
 <pubDate>Mon, 01 Feb 2027 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>PVFormer: Proper Velocity Transformer for Stable and Scalable Hyperbolic Representation Learning</title>
+<link>https://www.semanticscholar.org/paper/2b94e26e063e84bb7be3f61813852c83568659ce</link>
+<guid isPermaLink="false">2b94e26e063e84bb7be3f61813852c83568659ce</guid>
+<description>By Xiang-Long Shi, N. Sebe, B. Schölkopf, Zi-Heng Chen. . (Met: Bernhard Schölkopf) arXiv:2611.30785</description>
+<pw:authors>Xiang-Long Shi, N. Sebe, B. Schölkopf, Zi-Heng Chen</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.30785</pw:arxiv>
+<pw:date>2026-11-23</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>From Learning Rates to Rotational Schedules: Finite-Horizon Theory on the Sphere</title>
+<link>https://www.semanticscholar.org/paper/727e44c525c27349d09e120cd1f946baf0f6323d</link>
+<guid isPermaLink="false">727e44c525c27349d09e120cd1f946baf0f6323d</guid>
+<description>By Jacopo Graldi, Antonio Orvieto, Anastasia Koloskova. . (Met: Antonio Orvieto) arXiv:2611.29579</description>
+<pw:authors>Jacopo Graldi, Antonio Orvieto, Anastasia Koloskova</pw:authors>
+<pw:met>Antonio Orvieto</pw:met>
+<pw:relationships>Antonio Orvieto=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.29579</pw:arxiv>
+<pw:date>2026-11-22</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>How Multi-Timescale Memory Cools Optimization: Theory and Evidence from AdEMAMix</title>
+<link>https://www.semanticscholar.org/paper/7ac3065485b058ed064ed0a3d52f902702c854ec</link>
+<guid isPermaLink="false">7ac3065485b058ed064ed0a3d52f902702c854ec</guid>
+<description>By Jacopo Graldi, Antonio Orvieto, Anastasia Koloskova. . (Met: Antonio Orvieto) arXiv:2611.29588</description>
+<pw:authors>Jacopo Graldi, Antonio Orvieto, Anastasia Koloskova</pw:authors>
+<pw:met>Antonio Orvieto</pw:met>
+<pw:relationships>Antonio Orvieto=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.29588</pw:arxiv>
+<pw:date>2026-11-22</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Your Diffusion-Based Driving Planner Only Needs a Nudge</title>
+<link>https://www.semanticscholar.org/paper/f7b883d059668c9a6b552723780e80524ac70c35</link>
+<guid isPermaLink="false">f7b883d059668c9a6b552723780e80524ac70c35</guid>
+<description>By Zi-Lin Wang, Guo-Zheng Ma, Saeed Rahmani, Jiong Yang, Antyanta Bangunharcana, Yi-Luan Guo, J. Foerster, S. Whiteson. . (Met: Jakob Foerster) arXiv:2611.29123</description>
+<pw:authors>Zi-Lin Wang, Guo-Zheng Ma, Saeed Rahmani, Jiong Yang, Antyanta Bangunharcana, Yi-Luan Guo, J. Foerster, S. Whiteson</pw:authors>
+<pw:met>Jakob Foerster</pw:met>
+<pw:relationships>Jakob Foerster=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.29123</pw:arxiv>
+<pw:date>2026-11-22</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Dynamic Token Merging for Efficient Vision-Language Models</title>
 <link>https://www.semanticscholar.org/paper/3f395d7f8a3974d839003fc9fc5c57c77352a347</link>
 <guid isPermaLink="false">3f395d7f8a3974d839003fc9fc5c57c77352a347</guid>
@@ -3541,9 +3597,9 @@
 <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>LeHami: Symplectic Latent Dynamics for World Models</title>
-<link>https://www.semanticscholar.org/paper/afccda846d7dbe8f1ba666043ef30586ace10557</link>
-<guid isPermaLink="false">afccda846d7dbe8f1ba666043ef30586ace10557</guid>
+<title>LeHami: Symplectic Latent Dynamics Toward Long-Horizon Rollouts in World Models</title>
+<link>https://www.semanticscholar.org/paper/537fc1713d2d1b38f9e7706a40503603c1bb8a8d</link>
+<guid isPermaLink="false">537fc1713d2d1b38f9e7706a40503603c1bb8a8d</guid>
 <description>By Romina Yalovetzky, Randall Balestriero, Yann LeCun. . (Met: Yann LeCun) arXiv:2610.15267</description>
 <pw:authors>Romina Yalovetzky, Randall Balestriero, Yann LeCun</pw:authors>
 <pw:met>Yann LeCun</pw:met>
@@ -4956,8 +5012,8 @@
 </item>
 <item>
 <title>Explicit Boundary Markers for Subword Vocabularies</title>
-<link>https://www.semanticscholar.org/paper/8727f56e27413beba879109141b36af73b657391</link>
-<guid isPermaLink="false">8727f56e27413beba879109141b36af73b657391</guid>
+<link>https://www.semanticscholar.org/paper/11065222f52f63db76a68fdcefc724c791488c50</link>
+<guid isPermaLink="false">11065222f52f63db76a68fdcefc724c791488c50</guid>
 <description>By Sander Land, Clara Meister. arXiv.org. (Met: Clara Isabel Meister) arXiv:2608.08847</description>
 <pw:authors>Sander Land, Clara Meister</pw:authors>
 <pw:met>Clara Isabel Meister</pw:met>
@@ -8234,8 +8290,8 @@
 <title>Mind the Sim2Real Gap in User Simulation for Agentic Tasks</title>
 <link>https://www.semanticscholar.org/paper/e3a1443a207e24fbe454a4685693dd46f812af9d</link>
 <guid isPermaLink="false">e3a1443a207e24fbe454a4685693dd46f812af9d</guid>
-<description>By Xuhui Zhou, Wei-Wei Sun, Qianou Ma, Yi-Qing Xie, Jia-Rui Liu, Weihua Du, S. Welleck, YiMing Yang, Graham Neubig, S. Wu et al.. arXiv.org. (Met: Graham Neubig) arXiv:2603.11245</description>
-<pw:authors>Xuhui Zhou, Wei-Wei Sun, Qianou Ma, Yi-Qing Xie, Jia-Rui Liu, Weihua Du, S. Welleck, YiMing Yang, Graham Neubig, S. Wu et al.</pw:authors>
+<description>By Xuhui Zhou, Wei-Wei Sun, Qianou Ma, Yi-Qing Xie, Jia-Rui Liu, Weihua Du, S. Welleck, Yi-Ming Yang, Graham Neubig, S. Wu et al.. arXiv.org. (Met: Graham Neubig) arXiv:2603.11245</description>
+<pw:authors>Xuhui Zhou, Wei-Wei Sun, Qianou Ma, Yi-Qing Xie, Jia-Rui Liu, Weihua Du, S. Welleck, Yi-Ming Yang, Graham Neubig, S. Wu et al.</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -11692,8 +11748,8 @@
 <title>Training Proactive and Personalized LLM Agents</title>
 <link>https://www.semanticscholar.org/paper/15176cdac29c9581d63d3a9ca2fb1aad65775bd1</link>
 <guid isPermaLink="false">15176cdac29c9581d63d3a9ca2fb1aad65775bd1</guid>
-<description>By Wei-Wei Sun, Xuhui Zhou, Weihua Du, Xing-Yao Wang, S. Welleck, Graham Neubig, Maarten Sap, YiMing Yang. arXiv.org. (Met: Graham Neubig) arXiv:2511.02208</description>
-<pw:authors>Wei-Wei Sun, Xuhui Zhou, Weihua Du, Xing-Yao Wang, S. Welleck, Graham Neubig, Maarten Sap, YiMing Yang</pw:authors>
+<description>By Wei-Wei Sun, Xuhui Zhou, Weihua Du, Xing-Yao Wang, S. Welleck, Graham Neubig, Maarten Sap, Yi-Ming Yang. arXiv.org. (Met: Graham Neubig) arXiv:2511.02208</description>
+<pw:authors>Wei-Wei Sun, Xuhui Zhou, Weihua Du, Xing-Yao Wang, S. Welleck, Graham Neubig, Maarten Sap, Yi-Ming Yang</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -16144,8 +16200,8 @@
 <title>Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems</title>
 <link>https://www.semanticscholar.org/paper/305a7422a34a89fb79a84a9cdbecbae5021d6d83</link>
 <guid isPermaLink="false">305a7422a34a89fb79a84a9cdbecbae5021d6d83</guid>
-<description>By Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Si-Rui Hong, Hong-Zhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.. arXiv.org. (Met: Yu Su) arXiv:2504.01990</description>
-<pw:authors>Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tanjin He, Si-Rui Hong, Hong-Zhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.</pw:authors>
+<description>By Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tan-Jin He, Si-Rui Hong, Hong-Zhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.. arXiv.org. (Met: Yu Su) arXiv:2504.01990</description>
+<pw:authors>Bangbang Liu, Xin-Feng Li, Jiayi Zhang, Jin-Lin Wang, Tan-Jin He, Si-Rui Hong, Hong-Zhang Liu, Shao-Kun Zhang, Kai-Tao Song, Kun-Lun Zhu et al.</pw:authors>
 <pw:met>Yu Su</pw:met>
 <pw:relationships>Yu Su=following</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -19317,34 +19373,6 @@
 <pw:date>2024-11-25</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Adaptive Methods through the Lens of SDEs: Theoretical Insights on the Role of Noise</title>
-<link>https://www.semanticscholar.org/paper/be1a28b24891acffa3b6d4226a85c390e42f254f</link>
-<guid isPermaLink="false">be1a28b24891acffa3b6d4226a85c390e42f254f</guid>
-<description>By Enea Monzio Compagnoni, Tianlin Liu, R. Islamov, F. Proske, Antonio Orvieto, Aurélien Lucchi. arXiv.org. (Met: Antonio Orvieto) arXiv:2411.15958</description>
-<pw:authors>Enea Monzio Compagnoni, Tianlin Liu, R. Islamov, F. Proske, Antonio Orvieto, Aurélien Lucchi</pw:authors>
-<pw:met>Antonio Orvieto</pw:met>
-<pw:relationships>Antonio Orvieto=following</pw:relationships>
-<pw:venue>arXiv.org</pw:venue>
-<pw:arxiv>2411.15958</pw:arxiv>
-<pw:date>2024-11-24</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>Improving Pre-Trained Self-Supervised Embeddings Through Effective Entropy Maximization</title>
-<link>https://www.semanticscholar.org/paper/96199c65d118164ee47310a5decfd6df05937f96</link>
-<guid isPermaLink="false">96199c65d118164ee47310a5decfd6df05937f96</guid>
-<description>By Deep Chakraborty, Yann LeCun, Tim G. J. Rudner, E. Learned-Miller. International Conference on Artificial Intelligence and Statistics. (Met: Yann LeCun) arXiv:2411.15931</description>
-<pw:authors>Deep Chakraborty, Yann LeCun, Tim G. J. Rudner, E. Learned-Miller</pw:authors>
-<pw:met>Yann LeCun</pw:met>
-<pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue>International Conference on Artificial Intelligence and Statistics</pw:venue>
-<pw:arxiv>2411.15931</pw:arxiv>
-<pw:date>2024-11-24</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Why do language models perform worse for morphologically complex languages?</title>
@@ -25258,8 +25286,8 @@
 <title>Making AI Machines Work for Humans in FoW</title>
 <link>https://www.semanticscholar.org/paper/6aced7d7303fd82f8c4218aea2f3387efdf1d3c1</link>
 <guid isPermaLink="false">6aced7d7303fd82f8c4218aea2f3387efdf1d3c1</guid>
-<description>By S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, Gianluca Demartini et al.. SIGMOD record. (Met: Yunyao Li)</description>
-<pw:authors>S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, Gianluca Demartini et al.</pw:authors>
+<description>By S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, G. Demartini et al.. SIGMOD record. (Met: Yunyao Li)</description>
+<pw:authors>S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, G. Demartini et al.</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>SIGMOD record</pw:venue>
