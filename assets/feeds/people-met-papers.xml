@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Wed, 25 Nov 2026 04:05:16 +0000</lastBuildDate>
+<lastBuildDate>Thu, 26 Nov 2026 04:07:20 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -423,19 +423,6 @@
 <pw:year></pw:year>
 </item>
 <item>
-<title>: Disentangling Knowledge Gaps in Multilingual LLM Evaluation</title>
-<link>https://www.semanticscholar.org/paper/a08973534292e30edbfcba755296743921a6e3a6</link>
-<guid isPermaLink="false">a08973534292e30edbfcba755296743921a6e3a6</guid>
-<description>By Angelika Romanou, María Grandury, Clara Meister, Negar Foroutan, Jabez Magomere, Anna Sotnikova, Orestis Papakyriakopoulos, Scott A. Hale, Shamsuddeen Hassan Muhammad, Antoine Bosselut et al.. . (Met: Antoine Bosselut, Clara Isabel Meister, Leshem Choshen)</description>
-<pw:authors>Angelika Romanou, María Grandury, Clara Meister, Negar Foroutan, Jabez Magomere, Anna Sotnikova, Orestis Papakyriakopoulos, Scott A. Hale, Shamsuddeen Hassan Muhammad, Antoine Bosselut et al.</pw:authors>
-<pw:met>Antoine Bosselut, Clara Isabel Meister, Leshem Choshen</pw:met>
-<pw:relationships>Antoine Bosselut=following|Clara Isabel Meister=following|Leshem Choshen=met</pw:relationships>
-<pw:venue></pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year></pw:year>
-</item>
-<item>
 <title>Upper-bound Translation Performance of Llama-2 Under Idealized Setup</title>
 <link>https://www.semanticscholar.org/paper/d60db02a945775dc5470146775221ef487ceb8b6</link>
 <guid isPermaLink="false">d60db02a945775dc5470146775221ef487ceb8b6</guid>
@@ -820,6 +807,19 @@
 <pw:authors>Stephen Hansen, Eth Zürich, Elliott Ash</pw:authors>
 <pw:met>Elliott Ash</pw:met>
 <pw:relationships>Elliott Ash=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv></pw:arxiv>
+<pw:date></pw:date>
+<pw:year></pw:year>
+</item>
+<item>
+<title>DIRAS: Efficient LLM-Assisted Annotation of Document Relevance in Retrieval Augmented Generation</title>
+<link>https://www.semanticscholar.org/paper/bf623420dfd7bbf59822335ec36878353eb4923d</link>
+<guid isPermaLink="false">bf623420dfd7bbf59822335ec36878353eb4923d</guid>
+<description>By Jingwei Ni, Tobias Schimanski, Mei-Hong Lin, Mrinmaya Sachan, Elliott Ash, Markus Leippold, Eth Zürich, Marah I. Abdin, Ammar Sam Ade Jacobs, Ahmad Awan et al.. . (Met: Elliott Ash, Mrinmaya Sachan)</description>
+<pw:authors>Jingwei Ni, Tobias Schimanski, Mei-Hong Lin, Mrinmaya Sachan, Elliott Ash, Markus Leippold, Eth Zürich, Marah I. Abdin, Ammar Sam Ade Jacobs, Ahmad Awan et al.</pw:authors>
+<pw:met>Elliott Ash, Mrinmaya Sachan</pw:met>
+<pw:relationships>Elliott Ash=following|Mrinmaya Sachan=met</pw:relationships>
 <pw:venue></pw:venue>
 <pw:arxiv></pw:arxiv>
 <pw:date></pw:date>
@@ -2673,6 +2673,20 @@
 <pubDate>Mon, 01 Feb 2027 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Eliciting the Recall Capacity of Linear Attention</title>
+<link>https://www.semanticscholar.org/paper/2204b54ef7677dca1c080e53d483d64ce5af3b61</link>
+<guid isPermaLink="false">2204b54ef7677dca1c080e53d483d64ce5af3b61</guid>
+<description>By Johan Lindqvist, Antonio Orvieto. . (Met: Antonio Orvieto) arXiv:2611.32969</description>
+<pw:authors>Johan Lindqvist, Antonio Orvieto</pw:authors>
+<pw:met>Antonio Orvieto</pw:met>
+<pw:relationships>Antonio Orvieto=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.32969</pw:arxiv>
+<pw:date>2026-11-24</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>PVFormer: Proper Velocity Transformer for Stable and Scalable Hyperbolic Representation Learning</title>
 <link>https://www.semanticscholar.org/paper/2b94e26e063e84bb7be3f61813852c83568659ce</link>
 <guid isPermaLink="false">2b94e26e063e84bb7be3f61813852c83568659ce</guid>
@@ -3329,6 +3343,20 @@
 <pw:date>2026-10-19</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Mon, 19 Oct 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>INCLUDE-2.0: Disentangling Knowledge Gaps in Multilingual LLM Evaluation</title>
+<link>https://www.semanticscholar.org/paper/a08973534292e30edbfcba755296743921a6e3a6</link>
+<guid isPermaLink="false">a08973534292e30edbfcba755296743921a6e3a6</guid>
+<description>By Angelika Romanou, María Grandury, Clara Meister, Negar Foroutan, Jabez Magomere, Anna Sotnikova, Hitesh Laxmichand Patel, Akshay Kumar Dubey, Alfonso Amayuelas, Amit Agarwal et al.. Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing. (Met: Antoine Bosselut, Clara Isabel Meister) arXiv:2611.31255</description>
+<pw:authors>Angelika Romanou, María Grandury, Clara Meister, Negar Foroutan, Jabez Magomere, Anna Sotnikova, Hitesh Laxmichand Patel, Akshay Kumar Dubey, Alfonso Amayuelas, Amit Agarwal et al.</pw:authors>
+<pw:met>Antoine Bosselut, Clara Isabel Meister</pw:met>
+<pw:relationships>Antoine Bosselut=following|Clara Isabel Meister=following</pw:relationships>
+<pw:venue>Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing</pw:venue>
+<pw:arxiv>2611.31255</pw:arxiv>
+<pw:date>2026-10-18</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Assertion and Belief: Moore's Paradox in Language Models</title>
@@ -10177,20 +10205,6 @@
 <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>INCLUDE-2.0: Disentangling Knowledge Gaps in Multilingual LLM Evaluation</title>
-<link>https://www.semanticscholar.org/paper/324933e8e64cbcfe4af28d846288a4b5a05bfc70</link>
-<guid isPermaLink="false">324933e8e64cbcfe4af28d846288a4b5a05bfc70</guid>
-<description>By Angelika Romanou, María Grandury, Clara Meister, Negar Foroutan, Jabez Magomere, Anna Sotnikova, Hitesh Laxmichand Patel, Akshay Kumar Dubey, Alfonso Amayuelas, Amit Agarwal et al.. Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing. (Met: Antoine Bosselut, Clara Isabel Meister)</description>
-<pw:authors>Angelika Romanou, María Grandury, Clara Meister, Negar Foroutan, Jabez Magomere, Anna Sotnikova, Hitesh Laxmichand Patel, Akshay Kumar Dubey, Alfonso Amayuelas, Amit Agarwal et al.</pw:authors>
-<pw:met>Antoine Bosselut, Clara Isabel Meister</pw:met>
-<pw:relationships>Antoine Bosselut=following|Clara Isabel Meister=following</pw:relationships>
-<pw:venue>Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date></pw:date>
-<pw:year>2026</pw:year>
-<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning</title>
 <link>https://www.semanticscholar.org/paper/e955759b54ec205bc219f99f9ab2eafcf8a687ad</link>
 <guid isPermaLink="false">e955759b54ec205bc219f99f9ab2eafcf8a687ad</guid>
@@ -12798,8 +12812,8 @@
 <title>Believing without Seeing: Quality Scores for Contextualizing Vision-Language Model Explanations</title>
 <link>https://www.semanticscholar.org/paper/1dfde14e16f9a350fed68bf9205008ef6fb20f87</link>
 <guid isPermaLink="false">1dfde14e16f9a350fed68bf9205008ef6fb20f87</guid>
-<description>By Keyu He, Tejas Srinivasan, Brihi Joshi, Xiang Ren, Jesse Thomason, S. Swayamdipta. Annual Meeting of the Association for Computational Linguistics. (Met: Swabha Swayamdipta) arXiv:2509.25844</description>
-<pw:authors>Keyu He, Tejas Srinivasan, Brihi Joshi, Xiang Ren, Jesse Thomason, S. Swayamdipta</pw:authors>
+<description>By Ke-Yu He, Tejas Srinivasan, Brihi Joshi, Xiang Ren, Jesse Thomason, S. Swayamdipta. Annual Meeting of the Association for Computational Linguistics. (Met: Swabha Swayamdipta) arXiv:2509.25844</description>
+<pw:authors>Ke-Yu He, Tejas Srinivasan, Brihi Joshi, Xiang Ren, Jesse Thomason, S. Swayamdipta</pw:authors>
 <pw:met>Swabha Swayamdipta</pw:met>
 <pw:relationships>Swabha Swayamdipta=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -14282,8 +14296,8 @@
 <title>ELI-Why: Evaluating the Pedagogical Utility of Language Model Explanations</title>
 <link>https://www.semanticscholar.org/paper/29fac5d2ba317a72e7f4a3b7269790f6c1694dac</link>
 <guid isPermaLink="false">29fac5d2ba317a72e7f4a3b7269790f6c1694dac</guid>
-<description>By Brihi Joshi, Keyu He, Sahana Ramnath, Sadra Sabouri, Kaitlyn Zhou, Souti Chattopadhyay, S. Swayamdipta, Xiang Ren. Annual Meeting of the Association for Computational Linguistics. (Met: Swabha Swayamdipta) arXiv:2506.14200</description>
-<pw:authors>Brihi Joshi, Keyu He, Sahana Ramnath, Sadra Sabouri, Kaitlyn Zhou, Souti Chattopadhyay, S. Swayamdipta, Xiang Ren</pw:authors>
+<description>By Brihi Joshi, Ke-Yu He, Sahana Ramnath, Sadra Sabouri, Kaitlyn Zhou, Souti Chattopadhyay, S. Swayamdipta, Xiang Ren. Annual Meeting of the Association for Computational Linguistics. (Met: Swabha Swayamdipta) arXiv:2506.14200</description>
+<pw:authors>Brihi Joshi, Ke-Yu He, Sahana Ramnath, Sadra Sabouri, Kaitlyn Zhou, Souti Chattopadhyay, S. Swayamdipta, Xiang Ren</pw:authors>
 <pw:met>Swabha Swayamdipta</pw:met>
 <pw:relationships>Swabha Swayamdipta=following</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -19347,34 +19361,6 @@
 <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Discovering Severe Adverse Reactions From Pharmacokinetic Drug–Drug Interactions Through Literature Analysis and Electronic Health Record Verification</title>
-<link>https://www.semanticscholar.org/paper/226ebe8dff0953f5a554d3285437a039147683f0</link>
-<guid isPermaLink="false">226ebe8dff0953f5a554d3285437a039147683f0</guid>
-<description>By Eugene Jeong, Yu Su, Lang Li, You Chen. Clinical pharmacology and therapy. (Met: Yu Su)</description>
-<pw:authors>Eugene Jeong, Yu Su, Lang Li, You Chen</pw:authors>
-<pw:met>Yu Su</pw:met>
-<pw:relationships>Yu Su=following</pw:relationships>
-<pw:venue>Clinical pharmacology and therapy</pw:venue>
-<pw:arxiv></pw:arxiv>
-<pw:date>2024-11-25</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics</title>
-<link>https://www.semanticscholar.org/paper/ba8f1e36ca5f16a61d679f1ddf7b2cb3e298b354</link>
-<guid isPermaLink="false">ba8f1e36ca5f16a61d679f1ddf7b2cb3e298b354</guid>
-<description>By Chan Hee Song, Valts Blukis, Jonathan Tremblay, Stephen Tyree, Yu Su, Stanley T. Birchfield. Computer Vision and Pattern Recognition. (Met: Yu Su) arXiv:2411.16537</description>
-<pw:authors>Chan Hee Song, Valts Blukis, Jonathan Tremblay, Stephen Tyree, Yu Su, Stanley T. Birchfield</pw:authors>
-<pw:met>Yu Su</pw:met>
-<pw:relationships>Yu Su=following</pw:relationships>
-<pw:venue>Computer Vision and Pattern Recognition</pw:venue>
-<pw:arxiv>2411.16537</pw:arxiv>
-<pw:date>2024-11-25</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
 <title>Why do language models perform worse for morphologically complex languages?</title>
 <link>https://www.semanticscholar.org/paper/d434a9c21c02b2140659eec5a97dbaeca7ba1c93</link>
 <guid isPermaLink="false">d434a9c21c02b2140659eec5a97dbaeca7ba1c93</guid>
@@ -20215,11 +20201,11 @@
 <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
-<title>DIRAS: Efficient LLM Annotation of Document Relevance for Retrieval Augmented Generation</title>
+<title>DIRAS: Efficient LLM-Assisted Annotation of Document Relevance in Retrieval Augmented Generation</title>
 <link>https://www.semanticscholar.org/paper/4378be35bad35f7f81dc76286e7ce064d6cfc374</link>
 <guid isPermaLink="false">4378be35bad35f7f81dc76286e7ce064d6cfc374</guid>
-<description>By Jingwei Ni, Tobias Schimanski, Meihong Lin, Mrinmaya Sachan, Elliott Ash, Markus Leippold. North American Chapter of the Association for Computational Linguistics. (Met: Mrinmaya Sachan) arXiv:2406.14162</description>
-<pw:authors>Jingwei Ni, Tobias Schimanski, Meihong Lin, Mrinmaya Sachan, Elliott Ash, Markus Leippold</pw:authors>
+<description>By Jingwei Ni, Tobias Schimanski, Mei-Hong Lin, Mrinmaya Sachan, Elliott Ash, Markus Leippold. North American Chapter of the Association for Computational Linguistics. (Met: Mrinmaya Sachan) arXiv:2406.14162</description>
+<pw:authors>Jingwei Ni, Tobias Schimanski, Mei-Hong Lin, Mrinmaya Sachan, Elliott Ash, Markus Leippold</pw:authors>
 <pw:met>Mrinmaya Sachan</pw:met>
 <pw:relationships>Mrinmaya Sachan=met</pw:relationships>
 <pw:venue>North American Chapter of the Association for Computational Linguistics</pw:venue>
@@ -25286,8 +25272,8 @@
 <title>Making AI Machines Work for Humans in FoW</title>
 <link>https://www.semanticscholar.org/paper/6aced7d7303fd82f8c4218aea2f3387efdf1d3c1</link>
 <guid isPermaLink="false">6aced7d7303fd82f8c4218aea2f3387efdf1d3c1</guid>
-<description>By S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, G. Demartini et al.. SIGMOD record. (Met: Yunyao Li)</description>
-<pw:authors>S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, G. Demartini et al.</pw:authors>
+<description>By S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, Gianluca Demartini et al.. SIGMOD record. (Met: Yunyao Li)</description>
+<pw:authors>S. Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, James Abello Monedero, P. Bourhis, F. Charoy, Marina Danilevsky, Gautam Das, Gianluca Demartini et al.</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>SIGMOD record</pw:venue>
@@ -25790,8 +25776,8 @@
 <title>Learning Electronic Health Records through Hyperbolic Embedding of Medical Ontologies</title>
 <link>https://www.semanticscholar.org/paper/37db7b51dc988a8a90aece71238c9d6245af16b3</link>
 <guid isPermaLink="false">37db7b51dc988a8a90aece71238c9d6245af16b3</guid>
-<description>By Qiuhao Lu, Nisansa de Silva, Sabin Kafle, Jiazhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li. ACM International Conference on Bioinformatics, Computational Biology and Biomedicine. (Met: Yunyao Li)</description>
-<pw:authors>Qiuhao Lu, Nisansa de Silva, Sabin Kafle, Jiazhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li</pw:authors>
+<description>By Qiuhao Lu, Nisansa de Silva, Sabin Kafle, Jia-Zhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li. ACM International Conference on Bioinformatics, Computational Biology and Biomedicine. (Met: Yunyao Li)</description>
+<pw:authors>Qiuhao Lu, Nisansa de Silva, Sabin Kafle, Jia-Zhen Cao, D. Dou, Thien Huu Nguyen, Prithviraj Sen, B. Hailpern, B. Reinwald, Yunyao Li</pw:authors>
 <pw:met>Yunyao Li</pw:met>
 <pw:relationships>Yunyao Li=met</pw:relationships>
 <pw:venue>ACM International Conference on Bioinformatics, Computational Biology and Biomedicine</pw:venue>
