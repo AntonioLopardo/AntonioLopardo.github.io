@@ -3,7 +3,7 @@
 <title>Papers from people I like</title>
 <link>https://AntonioLopardo.github.io/assets/feeds/people-met-papers.xml</link>
 <description>Recent papers by researchers I like — people I've interacted with or follow. Via Semantic Scholar.</description>
-<lastBuildDate>Thu, 26 Nov 2026 04:07:20 +0000</lastBuildDate>
+<lastBuildDate>Fri, 27 Nov 2026 04:04:45 +0000</lastBuildDate>
 <pw:person name="Aditya Yadavalli" relationship="met" affiliation="UCSD PhD (lemn-lab), prev. Karya / IIIT Hyderabad"/>
 <pw:person name="Akshat Gupta" relationship="met" affiliation="UC Berkeley (BAIR)"/>
 <pw:person name="Aldo Lipani" relationship="following" affiliation="University College London"/>
@@ -1011,8 +1011,8 @@
 <title>GenAI-Bench: A Holistic Benchmark for Compositional Text-to-Visual Generation</title>
 <link>https://www.semanticscholar.org/paper/d5c6c58d3c1ce61714079fe906473c0d20918189</link>
 <guid isPermaLink="false">d5c6c58d3c1ce61714079fe906473c0d20918189</guid>
-<description>By Baiqi Li, Zhiqiu Lin, Deepak Pathak, Jia-Yao Li, Xi-De Xia, Graham Neubig, Pengchuan Zhang, D. Ramanan. . (Met: Graham Neubig)</description>
-<pw:authors>Baiqi Li, Zhiqiu Lin, Deepak Pathak, Jia-Yao Li, Xi-De Xia, Graham Neubig, Pengchuan Zhang, D. Ramanan</pw:authors>
+<description>By Bai-Qi Li, Zhiqiu Lin, Deepak Pathak, Jia-Yao Li, Xi-De Xia, Graham Neubig, Pengchuan Zhang, D. Ramanan. . (Met: Graham Neubig)</description>
+<pw:authors>Bai-Qi Li, Zhiqiu Lin, Deepak Pathak, Jia-Yao Li, Xi-De Xia, Graham Neubig, Pengchuan Zhang, D. Ramanan</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -1050,8 +1050,8 @@
 <title>Multi-Task Learning with Self-Supervised Objectives can Improve Worst-Group Outcomes</title>
 <link>https://www.semanticscholar.org/paper/02cd101b8c274997ff0382c8689d17b724267065</link>
 <guid isPermaLink="false">02cd101b8c274997ff0382c8689d17b724267065</guid>
-<description>By Atharva S Kulkarni, L. Dery, Amrith Rajagopal Setlur, Aditi Raghunathan, Ameet Talwalkar, Graham Neubig. . (Met: Graham Neubig)</description>
-<pw:authors>Atharva S Kulkarni, L. Dery, Amrith Rajagopal Setlur, Aditi Raghunathan, Ameet Talwalkar, Graham Neubig</pw:authors>
+<description>By Atharva S. Kulkarni, L. Dery, Amrith Rajagopal Setlur, Aditi Raghunathan, Ameet Talwalkar, Graham Neubig. . (Met: Graham Neubig)</description>
+<pw:authors>Atharva S. Kulkarni, L. Dery, Amrith Rajagopal Setlur, Aditi Raghunathan, Ameet Talwalkar, Graham Neubig</pw:authors>
 <pw:met>Graham Neubig</pw:met>
 <pw:relationships>Graham Neubig=following</pw:relationships>
 <pw:venue></pw:venue>
@@ -2673,6 +2673,48 @@
 <pubDate>Mon, 01 Feb 2027 00:00:00 +0000</pubDate>
 </item>
 <item>
+<title>Looped Models are Fast Multi-Token Predictors</title>
+<link>https://www.semanticscholar.org/paper/820676150a74eec01111b590c1559fa1153cad83</link>
+<guid isPermaLink="false">820676150a74eec01111b590c1559fa1153cad83</guid>
+<description>By Ayhan Suleymanzade, Sean McLeish, Sehoon Kim, Jinwoo Kim, Antoine Bosselut. . (Met: Antoine Bosselut) arXiv:2611.33896</description>
+<pw:authors>Ayhan Suleymanzade, Sean McLeish, Sehoon Kim, Jinwoo Kim, Antoine Bosselut</pw:authors>
+<pw:met>Antoine Bosselut</pw:met>
+<pw:relationships>Antoine Bosselut=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.33896</pw:arxiv>
+<pw:date>2026-11-25</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>PersonaFactory: Stylistic User Prompt Augmentation with Synthetic Persona Bank</title>
+<link>https://www.semanticscholar.org/paper/dcbabc0584881ae3e7dd3e629d8f8c4ce24f542f</link>
+<guid isPermaLink="false">dcbabc0584881ae3e7dd3e629d8f8c4ce24f542f</guid>
+<description>By Ngoc Bich Doan, Hanna Yukhymenko, Imanol Schlag. . (Met: Hanna Yukhymenko) arXiv:2611.34785</description>
+<pw:authors>Ngoc Bich Doan, Hanna Yukhymenko, Imanol Schlag</pw:authors>
+<pw:met>Hanna Yukhymenko</pw:met>
+<pw:relationships>Hanna Yukhymenko=met</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.34785</pw:arxiv>
+<pw:date>2026-11-25</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Tokenisation is not in APX</title>
+<link>https://www.semanticscholar.org/paper/87f794f412cf59404c3ecac363a88cd0b5cb198e</link>
+<guid isPermaLink="false">87f794f412cf59404c3ecac363a88cd0b5cb198e</guid>
+<description>By Violeta Kastreva, Philip Whittington, D. Komm, Tiago Pimentel. . (Met: Tiago Pimentel) arXiv:2611.34938</description>
+<pw:authors>Violeta Kastreva, Philip Whittington, D. Komm, Tiago Pimentel</pw:authors>
+<pw:met>Tiago Pimentel</pw:met>
+<pw:relationships>Tiago Pimentel=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.34938</pw:arxiv>
+<pw:date>2026-11-25</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
 <title>Eliciting the Recall Capacity of Linear Attention</title>
 <link>https://www.semanticscholar.org/paper/2204b54ef7677dca1c080e53d483d64ce5af3b61</link>
 <guid isPermaLink="false">2204b54ef7677dca1c080e53d483d64ce5af3b61</guid>
@@ -2783,6 +2825,20 @@
 <pw:date>2026-11-18</pw:date>
 <pw:year>2026</pw:year>
 <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>Formalization, Transparency, and Collusion in Open-Source Game Theory</title>
+<link>https://www.semanticscholar.org/paper/6777c2062c8a3c4dbb8cf0c3c79a9ca26893d663</link>
+<guid isPermaLink="false">6777c2062c8a3c4dbb8cf0c3c79a9ca26893d663</guid>
+<description>By Colomban Duclaux, Riccardo Formenti, Pepijn Cobben, Terry Jingchen Zhang, B. Schölkopf, Zhijing Jin. . (Met: Bernhard Schölkopf) arXiv:2611.33193</description>
+<pw:authors>Colomban Duclaux, Riccardo Formenti, Pepijn Cobben, Terry Jingchen Zhang, B. Schölkopf, Zhijing Jin</pw:authors>
+<pw:met>Bernhard Schölkopf</pw:met>
+<pw:relationships>Bernhard Schölkopf=following</pw:relationships>
+<pw:venue></pw:venue>
+<pw:arxiv>2611.33193</pw:arxiv>
+<pw:date>2026-11-15</pw:date>
+<pw:year>2026</pw:year>
+<pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>When Does Label-Free Deconfounding of Document Embeddings Work?</title>
@@ -4830,8 +4886,8 @@
 </item>
 <item>
 <title>LAION-BVD: A 13-Million-Hour Open Video Dataset for Multimodal Pre-training</title>
-<link>https://www.semanticscholar.org/paper/833e57141999d599a24b2ab287e492703fd26566</link>
-<guid isPermaLink="false">833e57141999d599a24b2ab287e492703fd26566</guid>
+<link>https://www.semanticscholar.org/paper/5f1e994677f4a89ab642c639fb9cdabe87f90309</link>
+<guid isPermaLink="false">5f1e994677f4a89ab642c639fb9cdabe87f90309</guid>
 <description>By Andreas Hochlehnert, Marianna Nezhurina, M. Cherti, Andrej Radonjic, Thaddäus Wiedemer, C. Schuhmann, R. Beaumont, Wieland Brendel, B. Schölkopf, A. S. Koepke et al.. . (Met: Bernhard Schölkopf) arXiv:2608.24845</description>
 <pw:authors>Andreas Hochlehnert, Marianna Nezhurina, M. Cherti, Andrej Radonjic, Thaddäus Wiedemer, C. Schuhmann, R. Beaumont, Wieland Brendel, B. Schölkopf, A. S. Koepke et al.</pw:authors>
 <pw:met>Bernhard Schölkopf</pw:met>
@@ -5840,8 +5896,8 @@
 <title>MMGist: A Comprehensive Multimodal Benchmark for 2027</title>
 <link>https://www.semanticscholar.org/paper/680d695ee44d424d2344f74c6b1b276ed05707a9</link>
 <guid isPermaLink="false">680d695ee44d424d2344f74c6b1b276ed05707a9</guid>
-<description>By Wen-Zhen Yuan, Jia-Cheng Ruan, Wutao Xiong, Chen Zhao, Ting Liu, Yu-Zhuo Fu. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao) arXiv:2606.22437</description>
-<pw:authors>Wen-Zhen Yuan, Jia-Cheng Ruan, Wutao Xiong, Chen Zhao, Ting Liu, Yu-Zhuo Fu</pw:authors>
+<description>By Wen-Zhen Yuan, Jia-Cheng Ruan, Wu-Tao Xiong, Chen Zhao, Ting Liu, Yu-Zhuo Fu. Conference on Empirical Methods in Natural Language Processing. (Met: Chen Zhao) arXiv:2606.22437</description>
+<pw:authors>Wen-Zhen Yuan, Jia-Cheng Ruan, Wu-Tao Xiong, Chen Zhao, Ting Liu, Yu-Zhuo Fu</pw:authors>
 <pw:met>Chen Zhao</pw:met>
 <pw:relationships>Chen Zhao=following</pw:relationships>
 <pw:venue>Conference on Empirical Methods in Natural Language Processing</pw:venue>
@@ -10740,8 +10796,8 @@
 <title>Gaperon: A Peppered English-French Generative Language Model Suite</title>
 <link>https://www.semanticscholar.org/paper/7c201b4efcacb21aad8fb367b02626491ca2769e</link>
 <guid isPermaLink="false">7c201b4efcacb21aad8fb367b02626491ca2769e</guid>
-<description>By Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
-<pw:authors>Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah</pw:authors>
+<description>By Nathan Godey, Wissam Antoun, Rian Touchent-Saad, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
+<pw:authors>Nathan Godey, Wissam Antoun, Rian Touchent-Saad, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:relationships>Nathan Godey=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -10754,8 +10810,8 @@
 <title>Biomed-Enriched: Data-Efficient Biomedical Pretraining via Paragraph-Level Annotation</title>
 <link>https://www.semanticscholar.org/paper/bddf23a04c87f0ca4b16786bdd9af733cfe69e30</link>
 <guid isPermaLink="false">bddf23a04c87f0ca4b16786bdd9af733cfe69e30</guid>
-<description>By Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
-<pw:authors>Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
+<description>By Rian Touchent-Saad, Nathan Godey, Éric Villemonte de la Clergerie. Annual Meeting of the Association for Computational Linguistics. (Met: Nathan Godey)</description>
+<pw:authors>Rian Touchent-Saad, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:relationships>Nathan Godey=met</pw:relationships>
 <pw:venue>Annual Meeting of the Association for Computational Linguistics</pw:venue>
@@ -11958,8 +12014,8 @@
 <title>Gaperon: A Peppered English-French Generative Language Model Suite</title>
 <link>https://www.semanticscholar.org/paper/e4ec95f799dc73bd387b73432dac6d8376ea0bfa</link>
 <guid isPermaLink="false">e4ec95f799dc73bd387b73432dac6d8376ea0bfa</guid>
-<description>By Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah. arXiv.org. (Met: Nathan Godey) arXiv:2510.25771</description>
-<pw:authors>Nathan Godey, Wissam Antoun, Rian Touchent, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah</pw:authors>
+<description>By Nathan Godey, Wissam Antoun, Rian Touchent-Saad, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah. arXiv.org. (Met: Nathan Godey) arXiv:2510.25771</description>
+<pw:authors>Nathan Godey, Wissam Antoun, Rian Touchent-Saad, Rachel Bawden, Éric Villemonte de la Clergerie, Benoît Sagot, Djamé Seddah</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:relationships>Nathan Godey=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -13232,11 +13288,11 @@
 <title>Learning Acrobatic Flight from Preferences</title>
 <link>https://www.semanticscholar.org/paper/3ddc1529e1cdd253956999f1c01f1a7f69fdb6de</link>
 <guid isPermaLink="false">3ddc1529e1cdd253956999f1c01f1a7f69fdb6de</guid>
-<description>By Colin Merk, Ismail Geles, Jiaxu Xing, Angel Romero, Giorgia Ramponi, D. Scaramuzza. . (Met: Giorgia Ramponi) arXiv:2508.18817</description>
+<description>By Colin Merk, Ismail Geles, Jiaxu Xing, Angel Romero, Giorgia Ramponi, D. Scaramuzza. IEEE/RJS International Conference on Intelligent RObots and Systems. (Met: Giorgia Ramponi) arXiv:2508.18817</description>
 <pw:authors>Colin Merk, Ismail Geles, Jiaxu Xing, Angel Romero, Giorgia Ramponi, D. Scaramuzza</pw:authors>
 <pw:met>Giorgia Ramponi</pw:met>
 <pw:relationships>Giorgia Ramponi=following</pw:relationships>
-<pw:venue></pw:venue>
+<pw:venue>IEEE/RJS International Conference on Intelligent RObots and Systems</pw:venue>
 <pw:arxiv>2508.18817</pw:arxiv>
 <pw:date>2025-08-26</pw:date>
 <pw:year>2025</pw:year>
@@ -14086,8 +14142,8 @@
 <title>Biomed-Enriched: A Biomedical Dataset Enriched with LLMs for Pretraining and Extracting Rare and Hidden Content</title>
 <link>https://www.semanticscholar.org/paper/4d56e977cd0b4abb88b4355537479ef279ae51d8</link>
 <guid isPermaLink="false">4d56e977cd0b4abb88b4355537479ef279ae51d8</guid>
-<description>By Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie. arXiv.org. (Met: Nathan Godey) arXiv:2506.20331</description>
-<pw:authors>Rian Touchent, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
+<description>By Rian Touchent-Saad, Nathan Godey, Éric Villemonte de la Clergerie. arXiv.org. (Met: Nathan Godey) arXiv:2506.20331</description>
+<pw:authors>Rian Touchent-Saad, Nathan Godey, Éric Villemonte de la Clergerie</pw:authors>
 <pw:met>Nathan Godey</pw:met>
 <pw:relationships>Nathan Godey=met</pw:relationships>
 <pw:venue>arXiv.org</pw:venue>
@@ -19345,20 +19401,6 @@
 <pw:date>2024-11-29</pw:date>
 <pw:year>2024</pw:year>
 <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
-</item>
-<item>
-<title>RoboPEPP: Vision-Based Robot Pose and Joint Angle Estimation through Embedding Predictive Pre-Training</title>
-<link>https://www.semanticscholar.org/paper/0353e068d0c5e995788bdf87567ea4d3816bc3fd</link>
-<guid isPermaLink="false">0353e068d0c5e995788bdf87567ea4d3816bc3fd</guid>
-<description>By Raktim Gautam Goswami, P. Krishnamurthy, Yann LeCun, F. Khorrami. Computer Vision and Pattern Recognition. (Met: Yann LeCun) arXiv:2411.17662</description>
-<pw:authors>Raktim Gautam Goswami, P. Krishnamurthy, Yann LeCun, F. Khorrami</pw:authors>
-<pw:met>Yann LeCun</pw:met>
-<pw:relationships>Yann LeCun=following</pw:relationships>
-<pw:venue>Computer Vision and Pattern Recognition</pw:venue>
-<pw:arxiv>2411.17662</pw:arxiv>
-<pw:date>2024-11-26</pw:date>
-<pw:year>2024</pw:year>
-<pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
 </item>
 <item>
 <title>Why do language models perform worse for morphologically complex languages?</title>
